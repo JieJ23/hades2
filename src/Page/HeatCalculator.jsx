@@ -1,21 +1,21 @@
 import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
-import { allVows, vowArray, defineArray } from "../Data/FearTrait";
 import { useState, useEffect } from "react";
+import { allPact, definePact, pactArray } from "../Data/PactPunishmentTrait";
 
-export default function FearCalculator() {
-  const [vows, setVows] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+export default function HeatCalculator() {
+  const [pact, setPact] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [isCopied, setIsCopied] = useState(false);
   const [shareableURL, setShareableURL] = useState(""); // State to store the shareable URL
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
-    const base64Vows = searchParams.get("vows");
+    const base64Pact = searchParams.get("pact");
 
-    if (base64Vows) {
+    if (base64Pact) {
       try {
-        const decodedVows = JSON.parse(atob(base64Vows)); // Decode the Base64
-        setVows(decodedVows);
+        const decodedVows = JSON.parse(atob(base64Pact)); // Decode the Base64
+        setPact(decodedVows);
         window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
         return;
         // Reset the URL back to localhost without the query
@@ -23,35 +23,35 @@ export default function FearCalculator() {
         console.error("Error decoding cards data from URL:", error);
       }
     }
-    const stored = localStorage.getItem("myVows");
+    const stored = localStorage.getItem("myPact");
     if (stored) {
-      setVows(JSON.parse(stored));
+      setPact(JSON.parse(stored));
     }
   }, []);
 
   const handleButtonClick = (index) => {
-    setVows((prevValues) => {
-      const options = vowArray(allVows[index]); // this show the array for the vow
+    setPact((prevValues) => {
+      const options = pactArray(allPact[index]); // this show the array for the vow
       const currentIndex = options.indexOf(prevValues[index]); // Find the current value's index
       const nextIndex = (currentIndex + 1) % options.length; // Cycle to the next index
       const updatedValues = [...prevValues]; // Clone the array to update
       updatedValues[index] = options[nextIndex]; // Update the specific value
-      localStorage.setItem("myVows", JSON.stringify(updatedValues));
+      localStorage.setItem("myPact", JSON.stringify(updatedValues));
       return updatedValues; // Return the updated array
     });
   };
 
-  const findSelectionIndex = vows.map((item, index) => (item > 0 ? index : -1)).filter((item) => item !== -1);
-  const displayVow = findSelectionIndex.map((num) => allVows[num]);
+  const findSelectionIndex = pact.map((item, index) => (item > 0 ? index : -1)).filter((item) => item !== -1);
+  const displayPact = findSelectionIndex.map((num) => allPact[num]);
 
-  const currentVows = vows.reduce((a, b) => a + b, 0);
+  const currentPact = pact.reduce((a, b) => a + b, 0);
 
   //
   //
 
   const generateShareableURL = () => {
-    const base64Vows = btoa(JSON.stringify(vows));
-    const newURL = `${window.location.origin}/FearCalculator/?vows=${base64Vows}`;
+    const base64Pact = btoa(JSON.stringify(pact));
+    const newURL = `${window.location.origin}/HeatCalculator/?vows=${base64Pact}`;
     setShareableURL(newURL);
   };
 
@@ -79,8 +79,8 @@ export default function FearCalculator() {
               className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]"
               onClick={() => {
                 const defaultValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-                setVows(defaultValues);
-                localStorage.setItem("myVows", JSON.stringify(defaultValues));
+                setPact(defaultValues);
+                localStorage.setItem("myPact", JSON.stringify(defaultValues));
               }}
             >
               Reset Selection
@@ -92,19 +92,19 @@ export default function FearCalculator() {
           </section>
           <div className="flex flex-col lg:flex-row items-center lg:items-start py-1">
             <div className="grid grid-cols-4 w-[460px] gap-1 place-content-start shrink-0">
-              {allVows.map((ite, index) => (
+              {allPact.map((ite, index) => (
                 <div
                   className={`w-[110px] h-[110px] border-1 border-white/20 flex flex-col justify-center items-center gap-0.5 relative rounded transition-all duration-300 ease-in ${
-                    vows[index] !== 0
-                      ? `bg-gradient-to-tr from-[#321846] to-[#1b0299]`
+                    pact[index] !== 0
+                      ? `bg-gradient-to-tr from-[#462318] to-[#995f02]`
                       : `bg-gradient-to-tr from-[#0f1c1d] to-[#0f1a26]`
                   }`}
                   key={index}
                 >
                   <div className="absolute top-0 left-1">
                     <div className="flex flex-col text-[10px]">
-                      {vowArray(ite).map((item, index) => (
-                        <div className="font-[PT]" key={index}>
+                      {pactArray(ite).map((item, index) => (
+                        <div className="font-[PT] text-white" key={index}>
                           {item}
                         </div>
                       ))}
@@ -112,31 +112,33 @@ export default function FearCalculator() {
                   </div>
                   <div className="avatar flex justify-center">
                     <div className="w-10 rounded">
-                      <img src={`/Vows/${ite}.png`} alt="Fear Vows" draggable={false} />
+                      <img src={`/Punishment/${ite}.png`} alt="Fear Vows" draggable={false} />
                     </div>
                   </div>
-                  <div className="font-[Cinzel] text-[10px]">{ite}</div>
+                  <div className="font-[Cinzel] text-[10px] h-[30px] w-[90px] flex flex-col justify-center text-center">
+                    {ite}
+                  </div>
                   <button
-                    className="btn btn-outline btn-accent btn-xs text-[12px] font-[PT]"
+                    className="btn btn-outline btn-error btn-xs text-[12px] font-[PT]"
                     onClick={() => handleButtonClick(index)}
                   >
-                    {vows[index]}
+                    {pact[index]}
                   </button>
                 </div>
               ))}
             </div>
             <div className="w-full p-2 lg:py-0">
-              <div className={`text-[18px] text-[#0cf29e] font-[PT]`}>Total: {currentVows ? currentVows : 0}</div>
+              <div className={`text-[18px] text-[#f2ad0c] font-[PT]`}>Total: {currentPact ? currentPact : 0}</div>
               <div className="grid grid-cols-2 gap-2">
-                {displayVow.map((item, index) => (
+                {displayPact.map((item, index) => (
                   <div
-                    className="w-full font-[PT] text-[12px] text-white border-1 border-white/20 rounded p-2 bg-[#2b2b5c60]"
+                    className="w-full font-[PT] text-[12px] text-white border-1 border-white/20 rounded p-2 bg-[#5c452b60]"
                     key={index}
                   >
                     <div className="font-[Cinzel]">{item}</div>
-                    <div className="text-gray-300">{defineArray(item).d}</div>
+                    <div className="text-gray-300">{definePact(item).d}</div>
                     <div className="flex flex-wrap justify-start gap-2 mt-1">
-                      {defineArray(item).rank.map((ite, index) => (
+                      {definePact(item).rank.map((ite, index) => (
                         <div className="flex items-center gap-1" key={index}>
                           <div className="avatar">
                             <div className="w-4 rounded-none">
@@ -150,7 +152,7 @@ export default function FearCalculator() {
                                     ? `/Level/Epic.png`
                                     : `/Level/Heroic.png`
                                 }
-                                alt="Vow Rank"
+                                alt="Pact Rank"
                                 draggable={false}
                               />
                             </div>

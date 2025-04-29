@@ -72,7 +72,14 @@ export default function ArcaneDeck() {
             <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT] mx-1" onClick={copyURLToClipboard}>
               {isCopied ? "Copied!" : "Copy URL"}
             </button>
-            <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]" onClick={() => setDeck([])}>
+            <button
+              className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]"
+              onClick={() => {
+                const defaultValue = [];
+                setDeck(defaultValue);
+                localStorage.setItem("myDeck", JSON.stringify(defaultValue));
+              }}
+            >
               Reset Deck
             </button>
 

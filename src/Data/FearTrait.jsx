@@ -84,7 +84,7 @@ export const defineArray = (vow) => {
     case `Grit`:
       return {
         d: `All foes have more Health.`,
-        rank: [`+10%`, `+20%`, `30%`],
+        rank: [`+10%`, `+20%`, `+30%`],
       };
     case `Hordes`:
       return {
