@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui" {
+    themes: dim --default, dark --prefersdark;
+  }
+
+  @font-face {
+    font-family: Cinzel;
+    font-style: normal;
+    src: url("/src/fonts/Cinzel-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: PT;
+    font-style: normal;
+    src: url("/src/fonts/PTSans-Regular.ttf") format("truetype");
+  }
