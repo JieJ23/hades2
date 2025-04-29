@@ -50,7 +50,7 @@ export default function Head() {
         </Link>
       </div>
       <div className="navbar-end">
-        <Link to={`/https://discord.com/users/1110261416432242758`}>
+        <Link to={"https://discord.com/users/1110261416432242758"} target="_blank`">
           <div className="avatar">
             <div className="w-8 rounded-xl">
               <img src="/discord.jpeg" />
