@@ -5,6 +5,7 @@ export const sites = [
   { link: `FearCalculator`, nam: `Fear Calculator` },
   { link: `ArcaneDeck`, nam: `Arcane Deck` },
   { link: `HeatCalculator`, nam: `Heat Calculator` },
+  { link: `Hades`, nam: `Hades` },
 ];
 
 export default function SideNav() {

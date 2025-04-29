@@ -60,7 +60,7 @@ export default function ArcaneDeck() {
   };
 
   return (
-    <main>
+    <main className="select-none">
       <Head />
       <div className="flex flex-col md:flex-row gap-2">
         <SideNav />
