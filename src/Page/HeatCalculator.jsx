@@ -69,32 +69,34 @@ export default function HeatCalculator() {
         <SideNav />
         <div className="w-full">
           <section className="p-2">
-            <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]" onClick={generateShareableURL}>
-              Generate URL
-            </button>
-            <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT] mx-1" onClick={copyURLToClipboard}>
-              {isCopied ? "Copied!" : "Copy URL"}
-            </button>
-            <button
-              className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]"
-              onClick={() => {
-                const defaultValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-                setPact(defaultValues);
-                localStorage.setItem("myPact", JSON.stringify(defaultValues));
-              }}
-            >
-              Reset Selection
-            </button>
+            <div className="flex flex-wrap gap-1">
+              <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]" onClick={generateShareableURL}>
+                Generate URL
+              </button>
+              <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]" onClick={copyURLToClipboard}>
+                {isCopied ? "Copied!" : "Copy URL"}
+              </button>
+              <button
+                className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]"
+                onClick={() => {
+                  const defaultValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+                  setPact(defaultValues);
+                  localStorage.setItem("myPact", JSON.stringify(defaultValues));
+                }}
+              >
+                Reset Selection
+              </button>
+            </div>
 
             <div className="max-w-[1000px] bg-base-300 overflow-hidden p-2 truncate text-[13px] text-white rounded-md font-[PT] mt-2">
               {shareableURL || "No URL Generated Yet"}
             </div>
           </section>
           <div className="flex flex-col lg:flex-row items-center lg:items-start py-1">
-            <div className="grid grid-cols-4 w-[460px] gap-1 place-content-start shrink-0">
+            <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start">
               {allPact.map((ite, index) => (
                 <div
-                  className={`w-[110px] h-[110px] border-1 border-white/20 flex flex-col justify-center items-center gap-0.5 relative rounded transition-all duration-300 ease-in ${
+                  className={`w-full min-h-[110px] border-1 border-white/20 flex flex-col justify-center items-center gap-0.5 relative rounded transition-all duration-300 ease-in ${
                     pact[index] !== 0
                       ? `bg-gradient-to-tr from-[#462318] to-[#995f02]`
                       : `bg-gradient-to-tr from-[#0f1c1d] to-[#0f1a26]`

@@ -66,29 +66,31 @@ export default function ArcaneDeck() {
         <SideNav />
         <div className="w-full">
           <section className="p-2">
-            <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]" onClick={generateShareableURL}>
-              Generate URL
-            </button>
-            <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT] mx-1" onClick={copyURLToClipboard}>
-              {isCopied ? "Copied!" : "Copy URL"}
-            </button>
-            <button
-              className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]"
-              onClick={() => {
-                const defaultValue = [];
-                setDeck(defaultValue);
-                localStorage.setItem("myDeck", JSON.stringify(defaultValue));
-              }}
-            >
-              Reset Deck
-            </button>
+            <div className="flex flex-wrap gap-1">
+              <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]" onClick={generateShareableURL}>
+                Generate URL
+              </button>
+              <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]" onClick={copyURLToClipboard}>
+                {isCopied ? "Copied!" : "Copy URL"}
+              </button>
+              <button
+                className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]"
+                onClick={() => {
+                  const defaultValue = [];
+                  setDeck(defaultValue);
+                  localStorage.setItem("myDeck", JSON.stringify(defaultValue));
+                }}
+              >
+                Reset Deck
+              </button>
+            </div>
 
             <div className="max-w-[1000px] bg-base-300 overflow-hidden p-2 truncate text-[13px] text-white rounded-md font-[PT] mt-2">
               {shareableURL || "No URL Generated Yet"}
             </div>
           </section>
           <div className="flex flex-col lg:flex-row">
-            <div className="grid grid-cols-5 place-content-start w-[450px] h-auto mx-auto shrink-0 py-1">
+            <div className="grid grid-cols-5 place-content-start max-w-[450px] h-auto mx-auto shrink-0 py-1">
               {allCards.map((ite, idx) => (
                 <div key={idx} className="relative" onClick={() => handleDeck(ite)}>
                   <img
