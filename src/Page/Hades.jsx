@@ -1,52 +1,68 @@
 import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
-
-const currentPatches = [
-  `https://shared.fastly.steamstatic.com//store_item_assets/steam/apps/1145360/ss_34e6660705cfe47d2b2f95189c37f7cb77f75ca6.jpg?t=1715722799`,
-  `https://shared.fastly.steamstatic.com//store_item_assets/steam/apps/1145360/ss_e0622b5a57521b76182d7e7e1ae47ee440edcf90.jpg?t=1715722799`,
-  `https://shared.fastly.steamstatic.com//store_item_assets/steam/apps/1145360/ss_5e52844b891b54608eb51a850d6b53313eeed0f7.jpg?t=1715722799`,
-  `https://shared.fastly.steamstatic.com//store_item_assets/steam/apps/1145360/ss_8e07e477fa7ff2f88c8984bc89b9652a655da0e9.jpg?t=1715722799`,
-  `https://shared.fastly.steamstatic.com//store_item_assets/steam/apps/1145360/ss_c0fed447426b69981cf1721756acf75369801b31.jpg?t=1715722799`,
-  `https://shared.fastly.steamstatic.com//store_item_assets/steam/apps/1145360/ss_bcb499a0dd001f4101823f99ec5094d2872ba6ee.jpg?t=1715722799`,
-  `https://shared.fastly.steamstatic.com//store_item_assets/steam/apps/1145360/ss_217b70678a2eea71a974fba1a4cd8baa660581bb.jpg?t=1715722799`,
-];
+import { hadesEntries } from "../Data/HadesEntries";
+import { Link } from "react-router-dom";
 
 export default function Hades() {
+  const hades64SortByDate = hadesEntries.sort((a, b) => (new Date(a.d) > new Date(b.d) ? -1 : 1));
+
   return (
     <main className="h-full min-h-lvh">
       <Head />
       <div className="flex flex-col md:flex-row gap-1">
         <SideNav />
         <div className="w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-            <div className="p-1 w-full">
-              <video
-                src="https://video.st.dl.eccdnx.com/store_trailers/256801252/movie480_vp9.webm?t=1600353465"
-                autoPlay={true}
-                muted={true}
-                loop={true}
-                controls={true}
-                className="rounded border-1 border-black w-full"
-              />
-            </div>
-            <div className="w-full p-1">
-              <img
-                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/ss_2a9e3f9ad4d29d900b890d56361be5b1634225a0.600x338.jpg?t=1715722799"
-                className="rounded border-1 border-black w-full hidden md:block"
-                draggable={false}
-              />
-            </div>
+          <div className="max-w-[500px] items-center p-1">
+            <ul className="list bg-base-100 rounded-box shadow-md">
+              <li className="p-2 text-xs opacity-80 tracking-wide font-[PT] text-[12px]">Hades 64 Heat</li>
+              {hades64SortByDate.map((obj, index) => (
+                <li
+                  className="list-row flex items-center justify-between border-1 border-white/20 p-3 px-2 font-[PT] text-[12px] my-0.5 bg-[#00000050] relative"
+                  key={index}
+                >
+                  <div className="absolute top-0.5 left-1 text-[10px] opacity-80">
+                    #{hades64SortByDate.length - index}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <img className="size-10 rounded-none" src={`/H1Boon/${obj.a}.png`} />
+                    <div>
+                      <div className="font-[Cinzel]">{obj.n}</div>
+                      <div className="opacity-60 text-[10px]">
+                        {obj.w} - {obj.a}
+                      </div>
+                      <div className="text-[10px] text-[yellow]">{obj.t}</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-1">
+                    {obj.b.map((ite) => (
+                      <img className="size-8 md:size-10 rounded-none" src={`/H1Boon/${ite}.png`} />
+                    ))}
+                  </div>
+                  <div className="flex flex-col justify-center items-center">
+                    <Link to={`${obj.src}`} target="_blank">
+                      <button className="btn btn-square btn-ghost">
+                        <svg className="size-[1em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <g
+                            strokeLinejoin="round"
+                            strokeLinecap="round"
+                            strokeWidth="2"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                            <path d="M6 3L20 12 6 21 6 3z"></path>
+                          </g>
+                        </svg>
+                      </button>
+                    </Link>
+                    <div className="text-[cyan] text-[10px]">{obj.c}</div>
+                    <div className="text-[pink] text-[10px]">{obj.d}</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-        <div className="w-[250px] shrink-0 hidden lg:block">
-          <div>
-            {currentPatches.map((item, index) => (
-              <div key={index} className="m-2">
-                <img src={item} alt="Patches" className="border-1 border-black rounded" draggable={false} />
-              </div>
-            ))}
-          </div>
-        </div>
+        <div className="w-[250px] shrink-0 hidden lg:block"></div>
       </div>
     </main>
   );
