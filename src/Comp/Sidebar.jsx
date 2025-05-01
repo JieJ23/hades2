@@ -11,7 +11,7 @@ export const sites = [
 export default function SideNav() {
   const currentLocation = useLocation();
   return (
-    <div className="w-full h-full md:w-[200px] hidden md:block p-2 font-[Cinzel] text-[12px] bg-base-300 m-1 rounded shrink-0">
+    <div className="h-full w-[200px] hidden md:block p-2 font-[Cinzel] text-[12px] bg-base-300 m-1 rounded shrink-0">
       <div className="flex flex-col gap-3 my-4">
         {sites.map((obj, idx) => (
           <Link

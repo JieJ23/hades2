@@ -3,7 +3,7 @@ import { sites } from "./Sidebar";
 
 export default function Head() {
   return (
-    <div className="navbar bg-base-300 shadow-sm">
+    <div className="navbar bg-base-300 shadow-sm select-none">
       <div className="navbar-start">
         <div className="block md:hidden">
           <div className="dropdown">
