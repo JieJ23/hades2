@@ -23,7 +23,7 @@ export default function SideNav() {
           >
             <div className="avatar">
               <div className="w-6 rounded-none">
-                <img src={`/${obj.link}.png`} />
+                <img src={`/${obj.link}.png`} draggable={false} />
               </div>
             </div>
             <div>{obj.nam}</div>
