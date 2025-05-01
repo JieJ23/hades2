@@ -65,7 +65,7 @@ export default function HeatCalculator() {
   return (
     <main className="select-none">
       <Head />
-      <div className="flex flex-col md:flex-row gap-2">
+      <div className="flex flex-col md:flex-row gap-2 max-w-[1400px] mx-auto">
         <SideNav />
         <div className="w-full">
           <section className="p-2">
