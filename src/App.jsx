@@ -21,7 +21,7 @@ function App() {
                 <tr className="font-[Cinzel]">
                   <th className="text-[10px] text-white"> Hades II</th>
                   <th></th>
-                  <th className="min-w-[150px]"></th>
+                  <th className="min-w-[180px]"></th>
                   <th className="min-w-[100px]"></th>
                   <th className="min-w-[100px]"></th>
                   <th></th>
