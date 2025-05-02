@@ -49,10 +49,10 @@ export default function Hades() {
           </ul>
           <div className="grid grid-col-1 xl:grid-cols-2 gap-2">
             <div className="overflow-x-scroll ">
-              <table className="table select-none">
+              <table className="table select-none table-zebra">
                 <thead>
                   <tr className="font-[Cinzel]">
-                    <th className="text-[10px] text-white">Hade Heat</th>
+                    <th className="text-[10px] text-white">Ladder</th>
                     <th className="min-w-[120px]"></th>
                     <th className="min-w-[80px]"></th>
                     <th className="min-w-[80px]"></th>
@@ -64,7 +64,7 @@ export default function Hades() {
                     <tr key={index} className="font-[PT] text-[12px] overflow-hidden">
                       <td className="font-[Cinzel] relative">
                         <div className="absolute top-0 left-1 font-[PT] text-[8px]">{index + 1}</div>
-                        <div className="text-[12px]">{obj.name}</div>
+                        <div className="text-[12px] font-[PT]">{obj.name}</div>
                         <div className="text-[8px] opacity-70">{obj.aspect}</div>
                       </td>
                       <td>
@@ -138,9 +138,9 @@ export default function Hades() {
                         </div>
                         <div className="absolute top-0 left-1 text-[10px]">{index + 1}</div>
                       </td>
-                      <td className="font-[Cinzel]">
+                      <td className="font-[PT]">
                         <div className="text-[12px]">{obj.n}</div>
-                        <div className="text-[10px] font-[PT] opacity-70">{obj.a}</div>
+                        <div className="text-[8px] font-[Cinzel] opacity-70">{obj.a}</div>
                       </td>
                       <td>
                         <div className="flex">
