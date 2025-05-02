@@ -8,6 +8,8 @@ function sToA(string) {
   return array;
 }
 
+const currentData = h2Data.sort((a, b) => (new Date(a.d) > new Date(b.d) ? -1 : 1));
+
 function App() {
   return (
     <main className="h-full min-h-lvh">
@@ -19,7 +21,7 @@ function App() {
             <table className="table select-none table-zebra">
               <thead>
                 <tr className="font-[Cinzel]">
-                  <th className="text-[10px] text-white"> Hades II</th>
+                  <th className="text-[10px] text-white">Latest</th>
                   <th></th>
                   <th className="min-w-[180px]"></th>
                   <th className="min-w-[100px]"></th>
@@ -28,7 +30,7 @@ function App() {
                 </tr>
               </thead>
               <tbody>
-                {h2Data.map((obj, index) => (
+                {currentData.map((obj, index) => (
                   <tr key={index} className="font-[PT] text-[12px] overflow-hidden">
                     <td className="absolute">
                       <div className="w-8">
@@ -68,7 +70,13 @@ function App() {
                         <img draggable={false} className="size-8 rounded-none" src={`FearCalculator.png`} />
                         <div>
                           <div>{obj.f}</div>
-                          <div className="opacity-60 text-[10px]">{obj.l}</div>
+                          <div
+                            className={`opacity-80 text-[10px] ${
+                              obj.l == `Surface` ? `text-[yellow]` : `text-[#0df388]`
+                            }`}
+                          >
+                            {obj.l}
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -76,7 +84,7 @@ function App() {
                       <div className="flex items-center gap-1">
                         <img draggable={false} className="size-8 rounded-none" src={`time.png`} />
                         <div>
-                          <div
+                          {/* <div
                             className={`${
                               obj.c === `Modded`
                                 ? `text-[#0df490]`
@@ -86,7 +94,8 @@ function App() {
                             }`}
                           >
                             {obj.c}
-                          </div>
+                          </div> */}
+                          <div>{obj.t}</div>
                           <div className="opacity-60 text-[10px]">{obj.d}</div>
                         </div>
                       </div>

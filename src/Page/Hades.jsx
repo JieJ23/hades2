@@ -154,7 +154,7 @@ export default function Hades() {
                           <img draggable={false} className="size-8 rounded-none" src={`HeatCalculator.png`} />
                           <div>
                             <div>64</div>
-                            <div className="opacity-60 text-[10px]">{obj.l}</div>
+                            <div className="opacity-60 text-[10px]">{obj.t}</div>
                           </div>
                         </div>
                       </td>
