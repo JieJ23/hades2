@@ -55,7 +55,7 @@ export const hadesEntries = [
     b: [`AthAttack`, `AphSpecial`, `Cast`, `AthDash`, `AthCall`],
     a: "Zeus",
     w: "Shield",
-    date: "2/16/2024",
+    d: "2/16/2024",
     src: "https://www.youtube.com/watch?v=it_5y7pWFlE",
     c: `Modded`,
   },
