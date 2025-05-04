@@ -88,7 +88,7 @@ function App() {
               <tbody>
                 {currentDisplay.map((obj, index) => (
                   <tr key={index} className="font-[PT] text-[12px] overflow-hidden">
-                    <td className="absolute">
+                    <td className="relative">
                       <div className="w-8">
                         <img draggable={false} className="size-8 rounded-none" src={`/H2Boons/${obj.a}.png`} />
                       </div>
