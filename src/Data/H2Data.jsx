@@ -72,7 +72,7 @@ export const h2Data = [
     fam: "Polecat",
     boon: "Attack,ApoSpecial,DemCast,Sprint,Magick",
     c: "Unseeded",
-    f: "55",
+    f: "53",
     t: "17:57.98",
     p: "8",
     src: "https://www.bilibili.com/video/BV1P1oDYeECW/",
