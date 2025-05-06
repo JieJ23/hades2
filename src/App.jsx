@@ -79,6 +79,7 @@ function App() {
                 <tr className="font-[Cinzel]">
                   <th></th>
                   <th></th>
+                  <th className="min-w-[108px]"></th>
                   <th className="min-w-[180px]"></th>
                   <th className="min-w-[100px]"></th>
                   <th className="min-w-[100px]"></th>
@@ -97,6 +98,24 @@ function App() {
                     <td className="font-[Cinzel]">
                       <div className="text-[12px] font-[PT]">{obj.n}</div>
                       <div className="text-[8px] opacity-70">{obj.a}</div>
+                    </td>
+                    <td>
+                      <div className="flex">
+                        {obj.h &&
+                          sToA(obj.h).map((item, index) => (
+                            <div className="tooltip" key={index}>
+                              <div className="tooltip-content">
+                                <div className="text-[12px] font-[PT]">{item}</div>
+                              </div>
+                              <img
+                                draggable={false}
+                                src={`/Hammer/${item}.png`}
+                                alt="Hammer Boon"
+                                className="size-8 rounded-none"
+                              />
+                            </div>
+                          ))}
+                      </div>
                     </td>
                     <td>
                       <div className="flex">
