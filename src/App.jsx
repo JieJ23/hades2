@@ -103,7 +103,7 @@ function App() {
                       <div className="flex">
                         {obj.h &&
                           sToA(obj.h).map((item, index) => (
-                            <div className="tooltip" key={index}>
+                            <div className="tooltip shrink-0" key={index}>
                               <div className="tooltip-content">
                                 <div className="text-[12px] font-[PT]">{item}</div>
                               </div>
