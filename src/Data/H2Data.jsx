@@ -71,7 +71,7 @@ export const h2Data = [
   },
   {
     d: "3/28/2025",
-    n: "星辰-往昔",
+    n: "星辰往昔",
     l: "Surface",
     a: "Pan",
     fam: "Polecat",

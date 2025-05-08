@@ -4,7 +4,7 @@ import { h2Data } from "./Data/H2Data";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function sToA(string) {
+export function sToA(string) {
   const array = string.split(`,`);
   return array;
 }
@@ -26,10 +26,12 @@ function App() {
     setSub(num);
   };
   //
+  const sortByFearAndTime = h2Data.sort((a, b) => (a.t > b.t ? 1 : -1)).sort((a, b) => (a.f > b.f ? -1 : 1));
   const currentData = h2Data.slice().sort((a, b) => (new Date(a.d) > new Date(b.d) ? -1 : 1));
   const timeData = h2Data.slice().sort((a, b) => (a.t > b.t ? 1 : -1));
-  arrayData.push(currentData);
-  arrayData.push(timeData);
+  // arrayData.push(currentData);
+  // arrayData.push(timeData);
+  arrayData.push(sortByFearAndTime);
   //
   const allAspectData = arrayData[category].filter((obj) => obj.a);
   aspectArrayData.push(allAspectData);
@@ -47,7 +49,7 @@ function App() {
       <div className="flex flex-col md:flex-row gap-1 max-w-[1400px] mx-auto">
         <SideNav />
         <div className="p-1 w-full overflow-hidden">
-          <div className="p-1 flex gap-1 font-[PT]">
+          {/* <div className="p-1 flex gap-1 font-[PT]">
             {customCategory.map((ite, index) => (
               <button
                 class={`btn btn-sm ${category == index ? `btn-warning` : `btn-secondary btn-soft`}`}
@@ -56,20 +58,27 @@ function App() {
                 {ite}
               </button>
             ))}
-          </div>
+          </div> */}
           <div className="flex border-1 border-white/20 p-1 font-[PT] text-[12px] my-0.5 bg-[#00000050] gap-1 overflow-x-scroll w-full rounded-sm">
             <button
               onClick={() => handleChangeAspect(0)}
-              class={`btn btn-sm ${sub == 0 ? `btn-warning` : `btn-secondary btn-soft`}`}
+              class={`btn btn-sm h-[52px] min-w-[80px] font-[Cinzel] text-[10px]  ${
+                sub == 0 ? `btn-success` : `btn-base btn-soft`
+              }`}
             >
-              All
+              All Aspects
             </button>
             {allAvailableAspects.map((ite, index) => (
               <button
                 onClick={() => handleChangeAspect(index + 1)}
-                class={`btn btn-sm ${sub == 1 + index ? `btn-warning` : `btn-secondary btn-soft`}`}
+                class={`btn btn-sm h-full min-w-[80px] ${sub == 1 + index ? `btn-success` : `btn-base btn-soft`}`}
               >
-                {ite}
+                <div className="flex flex-col items-center">
+                  <img src={`/H2Boons/${ite}.png`} alt="Aspects" className="w-8 rounded" />
+                  <div className="font-[Cinzel] text-[10px]">
+                    {ite.includes(`Melinoe`) ? ite.replace(`Melinoe`, `M. `) : ite}
+                  </div>
+                </div>
               </button>
             ))}
           </div>
@@ -96,7 +105,7 @@ function App() {
                       <div className="absolute top-0 left-1 text-[10px]">{index + 1}</div>
                     </td>
                     <td className="font-[Cinzel]">
-                      <div className="text-[12px] font-[PT]">{obj.n}</div>
+                      <div className="text-[12px] font-[PT] whitespace-nowrap">{obj.n}</div>
                       <div className="text-[8px] opacity-70">{obj.a}</div>
                     </td>
                     <td>

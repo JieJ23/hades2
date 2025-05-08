@@ -22,7 +22,11 @@ export default function Head() {
             <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-300 z-1 mt-3 w-52 p-2 shadow">
               {sites.map((obj, idx) => (
                 <li key={idx}>
-                  <Link to={`/${obj.link}`} key={idx} className="font-[Cinzel] text-[12px] flex items-center gap-2">
+                  <Link
+                    to={obj.link === `hades2` ? `/` : `/${obj.link}`}
+                    key={idx}
+                    className="font-[Cinzel] text-[12px] flex items-center gap-2"
+                  >
                     <div className="avatar">
                       <div className="w-6 rounded-none">
                         <img src={`/${obj.link}.png`} />

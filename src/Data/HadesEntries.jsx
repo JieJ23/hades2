@@ -109,4 +109,14 @@ export const hadesEntries = [
     src: "https://youtu.be/y3scIiFUn2o",
     c: `Modded`,
   },
+  {
+    n: "PlayAd",
+    t: `19:56.72`,
+    b: [`ArtAttack`, `DioSpecial`, `AthCast`, `ArtDash`, `Call`],
+    a: "Rama",
+    w: "Bow",
+    d: "3/5/2025",
+    src: "https://www.youtube.com/watch?v=Osnijisn1bI",
+    c: `Unseeded`,
+  },
 ];
