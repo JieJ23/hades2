@@ -8,28 +8,23 @@ import { sToA } from "../App";
 
 export default function Hades() {
   const [category, setCategory] = useState(0);
+  const [show, setShow] = useState(25);
+
+  const handleLoadMore = () => {
+    setShow((prev) => prev + 25);
+  };
   //
   const handleChangeCategory = (num) => {
     setCategory(num);
   };
   //
-
-  const fullAspectArray = [];
-
   const hades64SortByDate = hadesEntries.sort((a, b) => (new Date(a.d) > new Date(b.d) ? -1 : 1));
-
   const allAspects = [...new Set(h1Data.map((obj) => obj.aspect))].sort();
-
-  const h1sortByHeat = h1Data.sort((a, b) => (a.heat > b.heat ? -1 : 1));
-
-  for (let i = 0; i < allAspects.length; i++) {
-    const aspectArray50 = h1sortByHeat.filter((obj) => obj.aspect === allAspects[i]).slice(0, 5);
-    fullAspectArray.push(aspectArray50);
-  }
-
   //
 
   const fullCategoryDetails = [];
+  const stacks = [];
+  fullCategoryDetails.push(stacks);
 
   for (let i = 0; i < allAspects.length; i++) {
     const targetAspect = h1Data
@@ -48,6 +43,7 @@ export default function Hades() {
     const finalizedUnseeded = unseededRun.filter((obj) => obj.heat === u_max);
 
     fullCategoryDetails.push([...finalizedSeeded, ...finalizedModded, ...finalizedUnseeded]);
+    stacks.push(...finalizedSeeded, ...finalizedModded, ...finalizedUnseeded);
   }
   //
 
@@ -61,11 +57,19 @@ export default function Hades() {
         <div className="p-1 w-full overflow-hidden">
           <ul className="list bg-base-100 rounded-box mb-2">
             <li className="flex border-1 border-white/20 p-2 pb-1 font-[PT] text-[12px] my-0.5 bg-[#00000050] gap-1 overflow-x-scroll w-full rounded-sm">
+              <button
+                className={`btn btn-sm w-[80px] h-[49px] ${category == 0 ? `btn-error` : `btn-base btn-soft`}`}
+                onClick={() => handleChangeCategory(0)}
+              >
+                <div className="flex flex-col items-center">
+                  <div className="font-[Cinzel] text-[10px]">All Aspects</div>
+                </div>
+              </button>
               {allAspects.map((ite, index) => (
                 <button
                   key={index}
-                  className={`btn btn-sm h-full w-[80px] ${category == index ? `btn-error` : `btn-base btn-soft`}`}
-                  onClick={() => handleChangeCategory(index)}
+                  className={`btn btn-sm h-full w-[80px] ${category == index + 1 ? `btn-error` : `btn-base btn-soft`}`}
+                  onClick={() => handleChangeCategory(index + 1)}
                 >
                   <div className="flex flex-col items-center">
                     <img src={`/H1Boon/${ite}.png`} alt="Aspects" className="w-8 rounded" />
@@ -148,6 +152,7 @@ export default function Hades() {
               </thead>
               <tbody>
                 {currentDisplay
+                  .slice(0, show)
                   .sort((a, b) => (a.t > b.t ? 1 : -1))
                   .sort((a, b) => (a.heat > b.heat ? -1 : 1))
                   .map((obj, index) => (
@@ -220,6 +225,13 @@ export default function Hades() {
               </tbody>
             </table>
           </div>
+          {show < currentDisplay.length && (
+            <div className=" flex justify-center my-2">
+              <btn onClick={handleLoadMore} className="btn btn-base text-[12px] border-white/20 border-[1px] font-[PT]">
+                Load More
+              </btn>
+            </div>
+          )}
         </div>
       </div>
     </main>

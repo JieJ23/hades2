@@ -12,6 +12,11 @@ export function sToA(string) {
 function App() {
   const [category, setCategory] = useState(0);
   const [sub, setSub] = useState(0);
+  const [show, setShow] = useState(25);
+
+  const handleLoadMore = () => {
+    setShow((prev) => prev + 25);
+  };
 
   const arrayData = [];
   const aspectArrayData = [];
@@ -96,7 +101,7 @@ function App() {
                 </tr>
               </thead>
               <tbody>
-                {currentDisplay.map((obj, index) => (
+                {currentDisplay.slice(0, show).map((obj, index) => (
                   <tr key={index} className="font-[PT] text-[12px] overflow-hidden">
                     <td className="relative">
                       <div className="w-8">
@@ -200,6 +205,13 @@ function App() {
               </tbody>
             </table>
           </div>
+          {show < currentDisplay.length && (
+            <div className=" flex justify-center my-2">
+              <btn onClick={handleLoadMore} className="btn btn-base text-[12px] border-white/20 border-[1px] font-[PT]">
+                Load More
+              </btn>
+            </div>
+          )}
         </div>
       </div>
     </main>
