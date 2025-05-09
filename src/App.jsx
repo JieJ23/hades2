@@ -116,19 +116,21 @@ function App() {
                     <td>
                       <div className="flex">
                         {obj.h &&
-                          sToA(obj.h).map((item, index) => (
-                            <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content">
-                                <div className="text-[12px] font-[PT]">{item}</div>
+                          sToA(obj.h)
+                            .sort()
+                            .map((item, index) => (
+                              <div className="tooltip shrink-0" key={index}>
+                                <div className="tooltip-content">
+                                  <div className="text-[12px] font-[PT]">{item}</div>
+                                </div>
+                                <img
+                                  draggable={false}
+                                  src={`/Hammer/${item}.png`}
+                                  alt="Hammer Boon"
+                                  className="size-8 rounded-none"
+                                />
                               </div>
-                              <img
-                                draggable={false}
-                                src={`/Hammer/${item}.png`}
-                                alt="Hammer Boon"
-                                className="size-8 rounded-none"
-                              />
-                            </div>
-                          ))}
+                            ))}
                       </div>
                     </td>
                     <td>
@@ -156,7 +158,11 @@ function App() {
                     </td>
                     <td>
                       <div className="flex items-center gap-1">
-                        <img draggable={false} className="size-8 rounded-none" src={`FearCalculator.png`} />
+                        {obj.l === `Underworld` ? (
+                          <img draggable={false} className="size-8 rounded-none" src={`Underworld.png`} />
+                        ) : (
+                          <img draggable={false} className="size-8 rounded-none" src={`Surface.png`} />
+                        )}
                         <div>
                           <div>{obj.f}</div>
                           <div
