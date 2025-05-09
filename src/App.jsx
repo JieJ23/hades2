@@ -8,6 +8,7 @@ function getHammer(data) {
   const hammerCount = {};
 
   data.forEach((item) => {
+    if (item.h === "") return;
     const hammer = item.h.split(",");
     hammer.forEach((fruit) => {
       const trimmed = fruit.trim(); // optional: removes extra spaces
