@@ -133,7 +133,7 @@ function App() {
           <div className="overflow-x-scroll">
             <table className="table select-none table-zebra">
               <thead>
-                <tr className="font-[Cinzel] hidden">
+                <tr className="font-[Cinzel]">
                   <th></th>
                   <th></th>
                   <th className="min-w-[108px]"></th>
