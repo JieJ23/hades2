@@ -4,49 +4,72 @@ import { h2Data } from "./Data/H2Data";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
+function getHammer(data) {
+  const hammerCount = {};
+
+  data.forEach((item) => {
+    const hammer = item.h.split(",");
+    hammer.forEach((fruit) => {
+      const trimmed = fruit.trim(); // optional: removes extra spaces
+      hammerCount[trimmed] = (hammerCount[trimmed] || 0) + 1;
+    });
+  });
+
+  return hammerCount;
+}
+
+function getTotal(obj) {
+  return Object.values(obj).reduce((sum, val) => sum + val, 0);
+}
+
+function getUnique(arr) {
+  const result = [];
+  const seen = new Set();
+
+  for (const item of arr) {
+    const key = `${item.n}-${item.a}-${item.l}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      result.push(item);
+    }
+  }
+
+  return result;
+}
+
 export function sToA(string) {
   const array = string.split(`,`);
   return array;
 }
 
 function App() {
-  const [category, setCategory] = useState(0);
-  const [sub, setSub] = useState(0);
+  const [unique, setUnique] = useState(false);
+  const [sub, setSub] = useState(1);
   const [show, setShow] = useState(25);
 
   const handleLoadMore = () => {
     setShow((prev) => prev + 25);
   };
 
-  const arrayData = [];
   const aspectArrayData = [];
 
-  const customCategory = [`Latest`, `Time`];
   const allAvailableAspects = [...new Set(h2Data.map((obj) => obj.a))].sort();
 
-  const handleChangeCategory = (num) => {
-    setCategory(num);
-  };
   const handleChangeAspect = (num) => {
     setSub(num);
   };
   //
   const sortByFearAndTime = h2Data.sort((a, b) => (a.t > b.t ? 1 : -1)).sort((a, b) => (a.f > b.f ? -1 : 1));
-  const currentData = h2Data.slice().sort((a, b) => (new Date(a.d) > new Date(b.d) ? -1 : 1));
-  const timeData = h2Data.slice().sort((a, b) => (a.t > b.t ? 1 : -1));
-  // arrayData.push(currentData);
-  // arrayData.push(timeData);
-  arrayData.push(sortByFearAndTime);
+
   //
-  const allAspectData = arrayData[category].filter((obj) => obj.a);
-  aspectArrayData.push(allAspectData);
+  aspectArrayData.push(sortByFearAndTime);
   for (let i = 0; i < allAvailableAspects.length; i++) {
-    const aspectData = arrayData[category].filter((obj) => obj.a === allAvailableAspects[i]);
+    const aspectData = sortByFearAndTime.filter((obj) => obj.a === allAvailableAspects[i]);
     aspectArrayData.push(aspectData);
   }
   //
 
-  const currentDisplay = aspectArrayData[sub];
+  const currentDisplay = unique === true ? getUnique(aspectArrayData[sub]) : aspectArrayData[sub];
 
   return (
     <main className="h-full min-h-lvh">
@@ -54,20 +77,10 @@ function App() {
       <div className="flex flex-col md:flex-row gap-1 max-w-[1400px] mx-auto">
         <SideNav />
         <div className="p-1 w-full overflow-hidden">
-          {/* <div className="p-1 flex gap-1 font-[PT]">
-            {customCategory.map((ite, index) => (
-              <button
-                class={`btn btn-sm ${category == index ? `btn-warning` : `btn-secondary btn-soft`}`}
-                onClick={() => handleChangeCategory(index)}
-              >
-                {ite}
-              </button>
-            ))}
-          </div> */}
           <div className="flex border-1 border-white/20 p-1 font-[PT] text-[12px] my-0.5 bg-[#00000050] gap-1 overflow-x-scroll w-full rounded-sm">
             <button
               onClick={() => handleChangeAspect(0)}
-              class={`btn btn-sm h-[52px] min-w-[80px] font-[Cinzel] text-[10px]  ${
+              className={`btn btn-sm h-[52px] min-w-[80px] font-[Cinzel] text-[10px]  ${
                 sub == 0 ? `btn-success` : `btn-base btn-soft`
               }`}
             >
@@ -76,7 +89,8 @@ function App() {
             {allAvailableAspects.map((ite, index) => (
               <button
                 onClick={() => handleChangeAspect(index + 1)}
-                class={`btn btn-sm h-full min-w-[80px] ${sub == 1 + index ? `btn-success` : `btn-base btn-soft`}`}
+                className={`btn btn-sm h-full min-w-[80px] ${sub == 1 + index ? `btn-success` : `btn-base btn-soft`}`}
+                key={index}
               >
                 <div className="flex flex-col items-center">
                   <img src={`/H2Boons/${ite}.png`} alt="Aspects" className="w-8 rounded" />
@@ -87,10 +101,39 @@ function App() {
               </button>
             ))}
           </div>
+          {sub !== 0 && (
+            <div className="rounded p-2">
+              <div className="flex flex-wrap gap-2">
+                {Object.entries(getHammer(currentDisplay))
+                  .sort((a, b) => (a[1] > b[1] ? -1 : 1))
+                  .map(([prop, value], index) => (
+                    <div key={index} className="rounded p-1 flex gap-1 items-center font-[PT] text-[12px]">
+                      <img src={`/Hammer/${prop}.png`} alt="Hammers" className="w-10 rounded" />
+                      <div className="flex flex-col items-start">
+                        <div>{prop}</div>
+                        <div className="text-success">
+                          {(100 * (value / getTotal(getHammer(currentDisplay)))).toFixed(2)}%
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
+          <div className="flex items-center text-[12px] font-[PT] gap-1 p-2">
+            <input
+              type="checkbox"
+              className="checkbox checkbox-success"
+              onClick={(e) => {
+                setUnique(e.target.checked);
+              }}
+            />
+            <label>Unique Sort</label>
+          </div>
           <div className="overflow-x-scroll">
             <table className="table select-none table-zebra">
               <thead>
-                <tr className="font-[Cinzel]">
+                <tr className="font-[Cinzel] hidden">
                   <th></th>
                   <th></th>
                   <th className="min-w-[108px]"></th>
@@ -213,9 +256,12 @@ function App() {
           </div>
           {show < currentDisplay.length && (
             <div className=" flex justify-center my-2">
-              <btn onClick={handleLoadMore} className="btn btn-base text-[12px] border-white/20 border-[1px] font-[PT]">
+              <button
+                onClick={handleLoadMore}
+                className="btn btn-base text-[12px] border-white/20 border-[1px] font-[PT]"
+              >
                 Load More
-              </btn>
+              </button>
             </div>
           )}
         </div>
