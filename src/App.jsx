@@ -73,7 +73,7 @@ function App() {
   const currentDisplay = unique === true ? getUnique(aspectArrayData[sub]) : aspectArrayData[sub];
 
   return (
-    <main className="h-full min-h-lvh">
+    <main className="h-full min-h-lvh select-none">
       <Head />
       <div className="flex flex-col md:flex-row gap-1 max-w-[1400px] mx-auto">
         <SideNav />
@@ -94,7 +94,7 @@ function App() {
                 key={index}
               >
                 <div className="flex flex-col items-center">
-                  <img src={`/H2Boons/${ite}.png`} alt="Aspects" className="w-8 rounded" />
+                  <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Aspects" className="w-8 rounded" />
                   <div className="font-[Cinzel] text-[10px]">
                     {ite.includes(`Melinoe`) ? ite.replace(`Melinoe`, `M. `) : ite}
                   </div>
@@ -109,7 +109,7 @@ function App() {
                   .sort((a, b) => (a[1] > b[1] ? -1 : 1))
                   .map(([prop, value], index) => (
                     <div key={index} className="rounded p-1 flex gap-1 items-center font-[PT] text-[12px]">
-                      <img src={`/Hammer/${prop}.png`} alt="Hammers" className="w-10 rounded" />
+                      <img src={`/Hammer/${prop}.png`} alt="Hammers" className="w-10 rounded" draggable={false} />
                       <div className="flex flex-col items-start">
                         <div>{prop}</div>
                         <div className="text-success">

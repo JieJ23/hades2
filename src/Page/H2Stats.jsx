@@ -220,7 +220,7 @@ export default function H2Stats() {
               className={`btn px-2 ${ap === ite ? `btn-success` : `btn-base btn-soft`} font-[PT] text-[12px]`}
               onClick={() => handleChangeAP(ite)}
             >
-              <img src={`/H2Boons/${ite}.png`} alt="Aspect" className="w-6 rounded" />
+              <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Aspect" className="w-6 rounded" />
               <div>{ite}</div>
             </button>
           ))}
@@ -233,7 +233,12 @@ export default function H2Stats() {
                 key={index}
                 className="flex items-center gap-1 w-[150px] border-1 border-white/20 rounded p-1 bg-base-300 "
               >
-                <img src={`/H2Boons/${obj.fam}.png`} alt="Boons" className="w-10 rounded-xl border-1 border-white/20" />
+                <img
+                  draggable={false}
+                  src={`/H2Boons/${obj.fam}.png`}
+                  alt="Boons"
+                  className="w-10 rounded-xl border-1 border-white/20"
+                />
                 <div>
                   <div>{obj.fam}</div>
                   <div>
@@ -255,7 +260,12 @@ export default function H2Stats() {
                   key={index}
                   className="flex items-center gap-1 w-[150px] border-1 border-white/20 rounded p-1 bg-base-300 "
                 >
-                  <img src={`/H2Boons/${prop}.png`} alt="Boons" className="w-10 rounded-xl border-1 border-white/20" />
+                  <img
+                    draggable={false}
+                    src={`/H2Boons/${prop}.png`}
+                    alt="Boons"
+                    className="w-10 rounded-xl border-1 border-white/20"
+                  />
                   <div>
                     <div>{replacePH(prop)}</div>
                     <div>
@@ -277,7 +287,12 @@ export default function H2Stats() {
                   key={index}
                   className="flex items-center gap-1 w-[150px] border-1 border-white/20 rounded p-1 bg-base-300 "
                 >
-                  <img src={`/H2Boons/${prop}.png`} alt="Boons" className="w-10 rounded-xl border-1 border-white/20" />
+                  <img
+                    draggable={false}
+                    src={`/H2Boons/${prop}.png`}
+                    alt="Boons"
+                    className="w-10 rounded-xl border-1 border-white/20"
+                  />
                   <div>
                     <div>{replacePH(prop)}</div>
                     <div>
@@ -299,7 +314,12 @@ export default function H2Stats() {
                   key={index}
                   className="flex items-center gap-1 w-[150px] border-1 border-white/20 rounded p-1 bg-base-300 "
                 >
-                  <img src={`/H2Boons/${prop}.png`} alt="Boons" className="w-10 rounded-xl border-1 border-white/20" />
+                  <img
+                    draggable={false}
+                    src={`/H2Boons/${prop}.png`}
+                    alt="Boons"
+                    className="w-10 rounded-xl border-1 border-white/20"
+                  />
                   <div>
                     <div>{replacePH(prop)}</div>
                     <div>
@@ -321,7 +341,12 @@ export default function H2Stats() {
                   key={index}
                   className="flex items-center gap-1 w-[150px] border-1 border-white/20 rounded p-1 bg-base-300 "
                 >
-                  <img src={`/H2Boons/${prop}.png`} alt="Boons" className="w-10 rounded-xl border-1 border-white/20" />
+                  <img
+                    draggable={false}
+                    src={`/H2Boons/${prop}.png`}
+                    alt="Boons"
+                    className="w-10 rounded-xl border-1 border-white/20"
+                  />
                   <div>
                     <div>{replacePH(prop)}</div>
                     <div>
@@ -343,7 +368,12 @@ export default function H2Stats() {
                   key={index}
                   className="flex items-center gap-1 w-[150px] border-1 border-white/20 rounded p-1 bg-base-300 "
                 >
-                  <img src={`/H2Boons/${prop}.png`} alt="Boons" className="w-10 rounded-xl border-1 border-white/20" />
+                  <img
+                    draggable={false}
+                    src={`/H2Boons/${prop}.png`}
+                    alt="Boons"
+                    className="w-10 rounded-xl border-1 border-white/20"
+                  />
                   <div>
                     <div>{replacePH(prop)}</div>
                     <div>
