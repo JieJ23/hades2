@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 
 export const sites = [
   { link: `hades2`, nam: `Hades II` },
+  { link: `H2Stats`, nam: `H2Stats` },
   { link: `FearCalculator`, nam: `Fear Calculator` },
   { link: `ArcaneDeck`, nam: `Arcane Deck` },
   { link: `Hades`, nam: `Hades` },

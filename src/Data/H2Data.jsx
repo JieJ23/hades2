@@ -17,7 +17,7 @@ export const h2Data = [
     d: "5/3/2025",
     n: "每把必三四的一姬",
     l: "Surface",
-    a: "Melinoe Blades",
+    a: "Melinoe Axe",
     fam: "Polecat",
     boon: "ApoAttack,Special,HepCast,AphSprint,Magick",
     c: "Unseeded",
