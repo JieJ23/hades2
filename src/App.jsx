@@ -73,7 +73,8 @@ function App() {
   const currentDisplay = unique === true ? getUnique(aspectArrayData[sub]) : aspectArrayData[sub];
 
   return (
-    <main className="h-full min-h-lvh select-none">
+    <main className="h-full min-h-lvh select-none relative">
+      <div className="fixed w-full h-full bg-[url('mbg.png')] -z-10 bg-top" />
       <Head />
       <div className="flex flex-col md:flex-row gap-1 max-w-[1400px] mx-auto">
         <SideNav />
@@ -132,7 +133,7 @@ function App() {
             <label>Unique Sort</label>
           </div>
           <div className="overflow-x-scroll">
-            <table className="table select-none table-zebra">
+            <table className="table select-none">
               <thead>
                 <tr className="font-[Cinzel]">
                   <th></th>

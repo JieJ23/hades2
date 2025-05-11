@@ -60,7 +60,8 @@ export default function ArcaneDeck() {
   };
 
   return (
-    <main className="select-none">
+    <main className="select-none relative">
+      <div className="fixed w-full h-full bg-[url('mbg.png')] -z-10 bg-top" />
       <Head />
       <div className="flex flex-col md:flex-row gap-2 max-w-[1400px] mx-auto">
         <SideNav />

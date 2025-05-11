@@ -157,7 +157,8 @@ export default function H2Stats() {
   const currentMagick = Object.fromEntries(Object.entries(allBoonDetails).filter(([key]) => key.includes("Magick")));
 
   return (
-    <main className="select-none">
+    <main className="select-none relative">
+      <div className="fixed w-full h-full bg-[url('mbg.png')] -z-10 bg-top" />
       <Head />
       <div className="flex flex-col md:flex-row gap-2 max-w-[1400px] mx-auto">
         <SideNav />
@@ -225,7 +226,7 @@ export default function H2Stats() {
             </button>
           ))}
         </div>
-        <div className="my-2 bg-base-200 rounded p-2">
+        <div className="my-2 rounded p-2">
           <div className="text-[12px] ps-2 font-[Cinzel] pb-2">Familiar</div>
           <div className="flex flex-wrap justify-start font-[PT] text-[12px] gap-2">
             {allFamDetails.map((obj, index) => (
@@ -250,7 +251,7 @@ export default function H2Stats() {
             ))}
           </div>
         </div>
-        <div className="my-2 bg-base-200 rounded p-2">
+        <div className="my-2 rounded p-2">
           <div className="text-[12px] ps-2 font-[Cinzel] pb-2">Attack</div>
           <div className="flex flex-wrap justify-start font-[PT] text-[12px] gap-2">
             {Object.entries(currentAttack)
@@ -277,7 +278,7 @@ export default function H2Stats() {
               ))}
           </div>
         </div>
-        <div className="my-2 bg-base-200 rounded p-2">
+        <div className="my-2 rounded p-2">
           <div className="text-[12px] ps-2 font-[Cinzel] pb-2">Special</div>
           <div className="flex flex-wrap justify-start font-[PT] text-[12px] gap-2">
             {Object.entries(currentSpecial)
@@ -304,7 +305,7 @@ export default function H2Stats() {
               ))}
           </div>
         </div>
-        <div className="my-2 bg-base-200 rounded p-2">
+        <div className="my-2 rounded p-2">
           <div className="text-[12px] ps-2 font-[Cinzel] pb-2">Cast</div>
           <div className="flex flex-wrap justify-start font-[PT] text-[12px] gap-2">
             {Object.entries(currentCast)
@@ -331,7 +332,7 @@ export default function H2Stats() {
               ))}
           </div>
         </div>
-        <div className="my-2 bg-base-200 rounded p-2">
+        <div className="my-2 rounded p-2">
           <div className="text-[12px] ps-2 font-[Cinzel] pb-2">Sprint</div>
           <div className="flex flex-wrap justify-start font-[PT] text-[12px] gap-2">
             {Object.entries(currentSprint)
@@ -358,7 +359,7 @@ export default function H2Stats() {
               ))}
           </div>
         </div>
-        <div className="my-2 bg-base-200 rounded p-2">
+        <div className="my-2 rounded p-2">
           <div className="text-[12px] ps-2 font-[Cinzel] pb-2">Magick</div>
           <div className="flex flex-wrap justify-start font-[PT] text-[12px] gap-2">
             {Object.entries(currentMagick)
