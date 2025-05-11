@@ -51,7 +51,7 @@ export default function Hades() {
 
   return (
     <main className="h-full min-h-lvh  select-none relative">
-      <div className="fixed w-full h-full bg-[url('mbg.png')] -z-10 bg-top" />
+      <div className="fixed w-full h-full bg-[url('/mbg.png')] -z-10 bg-top"></div>
       <Head />
       <div className="flex flex-col md:flex-row gap-1 max-w-[1400px] mx-auto">
         <SideNav />
