@@ -3,6 +3,7 @@ import SideNav from "./Comp/Sidebar";
 import { h2Data } from "./Data/H2Data";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { h2AspectOrder } from "./Data/Misc";
 
 function getHammer(data) {
   const hammerCount = {};
@@ -54,7 +55,9 @@ function App() {
 
   const aspectArrayData = [];
 
-  const allAvailableAspects = [...new Set(h2Data.map((obj) => obj.a))].sort();
+  const allAvailableAspects = [...new Set(h2Data.map((obj) => obj.a))].sort(
+    (a, b) => h2AspectOrder.indexOf(a) - h2AspectOrder.indexOf(b)
+  );
 
   const handleChangeAspect = (num) => {
     setSub(num);
@@ -74,7 +77,7 @@ function App() {
 
   return (
     <main className="h-full min-h-lvh select-none relative">
-      <div className="fixed w-full h-full bg-[url('/mbg.png')] -z-10 bg-top"></div>
+      <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
       <Head />
       <div className="flex flex-col md:flex-row gap-1 max-w-[1400px] mx-auto">
         <SideNav />

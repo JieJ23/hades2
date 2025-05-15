@@ -3,6 +3,7 @@ import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import { h2Data } from "../Data/H2Data";
 import { useState } from "react";
+import { h2AspectOrder } from "../Data/Misc";
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
@@ -30,7 +31,7 @@ const replacePH = (string) => {
 };
 
 export default function H2Stats() {
-  const [ap, setAp] = useState(`Artemis`);
+  const [ap, setAp] = useState(`Melinoe Staff`);
 
   const handleChangeAP = (a) => {
     setAp(a);
@@ -125,7 +126,9 @@ export default function H2Stats() {
 
   //
 
-  const allAspects = [...new Set(h2Data.map((obj) => obj.a))].sort();
+  const allAspects = [...new Set(h2Data.map((obj) => obj.a))]
+    .sort()
+    .sort((a, b) => h2AspectOrder.indexOf(a) - h2AspectOrder.indexOf(b));
   const allFam = [...new Set(h2Data.map((obj) => obj.fam))].sort();
 
   const allBoonDetails = {};
@@ -144,7 +147,6 @@ export default function H2Stats() {
     const targetFam = currentAspect.filter((obj) => obj.fam === allFam[i]);
     allFamDetails.push({ fam: allFam[i], len: targetFam.length });
   }
-  console.log(allFamDetails);
   //
   const currentAttack = Object.fromEntries(Object.entries(allBoonDetails).filter(([key]) => key.includes("Attack")));
 
@@ -158,7 +160,7 @@ export default function H2Stats() {
 
   return (
     <main className="select-none relative">
-      <div className="fixed w-full h-full bg-[url('/mbg.png')] -z-10 bg-top"></div>
+      <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
       <Head />
       <div className="flex flex-col md:flex-row gap-2 max-w-[1400px] mx-auto">
         <SideNav />
