@@ -16,15 +16,15 @@ export default function Hammer() {
             <div className="flex flex-wrap gap-1 my-1 justify-center md:justify-start" key={ind}>
               {obj.map((item, index) => (
                 <div
-                  className="w-[100px] bg-base-300 hover:bg-warning  transition-all duration-100 ease-in border-1 border-black rounded-xl flex flex-col items-center p-2 group"
+                  className="w-[75px] md:w-[100px] bg-base-300 hover:bg-warning  transition-all duration-100 ease-in border-1 border-black rounded-xl flex flex-col items-center p-1 md:p-2 group"
                   key={index}
                 >
                   <div class="avatar">
-                    <div class="w-14 rounded group-hover:w-16 transition-all duration-100 ease-in">
+                    <div class="w-10 md:w-14 rounded group-hover:w-16 transition-all duration-100 ease-in">
                       <img src={`/Hammer/${item}.png`} alt="Tailwind-CSS-Avatar-component" draggable={false} />
                     </div>
                   </div>
-                  <div className="text-center text-[12px] group-hover:text-black transition-all duration-200 ease-in">
+                  <div className="text-center text-[10px] md:text-[12px] group-hover:text-black transition-all duration-200 ease-in">
                     {item}
                   </div>
                 </div>
