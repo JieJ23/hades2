@@ -6,6 +6,7 @@ export const sites = [
   { link: `H2Stats`, nam: `H2Stats` },
   { link: `FearCalculator`, nam: `Fear Calculator` },
   { link: `ArcaneDeck`, nam: `Arcane Deck` },
+  { link: `Hammer`, nam: `Hammer` },
   { link: `Hades`, nam: `Hades` },
   { link: `HeatCalculator`, nam: `Heat Calculator` },
 ];
