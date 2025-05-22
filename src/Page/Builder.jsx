@@ -3,16 +3,6 @@ import SideNav from "../Comp/Sidebar";
 import { nameGods, grandBoon, fullBoon } from "../Data/builder_gods";
 import { useState, useEffect } from "react";
 
-const firstrow = [...grandBoon[0], ...grandBoon[1], ...grandBoon[2]].map((obj) => obj.tag);
-const hammerrow = [
-  ...grandBoon[3],
-  ...grandBoon[4],
-  ...grandBoon[5],
-  ...grandBoon[6],
-  ...grandBoon[7],
-  ...grandBoon[8],
-].map((obj) => obj.tag);
-
 export default function Builder() {
   const [pool, setPool] = useState(0);
   const [boon, setBoon] = useState([]);
@@ -84,10 +74,6 @@ export default function Builder() {
     return item.tag;
   });
 
-  const firstDisplay = displaySelect.filter((item) => firstrow.includes(item));
-  const hammerDisplay = displaySelect.filter((item) => hammerrow.includes(item));
-  const secondDisplay = displaySelect.filter((item) => !firstrow.includes(item) && !hammerrow.includes(item));
-
   return (
     <main className="relative select-none">
       <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
@@ -122,7 +108,7 @@ export default function Builder() {
           <div className="p-2 my-4 bg-[#21214a57] rounded">
             <div className="text-[20px] text-white text-center font-[Cinzel] pb-2">Selected Items/Boons</div>
             <div className="flex flex-wrap justify-center md:justify-start gap-2 my-2">
-              {firstDisplay.map((item, index) => (
+              {displaySelect.map((item, index) => (
                 <div
                   className="flex flex-col items-center gap-1 px-3 py-1 cursor-pointer border-1 border-white/20 rounded hover:bg-warning duration-150 ease-in transition-colors bg-[#21214a88] w-[80px] h-[90px] overflow-hidden"
                   onClick={() => handleRemoveBoon(index)}
@@ -130,39 +116,7 @@ export default function Builder() {
                 >
                   <div className="avatar">
                     <div className="w-10 rounded">
-                      <img src={`/buildgui/${item}.png`} alt="Boons" />
-                    </div>
-                  </div>
-                  <div className="text-[10px] md:text-[12px] text-center">{item}</div>
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 my-2">
-              {hammerDisplay.map((item, index) => (
-                <div
-                  className="flex flex-col items-center gap-1 px-3 py-1 cursor-pointer border-1 border-white/20 rounded hover:bg-warning duration-150 ease-in transition-colors bg-[#21214a88] w-[80px] h-[90px] overflow-hidden"
-                  onClick={() => handleRemoveBoon(index)}
-                  key={index}
-                >
-                  <div className="avatar">
-                    <div className="w-10 rounded">
-                      <img src={`/buildgui/${item}.png`} alt="Boons" />
-                    </div>
-                  </div>
-                  <div className="text-[10px] md:text-[12px] text-center">{item}</div>
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 my-2">
-              {secondDisplay.map((item, index) => (
-                <div
-                  className="flex flex-col items-center gap-1 px-3 py-1 cursor-pointer border-1 border-white/20 rounded hover:bg-warning duration-150 ease-in transition-colors bg-[#21214a88] w-[80px] h-[90px] overflow-hidden"
-                  onClick={() => handleRemoveBoon(index)}
-                  key={index}
-                >
-                  <div className="avatar">
-                    <div className="w-10 rounded">
-                      <img src={`/buildgui/${item}.png`} alt="Boons" />
+                      <img src={`/buildgui/${item}.png`} alt="Boons" draggable={false} />
                     </div>
                   </div>
                   <div className="text-[10px] md:text-[12px] text-center">{item}</div>
@@ -194,7 +148,7 @@ export default function Builder() {
               >
                 <div className="avatar">
                   <div className="w-10 md:w-12 rounded">
-                    <img src={`/buildgui/${obj.tag}.png`} alt="Boons" />
+                    <img src={`/buildgui/${obj.tag}.png`} alt="Boons" draggable={false} />
                   </div>
                 </div>
                 <div className="text-[10px] md:text-[12px] text-center">{obj.tag}</div>
