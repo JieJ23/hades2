@@ -105,12 +105,12 @@ export default function Builder() {
               {shareableURL || "No URL Generated Yet"}
             </div>
           </section>
-          <div className=" p-2 my-4 bg-[#21214a57] rounded">
-            <div className="text-[20px] text-white text-center font-[Cinzel]">Selected Items/Boons</div>
-            <div className="flex flex-wrap gap-2">
+          <div className="p-2 py-4 my-4 bg-[#21214a57] rounded">
+            <div className="text-[20px] text-white text-center font-[Cinzel] pb-2">Selected Items/Boons</div>
+            <div className="flex flex-wrap justify-center md:justify-start gap-2">
               {displaySelect.map((item, index) => (
                 <div
-                  className="flex items-center gap-1 p-2 w-[140px] cursor-pointer border-1 border-white/20 rounded hover:bg-warning duration-150 ease-in transition-colors"
+                  className="flex items-center gap-1 px-3 py-1 cursor-pointer border-1 border-white/20 rounded hover:bg-warning duration-150 ease-in transition-colors"
                   onClick={() => handleRemoveBoon(index)}
                   key={index}
                 >
@@ -119,7 +119,7 @@ export default function Builder() {
                       <img src={`/buildgui/${item}.png`} alt="Boons" />
                     </div>
                   </div>
-                  <div className="text-[12px]">{item}</div>
+                  <div className="text-[10px] md:text-[12px]">{item}</div>
                 </div>
               ))}
             </div>
@@ -127,7 +127,9 @@ export default function Builder() {
           <div className="flex gap-0.5 flex-wrap">
             {nameGods.map((item, index) => (
               <button
-                className="btn font-[PT] text-[12px] border-1 border-black rounded-sm"
+                className={`btn font-[PT] text-[12px] border-1 border-black rounded-sm ${
+                  pool == index ? `btn-warning` : `btn-neutral`
+                }`}
                 key={index}
                 onClick={() => handleChangePool(index)}
               >
@@ -138,18 +140,18 @@ export default function Builder() {
           <div className="flex flex-wrap justify-center md:justify-start gap-1 my-4">
             {displayPool.map((obj, index) => (
               <div
-                className={`w-[140px] backdrop-blur-sm rounded border-1 border-white/20 flex items-center gap-2 p-2 group hover:bg-base-200 duration-150 ease-in transition-colors hover:cursor-pointer ${
+                className={`w-[75px] md:w-[100px] backdrop-blur-sm rounded border-1 border-white/20 flex flex-col items-center gap-1 p-2 group hover:bg-base-200 duration-150 ease-in transition-colors hover:cursor-pointer justify-center ${
                   boon.includes(obj.id) && `bg-[#3d3c7e]`
                 }`}
                 onClick={() => handleAddBoon(obj.id)}
                 key={index}
               >
                 <div className="avatar">
-                  <div className="w-12 rounded">
+                  <div className="w-10 md:w-12 rounded">
                     <img src={`/buildgui/${obj.tag}.png`} alt="Boons" />
                   </div>
                 </div>
-                <div className="text-[12px]">{obj.tag}</div>
+                <div className="text-[10px] md:text-[12px] text-center">{obj.tag}</div>
               </div>
             ))}
           </div>
