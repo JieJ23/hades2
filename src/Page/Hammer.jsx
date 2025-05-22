@@ -16,7 +16,7 @@ export default function Hammer() {
             <div className="flex flex-wrap gap-1 my-1 justify-center md:justify-start" key={ind}>
               {obj.map((item, index) => (
                 <div
-                  className="w-[75px] md:w-[100px] bg-base-300 hover:bg-warning  transition-all duration-100 ease-in border-1 border-black rounded-xl flex flex-col items-center p-1 md:p-2 group"
+                  className="w-[75px] md:w-[100px] bg-base-300 hover:bg-warning  transition-all duration-100 ease-in border-1 border-black rounded flex flex-col items-center p-1 md:p-2 group"
                   key={index}
                 >
                   <div class="avatar">

@@ -7,6 +7,7 @@ import App from "./App.jsx";
 import FearCalculator from "./Page/FearCalculator.jsx";
 import H2Stats from "./Page/H2Stats.jsx";
 import ArcaneDeck from "./Page/ArcaneDeck.jsx";
+import Builder from "./Page/Builder.jsx";
 import Hammer from "./Page/Hammer.jsx";
 import HeatCalculator from "./Page/HeatCalculator.jsx";
 import Hades from "./Page/Hades.jsx";
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/FearCalculator" element={<FearCalculator />} />
         <Route path="/ArcaneDeck" element={<ArcaneDeck />} />
         <Route path="/Hammer" element={<Hammer />} />
+        <Route path="/Builder" element={<Builder />} />
         <Route path="/HeatCalculator" element={<HeatCalculator />} />
         <Route path="/Hades" element={<Hades />} />
       </Routes>

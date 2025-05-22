@@ -46,7 +46,7 @@ export function sToA(string) {
 
 function App() {
   const [unique, setUnique] = useState(false);
-  const [sub, setSub] = useState(1);
+  const [sub, setSub] = useState(0);
   const [show, setShow] = useState(25);
 
   const handleLoadMore = () => {
