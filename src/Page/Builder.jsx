@@ -110,7 +110,7 @@ export default function Builder() {
             <div className="flex flex-wrap justify-center md:justify-start gap-2">
               {displaySelect.map((item, index) => (
                 <div
-                  className="flex items-center gap-1 px-3 py-1 cursor-pointer border-1 border-white/20 rounded hover:bg-warning duration-150 ease-in transition-colors"
+                  className="flex flex-col items-center gap-1 px-3 py-1 cursor-pointer border-1 border-white/20 rounded hover:bg-warning duration-150 ease-in transition-colors bg-[#21214a88] w-[80px] h-[90px] overflow-hidden"
                   onClick={() => handleRemoveBoon(index)}
                   key={index}
                 >
@@ -119,7 +119,7 @@ export default function Builder() {
                       <img src={`/buildgui/${item}.png`} alt="Boons" />
                     </div>
                   </div>
-                  <div className="text-[10px] md:text-[12px]">{item}</div>
+                  <div className="text-[10px] md:text-[12px] text-center">{item}</div>
                 </div>
               ))}
             </div>
