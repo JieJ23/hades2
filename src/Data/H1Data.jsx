@@ -667,15 +667,6 @@ export const h1Data = [
     b: `DioAttack,AthSpecial,AthCast,Dash,Call`,
   },
   {
-    category: "Modded",
-    name: "PlayAd",
-    heat: 63,
-    weapon: "Bow",
-    aspect: "Rama",
-    src: "https://www.youtube.com/watch?v=lQgBtOjaGt8",
-    date: "2/10/2024",
-  },
-  {
     category: "Unseeded",
     name: "Nitrostarch",
     heat: 56,

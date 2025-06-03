@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 export const sites = [
-  { link: `hades2`, nam: `Hades II` },
+  { link: `Hades2`, nam: `Hades II` },
   { link: `Builder`, nam: `Builder` },
   { link: `H2Stats`, nam: `H2Stats` },
   { link: `FearCalculator`, nam: `Fear Calculator` },
@@ -19,7 +19,7 @@ export default function SideNav() {
       <div className="flex flex-col items-center gap-3 my-4">
         {sites.map((obj, idx) => (
           <Link
-            to={obj.link === `hades2` ? `/` : `/${obj.link}`}
+            to={`/${obj.link}`}
             className={`flex items-center gap-2 group ${
               currentLocation.pathname == `/${obj.link}` && `text-[#f2920c]`
             }`}

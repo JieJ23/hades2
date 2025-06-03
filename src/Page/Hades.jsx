@@ -4,7 +4,7 @@ import { hadesEntries } from "../Data/HadesEntries";
 import { h1Data } from "../Data/H1Data";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { sToA } from "../App";
+import { sToA } from "./Hades2";
 
 export default function Hades() {
   const [category, setCategory] = useState(0);

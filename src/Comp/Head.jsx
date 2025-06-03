@@ -23,7 +23,7 @@ export default function Head() {
               {sites.map((obj, idx) => (
                 <li key={idx}>
                   <Link
-                    to={obj.link === `hades2` ? `/` : `/${obj.link}`}
+                    to={obj.link === `Hades2` ? `/` : `/${obj.link}`}
                     key={idx}
                     className="font-[Cinzel] text-[12px] flex items-center gap-2"
                   >
@@ -47,7 +47,7 @@ export default function Head() {
         >
           <div className="avatar">
             <div className="w-8 rounded-xl">
-              <img src="/hades2.png" />
+              <img src="/Hades2.png" />
             </div>
           </div>
           <div>Hades 2</div>
