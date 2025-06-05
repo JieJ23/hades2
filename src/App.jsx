@@ -91,7 +91,10 @@ export default function App() {
             </div>
             <section className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
               {displayAnyFearData.slice(0, show).map((obj, index) => (
-                <div key={index} className="font-[PT] text-[12px] rounded overflow-hidden bg-black/80">
+                <div
+                  key={index}
+                  className="font-[PT] text-[12px] rounded overflow-hidden bg-black/80 border-1 border-white/20"
+                >
                   <Link to={`${obj.src}`} target="_blank">
                     <img
                       src={
@@ -106,56 +109,58 @@ export default function App() {
                       draggable={false}
                     />
                   </Link>
-                  <div className="px-2 py-1">
+                  <div className="px-1 py-1 flex flex-col justify-between gap-0.5">
                     <div className="line-clamp-1">
                       {obj.a} - {obj.f} - {obj.l}
                     </div>
-                    {obj.boon ? (
-                      <div className="flex justify-between relative">
-                        <div className="flex">
-                          {obj.boon &&
-                            sToA(obj.boon).map((ite) => (
-                              <div>
-                                <img
-                                  draggable={false}
-                                  src={`/H2Boons/${ite}.png`}
-                                  alt="Core Boon"
-                                  className="size-6 rounded-none"
-                                />
-                              </div>
-                            ))}
-                        </div>
-                        <div className="flex">
-                          {obj.h &&
-                            sToA(obj.h)
-                              .sort()
-                              .map((item, index) => (
-                                <div className="tooltip" key={index}>
-                                  <div className="tooltip-content">
-                                    <div className="text-[12px] font-[PT]">{item}</div>
-                                  </div>
+                    <>
+                      {obj.boon ? (
+                        <div className="flex justify-between items-center">
+                          <div className="flex">
+                            {obj.boon &&
+                              sToA(obj.boon).map((ite) => (
+                                <div>
                                   <img
                                     draggable={false}
-                                    src={`/Hammer/${item}.png`}
-                                    alt="Hammer Boon"
-                                    className="size-6 rounded-none"
+                                    src={`/H2Boons/${ite}.png`}
+                                    alt="Core Boon"
+                                    className="w-5 md:w-6 rounded-none"
                                   />
                                 </div>
                               ))}
+                          </div>
+                          <div className="flex">
+                            {obj.h &&
+                              sToA(obj.h)
+                                .sort()
+                                .map((item, index) => (
+                                  <div className="tooltip tooltip-left" key={index}>
+                                    <div className="tooltip-content bg-black border-1 text-white border-white/20 rounded">
+                                      <div className="text-[12px]">{item}</div>
+                                    </div>
+                                    <img
+                                      draggable={false}
+                                      src={`/Hammer/${item}.png`}
+                                      alt="Hammer Boon"
+                                      className="w-5 md:w-6 rounded-none"
+                                    />
+                                  </div>
+                                ))}
+                          </div>
                         </div>
-                      </div>
-                    ) : (
-                      <div className="tooltip relative">
-                        <div className="tooltip-content w-full text-start bg-black border-1 text-white border-white/20 rounded">
-                          <div className="font-[PT] text-[12px] w-full">{formatSentence(obj.des)}</div>
+                      ) : (
+                        <div className="tooltip">
+                          <div className="tooltip-content max-w-[95%] bg-black border-1 border-white/20 rounded text-start">
+                            <div className="text-[12px]">{formatSentence(obj.des)}</div>
+                          </div>
+                          <div className="line-clamp-1 text-[#ffa006] text-[12px]">{formatSentence(obj.des)}</div>
                         </div>
-                        <div className="line-clamp-1 text-[#ffa006]">{formatSentence(obj.des)}</div>
-                      </div>
-                    )}
+                      )}
+                    </>
                     <div className="flex justify-between">
                       {obj.n}
                       <div className="flex gap-0.5 items-center">
-                        {daysAgo(obj.d)}{" "}
+                        {daysAgo(obj.d)}
                         <div className="avatar">
                           <div className="size-4 md:size-5 rounded">
                             <img
