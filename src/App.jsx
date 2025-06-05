@@ -135,15 +135,21 @@ export default function App() {
               </>
             ) : (
               <> */}
-            <label className="floating-label my-2 px-2">
-              <input
-                type="text"
-                placeholder="Search Keyword / Aspect"
-                className="input rounded border-1 border-white/20 text-[12px] bg-base-300"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </label>
+            <div className="font-[PT] text-[12px] flex items-center">
+              <label className="floating-label my-2 px-2 min-w-[200px]">
+                <input
+                  type="text"
+                  placeholder="Search Keyword / Aspect"
+                  className="input rounded border-1 border-white/20 text-[12px] bg-base-300"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </label>
+              <div className="flex flex-col text-[11px]">
+                <div>"{searchTerm ? searchTerm : `Latest`}" Query</div>
+                <div>{displayAnyFearData.length} Entries</div>
+              </div>
+            </div>
             <section className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 px-1">
               {displayAnyFearData.slice(0, show).map((obj, index) => (
                 <div key={index} className="font-[PT] text-[12px] rounded overflow-hidden bg-black/80">
