@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { daysAgo } from "./Data/Misc";
 import { sToA } from "./Page/Hades2";
 import { useState, useEffect } from "react";
+import { h2AspectOrder } from "./Data/Misc";
 
 const data_grand = [...data_AnyFear, ...h2Data].sort((a, b) => (new Date(a.d) > new Date(b.d) ? -1 : 1));
 
@@ -14,24 +15,21 @@ export function getYTid(text) {
 }
 
 export default function App() {
-  // const [category, setCategory] = useState(`Any Fear`);
   const [searchTerm, setSearchTerm] = useState("");
   const [show, setShow] = useState(20);
+  const [sub, setSub] = useState(`All`);
 
   useEffect(() => {
     setShow(20);
+    setSub(`All`);
   }, [searchTerm]);
-  // const handleChangeCategory = (str) => {
-  //   setSearchTerm("");
-  //   setCategory(str);
-  // };
+
   const handleLoadMore = () => {
     setShow((prev) => prev + 25);
   };
-  // const displayContent = h2Data
-  //   .slice()
-  //   .sort((a, b) => (new Date(a.d) > new Date(b.d) ? -1 : 1))
-  //   .slice(0, 20);
+  const handleChangeSub = (str) => {
+    setSub(str);
+  };
 
   const displayAnyFearData = searchTerm
     ? data_grand.filter(
@@ -40,7 +38,9 @@ export default function App() {
           obj.n.toLowerCase().includes(searchTerm.toLowerCase()) ||
           obj.a.toLowerCase().includes(searchTerm.toLowerCase())
       )
-    : data_grand;
+    : sub === `All`
+    ? data_grand
+    : data_grand.filter((obj) => obj.a === sub);
 
   return (
     <main className="h-full min-h-lvh select-none relative">
@@ -48,95 +48,34 @@ export default function App() {
       <Head />
       <div className="flex flex-col md:flex-row gap-1 max-w-[1400px] mx-auto items-start font-[PT]">
         <SideNav />
-        <div>
-          <div className="mb-2">
-            {/* <div className="flex gap-1 my-2 px-2">
-              <button
-                className={`btn border-1 border-white/20 text-[12px] btn-sm rounded ${
-                  category === `High Fear` ? `btn-success` : `btn-neutral`
-                }`}
-                onClick={() => handleChangeCategory(`High Fear`)}
-              >
-                High Fear
-              </button>
-              <button
-                className={`btn border-1 border-white/20 text-[12px] btn-sm rounded ${
-                  category === `Any Fear` ? `btn-success` : `btn-neutral`
-                }`}
-                onClick={() => handleChangeCategory(`Any Fear`)}
-              >
-                Any Fear
-              </button>
-            </div> */}
-            {/* {category === `High Fear` ? (
-              <>
-                <section className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 px-1">
-                  {displayContent.map((obj, index) => (
-                    <div key={index} className="font-[PT] text-[12px] rounded overflow-hidden bg-black/80">
-                      <Link to={`${obj.src}`} target="_blank">
-                        <img
-                          src={
-                            obj.src.includes(`bilibil`) && obj.l === `Underworld`
-                              ? `/surface.jpg`
-                              : obj.src.includes(`bilibil`) && obj.l === `Surface`
-                              ? `/underworld.jpg`
-                              : `https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`
-                          }
-                          alt="Video"
-                          className="border-1 border-white/20 rounded rounded-b-none"
-                          draggable={false}
-                        />
-                      </Link>
-                      <div className="px-2 py-1">
-                        <div className="line-clamp-1">
-                          {obj.n} - {obj.f} - {obj.a} - {obj.l}
-                        </div>
-                        <div className="flex justify-between">
-                          <div className="flex">
-                            {obj.boon &&
-                              sToA(obj.boon).map((ite) => (
-                                <div>
-                                  <img
-                                    draggable={false}
-                                    src={`/H2Boons/${ite}.png`}
-                                    alt="Core Boon"
-                                    className="size-6 rounded-none"
-                                  />
-                                </div>
-                              ))}
-                          </div>
-                          <div className="flex">
-                            {obj.h &&
-                              sToA(obj.h)
-                                .sort()
-                                .map((item, index) => (
-                                  <div className="tooltip">
-                                    <div className="tooltip-content">
-                                      <div className="text-[12px] font-[PT]">{item}</div>
-                                    </div>
-                                    <img
-                                      draggable={false}
-                                      src={`/Hammer/${item}.png`}
-                                      alt="Hammer Boon"
-                                      className="size-6 rounded-none"
-                                    />
-                                  </div>
-                                ))}
-                          </div>
-                        </div>
-                        <div className="flex justify-between">
-                          <div>{obj.t}</div>
-                          <div>{daysAgo(obj.d)}</div>
-                        </div>
-                      </div>
+        <div className="w-full overflow-hidden">
+          <div className="mb-2 px-1">
+            <div className="flex border-1 border-white/20 p-1 pb-0 font-[PT] text-[12px] bg-[#00000050] gap-1 overflow-x-scroll w-full rounded-sm">
+              {h2AspectOrder.map((ite, index) => (
+                <button
+                  onClick={() => handleChangeSub(ite)}
+                  className={`btn btn-sm rounded pt-1 h-full min-w-[80px] active:border-0 ${
+                    sub == ite ? `bg-[orange] text-black` : `bg-transparent`
+                  }`}
+                  key={index}
+                >
+                  <div className="flex flex-col items-center">
+                    <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Aspects" className="w-8 rounded" />
+                    <div className="font-[PT] text-[12px]">
+                      {ite.includes(`Melinoe`) ? ite.replace(`Melinoe`, `M. `) : ite}
                     </div>
-                  ))}
-                </section>
-              </>
-            ) : (
-              <> */}
-            <div className="font-[PT] text-[12px] flex items-center">
-              <label className="floating-label my-2 px-2 min-w-[200px]">
+                  </div>
+                </button>
+              ))}
+            </div>
+            <div className="font-[PT] text-[12px] flex items-center gap-1">
+              <button
+                className="btn btn-soft text-white border-1 border-white/20 rounded text-[12px] px-3"
+                onClick={() => handleChangeSub(`All`)}
+              >
+                Show All
+              </button>
+              <label className="floating-label my-2 min-w-[200px]">
                 <input
                   type="text"
                   placeholder="Search Keyword / Aspect"
@@ -146,11 +85,11 @@ export default function App() {
                 />
               </label>
               <div className="flex flex-col text-[11px]">
-                <div>"{searchTerm ? searchTerm : `Latest`}" Query</div>
+                <div>"{searchTerm ? searchTerm : sub}" Query</div>
                 <div>{displayAnyFearData.length} Entries</div>
               </div>
             </div>
-            <section className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 px-1">
+            <section className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
               {displayAnyFearData.slice(0, show).map((obj, index) => (
                 <div key={index} className="font-[PT] text-[12px] rounded overflow-hidden bg-black/80">
                   <Link to={`${obj.src}`} target="_blank">
@@ -216,8 +155,6 @@ export default function App() {
                 </div>
               ))}
             </section>
-            {/* </>
-            )} */}
           </div>
         </div>
       </div>
