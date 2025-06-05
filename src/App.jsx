@@ -50,7 +50,7 @@ export default function App() {
         <SideNav />
         <div className="w-full overflow-hidden">
           <div className="mb-2 px-1">
-            <div className="flex border-1 border-white/20 p-1 pb-0 font-[PT] text-[12px] bg-[#00000050] gap-1 overflow-x-scroll w-full rounded-sm">
+            <div className="flex border-1 border-white/20 p-1 font-[PT] text-[12px] bg-[#00000050] gap-1 overflow-x-scroll w-full rounded-sm">
               {h2AspectOrder.map((ite, index) => (
                 <button
                   onClick={() => handleChangeSub(ite)}
