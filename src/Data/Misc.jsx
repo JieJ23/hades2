@@ -35,3 +35,24 @@ export function daysAgo(dateString) {
   if (diffDays === 1) return "1 day ago";
   return `${diffDays} days ago`;
 }
+
+export function formatSentence(sentence) {
+  if (!sentence) return "";
+
+  return sentence
+    .split(" ")
+    .map((word) => {
+      // Match optional open/close parentheses or brackets around a word
+      const match = word.match(/^([\(\[])?([a-zA-Z]+)([\)\]])?$/);
+      if (match) {
+        const [, openSymbol, coreWord, closeSymbol] = match;
+        return (
+          (openSymbol || "") + coreWord.charAt(0).toUpperCase() + coreWord.slice(1).toLowerCase() + (closeSymbol || "")
+        );
+      }
+
+      // Fallback: just capitalize normally
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join(" ");
+}

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { daysAgo } from "./Data/Misc";
 import { sToA } from "./Page/Hades2";
 import { useState, useEffect } from "react";
-import { h2AspectOrder } from "./Data/Misc";
+import { h2AspectOrder, formatSentence } from "./Data/Misc";
 
 const data_grand = [...data_AnyFear, ...h2Data].sort((a, b) => (new Date(a.d) > new Date(b.d) ? -1 : 1));
 
@@ -111,7 +111,7 @@ export default function App() {
                       {obj.a} - {obj.f} - {obj.l}
                     </div>
                     {obj.boon ? (
-                      <div className="flex justify-between">
+                      <div className="flex justify-between relative">
                         <div className="flex">
                           {obj.boon &&
                             sToA(obj.boon).map((ite) => (
@@ -130,7 +130,7 @@ export default function App() {
                             sToA(obj.h)
                               .sort()
                               .map((item, index) => (
-                                <div className="tooltip">
+                                <div className="tooltip" key={index}>
                                   <div className="tooltip-content">
                                     <div className="text-[12px] font-[PT]">{item}</div>
                                   </div>
@@ -145,11 +145,16 @@ export default function App() {
                         </div>
                       </div>
                     ) : (
-                      <div className="line-clamp-1 text-[#ffa006]">{obj.des}</div>
+                      <div className="tooltip relative">
+                        <div className="tooltip-content w-full text-start bg-black border-1 text-white border-white/20 rounded">
+                          <div className="font-[PT] text-[12px] w-full">{formatSentence(obj.des)}</div>
+                        </div>
+                        <div className="line-clamp-1 text-[#ffa006]">{formatSentence(obj.des)}</div>
+                      </div>
                     )}
                     <div className="flex justify-between">
                       {obj.n}
-                      <div className="flex gap-0.5 items-center text-[10px] md:text-[12px]">
+                      <div className="flex gap-0.5 items-center">
                         {daysAgo(obj.d)}{" "}
                         <div className="avatar">
                           <div className="size-4 md:size-5 rounded">
