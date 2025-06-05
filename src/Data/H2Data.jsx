@@ -16,7 +16,7 @@ export const h2Data = [
     d: `6/4/2025`,
     n: `HookieDookie`,
     l: `Surface`,
-    a: `Melinoe Blade`,
+    a: `Melinoe Blades`,
     fam: `Frog`,
     f: 50,
     t: `17:39.16`,
