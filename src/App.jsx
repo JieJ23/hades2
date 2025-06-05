@@ -16,11 +16,11 @@ export function getYTid(text) {
 
 export default function App() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [show, setShow] = useState(20);
+  const [show, setShow] = useState(25);
   const [sub, setSub] = useState(`All`);
 
   useEffect(() => {
-    setShow(20);
+    setShow(25);
     setSub(`All`);
   }, [searchTerm]);
 
@@ -149,7 +149,17 @@ export default function App() {
                     )}
                     <div className="flex justify-between">
                       {obj.n}
-                      <div>{daysAgo(obj.d)}</div>
+                      <div className="flex gap-1">
+                        {daysAgo(obj.d)}
+                        <div className="avatar">
+                          <div className="size-5 rounded">
+                            <img
+                              src={obj.src.includes(`bilibil`) ? `/bilibili.png` : `/youtube.png`}
+                              alt="Video Source"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
