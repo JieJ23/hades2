@@ -2,7 +2,7 @@ import Head from "./Comp/Head";
 import SideNav from "./Comp/Sidebar";
 import { h2Data } from "./Data/H2Data";
 import { data_AnyFear } from "./Data/H2Fear";
-import { data, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { daysAgo } from "./Data/Misc";
 import { sToA } from "./Page/Hades2";
 import { useState } from "react";
@@ -13,8 +13,10 @@ export function getYTid(text) {
 
 export default function App() {
   const [category, setCategory] = useState(`High Fear`);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleChangeCategory = (str) => {
+    setSearchTerm("");
     setCategory(str);
   };
 
@@ -22,6 +24,15 @@ export default function App() {
     .slice()
     .sort((a, b) => (new Date(a.d) > new Date(b.d) ? -1 : 1))
     .slice(0, 20);
+
+  const displayAnyFearData = searchTerm
+    ? data_AnyFear.filter(
+        (obj) =>
+          obj.des.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          obj.p.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          obj.a.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : data_AnyFear;
 
   return (
     <main className="h-full min-h-lvh select-none relative">
@@ -31,7 +42,7 @@ export default function App() {
         <SideNav />
         <div>
           <div className="mb-8">
-            <div className="flex gap-1 p-2">
+            <div className="flex gap-1 my-2 px-2">
               <button
                 className={`btn border-1 border-white/20 text-[12px] btn-sm rounded ${
                   category === `High Fear` ? `btn-success` : `btn-neutral`
@@ -49,9 +60,9 @@ export default function App() {
                 Any Fear
               </button>
             </div>
-            <section className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 px-1">
-              {category === `High Fear` ? (
-                <>
+            {category === `High Fear` ? (
+              <>
+                <section className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 px-1">
                   {displayContent.map((obj, index) => (
                     <div key={index} className="font-[PT] text-[12px] rounded overflow-hidden bg-black/80">
                       <Link to={`${obj.src}`} target="_blank">
@@ -112,22 +123,25 @@ export default function App() {
                       </div>
                     </div>
                   ))}
-                </>
-              ) : (
-                <>
-                  {data_AnyFear.map((obj, index) => (
+                </section>
+              </>
+            ) : (
+              <>
+                <label className="floating-label my-2 px-2">
+                  <input
+                    type="text"
+                    placeholder="Search Keyword / Aspect"
+                    className="input rounded border-1 border-white/20 text-[12px] bg-base-300"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                </label>
+                <section className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 px-1">
+                  {displayAnyFearData.map((obj, index) => (
                     <div key={index} className="font-[PT] text-[12px] rounded overflow-hidden bg-black/80">
                       <Link to={`${obj.src}`} target="_blank">
                         <img
-                          src={
-                            `https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`
-                            // obj.src.includes(`bilibil`) && obj.l === `Underworld`
-                            //   ? `/surface.jpg`
-                            //   : obj.src.includes(`bilibil`) && obj.l === `Surface`
-                            //   ? `/underworld.jpg`
-                            //   :
-                            //   `https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`
-                          }
+                          src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`}
                           alt="Video"
                           className="border-1 border-white/20 rounded rounded-b-none"
                           draggable={false}
@@ -145,9 +159,9 @@ export default function App() {
                       </div>
                     </div>
                   ))}
-                </>
-              )}
-            </section>
+                </section>
+              </>
+            )}
           </div>
         </div>
       </div>
