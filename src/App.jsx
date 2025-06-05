@@ -148,11 +148,11 @@ export default function App() {
                       <div className="line-clamp-1 text-[#ffa006]">{obj.des}</div>
                     )}
                     <div className="flex justify-between">
-                      {obj.n.length > 16 ? `${obj.n.slice(0, 16)}.` : obj.n}
-                      <div className="flex gap-0.5 items-center">
-                        {daysAgo(obj.d)}
+                      {obj.n}
+                      <div className="flex gap-0.5 items-center text-[10px] md:text-[12px]">
+                        {daysAgo(obj.d)}{" "}
                         <div className="avatar">
-                          <div className="size-5 rounded">
+                          <div className="size-4 md:size-5 rounded">
                             <img
                               src={obj.src.includes(`bilibil`) ? `/bilibili.png` : `/youtube.png`}
                               alt="Video Source"
