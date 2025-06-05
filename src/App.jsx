@@ -1,8 +1,9 @@
 import Head from "./Comp/Head";
 import SideNav from "./Comp/Sidebar";
 import { h2Data } from "./Data/H2Data";
-import { h1Data } from "./Data/H1Data";
 import { Link } from "react-router-dom";
+import { daysAgo } from "./Data/Misc";
+import { sToA } from "./Page/Hades2";
 
 export function getYTid(text) {
   return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
@@ -11,16 +12,8 @@ export function getYTid(text) {
 export default function App() {
   const displayContent = h2Data
     .slice()
-    .sort((a, b) => (a.t > b.t ? 1 : -1))
-    .sort((a, b) => (a.f > b.f ? -1 : 1))
-    .filter((obj) => obj.src.includes(`youtub`))
-    .slice(0, 10);
-
-  const displayContent2 = h1Data
-    .slice()
-    .sort((a, b) => (a.heat > b.heat ? -1 : 1))
-    .filter((obj) => obj.src.includes(`youtub`))
-    .slice(0, 10);
+    .sort((a, b) => (new Date(a.d) > new Date(b.d) ? -1 : 1))
+    .slice(0, 20);
 
   return (
     <main className="h-full min-h-lvh select-none relative">
@@ -31,14 +24,20 @@ export default function App() {
         <div>
           <div className="mb-8">
             <div className="px-4 text-[16px] text-[#0fff7b] rounded font-[Cinzel]">Fear Gameplay</div>
-            <section className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
+            <section className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5 p-2">
               {displayContent.map((obj, index) => (
-                <div key={index} className="font-[PT] text-[12px] rounded overflow-hidden">
+                <div key={index} className="font-[PT] text-[12px] rounded-xl bg-black/80">
                   <Link to={`${obj.src}`} target="_blank">
                     <img
-                      src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`}
+                      src={
+                        obj.src.includes(`bilibil`) && obj.l === `Underworld`
+                          ? `/surface.jpg`
+                          : obj.src.includes(`bilibil`) && obj.l === `Surface`
+                          ? `/underworld.jpg`
+                          : `https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`
+                      }
                       alt="Video"
-                      className="border-1 border-white/20 rounded"
+                      className="border-1 border-white/20 rounded-xl rounded-b-none"
                       draggable={false}
                     />
                   </Link>
@@ -46,27 +45,43 @@ export default function App() {
                     <div className="line-clamp-1">
                       {obj.n} - {obj.f} - {obj.a} - {obj.l}
                     </div>
-                    <div>{obj.t}</div>
-                  </div>
-                </div>
-              ))}
-            </section>
-          </div>
-          <div className="my-8">
-            <div className="px-4 text-[16px] text-[#ff5e1f] rounded font-[Cinzel]">Heat Gameplay</div>
-            <section className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
-              {displayContent2.map((obj, index) => (
-                <div key={index} className="font-[PT] text-[12px] rounded overflow-hidden">
-                  <Link to={`${obj.src}`} target="_blank">
-                    <img
-                      src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`}
-                      alt="Video"
-                      className="border-1 border-white/20 rounded"
-                      draggable={false}
-                    />
-                  </Link>
-                  <div className="pt-1 p-2 line-clamp-1">
-                    {obj.name} - {obj.heat} - {obj.aspect}
+                    <div className="flex justify-between">
+                      <div className="flex">
+                        {obj.boon &&
+                          sToA(obj.boon).map((ite) => (
+                            <div key={index}>
+                              <img
+                                draggable={false}
+                                src={`/H2Boons/${ite}.png`}
+                                alt="Core Boon"
+                                className="size-6 rounded-none"
+                              />
+                            </div>
+                          ))}
+                      </div>
+                      <div className="flex">
+                        {obj.h &&
+                          sToA(obj.h)
+                            .sort()
+                            .map((item, index) => (
+                              <div className="tooltip" key={index}>
+                                <div className="tooltip-content">
+                                  <div className="text-[12px] font-[PT]">{item}</div>
+                                </div>
+                                <img
+                                  draggable={false}
+                                  src={`/Hammer/${item}.png`}
+                                  alt="Hammer Boon"
+                                  className="size-6 rounded-none"
+                                />
+                              </div>
+                            ))}
+                      </div>
+                    </div>
+                    <div className="flex justify-between">
+                      <div>{obj.t}</div>
+                      <div>{daysAgo(obj.d)}</div>
+                    </div>
                   </div>
                 </div>
               ))}
