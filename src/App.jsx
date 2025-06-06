@@ -28,6 +28,7 @@ export default function App() {
     setShow((prev) => prev + 50);
   };
   const handleChangeSub = (str) => {
+    setSearchTerm("");
     setSub(str);
   };
 
