@@ -25,7 +25,7 @@ export default function App() {
   }, [searchTerm]);
 
   const handleLoadMore = () => {
-    setShow((prev) => prev + 25);
+    setShow((prev) => prev + 50);
   };
   const handleChangeSub = (str) => {
     setSub(str);
@@ -98,9 +98,9 @@ export default function App() {
                   <Link to={`${obj.src}`} target="_blank">
                     <img
                       src={
-                        obj.src.includes(`bilibil`) && obj.l === `Underworld`
+                        obj.src.includes(`bilibili`) && obj.l === `Underworld`
                           ? `/Underworld2.webp`
-                          : obj.src.includes(`bilibil`) && obj.l === `Surface`
+                          : obj.src.includes(`bilibili`) && obj.l === `Surface`
                           ? `/Surface2.webp`
                           : `https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`
                       }
