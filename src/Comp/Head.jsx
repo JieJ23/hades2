@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { sites } from "./Sidebar";
+import Submit from "./Submit";
 
 export default function Head() {
   return (
-    <div className="navbar shadow-sm select-none">
+    <div className="navbar shadow-sm select-none w-full max-w-[1400px] mx-auto">
       <div className="navbar-start">
         <div className="block md:hidden">
           <div className="dropdown">
@@ -50,13 +51,14 @@ export default function Head() {
         </Link>
       </div>
       <div className="navbar-end">
-        <Link to={"https://discord.com/users/1110261416432242758"} target="_blank`">
+        <Submit />
+        {/* <Link to={"https://discord.com/users/1110261416432242758"} target="_blank`">
           <div className="avatar">
             <div className="w-8 rounded-xl">
               <img src="/discord.jpeg" />
             </div>
           </div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
