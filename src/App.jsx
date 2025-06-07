@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { daysAgo } from "./Data/Misc";
 import { sToA } from "./Page/Hades2";
 import { useState, useEffect } from "react";
-import { h2AspectOrder, formatSentence, constantDate } from "./Data/Misc";
+import { h2AspectOrder, formatSentence } from "./Data/Misc";
 import { useData } from "./Comp/Hook";
 import Loading from "./Comp/Loading";
 
@@ -28,11 +28,18 @@ export default function App() {
   const [sub, setSub] = useState(`All`);
   const [min, setMin] = useState(1);
   const [max, setMax] = useState(55);
+  const [high, setHigh] = useState(false);
 
   const { posts, loader } = useData();
 
   const data_grand = [...data_AnyFear, ...h2Data, ...posts]
-    .sort((a, b) => (new Date(a.d) > new Date(b.d) ? -1 : 1))
+    .sort((a, b) => {
+      if (high) {
+        return b.f - a.f;
+      } else {
+        return new Date(b.d) - new Date(a.d);
+      }
+    })
     .filter((obj) => obj.f >= min && obj.f <= max);
 
   useEffect(() => {
@@ -80,7 +87,7 @@ export default function App() {
                   </button>
                 ))}
               </div>
-              <div className="font-[PT] text-[12px] flex flex-wrap items-center gap-2">
+              <div className="font-[PT] text-[12px] flex flex-wrap items-center gap-1">
                 <button
                   className="btn btn-soft text-white border-1 border-white/20 rounded text-[12px] px-3"
                   onClick={() => handleChangeSub(`All`, setSub, setSearchTerm)}
@@ -98,7 +105,7 @@ export default function App() {
                 </label>
                 <input
                   type="number"
-                  className="input w-12 text-[12px]"
+                  className="input w-12 text-[12px] rounded"
                   value={`${min}`}
                   min={1}
                   max={55}
@@ -106,12 +113,16 @@ export default function App() {
                 />
                 <input
                   type="number"
-                  className="input w-12 text-[12px]"
+                  className="input w-12 text-[12px] rounded"
                   value={`${max}`}
                   min={1}
                   max={55}
                   onChange={(e) => setMax(Number(e.target.value))}
                 />
+                <button
+                  className={`btn rounded p-3 ${high ? `btn-error` : `btn-info`}`}
+                  onClick={() => setHigh(!high)}
+                >{`${high ? `H` : `D`}`}</button>
               </div>
               <div className="flex text-[11px] gap-2 px-2 mb-1">
                 <div className="whitespace-nowrap">"{searchTerm ? searchTerm : sub}" Query</div>
