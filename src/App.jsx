@@ -87,7 +87,7 @@ export default function App() {
                 >
                   Show All
                 </button>
-                <label className="floating-label my-2 min-w-[200px]">
+                <label className="floating-label my-2 min-w-[150px]">
                   <input
                     type="text"
                     placeholder="Search Keyword / Aspect"
@@ -96,10 +96,6 @@ export default function App() {
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </label>
-                <div className="flex flex-col text-[11px]">
-                  <div className="whitespace-nowrap">"{searchTerm ? searchTerm : sub}" Query</div>
-                  <div className="whitespace-nowrap">{displayAnyFearData.length} Entries</div>
-                </div>
                 <input
                   type="number"
                   className="input w-12 text-[12px]"
@@ -116,6 +112,10 @@ export default function App() {
                   max={55}
                   onChange={(e) => setMax(Number(e.target.value))}
                 />
+              </div>
+              <div className="flex text-[11px] gap-2 px-2 mb-1">
+                <div className="whitespace-nowrap">"{searchTerm ? searchTerm : sub}" Query</div>
+                <div className="whitespace-nowrap">{displayAnyFearData.length} Entries</div>
               </div>
               <section className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
                 {displayAnyFearData.slice(0, show).map((obj, index) => (
