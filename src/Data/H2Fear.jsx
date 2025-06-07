@@ -1,5 +1,32 @@
 export const data_AnyFear = [
   {
+    d: "6/7/2025",
+    n: "Skuld",
+    a: "Medea",
+    l: "Underworld",
+    f: "14",
+    src: "https://www.youtube.com/watch?v=RNGVqq7KzWQ",
+    des: "Medea Skull / IGT 7:01",
+  },
+  {
+    d: "6/6/2025",
+    n: "Shaded",
+    a: "Melinoe Staff",
+    l: "Surface",
+    f: "12",
+    src: "https://www.youtube.com/watch?v=bcTcRGXAG_Y",
+    des: "A Nice Omega Fun Run",
+  },
+  {
+    d: "6/6/2025",
+    n: "Joeza",
+    a: "Melinoe Staff",
+    l: "Underworld",
+    f: "8",
+    src: "https://www.youtube.com/watch?v=9WLgKePEr60",
+    des: "Slow Cooker roughly doubled my damage?",
+  },
+  {
     d: "5/10/2024",
     n: "MochaLatte",
     a: "Momus",
