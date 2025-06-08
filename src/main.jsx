@@ -11,6 +11,7 @@ import ArcaneDeck from "./Page/ArcaneDeck.jsx";
 import Builder from "./Page/Builder.jsx";
 import Hammer from "./Page/Hammer.jsx";
 import HeatCalculator from "./Page/HeatCalculator.jsx";
+import Hades_v2 from "./Page/Hades_v2.jsx";
 import Hades from "./Page/Hades.jsx";
 
 import { DataProvider } from "./Comp/Hook.jsx";
@@ -29,6 +30,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/Builder" element={<Builder />} />
           <Route path="/HeatCalculator" element={<HeatCalculator />} />
           <Route path="/Hades" element={<Hades />} />
+          <Route path="/Hades_v2" element={<Hades_v2 />} />
         </Routes>
       </Router>
     </DataProvider>

@@ -9,6 +9,7 @@ export const sites = [
   { link: `ArcaneDeck`, nam: `Arcane Deck` },
   { link: `Hammer`, nam: `Hammer` },
   { link: `Hades`, nam: `Hades` },
+  { link: `Hades_v2`, nam: `Hades Gameplay` },
   { link: `HeatCalculator`, nam: `Heat Calculator` },
 ];
 

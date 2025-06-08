@@ -19,6 +19,33 @@ export const h2AspectOrder = [
   `Selene`,
 ];
 
+export const h1AspectOrder = [
+  `Zagreus Sword`,
+  `Nemesis`,
+  `Poseidon`,
+  `Arthur`,
+  `Zagreus Spear`,
+  `Achilles`,
+  `Hades`,
+  `Guan Yu`,
+  `Zagreus Shield`,
+  `Chaos`,
+  `Zeus`,
+  `Beowulf`,
+  `Zagreus Bow`,
+  `Chiron`,
+  `Hera`,
+  `Rama`,
+  `Zagreus Fists`,
+  `Talos`,
+  `Demeter`,
+  `Gilgamesh`,
+  `Zagreus Rail`,
+  `Eris`,
+  `Hestia`,
+  `Lucifer`,
+];
+
 export function daysAgo(dateString) {
   const [month, day, year] = dateString.split("/").map(Number);
   const date = new Date(year, month - 1, day); // month is 0-indexed
