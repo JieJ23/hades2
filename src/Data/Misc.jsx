@@ -34,7 +34,7 @@ export function daysAgo(dateString) {
   if (diffDays <= 0) return "Today";
   if (diffDays > 0 && diffDays < 30) return `${diffDays} days ago`;
   if (diffDays > 30 && diffDays < 60) return `1 month ago`;
-  if (diffDays > 60) return `${diffDays % 30} months ago`;
+  if (diffDays > 60) return `${Math.floor(diffDays / 30)} months ago`;
 }
 
 export function formatSentence(sentence) {
