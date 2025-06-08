@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { h2AspectOrder, formatSentence } from "./Data/Misc";
 import { useData } from "./Comp/Hook";
 import Loading from "./Comp/Loading";
+import { sheet_data } from "./Data/Sheet";
 
 export function getYTid(text) {
   return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
@@ -32,7 +33,7 @@ export default function App() {
 
   const { posts, loader } = useData();
 
-  const data_grand = [...data_AnyFear, ...h2Data, ...posts]
+  const data_grand = [...data_AnyFear, ...h2Data, ...posts, ...sheet_data]
     .sort((a, b) => {
       if (high) {
         return b.f - a.f;
@@ -59,7 +60,7 @@ export default function App() {
     : data_grand.filter((obj) => obj.a === sub);
 
   return (
-    <main className="h-full min-h-lvh select-none relative">
+    <main className="h-full min-h-lvh relative">
       <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
       <Head />
       <div className="flex flex-col md:flex-row gap-1 max-w-[1400px] mx-auto items-start font-[PT]">
