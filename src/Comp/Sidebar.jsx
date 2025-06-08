@@ -4,11 +4,11 @@ import { useLocation } from "react-router-dom";
 export const sites = [
   { link: `Hades2`, nam: `Hades II` },
   { link: `Builder`, nam: `Builder` },
-  { link: `H2Stats`, nam: `H2Stats` },
+  // { link: `H2Stats`, nam: `H2Stats` },
   { link: `FearCalculator`, nam: `Fear Calculator` },
   { link: `ArcaneDeck`, nam: `Arcane Deck` },
   { link: `Hammer`, nam: `Hammer` },
-  { link: `Hades`, nam: `Hades` },
+  // { link: `Hades`, nam: `Hades` },
   { link: `Hades_v2`, nam: `Hades Gameplay` },
   { link: `HeatCalculator`, nam: `Heat Calculator` },
 ];
