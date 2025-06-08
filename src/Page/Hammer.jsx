@@ -86,6 +86,15 @@ export default function Hammer() {
               <button className="btn btn-sm btn-soft btn-info rounded-sm font-[PT]" onClick={copyURLToClipboard}>
                 {isCopied ? "Copied!" : "Copy URL"}
               </button>
+              <button
+                className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]"
+                onClick={() => {
+                  setTiers(Array(totalItems).fill(""));
+                  localStorage.setItem("myTier", JSON.stringify(Array(totalItems).fill("")));
+                }}
+              >
+                Reset Selection
+              </button>
             </div>
             <div className="max-w-[1000px] bg-base-300 overflow-hidden p-2 truncate text-[13px] text-white rounded-md font-[PT] mt-2">
               {shareableURL || "No URL Generated Yet"}
