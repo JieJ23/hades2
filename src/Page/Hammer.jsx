@@ -8,13 +8,13 @@ const fullWeaponHammers = [w_staff, w_blades, w_axe, w_flames, w_skull, w_coat];
 const getTierBackground = (tier) => {
   switch (tier) {
     case "S":
-      return "bg-gradient-to-b from-[#bd03ec88] to-transparent";
+      return "bg-gradient-to-b from-[#bd03ec88] to-[#bd03ec11]";
     case "A":
-      return "bg-gradient-to-b from-[#ec9a0388] to-transparent";
+      return "bg-gradient-to-b from-[#ec9a0388] to-[#ec9a0311]";
     case "B":
-      return "bg-gradient-to-b from-[#039aec88] to-transparent";
+      return "bg-gradient-to-b from-[#039aec88] to-[#039aec11]";
     case "C":
-      return "bg-gradient-to-b from-[#03ec7f88] to-transparent";
+      return "bg-gradient-to-b from-[#03ec7f88] to-[#03ec7f11]";
     default:
       return "";
   }
@@ -92,22 +92,25 @@ export default function Hammer() {
             </div>
           </section>
           {fullWeaponHammers.map((obj, ind) => (
-            <div className="flex flex-wrap gap-1 my-1 justify-center md:justify-start" key={ind}>
+            <div
+              className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-1"
+              key={ind}
+            >
               {obj.map((item, index) => {
                 const currentIndex = globalIndex++;
                 return (
                   <div
-                    className={`w-[75px] md:w-[100px] border-1 border-black overflow-hidden rounded flex flex-col items-center p-1 md:p-2 ${getTierBackground(
+                    className={`w-full border-1 border-white/20 overflow-hidden rounded flex flex-col items-center my-1 p-1 md:p-2 ${getTierBackground(
                       tiers[currentIndex]
                     )}`}
                     key={index}
                   >
                     <div className="avatar">
-                      <div className="w-10 md:w-14 rounded group-hover:w-16 transition-all duration-100 ease-in">
+                      <div className="w-10 md:w-12 rounded">
                         <img src={`/Hammer/${item}.png`} alt="Hammer" draggable={false} />
                       </div>
                     </div>
-                    <div className="text-center text-[10px] md:text-[12px] line-clamp-2 pb-0.5 h-[40px]">{item}</div>
+                    <div className="text-center text-[11px] line-clamp-2 pb-0.5 h-[34px]">{item}</div>
                     <div className="flex gap-0.5">
                       <select
                         value={tiers[currentIndex]}
