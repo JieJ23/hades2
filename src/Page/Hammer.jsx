@@ -107,12 +107,12 @@ export default function Hammer() {
                         <img src={`/Hammer/${item}.png`} alt="Hammer" draggable={false} />
                       </div>
                     </div>
-                    <div className="text-center text-[10px] md:text-[12px] line-clamp-1 pb-0.5">{item}</div>
+                    <div className="text-center text-[10px] md:text-[12px] line-clamp-2 pb-0.5 h-[40px]">{item}</div>
                     <div className="flex gap-0.5">
                       <select
                         value={tiers[currentIndex]}
                         onChange={(e) => handleTierChange(currentIndex, e.target.value)}
-                        className={`select bg-transparent text-[12px] pl-2`}
+                        className={`select bg-transparent text-[10px] pl-2 py-2`}
                       >
                         <option value="">Tier</option>
                         <option value="S">S</option>
