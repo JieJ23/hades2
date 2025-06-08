@@ -21,7 +21,7 @@ const handleChangeSub = (str, updater, depend) => {
 
 export default function Hades_v2() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [show, setShow] = useState(100);
+  const [show, setShow] = useState(25);
   const [sub, setSub] = useState(`All`);
   const [min, setMin] = useState(32);
   const [max, setMax] = useState(64);
@@ -29,7 +29,7 @@ export default function Hades_v2() {
   const data_grand = [...h1Data].sort((a, b) => b.heat - a.heat).filter((obj) => obj.heat >= min && obj.heat <= max);
 
   useEffect(() => {
-    setShow(100);
+    setShow(25);
     setSub(`All`);
   }, [searchTerm]);
 
