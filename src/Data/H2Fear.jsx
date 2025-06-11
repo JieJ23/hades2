@@ -1908,14 +1908,6 @@ export const data_AnyFear = [
   },
   {
     d: "11/1/2024",
-    n: "jdeeyu",
-    a: "Circe",
-    l: "Underworld",
-    f: "50",
-    src: "https://www.youtube.com/watch?v=hPFE1bsItj0",
-  },
-  {
-    d: "11/1/2024",
     n: "Mininet",
     a: "Momus",
     l: "Underworld",
