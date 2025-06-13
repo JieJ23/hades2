@@ -26,7 +26,7 @@ export default function Head() {
                   <Link to={`/${obj.link}`} key={idx} className="font-[Cinzel] text-[12px] flex items-center gap-2">
                     <div className="avatar">
                       <div className="w-6 rounded-none">
-                        <img src={`/${obj.link}.png`} />
+                        <img src={`/${obj.icon}.png`} />
                       </div>
                     </div>
                     <div>{obj.nam}</div>

@@ -1,7 +1,7 @@
-import Head from "./Comp/Head";
-import SideNav from "./Comp/Sidebar";
-import { h2Data } from "./Data/H2Data";
-import { sToA } from "./Page/Hades2";
+import Head from "../Comp/Head";
+import SideNav from "../Comp/Sidebar";
+import { h2Data } from "../Data/H2Data";
+import { sToA } from "./Hades2";
 import { Link } from "react-router-dom";
 
 export function getYTid(text) {
@@ -20,9 +20,9 @@ export default function Ladder() {
         <SideNav />
         <section className="w-full px-2 py-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
-            <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded-lg bg-black/85 text-[12px]">
+            <div className="col-span-1 p-2 border-1 border-white/20 rounded-lg bg-black/85 text-[12px]">
               <div>
-                <div className="font-[Cinzel] border-b border-[#00ffaa] mb-2">Ranking Player</div>
+                <div className="font-[Cinzel] border-b border-white/20 mb-2">Ranking Player</div>
                 <div className="grid grid-cols-2 gap-1">
                   {rankingPlayer.map((item, index) => (
                     <div key={index}>
@@ -32,9 +32,9 @@ export default function Ladder() {
                 </div>
               </div>
             </div>
-            <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded-lg bg-black/85 text-[12px]">
+            <div className="col-span-1 p-2 border-1 border-white/20 rounded-lg bg-black/85 text-[12px]">
               <div>
-                <div className="font-[Cinzel] border-b border-[#00ffaa] mb-2">Ranking Aspect</div>
+                <div className="font-[Cinzel] border-b border-white/20 mb-2">Ranking Aspect</div>
                 <div className="grid grid-cols-2 gap-1">
                   {rankingAspect.map((item, index) => (
                     <div key={index}>

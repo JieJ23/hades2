@@ -2,15 +2,16 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 export const sites = [
-  { link: `Hades2`, nam: `Hades II` },
-  { link: `Builder`, nam: `Builder` },
-  // { link: `H2Stats`, nam: `H2Stats` },
-  { link: `FearCalculator`, nam: `Fear Calculator` },
-  { link: `ArcaneDeck`, nam: `Arcane Deck` },
-  { link: `Hammer`, nam: `Hammer` },
-  // { link: `Hades`, nam: `Hades` },
-  { link: `Hades_v2`, nam: `Hades Gameplay` },
-  { link: `HeatCalculator`, nam: `Heat Calculator` },
+  { icon: `Hades2`, link: ``, nam: `Ladder` },
+  // { icon: ``, link: `Ladder`, nam: `H2 Ladder` },
+  { icon: `Builder`, link: `Builder`, nam: `Builder` },
+  // { icon: ``, link: `H2Stats`, nam: `H2Stats` },
+  { icon: `FearCalculator`, link: `FearCalculator`, nam: `Fear Calculator` },
+  { icon: `ArcaneDeck`, link: `ArcaneDeck`, nam: `Arcane Deck` },
+  { icon: `Hammer`, link: `Hammer`, nam: `Hammer` },
+  // { icon: ``, link: `Hades`, nam: `Hades` },
+  // { icon: ``, link: `Hades_v2`, nam: `Hades Gameplay` },
+  // { icon: ``, link: `HeatCalculator`, nam: `Heat Calculator` },
 ];
 
 export default function SideNav() {
@@ -31,7 +32,7 @@ export default function SideNav() {
               <div className="avatar">
                 <div className="w-8 h-10 rounded-none">
                   <img
-                    src={`/${obj.link}.png`}
+                    src={`/${obj.icon}.png`}
                     draggable={false}
                     className="group-hover:scale-[80%] duration-100 ease-in transition-transform"
                   />
