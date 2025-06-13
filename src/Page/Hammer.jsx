@@ -77,7 +77,7 @@ export default function Hammer() {
       <Head />
       <div className="flex flex-col md:flex-row gap-2 max-w-[1400px] mx-auto">
         <SideNav />
-        <section className="p-2 py-10 font-[PT] text-[14px] rounded">
+        <section className="w-full p-2 py-10 font-[PT] text-[14px] rounded">
           <section className="p-2">
             <div className="flex flex-wrap gap-1">
               <button className="btn btn-sm btn-soft btn-info rounded-sm font-[PT]" onClick={generateShareableURL}>
@@ -109,7 +109,7 @@ export default function Hammer() {
                 const currentIndex = globalIndex++;
                 return (
                   <div
-                    className={`w-full border-1 border-white/20 overflow-hidden rounded flex flex-col items-center my-1 p-1 md:p-2 ${getTierBackground(
+                    className={`w-full border-1 border-white/20 bg-black/70 overflow-hidden rounded flex flex-col items-center my-1 p-1 md:p-2 ${getTierBackground(
                       tiers[currentIndex]
                     )}`}
                     key={index}
@@ -119,7 +119,12 @@ export default function Hammer() {
                         <img src={`/Hammer/${item}.png`} alt="Hammer" draggable={false} />
                       </div>
                     </div>
-                    <div className="text-center text-[11px] line-clamp-2 pb-0.5 h-[34px]">{item}</div>
+                    <div className="text-center text-[11px] line-clamp-2 py-0.5">
+                      {" "}
+                      {item.split(" ").map((word, index) => (
+                        <div key={index}>{word}</div>
+                      ))}
+                    </div>
                     <div className="flex gap-0.5">
                       <select
                         value={tiers[currentIndex]}
