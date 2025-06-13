@@ -20,7 +20,7 @@ export default function Ladder() {
         <SideNav />
         <section className="w-full px-2 py-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
-            <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded-lg bg-black/85 text-[12px]">
+            <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded bg-black/85 text-[12px]">
               <div>
                 <div className="font-[Cinzel] border-b border-[#00ffaa] mb-2">Ranking Player</div>
                 <div className="grid grid-cols-2 gap-1">
@@ -32,7 +32,7 @@ export default function Ladder() {
                 </div>
               </div>
             </div>
-            <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded-lg bg-black/85 text-[12px]">
+            <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded bg-black/85 text-[12px]">
               <div>
                 <div className="font-[Cinzel] border-b border-[#00ffaa] mb-2">Ranking Aspect</div>
                 <div className="grid grid-cols-2 gap-1">
@@ -47,7 +47,7 @@ export default function Ladder() {
             {fear55.map((item, index) => (
               <div
                 key={index}
-                className="w-full rounded-lg border-1 border-white/20 p-2 col-span-2 font-[PT] text-[12px] text-gray-300 relative overflow-hidden bg-black/85"
+                className="w-full rounded border-1 border-white/20 p-2 col-span-2 font-[PT] text-[12px] text-gray-300 relative overflow-hidden bg-black/85"
               >
                 <div className={`absolute w-full h-full top-0 left-0 -z-10 opacity-50`}>
                   <img
