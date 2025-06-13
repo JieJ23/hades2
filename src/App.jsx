@@ -13,7 +13,6 @@ export default function Ladder() {
   const rankingPlayer = [...new Set(fear55.map((item) => item.n))];
   const rankingAspect = [...new Set(fear55.map((item) => item.a))];
 
-  console.log(fear55.length);
   return (
     <main className="h-full min-h-lvh select-none relative">
       <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
@@ -21,7 +20,7 @@ export default function Ladder() {
       <div className="flex flex-col md:flex-row gap-1 max-w-[1400px] font-[PT] text-[14px] mx-auto">
         <SideNav />
         <section className="w-full px-2 py-4">
-          <div className="text-[14px] p-2 pt-0 font-[Cinzel]">* Max Fear 55</div>
+          <div className="text-[16px] p-2 pt-0 font-[Cinzel]">Max Fear Ladder - Patch 8</div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
             <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded bg-black/85 text-[12px]">
               <div>
@@ -172,6 +171,15 @@ export default function Ladder() {
                           className="size-7 border-1 border-white/20 rounded-md me-1"
                         />
                         <div>{item.a}</div>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-[55px]">Fam:</div>
+                        <img
+                          src={`/H2Boons/${item.fam}.png`}
+                          alt="Familiar"
+                          className="size-7 border-1 border-white/20 rounded-md me-1"
+                        />
+                        <div>{item.fam}</div>
                       </div>
                       <div className="flex items-center">
                         <div className="w-[55px]">Time:</div>
