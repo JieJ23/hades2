@@ -2620,7 +2620,7 @@ export const h2Data = [
     t: "16:22.81",
     p: "8",
     h: "Mirrored Thrasher,Vampiric Cataclysm",
-    duo: "Proper Upbringing",
+    duo: "",
     des: `Fluid Gain was soooooo bad with Mirrored Thrasher, had to take antler because I'd die in the Chronos fight if I didn't have a ton of dps.`,
     m: "Mixed Blessings,Flourish,Hard Target,Deep Dissent,Support Fire,Phalanx Shot",
     src: "https://www.youtube.com/watch?v=mXrHitsJKC4",
