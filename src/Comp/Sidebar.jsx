@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 
 export const sites = [
   { icon: `Hades2`, link: ``, nam: `Ladder` },
+  { icon: `Scroll`, link: `Summary`, nam: `Summary` },
   // { icon: ``, link: `Ladder`, nam: `H2 Ladder` },
   { icon: `Builder`, link: `Builder`, nam: `Builder` },
   // { icon: ``, link: `H2Stats`, nam: `H2Stats` },

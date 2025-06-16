@@ -182,6 +182,9 @@ export const h2Data = [
     t: "15:47.69",
     p: "8",
     h: "Hidden Knives,Reaper Knives,Sureshot Flurry",
+    des: `trick knives please come back to me`,
+    duo: ``,
+    m: `Stutter Step,Divine Dash,Killing Stroke,Soul,Mind,Unseen Ire`,
     src: "https://www.youtube.com/watch?v=Ib58BrkVI7c",
   },
   {
@@ -260,6 +263,9 @@ export const h2Data = [
     t: "16:48.83",
     p: "8",
     h: "Looming Ignition",
+    des: `Got lucky to go into Chronos with all three DD.`,
+    duo: `Cherished Heirloom`,
+    m: `Vital Signs,Stutter Step,Last Gasp,Stalwart Stand,Precious Metals,Quick Buck`,
     src: "https://www.youtube.com/watch?v=mUDSzukUHXE",
   },
   {
@@ -2636,6 +2642,9 @@ export const h2Data = [
     f: "53",
     t: "17:48.00",
     p: "8",
+    des: `they needa buff staff again`,
+    duo: `Freezer Burn`,
+    m: `Divine Dash,Strike,Evade Evade Evade,Deep Dissent`,
     src: "https://www.youtube.com/watch?v=kNin4FN30N0",
   },
   {
@@ -2649,6 +2658,9 @@ export const h2Data = [
     f: "53",
     t: "14:54.38",
     p: "8",
+    des: `suicide attack to make it within 15 min`,
+    duo: ``,
+    m: `Nitro Boost,Mental Block,Mystic Secrets,Stutter Step,Old Grudge`,
     src: "https://www.youtube.com/watch?v=s11ZiiVHB2s",
   },
   {
@@ -2662,6 +2674,9 @@ export const h2Data = [
     f: "53",
     t: "19:17.51",
     p: "8",
+    des: `The gameplay is so sloppy in Erebus, please ignore it.`,
+    duo: ``,
+    m: `Celerity,Racing Thoughts,Divine Dash,Cinerary Circle,Will`,
     src: "https://www.youtube.com/watch?v=_FVBaztf5Qw",
   },
   {
@@ -2675,6 +2690,9 @@ export const h2Data = [
     f: "53",
     t: "19:19.56",
     p: "8",
+    des: `Mel Blades 53F Underworld | IGT: 19:19:56`,
+    duo: ``,
+    m: `Divine Dash,Evade Evade Evade`,
     src: "https://www.youtube.com/watch?v=A28oQaA4rEs",
   },
   {
@@ -2688,6 +2706,9 @@ export const h2Data = [
     f: "53",
     t: "18:54.85",
     p: "8",
+    des: `Artemis Blades 53F Underworld | IGT: 18:54:85`,
+    duo: ``,
+    m: `Last Gasp,Stutter Step,Precious Metals,Defensive Posture,Mean Streak`,
     src: "https://www.youtube.com/watch?v=NcMTjPcM3eY",
   },
   {
@@ -2717,6 +2738,9 @@ export const h2Data = [
     f: "53",
     t: "18:54.75",
     p: "8",
+    des: `Mel Axe 53F Underworld | IGT: 18:54:75`,
+    duo: `Tropical Cyclone`,
+    m: `Nimble Limbs,Quick Buck,Stalwart Stand`,
     src: "https://www.youtube.com/watch?v=lz9hZqxxJX4",
   },
   {
@@ -2730,6 +2754,9 @@ export const h2Data = [
     f: "53",
     t: "17:56.86",
     p: "8",
+    des: `Thanatos 53F`,
+    duo: ``,
+    m: `Pressure Points,Soul,Unseen Ire`,
     src: "https://www.youtube.com/watch?v=R3q7KXCiFpc",
   },
   {
@@ -2743,6 +2770,9 @@ export const h2Data = [
     f: "53",
     t: "17:13.34",
     p: "8",
+    des: `Surprise high fear gaming! Also please don't laugh at my skill issue at times, not getting hit is hard.`,
+    duo: `Cherished Heirloom`,
+    m: `Lethal Snare,Nitro Boost`,
     src: "https://www.youtube.com/watch?v=hLkfNuh3W0g",
   },
   {
@@ -2788,6 +2818,9 @@ export const h2Data = [
     f: "53",
     t: "17:01.69",
     p: "8",
+    des: `This was kind of a Flash Fry carry, then eventually a Mutual Destruction carry, to be honest.`,
+    duo: ``,
+    m: `Stalwart Stand,Unseen Ire,Favor,Ancestral Offering`,
     src: "https://www.youtube.com/watch?v=bqh1HtVEz4U",
   },
   {
@@ -2929,6 +2962,9 @@ export const h2Data = [
     f: "53",
     t: "19:56.66",
     p: "8",
+    des: `55还得再磨练磨练`,
+    duo: ``,
+    m: `Stalwart Stand,Nitro Boost,Travel Deal,Ingenious Strike,Bounce Back,Strike`,
     src: "https://www.bilibili.com/video/BV1BCQoYhEf2/",
   },
   {
