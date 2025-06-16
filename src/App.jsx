@@ -3,6 +3,8 @@ import SideNav from "./Comp/Sidebar";
 import { h2Data } from "./Data/H2Data";
 import { sToA } from "./Page/Hades2";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { h2AspectOrder } from "./Data/Misc";
 
 export function getYTid(text) {
   return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
@@ -14,7 +16,25 @@ const highfear = h2Data
 const rankingPlayer = [...new Set(highfear.map((item) => item.n))];
 const rankingAspect = [...new Set(highfear.map((item) => item.a))];
 
+const availableRegion = [`Underworld`, `Surface`];
+
 export default function Ladder() {
+  const [region, setRegion] = useState(`All`);
+  const [category, setCategory] = useState(`All`);
+
+  const highfear_region = region === `All` ? highfear : highfear.filter((obj) => obj.l === region);
+
+  const availableAspects =
+    region === `All`
+      ? [...new Set(highfear.map((obj) => obj.a))].sort((a, b) =>
+          h2AspectOrder.indexOf(a) > h2AspectOrder.indexOf(b) ? 1 : -1
+        )
+      : [...new Set(highfear_region.map((obj) => obj.a))].sort((a, b) =>
+          h2AspectOrder.indexOf(a) > h2AspectOrder.indexOf(b) ? 1 : -1
+        );
+
+  const displayEntries = category === `All` ? highfear_region : highfear_region.filter((obj) => obj.a === category);
+
   return (
     <main className="h-full min-h-lvh select-none relative">
       <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
@@ -23,11 +43,54 @@ export default function Ladder() {
         <SideNav />
         <section className="w-full px-2 py-4">
           <div className="text-[16px] p-2 py-0 font-[Cinzel]">Highest Fear Ladder - Patch 8</div>
-          <div className="p-2 py-1 font-[Cinzel] text-[12px]">
+          <div className="p-2 py-0 font-[Cinzel] text-[12px]">
             Full details in{" "}
             <Link to={"/Summary"} className="text-[#f3ef0e] underline">
               Summary
             </Link>
+          </div>
+          <div className={`flex flex-wrap p-2 font-[PT] text-[12px] bg-[#00000050] gap-1 w-full rounded-sm`}>
+            <button
+              onClick={() => {
+                setRegion(`All`);
+                setCategory(`All`);
+              }}
+              className={`btn btn-sm ${region === `All` && `text-black bg-[#f05bdc]`}`}
+            >
+              All
+            </button>
+            {availableRegion.map((ite, index) => (
+              <button
+                onClick={() => {
+                  setRegion(ite);
+                  setCategory(`All`);
+                }}
+                className={`btn btn-sm ${region === ite && `text-black bg-[#f05bdc]`}`}
+                key={index}
+              >
+                <div>{ite}</div>
+              </button>
+            ))}
+            <button
+              onClick={() => setCategory(`All`)}
+              className={`btn btn-sm ${category === `All` && `text-black bg-[#00ffaa]`}`}
+            >
+              All
+            </button>
+            {availableAspects.map((ite, index) => (
+              <button
+                onClick={() => setCategory(ite)}
+                className={`btn btn-sm ${category === ite && `text-black bg-[#00ffaa]`}`}
+                key={index}
+              >
+                <div>{ite}</div>
+              </button>
+            ))}
+          </div>
+          <div className="text-[12px] p-1 flex gap-2">
+            <div>Query:</div>
+            <div className="text-[#f05bdc]">Region [ {region} ]</div>
+            <div className="text-[#00ffaa]">Aspect [ {category} ]</div>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
             <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded bg-black/85 text-[12px]">
@@ -54,7 +117,7 @@ export default function Ladder() {
                 </div>
               </div>
             </div>
-            {highfear.map((item, index) => (
+            {displayEntries.map((item, index) => (
               <div
                 key={index}
                 className="w-full rounded border-1 border-white/20 col-span-2 font-[PT] text-[12px] text-gray-300 relative overflow-hidden bg-black/80"

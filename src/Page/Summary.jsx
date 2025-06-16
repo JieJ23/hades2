@@ -43,7 +43,7 @@ export default function Summary() {
             <div className="py-4">
               <div className="font-[Cinzel] bg-black border-1 border-[#00ffaa] rounded py-1 px-4">Overall (UW + S)</div>
               <div className="pl-4 pt-2 text-[#e09c1e]">
-                {overallRanking.n} {overallRanking.f}F - {overallRanking.t}
+                {overallRanking.f} {overallRanking.n} - {overallRanking.t}
               </div>
             </div>
 
@@ -52,7 +52,7 @@ export default function Summary() {
                 Overall (Underworld)
               </div>
               <div className="pl-4 pt-2 text-[#e09c1e]">
-                {overallRanking_Underworld.n} {overallRanking_Underworld.f}F - {overallRanking_Underworld.t}
+                {overallRanking_Underworld.f} {overallRanking_Underworld.n} - {overallRanking_Underworld.t}
               </div>
             </div>
 
@@ -61,12 +61,12 @@ export default function Summary() {
                 Overall (Surface)
               </div>
               <div className="pl-4 pt-2 text-[#e09c1e]">
-                {overallRanking_Surface.n} {overallRanking_Surface.f}F - {overallRanking_Surface.t}
+                {overallRanking_Surface.f} {overallRanking_Surface.n} - {overallRanking_Surface.t}
               </div>
             </div>
           </section>
 
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-[14px]">
             <div className="py-4">
               <div className="font-[Cinzel] bg-black border-1 border-[#00ffaa] rounded py-1 px-4">
                 Overall Aspects (UW + S)
@@ -74,16 +74,16 @@ export default function Summary() {
               <div className="pl-4 pt-2">
                 {overall_aspect.map((obj, idx) => (
                   <div key={idx} className="py-1">
-                    <div className="text-[#75edaf] flex items-center gap-1">
+                    <div className="font-[Cinzel] text-[12px] flex items-center gap-1">
                       <img
                         src={`/H2Boons/${obj.aspect}.png`}
                         alt="Aspect"
-                        className="size-6 border-1 border-white/20 rounded"
+                        className="size-7 border-1 border-white/20 rounded"
                       />
                       {obj.aspect}
                     </div>
                     <div className={`pl-4 ${obj.status === `n/a` ? `` : `text-[#e09c1e]`}`}>
-                      {obj.status === `n/a` ? `-` : `${obj.status} ${obj.fear}F - ${obj.time}`}
+                      {obj.status === `n/a` ? `-` : `${obj.fear} ${obj.status} - ${obj.time}`}
                     </div>
                   </div>
                 ))}
@@ -97,16 +97,16 @@ export default function Summary() {
               <div className="pl-4 pt-2">
                 {overall_aspect_underworld.map((obj, idx) => (
                   <div key={idx} className="py-1">
-                    <div className="text-[#75edaf] flex items-center gap-1">
+                    <div className="font-[Cinzel] text-[12px] flex items-center gap-1">
                       <img
                         src={`/H2Boons/${obj.aspect}.png`}
                         alt="Aspect"
-                        className="size-6 border-1 border-white/20 rounded"
+                        className="size-7 border-1 border-white/20 rounded"
                       />
                       {obj.aspect}
                     </div>
                     <div className={`pl-4 ${obj.status === `n/a` ? `` : `text-[#e09c1e]`}`}>
-                      {obj.status === `n/a` ? `-` : `${obj.status} ${obj.fear}F - ${obj.time}`}{" "}
+                      {obj.status === `n/a` ? `-` : `${obj.fear} ${obj.status} - ${obj.time}`}{" "}
                     </div>
                   </div>
                 ))}
@@ -120,16 +120,16 @@ export default function Summary() {
               <div className="pl-4 pt-2">
                 {overall_aspect_surface.map((obj, idx) => (
                   <div key={idx} className="py-1">
-                    <div className="text-[#75edaf] flex items-center gap-1">
+                    <div className="font-[Cinzel] text-[12px] flex items-center gap-1">
                       <img
                         src={`/H2Boons/${obj.aspect}.png`}
                         alt="Aspect"
-                        className="size-6 border-1 border-white/20 rounded"
+                        className="size-7 border-1 border-white/20 rounded"
                       />
                       {obj.aspect}
                     </div>
                     <div className={`pl-4 ${obj.status === `n/a` ? `` : `text-[#e09c1e]`}`}>
-                      {obj.status === `n/a` ? `-` : `${obj.status} ${obj.fear}F - ${obj.time}`}
+                      {obj.status === `n/a` ? `-` : `${obj.fear} ${obj.status} - ${obj.time}`}
                     </div>
                   </div>
                 ))}
