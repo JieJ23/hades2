@@ -32,7 +32,7 @@ export default function Ladder() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
             <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded bg-black/85 text-[12px]">
               <div>
-                <div className="font-[Cinzel] border-b border-[#00ffaa] mb-2">Top 10 Player</div>
+                <div className="font-[Cinzel] border-b border-[#00ffaa] mb-2">Top 10 Players</div>
                 <div className="grid grid-cols-2 gap-1">
                   {rankingPlayer.slice(0, 10).map((item, index) => (
                     <div key={index}>
