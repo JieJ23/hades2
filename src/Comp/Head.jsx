@@ -6,7 +6,7 @@ export default function Head() {
   return (
     <div className="navbar shadow-sm select-none w-full max-w-[1400px] mx-auto">
       <div className="navbar-start">
-        <div className="block md:hidden">
+        <div className="block lg:hidden">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
               <svg

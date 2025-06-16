@@ -39,23 +39,23 @@ export default function Ladder() {
     <main className="h-full min-h-lvh select-none relative">
       <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
       <Head />
-      <div className="flex flex-col md:flex-row gap-1 max-w-[1400px] font-[PT] text-[14px] mx-auto">
+      <div className="flex flex-col lg:flex-row gap-1 max-w-[1400px] font-[PT] text-[14px] mx-auto">
         <SideNav />
-        <section className="w-full px-2 py-4">
+        <section className="w-full p-2">
           <div className="text-[16px] p-2 py-0 font-[Cinzel]">Highest Fear Ladder - Patch 8</div>
-          <div className="p-2 py-0 font-[Cinzel] text-[12px]">
+          <div className="px-2 pb-1 font-[Cinzel] text-[13px]">
             Full details in{" "}
             <Link to={"/Summary"} className="text-[#f3ef0e] underline">
               Summary
             </Link>
           </div>
-          <div className={`flex flex-wrap p-2 font-[PT] text-[12px] bg-[#00000050] gap-1 w-full rounded-sm`}>
+          <div className={`flex font-[PT] text-[12px] gap-1 rounded-sm overflow-x-scroll`}>
             <button
               onClick={() => {
                 setRegion(`All`);
                 setCategory(`All`);
               }}
-              className={`btn btn-sm ${region === `All` && `text-black bg-[#f05bdc]`}`}
+              className={`btn btn-sm border-1 border-white/20 ${region === `All` && `text-black bg-[#f05bdc]`}`}
             >
               All
             </button>
@@ -65,7 +65,7 @@ export default function Ladder() {
                   setRegion(ite);
                   setCategory(`All`);
                 }}
-                className={`btn btn-sm ${region === ite && `text-black bg-[#f05bdc]`}`}
+                className={`btn btn-sm border-1 border-white/20 ${region === ite && `text-black bg-[#f05bdc]`}`}
                 key={index}
               >
                 <div>{ite}</div>
@@ -80,14 +80,14 @@ export default function Ladder() {
             {availableAspects.map((ite, index) => (
               <button
                 onClick={() => setCategory(ite)}
-                className={`btn btn-sm ${category === ite && `text-black bg-[#00ffaa]`}`}
+                className={`btn btn-sm border-1 border-white/20 ${category === ite && `text-black bg-[#00ffaa]`}`}
                 key={index}
               >
                 <div>{ite}</div>
               </button>
             ))}
           </div>
-          <div className="text-[12px] p-1 flex gap-2">
+          <div className="text-[12px] p-1 pt-0 flex gap-2">
             <div>Query:</div>
             <div className="text-[#f05bdc]">Region [ {region} ]</div>
             <div className="text-[#00ffaa]">Aspect [ {category} ]</div>

@@ -78,7 +78,7 @@ export default function Builder() {
     <main className="relative select-none">
       <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
       <Head />
-      <div className="flex flex-col md:flex-row gap-2 max-w-[1400px] mx-auto">
+      <div className="flex flex-col lg:flex-row gap-1 max-w-[1400px] font-[PT] text-[14px] mx-auto">
         <SideNav />
         <section className="p-2 py-10 font-[PT] text-[14px]">
           <section className="p-2">

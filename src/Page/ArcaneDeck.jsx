@@ -63,7 +63,7 @@ export default function ArcaneDeck() {
     <main className="select-none relative">
       <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
       <Head />
-      <div className="flex flex-col md:flex-row gap-2 max-w-[1400px] mx-auto">
+      <div className="flex flex-col lg:flex-row gap-1 max-w-[1400px] font-[PT] text-[14px] mx-auto">
         <SideNav />
         <div className="w-full">
           <section className="p-2">

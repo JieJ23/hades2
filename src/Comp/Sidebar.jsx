@@ -18,8 +18,8 @@ export const sites = [
 export default function SideNav() {
   const currentLocation = useLocation();
   return (
-    <div className="h-full w-[60px] hidden md:block p-2 font-[Cinzel] text-[12px] m-1 rounded shrink-0">
-      <div className="flex flex-col items-center gap-3 my-4">
+    <div className="h-full w-[60px] hidden lg:block p-2 font-[Cinzel] text-[12px] m-1 rounded shrink-0">
+      <div className="flex flex-col items-center gap-3">
         {sites.map((obj, idx) => (
           <Link
             to={`/${obj.link}`}

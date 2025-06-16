@@ -16,7 +16,7 @@ export default function Ladder() {
     <main className="h-full min-h-lvh select-none relative">
       <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
       <Head />
-      <div className="flex flex-col md:flex-row gap-1 max-w-[1400px] font-[PT] text-[14px] mx-auto">
+      <div className="flex flex-col lg:flex-row gap-1 max-w-[1400px] font-[PT] text-[14px] mx-auto">
         <SideNav />
         <section className="w-full px-2 py-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">

@@ -38,7 +38,7 @@ export default function Submit() {
           {/* Page content here */}
           <label
             htmlFor="my-drawer"
-            className="btn bg-[#2efaac] text-black border-1 border-white/20 rounded text-[14px] px-3"
+            className="btn border-[#2efaac] bg-transparent font-[PT] border-1 rounded text-[14px] px-3"
           >
             Submit
           </label>
