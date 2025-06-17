@@ -49,43 +49,30 @@ export default function Ladder() {
               Summary
             </Link>
           </div>
-          <div className={`flex font-[PT] text-[12px] gap-1 rounded-sm overflow-x-scroll`}>
-            <button
-              onClick={() => {
-                setRegion(`All`);
+          <div className="text-[12px] px-2 py-1 flex gap-2">
+            <select
+              value={region}
+              className="select w-[150px]"
+              onChange={(e) => {
+                setRegion(e.target.value);
                 setCategory(`All`);
               }}
-              className={`btn btn-sm border-1 border-white/20 ${region === `All` && `text-black bg-[#f05bdc]`}`}
             >
-              All
-            </button>
-            {availableRegion.map((ite, index) => (
-              <button
-                onClick={() => {
-                  setRegion(ite);
-                  setCategory(`All`);
-                }}
-                className={`btn btn-sm border-1 border-white/20 ${region === ite && `text-black bg-[#f05bdc]`}`}
-                key={index}
-              >
-                <div>{ite}</div>
-              </button>
-            ))}
-            <button
-              onClick={() => setCategory(`All`)}
-              className={`btn btn-sm ${category === `All` && `text-black bg-[#00ffaa]`}`}
-            >
-              All
-            </button>
-            {availableAspects.map((ite, index) => (
-              <button
-                onClick={() => setCategory(ite)}
-                className={`btn btn-sm border-1 border-white/20 ${category === ite && `text-black bg-[#00ffaa]`}`}
-                key={index}
-              >
-                <div>{ite}</div>
-              </button>
-            ))}
+              <option value={`All`}>All</option>
+              {availableRegion.map((ite, index) => (
+                <option value={ite} key={index}>
+                  {ite}
+                </option>
+              ))}
+            </select>
+            <select value={category} className="select w-[150px]" onChange={(e) => setCategory(e.target.value)}>
+              <option value={`All`}>All</option>
+              {availableAspects.map((ite, index) => (
+                <option value={ite} key={index}>
+                  {ite}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="text-[12px] p-1 pt-0 flex gap-2">
             <div>Query:</div>
