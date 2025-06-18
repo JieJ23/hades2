@@ -46,7 +46,7 @@ export default function Patch8() {
           <div className="text-[12px] px-2 py-1 flex gap-2">
             <select
               value={region}
-              className="select w-[150px] border-[#f05bdc]"
+              className="select select-sm w-[150px] border-[#f05bdc]"
               onChange={(e) => {
                 setRegion(e.target.value);
                 setCategory(`All`);
@@ -61,7 +61,7 @@ export default function Patch8() {
             </select>
             <select
               value={category}
-              className="select w-[150px] border-[#00ffaa]"
+              className="select select-sm w-[150px] border-[#00ffaa]"
               onChange={(e) => setCategory(e.target.value)}
             >
               <option value={`All`}>All</option>

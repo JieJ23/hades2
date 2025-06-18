@@ -34,7 +34,7 @@ const findValue = (arr) => {
 export function getYTid(text) {
   return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
 }
-const highfear = p9data.sort((a, b) => (a.tim > b.tim ? 1 : -1)).sort((a, b) => (a.fea > b.fea ? -1 : 1));
+const highfear = p9data.sort((a, b) => (a.tim > b.tim ? 1 : -1)).sort((a, b) => (+a.fea > +b.fea ? -1 : 1));
 // const rankingPlayer = [...new Set(highfear.map((item) => item.n))];
 // const rankingAspect = [...new Set(highfear.map((item) => item.a))];
 
@@ -58,22 +58,17 @@ export default function App() {
   const displayEntries = category === `All` ? highfear_region : highfear_region.filter((obj) => obj.asp === category);
 
   return (
-    <main className="h-full min-h-lvh select-none relative">
+    <main className="h-full min-h-lvh relative">
       <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
       <Head />
       <div className="max-w-[1200px] font-[PT] text-[14px] mx-auto">
         <SideNav />
-        <div className="text-center font-[Cinzel] text-[16px] py-10">
-          {" "}
-          <span className="loading loading-ball loading-xl"></span>
-          Patch 9 Update Soon <span className="loading loading-ball loading-xl"></span>
-        </div>
-        {/* <section className="w-full p-2">
-          <div className="text-[16px] p-2 py-0 font-[Cinzel] text-center">Highest Fear Ladder - Patch 9</div>
+        <section className="w-full px-2">
+          <div className="text-[16px] p-2 py-0 font-[Cinzel]">HFL Beta - Patch 9</div>
           <div className="text-[12px] px-2 py-1 flex gap-2">
             <select
               value={region}
-              className="select w-[150px] border-1 border-[#f05bdc]"
+              className="select select-sm w-[150px] border-1 border-[#f05bdc]"
               onChange={(e) => {
                 setRegion(e.target.value);
                 setCategory(`All`);
@@ -88,7 +83,7 @@ export default function App() {
             </select>
             <select
               value={category}
-              className="select w-[150px] border-1 border-[#00ffaa]"
+              className="select select-sm w-[150px] border-1 border-[#00ffaa]"
               onChange={(e) => setCategory(e.target.value)}
             >
               <option value={`All`}>All</option>
@@ -99,7 +94,7 @@ export default function App() {
               ))}
             </select>
           </div>
-          <div className="text-[12px] p-1 pt-2 flex gap-2">
+          <div className="text-[12px] p-1 flex gap-2">
             <div>Query:</div>
             <div className="text-[#f05bdc]">Region [ {region} ]</div>
             <div className="text-[#00ffaa]">Aspect [ {category} ]</div>
@@ -108,7 +103,7 @@ export default function App() {
         <section className="px-2 text-[12px]">
           {displayEntries.map((obj, index) => (
             <div
-              className="flex items-center w-full rounded-lg bg-black/90 px-2 py-1 border-1 border-white/20 gap-2 mb-2 relative"
+              className="flex items-center w-full rounded-lg bg-[#0b060fdd] px-2 py-1 border-1 border-white/20 gap-2 mb-2 relative"
               key={index}
             >
               <div className={`absolute w-full h-full top-0 left-0 opacity-30 sm:opacity-50`}>
@@ -120,18 +115,23 @@ export default function App() {
                 />
               </div>
               <div className="hidden md:block">
-                <img src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`} alt="Aspect" className="w-[80px] rounded" />
+                <img
+                  src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
+                  alt="Aspect"
+                  className="w-[80px] rounded"
+                  draggable={false}
+                />
               </div>
               <div className="w-full grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-2">
-                <div className="col-span-3 md:col-span-6 lg:col-span-8 flex items-center justify-between border-b-1 border-white/20">
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 flex items-center justify-between border-b-1 border-white/20 ">
                   <div className="text-[18px] font-[Cinzel]">{obj.nam}</div>
                   <div className="flex gap-2 text-[14px] font-[Cinzel]">
                     <div className="flex items-center gap-1">
-                      <img src={`/${obj.loc}.png`} alt="Region" className="size-5" />
+                      <img src={`/${obj.loc}.png`} alt="Region" className="size-5" draggable={false} />
                       {obj.fea}
                     </div>
                     <div className="flex items-center gap-1">
-                      <img src={`/Misc/Time.png`} alt="Region" className="size-5" />
+                      <img src={`/Misc/Time.png`} alt="Time" className="size-5" draggable={false} />
                       {obj.tim}
                     </div>
                   </div>
@@ -145,6 +145,7 @@ export default function App() {
                       src={`/P9/${obj.asp}.png`}
                       alt="Aspect"
                       className="size-8 border-1 border-white/20 rounded-lg"
+                      draggable={false}
                     />
                   </div>
                   <div className="flex flex-col">
@@ -155,23 +156,33 @@ export default function App() {
                       src={`/P9/${obj.fam}.png`}
                       alt="Familiar"
                       className="size-8 border-1 border-white/20 rounded-lg"
+                      draggable={false}
                     />
                   </div>
                   <div className="flex flex-col">
                     <div>
-                      <div className="font-[Cinzel]">{obj.loc}</div>
+                      <div className="font-[Cinzel]">Region</div>
                     </div>
-                    <img src={`/${obj.loc}.png`} alt="Region" className="size-8 border-1 border-white/20 rounded-lg" />
+                    <div className="tooltip shrink-0">
+                      <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                        <div className="text-[12px] font-[PT]">{obj.loc}</div>
+                      </div>
+                      <img src={`/${obj.loc}.png`} alt="Region" className="size-8" draggable={false} />
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div>
+                      <div className="font-[Cinzel]">{obj.sel === "f" ? `No` : `Yes`}</div>
+                    </div>
+                    <img src={`/Misc/Selene.png`} alt="Selene" className="size-8" draggable={false} />
                   </div>
                   <div className="flex flex-col">
                     <div>
                       <div className="font-[Cinzel]">Gameplay</div>
                     </div>
-                    <div className="line-clamp-2">
-                      <Link to={obj.src} target="_blank" className="text-[#73b0f1]">
-                        {obj.src}
-                      </Link>
-                    </div>
+                    <Link to={obj.src} target="_blank" className="text-[#73b0f1] line-clamp-2 z-40">
+                      {obj.src}
+                    </Link>
                   </div>
                 </div>
                 <div className="col-span-3 md:col-span-6 lg:col-span-8 gap-y-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
@@ -211,44 +222,46 @@ export default function App() {
                       ))}
                     </div>
                   </div>
-                  <div className="flex flex-col">
-                    <div className="font-[Cinzel]">Duo & Infusion</div>
-                    <div className="flex gap-1">
-                      {obj.duo &&
-                        findValue(sToA(obj.duo)).map((ite, index) => (
-                          <div className="tooltip shrink-0" key={index}>
-                            <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                              <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
+                  {(obj.duo || obj.ele) && (
+                    <div className="flex flex-col">
+                      <div className="font-[Cinzel]">Duo & Infusion</div>
+                      <div className="flex gap-1">
+                        {obj.duo &&
+                          findValue(sToA(obj.duo)).map((ite, index) => (
+                            <div className="tooltip shrink-0" key={index}>
+                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                                <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
+                              </div>
+                              <img
+                                draggable={false}
+                                src={`/P9/${ite}.png`}
+                                alt="Core Boon"
+                                className="size-7 border-1 border-white/20 rounded-md"
+                              />
                             </div>
-                            <img
-                              draggable={false}
-                              src={`/P9/${ite}.png`}
-                              alt="Core Boon"
-                              className="size-7 border-1 border-white/20 rounded-md"
-                            />
-                          </div>
-                        ))}
-                      {obj.ele &&
-                        findValue(sToA(obj.ele)).map((ite, index) => (
-                          <div className="tooltip shrink-0" key={index}>
-                            <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                              <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
+                          ))}
+                        {obj.ele &&
+                          findValue(sToA(obj.ele)).map((ite, index) => (
+                            <div className="tooltip shrink-0" key={index}>
+                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                                <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
+                              </div>
+                              <img
+                                draggable={false}
+                                src={`/P9/${ite}.png`}
+                                alt="Core Boon"
+                                className="size-7 border-1 border-white/20 rounded-md"
+                              />
                             </div>
-                            <img
-                              draggable={false}
-                              src={`/P9/${ite}.png`}
-                              alt="Core Boon"
-                              className="size-7 border-1 border-white/20 rounded-md"
-                            />
-                          </div>
-                        ))}
+                          ))}
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex flex-col">
-                    <div className="font-[Cinzel]">Misc</div>
-                    <div className="flex gap-1">
-                      {obj.duo &&
-                        findValue(sToA(obj.duo)).map((ite, index) => (
+                  )}
+                  {obj.mis && (
+                    <div className="flex flex-col">
+                      <div className="font-[Cinzel]">Misc</div>
+                      <div className="flex gap-1">
+                        {findValue(sToA(obj.mis)).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
                             <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                               <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
@@ -261,13 +274,14 @@ export default function App() {
                             />
                           </div>
                         ))}
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex flex-col">
-                    <div className="font-[Cinzel]">Chaos</div>
-                    <div className="flex gap-1">
-                      {obj.duo &&
-                        findValue(sToA(obj.duo)).map((ite, index) => (
+                  )}
+                  {obj.cha && (
+                    <div className="flex flex-col">
+                      <div className="font-[Cinzel]">Chaos</div>
+                      <div className="flex gap-1">
+                        {findValue(sToA(obj.cha)).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
                             <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                               <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
@@ -280,8 +294,9 @@ export default function App() {
                             />
                           </div>
                         ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
                 <div className="col-span-3 md:col-span-6 lg:col-span-8 text-[orange]">
                   <div>{obj.des}</div>
@@ -289,7 +304,7 @@ export default function App() {
               </div>
             </div>
           ))}
-        </section> */}
+        </section>
       </div>
     </main>
   );

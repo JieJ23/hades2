@@ -75,7 +75,7 @@ export default function Hammer() {
   console.log(fullhammers);
 
   return (
-    <main className="relative select-none">
+    <main className="relative">
       <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
       <Head />
       <div className="max-w-[1400px] font-[PT] text-[14px] mx-auto">
@@ -110,12 +110,12 @@ export default function Hammer() {
             </div>
           </section>
           {fullhammers.map((obj, ind) => (
-            <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-10 xl:grid-cols-12 gap-1 mb-2" key={ind}>
+            <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-10 xl:grid-cols-12 gap-1 mb-1" key={ind}>
               {Object.entries(obj).map((item, index) => {
                 const currentIndex = globalIndex++;
                 return (
                   <div
-                    className={`w-full border-1 border-white/20 bg-black/80 overflow-hidden rounded flex flex-col items-center p-1 md:p-2 ${getTierBackground(
+                    className={`w-full border-1 border-white/20 bg-black/90 overflow-hidden rounded-lg flex flex-col items-center p-1 md:p-2 ${getTierBackground(
                       tiers[currentIndex]
                     )}`}
                     key={index}
