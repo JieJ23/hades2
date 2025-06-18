@@ -141,8 +141,8 @@ export const defineArray = (vow) => {
       };
     case `Rivals`:
       return {
-        d: `EM`,
-        rank: [`1`, `2`, `3`, `4`],
+        d: `The boss shall be stronger in various ways.`,
+        rank: [`Hecate/Polyphemus`, `Scylla/Eris`, `Cerberus/Prometheus`, `Chronos/Typhon`],
       };
   }
 };

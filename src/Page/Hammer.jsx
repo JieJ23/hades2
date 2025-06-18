@@ -80,7 +80,7 @@ export default function Hammer() {
       <Head />
       <div className="max-w-[1400px] font-[PT] text-[14px] mx-auto">
         <SideNav />
-        <section className="w-full p-2 py-10 font-[PT] text-[14px] rounded">
+        <section className="w-full px-2 font-[PT] text-[14px] rounded">
           <section className="p-2">
             <div className="flex flex-wrap gap-1">
               <button
@@ -110,19 +110,24 @@ export default function Hammer() {
             </div>
           </section>
           {fullhammers.map((obj, ind) => (
-            <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-10 xl:grid-cols-10 gap-2 mb-2" key={ind}>
+            <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-10 xl:grid-cols-12 gap-1 mb-2" key={ind}>
               {Object.entries(obj).map((item, index) => {
                 const currentIndex = globalIndex++;
                 return (
                   <div
-                    className={`w-full border-1 border-white/20 bg-black/70 overflow-hidden rounded flex flex-col items-center p-1 md:p-2 ${getTierBackground(
+                    className={`w-full border-1 border-white/20 bg-black/80 overflow-hidden rounded flex flex-col items-center p-1 md:p-2 ${getTierBackground(
                       tiers[currentIndex]
                     )}`}
                     key={index}
                   >
                     <div className="avatar">
-                      <div className="w-10 md:w-12 rounded">
-                        <img src={`/P9/${item[0]}.png`} alt="Hammer" draggable={false} />
+                      <div className="size-8 md:size-9 rounded">
+                        <img
+                          src={`/P9/${item[0]}.png`}
+                          alt="Hammer"
+                          className="border-1 border-white/50 rounded"
+                          draggable={false}
+                        />
                       </div>
                     </div>
                     <div className="text-center text-[11px] line-clamp-2 py-0.5">
@@ -134,7 +139,7 @@ export default function Hammer() {
                       <select
                         value={tiers[currentIndex]}
                         onChange={(e) => handleTierChange(currentIndex, e.target.value)}
-                        className={`select bg-transparent text-[10px] pl-2 py-2`}
+                        className={`select bg-transparent text-[10px] pl-2 rounded`}
                       >
                         <option value="">Tier</option>
                         <option value="S">S</option>
