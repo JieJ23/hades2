@@ -264,3 +264,5 @@ export const p9boons = {
   Chaos_42: "Expiring",
   Chaos_43: "Barren",
 };
+
+export const p9boons_reverse = Object.fromEntries(Object.entries(p9boons).map(([key, value]) => [value, key]));

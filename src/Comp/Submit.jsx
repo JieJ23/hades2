@@ -45,11 +45,11 @@ export default function Submit() {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-          <div className="menu bg-black/80 text-base-content min-h-full w-80 p-4">
+          <div className="menu bg-black/90 text-base-content min-h-full w-80 p-4">
             {/* Sidebar content here */}
             <>
               <form onSubmit={Submit} className="w-full mx-auto my-4 flex flex-col items-center gap-2 p-2 font-[PT]">
-                <div className="text-white text-[22px]">Share Your Gameplay</div>
+                <div className="text-white text-[20px]">Share Gameplay</div>
                 <input type="date" placeholder="Date" className="input input-md" name="date" required />
                 <input type="text" placeholder="Name" className="input input-md" name="nam" required />
                 <select defaultValue="Melinoe Staff" className="select select-neutral" name="aspect">
@@ -66,13 +66,17 @@ export default function Submit() {
                   placeholder="Fear"
                   className="input input-md"
                   name="fear"
-                  max={55}
-                  min={1}
+                  max={67}
+                  min={51}
                   required
                 />
                 <input type="text" placeholder="Gameplay Link" className="input input-md" name="src" required />
                 <input type="text" placeholder="Short Description" className="input input-md" name="des" required />
-                <button className="btn btn-success border-1 border-white/20" type="submit" name="Submit">
+                <button
+                  className="btn border-[#2efaac] bg-transparent font-[PT] border-1 rounded text-[14px] px-3"
+                  type="submit"
+                  name="Submit"
+                >
                   {loading ? <span className="loading loading-spinner loading-sm"></span> : "Submit"}
                 </button>
               </form>

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 export const sites = [
   { icon: `Hades2`, link: ``, nam: `Ladder` },
-  { icon: `patch8`, link: `Patch8`, nam: `Patch 8` },
+  { icon: `Scroll`, link: `Patch8`, nam: `Patch 8` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
   { icon: `ArcaneDeck`, link: `ArcaneDeck`, nam: `Arcane` },
   { icon: `Hammer`, link: `Hammer`, nam: `Hammer` },

@@ -38,9 +38,9 @@ const everything = [
 export default function Boons() {
   return (
     <main className="relative">
-      <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
+      <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
       <Head />
-      <div className="flex flex-col lg:flex-row gap-1 max-w-[1400px] font-[PT] text-[12px] mx-auto">
+      <div className="max-w-[1400px] font-[PT] text-[12px] mx-auto">
         <SideNav />
         <section className="p-2">
           {everything.map((obj, idx) => (
@@ -55,7 +55,7 @@ export default function Boons() {
                   <img
                     src={`/P9/${item[0]}.png`}
                     alt="Boons"
-                    className="size-8 border-1 border-white/20 rounded-xl"
+                    className="size-10 border-1 border-white/20 rounded-xl"
                     loading="lazy"
                   />
                   <div>{item[1]}</div>
