@@ -103,15 +103,15 @@ export default function FearCalculator() {
             <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start">
               {allVows.map((ite, index) => (
                 <div
-                  className={`w-full min-h-[100px] border-1 border-white/20 flex flex-col justify-center items-center gap-0.5 relative rounded transition-all duration-300 ease-in ${
+                  className={`w-full min-h-[100px] border-1 border-white/20 flex flex-col justify-center items-center gap-0.5 relative rounded transition-all duration-300 ease-in pt-1 ${
                     vows[index] !== 0 ? `bg-gradient-to-tr from-[#190c23] to-[#3f0a84ad]` : `bg-black/80`
                   } ${index === 16 && `col-start-2 col-span-2`}`}
                   key={index}
                 >
                   <div className="absolute top-0 left-1">
                     <div className="flex flex-col text-[10px]">
-                      {vowArray(ite).map((item, index) => (
-                        <div className="font-[PT]" key={index}>
+                      {vowArray(ite).map((item, ind) => (
+                        <div className="font-[PT]" key={ind}>
                           {item}
                         </div>
                       ))}
@@ -129,6 +129,16 @@ export default function FearCalculator() {
                   >
                     {vows[index]}
                   </button>
+                  <div className="flex justify-center w-full gap-2 px-4 py-2">
+                    {Array.from({ length: vowArray(ite).length - 1 }).map((_, idx) => (
+                      <div
+                        key={idx}
+                        className={`h-1 w-full max-w-[25px] ${
+                          vowArray(ite).indexOf(vows[index]) >= idx + 1 ? `bg-[#00ffaa]` : `bg-gray-600`
+                        }`}
+                      ></div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
