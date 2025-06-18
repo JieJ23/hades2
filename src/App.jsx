@@ -136,7 +136,7 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                <div className="col-span-3 md:col-span-6 lg:col-span-8 flex gap-4">
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 flex gap-4 overflow-hidden">
                   <div className="flex flex-col">
                     <div>
                       <div className="font-[Cinzel]">{obj.asp}</div>
