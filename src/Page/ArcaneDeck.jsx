@@ -61,21 +61,27 @@ export default function ArcaneDeck() {
 
   return (
     <main className="select-none relative">
-      <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
+      <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
       <Head />
-      <div className="flex flex-col lg:flex-row gap-1 max-w-[1400px] font-[PT] text-[14px] mx-auto">
+      <div className="max-w-[1400px] font-[PT] text-[14px] mx-auto">
         <SideNav />
         <div className="w-full">
           <section className="p-2">
             <div className="flex flex-wrap gap-1">
-              <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]" onClick={generateShareableURL}>
+              <button
+                className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
+                onClick={generateShareableURL}
+              >
                 Generate URL
               </button>
-              <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]" onClick={copyURLToClipboard}>
+              <button
+                className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
+                onClick={copyURLToClipboard}
+              >
                 {isCopied ? "Copied!" : "Copy URL"}
               </button>
               <button
-                className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]"
+                className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
                 onClick={() => {
                   const defaultValue = [];
                   setDeck(defaultValue);

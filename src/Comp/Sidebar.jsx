@@ -3,19 +3,17 @@ import { useLocation } from "react-router-dom";
 
 export const sites = [
   { icon: `Hades2`, link: ``, nam: `Ladder` },
-  { icon: `Scroll`, link: `Summary`, nam: `Summary` },
-  { icon: `FearCalculator`, link: `FearCalculator`, nam: `Fear Calculator` },
-  { icon: `ArcaneDeck`, link: `ArcaneDeck`, nam: `Arcane Deck` },
+  { icon: `patch8`, link: `Patch8`, nam: `Patch 8` },
+  { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
+  { icon: `ArcaneDeck`, link: `ArcaneDeck`, nam: `Arcane` },
   { icon: `Hammer`, link: `Hammer`, nam: `Hammer` },
-  { icon: `Builder`, link: `Boons`, nam: `Boons` },
-  { icon: `HeatCalculator`, link: `HeatCalculator`, nam: `Heat Calculator` },
 ];
 
 export default function SideNav() {
   const currentLocation = useLocation();
   return (
-    <div className="h-full w-[60px] hidden lg:block p-2 font-[Cinzel] text-[12px] m-1 rounded shrink-0">
-      <div className="flex flex-col items-center gap-3">
+    <div className="h-full w-full hidden lg:block px-2 font-[Cinzel] text-[12px] rounded shrink-0">
+      <div className="flex justify-center items-center gap-3">
         {sites.map((obj, idx) => (
           <Link
             to={`/${obj.link}`}
@@ -27,7 +25,7 @@ export default function SideNav() {
             <div className="tooltip tooltip-right">
               <div className="tooltip-content text-[14px] bg-base-300">{obj.nam}</div>
               <div className="avatar">
-                <div className="w-8 h-10 rounded-none">
+                <div className="size-10 rounded-none">
                   <img
                     src={`/${obj.icon}.png`}
                     draggable={false}

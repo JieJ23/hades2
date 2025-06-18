@@ -4,7 +4,7 @@ import Submit from "./Submit";
 
 export default function Head() {
   return (
-    <div className="navbar shadow-sm select-none w-full max-w-[1400px] mx-auto">
+    <div className="navbar shadow-sm select-none w-full max-w-[1400px] py-0 mx-auto">
       <div className="navbar-start">
         <div className="block lg:hidden">
           <div className="dropdown">

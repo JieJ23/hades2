@@ -1,11 +1,8 @@
 import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
-import { w_staff, w_blades, w_axe, w_flames, w_coat, w_skull } from "../Data/Item";
 import { useState, useEffect } from "react";
 
 import { hammer_staff, hammer_axe, hammer_blades, hammer_skull, hammer_flames, hammer_suit } from "../Data/P9Boons";
-
-const fullWeaponHammers = [w_staff, w_blades, w_axe, w_flames, w_skull, w_coat];
 
 const fullhammers = [hammer_staff, hammer_axe, hammer_blades, hammer_skull, hammer_flames, hammer_suit];
 
@@ -26,7 +23,7 @@ const getTierBackground = (tier) => {
 
 export default function Hammer() {
   // Flatten the array to get total items count
-  const totalItems = fullWeaponHammers.flat().length;
+  const totalItems = fullhammers.flat().length;
   const [tiers, setTiers] = useState(Array(totalItems).fill(""));
 
   const [isCopied, setIsCopied] = useState(false);
@@ -79,21 +76,27 @@ export default function Hammer() {
 
   return (
     <main className="relative select-none">
-      <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
+      <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
       <Head />
-      <div className="flex flex-col lg:flex-row gap-1 max-w-[1400px] font-[PT] text-[14px] mx-auto">
+      <div className="max-w-[1400px] font-[PT] text-[14px] mx-auto">
         <SideNav />
         <section className="w-full p-2 py-10 font-[PT] text-[14px] rounded">
           <section className="p-2">
             <div className="flex flex-wrap gap-1">
-              <button className="btn btn-sm btn-soft btn-info rounded-sm font-[PT]" onClick={generateShareableURL}>
+              <button
+                className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
+                onClick={generateShareableURL}
+              >
                 Generate URL
               </button>
-              <button className="btn btn-sm btn-soft btn-info rounded-sm font-[PT]" onClick={copyURLToClipboard}>
+              <button
+                className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
+                onClick={copyURLToClipboard}
+              >
                 {isCopied ? "Copied!" : "Copy URL"}
               </button>
               <button
-                className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]"
+                className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
                 onClick={() => {
                   setTiers(Array(totalItems).fill(""));
                   localStorage.setItem("myTier", JSON.stringify(Array(totalItems).fill("")));

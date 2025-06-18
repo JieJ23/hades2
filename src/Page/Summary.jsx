@@ -19,14 +19,12 @@ const highfear = h2Data
   .sort((a, b) => (a.t > b.t ? 1 : -1))
   .sort((a, b) => (a.f > b.f ? -1 : 1));
 
-const overallRanking = highfear[0];
 const overallRanking_Underworld = highfear.filter((obj) => obj.l === "Underworld")[0];
 const overallRanking_Surface = highfear.filter((obj) => obj.l === "Surface")[0];
 
 const underworld_runs = highfear.filter((obj) => obj.l === "Underworld");
 const surface_runs = highfear.filter((obj) => obj.l === "Surface");
 
-const overall_aspect = getHighestOfEachAspect(h2AspectOrder, highfear);
 const overall_aspect_underworld = getHighestOfEachAspect(h2AspectOrder, underworld_runs);
 const overall_aspect_surface = getHighestOfEachAspect(h2AspectOrder, surface_runs);
 
@@ -39,15 +37,8 @@ export default function Summary() {
         <SideNav />
         <section className="p-2 w-full">
           <div className="font-[Cinzel] text-[16px]">Ladder Summary (Patch 8, 50+ Fear)</div>
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="py-4">
-              <div className="font-[Cinzel] bg-black border-1 border-[#00ffaa] rounded py-1 px-4">Overall (UW + S)</div>
-              <div className="pl-4 pt-2 text-[#e09c1e]">
-                {overallRanking.f} {overallRanking.n} - {overallRanking.t}
-              </div>
-            </div>
-
-            <div className="py-4">
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4">
               <div className="font-[Cinzel] bg-black border-1 border-[#00ffaa] rounded py-1 px-4">
                 Overall (Underworld)
               </div>
@@ -56,7 +47,7 @@ export default function Summary() {
               </div>
             </div>
 
-            <div className="py-4">
+            <div className="p-4">
               <div className="font-[Cinzel] bg-black border-1 border-[#00ffaa] rounded py-1 px-4">
                 Overall (Surface)
               </div>
@@ -66,31 +57,8 @@ export default function Summary() {
             </div>
           </section>
 
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-[14px]">
-            <div className="py-4">
-              <div className="font-[Cinzel] bg-black border-1 border-[#00ffaa] rounded py-1 px-4">
-                Overall Aspects (UW + S)
-              </div>
-              <div className="pl-4 pt-2">
-                {overall_aspect.map((obj, idx) => (
-                  <div key={idx} className="py-1">
-                    <div className="font-[Cinzel] text-[12px] flex items-center gap-1">
-                      <img
-                        src={`/H2Boons/${obj.aspect}.png`}
-                        alt="Aspect"
-                        className="size-7 border-1 border-white/20 rounded"
-                      />
-                      {obj.aspect}
-                    </div>
-                    <div className={`pl-4 ${obj.status === `n/a` ? `` : `text-[#e09c1e]`}`}>
-                      {obj.status === `n/a` ? `-` : `${obj.fear} ${obj.status} - ${obj.time}`}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="py-4">
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[14px]">
+            <div className="p-4">
               <div className="font-[Cinzel] bg-black border-1 border-[#00ffaa] rounded py-1 px-4">
                 Overall Aspects (Underworld)
               </div>
@@ -113,7 +81,7 @@ export default function Summary() {
               </div>
             </div>
 
-            <div className="py-4">
+            <div className="p-4">
               <div className="font-[Cinzel] bg-black border-1 border-[#00ffaa] rounded py-1 px-4">
                 Overall Aspects (Surface)
               </div>

@@ -64,21 +64,27 @@ export default function FearCalculator() {
 
   return (
     <main className="select-none relative">
-      <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
+      <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
       <Head />
-      <div className="flex flex-col lg:flex-row gap-1 max-w-[1400px] font-[PT] text-[14px] mx-auto">
+      <div className="max-w-[1400px] font-[PT] text-[14px] mx-auto">
         <SideNav />
         <div className="w-full">
           <section className="p-2">
             <div className="flex flex-wrap gap-1">
-              <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]" onClick={generateShareableURL}>
+              <button
+                className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
+                onClick={generateShareableURL}
+              >
                 Generate URL
               </button>
-              <button className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]" onClick={copyURLToClipboard}>
+              <button
+                className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
+                onClick={copyURLToClipboard}
+              >
                 {isCopied ? "Copied!" : "Copy URL"}
               </button>
               <button
-                className="btn btn-sm btn-soft btn-error rounded-sm font-[PT]"
+                className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
                 onClick={() => {
                   const defaultValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                   setVows(defaultValues);
@@ -98,9 +104,7 @@ export default function FearCalculator() {
               {allVows.map((ite, index) => (
                 <div
                   className={`w-full min-h-[100px] border-1 border-white/20 flex flex-col justify-center items-center gap-0.5 relative rounded transition-all duration-300 ease-in ${
-                    vows[index] !== 0
-                      ? `bg-gradient-to-tr from-[#321846] to-[#1b0299]`
-                      : `bg-gradient-to-tr from-[#0f1c1d] to-[#0f1a26]`
+                    vows[index] !== 0 ? `bg-gradient-to-tr from-[#32184680] to-[#1b029980]` : `bg-black/80`
                   }`}
                   key={index}
                 >
@@ -120,7 +124,7 @@ export default function FearCalculator() {
                   </div>
                   <div className="font-[Cinzel] text-[10px]">{ite}</div>
                   <button
-                    className="btn btn-outline btn-accent btn-xs text-[12px] font-[PT]"
+                    className="btn btn-outline border-white/50 rounded bg-black btn-xs text-[12px] font-[PT]"
                     onClick={() => handleButtonClick(index)}
                   >
                     {vows[index]}
