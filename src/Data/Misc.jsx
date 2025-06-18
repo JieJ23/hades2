@@ -92,3 +92,8 @@ export function constantDate(dateStr) {
   const yyyy = date.getFullYear();
   return `${mm}/${dd}/${yyyy}`;
 }
+
+export function sToA(string) {
+  const array = string.split(`,`);
+  return array;
+}

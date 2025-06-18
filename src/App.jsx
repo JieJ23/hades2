@@ -1,7 +1,7 @@
 import Head from "./Comp/Head";
 import SideNav from "./Comp/Sidebar";
 import { h2Data } from "./Data/H2Data";
-import { sToA } from "./Page/Hades2";
+import { sToA } from "./Data/Misc";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { h2AspectOrder } from "./Data/Misc";

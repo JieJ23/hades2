@@ -3,7 +3,11 @@ import SideNav from "../Comp/Sidebar";
 import { w_staff, w_blades, w_axe, w_flames, w_coat, w_skull } from "../Data/Item";
 import { useState, useEffect } from "react";
 
+import { hammer_staff, hammer_axe, hammer_blades, hammer_skull, hammer_flames, hammer_suit } from "../Data/P9Boons";
+
 const fullWeaponHammers = [w_staff, w_blades, w_axe, w_flames, w_skull, w_coat];
+
+const fullhammers = [hammer_staff, hammer_axe, hammer_blades, hammer_skull, hammer_flames, hammer_suit];
 
 const getTierBackground = (tier) => {
   switch (tier) {
@@ -71,6 +75,8 @@ export default function Hammer() {
 
   let globalIndex = 0;
 
+  console.log(fullhammers);
+
   return (
     <main className="relative select-none">
       <div className="fixed w-full h-full bg-[url('/mbg.webp')] -z-10 bg-top"></div>
@@ -100,28 +106,24 @@ export default function Hammer() {
               {shareableURL || "No URL Generated Yet"}
             </div>
           </section>
-          {fullWeaponHammers.map((obj, ind) => (
-            <div
-              className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-1"
-              key={ind}
-            >
-              {obj.map((item, index) => {
+          {fullhammers.map((obj, ind) => (
+            <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-10 xl:grid-cols-10 gap-2 mb-2" key={ind}>
+              {Object.entries(obj).map((item, index) => {
                 const currentIndex = globalIndex++;
                 return (
                   <div
-                    className={`w-full border-1 border-white/20 bg-black/70 overflow-hidden rounded flex flex-col items-center my-1 p-1 md:p-2 ${getTierBackground(
+                    className={`w-full border-1 border-white/20 bg-black/70 overflow-hidden rounded flex flex-col items-center p-1 md:p-2 ${getTierBackground(
                       tiers[currentIndex]
                     )}`}
                     key={index}
                   >
                     <div className="avatar">
                       <div className="w-10 md:w-12 rounded">
-                        <img src={`/Hammer/${item}.png`} alt="Hammer" draggable={false} />
+                        <img src={`/P9/${item[0]}.png`} alt="Hammer" draggable={false} />
                       </div>
                     </div>
                     <div className="text-center text-[11px] line-clamp-2 py-0.5">
-                      {" "}
-                      {item.split(" ").map((word, index) => (
+                      {item[1].split(" ").map((word, index) => (
                         <div key={index}>{word}</div>
                       ))}
                     </div>

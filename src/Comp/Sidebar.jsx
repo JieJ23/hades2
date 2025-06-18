@@ -4,15 +4,11 @@ import { useLocation } from "react-router-dom";
 export const sites = [
   { icon: `Hades2`, link: ``, nam: `Ladder` },
   { icon: `Scroll`, link: `Summary`, nam: `Summary` },
-  // { icon: ``, link: `Ladder`, nam: `H2 Ladder` },
-  { icon: `Builder`, link: `Builder`, nam: `Builder` },
-  // { icon: ``, link: `H2Stats`, nam: `H2Stats` },
   { icon: `FearCalculator`, link: `FearCalculator`, nam: `Fear Calculator` },
   { icon: `ArcaneDeck`, link: `ArcaneDeck`, nam: `Arcane Deck` },
   { icon: `Hammer`, link: `Hammer`, nam: `Hammer` },
-  // { icon: ``, link: `Hades`, nam: `Hades` },
-  // { icon: ``, link: `Hades_v2`, nam: `Hades Gameplay` },
-  // { icon: ``, link: `HeatCalculator`, nam: `Heat Calculator` },
+  { icon: `Builder`, link: `Boons`, nam: `Boons` },
+  { icon: `HeatCalculator`, link: `HeatCalculator`, nam: `Heat Calculator` },
 ];
 
 export default function SideNav() {
