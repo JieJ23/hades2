@@ -15,6 +15,7 @@ export const allVows = [
   `Void`,
   `Hubris`,
   `Denial`,
+  `Rivals`,
 ];
 
 export const vowArray = (vow) => {
@@ -51,6 +52,8 @@ export const vowArray = (vow) => {
       return [0, 1, 2, 3, 5];
     case `Wards`:
       return [0, 1, 2];
+    case `Rivals`:
+      return [0, 3, 6, 9, 12];
   }
 };
 
@@ -135,6 +138,11 @@ export const defineArray = (vow) => {
       return {
         d: `All foes have Shielded Health.`,
         rank: [`1`, `2`],
+      };
+    case `Rivals`:
+      return {
+        d: `EM`,
+        rank: [`1`, `2`, `3`, `4`],
       };
   }
 };

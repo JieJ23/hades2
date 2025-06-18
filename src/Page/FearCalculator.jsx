@@ -4,7 +4,7 @@ import { allVows, vowArray, defineArray } from "../Data/FearTrait";
 import { useState, useEffect } from "react";
 
 export default function FearCalculator() {
-  const [vows, setVows] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const [vows, setVows] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [isCopied, setIsCopied] = useState(false);
   const [shareableURL, setShareableURL] = useState(""); // State to store the shareable URL
 
@@ -86,7 +86,7 @@ export default function FearCalculator() {
               <button
                 className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
                 onClick={() => {
-                  const defaultValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+                  const defaultValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                   setVows(defaultValues);
                   localStorage.setItem("myVows", JSON.stringify(defaultValues));
                 }}
@@ -104,8 +104,8 @@ export default function FearCalculator() {
               {allVows.map((ite, index) => (
                 <div
                   className={`w-full min-h-[100px] border-1 border-white/20 flex flex-col justify-center items-center gap-0.5 relative rounded transition-all duration-300 ease-in ${
-                    vows[index] !== 0 ? `bg-gradient-to-tr from-[#32184680] to-[#1b029980]` : `bg-black/80`
-                  }`}
+                    vows[index] !== 0 ? `bg-gradient-to-tr from-[#190c23] to-[#3f0a84ad]` : `bg-black/80`
+                  } ${index === 16 && `col-start-2 col-span-2`}`}
                   key={index}
                 >
                   <div className="absolute top-0 left-1">
@@ -118,13 +118,13 @@ export default function FearCalculator() {
                     </div>
                   </div>
                   <div className="avatar flex justify-center">
-                    <div className="w-6 md:w-8 lg:w-10 rounded">
+                    <div className="size-7 md:size-8 lg:size-9 rounded">
                       <img src={`/Vows/${ite}.png`} alt="Fear Vows" draggable={false} />
                     </div>
                   </div>
-                  <div className="font-[Cinzel] text-[10px]">{ite}</div>
+                  <div className="text-[10px] md:text-[12px] font-[Cinzel] text-white">{ite}</div>
                   <button
-                    className="btn btn-outline border-white/50 rounded bg-black btn-xs text-[12px] font-[PT]"
+                    className="btn btn-outline border-white/50 rounded bg-black btn-xs text-[12px]"
                     onClick={() => handleButtonClick(index)}
                   >
                     {vows[index]}
