@@ -6,7 +6,7 @@ export default function Head() {
   return (
     <div className="navbar shadow-sm select-none w-full max-w-[1400px] py-0 mx-auto">
       <div className="navbar-start">
-        <div className="block lg:hidden">
+        <div className="block lg:hidden border-1 rounded border-[#2efaac]">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
               <svg
@@ -20,7 +20,10 @@ export default function Head() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" />{" "}
               </svg>
             </div>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-300 z-1 mt-3 w-52 p-2 shadow">
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-black/90 z-1 mt-3 w-52 p-2 shadow border-[#2efaac] border-1 rounded"
+            >
               {sites.map((obj, idx) => (
                 <li key={idx}>
                   <Link to={`/${obj.link}`} key={idx} className="font-[Cinzel] text-[12px] flex items-center gap-2">

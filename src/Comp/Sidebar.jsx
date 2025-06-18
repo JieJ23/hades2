@@ -22,8 +22,8 @@ export default function SideNav() {
             }`}
             key={idx}
           >
-            <div className="tooltip tooltip-right">
-              <div className="tooltip-content text-[14px] bg-base-300">{obj.nam}</div>
+            <div className="tooltip tooltip-bottom">
+              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded text-[12px]">{obj.nam}</div>
               <div className="avatar">
                 <div className="size-10 rounded-none">
                   <img
