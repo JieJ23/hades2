@@ -3,7 +3,7 @@ import SideNav from "../Comp/Sidebar";
 import { useState, useEffect } from "react";
 import { defineDeck, allCards } from "../Data/DeckTrait";
 
-export default function ArcaneDeck() {
+export default function ArcanaDeck() {
   const [deck, setDeck] = useState([]);
   const [isCopied, setIsCopied] = useState(false);
   const [shareableURL, setShareableURL] = useState(""); // State to store the shareable URL
