@@ -130,11 +130,7 @@ export default function Hammer() {
                         />
                       </div>
                     </div>
-                    <div className="text-center text-[11px] line-clamp-2 py-0.5">
-                      {item[1].split(" ").map((word, index) => (
-                        <div key={index}>{word}</div>
-                      ))}
-                    </div>
+                    <div className="text-center text-[11px] line-clamp-2 py-1">{item[1]}</div>
                     <div className="flex gap-0.5">
                       <select
                         value={tiers[currentIndex]}

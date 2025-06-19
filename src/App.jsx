@@ -64,7 +64,7 @@ export default function App() {
       <div className="max-w-[1200px] font-[PT] text-[14px] mx-auto">
         <SideNav />
         <section className="w-full px-2">
-          <div className="text-[16px] p-2 py-0 font-[Cinzel]">HFL Beta - Patch 9</div>
+          <div className="text-[16px] p-2 py-0 font-[Cinzel]">Highest Fear Ladder - Patch 9</div>
           <div className="text-[12px] px-2 py-1 flex gap-2">
             <select
               value={region}
@@ -294,7 +294,9 @@ export default function App() {
                 </div>
                 <div className="col-span-3 md:col-span-6 lg:col-span-8 text-[orange] z-40">
                   <div>{obj.des}</div>
-                  <Link className="text-[#298af2] line-clamp-1">{obj.src}</Link>
+                  <Link to={obj.src} target="_blank" className="text-[#298af2] line-clamp-1">
+                    {obj.src}
+                  </Link>
                 </div>
               </div>
             </div>
