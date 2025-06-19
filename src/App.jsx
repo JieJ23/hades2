@@ -60,6 +60,7 @@ export default function App() {
   return (
     <main className="h-full min-h-lvh relative">
       <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
+      <div className="fixed w-full h-full bg-[url('/mbg3.webp')] -z-10 bg-center bg-cover opacity-40"></div>
       <Head />
       <div className="max-w-[1200px] font-[PT] text-[14px] mx-auto">
         <SideNav />
@@ -94,19 +95,23 @@ export default function App() {
               ))}
             </select>
           </div>
-          <div className="text-[12px] p-1 flex gap-2">
+          <div className="text-[12px] px-1 flex gap-2">
             <div>Query:</div>
             <div className="text-[#f05bdc]">Region [ {region} ]</div>
             <div className="text-[#00ffaa]">Aspect [ {category} ]</div>
+          </div>
+          <div className="text-[12px] p-1 flex gap-2">
+            <div>Category Leader: </div>
+            <div className="text-[#ffb700]">{displayEntries[0].nam}</div>
           </div>
         </section>
         <section className="px-2 pb-8 text-[12px]">
           {displayEntries.map((obj, index) => (
             <div
-              className="flex items-center w-full rounded-lg bg-[#0b060fdd] px-2 py-1 border-1 border-white/20 gap-2 mb-2 relative"
+              className="flex items-center w-full rounded-lg bg-black/90 px-2 py-1 border-1 border-white/20 gap-2 mb-2 relative"
               key={index}
             >
-              <div className={`absolute w-full h-full top-0 left-0 opacity-20 lg:opacity-50`}>
+              <div className={`absolute w-full h-full top-0 left-0 opacity-15 lg:opacity-40`}>
                 <img
                   src={`/FamPort/${obj.fam}bg.png`}
                   alt="Fam"
@@ -124,9 +129,7 @@ export default function App() {
               </div>
               <div className="w-full grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-2">
                 <div className="col-span-3 md:col-span-6 lg:col-span-8 flex items-center justify-between border-b-1 border-white/20">
-                  <div className="text-[18px] font-[Cinzel]">
-                    <span className="text-[14px] font-[PT]">#{index + 1}.</span> {obj.nam}
-                  </div>
+                  <div className="text-[18px] font-[Cinzel]">{obj.nam}</div>
                   <div className="flex gap-2 text-[14px] font-[Cinzel]">
                     <div className="flex items-center gap-1">
                       <img src={`/${obj.loc}.png`} alt="Region" className="size-5" draggable={false} />
@@ -273,7 +276,7 @@ export default function App() {
                   )}
                   {obj.cha && (
                     <div className="flex flex-col">
-                      <div className="font-[Cinzel]">Chaos</div>
+                      <div className="font-[Cinzel]">Chaos/S</div>
                       <div className="flex gap-0.5">
                         {findValue(sToA(obj.cha)).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
