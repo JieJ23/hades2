@@ -100,13 +100,13 @@ export default function App() {
             <div className="text-[#00ffaa]">Aspect [ {category} ]</div>
           </div>
         </section>
-        <section className="px-2 text-[12px]">
+        <section className="px-2 pb-8 text-[12px]">
           {displayEntries.map((obj, index) => (
             <div
               className="flex items-center w-full rounded-lg bg-[#0b060fdd] px-2 py-1 border-1 border-white/20 gap-2 mb-2 relative"
               key={index}
             >
-              <div className={`absolute w-full h-full top-0 left-0 opacity-30 sm:opacity-50`}>
+              <div className={`absolute w-full h-full top-0 left-0 opacity-20 lg:opacity-50`}>
                 <img
                   src={`/FamPort/${obj.fam}bg.png`}
                   alt="Fam"
@@ -124,7 +124,9 @@ export default function App() {
               </div>
               <div className="w-full grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-2">
                 <div className="col-span-3 md:col-span-6 lg:col-span-8 flex items-center justify-between border-b-1 border-white/20 ">
-                  <div className="text-[18px] font-[Cinzel]">{obj.nam}</div>
+                  <div className="text-[18px] font-[Cinzel]">
+                    <span className="text-[14px] font-[PT]">#{index + 1}.</span> {obj.nam}
+                  </div>
                   <div className="flex gap-2 text-[14px] font-[Cinzel]">
                     <div className="flex items-center gap-1">
                       <img src={`/${obj.loc}.png`} alt="Region" className="size-5" draggable={false} />
@@ -136,7 +138,7 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                <div className="col-span-3 md:col-span-6 lg:col-span-8 flex gap-4 overflow-hidden">
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 flex gap-4">
                   <div className="flex flex-col">
                     <div>
                       <div className="font-[Cinzel]">{obj.asp}</div>
@@ -176,19 +178,11 @@ export default function App() {
                     </div>
                     <img src={`/Misc/Selene.png`} alt="Selene" className="size-8" draggable={false} />
                   </div>
-                  <div className="flex flex-col">
-                    <div>
-                      <div className="font-[Cinzel]">Gameplay</div>
-                    </div>
-                    <Link to={obj.src} target="_blank" className="text-[#73b0f1] line-clamp-2 z-40">
-                      {obj.src}
-                    </Link>
-                  </div>
                 </div>
                 <div className="col-span-3 md:col-span-6 lg:col-span-8 gap-y-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                   <div className="flex flex-col">
                     <div className="font-[Cinzel]">Core</div>
-                    <div className="flex gap-1">
+                    <div className="flex gap-0.5">
                       {sToA(obj.cor).map((ite, index) => (
                         <div className="tooltip shrink-0" key={index}>
                           <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
@@ -206,7 +200,7 @@ export default function App() {
                   </div>
                   <div className="flex flex-col">
                     <div className="font-[Cinzel]">Hammer</div>
-                    <div className="flex gap-1">
+                    <div className="flex gap-0.5">
                       {findValue(sToA(obj.ham)).map((ite, index) => (
                         <div className="tooltip shrink-0" key={index}>
                           <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
@@ -225,7 +219,7 @@ export default function App() {
                   {(obj.duo || obj.ele) && (
                     <div className="flex flex-col">
                       <div className="font-[Cinzel]">Duo & Infusion</div>
-                      <div className="flex gap-1">
+                      <div className="flex gap-0.5">
                         {obj.duo &&
                           findValue(sToA(obj.duo)).map((ite, index) => (
                             <div className="tooltip shrink-0" key={index}>
@@ -260,7 +254,7 @@ export default function App() {
                   {obj.mis && (
                     <div className="flex flex-col">
                       <div className="font-[Cinzel]">Misc</div>
-                      <div className="flex gap-1">
+                      <div className="flex gap-0.5">
                         {findValue(sToA(obj.mis)).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
                             <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
@@ -280,7 +274,7 @@ export default function App() {
                   {obj.cha && (
                     <div className="flex flex-col">
                       <div className="font-[Cinzel]">Chaos</div>
-                      <div className="flex gap-1">
+                      <div className="flex gap-0.5">
                         {findValue(sToA(obj.cha)).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
                             <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
@@ -298,8 +292,9 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <div className="col-span-3 md:col-span-6 lg:col-span-8 text-[orange]">
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 text-[orange] z-40">
                   <div>{obj.des}</div>
+                  <Link className="text-[#298af2] line-clamp-1">{obj.src}</Link>
                 </div>
               </div>
             </div>
