@@ -53,7 +53,7 @@ export const vowArray = (vow) => {
     case `Wards`:
       return [0, 1, 2];
     case `Rivals`:
-      return [0, 3, 6, 9, 12];
+      return [0, 2, 5, 8, 12];
   }
 };
 

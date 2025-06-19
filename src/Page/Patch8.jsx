@@ -40,9 +40,9 @@ export default function Patch8() {
       <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
       <div className="fixed w-full h-full bg-[url('/mbg3.webp')] -z-10 bg-center bg-cover opacity-40"></div>
       <Head />
-      <div className="max-w-[1400px] font-[PT] text-[14px] mx-auto">
+      <div className="max-w-[1200px] font-[PT] text-[14px] mx-auto">
         <SideNav />
-        <section className="w-full p-2">
+        <section className="w-full px-2">
           <div className="text-[16px] p-2 py-0 font-[Cinzel]">Highest Fear Ladder - Patch 8</div>
           <div className="text-[12px] px-2 py-1 flex gap-2">
             <select
@@ -73,10 +73,14 @@ export default function Patch8() {
               ))}
             </select>
           </div>
-          <div className="text-[12px] p-1 pt-0 flex gap-2">
+          <div className="text-[12px] p-1 py-0 flex gap-2">
             <div>Query:</div>
             <div className="text-[#f05bdc]">Region [ {region} ]</div>
             <div className="text-[#00ffaa]">Aspect [ {category} ]</div>
+          </div>
+          <div className="text-[12px] p-1 flex gap-2">
+            <div>Category Leader: </div>
+            <div className="text-[#ffb700]">{displayEntries[0].n}</div>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
             <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded bg-black/85 text-[12px]">
