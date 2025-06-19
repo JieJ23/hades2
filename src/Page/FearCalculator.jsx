@@ -104,7 +104,7 @@ export default function FearCalculator() {
             <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start">
               {allVows.map((ite, index) => (
                 <div
-                  className={`w-full min-h-[100px] border-1 border-white/20 flex flex-col justify-center items-center gap-0.5 relative rounded transition-all duration-300 ease-in pt-1 ${
+                  className={`w-full min-h-[100px] border-1 border-white/20 flex flex-col justify-center items-center gap-0.5 relative rounded transition-all duration-300 ease-in pt-1 group ${
                     vows[index] !== 0 ? `bg-gradient-to-tr from-[#190c23] to-[#3f0a84ad]` : `bg-black/80`
                   } ${index === 16 && `col-start-2 col-span-2`}`}
                   key={index}
@@ -118,11 +118,12 @@ export default function FearCalculator() {
                       ))}
                     </div>
                   </div>
-                  <div className="avatar flex justify-center">
-                    <div className="size-7 md:size-8 lg:size-9 rounded">
-                      <img src={`/Vows/${ite}.png`} alt="Fear Vows" draggable={false} />
-                    </div>
-                  </div>
+                  <img
+                    src={`/Vows/${ite}.png`}
+                    alt="Fear Vows"
+                    className="group-hover:scale-[125%] duration-75 transition-transform ease-in size-7 md:size-8 lg:size-9 rounded"
+                    draggable={false}
+                  />
                   <div className="text-[10px] md:text-[12px] font-[Cinzel] text-white">{ite}</div>
                   <button
                     className="btn btn-outline border-white/50 rounded bg-black btn-xs text-[12px]"
