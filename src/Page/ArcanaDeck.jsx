@@ -133,7 +133,7 @@ export default function ArcanaDeck() {
               {deck
                 .sort((a, b) => +(a.slice(1) < +b.slice(1) ? -1 : 1))
                 .map((ite) => (
-                  <div className="font-[PT] text-[12px] text-white border-1 border-white/20 rounded p-2 my-1 bg-gradient-to-r from-[#4940d130] to-[#67b58f30]">
+                  <div className="font-[PT] text-[12px] text-white border-1 border-white/20 rounded p-2 my-1 bg-black/90">
                     <div className="font-[Cinzel]">{defineDeck(ite).card}</div>
                     <div>{defineDeck(ite).d}</div>
                   </div>

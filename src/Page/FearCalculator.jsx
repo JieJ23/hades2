@@ -148,7 +148,7 @@ export default function FearCalculator() {
               <div className="grid grid-cols-2 gap-2">
                 {displayVow.map((item, index) => (
                   <div
-                    className="w-full font-[PT] text-[12px] text-white border-1 border-white/20 rounded p-2 bg-[#2b2b5c60]"
+                    className="w-full font-[PT] text-[12px] text-white border-1 border-white/20 rounded p-2 bg-black/90"
                     key={index}
                   >
                     <div className="font-[Cinzel]">{item}</div>
