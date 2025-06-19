@@ -110,7 +110,7 @@ export default function App() {
                 <img
                   src={`/FamPort/${obj.fam}bg.png`}
                   alt="Fam"
-                  className="border-1 border-white/20 w-full h-full object-contain object-right"
+                  className="w-full h-full object-contain object-right"
                   draggable={false}
                 />
               </div>
@@ -123,7 +123,7 @@ export default function App() {
                 />
               </div>
               <div className="w-full grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-2">
-                <div className="col-span-3 md:col-span-6 lg:col-span-8 flex items-center justify-between border-b-1 border-white/20 ">
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 flex items-center justify-between border-b-1 border-white/20">
                   <div className="text-[18px] font-[Cinzel]">
                     <span className="text-[14px] font-[PT]">#{index + 1}.</span> {obj.nam}
                   </div>
@@ -292,7 +292,7 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <div className="col-span-3 md:col-span-6 lg:col-span-8 text-[orange] z-40">
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 text-[orange] z-40 border-t-1 border-white/20 pt-1">
                   <div>{obj.des}</div>
                   <Link to={obj.src} target="_blank" className="text-[#298af2] line-clamp-1">
                     {obj.src}
