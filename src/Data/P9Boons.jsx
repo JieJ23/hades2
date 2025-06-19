@@ -320,3 +320,15 @@ export const p9chaos = {
   Chaos_42: "Expiring",
   Chaos_43: "Barren",
 };
+
+export const p9selene = {
+  Selene_123: "Shine of Apollo",
+  Selene_124: "Temper of Zeus",
+  Selene_125: "Nurture of Hera",
+  Selene_126: "Hearth of Hestia",
+  Selene_127: "Squall of Demeter",
+  Selene_128: "Allure of Aphrodite",
+  Selene_129: "Hand of Hephaestus",
+  Selene_130: "Prize of Poseidon",
+  Selene_131: "Lance of Ares",
+};

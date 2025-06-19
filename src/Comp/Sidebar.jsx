@@ -7,6 +7,7 @@ export const sites = [
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },
   { icon: `Hammer`, link: `Hammer`, nam: `Hammer` },
+  { icon: `Boons`, link: `Boons`, nam: `Boons` },
 ];
 
 export default function SideNav() {
