@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { h2AspectOrder } from "./Data/Misc";
 import { p9data } from "./Data/P9Data";
-import { p9boons_reverse, p9boons } from "./Data/P9BoonObj";
+import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
+
+const orderMap = new Map(allP9.map((item, index) => [item, index]));
 
 const findGUIcard = (asp) => {
   switch (asp) {
@@ -203,7 +205,13 @@ export default function App() {
                   <div className="flex flex-col">
                     <div className="font-[Cinzel]">Hammer</div>
                     <div className="flex gap-0.5">
-                      {findValue(sToA(obj.ham)).map((ite, index) => (
+                      {findValue(
+                        sToA(obj.ham).sort((a, b) => {
+                          const aIndex = orderMap.get(a) ?? Infinity;
+                          const bIndex = orderMap.get(b) ?? Infinity;
+                          return aIndex - bIndex;
+                        })
+                      ).map((ite, index) => (
                         <div className="tooltip shrink-0" key={index}>
                           <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                             <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
@@ -223,7 +231,13 @@ export default function App() {
                       <div className="font-[Cinzel]">Duo & Infusion</div>
                       <div className="flex gap-0.5">
                         {obj.duo &&
-                          findValue(sToA(obj.duo)).map((ite, index) => (
+                          findValue(
+                            sToA(obj.duo).sort((a, b) => {
+                              const aIndex = orderMap.get(a) ?? Infinity;
+                              const bIndex = orderMap.get(b) ?? Infinity;
+                              return aIndex - bIndex;
+                            })
+                          ).map((ite, index) => (
                             <div className="tooltip shrink-0" key={index}>
                               <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                                 <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
@@ -257,7 +271,13 @@ export default function App() {
                     <div className="flex flex-col">
                       <div className="font-[Cinzel]">Misc</div>
                       <div className="flex gap-0.5">
-                        {findValue(sToA(obj.mis)).map((ite, index) => (
+                        {findValue(
+                          sToA(obj.mis).sort((a, b) => {
+                            const aIndex = orderMap.get(a) ?? Infinity;
+                            const bIndex = orderMap.get(b) ?? Infinity;
+                            return aIndex - bIndex;
+                          })
+                        ).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
                             <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                               <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
@@ -277,7 +297,13 @@ export default function App() {
                     <div className="flex flex-col">
                       <div className="font-[Cinzel]">Chaos/S</div>
                       <div className="flex gap-0.5">
-                        {findValue(sToA(obj.cha)).map((ite, index) => (
+                        {findValue(
+                          sToA(obj.cha).sort((a, b) => {
+                            const aIndex = orderMap.get(a) ?? Infinity;
+                            const bIndex = orderMap.get(b) ?? Infinity;
+                            return aIndex - bIndex;
+                          })
+                        ).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
                             <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                               <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
@@ -294,9 +320,9 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <div className="col-span-3 md:col-span-6 lg:col-span-8 text-[orange] z-40 border-t-1 border-white/20 pt-1">
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 text-[orange] z-40 pt-1">
                   <div>{obj.des}</div>
-                  <Link to={obj.src} target="_blank" className="text-[#298af2] line-clamp-1">
+                  <Link to={obj.src} target="_blank" className="text-[#109de4] line-clamp-1">
                     {obj.src}
                   </Link>
                 </div>

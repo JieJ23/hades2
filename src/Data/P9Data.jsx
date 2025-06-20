@@ -13,8 +13,8 @@ export const p9data = [
     ham: "Soulfilled Ankh,Mirrored Ankh,Rapid Thrasher",
     duo: "",
     ele: "Water Fitness",
-    mis: "Pressure Points,Mind,Mixed Blessings,Success Rate,Unseen Ire",
-    cha: "",
+    mis: "Pressure Points,Mixed Blessings,Success Rate,Unseen Ire",
+    cha: "Mind",
     sel: "t",
   },
   {
