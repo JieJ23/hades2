@@ -60,7 +60,6 @@ export default function App() {
   return (
     <main className="h-full min-h-lvh relative">
       <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
-      <div className="fixed w-full h-full bg-[url('/mbg3.webp')] -z-10 bg-center bg-cover opacity-40"></div>
       <Head />
       <div className="max-w-[1200px] font-[PT] text-[14px] mx-auto">
         <SideNav />
@@ -69,7 +68,7 @@ export default function App() {
           <div className="text-[12px] px-2 py-1 flex gap-2">
             <select
               value={region}
-              className="select select-sm w-[150px] border-1 border-[#f05bdc]"
+              className="select select-sm w-[100px] border-1 border-[#f05bdc]"
               onChange={(e) => {
                 setRegion(e.target.value);
                 setCategory(`All`);
@@ -84,7 +83,7 @@ export default function App() {
             </select>
             <select
               value={category}
-              className="select select-sm w-[150px] border-1 border-[#00ffaa]"
+              className="select select-sm w-[100px] border-1 border-[#00ffaa]"
               onChange={(e) => setCategory(e.target.value)}
             >
               <option value={`All`}>All</option>

@@ -38,7 +38,6 @@ export default function Patch8() {
   return (
     <main className="h-full min-h-lvh select-none relative">
       <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
-      <div className="fixed w-full h-full bg-[url('/mbg3.webp')] -z-10 bg-center bg-cover opacity-40"></div>
       <Head />
       <div className="max-w-[1200px] font-[PT] text-[14px] mx-auto">
         <SideNav />
