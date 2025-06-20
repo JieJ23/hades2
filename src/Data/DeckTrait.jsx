@@ -79,7 +79,7 @@ export const defineDeck = (num) => {
     case `c9`:
       return {
         card: `IX - The Unseen`,
-        d: `You restore 6 Magick every 1 Sec.`,
+        d: `You restore 10 Magick every 1 Sec.`,
         g: 5,
       };
     case `c10`:
@@ -139,13 +139,13 @@ export const defineDeck = (num) => {
     case `c19`:
       return {
         card: `XIX - Excellence`,
-        d: `Any Boons you are offered have +50% chance to be improved to Rare.`,
+        d: `Any Boons you are offered have +50% chance to include Legendary or at least Rare blessings.`,
         g: 5,
       };
     case `c20`:
       return {
         card: `XX - The Queen`,
-        d: `Any Boons you are offered have a +10% chance to be a Duo (whenever possible).`,
+        d: `Any Boons you are offered have a +10% chance to include Duo blessings.`,
         g: 0,
       };
     case `c21`:
@@ -163,13 +163,13 @@ export const defineDeck = (num) => {
     case `c23`:
       return {
         card: `XXIII - Strength`,
-        d: `While you have no Death Defiance effects, you take -50% damage and deal +25%.`,
+        d: `While you have no Death Defiance effects, you take -40% damage and deal +20%.`,
         g: 4,
       };
     case `c24`:
       return {
         card: `XXIV - Divinity`,
-        d: `Any Boons you are offered have a +20% chance to be Epic.`,
+        d: `Any Boons you are offered have a +15% chance to be improved to Epic.`,
         g: 0,
       };
     case `c25`:

@@ -109,7 +109,7 @@ export default function App() {
         <section className="px-2 pb-8 text-[12px]">
           {displayEntries.map((obj, index) => (
             <div
-              className="flex items-center w-full rounded-lg bg-black/90 px-2 py-1 border-1 border-white/40 gap-2 mb-4 relative"
+              className="flex items-center w-full rounded bg-black/90 px-2 py-1 border-1 border-white/40 gap-2 mb-3 relative"
               key={index}
             >
               <div className={`absolute w-full h-full top-0 left-0 opacity-15 lg:opacity-40`}>
@@ -129,7 +129,7 @@ export default function App() {
                 />
               </div>
               <div className="w-full grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-2">
-                <div className="col-span-3 md:col-span-6 lg:col-span-8 flex items-center justify-between border-b-1 border-white/20">
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 flex items-center justify-between border-b-1 border-white/10">
                   <div className="text-[16px] font-[Cinzel]">{obj.nam}</div>
                   <div className="flex gap-2 text-[14px] font-[Cinzel]">
                     <div className="flex items-center gap-1">
