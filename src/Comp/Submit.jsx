@@ -67,7 +67,7 @@ export default function Submit() {
                   className="input input-md"
                   name="fear"
                   max={67}
-                  min={50}
+                  min={32}
                   required
                 />
                 <input type="text" placeholder="Gameplay Link" className="input input-md" name="src" required />
