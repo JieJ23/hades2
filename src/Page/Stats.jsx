@@ -115,7 +115,7 @@ export default function Stats() {
         <div className="rounded border-1 border-black bg-black/80 w-full h-[200px] sm:h-[300px] flex flex-col items-center py-2 relative justify-center">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('/Misc/Chronos.webp')] -z-10 bg-cover bg-top bg-no-repeat" />
 
-          <div className="whitespace-pre-line text-center">{`Nights Surrender 
+          <div className="whitespace-pre-line text-center">{`Nights Surrendered 
           to Chronos`}</div>
           <div className="text-[20px] sm:text-[30px] font-[monospace] text-[#f40909]">0</div>
         </div>
