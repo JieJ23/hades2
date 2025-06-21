@@ -116,7 +116,7 @@ export default function P9BoonData() {
   return (
     <div className="max-w-[1200px] font-[PT] text-[10px] md:text-[12px] mx-auto my-6">
       <div className="px-2 text-[#fff200]">Count: {p9data.length}</div>
-      <div className="rounded bg-black/90 border-1 border-white/20 p-4 py-2 mb-4">
+      <div className="rounded bg-black/80 border-1 border-white/20 p-4 py-2 mb-4">
         <div className="font-[Cinzel]">Core Boons</div>
         {core_attribute.map((ite) => (
           <div className="flex flex-wrap gap-1 py-2">
@@ -136,7 +136,7 @@ export default function P9BoonData() {
           </div>
         ))}
       </div>
-      <div className="rounded bg-black/90 border-1 border-white/20 p-4 py-0 mb-4">
+      <div className="rounded bg-black/80 border-1 border-white/20 p-4 py-0 mb-4">
         <div className="font-[Cinzel] py-2">Staff</div>
         <div className="flex flex-wrap gap-1">
           {hammerStaff.map((ite, index) => (
@@ -246,7 +246,7 @@ export default function P9BoonData() {
           ))}
         </div>
       </div>
-      <div className="rounded bg-black/90 border-1 border-white/20 p-4 py-2 mb-4">
+      <div className="rounded bg-black/80 border-1 border-white/20 p-4 py-2 mb-4">
         <div className="font-[Cinzel]">Duo</div>
         <div className="flex flex-wrap gap-1 py-2">
           {Object.entries(core_Duo)
@@ -268,7 +268,7 @@ export default function P9BoonData() {
             ))}
         </div>
       </div>
-      <div className="rounded bg-black/90 border-1 border-white/20 p-4 py-2 mb-4">
+      <div className="rounded bg-black/80 border-1 border-white/20 p-4 py-2 mb-4">
         <div className="font-[Cinzel]">Infusion</div>
         <div className="flex flex-wrap gap-1 py-2">
           {Object.entries(core_Ele)
@@ -290,7 +290,7 @@ export default function P9BoonData() {
             ))}
         </div>
       </div>
-      <div className="rounded bg-black/90 border-1 border-white/20 p-4 py-2 mb-4">
+      <div className="rounded bg-black/80 border-1 border-white/20 p-4 py-2 mb-4">
         <div className="font-[Cinzel]">Misc Boons</div>
         <div className="flex flex-wrap gap-1 py-2">
           {Object.entries(core_Misc)
@@ -317,7 +317,7 @@ export default function P9BoonData() {
             ))}
         </div>
       </div>
-      <div className="rounded bg-black/90 border-1 border-white/20 p-4 py-2 mb-4">
+      <div className="rounded bg-black/80 border-1 border-white/20 p-4 py-2 mb-4">
         <div className="font-[Cinzel]">Chaos / Hex</div>
         <div className="flex flex-wrap gap-1 py-2">
           {Object.entries(core_Chaos)

@@ -39,7 +39,7 @@ export default function Stats() {
             {h2AspectOrder.map((item, index) => (
               <div
                 className={`grid grid-cols-3 p-1 items-center px-2 ${
-                  index % 2 === 0 ? `bg-[#161635a9]` : `bg-black/80`
+                  index % 2 === 0 ? `bg-[#1f1f265a]` : `bg-black/80`
                 }`}
               >
                 <div className="flex gap-1 items-center">
@@ -48,7 +48,11 @@ export default function Stats() {
                     alt="Aspect"
                     className="size-9 border-1 border-black/20 rounded-lg"
                   />
-                  <div>{overall_aspect_surface[index].aspect}</div>
+                  <div>
+                    {overall_aspect_surface[index].aspect.includes(`Melinoe`)
+                      ? overall_aspect_surface[index].aspect.replace(`Melinoe`, ``)
+                      : overall_aspect_surface[index].aspect}
+                  </div>
                 </div>
                 <div>
                   <div>{overall_aspect_underworld[index].status}</div>
