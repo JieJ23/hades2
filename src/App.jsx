@@ -96,10 +96,11 @@ export default function App() {
               ))}
             </select>
           </div>
-          <div className="text-[12px] px-1 flex gap-2">
+          <div className="text-[12px] px-1 pt-1 flex gap-2">
             <div>Query:</div>
-            <div className="text-[#f05bdc] backdrop-blur-lg">Region [ {region} ]</div>
-            <div className="text-[#00ffaa] backdrop-blur-lg">Aspect [ {category} ]</div>
+            <div className="text-[#f05bdc] backdrop-blur-lg">Region [{region}]</div>
+            <div className="text-[#00ffaa] backdrop-blur-lg">Aspect [{category}]</div>
+            <div className="text-[#fff200] backdrop-blur-lg">Log [{displayEntries.length}]</div>
           </div>
           <div className="text-[12px] p-1 flex gap-2">
             <div>Category Leader: </div>
@@ -112,7 +113,7 @@ export default function App() {
               className="flex items-center w-full rounded bg-black/90 px-2 py-1 border-1 border-white/40 gap-2 mb-3 relative"
               key={index}
             >
-              <div className={`absolute w-full h-full top-0 left-0 opacity-15 lg:opacity-40`}>
+              <div className={`absolute w-full h-full top-0 left-0 opacity-15 lg:opacity-25`}>
                 <img
                   src={`/FamPort/${obj.fam}bg.png`}
                   alt="Fam"
@@ -229,7 +230,7 @@ export default function App() {
                   {(obj.duo || obj.ele) && (
                     <div className="flex flex-col">
                       <div className="font-[Cinzel]">Duo & Infusion</div>
-                      <div className="flex gap-0.5">
+                      <div className="flex flex-wrap gap-0.5">
                         {obj.duo &&
                           findValue(
                             sToA(obj.duo).sort((a, b) => {
@@ -320,7 +321,7 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <div className="col-span-3 md:col-span-6 lg:col-span-8 text-[orange] z-40 pt-1">
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 text-gray-300 z-40 pt-1">
                   <div>{obj.des}</div>
                   <Link to={obj.src} target="_blank" className="text-[#109de4] line-clamp-1">
                     {obj.src}
