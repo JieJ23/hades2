@@ -86,32 +86,38 @@ export default function Stats() {
           </div>
         </section>
       </div>
-      <div className="max-w-[1200px] text-[12px] mx-auto my-2 grid grid-cols-2 md:grid-cols-4 gap-2 text-white font-[Cinzel] px-4">
-        <div className="rounded border-1 border-[#00ffaa] bg-black/80 w-full flex flex-col items-center py-2">
+      <div className="max-w-[1200px] text-[12px] sm:text-[16px] mx-auto my-2 grid grid-cols-2 md:grid-cols-4 gap-2 text-white font-[Cinzel] px-4">
+        <div className="rounded border-1 border-black bg-black/80 w-full h-[200px] sm:h-[300px] flex flex-col items-center py-2 relative justify-center">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('/Misc/Selene.webp')] -z-10 bg-cover bg-center bg-no-repeat" />
           <div className="whitespace-pre-line text-center">{`Nights Blessed 
           by Selene`}</div>
-          <div className="text-[20px] font-[serif] text-[#0fe6e9]">
+          <div className="text-[20px] sm:text-[30px] font-[serif] text-[#0fe6e9]">
             {Math.round(100 * (seleneRuns / p9data.length))}%
           </div>
         </div>
-        <div className="rounded border-1 border-[#00ffaa] bg-black/80 w-full flex flex-col items-center py-2">
+        <div className="rounded border-1 border-black bg-black/80 w-full h-[200px] sm:h-[300px] flex flex-col items-center py-2 relative justify-center">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('/Misc/Chaos.webp')] -z-10 bg-cover bg-center bg-no-repeat" />
           <div className="whitespace-pre-line text-center">{`Nights Cursed 
           by Chaos`}</div>
-          <div className="text-[20px] font-[serif] text-[#f10bf1]">
+          <div className="text-[20px] sm:text-[30px] font-[serif] text-[#f10bf1]">
             {Math.round(100 * (chaosRunswithselene / p9data.length))}%
           </div>
         </div>
-        <div className="rounded border-1 border-[#00ffaa] bg-black/80 w-full flex flex-col items-center py-2">
+        <div className="rounded border-1 border-black bg-black/80 w-full h-[200px] sm:h-[300px] flex flex-col items-center py-2 relative justify-center">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('/Misc/Athena.webp')] -z-10 bg-cover bg-center bg-no-repeat" />
+
           <div className="whitespace-pre-line text-center">{`Nights Aided 
           by Athena`}</div>
-          <div className="text-[20px] font-[serif] text-[#dae811]">
+          <div className="text-[20px] sm:text-[30px] font-[serif] text-[#dae811]">
             {Math.round(100 * (AthenaRuns / p9data.length))}%
           </div>
         </div>
-        <div className="rounded border-1 border-[#00ffaa] bg-black/80 w-full flex flex-col items-center py-2">
+        <div className="rounded border-1 border-black bg-black/80 w-full h-[200px] sm:h-[300px] flex flex-col items-center py-2 relative justify-center">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('/Misc/Chronos.webp')] -z-10 bg-cover bg-top bg-no-repeat" />
+
           <div className="whitespace-pre-line text-center">{`Nights Surrender 
           to Chronos`}</div>
-          <div className="text-[20px] font-[monospace] text-[#f40909]">0</div>
+          <div className="text-[20px] sm:text-[30px] font-[monospace] text-[#f40909]">0</div>
         </div>
       </div>
       <P9BoonData />

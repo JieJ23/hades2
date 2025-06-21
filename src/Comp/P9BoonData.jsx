@@ -123,6 +123,8 @@ export default function P9BoonData() {
             {findBoonTotal(core_Counts, ite).map((arr, index) => (
               <div className="flex gap-1 rounded border-1 border-white/20 p-2" key={index}>
                 <img
+                  draggable={false}
+                  loading="lazy"
                   src={`/H2Boons/${arr[0]}.png`}
                   alt="Core Boons"
                   className="size-7 md:size-9 rounded border-1 border-black/20"
@@ -143,6 +145,8 @@ export default function P9BoonData() {
             <div className="flex flex-wrap gap-1" key={index}>
               <div className="flex gap-1 rounded border-1 border-white/20 p-2">
                 <img
+                  draggable={false}
+                  loading="lazy"
                   src={`/P9/${p9boons_reverse[ite[0]]}.png`}
                   alt="Core Boons"
                   className="size-7 md:size-9 rounded border-1 border-black/20"
@@ -161,6 +165,8 @@ export default function P9BoonData() {
             <div className="flex flex-wrap gap-1" key={index}>
               <div className="flex gap-1 rounded border-1 border-white/20 p-2">
                 <img
+                  draggable={false}
+                  loading="lazy"
                   src={`/P9/${p9boons_reverse[ite[0]]}.png`}
                   alt="Core Boons"
                   className="size-7 md:size-9 rounded border-1 border-black/20"
@@ -179,6 +185,8 @@ export default function P9BoonData() {
             <div className="flex flex-wrap gap-1" key={index}>
               <div className="flex gap-1 rounded border-1 border-white/20 p-2">
                 <img
+                  draggable={false}
+                  loading="lazy"
                   src={`/P9/${p9boons_reverse[ite[0]]}.png`}
                   alt="Core Boons"
                   className="size-7 md:size-9 rounded border-1 border-black/20"
@@ -197,6 +205,8 @@ export default function P9BoonData() {
             <div className="flex flex-wrap gap-1" key={index}>
               <div className="flex gap-1 rounded border-1 border-white/20 p-2">
                 <img
+                  draggable={false}
+                  loading="lazy"
                   src={`/P9/${p9boons_reverse[ite[0]]}.png`}
                   alt="Core Boons"
                   className="size-7 md:size-9 rounded border-1 border-black/20"
@@ -215,6 +225,8 @@ export default function P9BoonData() {
             <div className="flex flex-wrap gap-1" key={index}>
               <div className="flex gap-1 rounded border-1 border-white/20 p-2">
                 <img
+                  draggable={false}
+                  loading="lazy"
                   src={`/P9/${p9boons_reverse[ite[0]]}.png`}
                   alt="Core Boons"
                   className="size-7 md:size-9 rounded border-1 border-black/20"
@@ -233,6 +245,8 @@ export default function P9BoonData() {
             <div className="flex flex-wrap gap-1" key={index}>
               <div className="flex gap-1 rounded border-1 border-white/20 p-2">
                 <img
+                  draggable={false}
+                  loading="lazy"
                   src={`/P9/${p9boons_reverse[ite[0]]}.png`}
                   alt="Core Boons"
                   className="size-7 md:size-9 rounded border-1 border-black/20"
@@ -255,6 +269,8 @@ export default function P9BoonData() {
               <div className="flex flex-wrap gap-1" key={index}>
                 <div className="flex gap-1 rounded border-1 border-white/20 p-2">
                   <img
+                    draggable={false}
+                    loading="lazy"
                     src={ite[0] === `` ? `/P9/Nona.png` : `/P9/${p9boons_reverse[ite[0]]}.png`}
                     alt="Core Boons"
                     className="size-7 md:size-9 rounded border-1 border-black/20"
@@ -277,6 +293,8 @@ export default function P9BoonData() {
               <div className="flex flex-wrap gap-1" key={index}>
                 <div className="flex gap-1 rounded border-1 border-white/20 p-2">
                   <img
+                    draggable={false}
+                    loading="lazy"
                     src={ite[0] === `` ? `/P9/Nona.png` : `/P9/${p9boons_reverse[ite[0]]}.png`}
                     alt="Core Boons"
                     className="size-7 md:size-9 rounded border-1 border-black/20"
@@ -304,6 +322,8 @@ export default function P9BoonData() {
               <div className="flex flex-wrap gap-1" key={index}>
                 <div className="flex gap-1 rounded border-1 border-white/20 p-2">
                   <img
+                    draggable={false}
+                    loading="lazy"
                     src={ite[0] === `` ? `/P9/Nona.png` : `/P9/${p9boons_reverse[ite[0]]}.png`}
                     alt="Core Boons"
                     className="size-7 md:size-9 rounded border-1 border-black/20"
@@ -326,6 +346,8 @@ export default function P9BoonData() {
               <div className="flex flex-wrap gap-1" key={index}>
                 <div className="flex gap-1 rounded border-1 border-white/20 p-2">
                   <img
+                    draggable={false}
+                    loading="lazy"
                     src={ite[0] === `` ? `/P9/Nona.png` : `/P9/${p9boons_reverse[ite[0]]}.png`}
                     alt="Core Boons"
                     className="size-7 md:size-9 rounded border-1 border-black/20"
