@@ -24,6 +24,12 @@ export const h2AspectOrder = [
   `Selene`,
   `Shiva`,
 ];
+export const weaponCoat = [`Melinoe Coat`, `Nyx`, `Selene`, `Shiva`];
+export const weaponSkull = [`Melinoe Skull`, `Medea`, `Persephone`, `Hel`];
+export const weaponFlames = [`Melinoe Flames`, `Eos`, `Moros`, `Supay`];
+export const weaponAxe = [`Melinoe Axe`, `Charon`, `Thanatos`, `Nergal`];
+export const weaponStaff = [`Melinoe Staff`, `Circe`, `Momus`, `Anubis`];
+export const weaponBlades = [`Melinoe Blades`, `Artemis`, `Pan`, `Morrigan`];
 
 export function daysAgo(dateString) {
   const [month, day, year] = dateString.split("/").map(Number);

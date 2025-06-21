@@ -7,7 +7,7 @@ import { h2AspectOrder } from "./Data/Misc";
 import { p9data } from "./Data/P9Data";
 import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
 
-const orderMap = new Map(allP9.map((item, index) => [item, index]));
+export const orderMap = new Map(allP9.map((item, index) => [item, index]));
 
 const findGUIcard = (asp) => {
   switch (asp) {
