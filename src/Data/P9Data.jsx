@@ -299,7 +299,7 @@ export const p9data = [
     fam: "Frog",
     cor: "ZeuAttack,HesSpecial,AphCast,ZeuSprint,Magick",
     ham: "Mirrored Ankh,Soulfilled Ankh",
-    duo: "Romantic Spark,Burning Desire,",
+    duo: "Romantic Spark,Burning Desire",
     ele: "Air Quality,Wispy Wiles",
     mis: "Racing Thoughts,Support Fire,Hasty Retreat,Cinerary Circle",
     cha: "Allure of Aphrodite,Chasm",

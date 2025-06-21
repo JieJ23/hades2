@@ -114,7 +114,7 @@ const core_Chaos = p9data.reduce((acc, entry) => {
 
 export default function P9BoonData() {
   return (
-    <div className="max-w-[1200px] font-[PT] text-[10px] md:text-[12px] mx-auto my-6">
+    <div className="max-w-[1200px] font-[PT] text-[10px] md:text-[12px] mx-auto my-2">
       <div className="px-2 text-[#fff200]">Count: {p9data.length}</div>
       <div className="rounded bg-black/80 border-1 border-white/20 p-4 py-2 mb-4">
         <div className="font-[Cinzel]">Core Boons</div>

@@ -1,8 +1,9 @@
 import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
-import { h2AspectOrder } from "../Data/Misc";
+import { h2AspectOrder, sToA } from "../Data/Misc";
 import { p9data } from "../Data/P9Data";
 import P9BoonData from "../Comp/P9BoonData";
+import { p9athena, p9chaos, p9selene } from "../Data/P9Boons";
 
 const getHighestOfEachAspect = (order, data) => {
   return order.map((aspect) => {
@@ -21,13 +22,25 @@ const surface_runs = highfear.filter((obj) => obj.loc === "Surface");
 const overall_aspect_underworld = getHighestOfEachAspect(h2AspectOrder, underworld_runs);
 const overall_aspect_surface = getHighestOfEachAspect(h2AspectOrder, surface_runs);
 
+const seleneRuns = p9data.filter((obj) => obj.sel === `t`).length;
+// const chaosRuns = p9data.filter((obj) => obj.cha !== "").length;
+const chaosRunswithselene = p9data
+  .filter((obj) => obj.cha !== "")
+  .filter((obj) => sToA(obj.cha).some((chaItem) => Object.values(p9selene).includes(chaItem))).length;
+// const chaosRunsnoselene = p9data
+//   .filter((obj) => obj.cha !== "")
+//   .filter((obj) => sToA(obj.cha).some((chaItem) => Object.values(p9chaos).includes(chaItem))).length;
+const AthenaRuns = p9data.filter((obj) =>
+  sToA(obj.mis).some((athItem) => Object.values(p9athena).includes(athItem))
+).length;
+
 export default function Stats() {
   return (
     <main className="h-full min-h-lvh select-none relative">
       <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
       <Head />
       <SideNav />
-      <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto my-6">
+      <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto mb-2">
         <section className="w-full">
           <div className="text-[16px] p-2 py-0 font-[Cinzel]">Ladder Summary</div>
           <div className="bg-black/80 border-1 border-white/20 rounded overflow-hidden pt-2">
@@ -72,6 +85,34 @@ export default function Stats() {
             ))}
           </div>
         </section>
+      </div>
+      <div className="max-w-[1200px] text-[12px] mx-auto my-2 grid grid-cols-2 md:grid-cols-4 gap-2 text-white font-[Cinzel] px-4">
+        <div className="rounded border-1 border-[#00ffaa] bg-black/80 w-full flex flex-col items-center py-2">
+          <div className="whitespace-pre-line text-center">{`Nights Blessed 
+          by Selene`}</div>
+          <div className="text-[20px] font-[serif] text-[#0fe6e9]">
+            {Math.round(100 * (seleneRuns / p9data.length))}%
+          </div>
+        </div>
+        <div className="rounded border-1 border-[#00ffaa] bg-black/80 w-full flex flex-col items-center py-2">
+          <div className="whitespace-pre-line text-center">{`Nights Cursed 
+          by Chaos`}</div>
+          <div className="text-[20px] font-[serif] text-[#f10bf1]">
+            {Math.round(100 * (chaosRunswithselene / p9data.length))}%
+          </div>
+        </div>
+        <div className="rounded border-1 border-[#00ffaa] bg-black/80 w-full flex flex-col items-center py-2">
+          <div className="whitespace-pre-line text-center">{`Nights Aided 
+          by Athena`}</div>
+          <div className="text-[20px] font-[serif] text-[#dae811]">
+            {Math.round(100 * (AthenaRuns / p9data.length))}%
+          </div>
+        </div>
+        <div className="rounded border-1 border-[#00ffaa] bg-black/80 w-full flex flex-col items-center py-2">
+          <div className="whitespace-pre-line text-center">{`Nights Surrender 
+          to Chronos`}</div>
+          <div className="text-[20px] font-[monospace] text-[#f40909]">0</div>
+        </div>
       </div>
       <P9BoonData />
     </main>
