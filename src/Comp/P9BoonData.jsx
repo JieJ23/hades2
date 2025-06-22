@@ -139,7 +139,7 @@ export default function P9BoonData() {
         ))}
       </div>
       <div className="rounded bg-black/80 border-1 border-white/20 p-4 py-0 mb-4">
-        <div className="font-[Cinzel] py-2">Staff</div>
+        <div className="font-[Cinzel] py-2">Staff - {Math.round(100 * (allStaff / p9data.length))}% of count</div>
         <div className="flex flex-wrap gap-1">
           {hammerStaff.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
@@ -159,7 +159,7 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2">Axe</div>
+        <div className="font-[Cinzel] py-2">Axe - {Math.round(100 * (allAxe / p9data.length))}% of count</div>
         <div className="flex flex-wrap gap-1">
           {hammerAxe.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
@@ -179,7 +179,7 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2">Blades</div>
+        <div className="font-[Cinzel] py-2">Blades - {Math.round(100 * (allBlades / p9data.length))}% of count</div>
         <div className="flex flex-wrap gap-1">
           {hammerBlades.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
@@ -199,7 +199,7 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2">Flames</div>
+        <div className="font-[Cinzel] py-2">Flames - {Math.round(100 * (allFlames / p9data.length))}% of count</div>
         <div className="flex flex-wrap gap-1">
           {hammerFlames.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
@@ -219,7 +219,7 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2">Skulll</div>
+        <div className="font-[Cinzel] py-2">Skull - {Math.round(100 * (allSkull / p9data.length))}% of count</div>
         <div className="flex flex-wrap gap-1">
           {hammerSkull.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
@@ -239,7 +239,7 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2">Coat</div>
+        <div className="font-[Cinzel] py-2">Coat - {Math.round(100 * (allCoat / p9data.length))}% of count</div>
         <div className="flex flex-wrap gap-1">
           {hammerCoat.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>

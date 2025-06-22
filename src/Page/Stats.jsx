@@ -3,7 +3,8 @@ import SideNav from "../Comp/Sidebar";
 import { h2AspectOrder, sToA } from "../Data/Misc";
 import { p9data } from "../Data/P9Data";
 import P9BoonData from "../Comp/P9BoonData";
-import { p9athena, p9chaos, p9selene } from "../Data/P9Boons";
+import { p9athena, p9chaos } from "../Data/P9Boons";
+import ScatterGP from "../Comp/ScatterGp";
 
 const getHighestOfEachAspect = (order, data) => {
   return order.map((aspect) => {
@@ -23,13 +24,9 @@ const overall_aspect_underworld = getHighestOfEachAspect(h2AspectOrder, underwor
 const overall_aspect_surface = getHighestOfEachAspect(h2AspectOrder, surface_runs);
 
 const seleneRuns = p9data.filter((obj) => obj.sel === `t`).length;
-// const chaosRuns = p9data.filter((obj) => obj.cha !== "").length;
-const chaosRunswithselene = p9data
+const chaosRunsnoselene = p9data
   .filter((obj) => obj.cha !== "")
-  .filter((obj) => sToA(obj.cha).some((chaItem) => Object.values(p9selene).includes(chaItem))).length;
-// const chaosRunsnoselene = p9data
-//   .filter((obj) => obj.cha !== "")
-//   .filter((obj) => sToA(obj.cha).some((chaItem) => Object.values(p9chaos).includes(chaItem))).length;
+  .filter((obj) => sToA(obj.cha).some((chaItem) => Object.values(p9chaos).includes(chaItem))).length;
 const AthenaRuns = p9data.filter((obj) =>
   sToA(obj.mis).some((athItem) => Object.values(p9athena).includes(athItem))
 ).length;
@@ -40,7 +37,10 @@ export default function Stats() {
       <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
       <Head />
       <SideNav />
-      <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto mb-2">
+      <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto my-2 bg-black/85 rounded border-1 border-white/20">
+        <ScatterGP />
+      </div>
+      <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto my-2">
         <section className="w-full">
           <div className="text-[16px] p-2 py-0 font-[Cinzel]">Ladder Summary</div>
           <div className="bg-black/80 border-1 border-white/20 rounded overflow-hidden pt-2">
@@ -100,7 +100,7 @@ export default function Stats() {
           <div className="whitespace-pre-line text-center">{`Nights Cursed 
           by Chaos`}</div>
           <div className="text-[20px] sm:text-[30px] font-[serif] text-[#f10bf1]">
-            {Math.round(100 * (chaosRunswithselene / p9data.length))}%
+            {Math.round(100 * (chaosRunsnoselene / p9data.length))}%
           </div>
         </div>
         <div className="rounded border-1 border-black bg-black/80 w-full h-[200px] sm:h-[300px] flex flex-col items-center py-2 relative justify-center">

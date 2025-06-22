@@ -82,3 +82,11 @@ export function sToA(string) {
   const array = string.split(`,`);
   return array;
 }
+
+export function timeToDecimal(timeStr) {
+  const [minutesStr, secondsStr] = timeStr.split(":");
+  const minutes = parseInt(minutesStr, 10);
+  const seconds = parseInt(secondsStr, 10);
+
+  return minutes + seconds / 60;
+}
