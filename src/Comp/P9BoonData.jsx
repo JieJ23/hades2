@@ -130,7 +130,7 @@ export default function P9BoonData() {
                   className="size-7 md:size-9 rounded border-1 border-black/20"
                 />
                 <div>
-                  <div>{arr[0]}</div>
+                  <div>{arr[0].includes(`Sprint`) ? arr[0].replace(`Sprint`, `Rush`) : arr[0]}</div>
                   <div>{Math.floor(100 * (arr[1] / p9data.length))}%</div>
                 </div>
               </div>
