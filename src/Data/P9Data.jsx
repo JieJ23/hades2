@@ -200,7 +200,7 @@ export const p9data = [
   {
     dat: "2025-06-21",
     nam: "鵺狮鲵蝶",
-    asp: "Medea",
+    asp: "Persephone",
     loc: "Surface",
     fea: "55",
     src: "https://www.bilibili.com/video/BV1VnNkzqEsj/",
