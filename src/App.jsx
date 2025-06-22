@@ -2,7 +2,7 @@ import Head from "./Comp/Head";
 import SideNav from "./Comp/Sidebar";
 import { sToA } from "./Data/Misc";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { h2AspectOrder } from "./Data/Misc";
 import { p9data } from "./Data/P9Data";
 import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
@@ -42,9 +42,18 @@ const highfear = p9data.sort((a, b) => (a.tim > b.tim ? 1 : -1)).sort((a, b) => 
 
 const availableRegion = [`Underworld`, `Surface`];
 
+const handleLoadMore = (updater) => {
+  updater((prev) => prev + 50);
+};
+
 export default function App() {
   const [region, setRegion] = useState(`All`);
   const [category, setCategory] = useState(`All`);
+  const [show, setShow] = useState(20);
+
+  useEffect(() => {
+    setShow(20);
+  }, [region, category]);
 
   const highfear_region = region === `All` ? highfear : highfear.filter((obj) => obj.loc === region);
 
@@ -107,8 +116,8 @@ export default function App() {
             <div className="text-[#ffb700] backdrop-blur-lg">{displayEntries[0].nam}</div>
           </div>
         </section>
-        <section className="px-2 pb-8 text-[12px]">
-          {displayEntries.map((obj, index) => (
+        <section className="p-2 text-[12px]">
+          {displayEntries.slice(0, show).map((obj, index) => (
             <div
               className="flex items-center w-full rounded bg-black/90 px-2 py-1 border-1 border-white/40 gap-2 mb-3 relative"
               key={index}
@@ -331,6 +340,26 @@ export default function App() {
             </div>
           ))}
         </section>
+        <div className="flex justify-center mb-4 gap-2">
+          {show < displayEntries.length && (
+            <button
+              className="btn bg-transparent rounded border-1 border-[#00ffaa] btn-sm font-[PT]"
+              onClick={() => handleLoadMore(setShow)}
+            >
+              Show More
+            </button>
+          )}
+          {show > 20 && (
+            <button
+              className="btn bg-transparent rounded border-1 border-[#00ffaa] btn-sm font-[PT]"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Back Top
+            </button>
+          )}
+        </div>
       </div>
     </main>
   );
