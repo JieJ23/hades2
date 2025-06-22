@@ -92,6 +92,16 @@ const core_Ele = p9data.reduce((acc, entry) => {
   return acc;
 }, {});
 
+const core_Fam = p9data.reduce((acc, entry) => {
+  const corArray = sToA(entry.fam); // Convert string to array
+
+  corArray.forEach((cor) => {
+    acc[cor] = (acc[cor] || 0) + 1;
+  });
+
+  return acc;
+}, {});
+
 const core_Misc = p9data.reduce((acc, entry) => {
   const corArray = sToA(entry.mis); // Convert string to array
 
@@ -116,6 +126,30 @@ export default function P9BoonData() {
   return (
     <div className="max-w-[1200px] font-[PT] text-[10px] md:text-[12px] mx-auto my-2">
       <div className="px-2 text-[#fff200]">Count: {p9data.length}</div>
+      <div className="rounded bg-black/80 border-1 border-white/20 p-4 py-2 mb-4">
+        <div className="font-[Cinzel]">Familiar</div>
+        <div className="flex flex-wrap gap-1 py-2">
+          {Object.entries(core_Fam)
+            .sort((a, b) => b[1] - a[1])
+            .map((ite, index) => (
+              <div className="flex flex-wrap gap-1" key={index}>
+                <div className="flex gap-1 rounded border-1 border-white/20 p-2">
+                  <img
+                    draggable={false}
+                    loading="lazy"
+                    src={ite[0] === `` ? `/P9/Nona.png` : `/P9/${ite[0]}.png`}
+                    alt="Core Boons"
+                    className="size-7 md:size-9 rounded border-1 border-black/20"
+                  />
+                  <div>
+                    <div>{ite[0] === `` ? `None` : ite[0]}</div>
+                    <div>{Math.floor(100 * (ite[1] / p9data.length))}%</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
       <div className="rounded bg-black/80 border-1 border-white/20 p-4 py-2 mb-4">
         <div className="font-[Cinzel]">Core Boons</div>
         {core_attribute.map((ite) => (

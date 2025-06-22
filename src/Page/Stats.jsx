@@ -38,6 +38,7 @@ export default function Stats() {
       <Head />
       <SideNav />
       <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto my-2 bg-black/85 rounded border-1 border-white/20">
+        <div className="text-[16px] p-2 font-[Cinzel]">F/T Scatter</div>
         <ScatterGP />
       </div>
       <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto my-2">
