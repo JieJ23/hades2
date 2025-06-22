@@ -10,8 +10,6 @@ const graphData = p9data.map((obj) => ({
   asp: obj.asp,
 }));
 
-console.log(graphData);
-
 const CustomTooltip = ({ active, payload, label }) => {
   if (!active || !payload || !payload.length) {
     return null; // Hide tooltip if not active or no data
@@ -27,6 +25,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     </div>
   );
 };
+console.log(graphData);
 
 export default function ScatterGP() {
   return (
