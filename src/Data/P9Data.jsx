@@ -169,7 +169,7 @@ export const p9data = [
     fea: "60",
     src: "https://www.bilibili.com/video/BV14ZNCzcE5z/",
     des: "旧轮椅，纯在发泄，没啥意思的一把.不太喜欢这个版本的敌手之誓boss战，堆双boss全屏弹幕构式，根本没有无伤交互的空间！",
-    tim: "15.36.96",
+    tim: "15:36.96",
     fam: "Hound",
     cor: "ApoAttack,Special,DemCast,ApoSprint,HerMagick",
     ham: "Possessed Array,Wide Grin",

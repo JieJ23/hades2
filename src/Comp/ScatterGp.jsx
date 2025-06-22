@@ -10,6 +10,8 @@ const graphData = p9data.map((obj) => ({
   asp: obj.asp,
 }));
 
+console.log(graphData);
+
 const CustomTooltip = ({ active, payload, label }) => {
   if (!active || !payload || !payload.length) {
     return null; // Hide tooltip if not active or no data
@@ -39,7 +41,7 @@ export default function ScatterGP() {
       >
         <CartesianGrid stroke="#131111" strokeDasharray="0" /> {/* Dark, solid grid lines */}
         <Tooltip content={<CustomTooltip />} />
-        <XAxis type="number" dataKey="y" name="Min" unit="M" domain={["dataMin", "auto"]} />
+        <XAxis type="number" dataKey="y" name="Min" unit="M" domain={[(dataMin) => dataMin, "auto"]} />
         <YAxis type="number" dataKey="x" name="Fear" unit="F" domain={[(dataMin) => dataMin - 2, "auto"]} />
         <Scatter name="A school" data={graphData} fill="#00ffaa" />
       </ScatterChart>
