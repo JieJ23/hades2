@@ -25,7 +25,6 @@ const CustomTooltip = ({ active, payload, label }) => {
     </div>
   );
 };
-console.log(graphData);
 
 export default function ScatterGP() {
   return (

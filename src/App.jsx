@@ -2,9 +2,10 @@ import Head from "./Comp/Head";
 import SideNav from "./Comp/Sidebar";
 import { sToA } from "./Data/Misc";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { h2AspectOrder } from "./Data/Misc";
 import { p9data } from "./Data/P9Data";
+import { testData } from "./Data/P9TestData";
 import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
 
 export const orderMap = new Map(allP9.map((item, index) => [item, index]));
@@ -51,10 +52,6 @@ export default function App() {
   const [category, setCategory] = useState(`All`);
   const [show, setShow] = useState(20);
 
-  useEffect(() => {
-    setShow(20);
-  }, [region, category]);
-
   const highfear_region = region === `All` ? highfear : highfear.filter((obj) => obj.loc === region);
 
   const availableAspects =
@@ -81,6 +78,7 @@ export default function App() {
               value={region}
               className="select select-sm w-[100px] border-1 border-[#f05bdc]"
               onChange={(e) => {
+                setShow(20);
                 setRegion(e.target.value);
                 setCategory(`All`);
               }}
@@ -95,12 +93,15 @@ export default function App() {
             <select
               value={category}
               className="select select-sm w-[100px] border-1 border-[#00ffaa]"
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => {
+                setShow(20);
+                setCategory(e.target.value);
+              }}
             >
               <option value={`All`}>All</option>
               {availableAspects.map((ite, index) => (
                 <option value={ite} key={index}>
-                  {ite}
+                  <div>{ite}</div>
                 </option>
               ))}
             </select>
@@ -119,7 +120,7 @@ export default function App() {
         <section className="p-2 text-[12px]">
           {displayEntries.slice(0, show).map((obj, index) => (
             <div
-              className="flex items-center w-full rounded bg-black/90 px-2 py-1 border-1 border-white/40 gap-2 mb-3 relative"
+              className="flex items-center w-full rounded bg-black/90 px-2 py-1 border-1 border-white/20 gap-2 mb-3 relative"
               key={index}
             >
               <div className={`absolute w-full h-full top-0 left-0 opacity-15 lg:opacity-25`}>
@@ -330,7 +331,7 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <div className="col-span-3 md:col-span-6 lg:col-span-8 text-gray-300 z-40 pt-1">
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 text-gray-300 pt-1">
                   <div>{obj.des}</div>
                   <Link to={obj.src} target="_blank" className="text-[#109de4] line-clamp-1">
                     {obj.src}
