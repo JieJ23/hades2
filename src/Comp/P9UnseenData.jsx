@@ -37,7 +37,7 @@ const IcarusRuns = p9data.filter((obj) => sToA(obj.mis).some((item) => Object.va
 export default function P9Unseen() {
   return (
     <div className="max-w-[1200px] text-[12px] mx-auto my-2 font-[PT] text-white">
-      <div className="px-2 text-[#fff200]">Encounter Count</div>
+      <div className="px-2 text-[#fff200]">Encounter</div>
       <div className="rounded border-1 border-black bg-black/80 flex gap-2 flex-wrap p-2">
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-[#00ffaa] rounded bg-black">
           <img src={`/Misc/Arachne.png`} alt="Unseen" className="size-12 rounded" />
