@@ -704,7 +704,7 @@ export const p9data = [
   {
     dat: "2025-06-25",
     nam: "星辰往昔",
-    asp: "Shiva",
+    asp: "Nyx",
     loc: "Surface",
     fea: "40",
     src: "https://www.bilibili.com/video/BV1Y1K7zTE3Y/",

@@ -43,7 +43,7 @@ export default function Submit() {
             Submit
           </label>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side z-40">
           <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
           <div className="menu bg-black/90 text-base-content min-h-full w-80 p-4">
             {/* Sidebar content here */}
@@ -67,7 +67,7 @@ export default function Submit() {
                   className="input input-md"
                   name="fear"
                   max={67}
-                  min={32}
+                  min={22}
                   required
                 />
                 <input type="text" placeholder="Gameplay Link" className="input input-md" name="src" required />
