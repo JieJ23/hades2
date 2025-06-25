@@ -213,30 +213,32 @@ export default function App() {
                       ))}
                     </div>
                   </div>
-                  <div className="flex flex-col">
-                    <div className="font-[Cinzel]">Hammer</div>
-                    <div className="flex gap-0.5">
-                      {findValue(
-                        sToA(obj.ham).sort((a, b) => {
-                          const aIndex = orderMap.get(a) ?? Infinity;
-                          const bIndex = orderMap.get(b) ?? Infinity;
-                          return aIndex - bIndex;
-                        })
-                      ).map((ite, index) => (
-                        <div className="tooltip shrink-0" key={index}>
-                          <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                            <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
+                  {obj.ham && (
+                    <div className="flex flex-col">
+                      <div className="font-[Cinzel]">Hammer</div>
+                      <div className="flex gap-0.5">
+                        {findValue(
+                          sToA(obj.ham).sort((a, b) => {
+                            const aIndex = orderMap.get(a) ?? Infinity;
+                            const bIndex = orderMap.get(b) ?? Infinity;
+                            return aIndex - bIndex;
+                          })
+                        ).map((ite, index) => (
+                          <div className="tooltip shrink-0" key={index}>
+                            <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                              <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
+                            </div>
+                            <img
+                              draggable={false}
+                              src={`/P9/${ite}.png`}
+                              alt="Core Boon"
+                              className="size-7 border-1 border-white/20 rounded-md"
+                            />
                           </div>
-                          <img
-                            draggable={false}
-                            src={`/P9/${ite}.png`}
-                            alt="Core Boon"
-                            className="size-7 border-1 border-white/20 rounded-md"
-                          />
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
                   {(obj.duo || obj.ele) && (
                     <div className="flex flex-col">
                       <div className="font-[Cinzel]">Duo & Infusion</div>
