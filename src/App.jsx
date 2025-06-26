@@ -37,7 +37,10 @@ const findValue = (arr) => {
 export function getYTid(text) {
   return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
 }
-const highfear = p9data.sort((a, b) => (a.tim > b.tim ? 1 : -1)).sort((a, b) => (+a.fea > +b.fea ? -1 : 1));
+const highfear = p9data
+  .slice()
+  .sort((a, b) => a.tim - b.tim)
+  .sort((a, b) => +b.fea - +a.fea);
 // const rankingPlayer = [...new Set(highfear.map((item) => item.n))];
 // const rankingAspect = [...new Set(highfear.map((item) => item.a))];
 
