@@ -163,7 +163,7 @@ export default function App() {
             <div className="text-[#ffb700] backdrop-blur-lg">{displayEntries[0]?.nam ?? `Null`}</div>
           </div>
         </section>
-        <section className="p-2 text-[12px]">
+        <section className="p-2 text-[12px] overflow-hidden">
           {displayEntries.slice(0, show).map((obj, index) => (
             <div
               className="flex items-center w-full rounded bg-black/90 px-2 py-1 border-1 border-white/20 gap-2 mb-3 relative"

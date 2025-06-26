@@ -147,7 +147,11 @@ export default function P9BoonData() {
         <div className="flex flex-wrap gap-1">
           {hammerStaff.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
-              <div className="flex gap-1 rounded border-1 border-white/20 p-2">
+              <div
+                className={`flex gap-1 rounded border-1 p-2 ${
+                  Math.floor(100 * (ite[1] / allStaff)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                }`}
+              >
                 <img
                   draggable={false}
                   loading="lazy"
@@ -167,7 +171,11 @@ export default function P9BoonData() {
         <div className="flex flex-wrap gap-1">
           {hammerAxe.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
-              <div className="flex gap-1 rounded border-1 border-white/20 p-2">
+              <div
+                className={`flex gap-1 rounded border-1 p-2 ${
+                  Math.floor(100 * (ite[1] / allAxe)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                }`}
+              >
                 <img
                   draggable={false}
                   loading="lazy"
@@ -189,7 +197,11 @@ export default function P9BoonData() {
         <div className="flex flex-wrap gap-1">
           {hammerBlades.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
-              <div className="flex gap-1 rounded border-1 border-white/20 p-2">
+              <div
+                className={`flex gap-1 rounded border-1 p-2 ${
+                  Math.floor(100 * (ite[1] / allBlades)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                }`}
+              >
                 <img
                   draggable={false}
                   loading="lazy"
@@ -211,7 +223,11 @@ export default function P9BoonData() {
         <div className="flex flex-wrap gap-1">
           {hammerFlames.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
-              <div className="flex gap-1 rounded border-1 border-white/20 p-2">
+              <div
+                className={`flex gap-1 rounded border-1 p-2 ${
+                  Math.floor(100 * (ite[1] / allFlames)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                }`}
+              >
                 <img
                   draggable={false}
                   loading="lazy"
@@ -231,7 +247,11 @@ export default function P9BoonData() {
         <div className="flex flex-wrap gap-1">
           {hammerSkull.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
-              <div className="flex gap-1 rounded border-1 border-white/20 p-2">
+              <div
+                className={`flex gap-1 rounded border-1 p-2 ${
+                  Math.floor(100 * (ite[1] / allSkull)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                }`}
+              >
                 <img
                   draggable={false}
                   loading="lazy"
@@ -251,7 +271,11 @@ export default function P9BoonData() {
         <div className="flex flex-wrap gap-1">
           {hammerCoat.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
-              <div className="flex gap-1 rounded border-1 border-white/20 p-2">
+              <div
+                className={`flex gap-1 rounded border-1 p-2 ${
+                  Math.floor(100 * (ite[1] / allCoat)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                }`}
+              >
                 <img
                   draggable={false}
                   loading="lazy"
@@ -322,7 +346,12 @@ export default function P9BoonData() {
         {core_attribute.map((ite) => (
           <div className="flex flex-wrap gap-1 py-2">
             {findBoonTotal(core_Counts, ite).map((arr, index) => (
-              <div className="flex gap-1 rounded border-1 border-white/20 p-2" key={index}>
+              <div
+                className={`flex gap-1 rounded border-1 p-2 ${
+                  Math.floor(100 * (arr[1] / displayData.length)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                }`}
+                key={index}
+              >
                 <img
                   draggable={false}
                   loading="lazy"
@@ -346,7 +375,13 @@ export default function P9BoonData() {
             .sort((a, b) => b[1] - a[1])
             .map((ite, index) => (
               <div className="flex flex-wrap gap-1" key={index}>
-                <div className="flex gap-1 rounded border-1 border-white/20 p-2">
+                <div
+                  className={`flex gap-1 rounded border-1 p-2 ${
+                    Math.floor(100 * (ite[1] / displayData.length)) >= 25
+                      ? `bg-[#192265] border-none`
+                      : `border-white/20`
+                  }`}
+                >
                   <img
                     draggable={false}
                     loading="lazy"
@@ -370,7 +405,13 @@ export default function P9BoonData() {
             .sort((a, b) => b[1] - a[1])
             .map((ite, index) => (
               <div className="flex flex-wrap gap-1" key={index}>
-                <div className="flex gap-1 rounded border-1 border-white/20 p-2">
+                <div
+                  className={`flex gap-1 rounded border-1 p-2 ${
+                    Math.floor(100 * (ite[1] / displayData.length)) >= 25
+                      ? `bg-[#192265] border-none`
+                      : `border-white/20`
+                  }`}
+                >
                   <img
                     draggable={false}
                     loading="lazy"
@@ -394,7 +435,13 @@ export default function P9BoonData() {
             .sort((a, b) => b[1] - a[1])
             .map((ite, index) => (
               <div className="flex flex-wrap gap-1" key={index}>
-                <div className="flex gap-1 rounded border-1 border-white/20 p-2">
+                <div
+                  className={`flex gap-1 rounded border-1 p-2 ${
+                    Math.floor(100 * (ite[1] / displayData.length)) >= 25
+                      ? `bg-[#192265] border-none`
+                      : `border-white/20`
+                  }`}
+                >
                   <img
                     draggable={false}
                     loading="lazy"
@@ -423,7 +470,13 @@ export default function P9BoonData() {
 
             .map((ite, index) => (
               <div className="flex flex-wrap gap-1" key={index}>
-                <div className="flex gap-1 rounded border-1 border-white/20 p-2">
+                <div
+                  className={`flex gap-1 rounded border-1 p-2 ${
+                    Math.floor(100 * (ite[1] / displayData.length)) >= 25
+                      ? `bg-[#192265] border-none`
+                      : `border-white/20`
+                  }`}
+                >
                   <img
                     draggable={false}
                     loading="lazy"
@@ -447,7 +500,13 @@ export default function P9BoonData() {
             .sort((a, b) => b[1] - a[1])
             .map((ite, index) => (
               <div className="flex flex-wrap gap-1" key={index}>
-                <div className="flex gap-1 rounded border-1 border-white/20 p-2">
+                <div
+                  className={`flex gap-1 rounded border-1 p-2 ${
+                    Math.floor(100 * (ite[1] / displayData.length)) >= 25
+                      ? `bg-[#192265] border-none`
+                      : `border-white/20`
+                  }`}
+                >
                   <img
                     draggable={false}
                     loading="lazy"
