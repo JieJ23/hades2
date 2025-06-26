@@ -61,7 +61,7 @@ export default function App() {
   const [min, setMin] = useState(22);
   const [max, setMax] = useState(67);
 
-  const selectedHighfear = highfear.filter((obj) => obj.fea >= min && obj.fea <= max);
+  const selectedHighfear = p9data.filter((obj) => obj.fea >= min && obj.fea <= max);
 
   const highfear_region = region === `All` ? selectedHighfear : selectedHighfear.filter((obj) => obj.loc === region);
 
