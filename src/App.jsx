@@ -3,7 +3,7 @@ import SideNav from "./Comp/Sidebar";
 import { sToA } from "./Data/Misc";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { h2AspectOrder } from "./Data/Misc";
+import { h2AspectOrder, parseTimetoms } from "./Data/Misc";
 import { p9data } from "./Data/P9Data";
 import { testData } from "./Data/P9TestData";
 import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
@@ -37,10 +37,14 @@ const findValue = (arr) => {
 export function getYTid(text) {
   return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
 }
-const highfear = p9data
-  .slice()
-  .sort((a, b) => a.tim - b.tim)
-  .sort((a, b) => +b.fea - +a.fea);
+const highfear = p9data.slice().sort((a, b) => {
+  // Sort by fear descending
+  const feaDiff = +b.fea - +a.fea;
+  if (feaDiff !== 0) return feaDiff;
+
+  // If fear is equal, sort by time ascending (fastest first)
+  return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+});
 // const rankingPlayer = [...new Set(highfear.map((item) => item.n))];
 // const rankingAspect = [...new Set(highfear.map((item) => item.a))];
 

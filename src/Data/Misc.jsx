@@ -90,3 +90,15 @@ export function timeToDecimal(timeStr) {
 
   return minutes + seconds / 60;
 }
+
+export function parseTimetoms(timeStr) {
+  const [minPart, rest] = timeStr.split(":");
+  const [secPart, hundredthsPart] = rest.split(".");
+
+  const minutes = parseInt(minPart, 10);
+  const seconds = parseInt(secPart, 10);
+  const hundredths = parseInt(hundredthsPart.padEnd(2, "0"), 10); // Ensure 2 digits
+
+  const totalMs = (minutes * 60 + seconds) * 1000 + hundredths * 10;
+  return totalMs;
+}
