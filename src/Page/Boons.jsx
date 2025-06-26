@@ -75,6 +75,7 @@ export default function Boons() {
                     }`}
                   >
                     <img
+                      draggable={false}
                       src={`/P9/${item[0]}.png`}
                       alt="Boons"
                       className="size-10 border-1 border-white/20 rounded-xl"

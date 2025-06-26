@@ -36,7 +36,7 @@ export default function P9Core() {
   }, {});
 
   return (
-    <div className="rounded bg-[#0e0c1e] border-1 border-white/20 p-4 py-2 mb-4">
+    <div className="rounded bg-black/80 border-1 border-white/20 p-4 py-2 mb-4">
       <div className="text-[12px] py-1 flex gap-2">
         <select
           value={weapontype}

@@ -51,12 +51,16 @@ export default function App() {
   const [region, setRegion] = useState(`All`);
   const [category, setCategory] = useState(`All`);
   const [show, setShow] = useState(20);
+  const [min, setMin] = useState(22);
+  const [max, setMax] = useState(67);
 
-  const highfear_region = region === `All` ? highfear : highfear.filter((obj) => obj.loc === region);
+  const selectedHighfear = highfear.filter((obj) => obj.fea >= min && obj.fea <= max);
+
+  const highfear_region = region === `All` ? selectedHighfear : selectedHighfear.filter((obj) => obj.loc === region);
 
   const availableAspects =
     region === `All`
-      ? [...new Set(highfear.map((obj) => obj.asp))].sort((a, b) =>
+      ? [...new Set(selectedHighfear.map((obj) => obj.asp))].sort((a, b) =>
           h2AspectOrder.indexOf(a) > h2AspectOrder.indexOf(b) ? 1 : -1
         )
       : [...new Set(highfear_region.map((obj) => obj.asp))].sort((a, b) =>
@@ -101,20 +105,55 @@ export default function App() {
               <option value={`All`}>All</option>
               {availableAspects.map((ite, index) => (
                 <option value={ite} key={index}>
-                  <div>{ite}</div>
+                  {ite}
                 </option>
               ))}
             </select>
+            <input
+              type="number"
+              className="input input-sm border-1 border-[#f18043] w-[50px]"
+              value={min}
+              min={22}
+              max={67}
+              onChange={(e) => {
+                setRegion(`All`);
+                setCategory(`All`);
+                const newMin = Number(e.target.value);
+                if (newMin <= max) {
+                  setMin(newMin);
+                }
+              }}
+            />
+            <input
+              type="number"
+              className="input input-sm border-1 border-[#f18043] w-[50px]"
+              value={max}
+              min={22}
+              max={67}
+              onChange={(e) => {
+                setRegion(`All`);
+                setCategory(`All`);
+                const newMax = Number(e.target.value);
+                if (newMax >= min) {
+                  setMax(newMax);
+                }
+              }}
+            />
           </div>
           <div className="text-[12px] px-1 pt-1 flex gap-2">
-            <div>Query:</div>
+            <div>Query Data:</div>
             <div className="text-[#f05bdc] backdrop-blur-lg">Region [{region}]</div>
             <div className="text-[#00ffaa] backdrop-blur-lg">Aspect [{category}]</div>
-            <div className="text-[#fff200] backdrop-blur-lg">Log [{displayEntries.length}]</div>
+            <div className="text-[#fff200] backdrop-blur-lg">[{displayEntries.length}]</div>
+          </div>
+          <div className="text-[12px] px-1 pt-1 flex gap-2">
+            <div>Query Fear:</div>
+            <div className="text-[#f18043] backdrop-blur-lg">Min [{min}]</div>
+            <div className="text-[#f18043] backdrop-blur-lg">Max [{max}]</div>
           </div>
           <div className="text-[12px] p-1 flex gap-2">
             <div>Category Leader: </div>
-            <div className="text-[#ffb700] backdrop-blur-lg">{displayEntries[0].nam}</div>
+            <div className="text-[#ffb700] backdrop-blur-lg">{displayEntries[0]?.nam ?? `Null`}</div>
           </div>
         </section>
         <section className="p-2 text-[12px]">
