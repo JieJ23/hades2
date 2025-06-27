@@ -82,7 +82,7 @@ export default function App() {
   //
   const filteredData = p9data.filter((item) => {
     // Combine all relevant fields into a single string (lowercase for case-insensitive)
-    const combined = [item.ham, item.duo, item.ele, item.mis, item.cha]
+    const combined = [item.cor, item.ham, item.duo, item.ele, item.mis, item.cha]
       .filter(Boolean) // remove empty strings
       .join(",") // join them into one string
       .toLowerCase();
