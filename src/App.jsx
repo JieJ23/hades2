@@ -60,6 +60,11 @@ export default function App() {
   const [show, setShow] = useState(20);
   const [min, setMin] = useState(22);
   const [max, setMax] = useState(67);
+  const [has, setHas] = useState([]);
+  const [query, setQuery] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const filteredBoons = allP9.filter((boon) => boon.toLowerCase().includes(query.toLowerCase()));
 
   const selectedHighfear = p9data.filter((obj) => obj.fea >= min && obj.fea <= max);
 
@@ -74,7 +79,25 @@ export default function App() {
           h2AspectOrder.indexOf(a) > h2AspectOrder.indexOf(b) ? 1 : -1
         );
 
-  const displayEntries = category === `All` ? highfear_region : highfear_region.filter((obj) => obj.asp === category);
+  //
+  const filteredData = p9data.filter((item) => {
+    // Combine all relevant fields into a single string (lowercase for case-insensitive)
+    const combined = [item.ham, item.duo, item.ele, item.mis, item.cha]
+      .filter(Boolean) // remove empty strings
+      .join(",") // join them into one string
+      .toLowerCase();
+
+    // Check if all "has" items exist in combined string
+    return has.every((h) => combined.includes(h.toLowerCase()));
+  });
+  //
+
+  const displayEntries =
+    has.length >= 1
+      ? filteredData
+      : category === `All`
+      ? highfear_region
+      : highfear_region.filter((obj) => obj.asp === category);
 
   return (
     <main className="h-full min-h-lvh relative">
@@ -91,6 +114,7 @@ export default function App() {
               onChange={(e) => {
                 setShow(20);
                 setRegion(e.target.value);
+                setHas([]);
                 setCategory(`All`);
               }}
             >
@@ -106,6 +130,7 @@ export default function App() {
               className="select select-sm w-[100px] border-1 border-[#00ffaa]"
               onChange={(e) => {
                 setShow(20);
+                setHas([]);
                 setCategory(e.target.value);
               }}
             >
@@ -124,6 +149,7 @@ export default function App() {
               max={67}
               onChange={(e) => {
                 setRegion(`All`);
+                setHas([]);
                 setCategory(`All`);
                 const newMin = Number(e.target.value);
                 if (newMin <= max) {
@@ -147,6 +173,53 @@ export default function App() {
               }}
             />
           </div>
+          <div className="text-[12px] px-2 py-1 flex gap-2 relative">
+            <input
+              type="text"
+              placeholder="Search Boons"
+              className="input input-sm border-white w-[200px]"
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setIsOpen(true);
+              }}
+              onFocus={() => setIsOpen(true)}
+              onBlur={() => setTimeout(() => setIsOpen(false), 100)} // allow click
+            />
+            {isOpen && query.length >= 3 && (
+              <ul className="absolute top-full left-0 w-[200px] bg-[black] border-1 border-white/20 rounded ml-2  z-40 overflow-y-auto">
+                {filteredBoons.length > 0 ? (
+                  filteredBoons.map((boon, index) => (
+                    <li
+                      key={index}
+                      className="px-3 py-1 hover:bg-base-200 cursor-pointer flex gap-1"
+                      onMouseDown={() => {
+                        if (has.length >= 5) {
+                          // Optionally alert or ignore
+                          alert("You can only select up to 5 boons");
+                          return;
+                        }
+                        if (!has.includes(boon)) {
+                          setHas((prev) => [...prev, boon]);
+                        }
+                        setRegion(`All`);
+                        setCategory(`All`);
+                        setMin(22);
+                        setMax(67);
+                        setQuery("");
+                        setIsOpen(false);
+                      }}
+                    >
+                      <img src={`P9/${p9boons_reverse[boon]}.png`} alt="Boons" className="size-6" />
+                      {boon}
+                    </li>
+                  ))
+                ) : (
+                  <li className="px-3 py-1 text-gray-500">No matches</li>
+                )}
+              </ul>
+            )}
+          </div>
           <div className="text-[12px] px-1 pt-1 flex gap-2">
             <div>Query Data:</div>
             <div className="text-[#f05bdc] backdrop-blur-lg">Region [{region}]</div>
@@ -158,6 +231,23 @@ export default function App() {
             <div className="text-[#f18043] backdrop-blur-lg">Min [{min}]</div>
             <div className="text-[#f18043] backdrop-blur-lg">Max [{max}]</div>
           </div>
+          {has.length >= 1 && (
+            <div className="text-[12px] px-1 pt-1 flex items-center gap-1">
+              <div>Query Has:</div>
+              {has.map((ite, index) => (
+                <div
+                  className="text-white bg-[black] px-2 rounded border-1 border-white/20 flex gap-0.5 items-center text-[12px] cursor-pointer hover:border-[red]"
+                  key={index}
+                  onClick={() => {
+                    setHas((prev) => prev.filter((item) => item !== ite));
+                  }}
+                >
+                  <img src={`P9/${p9boons_reverse[ite]}.png`} alt="Boons" className="size-6 border-1 border-black" />
+                  {ite}
+                </div>
+              ))}
+            </div>
+          )}
           <div className="text-[12px] p-1 flex gap-2">
             <div>Category Leader: </div>
             <div className="text-[#ffb700] backdrop-blur-lg">{displayEntries[0]?.nam ?? `Null`}</div>
