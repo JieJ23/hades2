@@ -473,9 +473,13 @@ export default function App() {
                 </div>
                 <div className="col-span-3 md:col-span-6 lg:col-span-8 text-gray-300 pt-1 z-20">
                   <div>{obj.des}</div>
-                  <Link to={obj.src} target="_blank" className="text-[#109de4] line-clamp-1">
-                    {obj.src}
-                  </Link>
+                  {obj.ss ? (
+                    <div className="text-[#10e410]">Discord ID: {obj.ss}</div>
+                  ) : (
+                    <Link to={obj.src} target="_blank" className="text-[#109de4] line-clamp-1">
+                      {obj.src}
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
