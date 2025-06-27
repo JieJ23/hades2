@@ -234,18 +234,20 @@ export default function App() {
           {has.length >= 1 && (
             <div className="text-[12px] px-1 pt-1 flex items-center gap-1">
               <div>Query Has:</div>
-              {has.map((ite, index) => (
-                <div
-                  className="text-white bg-[black] px-2 rounded border-1 border-white/20 flex gap-0.5 items-center text-[12px] cursor-pointer hover:border-[red]"
-                  key={index}
-                  onClick={() => {
-                    setHas((prev) => prev.filter((item) => item !== ite));
-                  }}
-                >
-                  <img src={`P9/${p9boons_reverse[ite]}.png`} alt="Boons" className="size-6 border-1 border-black" />
-                  {ite}
-                </div>
-              ))}
+              <div className="flex flex-wrap gap-0.5">
+                {has.map((ite, index) => (
+                  <div
+                    className="text-white bg-[black] px-1 rounded border-1 border-white/20 flex gap-0.5 items-center text-[12px] cursor-pointer hover:border-[red]"
+                    key={index}
+                    onClick={() => {
+                      setHas((prev) => prev.filter((item) => item !== ite));
+                    }}
+                  >
+                    <img src={`P9/${p9boons_reverse[ite]}.png`} alt="Boons" className="size-6 border-1 border-black" />
+                    <div className="line-clamp-1">{ite}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
           <div className="text-[12px] p-1 flex gap-2">
