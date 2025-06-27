@@ -45,6 +45,7 @@ const highfear = p9data.slice().sort((a, b) => {
   // If fear is equal, sort by time ascending (fastest first)
   return parseTimetoms(a.tim) - parseTimetoms(b.tim);
 });
+
 // const rankingPlayer = [...new Set(highfear.map((item) => item.n))];
 // const rankingAspect = [...new Set(highfear.map((item) => item.a))];
 
@@ -66,7 +67,7 @@ export default function App() {
 
   const filteredBoons = allP9.filter((boon) => boon.toLowerCase().includes(query.toLowerCase()));
 
-  const selectedHighfear = p9data.filter((obj) => obj.fea >= min && obj.fea <= max);
+  const selectedHighfear = highfear.filter((obj) => obj.fea >= min && obj.fea <= max);
 
   const highfear_region = region === `All` ? selectedHighfear : selectedHighfear.filter((obj) => obj.loc === region);
 
