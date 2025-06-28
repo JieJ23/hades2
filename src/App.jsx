@@ -46,8 +46,7 @@ const highfear = p9data.slice().sort((a, b) => {
   return parseTimetoms(a.tim) - parseTimetoms(b.tim);
 });
 
-// const rankingPlayer = [...new Set(highfear.map((item) => item.n))];
-// const rankingAspect = [...new Set(highfear.map((item) => item.a))];
+const entriesOnlyVod = highfear.filter((obj) => !obj.ss);
 
 const availableRegion = [`Underworld`, `Surface`];
 
@@ -64,10 +63,13 @@ export default function App() {
   const [has, setHas] = useState([]);
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [hasvod, setHasVod] = useState(false);
 
   const filteredBoons = allP9.filter((boon) => boon.toLowerCase().includes(query.toLowerCase()));
 
-  const selectedHighfear = highfear.filter((obj) => obj.fea >= min && obj.fea <= max);
+  const selectedHighfear = hasvod
+    ? entriesOnlyVod.filter((obj) => obj.fea >= min && obj.fea <= max)
+    : highfear.filter((obj) => obj.fea >= min && obj.fea <= max);
 
   const highfear_region = region === `All` ? selectedHighfear : selectedHighfear.filter((obj) => obj.loc === region);
 
@@ -81,7 +83,7 @@ export default function App() {
         );
 
   //
-  const filteredData = p9data.filter((item) => {
+  const filteredData = highfear.filter((item) => {
     // Combine all relevant fields into a single string (lowercase for case-insensitive)
     const combined = [item.cor, item.ham, item.duo, item.ele, item.mis, item.cha]
       .filter(Boolean) // remove empty strings
@@ -221,7 +223,16 @@ export default function App() {
               </ul>
             )}
           </div>
-          <div className="text-[12px] px-1 pt-1 flex gap-2">
+          <label className="label font-[PT] text-[] text-[12px] p-1 pb-0 text-white/80">
+            Require VOD
+            <input
+              type="checkbox"
+              className=" border-white/80 checkbox checkbox-white checkbox-xs rounded checked:checkbox-warning"
+              checked={hasvod}
+              onChange={(e) => setHasVod(e.target.checked)}
+            />
+          </label>
+          <div className="text-[12px] px-1 flex gap-2">
             <div>Query Data:</div>
             <div className="text-[#f05bdc] backdrop-blur-lg">Region [{region}]</div>
             <div className="text-[#00ffaa] backdrop-blur-lg">Aspect [{category}]</div>
@@ -251,7 +262,7 @@ export default function App() {
               </div>
             </div>
           )}
-          <div className="text-[12px] p-1 flex gap-2">
+          <div className="text-[12px] p-1 pb-0 flex gap-2">
             <div>Category Leader: </div>
             <div className="text-[#ffb700] backdrop-blur-lg">{displayEntries[0]?.nam ?? `Null`}</div>
           </div>
@@ -475,7 +486,7 @@ export default function App() {
                 <div className="col-span-3 md:col-span-6 lg:col-span-8 text-gray-300 pt-1 z-20">
                   <div>{obj.des}</div>
                   {obj.ss ? (
-                    <div className="text-[#10e410]">Discord ID: {obj.ss}</div>
+                    <div className="text-[#10e410]">Discord ID: #{obj.ss}</div>
                   ) : (
                     <Link to={obj.src} target="_blank" className="text-[#109de4] line-clamp-1">
                       {obj.src}
