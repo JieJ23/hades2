@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 export const sites = [
   { icon: `Ladder`, link: ``, nam: `Ladder` },
   { icon: `Stats`, link: `Stats`, nam: `Stats` },
-  { icon: `Comm`, link: `Community`, nam: `Community` },
+  { icon: `Player`, link: `Player`, nam: `Player` },
   { icon: `Patch8`, link: `Patch8`, nam: `Patch 8` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },

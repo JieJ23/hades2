@@ -10,7 +10,7 @@ import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
 
 export const orderMap = new Map(allP9.map((item, index) => [item, index]));
 
-const findGUIcard = (asp) => {
+export const findGUIcard = (asp) => {
   switch (asp) {
     case `Anubis`:
       return `Melinoe Staff`;
@@ -29,7 +29,7 @@ const findGUIcard = (asp) => {
   }
 };
 
-const findValue = (arr) => {
+export const findValue = (arr) => {
   const finalized = arr.map((ite) => p9boons_reverse[ite]);
   return finalized;
 };
@@ -293,11 +293,11 @@ export default function App() {
                 <div className="col-span-3 md:col-span-6 lg:col-span-8 flex items-center justify-between border-b-1 border-white/10">
                   <div className="text-[16px] font-[Cinzel]">{obj.nam}</div>
                   <div className="flex gap-2 text-[14px] font-[Cinzel]">
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 font-[PT]">
                       <img src={`/${obj.loc}.png`} alt="Region" className="size-5" draggable={false} />
                       {obj.fea}
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 font-[PT]">
                       <img src={`/Misc/Time.png`} alt="Time" className="size-5" draggable={false} />
                       {obj.tim}
                     </div>

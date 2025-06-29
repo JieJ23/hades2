@@ -37,7 +37,7 @@ export default function Stats() {
         <section className="w-full">
           <div className="text-[16px] p-2 py-0 font-[Cinzel]">Ladder Summary</div>
           <div className="bg-black/80 border-1 border-white/20 rounded overflow-hidden pt-2">
-            <div className="grid grid-cols-3 font-[Cinzel] px-2 pb-2">
+            <div className="grid grid-cols-3 font-[PT] px-2 pb-2">
               <div>Aspects</div>
               <div>Underworld</div>
               <div>Surface</div>
