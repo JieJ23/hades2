@@ -7,6 +7,7 @@ import { h2AspectOrder, parseTimetoms } from "./Data/Misc";
 import { p9data } from "./Data/P9Data";
 import { testData } from "./Data/P9TestData";
 import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
+import Background from "./Comp/Background";
 
 export const orderMap = new Map(allP9.map((item, index) => [item, index]));
 
@@ -104,7 +105,7 @@ export default function App() {
 
   return (
     <main className="h-full min-h-lvh relative">
-      <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
+      <Background />
       <Head />
       <div className="max-w-[1200px] font-[PT] text-[14px] mx-auto">
         <SideNav />

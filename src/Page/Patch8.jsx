@@ -5,6 +5,7 @@ import { sToA } from "../Data/Misc";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { h2AspectOrder } from "../Data/Misc";
+import Background from "../Comp/Background";
 
 export function getYTid(text) {
   return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
@@ -37,7 +38,7 @@ export default function Patch8() {
 
   return (
     <main className="h-full min-h-lvh select-none relative">
-      <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
+      <Background />
       <Head />
       <div className="max-w-[1200px] font-[PT] text-[14px] mx-auto">
         <SideNav />

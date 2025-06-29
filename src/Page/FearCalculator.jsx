@@ -2,6 +2,7 @@ import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import { allVows, vowArray, defineArray } from "../Data/FearTrait";
 import { useState, useEffect } from "react";
+import Background from "../Comp/Background";
 
 export default function FearCalculator() {
   const [vows, setVows] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
@@ -64,7 +65,7 @@ export default function FearCalculator() {
 
   return (
     <main className="select-none relative">
-      <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
+      <Background />
       <Head />
       <div className="max-w-[1400px] font-[PT] text-[14px] mx-auto">
         <SideNav />

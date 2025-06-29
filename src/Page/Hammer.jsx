@@ -1,6 +1,7 @@
 import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import { useState, useEffect } from "react";
+import Background from "../Comp/Background";
 
 import { hammer_staff, hammer_axe, hammer_blades, hammer_skull, hammer_flames, hammer_suit } from "../Data/P9Boons";
 
@@ -72,11 +73,9 @@ export default function Hammer() {
 
   let globalIndex = 0;
 
-  console.log(fullhammers);
-
   return (
     <main className="relative">
-      <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
+      <Background />
       <Head />
       <div className="max-w-[1400px] font-[PT] text-[14px] mx-auto">
         <SideNav />

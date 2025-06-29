@@ -1,5 +1,6 @@
 import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
+import Background from "../Comp/Background";
 
 import {
   p9duo,
@@ -58,7 +59,7 @@ const everything_label = [
 export default function Boons() {
   return (
     <main className="relative">
-      <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
+      <Background />
       <Head />
       <div className="max-w-[1400px] font-[PT] text-[12px] mx-auto">
         <SideNav />

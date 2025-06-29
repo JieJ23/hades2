@@ -5,6 +5,7 @@ import { p9data } from "../Data/P9Data";
 import P9BoonData from "../Comp/P9BoonData";
 import ScatterGP from "../Comp/ScatterGp";
 import P9Unseen from "../Comp/P9UnseenData";
+import Background from "../Comp/Background";
 
 const getHighestOfEachAspect = (order, data) => {
   return order.map((aspect) => {
@@ -26,7 +27,7 @@ const overall_aspect_surface = getHighestOfEachAspect(h2AspectOrder, surface_run
 export default function Stats() {
   return (
     <main className="h-full min-h-lvh select-none relative">
-      <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
+      <Background />
       <Head />
       <SideNav />
       <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto my-2 bg-black/85 rounded border-1 border-white/20">

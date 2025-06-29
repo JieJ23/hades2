@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { sToA } from "../Data/Misc";
 import { findGUIcard, findValue, orderMap } from "../App";
 import { p9boons } from "../Data/P9BoonObj";
+import Background from "../Comp/Background";
 
 const defineAllPlayers = [...new Set(p9data.map((obj) => obj.nam))].sort();
 
@@ -25,7 +26,7 @@ export default function Player() {
 
   return (
     <main className="relative">
-      <div className="fixed w-full h-full bg-[url('/mbg2.webp')] -z-10 bg-left lg:bg-center bg-cover opacity-20"></div>
+      <Background />
       <Head />
       <div className="max-w-[1200px] font-[PT] text-[12px] md:text-[14px] mx-auto">
         <SideNav />
