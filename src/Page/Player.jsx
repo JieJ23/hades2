@@ -7,6 +7,7 @@ import { sToA } from "../Data/Misc";
 import { findGUIcard, findValue, orderMap } from "../App";
 import { p9boons } from "../Data/P9BoonObj";
 import Background from "../Comp/Background";
+import RaderP from "../Comp/RadarP";
 
 const defineAllPlayers = [...new Set(p9data.map((obj) => obj.nam))].sort();
 
@@ -103,6 +104,9 @@ export default function Player() {
                 <div className="font-[monospace] text-[16px] text-[#f18043]">{target_fear}</div>
               </div>
             </section>
+            <div className="h-[400px]">
+              <RaderP target={playerhistory} targetHistory={selectedPlayerData} />
+            </div>
             <section className="p-2 pt-0 text-[12px] overflow-hidden w-full max-w-[1200px] mx-auto">
               {selectedPlayerData.map((obj, index) => (
                 <div
