@@ -68,40 +68,31 @@ export default function App() {
 
   const filteredBoons = allP9.filter((boon) => boon.toLowerCase().includes(query.toLowerCase()));
 
-  const selectedHighfear = hasvod
-    ? entriesOnlyVod.filter((obj) => obj.fea >= min && obj.fea <= max)
-    : highfear.filter((obj) => obj.fea >= min && obj.fea <= max);
+  const selectedHighfear = (hasvod ? entriesOnlyVod : highfear).filter((obj) => obj.fea >= min && obj.fea <= max);
 
   const highfear_region = region === `All` ? selectedHighfear : selectedHighfear.filter((obj) => obj.loc === region);
+  const highfear_category =
+    category === `All` ? highfear_region : highfear_region.filter((obj) => obj.asp === category);
 
-  const availableAspects =
+  const availableAspects = (
     region === `All`
-      ? [...new Set(selectedHighfear.map((obj) => obj.asp))].sort((a, b) =>
-          h2AspectOrder.indexOf(a) > h2AspectOrder.indexOf(b) ? 1 : -1
-        )
-      : [...new Set(highfear_region.map((obj) => obj.asp))].sort((a, b) =>
-          h2AspectOrder.indexOf(a) > h2AspectOrder.indexOf(b) ? 1 : -1
-        );
+      ? [...new Set(selectedHighfear.map((obj) => obj.asp))]
+      : [...new Set(highfear_region.map((obj) => obj.asp))]
+  ).sort((a, b) => (h2AspectOrder.indexOf(a) > h2AspectOrder.indexOf(b) ? 1 : -1));
 
   //
-  const filteredData = highfear.filter((item) => {
+  const filteredData = highfear_category.filter((item) => {
     // Combine all relevant fields into a single string (lowercase for case-insensitive)
     const combined = [item.cor, item.ham, item.duo, item.ele, item.mis, item.cha]
       .filter(Boolean) // remove empty strings
       .join(",") // join them into one string
       .toLowerCase();
-
     // Check if all "has" items exist in combined string
     return has.every((h) => combined.includes(h.toLowerCase()));
   });
   //
 
-  const displayEntries =
-    has.length >= 1
-      ? filteredData
-      : category === `All`
-      ? highfear_region
-      : highfear_region.filter((obj) => obj.asp === category);
+  const displayEntries = has.length >= 1 ? filteredData : highfear_category;
 
   return (
     <main className="h-full min-h-lvh relative">
@@ -112,39 +103,6 @@ export default function App() {
         <section className="w-full px-2">
           <div className="text-[16px] p-2 py-0 font-[Cinzel]">Highest Fear Ladder - Patch 9</div>
           <div className="text-[12px] px-2 py-1 flex gap-2">
-            <select
-              value={region}
-              className="select select-sm w-[100px] border-1 border-[#f05bdc]"
-              onChange={(e) => {
-                setShow(20);
-                setRegion(e.target.value);
-                setHas([]);
-                setCategory(`All`);
-              }}
-            >
-              <option value={`All`}>All</option>
-              {availableRegion.map((ite, index) => (
-                <option value={ite} key={index}>
-                  {ite}
-                </option>
-              ))}
-            </select>
-            <select
-              value={category}
-              className="select select-sm w-[100px] border-1 border-[#00ffaa]"
-              onChange={(e) => {
-                setShow(20);
-                setHas([]);
-                setCategory(e.target.value);
-              }}
-            >
-              <option value={`All`}>All</option>
-              {availableAspects.map((ite, index) => (
-                <option value={ite} key={index}>
-                  {ite}
-                </option>
-              ))}
-            </select>
             <input
               type="number"
               className="input input-sm border-1 border-[#f18043] w-[50px]"
@@ -153,7 +111,6 @@ export default function App() {
               max={67}
               onChange={(e) => {
                 setRegion(`All`);
-                setHas([]);
                 setCategory(`All`);
                 const newMin = Number(e.target.value);
                 if (newMin <= max) {
@@ -176,6 +133,37 @@ export default function App() {
                 }
               }}
             />
+            <select
+              value={region}
+              className="select select-sm w-[100px] border-1 border-[#f05bdc]"
+              onChange={(e) => {
+                setShow(20);
+                setRegion(e.target.value);
+                setCategory(`All`);
+              }}
+            >
+              <option value={`All`}>All</option>
+              {availableRegion.map((ite, index) => (
+                <option value={ite} key={index}>
+                  {ite}
+                </option>
+              ))}
+            </select>
+            <select
+              value={category}
+              className="select select-sm w-[100px] border-1 border-[#00ffaa]"
+              onChange={(e) => {
+                setShow(20);
+                setCategory(e.target.value);
+              }}
+            >
+              <option value={`All`}>All</option>
+              {availableAspects.map((ite, index) => (
+                <option value={ite} key={index}>
+                  {ite}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="text-[12px] px-2 py-1 flex gap-2 relative">
             <input
@@ -206,10 +194,10 @@ export default function App() {
                         if (!has.includes(boon)) {
                           setHas((prev) => [...prev, boon]);
                         }
-                        setRegion(`All`);
-                        setCategory(`All`);
-                        setMin(22);
-                        setMax(67);
+                        // setRegion(`All`);
+                        // setCategory(`All`);
+                        // setMin(22);
+                        // setMax(67);
                         setQuery("");
                         setIsOpen(false);
                       }}
