@@ -89,7 +89,7 @@ export default function Player() {
             <section className="p-2 grid grid-cols-4 md:grid-cols-6 gap-1 md:gap-2 font-[PT]">
               <div className="bg-black rounded border-1 border-white/20 text-[12px] flex flex-col p-3">
                 <div className="line-clamp-1">Aspect Played</div>
-                <div className="font-[monospace] text-[16px] text-[#f18043]">{target_aspect.length}</div>
+                <div className="font-[monospace] text-[16px] text-[#f18043]">{target_aspect.length}/24</div>
               </div>
               <div className="bg-black rounded border-1 border-white/20 text-[12px] flex flex-col p-3">
                 <div className="line-clamp-1">Underworld Runs</div>

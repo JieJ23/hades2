@@ -115,84 +115,84 @@ export default function P9Unseen() {
           <img src={`/Misc/Arachne.png`} alt="Unseen" className="size-12 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Arachne`}</div>
-            <div className="">{Math.round(100 * (ArachneRuns / regionData.length))}%</div>
+            <div className="">{(100 * (ArachneRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
           <img src={`/Misc/Artemis.png`} alt="Unseen" className="size-12 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Artemis`}</div>
-            <div className="">{Math.round(100 * (ArtemisRuns / regionData.length))}%</div>
+            <div className="">{(100 * (ArtemisRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
           <img src={`/Misc/Athena.png`} alt="Unseen" className="size-12 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Athena`}</div>
-            <div className="">{Math.round(100 * (AthenaRuns / regionData.length))}%</div>
+            <div className="">{(100 * (AthenaRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
           <img src={`/Misc/Selene.png`} alt="Unseen" className="size-12 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Selene`}</div>
-            <div className="">{Math.round(100 * (seleneRuns / regionData.length))}%</div>
+            <div className="">{(100 * (seleneRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
           <img src={`/Misc/Chaos.png`} alt="Unseen" className="size-12 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Chaos`}</div>
-            <div className="">{Math.round(100 * (chaosRunsnoselene / regionData.length))}%</div>
+            <div className="">{(100 * (chaosRunsnoselene / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
           <img src={`/Misc/Medea.png`} alt="Unseen" className="size-12 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Medea`}</div>
-            <div className="">{Math.round(100 * (MedeaRuns / regionData.length))}%</div>
+            <div className="">{(100 * (MedeaRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
           <img src={`/Misc/Hermes.png`} alt="Unseen" className="size-12 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Hermes`}</div>
-            <div className="">{Math.round(100 * (HermesRuns / regionData.length))}%</div>
+            <div className="">{(100 * (HermesRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
           <img src={`/Misc/Dionysus.png`} alt="Unseen" className="size-12 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Dionysus`}</div>
-            <div className="">{Math.round(100 * (DionysusRuns / regionData.length))}%</div>
+            <div className="">{(100 * (DionysusRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
           <img src={`/Misc/Circe.png`} alt="Unseen" className="size-12 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Circe`}</div>
-            <div className="">{Math.round(100 * (CirceRuns / regionData.length))}%</div>
+            <div className="">{(100 * (CirceRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
           <img src={`/Misc/Echo.png`} alt="Unseen" className="size-12 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Echo`}</div>
-            <div className="">{Math.round(100 * (EchoRuns / regionData.length))}%</div>
+            <div className="">{(100 * (EchoRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
           <img src={`/Misc/Narcissus.png`} alt="Unseen" className="size-12 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Narcissus`}</div>
-            <div className="">{Math.round(100 * (NarcissusRuns / regionData.length))}%</div>
+            <div className="">{(100 * (NarcissusRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
           <img src={`/Misc/Icarus.png`} alt="Unseen" className="size-12 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Icarus`}</div>
-            <div className="">{Math.round(100 * (IcarusRuns / regionData.length))}%</div>
+            <div className="">{(100 * (IcarusRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
       </div>

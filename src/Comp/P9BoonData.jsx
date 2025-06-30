@@ -143,13 +143,13 @@ export default function P9BoonData() {
     <div className="max-w-[1200px] font-[PT] text-[10px] md:text-[12px] mx-auto my-2">
       {/* <P9Core /> */}
       <div className="rounded bg-black/80 border-1 border-black p-4 mb-4">
-        <div className="font-[Cinzel] py-2 px-4">Staff - {Math.round(100 * (allStaff / p9data.length))}% of count</div>
+        <div className="font-[Cinzel] py-2 px-4">Staff - {(100 * (allStaff / p9data.length)).toFixed(2)}% of count</div>
         <div className="flex flex-wrap gap-1">
           {hammerStaff.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  Math.floor(100 * (ite[1] / allStaff)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (ite[1] / allStaff)).toFixed(2) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
                 }`}
               >
                 <img
@@ -161,19 +161,19 @@ export default function P9BoonData() {
                 />
                 <div>
                   <div>{ite[0]}</div>
-                  <div>{Math.floor(100 * (ite[1] / allStaff))}%</div>
+                  <div>{(100 * (ite[1] / allStaff)).toFixed(2)}%</div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2 px-4">Axe - {Math.round(100 * (allAxe / p9data.length))}% of count</div>
+        <div className="font-[Cinzel] py-2 px-4">Axe - {(100 * (allAxe / p9data.length)).toFixed(2)}% of count</div>
         <div className="flex flex-wrap gap-1">
           {hammerAxe.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  Math.floor(100 * (ite[1] / allAxe)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (ite[1] / allAxe)).toFixed(2) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
                 }`}
               >
                 <img
@@ -185,21 +185,21 @@ export default function P9BoonData() {
                 />
                 <div>
                   <div>{ite[0]}</div>
-                  <div>{Math.floor(100 * (ite[1] / allAxe))}%</div>
+                  <div>{(100 * (ite[1] / allAxe)).toFixed(2)}%</div>
                 </div>
               </div>
             </div>
           ))}
         </div>
         <div className="font-[Cinzel] py-2 px-4">
-          Blades - {Math.round(100 * (allBlades / p9data.length))}% of count
+          Blades - {(100 * (allBlades / p9data.length)).toFixed(2)}% of count
         </div>
         <div className="flex flex-wrap gap-1">
           {hammerBlades.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  Math.floor(100 * (ite[1] / allBlades)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (ite[1] / allBlades)).toFixed(2) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
                 }`}
               >
                 <img
@@ -211,21 +211,21 @@ export default function P9BoonData() {
                 />
                 <div>
                   <div>{ite[0]}</div>
-                  <div>{Math.floor(100 * (ite[1] / allBlades))}%</div>
+                  <div>{(100 * (ite[1] / allBlades)).toFixed(2)}%</div>
                 </div>
               </div>
             </div>
           ))}
         </div>
         <div className="font-[Cinzel] py-2 px-4">
-          Flames - {Math.round(100 * (allFlames / p9data.length))}% of count
+          Flames - {(100 * (allFlames / p9data.length)).toFixed(2)}% of count
         </div>
         <div className="flex flex-wrap gap-1">
           {hammerFlames.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  Math.floor(100 * (ite[1] / allFlames)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (ite[1] / allFlames)).toFixed(2) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
                 }`}
               >
                 <img
@@ -237,19 +237,19 @@ export default function P9BoonData() {
                 />
                 <div>
                   <div>{ite[0]}</div>
-                  <div>{Math.floor(100 * (ite[1] / allFlames))}%</div>
+                  <div>{(100 * (ite[1] / allFlames)).toFixed(2)}%</div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2 px-4">Skull - {Math.round(100 * (allSkull / p9data.length))}% of count</div>
+        <div className="font-[Cinzel] py-2 px-4">Skull - {(100 * (allSkull / p9data.length)).toFixed(2)}% of count</div>
         <div className="flex flex-wrap gap-1">
           {hammerSkull.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  Math.floor(100 * (ite[1] / allSkull)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (ite[1] / allSkull)).toFixed(2) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
                 }`}
               >
                 <img
@@ -261,19 +261,19 @@ export default function P9BoonData() {
                 />
                 <div>
                   <div>{ite[0]}</div>
-                  <div>{Math.floor(100 * (ite[1] / allSkull))}%</div>
+                  <div>{(100 * (ite[1] / allSkull)).toFixed(2)}%</div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2 px-4">Coat - {Math.round(100 * (allCoat / p9data.length))}% of count</div>
+        <div className="font-[Cinzel] py-2 px-4">Coat - {(100 * (allCoat / p9data.length)).toFixed(2)}% of count</div>
         <div className="flex flex-wrap gap-1">
           {hammerCoat.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  Math.floor(100 * (ite[1] / allCoat)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (ite[1] / allCoat)).toFixed(2) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
                 }`}
               >
                 <img
@@ -285,7 +285,7 @@ export default function P9BoonData() {
                 />
                 <div>
                   <div>{ite[0]}</div>
-                  <div>{Math.floor(100 * (ite[1] / allCoat))}%</div>
+                  <div>{(100 * (ite[1] / allCoat)).toFixed(2)}%</div>
                 </div>
               </div>
             </div>
@@ -391,7 +391,7 @@ export default function P9BoonData() {
                   />
                   <div>
                     <div>{ite[0] === `` ? `None` : ite[0]}</div>
-                    <div>{Math.floor(100 * (ite[1] / displayData.length))}%</div>
+                    <div>{(100 * (ite[1] / displayData.length)).toFixed(2)}%</div>
                   </div>
                 </div>
               </div>
@@ -407,7 +407,7 @@ export default function P9BoonData() {
               <div className="flex flex-wrap gap-1" key={index}>
                 <div
                   className={`flex gap-1 rounded border-1 p-2 ${
-                    Math.floor(100 * (ite[1] / displayData.length)) >= 25
+                    (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#192265] border-none`
                       : `border-white/20`
                   }`}
@@ -421,7 +421,7 @@ export default function P9BoonData() {
                   />
                   <div>
                     <div>{ite[0] === `` ? `None` : ite[0]}</div>
-                    <div>{Math.floor(100 * (ite[1] / displayData.length))}%</div>
+                    <div>{(100 * (ite[1] / displayData.length)).toFixed(2)}%</div>
                   </div>
                 </div>
               </div>
@@ -437,7 +437,7 @@ export default function P9BoonData() {
               <div className="flex flex-wrap gap-1" key={index}>
                 <div
                   className={`flex gap-1 rounded border-1 p-2 ${
-                    Math.floor(100 * (ite[1] / displayData.length)) >= 25
+                    (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#192265] border-none`
                       : `border-white/20`
                   }`}
@@ -451,7 +451,7 @@ export default function P9BoonData() {
                   />
                   <div>
                     <div>{ite[0] === `` ? `None` : ite[0]}</div>
-                    <div>{Math.floor(100 * (ite[1] / displayData.length))}%</div>
+                    <div>{(100 * (ite[1] / displayData.length)).toFixed(2)}%</div>
                   </div>
                 </div>
               </div>
@@ -472,7 +472,7 @@ export default function P9BoonData() {
               <div className="flex flex-wrap gap-1" key={index}>
                 <div
                   className={`flex gap-1 rounded border-1 p-2 ${
-                    Math.floor(100 * (ite[1] / displayData.length)) >= 25
+                    (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#192265] border-none`
                       : `border-white/20`
                   }`}
@@ -486,7 +486,7 @@ export default function P9BoonData() {
                   />
                   <div>
                     <div>{ite[0] === `` ? `None` : ite[0]}</div>
-                    <div>{Math.floor(100 * (ite[1] / displayData.length))}%</div>
+                    <div>{(100 * (ite[1] / displayData.length)).toFixed(2)}%</div>
                   </div>
                 </div>
               </div>
@@ -502,7 +502,7 @@ export default function P9BoonData() {
               <div className="flex flex-wrap gap-1" key={index}>
                 <div
                   className={`flex gap-1 rounded border-1 p-2 ${
-                    Math.floor(100 * (ite[1] / displayData.length)) >= 25
+                    (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#192265] border-none`
                       : `border-white/20`
                   }`}
@@ -516,7 +516,7 @@ export default function P9BoonData() {
                   />
                   <div>
                     <div>{ite[0] === `` ? `None` : ite[0]}</div>
-                    <div>{Math.floor(100 * (ite[1] / displayData.length))}%</div>
+                    <div>{(100 * (ite[1] / displayData.length)).toFixed(2)}%</div>
                   </div>
                 </div>
               </div>

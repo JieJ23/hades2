@@ -94,6 +94,10 @@ export default function App() {
 
   const displayEntries = has.length >= 1 ? filteredData : highfear_category;
 
+  //
+  const top10Player = [...new Set(highfear.map((obj) => obj.nam))].slice(0, 10);
+  const top10Aspect = [...new Set(highfear.map((obj) => obj.asp))];
+  //
   return (
     <main className="h-full min-h-lvh relative">
       <Background />
@@ -251,15 +255,41 @@ export default function App() {
               </div>
             </div>
           )}
-          <div className="text-[12px] p-1 pb-0 flex gap-2">
+          <div className="text-[12px] p-1 flex gap-2">
             <div>Category Leader: </div>
             <div className="text-[#ffb700] backdrop-blur-lg">{displayEntries[0]?.nam ?? `Null`}</div>
           </div>
         </section>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-2">
+          <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded text-[12px]">
+            <div>
+              <div className="font-[Cinzel] mb-1">Top 10 Players</div>
+              <div className="grid grid-cols-2 gap-1">
+                {top10Player.map((item, index) => (
+                  <div key={index}>
+                    {index + 1}. {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded text-[12px]">
+            <div>
+              <div className="font-[Cinzel] mb-1">Top Aspects</div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1">
+                {top10Aspect.map((item, index) => (
+                  <div key={index} className="line-clamp-1">
+                    {index + 1}. {item.includes(`Melinoe`) ? item.replace(`Melinoe `, ``) : item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
         <section className="p-2 text-[12px] overflow-hidden">
           {displayEntries.slice(0, show).map((obj, index) => (
             <div
-              className="flex items-center w-full rounded bg-black/90 px-2 py-1 border-1 border-white/20 gap-2 mb-3 relative"
+              className="flex items-center w-full rounded bg-black/80 px-2 py-1 border-1 border-white/20 gap-2 mb-3 relative"
               key={index}
             >
               <div className={`absolute w-full h-full top-0 left-0 opacity-15 lg:opacity-25`}>
