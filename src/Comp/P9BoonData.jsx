@@ -315,10 +315,10 @@ export default function P9BoonData() {
           min={22}
           max={67}
           onChange={(e) => {
-            const newMin = Number(e.target.value);
-            if (newMin <= max) {
-              setMin(newMin);
-            }
+            // const newMin = Number(e.target.value);
+            // if (newMin <= max) {
+            // }
+            setMin(e.target.value);
           }}
         />
         <input
@@ -328,10 +328,10 @@ export default function P9BoonData() {
           min={22}
           max={67}
           onChange={(e) => {
-            const newMax = Number(e.target.value);
-            if (newMax >= min) {
-              setMax(newMax);
-            }
+            // const newMax = Number(e.target.value);
+            // if (newMax >= min) {
+            // }
+            setMax(e.target.value);
           }}
         />
       </div>
