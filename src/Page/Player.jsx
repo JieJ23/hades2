@@ -108,7 +108,7 @@ export default function Player() {
             <div className="h-[400px]">
               <RaderP target={playerhistory} targetHistory={selectedPlayerData} />
             </div>
-            <section className="p-2 pt-0 text-[11px] sm:text-[12px] overflow-hidden w-full max-w-[1200px] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pb-4 gap-4">
+            <section className="p-2 pt-0 text-[11px] sm:text-[12px] overflow-hidden w-full max-w-[1200px] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pb-4 gap-1 lg:gap-2">
               {selectedPlayerData.map((obj, index) => (
                 <div className="w-full" key={index}>
                   <Link to={`${obj.src}`} target="_blank">
@@ -116,19 +116,32 @@ export default function Player() {
                       <img
                         src={`/Misc/bilibili.webp`}
                         alt="Video"
-                        className="rounded rounded-b-none border-white/20 border-1 w-full"
+                        className="rounded rounded-b-none border-white/20 border-1 w-full p-1"
                         draggable={false}
                       />
                     ) : (
                       <img
                         src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`}
                         alt="Video"
-                        className="rounded rounded-b-none border-white/20 border-1 w-full"
+                        className="rounded rounded-b-none border-white/20 border-1 w-full p-1"
                         draggable={false}
                       />
                     )}
                   </Link>
                   <div className="border-1 border-white/20 rounded rounded-t-none p-1 flex flex-col">
+                    <section>
+                      <div className="flex justify-between">
+                        <div>{obj.nam}</div>
+                        <div>{obj.loc}</div>
+                      </div>
+                    </section>
+                    <section className="flex justify-between">
+                      <div>
+                        <span className="text-[#f18043] font-[monospace] text-[10px]">{obj.fea}</span>{" "}
+                        <span className="text-[#00ffaa]">{obj.asp}</span>
+                      </div>
+                      <div className="font-[monospace] text-[10px]">{obj.tim}</div>
+                    </section>
                     <section className="flex flex-col gap-1 lg:flex-row justify-between py-0.5">
                       <div className="flex gap-0.5">
                         {sToA(obj.cor).map((ite, index) => (
@@ -140,7 +153,7 @@ export default function Player() {
                               draggable={false}
                               src={`/H2Boons/${ite}.png`}
                               alt="Core Boon"
-                              className="size-6 border-1 border-white/20 rounded-md"
+                              className="size-5 md:size-6 border-1 border-white/20 rounded-md"
                             />
                           </div>
                         ))}
@@ -163,7 +176,7 @@ export default function Player() {
                                   draggable={false}
                                   src={`/P9/${ite}.png`}
                                   alt="Core Boon"
-                                  className="size-6 border-1 border-white/20 rounded-md"
+                                  className="size-5 md:size-6 border-1 border-white/20 rounded-md"
                                 />
                               </div>
                             ))}
@@ -260,19 +273,6 @@ export default function Player() {
                           </div>
                         </div>
                       )} */}
-                    </section>
-                    <section>
-                      <div className="flex justify-between">
-                        <div>{obj.nam}</div>
-                        <div>
-                          <span className="text-[#f18043]">{obj.fea}</span>{" "}
-                          <span className="text-[#00ffaa]">{obj.asp}</span>
-                        </div>
-                      </div>
-                    </section>
-                    <section className="flex justify-between">
-                      <div>{obj.loc}</div>
-                      <div>{obj.tim}</div>
                     </section>
                   </div>
                 </div>
