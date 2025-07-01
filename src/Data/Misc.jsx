@@ -70,6 +70,10 @@ export function formatSentence(sentence) {
     .join(" ");
 }
 
+export function getYTid(text) {
+  return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
+}
+
 export function constantDate(dateStr) {
   const date = new Date(dateStr);
   const mm = String(date.getMonth() + 1).padStart(2, "0");

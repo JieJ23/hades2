@@ -8,6 +8,7 @@ import { findGUIcard, findValue, orderMap } from "../App";
 import { p9boons } from "../Data/P9BoonObj";
 import Background from "../Comp/Background";
 import RaderP from "../Comp/RadarP";
+import { getYTid } from "../Data/Misc";
 
 const defineAllPlayers = [...new Set(p9data.map((obj) => obj.nam))].sort();
 
@@ -107,105 +108,45 @@ export default function Player() {
             <div className="h-[400px]">
               <RaderP target={playerhistory} targetHistory={selectedPlayerData} />
             </div>
-            <section className="p-2 pt-0 text-[12px] overflow-hidden w-full max-w-[1200px] mx-auto">
+            <section className="p-2 pt-0 text-[11px] sm:text-[12px] overflow-hidden w-full max-w-[1200px] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pb-4 gap-4">
               {selectedPlayerData.map((obj, index) => (
-                <div
-                  className="flex items-center w-full rounded bg-black/90 px-2 py-1 border-1 border-white/20 gap-2 mb-3 relative"
-                  key={index}
-                >
-                  <div className={`absolute w-full h-full top-0 left-0 opacity-15 lg:opacity-25`}>
-                    <img
-                      src={`/FamPort/${obj.fam}bg.png`}
-                      alt="Fam"
-                      className="w-full h-full object-contain object-right"
-                      draggable={false}
-                    />
-                  </div>
-                  <div className="hidden md:block">
-                    <img
-                      src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
-                      alt="Aspect"
-                      className="w-[80px] rounded"
-                      draggable={false}
-                    />
-                  </div>
-                  <div className="w-full grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-2">
-                    <div className="col-span-3 md:col-span-6 lg:col-span-8 flex items-center justify-between border-b-1 border-white/10">
-                      <div className="text-[16px] font-[Cinzel]">{obj.nam}</div>
-                      <div className="flex gap-2 text-[14px] font-[Cinzel]">
-                        <div className="flex items-center gap-1 font-[PT]">
-                          <img src={`/${obj.loc}.png`} alt="Region" className="size-5" draggable={false} />
-                          {obj.fea}
-                        </div>
-                        <div className="flex items-center gap-1 font-[PT]">
-                          <img src={`/Misc/Time.png`} alt="Time" className="size-5" draggable={false} />
-                          {obj.tim}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-span-3 md:col-span-6 lg:col-span-8 flex gap-4">
-                      <div className="flex flex-col">
-                        <div>
-                          <div className="font-[Cinzel]">{obj.asp}</div>
-                        </div>
-                        <img
-                          src={`/P9/${obj.asp}.png`}
-                          alt="Aspect"
-                          className="size-8 border-1 border-white/20 rounded-lg"
-                          draggable={false}
-                        />
-                      </div>
-                      <div className="flex flex-col">
-                        <div>
-                          <div className="font-[Cinzel]">{obj.fam}</div>
-                        </div>
-                        <img
-                          src={`/P9/${obj.fam}.png`}
-                          alt="Familiar"
-                          className="size-8 border-1 border-white/20 rounded-lg"
-                          draggable={false}
-                        />
-                      </div>
-                      <div className="flex flex-col">
-                        <div>
-                          <div className="font-[Cinzel]">Region</div>
-                        </div>
-                        <div className="tooltip shrink-0">
-                          <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                            <div className="text-[12px] font-[PT]">{obj.loc}</div>
-                          </div>
-                          <img src={`/${obj.loc}.png`} alt="Region" className="size-8" draggable={false} />
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div>
-                          <div className="font-[Cinzel]">{obj.sel === "f" ? `No` : `Yes`}</div>
-                        </div>
-                        <img src={`/Misc/Selene.png`} alt="Selene" className="size-8" draggable={false} />
-                      </div>
-                    </div>
-                    <div className="col-span-3 md:col-span-6 lg:col-span-8 gap-y-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                      <div className="flex flex-col">
-                        <div className="font-[Cinzel]">Core</div>
-                        <div className="flex gap-0.5">
-                          {sToA(obj.cor).map((ite, index) => (
-                            <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="text-[12px] font-[PT]">{ite}</div>
-                              </div>
-                              <img
-                                draggable={false}
-                                src={`/H2Boons/${ite}.png`}
-                                alt="Core Boon"
-                                className="size-7 border-1 border-white/20 rounded-md"
-                              />
+                <div className="w-full" key={index}>
+                  <Link to={`${obj.src}`} target="_blank">
+                    {obj.src.includes(`bilibil`) ? (
+                      <img
+                        src={`/Misc/bilibili.webp`}
+                        alt="Video"
+                        className="rounded rounded-b-none border-white/20 border-1 w-full"
+                        draggable={false}
+                      />
+                    ) : (
+                      <img
+                        src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`}
+                        alt="Video"
+                        className="rounded rounded-b-none border-white/20 border-1 w-full"
+                        draggable={false}
+                      />
+                    )}
+                  </Link>
+                  <div className="border-1 border-white/20 rounded rounded-t-none p-1 flex flex-col">
+                    <section className="flex flex-col gap-1 lg:flex-row justify-between py-0.5">
+                      <div className="flex gap-0.5">
+                        {sToA(obj.cor).map((ite, index) => (
+                          <div className="tooltip shrink-0" key={index}>
+                            <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                              <div className="text-[12px] font-[PT]">{ite}</div>
                             </div>
-                          ))}
-                        </div>
+                            <img
+                              draggable={false}
+                              src={`/H2Boons/${ite}.png`}
+                              alt="Core Boon"
+                              className="size-6 border-1 border-white/20 rounded-md"
+                            />
+                          </div>
+                        ))}
                       </div>
                       {obj.ham && (
                         <div className="flex flex-col">
-                          <div className="font-[Cinzel]">Hammer</div>
                           <div className="flex gap-0.5">
                             {findValue(
                               sToA(obj.ham).sort((a, b) => {
@@ -222,16 +163,15 @@ export default function Player() {
                                   draggable={false}
                                   src={`/P9/${ite}.png`}
                                   alt="Core Boon"
-                                  className="size-7 border-1 border-white/20 rounded-md"
+                                  className="size-6 border-1 border-white/20 rounded-md"
                                 />
                               </div>
                             ))}
                           </div>
                         </div>
                       )}
-                      {(obj.duo || obj.ele) && (
+                      {/* {(obj.duo || obj.ele) && (
                         <div className="flex flex-col">
-                          <div className="font-[Cinzel]">Duo & Infusion</div>
                           <div className="flex flex-wrap gap-0.5">
                             {obj.duo &&
                               findValue(
@@ -249,7 +189,7 @@ export default function Player() {
                                     draggable={false}
                                     src={`/P9/${ite}.png`}
                                     alt="Core Boon"
-                                    className="size-7 border-1 border-white/20 rounded-md"
+                                    className="size-6 border-1 border-white/20 rounded-md"
                                   />
                                 </div>
                               ))}
@@ -263,7 +203,7 @@ export default function Player() {
                                     draggable={false}
                                     src={`/P9/${ite}.png`}
                                     alt="Core Boon"
-                                    className="size-7 border-1 border-white/20 rounded-md"
+                                    className="size-6 border-1 border-white/20 rounded-md"
                                   />
                                 </div>
                               ))}
@@ -272,7 +212,6 @@ export default function Player() {
                       )}
                       {obj.mis && (
                         <div className="flex flex-col">
-                          <div className="font-[Cinzel]">Misc</div>
                           <div className="flex gap-0.5">
                             {findValue(
                               sToA(obj.mis).sort((a, b) => {
@@ -289,7 +228,7 @@ export default function Player() {
                                   draggable={false}
                                   src={`/P9/${ite}.png`}
                                   alt="Core Boon"
-                                  className="size-7 border-1 border-white/20 rounded-md"
+                                  className="size-6 border-1 border-white/20 rounded-md"
                                 />
                               </div>
                             ))}
@@ -298,7 +237,6 @@ export default function Player() {
                       )}
                       {obj.cha && (
                         <div className="flex flex-col">
-                          <div className="font-[Cinzel]">Chaos/S</div>
                           <div className="flex gap-0.5">
                             {findValue(
                               sToA(obj.cha).sort((a, b) => {
@@ -315,24 +253,27 @@ export default function Player() {
                                   draggable={false}
                                   src={`/P9/${ite}.png`}
                                   alt="Core Boon"
-                                  className="size-7 border-1 border-white/20 rounded-md"
+                                  className="size-6 border-1 border-white/20 rounded-md"
                                 />
                               </div>
                             ))}
                           </div>
                         </div>
-                      )}
-                    </div>
-                    <div className="col-span-3 md:col-span-6 lg:col-span-8 text-gray-300 pt-1 z-20">
-                      <div>{obj.des}</div>
-                      {obj.ss ? (
-                        <div className="text-[#10e410]">Discord ID: #{obj.ss}</div>
-                      ) : (
-                        <Link to={obj.src} target="_blank" className="text-[#109de4] line-clamp-1">
-                          {obj.src}
-                        </Link>
-                      )}
-                    </div>
+                      )} */}
+                    </section>
+                    <section>
+                      <div className="flex justify-between">
+                        <div>{obj.nam}</div>
+                        <div>
+                          <span className="text-[#f18043]">{obj.fea}</span>{" "}
+                          <span className="text-[#00ffaa]">{obj.asp}</span>
+                        </div>
+                      </div>
+                    </section>
+                    <section className="flex justify-between">
+                      <div>{obj.loc}</div>
+                      <div>{obj.tim}</div>
+                    </section>
                   </div>
                 </div>
               ))}

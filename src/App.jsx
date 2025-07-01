@@ -34,10 +34,6 @@ export const findValue = (arr) => {
   const finalized = arr.map((ite) => p9boons_reverse[ite]);
   return finalized;
 };
-
-export function getYTid(text) {
-  return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
-}
 const highfear = p9data.slice().sort((a, b) => {
   // Sort by fear descending
   const feaDiff = +b.fea - +a.fea;
