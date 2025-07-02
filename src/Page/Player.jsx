@@ -111,27 +111,43 @@ export default function Player() {
             <section className="p-2 pt-0 text-[11px] sm:text-[12px] overflow-hidden w-full max-w-[1200px] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pb-4 gap-1 lg:gap-2">
               {selectedPlayerData.map((obj, index) => (
                 <div className="w-full" key={index}>
-                  <Link to={`${obj.src}`} target="_blank">
-                    {obj.src.includes(`bilibil`) ? (
-                      <img
-                        src={`/Misc/bilibili.webp`}
-                        alt="Video"
-                        className="rounded rounded-b-none border-white/20 border-1 w-full p-1"
-                        draggable={false}
-                      />
-                    ) : (
-                      <img
-                        src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`}
-                        alt="Video"
-                        className="rounded rounded-b-none border-white/20 border-1 w-full p-1"
-                        draggable={false}
-                      />
-                    )}
-                  </Link>
+                  {obj.ss ? (
+                    <img
+                      src={`/Misc/victory.webp`}
+                      alt="Victory Screen"
+                      className="rounded rounded-b-none border-white/20 border-1 w-full p-1"
+                      draggable={false}
+                    />
+                  ) : (
+                    <Link to={`${obj.src}`} target="_blank">
+                      {obj.src.includes(`bilibil`) ? (
+                        <img
+                          src={`/Misc/bilibili.webp`}
+                          alt="Video"
+                          className="rounded rounded-b-none border-white/20 border-1 w-full p-1"
+                          draggable={false}
+                        />
+                      ) : (
+                        <img
+                          src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`}
+                          alt="Video"
+                          className="rounded rounded-b-none border-white/20 border-1 w-full p-1"
+                          draggable={false}
+                          onError={(e) => {
+                            e.currentTarget.onerror = null; // prevent infinite loop
+                            e.currentTarget.src = "/Misc/bilibili.webp";
+                          }}
+                        />
+                      )}
+                    </Link>
+                  )}
                   <div className="border-1 border-white/20 rounded rounded-t-none p-1 flex flex-col">
                     <section>
                       <div className="flex justify-between">
-                        <div>{obj.nam}</div>
+                        <div>
+                          {obj.nam}
+                          {obj.ss && ` (Victory Screen)`}
+                        </div>
                         <div>{obj.loc}</div>
                       </div>
                     </section>

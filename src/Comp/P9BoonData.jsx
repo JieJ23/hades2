@@ -348,7 +348,9 @@ export default function P9BoonData() {
             {findBoonTotal(core_Counts, ite).map((arr, index) => (
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  Math.floor(100 * (arr[1] / displayData.length)) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (arr[1] / displayData.length)).toFixed(2) >= 25
+                    ? `bg-[#192265] border-none`
+                    : `border-white/20`
                 }`}
                 key={index}
               >
@@ -361,7 +363,7 @@ export default function P9BoonData() {
                 />
                 <div>
                   <div>{arr[0].includes(`Sprint`) ? arr[0].replace(`Sprint`, `Rush`) : arr[0]}</div>
-                  <div>{Math.floor(100 * (arr[1] / displayData.length))}%</div>
+                  <div>{(100 * (arr[1] / displayData.length)).toFixed(2)}%</div>
                 </div>
               </div>
             ))}
@@ -377,7 +379,7 @@ export default function P9BoonData() {
               <div className="flex flex-wrap gap-1" key={index}>
                 <div
                   className={`flex gap-1 rounded border-1 p-2 ${
-                    Math.floor(100 * (ite[1] / displayData.length)) >= 25
+                    (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#192265] border-none`
                       : `border-white/20`
                   }`}
