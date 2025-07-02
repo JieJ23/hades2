@@ -14,6 +14,7 @@ export const hammer_staff = {
   HammerStaff_43: "Soulfilled Ankh",
   HammerStaff_44: "Mirrored Ankh",
   HammerStaff_45: "Scarab Etchings",
+  HammerStaff_46: "Pharaoh Etchings",
 };
 
 export const hammer_axe = {
@@ -48,6 +49,7 @@ export const hammer_blades = {
   HammerDaggers_28: "Skulking Onslaught",
   HammerDaggers_43: "Phantom Etchings",
   HammerDaggers_44: "Banshee Brand",
+  HammerDaggers_45: "Sinister Pinion",
 };
 
 export const hammer_skull = {
@@ -67,6 +69,7 @@ export const hammer_skull = {
   HammerLob_18: "Leering Glance",
   HammerLob_20: "Runic Driver",
   HammerLob_21: "Garmr Gaze",
+  HammerLob_22: "Helheim Charge",
 };
 
 export const hammer_suit = {
@@ -82,7 +85,7 @@ export const hammer_suit = {
   HammerSuit_13: "Counter Barrage",
   HammerSuit_14: "Sudden Salvo",
   HammerSuit_15: "Ripper Rockets",
-  HammerSuit_17: "Nirvana Engine",
+  HammerSuit_17: "Chakra Collider",
   HammerSuit_18: "Elephant Rockets",
   HammerSuit_19: "Counter Supreme",
   HammerSuit_20: "Awakened Rockets",
