@@ -10,6 +10,7 @@ export const sites = [
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },
   { icon: `Hammer`, link: `Hammer`, nam: `Hammer` },
   { icon: `Boons`, link: `Boons`, nam: `Boons` },
+  { icon: `Enemy`, link: `Enemy`, nam: `Enemy` },
 ];
 
 export default function SideNav() {
@@ -28,7 +29,7 @@ export default function SideNav() {
             <div className="tooltip tooltip-bottom">
               <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded text-[12px]">{obj.nam}</div>
               <div className="avatar">
-                <div className="size-10 rounded-none">
+                <div className="size-8 rounded-none">
                   <img
                     src={`/${obj.icon}.png`}
                     draggable={false}
