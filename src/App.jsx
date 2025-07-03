@@ -316,11 +316,11 @@ export default function App() {
                   </div>
                   {obj.ss ? (
                     <Link
-                      className="flex items-center gap-1 bg-[#101122] border-1 border-white/20 rounded px-2 py-1"
+                      className="flex items-center gap-1 bg-[#101122] text-white border-1 border-[#00ffaa] rounded px-2 py-1"
                       to={`${obj.ss}`}
                       target="_blank"
                     >
-                      <img src={`/Arcana.png`} alt="Arcana" className="size-4" draggable={false} />
+                      <img src={`/Arcana.png`} alt="Arcana" className="w-4 h-6" draggable={false} />
                       <div>{`Arcana`}</div>
                     </Link>
                   ) : (
