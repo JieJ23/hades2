@@ -111,7 +111,7 @@ export default function Player() {
             <section className="p-2 pt-0 text-[11px] sm:text-[12px] overflow-hidden w-full max-w-[1200px] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pb-4 gap-1 lg:gap-2">
               {selectedPlayerData.map((obj, index) => (
                 <div className="w-full" key={index}>
-                  {obj.ss ? (
+                  {obj.src === "" ? (
                     <img
                       src={`/Misc/victory.webp`}
                       alt="Victory Screen"
@@ -146,7 +146,7 @@ export default function Player() {
                       <div className="flex justify-between">
                         <div>
                           {obj.nam}
-                          {obj.ss && ` (Victory Screen)`}
+                          {obj.src === "" && ` (Victory Screen)`}
                         </div>
                         <div>{obj.loc}</div>
                       </div>
