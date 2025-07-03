@@ -28,9 +28,9 @@ export default function Enemy() {
         <SideNav />
         <div className="flex flex-wrap gap-4 my-6 text-[12px] font-[PT]">
           {surface.map((obj, outeridx) => (
-            <div className="bg-[#101122] p-2 rounded border-1 border-white/20">
+            <div className="bg-[#101122] w-full p-2 rounded border-1 border-white/20">
               <div className="text-[16px] font-[Cinzel]">{surface_name[outeridx]}</div>
-              <div className="flex flex-wrap gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
                 {obj.map((item) => (
                   <div className="text-[11px] flex gap-2 items-center">
                     <img src={`/Enemy/${item}.png`} alt="Enemy" className="w-16" />
@@ -38,21 +38,21 @@ export default function Enemy() {
                       <div>{item}</div>
                       <div>HP: {enemy_data[item].hp}</div>
                       {/*  */}
-                      <div>Tier: {enemy_data[item].rat1}</div>
+                      <div>Difficulty: {enemy_data[item].rat1}</div>
                       {enemy_data[item].elitehp && (
                         <div className="text-[#f18043]">Elite HP: {enemy_data[item].elitehp}</div>
                       )}
                       {enemy_data[item].elitebuff && (
-                        <div className="text-[#f18043]">Elite HP Buff: {enemy_data[item].elitebuff}</div>
+                        <div className="text-[#f18043]">HP Buff: {enemy_data[item].elitebuff}</div>
                       )}
                       {enemy_data[item].rat2 && (
-                        <div className="text-[#f18043]">Elite Tier: {enemy_data[item].rat2}</div>
+                        <div className="text-[#f18043]">Difficulty: {enemy_data[item].rat2}</div>
                       )}
                       {enemy_data[item].superhp && (
                         <div className="text-[#f05bdc]">Super Elite HP: {enemy_data[item].superhp}</div>
                       )}
                       {enemy_data[item].superbuff && (
-                        <div className="text-[#f05bdc]">Super HP Buff: {enemy_data[item].superbuff}</div>
+                        <div className="text-[#f05bdc]">HP Buff: {enemy_data[item].superbuff}</div>
                       )}
                       {enemy_data[item].hp1 && <div className="text-[#00ffaa]">P1 HP: {enemy_data[item].hp1}</div>}
                       {enemy_data[item].hp2 && <div className="text-[#00ffaa]">P2 HP: {enemy_data[item].hp2}</div>}
@@ -67,9 +67,9 @@ export default function Enemy() {
         <div className="divider font-[Cinzel] text-[20px] divider-warning">The Crossroad</div>
         <div className="flex flex-wrap gap-4 my-6 text-[12px] font-[PT]">
           {underworld.map((obj, outeridx) => (
-            <div className="bg-[#101122] p-2 rounded border-1 border-white/20">
+            <div className="bg-[#101122] w-full p-2 rounded border-1 border-white/20">
               <div className="text-[16px] font-[Cinzel]">{underworld_name[outeridx]}</div>
-              <div className="flex flex-wrap gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
                 {obj.map((item) => (
                   <div className="text-[12px] flex gap-2 items-center">
                     <img src={`/Enemy/${item}.png`} alt="Enemy" className="w-16" />
@@ -77,21 +77,21 @@ export default function Enemy() {
                       <div>{item}</div>
                       <div>HP: {enemy_data[item].hp}</div>
                       {/*  */}
-                      <div>Tier: {enemy_data[item].rat1}</div>
+                      <div>Difficulty: {enemy_data[item].rat1}</div>
                       {enemy_data[item].elitehp && (
                         <div className="text-[#f18043]">Elite HP: {enemy_data[item].elitehp}</div>
                       )}
                       {enemy_data[item].elitebuff && (
-                        <div className="text-[#f18043]">Elite HP Buff: {enemy_data[item].elitebuff}</div>
+                        <div className="text-[#f18043]">HP Buff: {enemy_data[item].elitebuff}</div>
                       )}
                       {enemy_data[item].rat2 && (
-                        <div className="text-[#f18043]">Elite Tier: {enemy_data[item].rat2}</div>
+                        <div className="text-[#f18043]">Difficulty: {enemy_data[item].rat2}</div>
                       )}
                       {enemy_data[item].superhp && (
                         <div className="text-[#f05bdc]">Super Elite HP: {enemy_data[item].superhp}</div>
                       )}
                       {enemy_data[item].superbuff && (
-                        <div className="text-[#f05bdc]">Super HP Buff: {enemy_data[item].superbuff}</div>
+                        <div className="text-[#f05bdc]">HP Buff: {enemy_data[item].superbuff}</div>
                       )}
                       {/*  */}
                     </div>
