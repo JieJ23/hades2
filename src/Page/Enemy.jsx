@@ -28,7 +28,7 @@ export default function Enemy() {
         <SideNav />
         <div className="flex flex-wrap gap-4 my-6 text-[12px] font-[PT]">
           {surface.map((obj, outeridx) => (
-            <div className="bg-[#101122] w-full p-2 rounded border-1 border-white/20">
+            <div className="bg-black/80 w-full p-2 rounded border-1 border-white/20">
               <div className="text-[16px] font-[Cinzel]">{surface_name[outeridx]}</div>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
                 {obj.map((item) => (
@@ -67,7 +67,7 @@ export default function Enemy() {
         <div className="divider font-[Cinzel] text-[20px] divider-warning">The Crossroad</div>
         <div className="flex flex-wrap gap-4 my-6 text-[12px] font-[PT]">
           {underworld.map((obj, outeridx) => (
-            <div className="bg-[#101122] w-full p-2 rounded border-1 border-white/20">
+            <div className="bg-black/80 w-full p-2 rounded border-1 border-white/20">
               <div className="text-[16px] font-[Cinzel]">{underworld_name[outeridx]}</div>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
                 {obj.map((item) => (
