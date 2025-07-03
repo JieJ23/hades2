@@ -46,7 +46,7 @@ const highfear = p9data.slice().sort((a, b) => {
 //   return parseTimetoms(a.tim) - parseTimetoms(b.tim);
 // });
 //
-const entriesOnlyVod = highfear.filter((obj) => !obj.ss);
+const entriesOnlyVod = highfear.filter((obj) => obj.src !== "");
 
 const availableRegion = [`Underworld`, `Surface`];
 
@@ -261,8 +261,8 @@ export default function App() {
               </div>
               <div className="w-full gap-2">
                 <div className="flex items-center justify-between">
-                  <div className="text-[18px] font-[Cinzel] ps-2">{obj.nam}</div>
-                  <div className="flex gap-2 text-[14px] font-[Cinzel]">
+                  <div className="text-[16px] font-[Cinzel] ps-2">{obj.nam}</div>
+                  <div className="flex gap-2 text-[12px] font-[Cinzel]">
                     <div className="flex items-center gap-1 font-[PT]">
                       <img src={`/${obj.loc}.png`} alt="Region" className="size-5" draggable={false} />
                       {obj.fea}
@@ -329,7 +329,7 @@ export default function App() {
                           draggable={false}
                           src={`/H2Boons/${ite}.png`}
                           alt="Core Boon"
-                          className="size-8 border-1 border-white/20 rounded-lg"
+                          className="size-7 md:size-8 border-1 border-white/20 rounded-lg"
                         />
                       </div>
                     ))}
@@ -351,7 +351,7 @@ export default function App() {
                             draggable={false}
                             src={`/P9/${ite}.png`}
                             alt="Core Boon"
-                            className="size-8 border-1 border-white/20 rounded-lg"
+                            className="size-7 md:size-8 border-1 border-white/20 rounded-lg"
                           />
                         </div>
                       ))}
@@ -374,7 +374,7 @@ export default function App() {
                             draggable={false}
                             src={`/P9/${ite}.png`}
                             alt="Core Boon"
-                            className="size-8 border-1 border-white/20 rounded-lg"
+                            className="size-7 md:size-8 border-1 border-white/20 rounded-lg"
                           />
                         </div>
                       ))}
@@ -398,7 +398,7 @@ export default function App() {
                               draggable={false}
                               src={`/P9/${ite}.png`}
                               alt="Core Boon"
-                              className="size-8 border-1 border-white/20 rounded-lg"
+                              className="size-7 md:size-8 border-1 border-white/20 rounded-lg"
                             />
                           </div>
                         ))}
@@ -412,7 +412,7 @@ export default function App() {
                               draggable={false}
                               src={`/P9/${ite}.png`}
                               alt="Core Boon"
-                              className="size-8 border-1 border-white/20 rounded-lg"
+                              className="size-7 md:size-8 border-1 border-white/20 rounded-lg"
                             />
                           </div>
                         ))}
@@ -435,14 +435,14 @@ export default function App() {
                             draggable={false}
                             src={`/P9/${ite}.png`}
                             alt="Core Boon"
-                            className="size-8 border-1 border-white/20 rounded-lg"
+                            className="size-7 md:size-8 border-1 border-white/20 rounded-lg"
                           />
                         </div>
                       ))}
                     </div>
                   )}
                 </div>
-                <div className="text-gray-300 z-20 px-4">{obj.des}</div>
+                <div className="text-gray-400 z-20 px-2 text-[11px]">{obj.des}</div>
               </div>
               <div className="hidden md:block">
                 <img

@@ -148,15 +148,15 @@ export default function Player() {
                           {obj.nam}
                           {obj.src === "" && ` (Victory Screen)`}
                         </div>
-                        <div>{obj.loc}</div>
+                        <div className="text-[12px]">{obj.dat}</div>
                       </div>
                     </section>
                     <section className="flex justify-between">
                       <div>
-                        <span className="text-[#f18043] font-[monospace] text-[10px]">{obj.fea}</span>{" "}
+                        <span className="text-[#f18043] text-[12px]">{obj.fea}</span>{" "}
                         <span className="text-[#00ffaa]">{obj.asp}</span>
                       </div>
-                      <div className="font-[monospace] text-[10px]">{obj.tim}</div>
+                      <div className="text-[12px]">{obj.tim}</div>
                     </section>
                     <section className="flex flex-col gap-1 lg:flex-row justify-between py-0.5">
                       <div className="flex gap-0.5">

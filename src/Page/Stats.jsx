@@ -3,7 +3,6 @@ import SideNav from "../Comp/Sidebar";
 import { h2AspectOrder } from "../Data/Misc";
 import { p9data } from "../Data/P9Data";
 import P9BoonData from "../Comp/P9BoonData";
-import ScatterGP from "../Comp/ScatterGp";
 import P9Unseen from "../Comp/P9UnseenData";
 import Background from "../Comp/Background";
 
@@ -30,10 +29,6 @@ export default function Stats() {
       <Background />
       <Head />
       <SideNav />
-      <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto my-2 bg-black/85 rounded border-1 border-white/20">
-        <div className="text-[16px] p-2 font-[Cinzel]">F/T Scatter</div>
-        <ScatterGP />
-      </div>
       <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto my-2">
         <section className="w-full">
           <div className="text-[16px] p-2 py-0 font-[Cinzel]">Ladder Summary</div>
