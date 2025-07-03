@@ -5,7 +5,6 @@ export const sites = [
   { icon: `Ladder`, link: ``, nam: `Ladder` },
   { icon: `Stats`, link: `Stats`, nam: `Stats` },
   { icon: `Player`, link: `Player`, nam: `Player` },
-  { icon: `Patch8`, link: `Patch9`, nam: `Patch 9` },
   { icon: `Patch8`, link: `Patch8`, nam: `Patch 8` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },

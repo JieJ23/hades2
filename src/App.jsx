@@ -4,7 +4,7 @@ import { sToA } from "./Data/Misc";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { h2AspectOrder, parseTimetoms } from "./Data/Misc";
-import { p10data } from "./Data/P10Data";
+import { p9data } from "./Data/P9Data";
 import { testData } from "./Data/P9TestData";
 import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
 import Background from "./Comp/Background";
@@ -34,15 +34,18 @@ export const findValue = (arr) => {
   const finalized = arr.map((ite) => p9boons_reverse[ite]);
   return finalized;
 };
-const highfear = p10data.slice().sort((a, b) => {
-  // Sort by fear descending
+//
+const highfear = p9data.slice().sort((a, b) => {
   const feaDiff = +b.fea - +a.fea;
   if (feaDiff !== 0) return feaDiff;
-
-  // If fear is equal, sort by time ascending (fastest first)
   return parseTimetoms(a.tim) - parseTimetoms(b.tim);
 });
-
+// const highfear = testData.slice().sort((a, b) => {
+//   const feaDiff = +b.fea - +a.fea;
+//   if (feaDiff !== 0) return feaDiff;
+//   return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+// });
+//
 const entriesOnlyVod = highfear.filter((obj) => !obj.ss);
 
 const availableRegion = [`Underworld`, `Surface`];
@@ -97,7 +100,7 @@ export default function App() {
       <div className="max-w-[1200px] font-[PT] text-[14px] mx-auto">
         <SideNav />
         <section className="w-full px-2">
-          <div className="text-[16px] p-2 py-0 font-[Cinzel]">Highest Fear Ladder - Patch 10</div>
+          <div className="text-[16px] p-2 py-0 font-[Cinzel]">Highest Fear Patch 9 & 10</div>
           <div className="text-[12px] px-2 py-1 flex gap-2">
             <input
               type="number"
@@ -184,10 +187,6 @@ export default function App() {
                         if (!has.includes(boon)) {
                           setHas((prev) => [...prev, boon]);
                         }
-                        // setRegion(`All`);
-                        // setCategory(`All`);
-                        // setMin(22);
-                        // setMax(67);
                         setQuery("");
                         setIsOpen(false);
                       }}
@@ -308,12 +307,6 @@ export default function App() {
                       <div>Region</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 bg-[#101122] border-1 border-white/20 rounded px-2 py-1">
-                    <img src={`/Misc/Selene.png`} alt="Selene" className="size-6" draggable={false} />
-                    <div>
-                      <div>{obj.sel === "f" ? `No` : `Yes`}</div>
-                    </div>
-                  </div>
                   {obj.src !== "" && (
                     <Link
                       className="flex items-center gap-1 bg-[white] text-black border-1 border-black rounded px-2 py-1"
@@ -324,19 +317,9 @@ export default function App() {
                       <div>{`Video`}</div>
                     </Link>
                   )}
-                  {obj.ss && (
-                    <Link
-                      className="flex items-center gap-1 bg-[lightgreen] text-black border-1 border-[black] rounded px-2 py-1"
-                      to={`${obj.ss}`}
-                      target="_blank"
-                    >
-                      <img src={`/Arcana.png`} alt="Arcana" className="w-4 h-6" draggable={false} />
-                      <div>{`Arcana`}</div>
-                    </Link>
-                  )}
                 </div>
                 <div className="flex items-center flex-wrap py-1 gap-2 gap-y-1">
-                  <div className="flex gap-0.5 p-2 rounded bg-[#1e204a]">
+                  <div className="flex gap-0.5 p-2 rounded bg-[#101123]">
                     {sToA(obj.cor).map((ite, index) => (
                       <div className="tooltip shrink-0" key={index}>
                         <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
@@ -352,7 +335,7 @@ export default function App() {
                     ))}
                   </div>
                   {obj.ham && (
-                    <div className="flex gap-0.5 p-2 rounded bg-[#1e204a]">
+                    <div className="flex gap-0.5 p-2 rounded bg-[#101123]">
                       {findValue(
                         sToA(obj.ham).sort((a, b) => {
                           const aIndex = orderMap.get(a) ?? Infinity;
@@ -375,7 +358,7 @@ export default function App() {
                     </div>
                   )}
                   {obj.mis && (
-                    <div className="flex gap-0.5 p-2 rounded bg-[#1e204a]">
+                    <div className="flex gap-0.5 p-2 rounded bg-[#101123]">
                       {findValue(
                         sToA(obj.mis).sort((a, b) => {
                           const aIndex = orderMap.get(a) ?? Infinity;
@@ -398,7 +381,7 @@ export default function App() {
                     </div>
                   )}
                   {(obj.duo || obj.ele) && (
-                    <div className="flex flex-wrap gap-0.5 p-2 rounded bg-[#1e204a]">
+                    <div className="flex flex-wrap gap-0.5 p-2 rounded bg-[#101123]">
                       {obj.duo &&
                         findValue(
                           sToA(obj.duo).sort((a, b) => {
@@ -436,7 +419,7 @@ export default function App() {
                     </div>
                   )}
                   {obj.cha && (
-                    <div className="flex gap-0.5 p-2 rounded bg-[#1e204a]">
+                    <div className="flex gap-0.5 p-2 rounded bg-[#101123]">
                       {findValue(
                         sToA(obj.cha).sort((a, b) => {
                           const aIndex = orderMap.get(a) ?? Infinity;
@@ -459,7 +442,7 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <div className="text-gray-300 z-20 px-2">{obj.des}</div>
+                <div className="text-gray-300 z-20 px-4">{obj.des}</div>
               </div>
               <div className="hidden md:block">
                 <img
