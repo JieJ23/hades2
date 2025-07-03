@@ -134,7 +134,6 @@ export const enemy_data = {
   Treant: { hp: 450, hpbuff: 1220, rat1: 65 },
   Treant2: { hp: 850, hpbuff: 1850, rat1: 480, superhp: 1000, superbuff: 5000 },
   Wisp: { hp: 90, rat1: 9, elitebuff: 100, rat2: 20 },
-  ZombieAssassin: { hp: 230, rat1: 30 },
   ZombieAssassinMiniBoss: { hp: 1830, rat1: 60, elitebuff: 230, rat2: 60, shadowhp: 230, shadowbuff: 230 },
   LightRanged: { hp: 70, rat1: 10, elitebuff: 130 },
   LightRangedAsphodel: { hp: 150, rat1: 20, elitebuff: 225 },
