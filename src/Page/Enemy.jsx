@@ -43,7 +43,7 @@ export default function Enemy() {
                         <div className="text-[#f18043]">Elite HP: {enemy_data[item].elitehp}</div>
                       )}
                       {enemy_data[item].elitebuff && (
-                        <div className="text-[#f18043]">HP Buff: {enemy_data[item].elitebuff}</div>
+                        <div className="text-[#f18043]">Elite HP Buff: {enemy_data[item].elitebuff}</div>
                       )}
                       {enemy_data[item].rat2 && (
                         <div className="text-[#f18043]">Difficulty: {enemy_data[item].rat2}</div>
@@ -52,7 +52,7 @@ export default function Enemy() {
                         <div className="text-[#f05bdc]">Super Elite HP: {enemy_data[item].superhp}</div>
                       )}
                       {enemy_data[item].superbuff && (
-                        <div className="text-[#f05bdc]">HP Buff: {enemy_data[item].superbuff}</div>
+                        <div className="text-[#f05bdc]">Super HP Buff: {enemy_data[item].superbuff}</div>
                       )}
                       {enemy_data[item].hp1 && <div className="text-[#00ffaa]">P1 HP: {enemy_data[item].hp1}</div>}
                       {enemy_data[item].hp2 && <div className="text-[#00ffaa]">P2 HP: {enemy_data[item].hp2}</div>}
@@ -82,7 +82,7 @@ export default function Enemy() {
                         <div className="text-[#f18043]">Elite HP: {enemy_data[item].elitehp}</div>
                       )}
                       {enemy_data[item].elitebuff && (
-                        <div className="text-[#f18043]">HP Buff: {enemy_data[item].elitebuff}</div>
+                        <div className="text-[#f18043]">Elite HP Buff: {enemy_data[item].elitebuff}</div>
                       )}
                       {enemy_data[item].rat2 && (
                         <div className="text-[#f18043]">Difficulty: {enemy_data[item].rat2}</div>
@@ -91,7 +91,7 @@ export default function Enemy() {
                         <div className="text-[#f05bdc]">Super Elite HP: {enemy_data[item].superhp}</div>
                       )}
                       {enemy_data[item].superbuff && (
-                        <div className="text-[#f05bdc]">HP Buff: {enemy_data[item].superbuff}</div>
+                        <div className="text-[#f05bdc]">Super HP Buff: {enemy_data[item].superbuff}</div>
                       )}
                       {/*  */}
                     </div>
