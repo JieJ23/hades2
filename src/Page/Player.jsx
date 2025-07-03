@@ -4,7 +4,7 @@ import { p9data } from "../Data/P9Data";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { sToA } from "../Data/Misc";
-import { findGUIcard, findValue, orderMap } from "../App";
+import { findValue, orderMap } from "../App";
 import { p9boons } from "../Data/P9BoonObj";
 import Background from "../Comp/Background";
 import RaderP from "../Comp/RadarP";

@@ -28,7 +28,7 @@ export default function ArcanaDeck() {
 
   const generateShareableURL = () => {
     const base64Deck = btoa(JSON.stringify(deck));
-    const newURL = `${window.location.origin}/ArcaneDeck/?deck=${base64Deck}`;
+    const newURL = `${window.location.origin}/ArcanaDeck/?deck=${base64Deck}`;
     setShareableURL(newURL);
   };
 

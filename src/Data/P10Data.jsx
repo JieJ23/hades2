@@ -1,0 +1,20 @@
+export const p10data = [
+  {
+    dat: "2025-06-25",
+    nam: "Patch 10 Testing",
+    asp: "Momus",
+    loc: "Underworld",
+    fea: "32",
+    src: "https://www.youtube.com/",
+    des: "Ladder Reset : Patch 10 Testing",
+    tim: "11:23.34",
+    fam: "Hound",
+    cor: "HerAttack,HerSpecial,HerCast,HerSprint,HerMagick",
+    ham: "Pharaoh Etchings,Scarab Etchings,Soulfilled Ankh",
+    duo: "Queen's Ransom,King's Ransom",
+    ele: "Proper Upbringing",
+    mis: "Divine Dash,Renewed Faith,Phalanx Shot,Defensive Posture",
+    cha: "Paralyzing,Atrophic",
+    sel: "f",
+  },
+];

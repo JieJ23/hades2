@@ -1,13 +1,13 @@
-import Head from "./Comp/Head";
-import SideNav from "./Comp/Sidebar";
-import { sToA } from "./Data/Misc";
+import Head from "../Comp/Head";
+import SideNav from "../Comp/Sidebar";
+import { sToA } from "../Data/Misc";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { h2AspectOrder, parseTimetoms } from "./Data/Misc";
-import { p10data } from "./Data/P10Data";
-import { testData } from "./Data/P9TestData";
-import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
-import Background from "./Comp/Background";
+import { h2AspectOrder, parseTimetoms } from "../Data/Misc";
+import { p9data } from "../Data/P9Data";
+import { testData } from "../Data/P9TestData";
+import { p9boons_reverse, p9boons, allP9 } from "../Data/P9BoonObj";
+import Background from "../Comp/Background";
 
 export const orderMap = new Map(allP9.map((item, index) => [item, index]));
 
@@ -34,7 +34,7 @@ export const findValue = (arr) => {
   const finalized = arr.map((ite) => p9boons_reverse[ite]);
   return finalized;
 };
-const highfear = p10data.slice().sort((a, b) => {
+const highfear = p9data.slice().sort((a, b) => {
   // Sort by fear descending
   const feaDiff = +b.fea - +a.fea;
   if (feaDiff !== 0) return feaDiff;
@@ -51,7 +51,7 @@ const handleLoadMore = (updater) => {
   updater((prev) => prev + 50);
 };
 
-export default function App() {
+export default function Patch9() {
   const [region, setRegion] = useState(`All`);
   const [category, setCategory] = useState(`All`);
   const [show, setShow] = useState(20);
@@ -90,6 +90,10 @@ export default function App() {
 
   const displayEntries = has.length >= 1 ? filteredData : highfear_category;
 
+  //
+  const top10Player = [...new Set(highfear.map((obj) => obj.nam))].slice(0, 10);
+  const top10Aspect = [...new Set(highfear.map((obj) => obj.asp))];
+  //
   return (
     <main className="h-full min-h-lvh relative">
       <Background />
@@ -97,7 +101,7 @@ export default function App() {
       <div className="max-w-[1200px] font-[PT] text-[14px] mx-auto">
         <SideNav />
         <section className="w-full px-2">
-          <div className="text-[16px] p-2 py-0 font-[Cinzel]">Highest Fear Ladder - Patch 10</div>
+          <div className="text-[16px] p-2 py-0 font-[Cinzel]">Highest Fear Ladder - Patch 9</div>
           <div className="text-[12px] px-2 py-1 flex gap-2">
             <input
               type="number"
@@ -246,12 +250,46 @@ export default function App() {
             <div className="text-[#ffb700] backdrop-blur-lg">{displayEntries[0]?.nam ?? `Null`}</div>
           </div>
         </section>
-        <section className="p-1 text-[12px] overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 px-2">
+          <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded text-[12px]">
+            <div>
+              <div className="font-[Cinzel] mb-1">Top 10 Players</div>
+              <div className="grid grid-cols-2 gap-1">
+                {top10Player.map((item, index) => (
+                  <div key={index}>
+                    {index + 1}. {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="col-span-1 p-2 border-1 border-[#00ffaa] rounded text-[12px]">
+            <div>
+              <div className="font-[Cinzel] mb-1">Top Aspects</div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1">
+                {top10Aspect.map((item, index) => (
+                  <div key={index} className="line-clamp-1">
+                    {index + 1}. {item.includes(`Melinoe`) ? item.replace(`Melinoe `, ``) : item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <section className="p-2 text-[12px] overflow-hidden">
           {displayEntries.slice(0, show).map((obj, index) => (
             <div
-              className="flex items-center w-full rounded px-2 py-1 border-1 border-white/20 bg-black gap-2 relative"
+              className="flex items-center w-full rounded bg-black/80 px-2 py-1 border-1 border-white/20 gap-2 mb-3 relative"
               key={index}
             >
+              <div className={`absolute w-full h-full top-0 left-0 opacity-15 lg:opacity-25`}>
+                <img
+                  src={`/FamPort/${obj.fam}bg.png`}
+                  alt="Fam"
+                  className="w-full h-full object-contain object-right"
+                  draggable={false}
+                />
+              </div>
               <div className="hidden md:block">
                 <img
                   src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
@@ -260,9 +298,9 @@ export default function App() {
                   draggable={false}
                 />
               </div>
-              <div className="w-full gap-2">
-                <div className="flex items-center justify-between">
-                  <div className="text-[18px] font-[Cinzel] ps-2">{obj.nam}</div>
+              <div className="w-full grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-2">
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 flex items-center justify-between border-b-1 border-white/10">
+                  <div className="text-[16px] font-[Cinzel]">{obj.nam}</div>
                   <div className="flex gap-2 text-[14px] font-[Cinzel]">
                     <div className="flex items-center gap-1 font-[PT]">
                       <img src={`/${obj.loc}.png`} alt="Region" className="size-5" draggable={false} />
@@ -274,133 +312,72 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                <div className="py-1 flex flex-wrap gap-1 text-[12px]">
-                  <div className="flex items-center gap-1 bg-[#101122] border-1 border-white/20 rounded px-2 py-1">
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 flex gap-4">
+                  <div className="flex flex-col">
+                    <div>
+                      <div className="font-[Cinzel]">{obj.asp}</div>
+                    </div>
                     <img
                       src={`/P9/${obj.asp}.png`}
                       alt="Aspect"
-                      className="size-6 border-1 border-white/20 rounded-lg"
+                      className="size-8 border-1 border-white/20 rounded-lg"
                       draggable={false}
                     />
-                    <div>
-                      <div>{obj.asp}</div>
-                    </div>
                   </div>
-                  <div className="flex items-center gap-1 bg-[#101122] border-1 border-white/20 rounded px-2 py-1">
+                  <div className="flex flex-col">
+                    <div>
+                      <div className="font-[Cinzel]">{obj.fam}</div>
+                    </div>
                     <img
                       src={`/P9/${obj.fam}.png`}
                       alt="Familiar"
-                      className="size-6 border-1 border-white/20 rounded-lg"
+                      className="size-8 border-1 border-white/20 rounded-lg"
                       draggable={false}
                     />
-                    <div>
-                      <div>{obj.fam}</div>
-                    </div>
                   </div>
-                  <div className="flex items-center gap-1 bg-[#101122] border-1 border-white/20 rounded px-2 py-1">
+                  <div className="flex flex-col">
+                    <div>
+                      <div className="font-[Cinzel]">Region</div>
+                    </div>
                     <div className="tooltip shrink-0">
                       <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                         <div className="text-[12px] font-[PT]">{obj.loc}</div>
                       </div>
-                      <img src={`/${obj.loc}.png`} alt="Region" className="size-6" draggable={false} />
-                    </div>
-                    <div>
-                      <div>Region</div>
+                      <img src={`/${obj.loc}.png`} alt="Region" className="size-8" draggable={false} />
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 bg-[#101122] border-1 border-white/20 rounded px-2 py-1">
-                    <img src={`/Misc/Selene.png`} alt="Selene" className="size-6" draggable={false} />
+                  <div className="flex flex-col items-center">
                     <div>
-                      <div>{obj.sel === "f" ? `No` : `Yes`}</div>
+                      <div className="font-[Cinzel]">{obj.sel === "f" ? `No` : `Yes`}</div>
                     </div>
+                    <img src={`/Misc/Selene.png`} alt="Selene" className="size-8" draggable={false} />
                   </div>
-                  {obj.ss ? (
-                    <Link
-                      className="flex items-center gap-1 bg-[#101122] border-1 border-white/20 rounded px-2 py-1"
-                      to={`${obj.ss}`}
-                      target="_blank"
-                    >
-                      <img src={`/Arcana.png`} alt="Arcana" className="size-4" draggable={false} />
-                      <div>{`Arcana`}</div>
-                    </Link>
-                  ) : (
-                    <Link
-                      className="flex items-center gap-1 bg-[white] text-black border-1 border-black rounded px-2 py-1"
-                      to={obj.src}
-                      target="_blank"
-                    >
-                      <img src={`/Misc/play.png`} alt="Play" className="size-4" draggable={false} />
-                      <div>{`Video`}</div>
-                    </Link>
-                  )}
                 </div>
-                <div className="flex items-center flex-wrap py-1 gap-2 gap-y-1">
-                  <div className="flex gap-0.5 p-2 rounded bg-[#1e204a]">
-                    {sToA(obj.cor).map((ite, index) => (
-                      <div className="tooltip shrink-0" key={index}>
-                        <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                          <div className="text-[12px] font-[PT]">{ite}</div>
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 gap-y-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                  <div className="flex flex-col">
+                    <div className="font-[Cinzel]">Core</div>
+                    <div className="flex gap-0.5">
+                      {sToA(obj.cor).map((ite, index) => (
+                        <div className="tooltip shrink-0" key={index}>
+                          <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                            <div className="text-[12px] font-[PT]">{ite}</div>
+                          </div>
+                          <img
+                            draggable={false}
+                            src={`/H2Boons/${ite}.png`}
+                            alt="Core Boon"
+                            className="size-7 border-1 border-white/20 rounded-md"
+                          />
                         </div>
-                        <img
-                          draggable={false}
-                          src={`/H2Boons/${ite}.png`}
-                          alt="Core Boon"
-                          className="size-8 border-1 border-white/20 rounded-lg"
-                        />
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                   {obj.ham && (
-                    <div className="flex gap-0.5 p-2 rounded bg-[#1e204a]">
-                      {findValue(
-                        sToA(obj.ham).sort((a, b) => {
-                          const aIndex = orderMap.get(a) ?? Infinity;
-                          const bIndex = orderMap.get(b) ?? Infinity;
-                          return aIndex - bIndex;
-                        })
-                      ).map((ite, index) => (
-                        <div className="tooltip shrink-0" key={index}>
-                          <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                            <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
-                          </div>
-                          <img
-                            draggable={false}
-                            src={`/P9/${ite}.png`}
-                            alt="Core Boon"
-                            className="size-8 border-1 border-white/20 rounded-lg"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  {obj.mis && (
-                    <div className="flex gap-0.5 p-2 rounded bg-[#1e204a]">
-                      {findValue(
-                        sToA(obj.mis).sort((a, b) => {
-                          const aIndex = orderMap.get(a) ?? Infinity;
-                          const bIndex = orderMap.get(b) ?? Infinity;
-                          return aIndex - bIndex;
-                        })
-                      ).map((ite, index) => (
-                        <div className="tooltip shrink-0" key={index}>
-                          <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                            <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
-                          </div>
-                          <img
-                            draggable={false}
-                            src={`/P9/${ite}.png`}
-                            alt="Core Boon"
-                            className="size-8 border-1 border-white/20 rounded-lg"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  {(obj.duo || obj.ele) && (
-                    <div className="flex flex-wrap gap-0.5 p-2 rounded bg-[#1e204a]">
-                      {obj.duo &&
-                        findValue(
-                          sToA(obj.duo).sort((a, b) => {
+                    <div className="flex flex-col">
+                      <div className="font-[Cinzel]">Hammer</div>
+                      <div className="flex gap-0.5">
+                        {findValue(
+                          sToA(obj.ham).sort((a, b) => {
                             const aIndex = orderMap.get(a) ?? Infinity;
                             const bIndex = orderMap.get(b) ?? Infinity;
                             return aIndex - bIndex;
@@ -414,12 +391,65 @@ export default function App() {
                               draggable={false}
                               src={`/P9/${ite}.png`}
                               alt="Core Boon"
-                              className="size-8 border-1 border-white/20 rounded-lg"
+                              className="size-7 border-1 border-white/20 rounded-md"
                             />
                           </div>
                         ))}
-                      {obj.ele &&
-                        findValue(sToA(obj.ele)).map((ite, index) => (
+                      </div>
+                    </div>
+                  )}
+                  {(obj.duo || obj.ele) && (
+                    <div className="flex flex-col">
+                      <div className="font-[Cinzel]">Duo & Infusion</div>
+                      <div className="flex flex-wrap gap-0.5">
+                        {obj.duo &&
+                          findValue(
+                            sToA(obj.duo).sort((a, b) => {
+                              const aIndex = orderMap.get(a) ?? Infinity;
+                              const bIndex = orderMap.get(b) ?? Infinity;
+                              return aIndex - bIndex;
+                            })
+                          ).map((ite, index) => (
+                            <div className="tooltip shrink-0" key={index}>
+                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                                <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
+                              </div>
+                              <img
+                                draggable={false}
+                                src={`/P9/${ite}.png`}
+                                alt="Core Boon"
+                                className="size-7 border-1 border-white/20 rounded-md"
+                              />
+                            </div>
+                          ))}
+                        {obj.ele &&
+                          findValue(sToA(obj.ele)).map((ite, index) => (
+                            <div className="tooltip shrink-0" key={index}>
+                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                                <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
+                              </div>
+                              <img
+                                draggable={false}
+                                src={`/P9/${ite}.png`}
+                                alt="Core Boon"
+                                className="size-7 border-1 border-white/20 rounded-md"
+                              />
+                            </div>
+                          ))}
+                      </div>
+                    </div>
+                  )}
+                  {obj.mis && (
+                    <div className="flex flex-col">
+                      <div className="font-[Cinzel]">Misc</div>
+                      <div className="flex gap-0.5">
+                        {findValue(
+                          sToA(obj.mis).sort((a, b) => {
+                            const aIndex = orderMap.get(a) ?? Infinity;
+                            const bIndex = orderMap.get(b) ?? Infinity;
+                            return aIndex - bIndex;
+                          })
+                        ).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
                             <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                               <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
@@ -428,50 +458,55 @@ export default function App() {
                               draggable={false}
                               src={`/P9/${ite}.png`}
                               alt="Core Boon"
-                              className="size-8 border-1 border-white/20 rounded-lg"
+                              className="size-7 border-1 border-white/20 rounded-md"
                             />
                           </div>
                         ))}
+                      </div>
                     </div>
                   )}
                   {obj.cha && (
-                    <div className="flex gap-0.5 p-2 rounded bg-[#1e204a]">
-                      {findValue(
-                        sToA(obj.cha).sort((a, b) => {
-                          const aIndex = orderMap.get(a) ?? Infinity;
-                          const bIndex = orderMap.get(b) ?? Infinity;
-                          return aIndex - bIndex;
-                        })
-                      ).map((ite, index) => (
-                        <div className="tooltip shrink-0" key={index}>
-                          <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                            <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
+                    <div className="flex flex-col">
+                      <div className="font-[Cinzel]">Chaos/S</div>
+                      <div className="flex gap-0.5">
+                        {findValue(
+                          sToA(obj.cha).sort((a, b) => {
+                            const aIndex = orderMap.get(a) ?? Infinity;
+                            const bIndex = orderMap.get(b) ?? Infinity;
+                            return aIndex - bIndex;
+                          })
+                        ).map((ite, index) => (
+                          <div className="tooltip shrink-0" key={index}>
+                            <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                              <div className="text-[12px] font-[PT]">{p9boons[ite]}</div>
+                            </div>
+                            <img
+                              draggable={false}
+                              src={`/P9/${ite}.png`}
+                              alt="Core Boon"
+                              className="size-7 border-1 border-white/20 rounded-md"
+                            />
                           </div>
-                          <img
-                            draggable={false}
-                            src={`/P9/${ite}.png`}
-                            alt="Core Boon"
-                            className="size-8 border-1 border-white/20 rounded-lg"
-                          />
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
-                <div className="text-gray-300 z-20 px-2">{obj.des}</div>
-              </div>
-              <div className="hidden md:block">
-                <img
-                  src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
-                  alt="Aspect"
-                  className="w-[80px] rounded"
-                  draggable={false}
-                />
+                <div className="col-span-3 md:col-span-6 lg:col-span-8 text-gray-300 pt-1 z-20">
+                  <div>{obj.des}</div>
+                  {obj.ss ? (
+                    <div className="text-[#10e410]">Discord ID: #{obj.ss}</div>
+                  ) : (
+                    <Link to={obj.src} target="_blank" className="text-[#109de4] line-clamp-1">
+                      {obj.src}
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           ))}
         </section>
-        <div className="flex justify-center mb-4 my-2 gap-2">
+        <div className="flex justify-center mb-4 gap-2">
           {show < displayEntries.length && (
             <button
               className="btn bg-transparent rounded border-1 border-[#00ffaa] btn-sm font-[PT]"
