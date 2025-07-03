@@ -16,6 +16,7 @@ export const p10data = [
     mis: "Divine Dash,Renewed Faith,Phalanx Shot,Defensive Posture",
     cha: "Paralyzing,Atrophic",
     sel: "f",
+    ss: `https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzYiLCJjNyIsImMxMSIsImMxMyIsImMxOCIsImMxOSIsImMyMCIsImMyMyJd`,
   },
   {
     ss: `https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzYiLCJjNyIsImMxMSIsImMxMyIsImMxOCIsImMxOSIsImMyMCIsImMyMyJd`,
@@ -24,7 +25,7 @@ export const p10data = [
     asp: "Medea",
     loc: "Surface",
     fea: "32",
-    src: "https://www.youtube.com/",
+    src: "",
     des: "Patch 10 Testing Victory Screen w/ Arcana Deck",
     tim: "12:34.56",
     fam: "Cat",

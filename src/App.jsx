@@ -249,7 +249,7 @@ export default function App() {
         <section className="p-1 text-[12px] overflow-hidden">
           {displayEntries.slice(0, show).map((obj, index) => (
             <div
-              className="flex items-center w-full rounded px-2 py-1 border-1 border-white/20 bg-black gap-2 relative"
+              className="flex items-center w-full rounded px-2 py-1 border-1 border-white/20 bg-black gap-2 relative mb-2"
               key={index}
             >
               <div className="hidden md:block">
@@ -314,16 +314,7 @@ export default function App() {
                       <div>{obj.sel === "f" ? `No` : `Yes`}</div>
                     </div>
                   </div>
-                  {obj.ss ? (
-                    <Link
-                      className="flex items-center gap-1 bg-[#101122] text-white border-1 border-[#00ffaa] rounded px-2 py-1"
-                      to={`${obj.ss}`}
-                      target="_blank"
-                    >
-                      <img src={`/Arcana.png`} alt="Arcana" className="w-4 h-6" draggable={false} />
-                      <div>{`Arcana`}</div>
-                    </Link>
-                  ) : (
+                  {obj.src !== "" && (
                     <Link
                       className="flex items-center gap-1 bg-[white] text-black border-1 border-black rounded px-2 py-1"
                       to={obj.src}
@@ -331,6 +322,16 @@ export default function App() {
                     >
                       <img src={`/Misc/play.png`} alt="Play" className="size-4" draggable={false} />
                       <div>{`Video`}</div>
+                    </Link>
+                  )}
+                  {obj.ss && (
+                    <Link
+                      className="flex items-center gap-1 bg-[lightgreen] text-black border-1 border-[black] rounded px-2 py-1"
+                      to={`${obj.ss}`}
+                      target="_blank"
+                    >
+                      <img src={`/Arcana.png`} alt="Arcana" className="w-4 h-6" draggable={false} />
+                      <div>{`Arcana`}</div>
                     </Link>
                   )}
                 </div>
