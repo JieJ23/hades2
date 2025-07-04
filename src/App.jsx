@@ -318,10 +318,17 @@ export default function App() {
                     </Link>
                   )}
                   {index < 3 && (
-                    <div className="flex items-center gap-1 bg-[#ffcc00] text-black border-1 border-black rounded px-2 py-1">
-                      <img src={`/Misc/star.png`} alt="Play" className="size-4" draggable={false} />
+                    <div className="flex items-center gap-1 bg-[#3763dc] text-white border-1 border-black rounded px-2 py-1">
+                      <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
 
                       <div>{daysAgo(obj.dat)}</div>
+                    </div>
+                  )}
+                  {parseTimetoms(obj.tim) < 90000 && (
+                    <div className="flex items-center bg-[#ffcc00] text-black border-1 border-black rounded px-2 py-1">
+                      <img src={`/Misc/speed.png`} alt="Speed" className="w-6 h-6" draggable={false} />
+
+                      <div>Speed</div>
                     </div>
                   )}
                 </div>

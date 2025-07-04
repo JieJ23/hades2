@@ -104,7 +104,7 @@ export function parseTimetoms(timeStr) {
   const seconds = parseInt(secPart, 10);
   const hundredths = parseInt(hundredthsPart.padEnd(2, "0"), 10); // Ensure 2 digits
 
-  const totalMs = (minutes * 60 + seconds) * 1000 + hundredths * 10;
+  const totalMs = (minutes * 60 + seconds) * 100 + hundredths * 10;
   return totalMs;
 }
 
