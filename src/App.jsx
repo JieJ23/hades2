@@ -3,7 +3,7 @@ import SideNav from "./Comp/Sidebar";
 import { sToA } from "./Data/Misc";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { h2AspectOrder, parseTimetoms } from "./Data/Misc";
+import { h2AspectOrder, parseTimetoms, daysAgo } from "./Data/Misc";
 import { p9data } from "./Data/P9Data";
 import { testData } from "./Data/P9TestData";
 import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
@@ -316,6 +316,13 @@ export default function App() {
                       <img src={`/Misc/play.png`} alt="Play" className="size-4" draggable={false} />
                       <div>{`Video`}</div>
                     </Link>
+                  )}
+                  {index < 3 && (
+                    <div className="flex items-center gap-1 bg-[#ffcc00] text-black border-1 border-black rounded px-2 py-1">
+                      <img src={`/Misc/star.png`} alt="Play" className="size-4" draggable={false} />
+
+                      <div>{daysAgo(obj.dat)}</div>
+                    </div>
                   )}
                 </div>
                 <div className="flex items-center flex-wrap py-1 gap-2 gap-y-1">

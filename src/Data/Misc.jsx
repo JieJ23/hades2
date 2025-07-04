@@ -32,7 +32,7 @@ export const weaponStaff = [`Melinoe Staff`, `Circe`, `Momus`, `Anubis`];
 export const weaponBlades = [`Melinoe Blades`, `Artemis`, `Pan`, `Morrigan`];
 
 export function daysAgo(dateString) {
-  const [month, day, year] = dateString.split("/").map(Number);
+  const [year, month, day] = dateString.split("-").map(Number);
   const date = new Date(year, month - 1, day); // month is 0-indexed
   const now = new Date();
 
@@ -44,9 +44,10 @@ export function daysAgo(dateString) {
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
   if (diffDays <= 0) return "Today";
-  if (diffDays > 0 && diffDays < 30) return `${diffDays} days ago`;
-  if (diffDays > 30 && diffDays < 60) return `1 month ago`;
-  if (diffDays > 60) return `${Math.floor(diffDays / 30)} months ago`;
+  if (diffDays == 1) return "1 day";
+  if (diffDays > 0 && diffDays < 30) return `${diffDays} days`;
+  // if (diffDays > 30 && diffDays < 60) return `1 month ago`;
+  // if (diffDays > 60) return `${Math.floor(diffDays / 30)} months ago`;
 }
 
 export function formatSentence(sentence) {
