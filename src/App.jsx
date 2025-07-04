@@ -47,6 +47,7 @@ const highfear = p9data.slice().sort((a, b) => {
 // });
 //
 const entriesOnlyVod = highfear.filter((obj) => obj.src !== "");
+const entriesByData = highfear.slice().sort((a, b) => new Date(b.dat) - new Date(a.dat));
 
 const availableRegion = [`Underworld`, `Surface`];
 
@@ -67,14 +68,18 @@ export default function App() {
 
   const filteredBoons = allP9.filter((boon) => boon.toLowerCase().includes(query.toLowerCase()));
 
-  const selectedHighfear = (hasvod ? entriesOnlyVod : highfear).filter((obj) => obj.fea >= min && obj.fea <= max);
+  const selectedHighfear = (hasvod ? entriesOnlyVod : region === `Latest` ? entriesByData : highfear).filter(
+    (obj) => obj.fea >= min && obj.fea <= max
+  );
 
-  const highfear_region = region === `All` ? selectedHighfear : selectedHighfear.filter((obj) => obj.loc === region);
+  const highfear_region =
+    region === `All` || region === `Latest` ? selectedHighfear : selectedHighfear.filter((obj) => obj.loc === region);
+
   const highfear_category =
     category === `All` ? highfear_region : highfear_region.filter((obj) => obj.asp === category);
 
   const availableAspects = (
-    region === `All`
+    region === `All` || region === `Latest`
       ? [...new Set(selectedHighfear.map((obj) => obj.asp))]
       : [...new Set(highfear_region.map((obj) => obj.asp))]
   ).sort((a, b) => (h2AspectOrder.indexOf(a) > h2AspectOrder.indexOf(b) ? 1 : -1));
@@ -90,6 +95,8 @@ export default function App() {
     return has.every((h) => combined.includes(h.toLowerCase()));
   });
   //
+
+  console.log(region);
 
   const displayEntries = has.length >= 1 ? filteredData : highfear_category;
 
@@ -109,7 +116,7 @@ export default function App() {
               min={22}
               max={67}
               onChange={(e) => {
-                setRegion(`All`);
+                setRegion(region);
                 setCategory(`All`);
                 setMin(e.target.value);
               }}
@@ -121,7 +128,7 @@ export default function App() {
               min={22}
               max={67}
               onChange={(e) => {
-                setRegion(`All`);
+                setRegion(region);
                 setCategory(`All`);
                 setMax(e.target.value);
               }}
@@ -135,6 +142,7 @@ export default function App() {
                 setCategory(`All`);
               }}
             >
+              <option value={`Latest`}>Latest</option>
               <option value={`All`}>All</option>
               {availableRegion.map((ite, index) => (
                 <option value={ite} key={index}>
@@ -312,6 +320,34 @@ export default function App() {
 
                     <div>{daysAgo(obj.dat)}</div>
                   </div>
+                  {obj.fea >= 60 && (
+                    <div className="flex items-center gap-0.5 bg-[#922fd840] text-white border-1 border-[#922fd8] rounded p-1 pe-2">
+                      <img src={`/Misc/Primordial.png`} alt="Speed" className="size-4" draggable={false} />
+
+                      <div className="uppercase text-[10px]">Primordial</div>
+                    </div>
+                  )}
+                  {obj.fea >= 50 && obj.fea < 60 && (
+                    <div className="flex items-center gap-0.5 bg-[#d82f2f40] text-white border-1 border-[#d82f2f] rounded p-1 pe-2">
+                      <img src={`/Misc/Titan.png`} alt="Speed" className="size-4" draggable={false} />
+
+                      <div className="uppercase text-[10px]">Titan</div>
+                    </div>
+                  )}
+                  {obj.fea >= 40 && obj.fea < 50 && (
+                    <div className="flex items-center gap-0.5 bg-[#2f6ad840] text-white border-1 border-[#2f6ad8] rounded p-1 pe-2">
+                      <img src={`/Misc/Demigod.png`} alt="Speed" className="size-4" draggable={false} />
+
+                      <div className="uppercase text-[10px]">Demigod</div>
+                    </div>
+                  )}
+                  {parseTimetoms(obj.tim) < 90000 && (
+                    <div className="flex items-center bg-[#cdd82f30] text-white border-1 border-[#cdd82f] rounded p-1 pe-2">
+                      <img src={`/Misc/speed.png`} alt="Speed" className="w-6 h-6" draggable={false} />
+
+                      <div className="uppercase text-[10px]">Speed</div>
+                    </div>
+                  )}
                   {obj.src !== "" && (
                     <Link
                       className="flex items-center gap-1 bg-[white] text-black border-1 border-black rounded px-2 py-1"
@@ -321,20 +357,6 @@ export default function App() {
                       <img src={`/Misc/play.png`} alt="Play" className="size-4" draggable={false} />
                       <div>{`Video`}</div>
                     </Link>
-                  )}
-                  {obj.fea >= 60 && (
-                    <div className="flex items-center gap-0.5 bg-[#d82f2f30] text-white border-1 border-[#d82f2f] rounded p-1 pe-2">
-                      <img src={`/Misc/Top.png`} alt="Speed" className="w-6 h-6" draggable={false} />
-
-                      <div className="uppercase text-[10px]">elite</div>
-                    </div>
-                  )}
-                  {parseTimetoms(obj.tim) < 90000 && (
-                    <div className="flex items-center bg-[#cdd82f30] text-white border-1 border-[#cdd82f] rounded p-1 pe-2">
-                      <img src={`/Misc/speed.png`} alt="Speed" className="w-6 h-6" draggable={false} />
-
-                      <div className="uppercase text-[10px]">Speed</div>
-                    </div>
                   )}
                 </div>
                 <div className="flex items-center flex-wrap py-1 gap-2 gap-y-1">
