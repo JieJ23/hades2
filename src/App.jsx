@@ -96,8 +96,6 @@ export default function App() {
   });
   //
 
-  console.log(region);
-
   const displayEntries = has.length >= 1 ? filteredData : highfear_category;
 
   return (
@@ -304,17 +302,6 @@ export default function App() {
                       <div>{obj.fam}</div>
                     </div>
                   </div>
-                  {/* <div className="flex items-center gap-1 bg-[#101122] border-1 border-white/20 rounded px-2 py-1">
-                    <div className="tooltip shrink-0">
-                      <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                        <div className="text-[12px] font-[PT]">{obj.loc}</div>
-                      </div>
-                      <img src={`/${obj.loc}.png`} alt="Region" className="size-6" draggable={false} />
-                    </div>
-                    <div>
-                      <div>Region</div>
-                    </div>
-                  </div> */}
                   <div className="flex items-center gap-1 bg-[#101122] text-white border-1 border-white/20 rounded px-2 py-1">
                     <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
 
