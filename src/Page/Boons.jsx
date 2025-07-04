@@ -55,6 +55,40 @@ const everything_label = [
   `Chaos`,
   `Selene`,
 ];
+//
+export const itemKS = [
+  `Silver Wheel`,
+  `Knuckle Bones`,
+  `Luckier Tooth`,
+  `Ghost Onion`,
+  `Evil Eye`,
+  `Engraved Pin`,
+  `Discordant Bell`,
+  `Gold Purse`,
+  `Metallic Droplet`,
+  `White Antler`,
+  `Moon Beam`,
+  `Cloud Bangle`,
+  `Iridescent Fan`,
+  `Vivid Sea`,
+  `Barley Sheaf`,
+  `Purest Hope`,
+  `Beautiful Mirror`,
+  `Adamant Shard`,
+  `Everlasting Ember`,
+  `Lion Fang`,
+  `Blackened Fleece`,
+  `Crystal Figurine`,
+  `Silken Sash`,
+  `Aromatic Phial`,
+  `Concave Stone`,
+  `Experimental Hammer`,
+  `Transcendent Embryo`,
+  `Sword Hilt`,
+  `Gorgon Amulet`,
+  `Fig Leaf`,
+];
+//
 
 export default function Boons() {
   return (
@@ -64,6 +98,23 @@ export default function Boons() {
       <div className="max-w-[1400px] font-[PT] text-[12px] mx-auto">
         <SideNav />
         <section className="py-4">
+          <div className="bg-black/80 rounded p-2 mb-4 border-1 border-white/20">
+            <div className="text-[20px] font-[Cinzel]">Keepsakes</div>
+            <div className={`flex gap-2 flex-wrap mb-2`}>
+              {itemKS.map((item, index) => (
+                <div
+                  key={index}
+                  className={`flex items-center gap-2 p-1 px-2 rounded bg-[#152253]
+                    `}
+                >
+                  <img draggable={false} src={`/buildgui/${item}.png`} alt="Boons" className="size-10" loading="lazy" />
+                  <div>
+                    <div>{item}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
           {everything.map((obj, idx) => (
             <div className="bg-black/80 rounded p-2 mb-4 border-1 border-white/20">
               <div className="text-[20px] font-[Cinzel]">{everything_label[idx]}</div>

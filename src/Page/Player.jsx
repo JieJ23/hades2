@@ -326,6 +326,23 @@ export default function Player() {
                           ))}
                         </div>
                       )}
+                      {obj.ks && (
+                        <div className="flex gap-0.5 p-2 rounded bg-[#343775]">
+                          {sToA(obj.ks).map((ite, index) => (
+                            <div className="tooltip shrink-0" key={index}>
+                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                                <div className="text-[12px] font-[PT]">{ite}</div>
+                              </div>
+                              <img
+                                draggable={false}
+                                src={`/buildgui/${ite}.png`}
+                                alt="Keepsake"
+                                className="size-7 md:size-8"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                     <div className="text-gray-400 z-20 px-2 text-[11px]">{obj.des}</div>
                   </div>

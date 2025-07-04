@@ -1150,6 +1150,7 @@ export const p9data = [
     mis: "Nitro Boost,Pressure Points,Divine Dash,Stutter Step",
     cha: "",
     sel: "",
+    ks: "Cloud Bangle,Fig Leaf,Iridescent Fan,White Antler",
   },
   {
     dat: "2025-06-27",
@@ -1204,6 +1205,7 @@ export const p9data = [
     mis: "Wealth from the Dead,Support Fire,Ingenious Strike,Black Night Banishment,Defensive Posture",
     cha: "",
     sel: "f",
+    ks: `Cloud Bangle,Fig Leaf,Adamant Shard,White Antler`,
   },
   {
     dat: "2025-06-19",
@@ -1546,6 +1548,7 @@ export const p9data = [
     mis: "Whispered Prayer,Renewed Faith,Unseen Ire",
     cha: "Allure of Aphrodite",
     sel: "t",
+    ks: `Everlasting Ember,Barley Sheaf,Gorgon Amulet,Engraved Pin`,
   },
   {
     dat: "2025-06-28",
@@ -1834,6 +1837,7 @@ export const p9data = [
     mis: "Hard Target,Pressure Points,Black Night Banishment,Quick Buck,Bounce Back,Stalwart Stand",
     cha: "",
     sel: "f",
+    ks: `Cloud Bangle,Fig Leaf,Beautiful Mirror,Knuckle Bones`,
   },
   {
     dat: "2025-06-30",
@@ -2644,6 +2648,7 @@ export const p9data = [
     mis: "Stalwart Stand,Worry Free,Supply Chain,Stutter Step",
     cha: "",
     sel: "f",
+    ks: `Everlasting Ember,Fig Leaf,Barley Sheaf,Knuckle Bones`,
   },
   {
     dat: "2025-07-03",
@@ -2680,5 +2685,6 @@ export const p9data = [
     mis: "Stalwart Stand,Hard Target,Vital Signs,Reckless Abandon,Primal Psychic Connection,Supply Chain",
     cha: "",
     sel: "f",
+    ks: `Everlasting Ember,Fig Leaf,Gorgon Amulet,Knuckle Bones`,
   },
 ];
