@@ -127,7 +127,6 @@ export const enemy_data = {
   Screamer: { hp: 130, rat1: 13, elitebuff: 190, rat2: 34 },
   Screamer2: { hp: 1100, rat1: 405, superhp: 1000, superbuff: 5000, shadowhp: 100, shadowbuff: 100 },
   Mage: { hp: 80, rat1: 12, elitebuff: 155, rat2: 24 },
-  Mage2: { hp: 415, rat1: 40, elitebuff: 415, rat2: 90 },
   SiegeVine: { hp: 290, rat1: 22, elitebuff: 390, rat2: 48 },
   FogEmitter: { hp: 290, rat1: 22, elitebuff: 1450, elitehp: 510, rat2: 50, shadowbuff: 1750 },
   FogEmitter2: { hp: 730, rat1: 80 },
