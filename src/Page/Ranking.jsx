@@ -49,40 +49,38 @@ export default function Ranking() {
     <main className="relative">
       <Background />
       <Head />
-      <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto text-white select-none">
+      <div className="max-w-[1400px] font-[PT] text-[12px] mx-auto text-white select-none">
         <SideNav />
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-2 py-6">
-          {fullData
-            .sort((a, b) => a.length - b.length)
-            .map((weaponData, index) => (
-              <div key={index} className="flex flex-col gap-2">
-                <img
-                  src={`/GUI_Card/c${findGUIcard([weaponType[index]])}.png`}
-                  alt="Aspect"
-                  className="w-[80px] rounded mx-auto"
-                  draggable={false}
-                />
-                {weaponData.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex items-center cursor-pointer gap-2 px-2 border-1 border-black rounded py-1 ${
-                      select === item.nam ? `bg-[#46e7a1d0] text-black` : `bg-[#0c0c20d0] text-white`
-                    }`}
-                    onClick={() => setSelect(item.nam)}
-                  >
-                    <img
-                      src={`/P9/${item.asp}.png`}
-                      alt={item.asp}
-                      className="size-7 border-1 border-white/20 rounded-lg"
-                      draggable={false}
-                    />
-                    <span>{idx + 1}.</span>
-                    <span className="line-clamp-1">{item.nam}</span>
-                    <span className="ml-auto">{item.fea}</span>
-                  </div>
-                ))}
-              </div>
-            ))}
+          {fullData.map((weaponData, index) => (
+            <div key={index} className="flex flex-col gap-2">
+              <img
+                src={`/GUI_Card/c${findGUIcard([weaponType[index]])}.png`}
+                alt="Aspect"
+                className="w-[80px] rounded mx-auto"
+                draggable={false}
+              />
+              {weaponData.map((item, idx) => (
+                <div
+                  key={idx}
+                  className={`flex items-center cursor-pointer gap-2 px-2 border-1 border-black rounded py-1 ${
+                    select === item.nam ? `bg-[#46e7a1d0] text-black` : `bg-[#0c0c20d0] text-white`
+                  }`}
+                  onClick={() => setSelect(item.nam)}
+                >
+                  <img
+                    src={`/P9/${item.asp}.png`}
+                    alt={item.asp}
+                    className="size-7 border-1 border-white/20 rounded-lg"
+                    draggable={false}
+                  />
+                  <span>{idx + 1}.</span>
+                  <span className="line-clamp-1">{item.nam}</span>
+                  <span className="ml-auto">{item.fea}</span>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </main>
