@@ -302,16 +302,22 @@ export default function App() {
                       <div>{obj.fam}</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 bg-[#101122] text-white border-1 border-white/20 rounded px-2 py-1">
+                  <div className="flex items-center gap-1 bg-[#101122] text-white border-1 border-white/20 rounded p-1">
                     <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
-
                     <div>{daysAgo(obj.dat)}</div>
                   </div>
-                  {obj.fea >= 60 && (
+                  {obj.fea == 67 && (
+                    <div className="flex items-center gap-0.5 bg-[#00ffaa40] text-white border-1 border-[#00ffaa] rounded p-1">
+                      <img src={`/Misc/lighting.gif`} alt="Max" className="size-4 " draggable={false} />
+                      <div className="uppercase text-[10px] animate-pulse text-[yellow]">True Melinoë</div>
+                      <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
+                    </div>
+                  )}
+                  {obj.fea >= 60 && obj.fea < 67 && (
                     <div className="flex items-center gap-0.5 bg-[#922fd840] text-white border-1 border-[#922fd8] rounded p-1 pe-2">
                       <img src={`/Misc/Primordial.png`} alt="Speed" className="size-4" draggable={false} />
 
-                      <div className="uppercase text-[10px]">Primordial</div>
+                      <div className="uppercase text-[10px] animate-pulse">Primordial</div>
                     </div>
                   )}
                   {obj.fea >= 50 && obj.fea < 60 && (
