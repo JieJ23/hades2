@@ -34,8 +34,9 @@ for (let i = 0; i < weaponCategory.length; i++) {
   const uniqueByNam = dataOrder
     .filter((obj) => weaponCategory[i].includes(obj.asp))
     .filter((item) => {
-      if (seen.has(item.nam)) return false;
-      seen.add(item.nam);
+      const key = `${item.nam}-${item.asp}`; // Composite key
+      if (seen.has(key)) return false;
+      seen.add(key);
       return true;
     });
   fullData.push(uniqueByNam);
