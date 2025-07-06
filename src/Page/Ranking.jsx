@@ -46,8 +46,6 @@ export default function Ranking() {
   const [select, setSelect] = useState(null);
   const [selectAspect, setSelectAspect] = useState(null);
 
-  console.log(select);
-
   return (
     <main className="relative">
       <Background />

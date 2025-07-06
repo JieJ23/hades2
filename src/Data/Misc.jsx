@@ -108,4 +108,18 @@ export function parseTimetoms(timeStr) {
   return totalMs;
 }
 
+export function parsemstoTime(ms) {
+  const totalSeconds = Math.floor(ms / 100);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  const hundredths = Math.floor((ms % 100) / 10); // get hundredths (2 digits)
+
+  // Pad with leading zeros if necessary
+  const minStr = String(minutes).padStart(2, "0");
+  const secStr = String(seconds).padStart(2, "0");
+  const hundredthsStr = String(hundredths).padStart(2, "0");
+
+  return `${minStr}:${secStr}.${hundredthsStr}`;
+}
+
 //
