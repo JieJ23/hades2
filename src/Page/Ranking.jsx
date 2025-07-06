@@ -44,6 +44,9 @@ for (let i = 0; i < weaponCategory.length; i++) {
 
 export default function Ranking() {
   const [select, setSelect] = useState(null);
+  const [selectAspect, setSelectAspect] = useState(null);
+
+  console.log(select);
 
   return (
     <main className="relative">
@@ -54,28 +57,48 @@ export default function Ranking() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-2 py-6">
           {fullData.map((weaponData, index) => (
             <div key={index} className="flex flex-col gap-2">
-              <img
-                src={`/GUI_Card/c${findGUIcard([weaponType[index]])}.png`}
-                alt="Aspect"
-                className="w-[80px] rounded mx-auto"
-                draggable={false}
-              />
+              <div className="relative">
+                <img
+                  src={`/GUI_Card/c${findGUIcard([weaponType[index]])}.png`}
+                  alt="Aspect"
+                  className="w-[80px] rounded mx-auto"
+                  draggable={false}
+                />
+                <span className="absolute -bottom-1 left-2">{weaponData.length}</span>
+              </div>
               {weaponData.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-center cursor-pointer gap-2 px-2 border-1 border-black rounded py-1 ${
-                    select === item.nam ? `bg-[#46e7a1d0] text-black` : `bg-[#0c0c20d0] text-white`
-                  }`}
-                  onClick={() => setSelect(item.nam)}
+                  className={`flex items-center gap-2 px-2 border-1 ${
+                    selectAspect === item.asp ? `border-[#00ff95]` : `border-black`
+                  }  rounded py-1 ${select === item.nam ? `bg-[#46e7a1d0] text-black` : `bg-[#0c0c20d0] text-white`}`}
                 >
                   <img
                     src={`/P9/${item.asp}.png`}
                     alt={item.asp}
-                    className="size-7 border-1 border-white/20 rounded-lg"
+                    className={`size-7 border-1 border-white/20 rounded-lg cursor-pointer`}
                     draggable={false}
+                    onClick={() => {
+                      if (selectAspect == item.asp) {
+                        setSelectAspect(null);
+                      } else {
+                        setSelectAspect(item.asp);
+                      }
+                    }}
                   />
                   <span>{idx + 1}.</span>
-                  <span className="line-clamp-1">{item.nam}</span>
+                  <span
+                    className="line-clamp-1 cursor-pointer"
+                    onClick={() => {
+                      if (select === item.nam) {
+                        setSelect(null);
+                      } else {
+                        setSelect(item.nam);
+                      }
+                    }}
+                  >
+                    {item.nam}
+                  </span>
                   <span className="ml-auto">{item.fea}</span>
                 </div>
               ))}
