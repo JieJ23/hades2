@@ -104,7 +104,7 @@ export function parseTimetoms(timeStr) {
   const seconds = parseInt(secPart, 10);
   const hundredths = parseInt(hundredthsPart.padEnd(2, "0"), 10); // Ensure 2 digits
 
-  const totalMs = (minutes * 60 + seconds) * 100 + hundredths * 10;
+  const totalMs = (minutes * 60 + seconds) * 100 + hundredths;
   return totalMs;
 }
 
@@ -112,7 +112,7 @@ export function parsemstoTime(ms) {
   const totalSeconds = Math.floor(ms / 100);
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
-  const hundredths = Math.floor((ms % 100) / 10); // get hundredths (2 digits)
+  const hundredths = Math.floor(ms % 100); // get hundredths (2 digits)
 
   // Pad with leading zeros if necessary
   const minStr = String(minutes).padStart(2, "0");
