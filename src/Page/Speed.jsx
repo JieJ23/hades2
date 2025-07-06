@@ -64,10 +64,19 @@ export default function Speed() {
               ))}
             </select>
           </div>
-          <div className="text-[12px] px-2 py-1 flex gap-2">
-            <div>Query Entries:</div>
+          <div className="text-[12px] px-2 pt-1 flex gap-1">
+            <div className="pe-1">Query Entries:</div>
             <div className="text-[#f18043] backdrop-blur-lg">Min [{min}]</div>
             <div className="text-[#f18043] backdrop-blur-lg">Max [{max}]</div>
+          </div>
+          <div className="text-[12px] px-2 flex gap-1">
+            <div className="pe-1">Query Avg:</div>
+            <div className="text-[#00ffaa] backdrop-blur-lg">
+              {parsemstoTime(
+                Math.round(displayData.reduce((total, item) => total + parseTimetoms(item.tim), 0) / displayData.length)
+              )}
+            </div>
+            <div className="text-[#00ffaa] backdrop-blur-lg">[{displayData.length}]</div>
           </div>
           <div className="p-2 pb-4">
             {displayData.map((obj, index) => (
