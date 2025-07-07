@@ -38,7 +38,7 @@ export default function Submit() {
           {/* Page content here */}
           <label
             htmlFor="my-drawer"
-            className="btn border-[#2efaac] bg-transparent font-[PT] border-1 rounded text-[14px] px-3"
+            className="btn border-[#2efaac] bg-transparent font-[Source] border-1 rounded text-[14px] px-3"
           >
             Submit
           </label>
@@ -48,7 +48,10 @@ export default function Submit() {
           <div className="menu bg-black/90 text-base-content min-h-full w-80 p-4">
             {/* Sidebar content here */}
             <>
-              <form onSubmit={Submit} className="w-full mx-auto my-4 flex flex-col items-center gap-2 p-2 font-[PT]">
+              <form
+                onSubmit={Submit}
+                className="w-full mx-auto my-4 flex flex-col items-center gap-2 p-2 font-[Source]"
+              >
                 <div className="text-white text-[20px]">Share Gameplay</div>
                 <input type="date" placeholder="Date" className="input input-md" name="date" required />
                 <input type="text" placeholder="Name" className="input input-md" name="nam" required />
@@ -73,7 +76,7 @@ export default function Submit() {
                 <input type="text" placeholder="Gameplay Link" className="input input-md" name="src" required />
                 <input type="text" placeholder="Short Description" className="input input-md" name="des" required />
                 <button
-                  className="btn border-[#2efaac] bg-transparent font-[PT] border-1 rounded text-[14px] px-3"
+                  className="btn border-[#2efaac] bg-transparent font-[Source] border-1 rounded text-[14px] px-3"
                   type="submit"
                   name="Submit"
                 >

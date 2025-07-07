@@ -25,13 +25,13 @@ export default function Speed() {
     <main className="relative">
       <Background />
       <Head />
-      <div className="max-w-[800px] font-[PT] text-[10px] md:text-[12px] mx-auto text-white select-none">
+      <div className="max-w-[800px] font-[Source] text-[12px] md:text-[13px] mx-auto text-white select-none">
         <SideNav />
         <div className="p-2">
-          <div className="text-[12px] px-2 py-1 flex gap-2">
+          <div className="px-2 py-1 flex gap-1">
             <input
               type="number"
-              className="input input-sm border-1 border-[#f18043] w-[50px]"
+              className="input input-sm border-1 border-[#f18043] w-[50px] focus:outline-0 rounded"
               value={min}
               min={22}
               max={67}
@@ -41,7 +41,7 @@ export default function Speed() {
             />
             <input
               type="number"
-              className="input input-sm border-1 border-[#f18043] w-[50px]"
+              className="input input-sm border-1 border-[#f18043] w-[50px] focus:outline-0 rounded"
               value={max}
               min={22}
               max={67}
@@ -51,7 +51,7 @@ export default function Speed() {
             />
             <select
               value={category}
-              className="select select-sm w-[100px] border-1 border-[#00ffaa]"
+              className="select select-sm w-[100px] border-1 border-[#00ffaa] focus:outline-0 rounded"
               onChange={(e) => {
                 setCategory(e.target.value);
               }}
@@ -64,26 +64,26 @@ export default function Speed() {
               ))}
             </select>
           </div>
-          <div className="text-[12px] px-2 pt-1 flex gap-1">
+          <div className="px-2 pt-1 flex gap-1">
             <div className="pe-1">Query Entries:</div>
-            <div className="text-[#f18043] backdrop-blur-lg">Min [{min}]</div>
-            <div className="text-[#f18043] backdrop-blur-lg">Max [{max}]</div>
+            <div className="text-[#f18043]">Min [{min}]</div>
+            <div className="text-[#f18043]">Max [{max}]</div>
           </div>
-          <div className="text-[12px] px-2 flex gap-1">
+          <div className="px-2 flex gap-1">
             <div className="pe-1">Query Avg:</div>
-            <div className="text-[#00ffaa] backdrop-blur-lg">
+            <div className="text-[#00ffaa]">
               {parsemstoTime(
                 Math.round(displayData.reduce((total, item) => total + parseTimetoms(item.tim), 0) / displayData.length)
               )}
             </div>
-            <div className="text-[#00ffaa] backdrop-blur-lg">[{displayData.length}]</div>
+            <div className="text-[#00ffaa]">[{displayData.length}]</div>
           </div>
           <div className="p-2 pb-4">
             {displayData.map((obj, index) => (
               <>
                 <div
                   className={`grid grid-cols-5 items-center ${
-                    obj.fea >= 60 ? `bg-[#321b49d0]` : `bg-[#050512d0]`
+                    obj.fea >= 60 ? `bg-[#46e7a1d0] text-black` : `bg-[#000000b5]`
                   } border-1 rounded p-2 border-white/20`}
                 >
                   <div>
@@ -102,7 +102,7 @@ export default function Speed() {
                   <div className="ml-auto">{daysAgo(obj.dat)}</div>
                 </div>
                 {index !== displayData.length - 1 && (
-                  <div className="text-center text-[#f05bdc] py-2 my-0.5 font-mono text-[11px] bg-[black] rounded">
+                  <div className="text-center text-[#f05bdc] py-2 my-0.5 text-[14px] rounded">
                     - {parsemstoTime(parseTimetoms(displayData[index + 1].tim) - parseTimetoms(obj.tim))}
                   </div>
                 )}

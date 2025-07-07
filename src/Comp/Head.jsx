@@ -26,7 +26,7 @@ export default function Head() {
             >
               {sites.map((obj, idx) => (
                 <li key={idx}>
-                  <Link to={`/${obj.link}`} key={idx} className="font-[Cinzel] text-[12px] flex items-center gap-2">
+                  <Link to={`/${obj.link}`} key={idx} className="font-[Source] text-[13px] flex items-center gap-2">
                     <div className="avatar">
                       <div className="w-6 rounded-none">
                         <img src={`/${obj.icon}.png`} />

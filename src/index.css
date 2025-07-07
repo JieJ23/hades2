@@ -15,3 +15,9 @@
     font-style: normal;
     src: url("/src/fonts/PTSans-Regular.ttf") format("truetype");
   }
+
+    @font-face {
+    font-family: Source;
+    font-style: normal;
+    src: url("/src/fonts/SourceSans3.ttf") format("truetype");
+  }

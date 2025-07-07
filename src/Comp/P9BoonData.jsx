@@ -140,16 +140,20 @@ export default function P9BoonData() {
   }, {});
 
   return (
-    <div className="max-w-[1200px] font-[PT] text-[10px] md:text-[12px] mx-auto my-2">
+    <div className="max-w-[1400px] font-[Source] text-[12px] md:text-[13px] mx-auto my-2">
       {/* <P9Core /> */}
-      <div className="rounded bg-black/80 border-1 border-black p-4 mb-4">
-        <div className="font-[Cinzel] py-2 px-4">Staff - {(100 * (allStaff / p9data.length)).toFixed(2)}% of count</div>
+      <div className="rounded bg-black/80 border-1 border-black px-2 mb-4">
+        <div className="py-1 pt-4 px-2 text-[14px]">
+          Staff - {(100 * (allStaff / p9data.length)).toFixed(2)}% of count
+        </div>
         <div className="flex flex-wrap gap-1">
           {hammerStaff.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  (100 * (ite[1] / allStaff)).toFixed(2) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (ite[1] / allStaff)).toFixed(2) >= 25
+                    ? `bg-[#00ffaa] text-black border-none`
+                    : `border-white/20`
                 }`}
               >
                 <img
@@ -157,7 +161,7 @@ export default function P9BoonData() {
                   loading="lazy"
                   src={`/P9/${p9boons_reverse[ite[0]]}.png`}
                   alt="Core Boons"
-                  className="size-7 md:size-9 rounded border-1 border-black/20"
+                  className="size-7 md:size-8"
                 />
                 <div>
                   <div>{ite[0]}</div>
@@ -167,13 +171,13 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2 px-4">Axe - {(100 * (allAxe / p9data.length)).toFixed(2)}% of count</div>
+        <div className="py-1 pt-4 px-2 text-[14px]">Axe - {(100 * (allAxe / p9data.length)).toFixed(2)}% of count</div>
         <div className="flex flex-wrap gap-1">
           {hammerAxe.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  (100 * (ite[1] / allAxe)).toFixed(2) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (ite[1] / allAxe)).toFixed(2) >= 25 ? `bg-[#00ffaa] text-black border-none` : `border-white/20`
                 }`}
               >
                 <img
@@ -181,7 +185,7 @@ export default function P9BoonData() {
                   loading="lazy"
                   src={`/P9/${p9boons_reverse[ite[0]]}.png`}
                   alt="Core Boons"
-                  className="size-7 md:size-9 rounded border-1 border-black/20"
+                  className="size-7 md:size-8"
                 />
                 <div>
                   <div>{ite[0]}</div>
@@ -191,7 +195,7 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2 px-4">
+        <div className="py-1 pt-4 px-2 text-[14px]">
           Blades - {(100 * (allBlades / p9data.length)).toFixed(2)}% of count
         </div>
         <div className="flex flex-wrap gap-1">
@@ -199,7 +203,9 @@ export default function P9BoonData() {
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  (100 * (ite[1] / allBlades)).toFixed(2) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (ite[1] / allBlades)).toFixed(2) >= 25
+                    ? `bg-[#00ffaa] text-black border-none`
+                    : `border-white/20`
                 }`}
               >
                 <img
@@ -207,7 +213,7 @@ export default function P9BoonData() {
                   loading="lazy"
                   src={`/P9/${p9boons_reverse[ite[0]]}.png`}
                   alt="Core Boons"
-                  className="size-7 md:size-9 rounded border-1 border-black/20"
+                  className="size-7 md:size-8"
                 />
                 <div>
                   <div>{ite[0]}</div>
@@ -217,7 +223,7 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2 px-4">
+        <div className="py-1 pt-4 px-2 text-[14px]">
           Flames - {(100 * (allFlames / p9data.length)).toFixed(2)}% of count
         </div>
         <div className="flex flex-wrap gap-1">
@@ -225,7 +231,9 @@ export default function P9BoonData() {
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  (100 * (ite[1] / allFlames)).toFixed(2) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (ite[1] / allFlames)).toFixed(2) >= 25
+                    ? `bg-[#00ffaa] text-black border-none`
+                    : `border-white/20`
                 }`}
               >
                 <img
@@ -233,7 +241,7 @@ export default function P9BoonData() {
                   loading="lazy"
                   src={`/P9/${p9boons_reverse[ite[0]]}.png`}
                   alt="Core Boons"
-                  className="size-7 md:size-9 rounded border-1 border-black/20"
+                  className="size-7 md:size-8"
                 />
                 <div>
                   <div>{ite[0]}</div>
@@ -243,13 +251,17 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2 px-4">Skull - {(100 * (allSkull / p9data.length)).toFixed(2)}% of count</div>
+        <div className="py-1 pt-4 px-2 text-[14px]">
+          Skull - {(100 * (allSkull / p9data.length)).toFixed(2)}% of count
+        </div>
         <div className="flex flex-wrap gap-1">
           {hammerSkull.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  (100 * (ite[1] / allSkull)).toFixed(2) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (ite[1] / allSkull)).toFixed(2) >= 25
+                    ? `bg-[#00ffaa] text-black border-none`
+                    : `border-white/20`
                 }`}
               >
                 <img
@@ -257,7 +269,7 @@ export default function P9BoonData() {
                   loading="lazy"
                   src={`/P9/${p9boons_reverse[ite[0]]}.png`}
                   alt="Core Boons"
-                  className="size-7 md:size-9 rounded border-1 border-black/20"
+                  className="size-7 md:size-8"
                 />
                 <div>
                   <div>{ite[0]}</div>
@@ -267,13 +279,17 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="font-[Cinzel] py-2 px-4">Coat - {(100 * (allCoat / p9data.length)).toFixed(2)}% of count</div>
+        <div className="py-1 pt-4 px-2 text-[14px]">
+          Coat - {(100 * (allCoat / p9data.length)).toFixed(2)}% of count
+        </div>
         <div className="flex flex-wrap gap-1">
           {hammerCoat.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  (100 * (ite[1] / allCoat)).toFixed(2) >= 25 ? `bg-[#192265] border-none` : `border-white/20`
+                  (100 * (ite[1] / allCoat)).toFixed(2) >= 25
+                    ? `bg-[#00ffaa] text-black border-none`
+                    : `border-white/20`
                 }`}
               >
                 <img
@@ -281,7 +297,7 @@ export default function P9BoonData() {
                   loading="lazy"
                   src={`/P9/${p9boons_reverse[ite[0]]}.png`}
                   alt="Core Boons"
-                  className="size-7 md:size-9 rounded border-1 border-black/20"
+                  className="size-7 md:size-8"
                 />
                 <div>
                   <div>{ite[0]}</div>
@@ -292,11 +308,10 @@ export default function P9BoonData() {
           ))}
         </div>
       </div>
-      <div className="text-[#fff200] px-4 py-1 text-[12px]">Boon Stats</div>
-      <div className="text-[12px] px-4 pb-2 flex gap-2">
+      <div className="px-2 flex gap-1">
         <select
           value={weapontype}
-          className="select select-sm w-[100px] border-1 border-[#00ffaa] rounded"
+          className="select select-sm w-[100px] border-1 focus:outline-0 border-[#00ffaa] rounded"
           onChange={(e) => {
             setWeapontype(e.target.value);
           }}
@@ -310,46 +325,39 @@ export default function P9BoonData() {
         </select>
         <input
           type="number"
-          className="input input-sm border-1 border-[#f18043] w-[50px]"
+          className="input input-sm border-1 focus:outline-0 border-[#f18043] rounded w-[50px]"
           value={min}
           min={22}
           max={67}
           onChange={(e) => {
-            // const newMin = Number(e.target.value);
-            // if (newMin <= max) {
-            // }
             setMin(e.target.value);
           }}
         />
         <input
           type="number"
-          className="input input-sm border-1 border-[#f18043] w-[50px]"
+          className="input input-sm border-1 focus:outline-0 border-[#f18043] rounded w-[50px]"
           value={max}
           min={22}
           max={67}
           onChange={(e) => {
-            // const newMax = Number(e.target.value);
-            // if (newMax >= min) {
-            // }
             setMax(e.target.value);
           }}
         />
       </div>
-      <div className="text-[12px] px-4 pb-1 flex gap-2">
+      <div className="px-2 py-1 flex gap-2">
         <div>Query Fear:</div>
         <div className="text-[#f18043] backdrop-blur-lg">Min [{min}]</div>
         <div className="text-[#f18043] backdrop-blur-lg">Max [{max}]</div>
         <div className="text-[#fff200] backdrop-blur-lg">[{displayData.length}]</div>
       </div>
-      <div className="rounded bg-black/80 border-1 border-black p-4 py-2 mb-4">
-        <div className="font-[Cinzel]">Core Boons</div>
+      <div className="rounded bg-[#000000b5] p-2 pb-1 pt-4 mb-4">
         {core_attribute.map((ite) => (
           <div className="flex flex-wrap gap-1 py-2">
             {findBoonTotal(core_Counts, ite).map((arr, index) => (
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (arr[1] / displayData.length)).toFixed(2) >= 25
-                    ? `bg-[#192265] border-none`
+                    ? `bg-[#00ffaa] text-black border-none`
                     : `border-white/20`
                 }`}
                 key={index}
@@ -359,7 +367,7 @@ export default function P9BoonData() {
                   loading="lazy"
                   src={`/H2Boons/${arr[0]}.png`}
                   alt="Core Boons"
-                  className="size-7 md:size-9 rounded border-1 border-black/20"
+                  className="size-7 md:size-8"
                 />
                 <div>
                   <div>{arr[0].includes(`Sprint`) ? arr[0].replace(`Sprint`, `Rush`) : arr[0]}</div>
@@ -370,8 +378,7 @@ export default function P9BoonData() {
           </div>
         ))}
       </div>
-      <div className="rounded bg-black/80 border-1 border-black p-4 py-2 mb-4">
-        <div className="font-[Cinzel]">Familiar</div>
+      <div className="rounded bg-[#000000b5] p-2 pb-1 pt-4 mb-4">
         <div className="flex flex-wrap gap-1 py-2">
           {Object.entries(core_Fam)
             .sort((a, b) => b[1] - a[1])
@@ -380,7 +387,7 @@ export default function P9BoonData() {
                 <div
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
-                      ? `bg-[#192265] border-none`
+                      ? `bg-[#00ffaa] text-black border-none`
                       : `border-white/20`
                   }`}
                 >
@@ -389,7 +396,7 @@ export default function P9BoonData() {
                     loading="lazy"
                     src={ite[0] === `` ? `/P9/Nona.png` : `/P9/${ite[0]}.png`}
                     alt="Core Boons"
-                    className="size-7 md:size-9 rounded border-1 border-black/20"
+                    className="size-7 md:size-8"
                   />
                   <div>
                     <div>{ite[0] === `` ? `None` : ite[0]}</div>
@@ -400,8 +407,7 @@ export default function P9BoonData() {
             ))}
         </div>
       </div>
-      <div className="rounded bg-black/80 border-1 border-black p-4 py-2 mb-4">
-        <div className="font-[Cinzel]">Duo</div>
+      <div className="rounded bg-[#000000b5] p-2 pb-1 pt-4 mb-4">
         <div className="flex flex-wrap gap-1 py-2">
           {Object.entries(core_Duo)
             .sort((a, b) => b[1] - a[1])
@@ -410,7 +416,7 @@ export default function P9BoonData() {
                 <div
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
-                      ? `bg-[#192265] border-none`
+                      ? `bg-[#00ffaa] text-black border-none`
                       : `border-white/20`
                   }`}
                 >
@@ -419,7 +425,7 @@ export default function P9BoonData() {
                     loading="lazy"
                     src={ite[0] === `` ? `/P9/Nona.png` : `/P9/${p9boons_reverse[ite[0]]}.png`}
                     alt="Core Boons"
-                    className="size-7 md:size-9 rounded border-1 border-black/20"
+                    className="size-7 md:size-8"
                   />
                   <div>
                     <div>{ite[0] === `` ? `None` : ite[0]}</div>
@@ -430,8 +436,7 @@ export default function P9BoonData() {
             ))}
         </div>
       </div>
-      <div className="rounded bg-black/80 border-1 border-black p-4 py-2 mb-4">
-        <div className="font-[Cinzel]">Infusion</div>
+      <div className="rounded bg-[#000000b5] p-2 pb-1 pt-4 mb-4">
         <div className="flex flex-wrap gap-1 py-2">
           {Object.entries(core_Ele)
             .sort((a, b) => b[1] - a[1])
@@ -440,7 +445,7 @@ export default function P9BoonData() {
                 <div
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
-                      ? `bg-[#192265] border-none`
+                      ? `bg-[#00ffaa] text-black border-none`
                       : `border-white/20`
                   }`}
                 >
@@ -449,7 +454,7 @@ export default function P9BoonData() {
                     loading="lazy"
                     src={ite[0] === `` ? `/P9/Nona.png` : `/P9/${p9boons_reverse[ite[0]]}.png`}
                     alt="Core Boons"
-                    className="size-7 md:size-9 rounded border-1 border-black/20"
+                    className="size-7 md:size-8"
                   />
                   <div>
                     <div>{ite[0] === `` ? `None` : ite[0]}</div>
@@ -460,8 +465,7 @@ export default function P9BoonData() {
             ))}
         </div>
       </div>
-      <div className="rounded bg-black/80 border-1 border-black p-4 py-2 mb-4">
-        <div className="font-[Cinzel]">Misc Boons</div>
+      <div className="rounded bg-[#000000b5] p-2 pb-1 pt-4 mb-4">
         <div className="flex flex-wrap gap-1 py-2">
           {Object.entries(core_Misc)
             .sort((a, b) => {
@@ -475,7 +479,7 @@ export default function P9BoonData() {
                 <div
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
-                      ? `bg-[#192265] border-none`
+                      ? `bg-[#00ffaa] text-black border-none`
                       : `border-white/20`
                   }`}
                 >
@@ -484,7 +488,7 @@ export default function P9BoonData() {
                     loading="lazy"
                     src={ite[0] === `` ? `/P9/Nona.png` : `/P9/${p9boons_reverse[ite[0]]}.png`}
                     alt="Core Boons"
-                    className="size-7 md:size-9 rounded border-1 border-black/20"
+                    className="size-7 md:size-8"
                   />
                   <div>
                     <div>{ite[0] === `` ? `None` : ite[0]}</div>
@@ -495,8 +499,7 @@ export default function P9BoonData() {
             ))}
         </div>
       </div>
-      <div className="rounded bg-black/80 border-1 border-black p-4 py-2 mb-4">
-        <div className="font-[Cinzel]">Chaos / Hex</div>
+      <div className="rounded bg-[#000000b5] p-2 pb-1 pt-4 mb-4">
         <div className="flex flex-wrap gap-1 py-2">
           {Object.entries(core_Chaos)
             .sort((a, b) => b[1] - a[1])
@@ -505,7 +508,7 @@ export default function P9BoonData() {
                 <div
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
-                      ? `bg-[#192265] border-none`
+                      ? `bg-[#00ffaa] text-black border-none`
                       : `border-white/20`
                   }`}
                 >
@@ -514,7 +517,7 @@ export default function P9BoonData() {
                     loading="lazy"
                     src={ite[0] === `` ? `/P9/Nona.png` : `/P9/${p9boons_reverse[ite[0]]}.png`}
                     alt="Core Boons"
-                    className="size-7 md:size-9 rounded border-1 border-black/20"
+                    className="size-7 md:size-8"
                   />
                   <div>
                     <div>{ite[0] === `` ? `None` : ite[0]}</div>

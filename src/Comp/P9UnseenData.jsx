@@ -11,18 +11,17 @@ import {
   p9nar,
   p9icarus,
 } from "../Data/P9Boons";
-import { p9data } from "../Data/P9Data";
 import { sToA } from "../Data/Misc";
 import { useState } from "react";
 
-export default function P9Unseen() {
+export default function P9Unseen({ data }) {
   const [region, setRegion] = useState(`All`);
   const [min, setMin] = useState(22);
   const [max, setMax] = useState(67);
 
   //
 
-  const selectedDataset = p9data.filter((obj) => obj.fea >= min && obj.fea <= max);
+  const selectedDataset = data.filter((obj) => obj.fea >= min && obj.fea <= max);
 
   const regionData = region === `All` ? selectedDataset : selectedDataset.filter((obj) => obj.loc === region);
 
@@ -63,12 +62,12 @@ export default function P9Unseen() {
   //
 
   return (
-    <div className="max-w-[1200px] text-[12px] mx-auto my-2 font-[PT] text-white py-2">
+    <div className="max-w-[1400px] text-[12px] mx-auto my-2 font-[PT] text-white py-2">
       <div className="text-[#fff200] px-4 py-1">Unseen Encounter</div>
-      <div className="text-[12px] pb-2 flex gap-2 px-4">
+      <div className="p-1 px-2 flex gap-1">
         <select
           value={region}
-          className="select select-sm w-[100px] border-1 border-[#00ffaa] rounded"
+          className="select select-sm w-[100px] border-1 border-[#00ffaa] rounded focus:outline-0"
           onChange={(e) => {
             setRegion(e.target.value);
           }}
@@ -79,7 +78,7 @@ export default function P9Unseen() {
         </select>
         <input
           type="number"
-          className="input input-sm border-1 border-[#f18043] w-[50px]"
+          className="input input-sm border-1 border-[#f18043] w-[50px] rounded focus:outline-0"
           value={min}
           min={22}
           max={67}
@@ -92,7 +91,7 @@ export default function P9Unseen() {
         />
         <input
           type="number"
-          className="input input-sm border-1 border-[#f18043] w-[50px]"
+          className="input input-sm border-1 border-[#f18043] w-[50px] rounded focus:outline-0"
           value={max}
           min={22}
           max={67}
@@ -104,92 +103,92 @@ export default function P9Unseen() {
           }}
         />
       </div>
-      <div className="text-[12px] px-4 pb-1 flex gap-2">
+      <div className="px-2 flex gap-2">
         <div>Query Fear:</div>
         <div className="text-[#f18043] backdrop-blur-lg">Min [{min}]</div>
         <div className="text-[#f18043] backdrop-blur-lg">Max [{max}]</div>
         <div className="text-[#fff200] backdrop-blur-lg">[{regionData.length}]</div>
       </div>
-      <div className="flex gap-2 flex-wrap p-4 rounded border-1 border-black bg-black/80">
-        <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
-          <img src={`/Misc/Arachne.png`} alt="Unseen" className="size-12 rounded" />
+      <div className="flex gap-2 flex-wrap px-2 py-1 rounded border-1 border-black bg-black/80">
+        <div className="flex items-center gap-2 p-2 border-1 border-white/20 rounded bg-black">
+          <img src={`/Misc/Arachne.png`} alt="Unseen" className="size-10 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Arachne`}</div>
             <div className="">{(100 * (ArachneRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
-          <img src={`/Misc/Artemis.png`} alt="Unseen" className="size-12 rounded" />
+          <img src={`/Misc/Artemis.png`} alt="Unseen" className="size-10 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Artemis`}</div>
             <div className="">{(100 * (ArtemisRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
-          <img src={`/Misc/Athena.png`} alt="Unseen" className="size-12 rounded" />
+          <img src={`/Misc/Athena.png`} alt="Unseen" className="size-10 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Athena`}</div>
             <div className="">{(100 * (AthenaRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
-          <img src={`/Misc/Selene.png`} alt="Unseen" className="size-12 rounded" />
+          <img src={`/Misc/Selene.png`} alt="Unseen" className="size-10 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Selene`}</div>
             <div className="">{(100 * (seleneRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
-          <img src={`/Misc/Chaos.png`} alt="Unseen" className="size-12 rounded" />
+          <img src={`/Misc/Chaos.png`} alt="Unseen" className="size-10 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Chaos`}</div>
             <div className="">{(100 * (chaosRunsnoselene / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
-          <img src={`/Misc/Medea.png`} alt="Unseen" className="size-12 rounded" />
+          <img src={`/Misc/Medea.png`} alt="Unseen" className="size-10 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Medea`}</div>
             <div className="">{(100 * (MedeaRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
-          <img src={`/Misc/Hermes.png`} alt="Unseen" className="size-12 rounded" />
+          <img src={`/Misc/Hermes.png`} alt="Unseen" className="size-10 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Hermes`}</div>
             <div className="">{(100 * (HermesRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
-          <img src={`/Misc/Dionysus.png`} alt="Unseen" className="size-12 rounded" />
+          <img src={`/Misc/Dionysus.png`} alt="Unseen" className="size-10 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Dionysus`}</div>
             <div className="">{(100 * (DionysusRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
-          <img src={`/Misc/Circe.png`} alt="Unseen" className="size-12 rounded" />
+          <img src={`/Misc/Circe.png`} alt="Unseen" className="size-10 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Circe`}</div>
             <div className="">{(100 * (CirceRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
-          <img src={`/Misc/Echo.png`} alt="Unseen" className="size-12 rounded" />
+          <img src={`/Misc/Echo.png`} alt="Unseen" className="size-10 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Echo`}</div>
             <div className="">{(100 * (EchoRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
-          <img src={`/Misc/Narcissus.png`} alt="Unseen" className="size-12 rounded" />
+          <img src={`/Misc/Narcissus.png`} alt="Unseen" className="size-10 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Narcissus`}</div>
             <div className="">{(100 * (NarcissusRuns / regionData.length)).toFixed(2)}%</div>
           </div>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 border-1 border-white/20 rounded bg-black">
-          <img src={`/Misc/Icarus.png`} alt="Unseen" className="size-12 rounded" />
+          <img src={`/Misc/Icarus.png`} alt="Unseen" className="size-10 rounded" />
           <div>
             <div className="whitespace-pre-line text-center">{`Icarus`}</div>
             <div className="">{(100 * (IcarusRuns / regionData.length)).toFixed(2)}%</div>

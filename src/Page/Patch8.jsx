@@ -44,10 +44,10 @@ export default function Patch8() {
         <SideNav />
         <section className="w-full px-2">
           <div className="text-[16px] p-2 py-0 font-[Cinzel]">Highest Fear Ladder - Patch 8</div>
-          <div className="text-[12px] px-2 py-1 flex gap-2">
+          <div className="text-[12px] px-2 py-1 flex gap-1">
             <select
               value={region}
-              className="select select-sm w-[150px] border-[#f05bdc]"
+              className="select select-sm w-[150px] border-[#f05bdc] focus:outline-0 rounded"
               onChange={(e) => {
                 setRegion(e.target.value);
                 setCategory(`All`);
@@ -62,7 +62,7 @@ export default function Patch8() {
             </select>
             <select
               value={category}
-              className="select select-sm w-[150px] border-[#00ffaa]"
+              className="select select-sm w-[150px] border-[#00ffaa] focus:outline-0 rounded"
               onChange={(e) => setCategory(e.target.value)}
             >
               <option value={`All`}>All</option>

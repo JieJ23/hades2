@@ -29,11 +29,11 @@ export default function Stats() {
       <Background />
       <Head />
       <SideNav />
-      <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto my-2">
+      <div className="max-w-[1400px] font-[Source] text-[12px] md:text-[13px] mx-auto my-2">
         <section className="w-full">
-          <div className="text-[16px] p-2 py-0 font-[Cinzel]">Ladder Summary</div>
-          <div className="bg-black/80 border-1 border-white/20 rounded overflow-hidden pt-2">
-            <div className="grid grid-cols-3 font-[PT] px-2 pb-2">
+          <div className="text-[15px] p-2 py-0 font-[Cinzel]">Ladder Summary</div>
+          <div className="bg-[#000000b5] rounded overflow-hidden pt-2">
+            <div className="grid grid-cols-3 px-2 pb-2 font-[Cinzel]">
               <div>Aspects</div>
               <div>Underworld</div>
               <div>Surface</div>
@@ -41,7 +41,7 @@ export default function Stats() {
             {h2AspectOrder.map((item, index) => (
               <div
                 className={`grid grid-cols-3 p-1 items-center px-2 ${
-                  index % 2 === 0 ? `bg-[#1f1f265a]` : `bg-black/80`
+                  index % 2 === 0 ? `bg-[#1f1f265a]` : `bg-transparent`
                 }`}
               >
                 <div className="flex gap-1 items-center">
@@ -75,7 +75,7 @@ export default function Stats() {
           </div>
         </section>
       </div>
-      <P9Unseen />
+      <P9Unseen data={p9data} />
       <P9BoonData />
     </main>
   );

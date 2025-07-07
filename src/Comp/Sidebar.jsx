@@ -18,7 +18,7 @@ export const sites = [
 export default function SideNav() {
   const currentLocation = useLocation();
   return (
-    <div className="h-full w-full hidden lg:block px-2 font-[Cinzel] text-[12px] rounded shrink-0">
+    <div className="h-full w-full hidden lg:block px-2 font-[Source] text-[13px] rounded shrink-0">
       <div className="flex justify-center items-center gap-3">
         {sites.map((obj, idx) => (
           <Link
