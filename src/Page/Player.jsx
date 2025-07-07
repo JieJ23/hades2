@@ -114,7 +114,12 @@ export default function Player() {
                   className="flex items-center w-full rounded px-2 py-1 bg-[#000000b5] gap-2 relative mb-4"
                   key={index}
                 >
-                  <div className="w-full gap-2">
+                  <div
+                    className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
+                      obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
+                    } rounded-l`}
+                  />
+                  <div className="w-full gap-2 ps-1">
                     <div className="flex items-center justify-between">
                       <div className="text-[15px] font-[Cinzel] ps-2">{obj.nam}</div>
                       <div className="flex gap-2 font-[Cinzel]">
@@ -145,31 +150,9 @@ export default function Player() {
                         <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
                         <div>{daysAgo(obj.dat)}</div>
                       </div>
-                      {obj.fea == 67 && (
-                        <div className="flex items-center gap-0.5 bg-[#00ffaa40] text-white border-1 border-[#00ffaa] rounded p-1">
-                          <img src={`/Misc/lighting.gif`} alt="Max" className="size-4 " draggable={false} />
-                          <div className="uppercase text-[10px] animate-pulse text-[yellow]">True Melinoë</div>
-                          <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
-                        </div>
-                      )}
-                      {obj.fea >= 60 && obj.fea < 67 && (
-                        <div className="flex justify-center items-center bg-[#101122] rounded w-[32px]">
-                          <img src={`/Misc/Primordial.png`} alt="Primordial" className="size-4" draggable={false} />
-                        </div>
-                      )}
-                      {obj.fea >= 50 && obj.fea < 60 && (
-                        <div className="flex justify-center items-center bg-[#101122] rounded w-[32px]">
-                          <img src={`/Misc/Titan.png`} alt="Titan" className="size-4" draggable={false} />
-                        </div>
-                      )}
-                      {parseTimetoms(obj.tim) < 90000 && (
-                        <div className="flex justify-center items-center bg-[#101122] rounded w-[32px]">
-                          <img src={`/Misc/speed.png`} alt="Speed" className="size-7" draggable={false} />
-                        </div>
-                      )}
                       {obj.src !== "" && (
                         <Link
-                          className="flex items-center gap-1 bg-[white] text-black border-1 border-black rounded px-2 py-1"
+                          className="flex items-center gap-1 bg-[#101122] border-1 border-black rounded px-2 py-1"
                           to={obj.src}
                           target="_blank"
                         >
@@ -177,6 +160,32 @@ export default function Player() {
                           <div>{`Video`}</div>
                         </Link>
                       )}
+                      {obj.fea == 67 && (
+                        <div className="flex justify-center items-center bg-[#101122] rounded px-1 border-1 border-yellow-200">
+                          <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
+                          <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
+                          <div className="uppercase text-yellow-200 px-1">Max Fear</div>
+                          <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
+                          <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
+                        </div>
+                      )}
+                      {obj.fea >= 60 && obj.fea < 67 && (
+                        <div className="flex justify-center items-center bg-[#101122] rounded gap-1">
+                          <img src={`/Misc/firepink.gif`} alt="Fire Pink" className="size-5" draggable={false} />
+                          <div className="uppercase text-pink-300 pe-2">+60</div>
+                        </div>
+                      )}
+                      {obj.fea >= 50 && obj.fea < 60 && (
+                        <div className="flex justify-center items-center bg-[#101122] rounded gap-1">
+                          <img src={`/Misc/firered.gif`} alt="Fire Red" className="size-5" draggable={false} />
+                          <div className="uppercase pe-2 text-orange-400">+50</div>
+                        </div>
+                      )}
+                      {/* {parseTimetoms(obj.tim) < 90000 && (
+                    <div className="flex justify-center items-center bg-[#101122] rounded w-[32px]">
+                      <img src={`/Misc/speed.gif`} alt="Speed" className="size-6" draggable={false} />
+                    </div>
+                  )} */}
                     </div>
                     <div className="flex items-center flex-wrap py-1 gap-2 gap-y-1">
                       <div className="flex gap-0.5 p-2 rounded bg-[#101122]">
