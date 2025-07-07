@@ -4,7 +4,7 @@ export const testData = [
     nam: "Tester",
     asp: "Artemis",
     loc: "Underworld",
-    fea: "67",
+    fea: "66",
     src: "https://www.youtube.com/watch?v=_bBD9YMgNeY",
     des: "lorem23",
     tim: "12:25.60",

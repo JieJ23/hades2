@@ -285,31 +285,9 @@ export default function App() {
                     <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
                     <div>{daysAgo(obj.dat)}</div>
                   </div>
-                  {obj.fea == 67 && (
-                    <div className="flex items-center gap-0.5 bg-[#00ffaa40] text-white border-1 border-[#00ffaa] rounded p-1">
-                      <img src={`/Misc/lighting.gif`} alt="Max" className="size-4 " draggable={false} />
-                      <div className="uppercase text-[10px] animate-pulse text-[yellow]">True Melinoë</div>
-                      <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
-                    </div>
-                  )}
-                  {obj.fea >= 60 && obj.fea < 67 && (
-                    <div className="flex justify-center items-center bg-[#101122] rounded w-[32px]">
-                      <img src={`/Misc/Primordial.png`} alt="Primordial" className="size-4" draggable={false} />
-                    </div>
-                  )}
-                  {obj.fea >= 50 && obj.fea < 60 && (
-                    <div className="flex justify-center items-center bg-[#101122] rounded w-[32px]">
-                      <img src={`/Misc/Titan.png`} alt="Titan" className="size-4" draggable={false} />
-                    </div>
-                  )}
-                  {parseTimetoms(obj.tim) < 90000 && (
-                    <div className="flex justify-center items-center bg-[#101122] rounded w-[32px]">
-                      <img src={`/Misc/speed.png`} alt="Speed" className="size-7" draggable={false} />
-                    </div>
-                  )}
                   {obj.src !== "" && (
                     <Link
-                      className="flex items-center gap-1 bg-[white] text-black border-1 border-black rounded px-2 py-1"
+                      className="flex items-center gap-1 bg-[#101122] border-1 border-black rounded px-2 py-1"
                       to={obj.src}
                       target="_blank"
                     >
@@ -317,6 +295,32 @@ export default function App() {
                       <div>{`Video`}</div>
                     </Link>
                   )}
+                  {obj.fea == 67 && (
+                    <div className="flex justify-center items-center bg-[#101122] rounded px-1 border-1 border-yellow-200">
+                      <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
+                      <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
+                      <div className="uppercase text-yellow-200 px-1">Max Fear</div>
+                      <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
+                      <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
+                    </div>
+                  )}
+                  {obj.fea >= 60 && obj.fea < 67 && (
+                    <div className="flex justify-center items-center bg-[#101122] rounded gap-1">
+                      <img src={`/Misc/firepink.gif`} alt="Fire Pink" className="size-5" draggable={false} />
+                      <div className="uppercase text-pink-300 pe-2">+60</div>
+                    </div>
+                  )}
+                  {obj.fea >= 50 && obj.fea < 60 && (
+                    <div className="flex justify-center items-center bg-[#101122] rounded gap-1">
+                      <img src={`/Misc/firered.gif`} alt="Fire Red" className="size-5" draggable={false} />
+                      <div className="uppercase pe-2 text-orange-400">+50</div>
+                    </div>
+                  )}
+                  {/* {parseTimetoms(obj.tim) < 90000 && (
+                    <div className="flex justify-center items-center bg-[#101122] rounded w-[32px]">
+                      <img src={`/Misc/speed.gif`} alt="Speed" className="size-6" draggable={false} />
+                    </div>
+                  )} */}
                 </div>
                 <div className="flex items-center flex-wrap py-1 gap-2 gap-y-1">
                   <div className="flex gap-0.5 p-2 rounded bg-[#101122]">
