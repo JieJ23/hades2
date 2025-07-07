@@ -102,7 +102,7 @@ export default function Speed() {
                   <div className="ml-auto">{daysAgo(obj.dat)}</div>
                 </div>
                 {index !== displayData.length - 1 && (
-                  <div className="text-center text-[#f05bdc] py-0.5 font-mono text-[11px]">
+                  <div className="text-center text-[#f05bdc] py-2 my-0.5 font-mono text-[11px] bg-[black] rounded">
                     - {parsemstoTime(parseTimetoms(displayData[index + 1].tim) - parseTimetoms(obj.tim))}
                   </div>
                 )}
