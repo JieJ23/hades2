@@ -254,7 +254,8 @@ export default function App() {
         <section className="p-1 overflow-hidden">
           {displayEntries.slice(0, show).map((obj, index) => (
             <div className="flex items-center w-full rounded px-2 py-1 bg-[#000000b5] gap-2 relative mb-4" key={index}>
-              <div className="w-full gap-2">
+              <div className="absolute top-0 left-0 h-full w-[4px] md:w-[6px] bg-[#00ffaa] rounded-l" />
+              <div className="w-full gap-2 ps-1">
                 <div className="flex items-center justify-between">
                   <div className="text-[15px] font-[Cinzel] ps-2">{obj.nam}</div>
                   <div className="flex gap-2 font-[Cinzel]">
