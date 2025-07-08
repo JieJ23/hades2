@@ -29,7 +29,7 @@ export default function Stats() {
       <Background />
       <Head />
       <SideNav />
-      <div className="max-w-[1400px] font-[Source] text-[12px] md:text-[13px] mx-auto my-2">
+      <div className="max-w-[1000px] font-[Source] text-[12px] md:text-[13px] mx-auto my-2">
         <section className="w-full">
           <div className="text-[15px] p-2 py-0 font-[Cinzel]">Ladder Summary</div>
           <div className="bg-[#000000b5] rounded overflow-hidden pt-2">

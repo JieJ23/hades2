@@ -25,7 +25,7 @@ export default function Speed() {
     <main className="relative">
       <Background />
       <Head />
-      <div className="max-w-[1200px] font-[Source] text-[12px] md:text-[13px] mx-auto text-white select-none">
+      <div className="max-w-[1400px] font-[Source] text-[12px] md:text-[13px] mx-auto text-white select-none">
         <SideNav />
         <div className="p-2">
           <div className="px-2 py-1 flex gap-1">
@@ -78,20 +78,20 @@ export default function Speed() {
             </div>
             <div className="text-[#00ffaa]">[{displayData.length}]</div>
           </div>
-          <div className="p-2 pb-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+          <div className="p-2 pb-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
             {displayData.map((obj, index) => (
-              <div className="bg-neutral-900 text-white rounded border-1 border-white/20 relative ps-2">
+              <div className="bg-[#000000b1] text-white rounded border-1 border-white/20 relative ps-2">
                 <div
                   className={`absolute top-0 left-0 h-full w-[4px] ${
                     obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
                   } rounded-l`}
                 />
-                <div className={`flex flex-col justify-center rounded p-2 py-1`}>
+                <div className={`flex flex-col justify-center rounded p-2 pb-1`}>
                   <div className="flex items-center gap-2">
                     <span className="text-[10px]">{index + 1}.</span>
                     <span className="font-[Cinzel] text-[#f18043]">{obj.nam}</span>
                   </div>
-                  <div className="px-2 py-1 text-[11px]">
+                  <div className="px-2 py-1">
                     <div>
                       {obj.asp} / {obj.loc}
                     </div>

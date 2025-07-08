@@ -67,10 +67,15 @@ export default function Ranking() {
               {weaponData.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-center gap-2 px-2 border-1 ${
+                  className={`flex items-center gap-2 px-2 ps-3 border-1 relative ${
                     selectAspect === item.asp ? `border-[#00ff95]` : `border-white/10`
                   }  rounded py-1 ${select === item.nam ? `bg-[#46e7a1d0] text-black` : `bg-[#000000b5] text-white`}`}
                 >
+                  <div
+                    className={`absolute top-0 left-0 h-full w-[4px] ${
+                      item.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
+                    } rounded-l`}
+                  />
                   <img
                     src={`/P9/${item.asp}.png`}
                     alt={item.asp}
