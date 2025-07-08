@@ -25,7 +25,7 @@ export default function Speed() {
     <main className="relative">
       <Background />
       <Head />
-      <div className="max-w-[800px] font-[Source] text-[12px] md:text-[13px] mx-auto text-white select-none">
+      <div className="max-w-[1200px] font-[Source] text-[12px] md:text-[13px] mx-auto text-white select-none">
         <SideNav />
         <div className="p-2">
           <div className="px-2 py-1 flex gap-1">
@@ -78,35 +78,34 @@ export default function Speed() {
             </div>
             <div className="text-[#00ffaa]">[{displayData.length}]</div>
           </div>
-          <div className="p-2 pb-4">
+          <div className="p-2 pb-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
             {displayData.map((obj, index) => (
-              <>
+              <div className="bg-neutral-900 text-white rounded border-1 border-white/20 relative ps-2">
                 <div
-                  className={`grid grid-cols-5 items-center ${
-                    obj.fea >= 60 ? `bg-[#46e7a1d0] text-black` : `bg-[#000000b5]`
-                  } border-1 rounded p-2 border-white/20`}
-                >
-                  <div>
-                    <span className={`text-[10px] pe-1`}>{index + 1}.</span>
-                    {obj.nam}
+                  className={`absolute top-0 left-0 h-full w-[4px] ${
+                    obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
+                  } rounded-l`}
+                />
+                <div className={`flex flex-col justify-center rounded p-2 py-1`}>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px]">{index + 1}.</span>
+                    <span className="font-[Cinzel] text-[#f18043]">{obj.nam}</span>
                   </div>
-                  <div className="flex items-center justify-center gap-1">
-                    <img src={`/P9/${obj.asp}.png`} alt="Aspect" className="size-6" />
-                    {obj.asp.includes(`Melinoe`) ? obj.asp.replace(`Melinoe`, ``) : obj.asp}
+                  <div className="px-2 py-1 text-[11px]">
+                    <div>
+                      {obj.asp} / {obj.loc}
+                    </div>
+                    <div>
+                      {obj.fea} / {obj.tim}
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1 justify-center">
-                    <img src={`/${obj.loc}.png`} alt="Regions" className="size-6" />
-                    {obj.tim}
-                  </div>
-                  <div className="text-center">{obj.fea}</div>
-                  <div className="ml-auto">{daysAgo(obj.dat)}</div>
+                  {index !== displayData.length - 1 && (
+                    <div className="text-end rounded">
+                      - {parsemstoTime(parseTimetoms(displayData[index + 1].tim) - parseTimetoms(obj.tim))}
+                    </div>
+                  )}
                 </div>
-                {index !== displayData.length - 1 && (
-                  <div className="text-center text-[#f05bdc] py-2 my-0.5 text-[14px] rounded">
-                    - {parsemstoTime(parseTimetoms(displayData[index + 1].tim) - parseTimetoms(obj.tim))}
-                  </div>
-                )}
-              </>
+              </div>
             ))}
           </div>
         </div>
