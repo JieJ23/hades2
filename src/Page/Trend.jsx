@@ -81,7 +81,7 @@ export default function Trend() {
               margin={{
                 top: 5,
                 right: 10,
-                left: 10,
+                left: -20,
                 bottom: 5,
               }}
             >
