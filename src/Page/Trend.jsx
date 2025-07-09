@@ -7,6 +7,8 @@ import { p9boons_reverse } from "../Data/P9BoonObj";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { useState } from "react";
 
+const lineColor = [`#00ffaa`, `#f18043`, `#00aaff`, `#f23219`, `#f8b2bb`];
+
 const entriesByData = p9data.slice().sort((a, b) => new Date(a.dat) - new Date(b.dat));
 
 function getUniqueValueCounts(data, keys, sToA) {
@@ -57,8 +59,8 @@ const sortBoonDataByValue = Object.entries(fullBoonData).sort(([, v1], [, v2]) =
 const sortedFullBoonData = Object.fromEntries(sortBoonDataByValue);
 
 export default function Trend() {
-  const [targetboon, setTargetboon] = useState([`AphMagick`, `Sprint`]);
-  const [toggle, setToggle] = useState(false);
+  const [targetboon, setTargetboon] = useState([`AphMagick`, `Sprint`, `DemCast`, `ApoSprint`, `PosCast`]);
+
   const graphData = getCumulativeOccurrences(
     entriesByData,
     targetboon,
@@ -66,13 +68,14 @@ export default function Trend() {
     sToA
   );
 
+  console.log(targetboon);
   return (
     <main className="relative">
       <Background />
       <Head />
       <div className="max-w-[1400px] font-[Source] text-[13px] md:text-[14px] mx-auto text-white select-none">
         <SideNav />
-        <div className="h-[500px] mt-8 mb-4">
+        <div className="h-[500px] mt-4 mb-2 bg-[#000000d0]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               width={500}
@@ -100,43 +103,41 @@ export default function Trend() {
               <Legend />
               <Line type="monotone" dataKey="Count1" stroke="#00ffaa" dot={false} />
               <Line type="monotone" dataKey="Count2" stroke="#f18043" dot={false} />
+              <Line type="monotone" dataKey="Count3" stroke="#00aaff" dot={false} />
+              <Line type="monotone" dataKey="Count4" stroke="#f23219" dot={false} />
+              <Line type="monotone" dataKey="Count5" stroke="#f8b2bb" dot={false} />
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="px-4 flex gap-1 font-[Source] text-[13px] mt-1">
-          <div>Cumulative Line Graph of: </div>
-          <div className="text-[#00ffaa]">"{targetboon[0]}"</div>
-          <div className="text-[#00ffaa]">
-            {sortedFullBoonData[targetboon[0]]} / {p9data.length}
-          </div>
-        </div>
-        <div className="px-4 flex gap-1 font-[Source] text-[13px] mb-1">
-          <div>Cumulative Line Graph of: </div>
-          <div className="text-[#f18043]">"{targetboon[1]}"</div>
-          <div className="text-[#f18043]">
-            {sortedFullBoonData[targetboon[1]]} / {p9data.length}
-          </div>
+        <div className="flex flex-col gap-0.5 my-2 ps-4">
+          {targetboon.map((item, index) => (
+            <div key={index} className="px-4 flex items-center gap-1 font-[Source] text-[13px]">
+              <div
+                className="bg-[#28282b] p-1 px-2 rounded cursor-pointer border-1 border-black"
+                onClick={() => {
+                  setTargetboon((prev) => prev.filter((boon) => boon !== targetboon[index]));
+                }}
+              >
+                Count {index + 1}
+              </div>
+              <span style={{ color: lineColor[index] }}>{targetboon[index]}</span>
+              <span style={{ color: lineColor[index] }}>{sortedFullBoonData[targetboon[index]]}</span>
+            </div>
+          ))}
         </div>
         <div className="flex flex-wrap gap-2 mb-8 px-2">
           {Object.entries(sortedFullBoonData).map((item) => (
-            <div className="flex gap-1 border-1 border-white/20 rounded p-2 bg-[#000000d4] hover:border-[#00ffaa] transition-colors ease-in duration-100">
+            <div
+              className={`flex gap-1 border-1 rounded p-2 bg-[#000000d4] hover:border-[#00ffaa] transition-colors ease-in duration-100 ${
+                targetboon.includes(item[0]) ? `border-[#00ffaa]` : `border-white/10`
+              }`}
+            >
               <div
                 className="flex gap-1 cursor-pointer text-gray-400"
                 onClick={() => {
-                  setToggle((prevToggle) => {
-                    const nextToggle = !prevToggle;
-
-                    setTargetboon((prev) => {
-                      const updated = [...prev];
-                      if (!prevToggle) {
-                        updated[0] = item[0]; // or item[0] depending on your source
-                      } else {
-                        updated[1] = item[0];
-                      }
-                      return updated;
-                    });
-
-                    return nextToggle;
+                  setTargetboon((prev) => {
+                    if (prev.length >= 5) return prev;
+                    return [...prev, item[0]];
                   });
                 }}
               >

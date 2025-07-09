@@ -40,11 +40,6 @@ const highfear = p9data.slice().sort((a, b) => {
   if (feaDiff !== 0) return feaDiff;
   return parseTimetoms(a.tim) - parseTimetoms(b.tim);
 });
-// const highfear = testData.slice().sort((a, b) => {
-//   const feaDiff = +b.fea - +a.fea;
-//   if (feaDiff !== 0) return feaDiff;
-//   return parseTimetoms(a.tim) - parseTimetoms(b.tim);
-// });
 //
 const entriesOnlyVod = highfear.filter((obj) => obj.src !== "");
 const entriesByData = highfear.slice().sort((a, b) => new Date(b.dat) - new Date(a.dat));
@@ -463,7 +458,7 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <div className="text-gray-300 z-20 px-2">{obj.des}</div>
+                <div className="text-gray-300 z-20 px-2 text-[12px]">{obj.des}</div>
               </div>
               <div className="hidden md:block">
                 <img
