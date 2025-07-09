@@ -88,7 +88,7 @@ export default function Trend() {
                 bottom: 5,
               }}
             >
-              <CartesianGrid stroke="#80808080" strokeDasharray="" />
+              <CartesianGrid stroke="#80808080" strokeDasharray="" horizontal={false} />
               <XAxis dataKey="name" stroke="#ffffff90" />
               <YAxis stroke="#ffffff90" />
               <Tooltip
