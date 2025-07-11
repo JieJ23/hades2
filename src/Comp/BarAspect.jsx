@@ -1,5 +1,6 @@
 import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { p9data } from "../Data/P9Data";
+import { h2AspectOrder } from "../Data/Misc";
 
 const feaCountsObj = p9data.reduce((acc, item) => {
   const asp = item.asp;
@@ -7,10 +8,14 @@ const feaCountsObj = p9data.reduce((acc, item) => {
   return acc;
 }, {});
 
-const feaCountsArray = Object.entries(feaCountsObj).map(([num, count]) => ({
-  num,
-  count,
-}));
+const orderMap = new Map(h2AspectOrder.map((num, index) => [num, index]));
+
+const feaCountsArray = Object.entries(feaCountsObj)
+  .map(([num, count]) => ({
+    num,
+    count,
+  }))
+  .sort((a, b) => orderMap.get(a.num) - orderMap.get(b.num));
 
 export default function BarAspect() {
   return (
