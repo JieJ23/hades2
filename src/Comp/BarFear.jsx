@@ -1,0 +1,45 @@
+import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
+import { p9data } from "../Data/P9Data";
+
+const feaCountsObj = p9data.reduce((acc, item) => {
+  const fea = item.fea;
+  acc[fea] = (acc[fea] || 0) + 1;
+  return acc;
+}, {});
+
+const feaCountsArray = Object.entries(feaCountsObj).map(([num, count]) => ({
+  num,
+  count,
+}));
+
+export default function BarFear() {
+  return (
+    <div className="h-[300px] w-full max-w-[1400px] mx-auto px-2 text-[12px] font-[Source] mt-6">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          data={feaCountsArray}
+          margin={{
+            top: 5,
+            right: 10,
+            left: -20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid stroke="#80808080" strokeDasharray="" vertical={false} />
+          <Tooltip
+            contentStyle={{
+              backgroundColor: "#000", // dark background
+              border: "1px solid #00ffaa",
+              borderRadius: "rounded",
+              color: "#ffffff", // text color (doesn't always work, use labelStyle too)
+            }}
+            labelStyle={{ color: "#fff" }} // controls the label text color
+          />
+          <XAxis dataKey="num" stroke="#ffffff" />
+          <YAxis stroke="#ffffff" />
+          <Bar dataKey="count" fill="#00ffaa" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+}

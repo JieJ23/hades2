@@ -109,11 +109,12 @@ export default function Trend() {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="flex flex-col gap-0.5 my-2 ps-4">
+        <div className="flex flex-wrap gap-2 my-2 ps-4">
           {targetboon.map((item, index) => (
-            <div key={index} className="px-4 flex items-center gap-1 font-[Source] text-[13px]">
+            <div key={index} className="flex items-center gap-1 font-[Source] text-[13px]">
               <div
                 className="bg-[#28282b] p-1 px-2 rounded cursor-pointer border-1 border-black"
+                style={{ color: lineColor[index] }}
                 onClick={() => {
                   setTargetboon((prev) => prev.filter((boon) => boon !== targetboon[index]));
                 }}
