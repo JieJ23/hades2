@@ -1227,7 +1227,7 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Shiva",
     loc: "Surface",
     fea: "32",
@@ -1425,7 +1425,7 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Anubis",
     loc: "Underworld",
     fea: "32",
@@ -1660,7 +1660,7 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Morrigan",
     loc: "Underworld",
     fea: "32",
@@ -1841,7 +1841,7 @@ export const p9data = [
   },
   {
     dat: "2025-06-30",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Hel",
     loc: "Underworld",
     fea: "32",
@@ -1877,7 +1877,7 @@ export const p9data = [
   },
   {
     dat: "2025-06-30",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Circe",
     loc: "Surface",
     fea: "32",
@@ -2327,7 +2327,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-02",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Selene",
     loc: "Underworld",
     fea: "32",
@@ -2345,7 +2345,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-02",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Circe",
     loc: "Surface",
     fea: "32",
@@ -2615,7 +2615,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Melinoe Blades",
     loc: "Underworld",
     fea: "52",
@@ -2689,7 +2689,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-04",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Persephone",
     loc: "Underworld",
     fea: "32",
@@ -2815,7 +2815,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-05",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Persephone",
     loc: "Surface",
     fea: "32",
@@ -2833,7 +2833,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-05",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Shiva",
     loc: "Underworld",
     fea: "32",
@@ -2978,7 +2978,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-07",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Morrigan",
     loc: "Surface",
     fea: "32",
@@ -2996,7 +2996,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-07",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Supay",
     loc: "Surface",
     fea: "32",
@@ -3050,7 +3050,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-08",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Supay",
     loc: "Underworld",
     fea: "45",
@@ -3068,7 +3068,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-07",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Pan",
     loc: "Surface",
     fea: "32",
@@ -3122,7 +3122,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-09",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Pan",
     loc: "Surface",
     fea: "32",
@@ -3140,7 +3140,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-09",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Morrigan",
     loc: "Surface",
     fea: "32",
@@ -3194,7 +3194,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-09",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Supay",
     loc: "Surface",
     fea: "40",
@@ -3212,7 +3212,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-09",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Melinoe Flames",
     loc: "Surface",
     fea: "32",
@@ -3410,7 +3410,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Nergal",
     loc: "Underworld",
     fea: "40",
@@ -3518,7 +3518,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-11",
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     asp: "Eos",
     loc: "Surface",
     fea: "32",
@@ -3550,6 +3550,42 @@ export const p9data = [
     ele: "Water Fitness",
     mis: "Renewed Faith,Pressure Points,Last Gasp,Mean Streak",
     cha: "Revelation",
+    sel: "f",
+  },
+  {
+    dat: "2025-07-06",
+    nam: "Zanderthaw",
+    asp: "Persephone",
+    loc: "Underworld",
+    fea: "32",
+    src: "https://www.youtube.com/watch?v=Avjmngu_AvQ",
+    des: "32 fear aspect of Persephone",
+    tim: "14:25.28",
+    fam: "Polecat",
+    cor: "Attack,HesSpecial,DemCast,Sprint,Magick",
+    ham: "Twisting Crash,Melting Break",
+    duo: "Freezer Burn",
+    ele: "",
+    mis: "Renewed Faith,Racing Thoughts,Racing Thoughts",
+    cha: "",
+    sel: "t",
+  },
+  {
+    dat: "2025-07-07",
+    nam: "Circe",
+    asp: "Anubis",
+    loc: "Underworld",
+    fea: "32",
+    src: "https://www.youtube.com/watch?v=VmUqamkqoy8",
+    des: "anubs 32f 8:13",
+    tim: "8:13.42",
+    fam: "Hound",
+    cor: "HesAttack,AphSpecial,PosCast,Sprint,HerMagick",
+    ham: "Rapid Moonshot,Giga Moonburst",
+    duo: "Scalding Vapor",
+    ele: "",
+    mis: "Quick Buck,Hasty Retreat,Gift Gift Gift,Life Savings",
+    cha: "Will",
     sel: "f",
   },
 ];
