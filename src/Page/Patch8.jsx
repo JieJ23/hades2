@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { h2AspectOrder } from "../Data/Misc";
 import Background from "../Comp/Background";
+import Footer from "../Comp/Footer";
 
 export function getYTid(text) {
   return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
@@ -268,6 +269,7 @@ export default function Patch8() {
           </div>
         </section>
       </div>
+      <Footer />
     </main>
   );
 }

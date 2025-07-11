@@ -3,6 +3,7 @@ import SideNav from "../Comp/Sidebar";
 import { allVows, vowArray, defineArray } from "../Data/FearTrait";
 import { useState, useEffect } from "react";
 import Background from "../Comp/Background";
+import Footer from "../Comp/Footer";
 
 export default function FearCalculator() {
   const [vows, setVows] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
@@ -185,6 +186,7 @@ export default function FearCalculator() {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

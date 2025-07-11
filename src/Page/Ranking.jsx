@@ -5,6 +5,7 @@ import { p9data } from "../Data/P9Data";
 import { findGUIcard } from "../App";
 import { parseTimetoms } from "../Data/Misc";
 import { useState } from "react";
+import Footer from "../Comp/Footer";
 import { weaponStaff, weaponAxe, weaponBlades, weaponCoat, weaponFlames, weaponSkull } from "../Data/Misc";
 
 const weaponType = [
@@ -109,6 +110,7 @@ export default function Ranking() {
           ))}
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

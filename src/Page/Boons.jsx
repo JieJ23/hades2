@@ -1,6 +1,7 @@
 import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
+import Footer from "../Comp/Footer";
 
 import {
   p9duo,
@@ -144,6 +145,7 @@ export default function Boons() {
           ))}
         </section>
       </div>
+      <Footer />
     </main>
   );
 }

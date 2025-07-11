@@ -3,6 +3,7 @@ import SideNav from "../Comp/Sidebar";
 import { useState, useEffect } from "react";
 import { defineDeck, allCards } from "../Data/DeckTrait";
 import Background from "../Comp/Background";
+import Footer from "../Comp/Footer";
 
 export default function ArcanaDeck() {
   const [deck, setDeck] = useState([]);
@@ -142,6 +143,7 @@ export default function ArcanaDeck() {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

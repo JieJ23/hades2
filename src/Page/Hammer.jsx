@@ -2,6 +2,7 @@ import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import { useState, useEffect } from "react";
 import Background from "../Comp/Background";
+import Footer from "../Comp/Footer";
 
 import { hammer_staff, hammer_axe, hammer_blades, hammer_skull, hammer_flames, hammer_suit } from "../Data/P9Boons";
 
@@ -150,6 +151,7 @@ export default function Hammer() {
           ))}
         </section>
       </div>
+      <Footer />
     </main>
   );
 }

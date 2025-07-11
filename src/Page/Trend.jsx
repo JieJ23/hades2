@@ -6,6 +6,7 @@ import { sToA } from "../Data/Misc";
 import { p9boons_reverse } from "../Data/P9BoonObj";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { useState } from "react";
+import Footer from "../Comp/Footer";
 
 const lineColor = [`#00ffaa`, `#f18043`, `#00aaff`, `#f23219`, `#f8b2bb`];
 
@@ -152,6 +153,7 @@ export default function Trend() {
           ))}
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

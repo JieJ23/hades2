@@ -10,6 +10,7 @@ import Background from "../Comp/Background";
 import RaderP from "../Comp/RadarP";
 import { findGUIcard } from "../App";
 import { daysAgo, parseTimetoms } from "../Data/Misc";
+import Footer from "../Comp/Footer";
 
 const defineAllPlayers = [...new Set(p9data.map((obj) => obj.nam))].sort();
 
@@ -347,6 +348,7 @@ export default function Player() {
           </>
         )}
       </div>
+      <Footer />
     </main>
   );
 }

@@ -13,6 +13,7 @@ import {
   s_summit,
   enemy_data,
 } from "../Data/EnemyTrait";
+import Footer from "../Comp/Footer";
 
 const underworld = [uw_erebus, uw_asphodel, uw_oceanus, uw_fields, uw_tartarus];
 const underworld_name = [`Erebus`, `Asphodel`, `Oceanus`, `Fields`, `Tartarus`];
@@ -102,6 +103,7 @@ export default function Enemy() {
           ))}
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
