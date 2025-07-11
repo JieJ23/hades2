@@ -7,6 +7,8 @@ import P9Unseen from "../Comp/P9UnseenData";
 import Background from "../Comp/Background";
 import BarFear from "../Comp/BarFear";
 import BarAspect from "../Comp/BarAspect";
+import BarSurface from "../Comp/BarSurface";
+import BarUW from "../Comp/BarUW";
 
 const getHighestOfEachAspect = (order, data) => {
   return order.map((aspect) => {
@@ -77,6 +79,8 @@ export default function Stats() {
           </div>
         </section>
       </div>
+      <BarSurface />
+      <BarUW />
       <BarAspect />
       <BarFear />
       <P9Unseen data={p9data} />
