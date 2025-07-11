@@ -3392,7 +3392,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    nam: "Alex Ca",
+    nam: "Alex CA",
     asp: "Nergal",
     loc: "Underworld",
     fea: "50",
