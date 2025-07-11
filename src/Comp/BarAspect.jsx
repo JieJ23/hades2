@@ -2,8 +2,8 @@ import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Toolti
 import { p9data } from "../Data/P9Data";
 
 const feaCountsObj = p9data.reduce((acc, item) => {
-  const fea = item.fea;
-  acc[fea] = (acc[fea] || 0) + 1;
+  const asp = item.asp;
+  acc[asp] = (acc[asp] || 0) + 1;
   return acc;
 }, {});
 
@@ -12,10 +12,10 @@ const feaCountsArray = Object.entries(feaCountsObj).map(([num, count]) => ({
   count,
 }));
 
-export default function BarFear() {
+export default function BarAspect() {
   return (
-    <div className="h-[300px] w-full max-w-[1400px] mx-auto px-2 text-[12px] font-[Source] mt-6">
-      <div className="text-[15px] font-[Cinzel]">Fear Summary</div>
+    <div className="h-[300px] w-full max-w-[1400px] mx-auto px-2 text-[10px] md:text-[12px] font-[Source] mt-6">
+      <div className="text-[15px] font-[Cinzel]">Aspect Summary</div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={feaCountsArray}
@@ -23,7 +23,7 @@ export default function BarFear() {
             top: 5,
             right: 10,
             left: -20,
-            bottom: 5,
+            bottom: 60,
           }}
         >
           <CartesianGrid stroke="#80808080" strokeDasharray="" vertical={false} />
@@ -36,7 +36,7 @@ export default function BarFear() {
             }}
             labelStyle={{ color: "#fff" }} // controls the label text color
           />
-          <XAxis dataKey="num" stroke="#ffffff" />
+          <XAxis dataKey="num" stroke="#ffffff" angle={-45} textAnchor="end" interval={0} dy={5} />
           <YAxis stroke="#ffffff" />
           <Bar dataKey="count" fill="#00ffaa" />
         </BarChart>
