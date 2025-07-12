@@ -249,12 +249,30 @@ export default function App() {
         </section>
         <section className="p-1 overflow-hidden">
           {displayEntries.slice(0, show).map((obj, index) => (
-            <div className="flex items-center w-full rounded px-2 py-1 bg-[#000000b5] gap-2 relative mb-4" key={index}>
+            <div
+              className={`flex items-center w-full rounded px-2 py-1 gap-2 relative mb-4
+            ${
+              obj.fea == 67
+                ? `md:min-h-[250px] bg-gradient-to-b from-[#000000b5] md:to-[#9900ff69] to-[#7300ffc2] border-1 border-black`
+                : `bg-[#000000b5]`
+            }
+            `}
+              key={index}
+            >
               <div
                 className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
                   obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
                 } rounded-l`}
               />
+              {obj.fea == 67 && (
+                <div className="absolute top-0 left-0 w-full h-full -z-10">
+                  <img
+                    src="/Misc/max.webp"
+                    alt="Max Fear"
+                    className="w-full h-full object-cover object-[center_30%] rounded"
+                  />
+                </div>
+              )}
               <div className="w-full gap-2 ps-1">
                 <div className="flex items-center justify-between">
                   <div className="text-[15px] font-[Cinzel] ps-2">{obj.nam}</div>
