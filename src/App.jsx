@@ -253,7 +253,7 @@ export default function App() {
               className={`flex items-center w-full rounded px-2 py-1 gap-2 relative mb-4
             ${
               obj.fea == 67
-                ? `md:min-h-[250px] bg-gradient-to-b from-[#000000b5] md:to-[#9900ff69] to-[#7300ffc2] border-1 border-black`
+                ? `md:min-h-[250px] bg-gradient-to-b from-[#000000b5] md:to-[#033777bc] to-[#033777bc] border-1 border-black`
                 : `bg-[#000000b5]`
             }
             `}
