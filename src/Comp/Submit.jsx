@@ -13,7 +13,7 @@ export default function Submit() {
 
     try {
       const res = await fetch(
-        "https://script.google.com/macros/s/AKfycbx1nSt_Qa4J_T8SslWtMEO0hGujgwTTtnus9BGkiTuipd1Z-E1MSyKjRrqaGqqImG0R/exec",
+        "https://script.google.com/macros/s/AKfycbzoCSh79R0_j_2Vu5vAHNN1IgIcMj_fXUKIA1Ah9OWTdmeUgLd3CJIl1ZQm1RQ9ygau/exec",
         {
           method: "POST",
           body: formDatab,
@@ -75,6 +75,9 @@ export default function Submit() {
                 />
                 <input type="text" placeholder="Gameplay Link" className="input input-md" name="src" required />
                 <input type="text" placeholder="Short Description" className="input input-md" name="des" required />
+                <input type="text" placeholder="Arcana Link" className="input input-md" name="arcana" required />
+                <input type="text" placeholder="Oath Link" className="input input-md" name="oath" required />
+
                 <button
                   className="btn border-[#2efaac] bg-transparent font-[Source] border-1 rounded text-[14px] px-3"
                   type="submit"
