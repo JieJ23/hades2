@@ -3868,6 +3868,7 @@ export const p9data = [
     ham: "Psychic Whirlwind,Furious Whirlwind",
     sel: "f",
     arcana: `https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM0IiwiYzUiLCJjNiIsImM3IiwiYzExIiwiYzEzIiwiYzE0IiwiYzE2IiwiYzE3IiwiYzIwIiwiYzIxIiwiYzIyIiwiYzIzIiwiYzI0Il0=`,
+    oath: `https://h2crossroads.pages.dev/FearCalculator/?vows=WzAsMCwwLDYsMywzLDAsNSw0LDIsMiwzLDYsMCwyLDIsMTJd`,
   },
   {
     dat: "2025-07-16",
