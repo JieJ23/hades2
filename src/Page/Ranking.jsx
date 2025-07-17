@@ -26,7 +26,7 @@ const dataOrder = p9data
     if (feaDiff !== 0) return feaDiff;
     return parseTimetoms(a.tim) - parseTimetoms(b.tim);
   })
-  .filter((obj) => obj.fea >= 32);
+  .filter((obj) => obj.fea >= 40);
 
 const fullData = [];
 

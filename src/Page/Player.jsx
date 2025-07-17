@@ -112,7 +112,13 @@ export default function Player() {
             <section className="p-1 text-[12px] overflow-hidden">
               {selectedPlayerData.map((obj, index) => (
                 <div
-                  className="flex items-center w-full rounded px-2 py-1 bg-[#000000b5] gap-2 relative mb-4"
+                  className={`flex items-center w-full rounded px-2 py-1 gap-2 relative mb-4
+            ${
+              obj.fea == 67
+                ? `md:min-h-[250px] bg-gradient-to-b from-[#000000b5] md:to-[#033777bc] to-[#033777bc] border-1 border-black`
+                : `bg-[#000000b5]`
+            }
+            `}
                   key={index}
                 >
                   <div
@@ -120,6 +126,15 @@ export default function Player() {
                       obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
                     } rounded-l`}
                   />
+                  {obj.fea == 67 && (
+                    <div className="absolute top-0 left-0 w-full h-full -z-10">
+                      <img
+                        src="/Misc/max.webp"
+                        alt="Max Fear"
+                        className="w-full h-full object-cover object-[center_30%] rounded"
+                      />
+                    </div>
+                  )}
                   <div className="w-full gap-2 ps-1">
                     <div className="flex items-center justify-between">
                       <div className="text-[15px] font-[Cinzel] ps-2">{obj.nam}</div>
@@ -147,13 +162,13 @@ export default function Player() {
                           <div>{obj.fam}</div>
                         </div>
                       </div>
-                      <div className="flex items-center gap-0.5 bg-[#101122] text-white border-1 border-black rounded p-1">
+                      <div className="flex items-center gap-0.5 bg-[#101122] text-white border-1 border-black rounded px-2 py-1">
                         <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
                         <div>{daysAgo(obj.dat)}</div>
                       </div>
                       {obj.src !== "" && (
                         <Link
-                          className="flex items-center gap-1 bg-[#101122] border-1 border-black rounded px-2 py-1"
+                          className="flex items-center gap-1 bg-[#fff] text-black border-1 border-black rounded px-2 py-1"
                           to={obj.src}
                           target="_blank"
                         >
@@ -161,26 +176,25 @@ export default function Player() {
                           <div>{`Video`}</div>
                         </Link>
                       )}
-                      {obj.fea == 67 && (
-                        <div className="flex justify-center items-center bg-[#101122] rounded px-1 border-1 border-yellow-200">
-                          <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
-                          <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
-                          <div className="uppercase text-yellow-200 px-1">Max Fear</div>
-                          <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
-                          <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
-                        </div>
+                      {obj.arcana && (
+                        <Link
+                          to={obj.arcana}
+                          target="_blank"
+                          className="flex items-center justify-center gap-0.5 bg-[#fff] text-black rounded px-2 py-1"
+                        >
+                          <img src={`/Scroll.png`} alt="Arcana" className="size-5" draggable={false} />
+                          <span>Arcana</span>
+                        </Link>
                       )}
-                      {obj.fea >= 60 && obj.fea < 67 && (
-                        <div className="flex justify-center items-center bg-[#101122] rounded gap-1">
-                          <img src={`/Misc/firepink.gif`} alt="Fire Pink" className="size-5" draggable={false} />
-                          <div className="uppercase text-pink-300 pe-2">+60</div>
-                        </div>
-                      )}
-                      {obj.fea >= 50 && obj.fea < 60 && (
-                        <div className="flex justify-center items-center bg-[#101122] rounded gap-1">
-                          <img src={`/Misc/firered.gif`} alt="Fire Red" className="size-5" draggable={false} />
-                          <div className="uppercase pe-2 text-orange-400">+50</div>
-                        </div>
+                      {obj.oath && (
+                        <Link
+                          to={obj.oath}
+                          target="_blank"
+                          className="flex items-center justify-center gap-0.5 bg-[#fff] text-black rounded px-2 py-1"
+                        >
+                          <img src={`/Vows/Pain.png`} alt="Oath" className="size-5" draggable={false} />
+                          <span>Oath</span>
+                        </Link>
                       )}
                       {/* {parseTimetoms(obj.tim) < 90000 && (
                     <div className="flex justify-center items-center bg-[#101122] rounded w-[32px]">
@@ -324,7 +338,7 @@ export default function Player() {
                         </div>
                       )}
                     </div>
-                    <div className="text-gray-300 z-20 px-2">{obj.des}</div>
+                    <div className="text-gray-300 z-20 px-2 text-[12px]">{obj.des}</div>
                   </div>
                   <div className="hidden md:block">
                     <img
@@ -342,6 +356,16 @@ export default function Player() {
                       draggable={false}
                     />
                   </div>
+                  {obj.arcana && (
+                    <Link target="_blank" to={obj.arcana} className="hidden md:block">
+                      <img src={`/Arcane/c0.png`} alt="Arcana" className="w-[80px] rounded" draggable={false} />
+                    </Link>
+                  )}
+                  {obj.oath && (
+                    <Link target="_blank" to={obj.oath} className="hidden md:block">
+                      <img src={`/Misc/Oath.png`} alt="Oath" className="w-[80px] rounded" draggable={false} />
+                    </Link>
+                  )}
                 </div>
               ))}
             </section>
