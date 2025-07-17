@@ -300,7 +300,7 @@ export default function App() {
                       <div>{obj.fam}</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-0.5 bg-[#101122] text-white border-1 border-black rounded p-1">
+                  <div className="flex items-center gap-0.5 bg-[#101122] text-white border-1 border-black rounded px-2 py-1">
                     <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
                     <div>{daysAgo(obj.dat)}</div>
                   </div>
@@ -315,7 +315,7 @@ export default function App() {
                     </Link>
                   )}
                   {obj.fea == 67 && (
-                    <div className="flex justify-center items-center bg-[#101122] rounded px-1 border-1 border-yellow-200">
+                    <div className="flex justify-center items-center bg-[#101122] rounded px-2 py-1 border-1 border-yellow-200">
                       <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
                       <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
                       <div className="uppercase text-yellow-200 px-1">Max Fear</div>
@@ -324,13 +324,13 @@ export default function App() {
                     </div>
                   )}
                   {obj.fea >= 60 && obj.fea < 67 && (
-                    <div className="flex justify-center items-center bg-[#101122] rounded gap-1">
+                    <div className="flex justify-center items-center bg-[#101122] rounded gap-1 px-2 py-1">
                       <img src={`/Misc/firepink.gif`} alt="Fire Pink" className="size-5" draggable={false} />
                       <div className="uppercase text-pink-300 pe-2">+60</div>
                     </div>
                   )}
                   {obj.fea >= 50 && obj.fea < 60 && (
-                    <div className="flex justify-center items-center bg-[#101122] rounded gap-1">
+                    <div className="flex justify-center items-center bg-[#101122] rounded gap-1 px-2 py-1">
                       <img src={`/Misc/firered.gif`} alt="Fire Red" className="size-5" draggable={false} />
                       <div className="uppercase pe-2 text-orange-400">+50</div>
                     </div>
@@ -339,7 +339,7 @@ export default function App() {
                     <Link
                       to={obj.arcana}
                       target="_blank"
-                      className="flex items-center justify-center gap-1 bg-[#101122] rounded px-2"
+                      className="flex items-center justify-center gap-1 bg-[#101122] rounded px-2 py-1"
                     >
                       <img src={`/Arcane/c0.png`} alt="Arcana" className="w-4 h-6" draggable={false} />
                       <span className="text-[#00ffaa]">Arcana</span>
