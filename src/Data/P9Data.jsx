@@ -3901,4 +3901,37 @@ export const p9data = [
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzMiLCJjNiIsImM3IiwiYzExIiwiYzEzIiwiYzE0IiwiYzE2IiwiYzE3IiwiYzIxIiwiYzIyIiwiYzIzIiwiYzI0Il0=",
   },
+  {
+    dat: "2025-07-16",
+    nam: "Vytautas",
+    asp: "Selene",
+    loc: "Underworld",
+    fea: "58",
+    src: "https://www.youtube.com/watch?v=ZYwkHM2cB68",
+    des: "A 58 fear unseeded clear featuring the black coat's aspect of selene and 3 of the 4 rivals bosses. Super clean play until phase 2 of scylla tbh. No commentary because I was locked in.",
+    tim: "19:25.83",
+    fam: "Polecat",
+    cor: "HesAttack,DemSpecial,AreCast,DemSprint,Magick",
+    ham: "Shimmering Rockets,Launcher Frame",
+    sel: "f",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTYiLCJjMTciLCJjMTgiLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjQiXQ==",
+  },
+  {
+    dat: "2025-07-16",
+    nam: "睿智的林带雨",
+    asp: "Melinoe Staff",
+    loc: "Surface",
+    fea: "62",
+    src: "https://www.bilibili.com/video/BV1pmutz4E5Q/",
+    des: "62热杖1",
+    tim: "18:31.83",
+    fam: "Polecat",
+    cor: "PosAttack,AphSpecial,DemCast,Sprint,AphMagick",
+    ham: "Shimmering Moonshot,Dual Moonshot",
+    sel: "f",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjMiLCJjMjQiXQ==",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
+  },
 ];

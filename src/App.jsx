@@ -306,7 +306,7 @@ export default function App() {
                   </div>
                   {obj.src !== "" && (
                     <Link
-                      className="flex items-center gap-1 bg-[#101122] border-1 border-black rounded px-2 py-1"
+                      className="flex items-center gap-1 bg-[#fff] text-black border-1 border-black rounded px-2 py-1"
                       to={obj.src}
                       target="_blank"
                     >
@@ -314,35 +314,24 @@ export default function App() {
                       <div>{`Video`}</div>
                     </Link>
                   )}
-                  {obj.fea == 67 && (
-                    <div className="flex justify-center items-center bg-[#101122] rounded px-2 py-1 border-1 border-yellow-200">
-                      <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
-                      <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
-                      <div className="uppercase text-yellow-200 px-1">Max Fear</div>
-                      <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
-                      <img src={`/Misc/lighting.gif`} alt="Max" className="size-4" draggable={false} />
-                    </div>
-                  )}
-                  {obj.fea >= 60 && obj.fea < 67 && (
-                    <div className="flex justify-center items-center bg-[#101122] rounded gap-1 px-2 py-1">
-                      <img src={`/Misc/firepink.gif`} alt="Fire Pink" className="size-5" draggable={false} />
-                      <div className="uppercase text-pink-300 pe-2">+60</div>
-                    </div>
-                  )}
-                  {obj.fea >= 50 && obj.fea < 60 && (
-                    <div className="flex justify-center items-center bg-[#101122] rounded gap-1 px-2 py-1">
-                      <img src={`/Misc/firered.gif`} alt="Fire Red" className="size-5" draggable={false} />
-                      <div className="uppercase pe-2 text-orange-400">+50</div>
-                    </div>
-                  )}
                   {obj.arcana && (
                     <Link
                       to={obj.arcana}
                       target="_blank"
-                      className="flex items-center justify-center gap-1 bg-[#101122] rounded px-2 py-1"
+                      className="flex items-center justify-center gap-0.5 bg-[#fff] text-black rounded px-2 py-1"
                     >
-                      <img src={`/Arcane/c0.png`} alt="Arcana" className="w-4 h-6" draggable={false} />
-                      <span className="text-[#00ffaa]">Arcana</span>
+                      <img src={`/Scroll.png`} alt="Arcana" className="size-5" draggable={false} />
+                      <span>Arcana</span>
+                    </Link>
+                  )}
+                  {obj.oath && (
+                    <Link
+                      to={obj.oath}
+                      target="_blank"
+                      className="flex items-center justify-center gap-0.5 bg-[#fff] text-black rounded px-2 py-1"
+                    >
+                      <img src={`/Vows/Pain.png`} alt="Oath" className="size-5" draggable={false} />
+                      <span>Oath</span>
                     </Link>
                   )}
                   {/* {parseTimetoms(obj.tim) < 90000 && (
@@ -503,6 +492,11 @@ export default function App() {
               {obj.arcana && (
                 <Link target="_blank" to={obj.arcana} className="hidden md:block">
                   <img src={`/Arcane/c0.png`} alt="Arcana" className="w-[80px] rounded" draggable={false} />
+                </Link>
+              )}
+              {obj.oath && (
+                <Link target="_blank" to={obj.oath} className="hidden md:block">
+                  <img src={`/Misc/Oath.png`} alt="Oath" className="w-[80px] rounded" draggable={false} />
                 </Link>
               )}
             </div>
