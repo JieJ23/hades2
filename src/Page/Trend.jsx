@@ -55,19 +55,14 @@ function getCumulativeOccurrences(data, boonNames, keys, sToA) {
 
 //
 
-const fullBoonData = getUniqueValueCounts(entriesByData, [`cor`, `ham`, `duo`, `ele`, `mis`, `cha`], sToA);
+const fullBoonData = getUniqueValueCounts(entriesByData, [`cor`, `ham`], sToA);
 const sortBoonDataByValue = Object.entries(fullBoonData).sort(([, v1], [, v2]) => v2 - v1);
 const sortedFullBoonData = Object.fromEntries(sortBoonDataByValue);
 
 export default function Trend() {
   const [targetboon, setTargetboon] = useState([`AphMagick`, `Sprint`, `DemCast`, `ApoSprint`, `PosCast`]);
 
-  const graphData = getCumulativeOccurrences(
-    entriesByData,
-    targetboon,
-    [`cor`, `ham`, `duo`, `ele`, `mis`, `cha`],
-    sToA
-  );
+  const graphData = getCumulativeOccurrences(entriesByData, targetboon, [`cor`, `ham`], sToA);
 
   console.log(targetboon);
   return (

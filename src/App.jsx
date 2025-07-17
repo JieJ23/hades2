@@ -83,7 +83,7 @@ export default function App() {
   //
   const filteredData = highfear_category.filter((item) => {
     // Combine all relevant fields into a single string (lowercase for case-insensitive)
-    const combined = [item.cor, item.ham, item.duo, item.ele, item.mis, item.cha]
+    const combined = [item.cor, item.ham]
       .filter(Boolean) // remove empty strings
       .join(",") // join them into one string
       .toLowerCase();
@@ -335,6 +335,16 @@ export default function App() {
                       <div className="uppercase pe-2 text-orange-400">+50</div>
                     </div>
                   )}
+                  {obj.arcana && (
+                    <Link
+                      to={obj.arcana}
+                      target="_blank"
+                      className="flex items-center justify-center gap-1 bg-[#101122] rounded px-2"
+                    >
+                      <img src={`/Arcane/c0.png`} alt="Arcana" className="w-4 h-6" draggable={false} />
+                      <span className="text-[#00ffaa]">Arcana</span>
+                    </Link>
+                  )}
                   {/* {parseTimetoms(obj.tim) < 90000 && (
                     <div className="flex justify-center items-center bg-[#101122] rounded w-[32px]">
                       <img src={`/Misc/speed.gif`} alt="Speed" className="size-6" draggable={false} />
@@ -490,6 +500,11 @@ export default function App() {
               <div className="hidden md:block">
                 <img src={`/GUI_Card/${obj.fam}.png`} alt="Familiar" className="w-[80px] rounded" draggable={false} />
               </div>
+              {obj.arcana && (
+                <Link target="_blank" to={obj.arcana} className="hidden md:block">
+                  <img src={`/Arcane/c0.png`} alt="Arcana" className="w-[80px] rounded" draggable={false} />
+                </Link>
+              )}
             </div>
           ))}
         </section>

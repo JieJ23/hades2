@@ -89,25 +89,25 @@ export default function P9BoonData() {
     return acc;
   }, {});
 
-  const core_Duo = displayData.reduce((acc, entry) => {
-    const corArray = sToA(entry.duo); // Convert string to array
+  // const core_Duo = displayData.reduce((acc, entry) => {
+  //   const corArray = sToA(entry.duo); // Convert string to array
 
-    corArray.forEach((cor) => {
-      acc[cor] = (acc[cor] || 0) + 1;
-    });
+  //   corArray.forEach((cor) => {
+  //     acc[cor] = (acc[cor] || 0) + 1;
+  //   });
 
-    return acc;
-  }, {});
+  //   return acc;
+  // }, {});
 
-  const core_Ele = displayData.reduce((acc, entry) => {
-    const corArray = sToA(entry.ele); // Convert string to array
+  // const core_Ele = displayData.reduce((acc, entry) => {
+  //   const corArray = sToA(entry.ele); // Convert string to array
 
-    corArray.forEach((cor) => {
-      acc[cor] = (acc[cor] || 0) + 1;
-    });
+  //   corArray.forEach((cor) => {
+  //     acc[cor] = (acc[cor] || 0) + 1;
+  //   });
 
-    return acc;
-  }, {});
+  //   return acc;
+  // }, {});
 
   const core_Fam = displayData.reduce((acc, entry) => {
     const corArray = sToA(entry.fam); // Convert string to array
@@ -119,25 +119,25 @@ export default function P9BoonData() {
     return acc;
   }, {});
 
-  const core_Misc = displayData.reduce((acc, entry) => {
-    const corArray = sToA(entry.mis); // Convert string to array
+  // const core_Misc = displayData.reduce((acc, entry) => {
+  //   const corArray = sToA(entry.mis); // Convert string to array
 
-    corArray.forEach((cor) => {
-      acc[cor] = (acc[cor] || 0) + 1;
-    });
+  //   corArray.forEach((cor) => {
+  //     acc[cor] = (acc[cor] || 0) + 1;
+  //   });
 
-    return acc;
-  }, {});
+  //   return acc;
+  // }, {});
 
-  const core_Chaos = displayData.reduce((acc, entry) => {
-    const corArray = sToA(entry.cha); // Convert string to array
+  // const core_Chaos = displayData.reduce((acc, entry) => {
+  //   const corArray = sToA(entry.cha); // Convert string to array
 
-    corArray.forEach((cor) => {
-      acc[cor] = (acc[cor] || 0) + 1;
-    });
+  //   corArray.forEach((cor) => {
+  //     acc[cor] = (acc[cor] || 0) + 1;
+  //   });
 
-    return acc;
-  }, {});
+  //   return acc;
+  // }, {});
 
   return (
     <div className="max-w-[1400px] font-[Source] text-[12px] md:text-[13px] mx-auto my-2">
@@ -407,7 +407,7 @@ export default function P9BoonData() {
             ))}
         </div>
       </div>
-      <div className="rounded bg-[#000000b5] p-2 pb-1 pt-4 mb-4">
+      {/* <div className="rounded bg-[#000000b5] p-2 pb-1 pt-4 mb-4">
         <div className="flex flex-wrap gap-1 py-2">
           {Object.entries(core_Duo)
             .sort((a, b) => b[1] - a[1])
@@ -527,7 +527,7 @@ export default function P9BoonData() {
               </div>
             ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

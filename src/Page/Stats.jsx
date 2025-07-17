@@ -3,7 +3,7 @@ import SideNav from "../Comp/Sidebar";
 import { h2AspectOrder } from "../Data/Misc";
 import { p9data } from "../Data/P9Data";
 import P9BoonData from "../Comp/P9BoonData";
-import P9Unseen from "../Comp/P9UnseenData";
+// import P9Unseen from "../Comp/P9UnseenData";
 import Background from "../Comp/Background";
 import BarFear from "../Comp/BarFear";
 import BarAspect from "../Comp/BarAspect";
@@ -84,7 +84,7 @@ export default function Stats() {
       <BarUW />
       <BarAspect />
       <BarFear />
-      <P9Unseen data={p9data} />
+      {/* <P9Unseen data={p9data} /> */}
       <P9BoonData />
       <Footer />
     </main>
