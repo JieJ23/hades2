@@ -75,9 +75,8 @@ export default function Submit() {
                 />
                 <input type="text" placeholder="Gameplay Link" className="input input-md" name="src" required />
                 <input type="text" placeholder="Short Description" className="input input-md" name="des" required />
-                <input type="text" placeholder="Arcana Link" className="input input-md" name="arcana" required />
-                <input type="text" placeholder="Oath Link" className="input input-md" name="oath" required />
-
+                <input type="text" placeholder="Arcana Link" className="input input-md" name="arcana" />
+                <input type="text" placeholder="Oath Link" className="input input-md" name="oath" />
                 <button
                   className="btn border-[#2efaac] bg-transparent font-[Source] border-1 rounded text-[14px] px-3"
                   type="submit"
