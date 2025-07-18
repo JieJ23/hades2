@@ -123,3 +123,54 @@ export function parsemstoTime(ms) {
 }
 
 //
+
+export function deCodeVow(base64String) {
+  const match = base64String.match(/[?&]vows=([^&#]+)/);
+  if (!match) {
+    console.error("No 'vows' parameter found in URL.");
+    return null;
+  }
+
+  try {
+    const base64String = decodeURIComponent(match[1]);
+    const decoded = atob(base64String);
+    const parsedArray = JSON.parse(decoded);
+    return parsedArray;
+  } catch (e) {
+    console.error("Failed to decode or parse 'vows' parameter:", e);
+    return null;
+  }
+}
+
+export const findRivals = (num) => {
+  switch (num) {
+    case 2:
+      return `R1`;
+    case 5:
+      return `R2`;
+    case 8:
+      return `R3`;
+    case 12:
+      return `R4`;
+    default:
+      return;
+  }
+};
+
+export function deCodeArcana(url) {
+  const match = url.match(/[?&]deck=([^&#]+)/);
+  if (!match) {
+    console.error("No 'deck' parameter found in URL.");
+    return null;
+  }
+
+  try {
+    const base64String = decodeURIComponent(match[1]);
+    const decoded = atob(base64String);
+    const parsedArray = JSON.parse(decoded);
+    return parsedArray;
+  } catch (e) {
+    console.error("Failed to decode or parse 'deck' parameter:", e);
+    return null;
+  }
+}

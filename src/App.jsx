@@ -3,7 +3,7 @@ import SideNav from "./Comp/Sidebar";
 import { sToA } from "./Data/Misc";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { h2AspectOrder, parseTimetoms, daysAgo } from "./Data/Misc";
+import { h2AspectOrder, parseTimetoms, daysAgo, deCodeVow, findRivals, deCodeArcana } from "./Data/Misc";
 import { p9data } from "./Data/P9Data";
 import { testData } from "./Data/P9TestData";
 import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
@@ -42,7 +42,7 @@ const highfear = p9data.slice().sort((a, b) => {
   return parseTimetoms(a.tim) - parseTimetoms(b.tim);
 });
 //
-const entriesOnlyVod = highfear.filter((obj) => obj.src !== "");
+const entriesOnlyVod = highfear.slice().filter((obj) => obj.src !== "");
 const entriesByData = highfear.slice().sort((a, b) => new Date(b.dat) - new Date(a.dat));
 
 const availableRegion = [`Underworld`, `Surface`];
@@ -64,9 +64,10 @@ export default function App() {
 
   const filteredBoons = allP9.filter((boon) => boon.toLowerCase().includes(query.toLowerCase()));
 
-  const selectedHighfear = (hasvod ? entriesOnlyVod : region === `Latest` ? entriesByData : highfear).filter(
-    (obj) => obj.fea >= min && obj.fea <= max
-  );
+  const baseData = hasvod ? entriesOnlyVod : highfear;
+
+  const selectedHighfear =
+    region === `Latest` ? [...baseData].sort((a, b) => new Date(b.dat) - new Date(a.dat)) : baseData;
 
   const highfear_region =
     region === `All` || region === `Latest` ? selectedHighfear : selectedHighfear.filter((obj) => obj.loc === region);
@@ -304,6 +305,7 @@ export default function App() {
                     <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
                     <div>{daysAgo(obj.dat)}</div>
                   </div>
+
                   {obj.src !== "" && (
                     <Link
                       className="flex items-center gap-1 bg-[#fff] text-black border-1 border-black rounded px-2 py-1"
@@ -334,11 +336,17 @@ export default function App() {
                       <span>Oath</span>
                     </Link>
                   )}
-                  {/* {parseTimetoms(obj.tim) < 90000 && (
-                    <div className="flex justify-center items-center bg-[#101122] rounded w-[32px]">
-                      <img src={`/Misc/speed.gif`} alt="Speed" className="size-6" draggable={false} />
+                  {obj.oath && deCodeVow(obj.oath)[16] !== 0 && (
+                    <div className="px-2 py-1 rounded bg-[#00ffaa] flex items-center text-black">
+                      {findRivals(deCodeVow(obj.oath)[16])}
                     </div>
-                  )} */}
+                  )}
+                  {obj.arcana && (
+                    <div className="px-2 py-1 rounded bg-[#00ffaa] flex items-center text-black">
+                      {deCodeArcana(obj.arcana).includes(`c23`) && `Strength`}
+                      {deCodeArcana(obj.arcana).includes(`c12`) && `Death`}
+                    </div>
+                  )}
                 </div>
                 <div className="flex items-center flex-wrap py-1 gap-2 gap-y-1">
                   <div className="flex gap-0.5 p-2 rounded bg-[#101122]">
