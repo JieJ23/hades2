@@ -4155,4 +4155,20 @@ export const p9data = [
     ham: "Aetheric Moonburst,Dual Moonshot",
     sel: "t",
   },
+  {
+    dat: "2025-07-17",
+    nam: "Boated",
+    asp: "Anubis",
+    loc: "Underworld",
+    fea: "48",
+    src: "https://www.youtube.com/watch?v=77XHFq6gglY",
+    des: "This Boon Combo Will Win You Runs.",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjQiXQ==",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzEsMywyLDYsMCwzLDIsNSw0LDAsMiwwLDYsMCwyLDAsMTJd",
+    tim: "18:14.32",
+    fam: "Polecat",
+    cor: "HerAttack,AphSpecial,PosCast,ApoSprint,AphMagick",
+    ham: "Aetheric Moonburst",
+  },
 ];

@@ -9,7 +9,7 @@ import { p9boons } from "../Data/P9BoonObj";
 import Background from "../Comp/Background";
 import RaderP from "../Comp/RadarP";
 import { findGUIcard } from "../App";
-import { daysAgo, parseTimetoms } from "../Data/Misc";
+import { daysAgo, parseTimetoms, deCodeArcana, deCodeVow, findRivals } from "../Data/Misc";
 import Footer from "../Comp/Footer";
 
 const defineAllPlayers = [...new Set(p9data.map((obj) => obj.nam))].sort();
@@ -166,6 +166,7 @@ export default function Player() {
                         <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
                         <div>{daysAgo(obj.dat)}</div>
                       </div>
+
                       {obj.src !== "" && (
                         <Link
                           className="flex items-center gap-1 bg-[#fff] text-black border-1 border-black rounded px-2 py-1"
@@ -196,11 +197,17 @@ export default function Player() {
                           <span>Oath</span>
                         </Link>
                       )}
-                      {/* {parseTimetoms(obj.tim) < 90000 && (
-                    <div className="flex justify-center items-center bg-[#101122] rounded w-[32px]">
-                      <img src={`/Misc/speed.gif`} alt="Speed" className="size-6" draggable={false} />
-                    </div>
-                  )} */}
+                      {obj.oath && deCodeVow(obj.oath)[16] !== 0 && (
+                        <div className="px-2 py-1 rounded bg-[#00ffaa] flex items-center text-black">
+                          {findRivals(deCodeVow(obj.oath)[16])}
+                        </div>
+                      )}
+                      {obj.arcana && (
+                        <div className="px-2 py-1 rounded bg-[#00ffaa] flex items-center text-black">
+                          {deCodeArcana(obj.arcana).includes(`c23`) && `Strength`}
+                          {deCodeArcana(obj.arcana).includes(`c12`) && `Death`}
+                        </div>
+                      )}
                     </div>
                     <div className="flex items-center flex-wrap py-1 gap-2 gap-y-1">
                       <div className="flex gap-0.5 p-2 rounded bg-[#101122]">
