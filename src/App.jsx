@@ -65,8 +65,9 @@ export default function App() {
 
   const baseData = hasvod ? entriesOnlyVod : highfear;
 
-  const selectedHighfear =
-    region === `Latest` ? [...baseData].sort((a, b) => new Date(b.dat) - new Date(a.dat)) : baseData;
+  const selectedHighfear = (
+    region === `Latest` ? [...baseData].sort((a, b) => new Date(b.dat) - new Date(a.dat)) : baseData
+  ).filter((obj) => obj.fea >= min && obj.fea <= max);
 
   const highfear_region =
     region === `All` || region === `Latest` ? selectedHighfear : selectedHighfear.filter((obj) => obj.loc === region);
