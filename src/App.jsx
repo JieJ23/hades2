@@ -1,9 +1,18 @@
 import Head from "./Comp/Head";
 import SideNav from "./Comp/Sidebar";
-import { sToA } from "./Data/Misc";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { h2AspectOrder, parseTimetoms, daysAgo, deCodeVow, findRivals, deCodeArcana, deckMatch } from "./Data/Misc";
+import {
+  h2AspectOrder,
+  sToA,
+  parseTimetoms,
+  daysAgo,
+  deCodeVow,
+  deCodeArcana,
+  deckMatch,
+  oathMatch,
+  vowMatch,
+} from "./Data/Misc";
 import { p9data } from "./Data/P9Data";
 import { testData } from "./Data/P9TestData";
 import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
@@ -476,13 +485,23 @@ export default function App() {
                 </div>
                 <div className="text-gray-300 z-20 p-1 pt-0 text-[11px]">{obj.des}</div>
                 <div className="flex flex-wrap gap-1 text-[10px]">
-                  {obj.oath && deCodeVow(obj.oath)[16] !== 0 && (
-                    <div className="px-1 py-0.5 bg-[#28282b] rounded">{findRivals(deCodeVow(obj.oath)[16])}</div>
-                  )}
                   {obj.arcana &&
                     deCodeArcana(obj.arcana)
                       .map((ite) => deckMatch[ite])
                       .map((ite) => <div className="px-1 py-0.5 bg-[#28282b] rounded">{ite}</div>)}
+                </div>
+                <div className="flex flex-wrap gap-1 text-[10px] pt-1">
+                  {obj.oath &&
+                    deCodeVow(obj.oath)
+                      .map((ite1, index) => oathMatch[index].indexOf(ite1))
+                      .map(
+                        (ite, index) =>
+                          ite !== 0 && (
+                            <div className="px-1 py-0.5 bg-[#28282b] rounded">
+                              {vowMatch[index]} {ite}
+                            </div>
+                          )
+                      )}
                 </div>
               </div>
               <div className="hidden md:block">

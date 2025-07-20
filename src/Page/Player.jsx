@@ -9,7 +9,7 @@ import { p9boons } from "../Data/P9BoonObj";
 import Background from "../Comp/Background";
 import RaderP from "../Comp/RadarP";
 import { findGUIcard } from "../App";
-import { daysAgo, parseTimetoms, deCodeArcana, deCodeVow, findRivals, deckMatch } from "../Data/Misc";
+import { daysAgo, parseTimetoms, deCodeArcana, deCodeVow, oathMatch, vowMatch, deckMatch } from "../Data/Misc";
 import Footer from "../Comp/Footer";
 
 const defineAllPlayers = [...new Set(p9data.map((obj) => obj.nam))].sort();
@@ -336,13 +336,23 @@ export default function Player() {
                     </div>
                     <div className="text-gray-300 z-20 p-1 pt-0 text-[11px]">{obj.des}</div>
                     <div className="flex flex-wrap gap-1 text-[10px]">
-                      {obj.oath && deCodeVow(obj.oath)[16] !== 0 && (
-                        <div className="px-1 py-0.5 bg-[#28282b] rounded">{findRivals(deCodeVow(obj.oath)[16])}</div>
-                      )}
                       {obj.arcana &&
                         deCodeArcana(obj.arcana)
                           .map((ite) => deckMatch[ite])
                           .map((ite) => <div className="px-1 py-0.5 bg-[#28282b] rounded">{ite}</div>)}
+                    </div>
+                    <div className="flex flex-wrap gap-1 text-[10px] pt-1">
+                      {obj.oath &&
+                        deCodeVow(obj.oath)
+                          .map((ite, index) => +oathMatch[index].indexOf(ite))
+                          .map(
+                            (ite, index) =>
+                              ite !== 0 && (
+                                <div className="px-1 py-0.5 bg-[#28282b] rounded">
+                                  {vowMatch[index]} {ite}
+                                </div>
+                              )
+                          )}
                     </div>
                   </div>
                   <div className="hidden md:block">

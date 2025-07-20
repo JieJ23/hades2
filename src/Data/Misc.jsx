@@ -202,3 +202,43 @@ export const findRivals = (num) => {
       return;
   }
 };
+
+export const oathMatch = [
+  [0, 1, 3, 5],
+  [0, 1, 2, 3],
+  [0, 1, 2],
+  [0, 3, 6],
+  [0, 1, 2, 3],
+  [0, 1, 3],
+  [0, 1, 2],
+  [0, 2, 5],
+  [0, 1, 2, 4],
+  [0, 1, 2],
+  [0, 2],
+  [0, 3],
+  [0, 1, 3, 6],
+  [0, 1, 2, 3, 5],
+  [0, 1, 2],
+  [0, 2],
+  [0, 2, 5, 8, 12],
+];
+
+export const vowMatch = [
+  `Pain`,
+  `Grit`,
+  `Wards`,
+  `Frenzy`,
+  `Hordes`,
+  `Menace`,
+  `Return`,
+  `Fangs`,
+  `Scars`,
+  `Debt`,
+  `Shadow`,
+  `Forfeit`,
+  `Time`,
+  `Void`,
+  `Hubris`,
+  `Denial`,
+  `Rivals`,
+];
