@@ -11,5 +11,6 @@ export const testData = [
     cor: "AreAttack,Special,HerCast,PosSprint,Magick",
     ham: "Mega Blaze,Melting Helix",
     sel: "f",
+    des: `lorem400`,
   },
 ];

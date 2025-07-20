@@ -9,7 +9,7 @@ import { p9boons } from "../Data/P9BoonObj";
 import Background from "../Comp/Background";
 import RaderP from "../Comp/RadarP";
 import { findGUIcard } from "../App";
-import { daysAgo, parseTimetoms, deCodeArcana, deCodeVow, findRivals } from "../Data/Misc";
+import { daysAgo, parseTimetoms, deCodeArcana, deCodeVow, findRivals, deckMatch } from "../Data/Misc";
 import Footer from "../Comp/Footer";
 
 const defineAllPlayers = [...new Set(p9data.map((obj) => obj.nam))].sort();
@@ -149,64 +149,53 @@ export default function Player() {
                         </div>
                       </div>
                     </div>
-                    <div className="py-1 flex flex-wrap gap-1 text-[12px]">
-                      <div className="flex items-center gap-1 bg-[#101122] border-1 border-black rounded px-2 py-1">
-                        <img src={`/P9/${obj.asp}.png`} alt="Aspect" className="size-6" draggable={false} />
+                    <div className="py-1 flex flex-wrap gap-1 text-[11px]">
+                      <div className="flex items-center gap-1 bg-[#101122] border-1 border-white/20 rounded px-2 py-1">
+                        <img src={`/P9/${obj.asp}.png`} alt="Aspect" className="size-4" draggable={false} />
                         <div>
                           <div>{obj.asp}</div>
                         </div>
                       </div>
-                      <div className="flex items-center gap-1 bg-[#101122] border-1 border-black rounded px-2 py-1">
-                        <img src={`/P9/${obj.fam}.png`} alt="Familiar" className="size-6 " draggable={false} />
+                      <div className="flex items-center gap-1 bg-[#101122] border-1 border-white/20 rounded px-2 py-1">
+                        <img src={`/P9/${obj.fam}.png`} alt="Familiar" className="size-4" draggable={false} />
                         <div>
                           <div>{obj.fam}</div>
                         </div>
                       </div>
-                      <div className="flex items-center gap-0.5 bg-[#101122] text-white border-1 border-black rounded px-2 py-1">
+                      <div className="flex items-center gap-0.5 bg-[#101122] text-white border-1 border-white/20 rounded px-2 py-1">
                         <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
                         <div>{daysAgo(obj.dat)}</div>
                       </div>
 
                       {obj.src !== "" && (
                         <Link
-                          className="flex items-center gap-1 bg-[#fff] text-black border-1 border-black rounded px-2 py-1"
+                          className="flex items-center bg-[#fff] text-black border-1 border-black rounded px-2 py-1"
                           to={obj.src}
                           target="_blank"
                         >
-                          <img src={`/Misc/play.png`} alt="Play" className="size-4" draggable={false} />
                           <div>{`Video`}</div>
+                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
                         </Link>
                       )}
                       {obj.arcana && (
                         <Link
                           to={obj.arcana}
                           target="_blank"
-                          className="flex items-center justify-center gap-0.5 bg-[#fff] text-black rounded px-2 py-1"
+                          className="flex items-center justify-center bg-[#fff] text-black rounded px-2 py-1"
                         >
-                          <img src={`/Scroll.png`} alt="Arcana" className="size-5" draggable={false} />
                           <span>Arcana</span>
+                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
                         </Link>
                       )}
                       {obj.oath && (
                         <Link
                           to={obj.oath}
                           target="_blank"
-                          className="flex items-center justify-center gap-0.5 bg-[#fff] text-black rounded px-2 py-1"
+                          className="flex items-center justify-center bg-[#fff] text-black rounded px-2 py-1"
                         >
-                          <img src={`/Vows/Pain.png`} alt="Oath" className="size-5" draggable={false} />
                           <span>Oath</span>
+                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
                         </Link>
-                      )}
-                      {obj.oath && deCodeVow(obj.oath)[16] !== 0 && (
-                        <div className="px-2 py-1 rounded bg-[#00ffaa] flex items-center text-black">
-                          {findRivals(deCodeVow(obj.oath)[16])}
-                        </div>
-                      )}
-                      {obj.arcana && (
-                        <div className="px-2 py-1 rounded bg-[#00ffaa] flex items-center text-black">
-                          {deCodeArcana(obj.arcana).includes(`c23`) && `Strength`}
-                          {deCodeArcana(obj.arcana).includes(`c12`) && `Death`}
-                        </div>
                       )}
                     </div>
                     <div className="flex items-center flex-wrap py-1 gap-2 gap-y-1">
@@ -345,7 +334,16 @@ export default function Player() {
                         </div>
                       )}
                     </div>
-                    <div className="text-gray-300 z-20 px-2 text-[12px]">{obj.des}</div>
+                    <div className="text-gray-300 z-20 p-1 text-[11px]">{obj.des}</div>
+                    <div className="flex flex-wrap gap-1 text-[10px]">
+                      {obj.oath && deCodeVow(obj.oath)[16] !== 0 && (
+                        <div className="px-1 bg-[#2b2b28]">{findRivals(deCodeVow(obj.oath)[16])}</div>
+                      )}
+                      {obj.arcana &&
+                        deCodeArcana(obj.arcana)
+                          .map((ite) => deckMatch[ite])
+                          .map((ite) => <div className="px-1 bg-[#28282b]">{ite}</div>)}
+                    </div>
                   </div>
                   <div className="hidden md:block">
                     <img

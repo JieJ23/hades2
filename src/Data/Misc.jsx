@@ -142,21 +142,6 @@ export function deCodeVow(base64String) {
   }
 }
 
-export const findRivals = (num) => {
-  switch (num) {
-    case 2:
-      return `R1`;
-    case 5:
-      return `R2`;
-    case 8:
-      return `R3`;
-    case 12:
-      return `R4`;
-    default:
-      return;
-  }
-};
-
 export function deCodeArcana(url) {
   const match = url.match(/[?&]deck=([^&#]+)/);
   if (!match) {
@@ -174,3 +159,46 @@ export function deCodeArcana(url) {
     return null;
   }
 }
+
+export const deckMatch = {
+  c1: `Sorceress`,
+  c2: `Wayward`,
+  c3: `Huntress`,
+  c4: `Eternity`,
+  c5: `Moon`,
+  c6: `Furies`,
+  c7: `Persistence`,
+  c8: `Messenger`,
+  c9: `Unseen`,
+  c10: `Night`,
+  c11: `Swift`,
+  c12: `Death`,
+  c13: `Centaur`,
+  c14: `Origination`,
+  c15: `Lovers`,
+  c16: `Enchantress`,
+  c17: `Boatman`,
+  c18: `Artificer`,
+  c19: `Excellence`,
+  c20: `Queen`,
+  c21: `Seer`,
+  c22: `Champions`,
+  c23: `Strength`,
+  c24: `Divinity`,
+  c25: `Judgment`,
+};
+
+export const findRivals = (num) => {
+  switch (num) {
+    case 2:
+      return `Rivals 1`;
+    case 5:
+      return `Rivals 2`;
+    case 8:
+      return `Rivals 3`;
+    case 12:
+      return `Rivals 4`;
+    default:
+      return;
+  }
+};
