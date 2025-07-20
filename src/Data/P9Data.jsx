@@ -3302,7 +3302,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-08",
-    nam: "East",
+    nam: "East_25",
     asp: "Nergal",
     loc: "Underworld",
     fea: "39",
@@ -3482,7 +3482,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    nam: "East",
+    nam: "East_25",
     asp: "Pan",
     loc: "Underworld",
     fea: "39",
@@ -4266,5 +4266,21 @@ export const p9data = [
     fam: "Frog",
     cor: "AreAttack,Special,ApoCast,AphSprint,HepMagick",
     ham: "Dividing Blaze,Leaden Blaze",
+  },
+  {
+    dat: "2025-07-19",
+    nam: "East_25",
+    asp: "Pan",
+    loc: "Underworld",
+    fea: "46",
+    src: "",
+    des: "Artificer exploit gets Trick Knives in Fields and that + the insane EHP gain from Spiritual Affirmation + 2x Chaos Souls form a damage engine with Mutual D",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMyIsImM2IiwiYzciLCJjOCIsImMxMSIsImMxMiIsImMxMyIsImMxNCIsImMxNSIsImMxNiIsImMxOCIsImMyMiIsImMyNCJd",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzAsMCwwLDYsMCwzLDIsNSw0LDIsMiwwLDYsMCwyLDIsMTJd",
+    tim: "17:48.27",
+    fam: "Frog",
+    cor: "AreAttack,HerSpecial,AphCast,ApoSprint,Magick",
+    ham: "Trick Knives,Sureshot Flurry,Reaper Knives",
   },
 ];

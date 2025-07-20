@@ -43,7 +43,6 @@ const highfear = p9data.slice().sort((a, b) => {
 });
 //
 const entriesOnlyVod = highfear.slice().filter((obj) => obj.src !== "");
-const entriesByData = highfear.slice().sort((a, b) => new Date(b.dat) - new Date(a.dat));
 
 const availableRegion = [`Underworld`, `Surface`];
 
