@@ -477,12 +477,12 @@ export default function App() {
                 <div className="text-gray-300 z-20 p-1 text-[11px]">{obj.des}</div>
                 <div className="flex flex-wrap gap-1 text-[10px]">
                   {obj.oath && deCodeVow(obj.oath)[16] !== 0 && (
-                    <div className="px-1 bg-[#2b2b28]">{findRivals(deCodeVow(obj.oath)[16])}</div>
+                    <div className="px-1 py-0.5 bg-[#28282b] rounded">{findRivals(deCodeVow(obj.oath)[16])}</div>
                   )}
                   {obj.arcana &&
                     deCodeArcana(obj.arcana)
                       .map((ite) => deckMatch[ite])
-                      .map((ite) => <div className="px-1 bg-[#28282b]">{ite}</div>)}
+                      .map((ite) => <div className="px-1 py-0.5 bg-[#28282b] rounded">{ite}</div>)}
                 </div>
               </div>
               <div className="hidden md:block">
