@@ -51,7 +51,7 @@ export default function Ranking() {
     <main className="relative">
       <Background />
       <Head />
-      <div className="max-w-[1400px] font-[Source] text-[12px] md:text-[13px] mx-auto text-white select-none">
+      <div className="max-w-[1400px] font-[Source] text-[11px] md:text-[12px] mx-auto text-white select-none">
         <SideNav />
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-2 py-6">
           {fullData.map((weaponData, index) => (

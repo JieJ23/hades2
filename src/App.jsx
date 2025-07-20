@@ -271,7 +271,7 @@ export default function App() {
                   <img
                     src="/Misc/max.webp"
                     alt="Max Fear"
-                    className="w-full h-full object-cover object-[center_30%] rounded"
+                    className="w-full h-full object-cover object-[center_10%] rounded"
                   />
                 </div>
               )}
@@ -290,19 +290,19 @@ export default function App() {
                   </div>
                 </div>
                 <div className="py-1 flex flex-wrap gap-1 text-[11px]">
-                  <div className="flex items-center gap-1 bg-[#101122] border-1 border-white/20 rounded px-2 py-1">
+                  <div className="flex items-center gap-1 bg-[#28282b] rounded px-2 py-1">
                     <img src={`/P9/${obj.asp}.png`} alt="Aspect" className="size-4" draggable={false} />
                     <div>
                       <div>{obj.asp}</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 bg-[#101122] border-1 border-white/20 rounded px-2 py-1">
+                  <div className="flex items-center gap-1 bg-[#28282b] rounded px-2 py-1">
                     <img src={`/P9/${obj.fam}.png`} alt="Familiar" className="size-4" draggable={false} />
                     <div>
                       <div>{obj.fam}</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-0.5 bg-[#101122] text-white border-1 border-white/20 rounded px-2 py-1">
+                  <div className="flex items-center gap-0.5 bg-[#28282b] text-white rounded px-2 py-1">
                     <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
                     <div>{daysAgo(obj.dat)}</div>
                   </div>
@@ -338,8 +338,8 @@ export default function App() {
                     </Link>
                   )}
                 </div>
-                <div className="flex items-center flex-wrap py-1 gap-2 gap-y-1">
-                  <div className="flex gap-0.5 p-2 rounded bg-[#101122]">
+                <div className="flex items-center flex-wrap py-1 gap-1 gap-y-1">
+                  <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                     {sToA(obj.cor).map((ite, index) => (
                       <div className="tooltip shrink-0" key={index}>
                         <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
@@ -349,13 +349,13 @@ export default function App() {
                           draggable={false}
                           src={`/H2Boons/${ite}.png`}
                           alt="Core Boon"
-                          className="size-7 border-1 border-white/20 rounded-lg"
+                          className="size-6 md:size-7 border-1 border-black rounded-lg"
                         />
                       </div>
                     ))}
                   </div>
                   {obj.ham && (
-                    <div className="flex gap-0.5 p-2 rounded bg-[#101122]">
+                    <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                       {findValue(
                         sToA(obj.ham).sort((a, b) => {
                           const aIndex = orderMap.get(a) ?? Infinity;
@@ -371,14 +371,14 @@ export default function App() {
                             draggable={false}
                             src={`/P9/${ite}.png`}
                             alt="Core Boon"
-                            className="size-7 border-1 border-white/20 rounded-lg"
+                            className="size-6 md:size-7 border-1 border-black rounded-lg"
                           />
                         </div>
                       ))}
                     </div>
                   )}
                   {obj.mis && (
-                    <div className="flex gap-0.5 p-2 rounded bg-[#101122]">
+                    <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                       {findValue(
                         sToA(obj.mis).sort((a, b) => {
                           const aIndex = orderMap.get(a) ?? Infinity;
@@ -394,14 +394,14 @@ export default function App() {
                             draggable={false}
                             src={`/P9/${ite}.png`}
                             alt="Core Boon"
-                            className="size-7 border-1 border-white/20 rounded-lg"
+                            className="size-6 md:size-7 border-1 border-black rounded-lg"
                           />
                         </div>
                       ))}
                     </div>
                   )}
                   {(obj.duo || obj.ele) && (
-                    <div className="flex flex-wrap gap-0.5 p-2 rounded bg-[#101122]">
+                    <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                       {obj.duo &&
                         findValue(
                           sToA(obj.duo).sort((a, b) => {
@@ -418,7 +418,7 @@ export default function App() {
                               draggable={false}
                               src={`/P9/${ite}.png`}
                               alt="Core Boon"
-                              className="size-7 border-1 border-white/20 rounded-lg"
+                              className="size-6 md:size-7 border-1 border-black rounded-lg"
                             />
                           </div>
                         ))}
@@ -432,14 +432,14 @@ export default function App() {
                               draggable={false}
                               src={`/P9/${ite}.png`}
                               alt="Core Boon"
-                              className="size-7 border-1 border-white/20 rounded-lg"
+                              className="size-6 md:size-7 border-1 border-black rounded-lg"
                             />
                           </div>
                         ))}
                     </div>
                   )}
                   {obj.cha && (
-                    <div className="flex gap-0.5 p-2 rounded bg-[#101122]">
+                    <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                       {findValue(
                         sToA(obj.cha).sort((a, b) => {
                           const aIndex = orderMap.get(a) ?? Infinity;
@@ -455,14 +455,14 @@ export default function App() {
                             draggable={false}
                             src={`/P9/${ite}.png`}
                             alt="Core Boon"
-                            className="size-7 border-1 border-white/20 rounded-lg"
+                            className="size-6 md:size-7 border-1 border-black rounded-lg"
                           />
                         </div>
                       ))}
                     </div>
                   )}
                   {obj.ks && (
-                    <div className="flex gap-0.5 p-2 rounded bg-[#101122]">
+                    <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                       {sToA(obj.ks).map((ite, index) => (
                         <div className="tooltip shrink-0" key={index}>
                           <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
@@ -474,7 +474,7 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <div className="text-gray-300 z-20 p-1 text-[11px]">{obj.des}</div>
+                <div className="text-gray-300 z-20 p-1 pt-0 text-[11px]">{obj.des}</div>
                 <div className="flex flex-wrap gap-1 text-[10px]">
                   {obj.oath && deCodeVow(obj.oath)[16] !== 0 && (
                     <div className="px-1 py-0.5 bg-[#28282b] rounded">{findRivals(deCodeVow(obj.oath)[16])}</div>
