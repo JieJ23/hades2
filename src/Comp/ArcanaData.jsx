@@ -69,7 +69,7 @@ export default function ArcanaData() {
           <div className="flex flex-col items-center text-[11px]">
             <img src={`/Arcane/${ite}.png`} alt="Arcana Card" className="w-[80px] h-[120px]" />
             <div>{deckMatch[ite]}</div>
-            <div>{arcana_Counts[ite] ? `${((arcana_Counts[ite] / arcanaData.length) * 100).toFixed(2)}%` : `-`}</div>
+            <div>{arcana_Counts[ite] ? `${((arcana_Counts[ite] / displayData.length) * 100).toFixed(2)}%` : `-`}</div>
           </div>
         ))}
       </div>
