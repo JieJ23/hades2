@@ -9,7 +9,7 @@ import { p9boons } from "../Data/P9BoonObj";
 import Background from "../Comp/Background";
 import RaderP from "../Comp/RadarP";
 import { findGUIcard } from "../App";
-import { daysAgo, parseTimetoms, deCodeArcana, deCodeVow, oathMatch, vowMatch, deckMatch } from "../Data/Misc";
+import { deCodeArcana, deCodeVow, oathMatch, vowMatch, deckMatch } from "../Data/Misc";
 import Footer from "../Comp/Footer";
 
 const defineAllPlayers = [...new Set(p9data.map((obj) => obj.nam))].sort();
@@ -32,7 +32,7 @@ export default function Player() {
     <main className="relative">
       <Background />
       <Head />
-      <div className="max-w-[1200px] font-[PT] text-[12px] md:text-[14px] mx-auto">
+      <div className="max-w-[1200px] font-[Source] text-[12px] md:text-[14px] mx-auto">
         <SideNav />
         <div className="px-2 relative flex gap-1 my-4 mb-2">
           <input
@@ -162,14 +162,14 @@ export default function Player() {
                           <div>{obj.fam}</div>
                         </div>
                       </div>
-                      <div className="flex items-center gap-0.5 bg-[#28282b] text-white rounded px-2 py-1">
+                      <div className="flex items-center gap-0.5 bg-[#28282b] text-white rounded pe-2 p-1">
                         <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
-                        <div>{daysAgo(obj.dat)}</div>
+                        <div>{obj.dat}</div>
                       </div>
 
                       {obj.src !== "" && (
                         <Link
-                          className="flex items-center bg-[#fff] text-black border-1 border-black rounded px-2 py-1"
+                          className="flex items-center bg-[#fff] text-black border-1 border-black rounded ps-2 p-1"
                           to={obj.src}
                           target="_blank"
                         >
@@ -181,7 +181,7 @@ export default function Player() {
                         <Link
                           to={obj.arcana}
                           target="_blank"
-                          className="flex items-center justify-center bg-[#fff] text-black rounded px-2 py-1"
+                          className="flex items-center justify-center bg-[#fff] text-black rounded ps-2 p-1"
                         >
                           <span>Arcana</span>
                           <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
@@ -191,7 +191,7 @@ export default function Player() {
                         <Link
                           to={obj.oath}
                           target="_blank"
-                          className="flex items-center justify-center bg-[#fff] text-black rounded px-2 py-1"
+                          className="flex items-center justify-center bg-[#fff] text-black rounded ps-2 p-1"
                         >
                           <span>Oath</span>
                           <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
@@ -344,7 +344,7 @@ export default function Player() {
                     <div className="flex flex-wrap gap-1 text-[10px] pt-1">
                       {obj.oath &&
                         deCodeVow(obj.oath)
-                          .map((ite, index) => +oathMatch[index].indexOf(ite))
+                          .map((ite1, index) => oathMatch[index].indexOf(ite1))
                           .map(
                             (ite, index) =>
                               ite !== 0 && (

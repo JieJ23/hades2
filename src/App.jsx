@@ -6,7 +6,6 @@ import {
   h2AspectOrder,
   sToA,
   parseTimetoms,
-  daysAgo,
   deCodeVow,
   deCodeArcana,
   deckMatch,
@@ -311,14 +310,14 @@ export default function App() {
                       <div>{obj.fam}</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-0.5 bg-[#28282b] text-white rounded px-2 py-1">
+                  <div className="flex items-center gap-0.5 bg-[#28282b] text-white rounded pe-2 p-1">
                     <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
-                    <div>{daysAgo(obj.dat)}</div>
+                    <div>{obj.dat}</div>
                   </div>
 
                   {obj.src !== "" && (
                     <Link
-                      className="flex items-center bg-[#fff] text-black border-1 border-black rounded px-2 py-1"
+                      className="flex items-center bg-[#fff] text-black border-1 border-black rounded ps-2 p-1"
                       to={obj.src}
                       target="_blank"
                     >
@@ -330,7 +329,7 @@ export default function App() {
                     <Link
                       to={obj.arcana}
                       target="_blank"
-                      className="flex items-center justify-center bg-[#fff] text-black rounded px-2 py-1"
+                      className="flex items-center justify-center bg-[#fff] text-black rounded ps-2 p-1"
                     >
                       <span>Arcana</span>
                       <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
@@ -340,7 +339,7 @@ export default function App() {
                     <Link
                       to={obj.oath}
                       target="_blank"
-                      className="flex items-center justify-center bg-[#fff] text-black rounded px-2 py-1"
+                      className="flex items-center justify-center bg-[#fff] text-black rounded ps-2 p-1"
                     >
                       <span>Oath</span>
                       <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
