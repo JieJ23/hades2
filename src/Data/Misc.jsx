@@ -242,3 +242,20 @@ export const vowMatch = [
   `Denial`,
   `Rivals`,
 ];
+
+export function reduceOathData(data) {
+  const result = [];
+
+  for (let i = 0; i < 17; i++) {
+    const counter = new Map();
+
+    for (const arr of data) {
+      const value = arr[i];
+      counter.set(value, (counter.get(value) || 0) + 1);
+    }
+
+    const countsArray = Array.from(counter.entries()).sort((a, b) => a[0] - b[0]);
+    result.push(countsArray);
+  }
+  return result;
+}

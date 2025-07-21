@@ -142,10 +142,8 @@ export default function P9BoonData() {
   return (
     <div className="max-w-[1400px] font-[Source] text-[12px] md:text-[13px] mx-auto my-2">
       {/* <P9Core /> */}
-      <div className="rounded bg-black/80 border-1 border-black px-2 mb-4">
-        <div className="py-1 pt-4 px-2 text-[14px]">
-          Staff - {(100 * (allStaff / p9data.length)).toFixed(2)}% of count
-        </div>
+      <div className="rounded px-2 py-4 mb-4">
+        <div className="px-2 pb-1 font-[Cinzel]">Staff - {(100 * (allStaff / p9data.length)).toFixed(2)}% of count</div>
         <div className="flex flex-wrap gap-1">
           {hammerStaff.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
@@ -171,7 +169,9 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="py-1 pt-4 px-2 text-[14px]">Axe - {(100 * (allAxe / p9data.length)).toFixed(2)}% of count</div>
+        <div className="py-1 pt-4 px-2 font-[Cinzel]">
+          Axe - {(100 * (allAxe / p9data.length)).toFixed(2)}% of count
+        </div>
         <div className="flex flex-wrap gap-1">
           {hammerAxe.map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
@@ -195,7 +195,7 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="py-1 pt-4 px-2 text-[14px]">
+        <div className="py-1 pt-4 px-2 font-[Cinzel]">
           Blades - {(100 * (allBlades / p9data.length)).toFixed(2)}% of count
         </div>
         <div className="flex flex-wrap gap-1">
@@ -223,7 +223,7 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="py-1 pt-4 px-2 text-[14px]">
+        <div className="py-1 pt-4 px-2 font-[Cinzel]">
           Flames - {(100 * (allFlames / p9data.length)).toFixed(2)}% of count
         </div>
         <div className="flex flex-wrap gap-1">
@@ -251,7 +251,7 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="py-1 pt-4 px-2 text-[14px]">
+        <div className="py-1 pt-4 px-2 font-[Cinzel]">
           Skull - {(100 * (allSkull / p9data.length)).toFixed(2)}% of count
         </div>
         <div className="flex flex-wrap gap-1">
@@ -279,7 +279,7 @@ export default function P9BoonData() {
             </div>
           ))}
         </div>
-        <div className="py-1 pt-4 px-2 text-[14px]">
+        <div className="py-1 pt-4 px-2 font-[Cinzel]">
           Coat - {(100 * (allCoat / p9data.length)).toFixed(2)}% of count
         </div>
         <div className="flex flex-wrap gap-1">
@@ -308,7 +308,7 @@ export default function P9BoonData() {
           ))}
         </div>
       </div>
-      <div className="px-2 flex gap-1">
+      <div className="px-4 flex gap-1">
         <select
           value={weapontype}
           className="select select-sm w-[100px] border-1 focus:outline-0 border-[#00ffaa] rounded"
@@ -344,13 +344,13 @@ export default function P9BoonData() {
           }}
         />
       </div>
-      <div className="px-2 py-1 flex gap-2">
+      <div className="px-4 pt-2 flex gap-2">
         <div>Query Fear:</div>
-        <div className="text-[#f18043] backdrop-blur-lg">Min [{min}]</div>
-        <div className="text-[#f18043] backdrop-blur-lg">Max [{max}]</div>
-        <div className="text-[#fff200] backdrop-blur-lg">[{displayData.length}]</div>
+        <div className="text-[#f18043]">Min [{min}]</div>
+        <div className="text-[#f18043]">Max [{max}]</div>
+        <div className="text-[#fff200]">[{displayData.length}]</div>
       </div>
-      <div className="rounded bg-[#000000b5] p-2 pb-1 pt-4 mb-4">
+      <div className="rounded px-2 mb-4">
         {core_attribute.map((ite) => (
           <div className="flex flex-wrap gap-1 py-2">
             {findBoonTotal(core_Counts, ite).map((arr, index) => (
@@ -378,7 +378,7 @@ export default function P9BoonData() {
           </div>
         ))}
       </div>
-      <div className="rounded bg-[#000000b5] p-2 pb-1 pt-4 mb-4">
+      <div className="rounded px-2 mb-4">
         <div className="flex flex-wrap gap-1 py-2">
           {Object.entries(core_Fam)
             .sort((a, b) => b[1] - a[1])
