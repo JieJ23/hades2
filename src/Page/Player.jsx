@@ -17,7 +17,7 @@ const defineAllPlayers = [...new Set(p9data.map((obj) => obj.nam))].sort();
 export default function Player() {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [playerhistory, setPlayerhistory] = useState(``);
+  const [playerhistory, setPlayerhistory] = useState(`睿智的林带雨`);
 
   const filteredName = defineAllPlayers.filter((nam) => nam.toLowerCase().includes(query.toLowerCase()));
 

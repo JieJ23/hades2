@@ -482,7 +482,7 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <div className="text-gray-300 z-20 p-1 pt-0 text-[11px]">{obj.des}</div>
+                <div className="text-white z-20 p-1 pt-0 text-[11px]">{obj.des}</div>
                 <div className="flex flex-wrap gap-1 text-[10px]">
                   {obj.arcana &&
                     deCodeArcana(obj.arcana)
