@@ -14,7 +14,7 @@ const feaCountsArray = Object.entries(feaCountsObj).map(([num, count]) => ({
 
 export default function BarFear() {
   return (
-    <div className="h-[300px] w-full max-w-[1400px] mx-auto px-2 text-[12px] font-[Source] mt-6">
+    <div className="h-[300px] w-full max-w-[1200px] mx-auto px-2 text-[12px] font-[Source] mt-6">
       <div className="text-[15px] font-[Cinzel]">Fear Summary</div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart

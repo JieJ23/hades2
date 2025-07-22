@@ -34,7 +34,7 @@ export default function ArcanaData() {
   const oathArrayData = reduceOathData(oathStore);
 
   return (
-    <div className="rounded mt-8 w-full max-w-[1400px] mx-auto font-[Source] text-[12px] md:text-[13px] py-4 px-2">
+    <div className="rounded mt-8 w-full max-w-[1200px] mx-auto font-[Source] text-[12px] md:text-[13px] py-4 px-2">
       <div className="px-2 font-[Cinzel]">Arcana & Vows</div>
       <div className="px-2 py-1 flex gap-1">
         <input

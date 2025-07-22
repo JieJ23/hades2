@@ -6,6 +6,7 @@ export const sites = [
   { icon: `Melinoe`, link: `Ranking`, nam: `Ranking` },
   { icon: `Boon2`, link: `Trend`, nam: `Boon Trend` },
   { icon: `Stats`, link: `Stats`, nam: `Stats` },
+  { icon: `Save`, link: `Savestate`, nam: `Savestate` },
   { icon: `Player`, link: `Player`, nam: `Player` },
   { icon: `Patch8`, link: `Patch8`, nam: `Patch 8` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },

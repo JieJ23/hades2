@@ -140,7 +140,7 @@ export default function P9BoonData() {
   // }, {});
 
   return (
-    <div className="max-w-[1400px] font-[Source] text-[12px] md:text-[13px] mx-auto my-2">
+    <div className="max-w-[1200px] font-[Source] text-[11px] md:text-[12px] mx-auto my-2">
       {/* <P9Core /> */}
       <div className="rounded px-2 py-4 mb-4">
         <div className="px-2 pb-1 font-[Cinzel]">Staff - {(100 * (allStaff / p9data.length)).toFixed(2)}% of count</div>
@@ -151,7 +151,7 @@ export default function P9BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (ite[1] / allStaff)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `border-white/20`
+                    : `bg-[#131111] border-white/20`
                 }`}
               >
                 <img
@@ -177,7 +177,9 @@ export default function P9BoonData() {
             <div className="flex flex-wrap gap-1" key={index}>
               <div
                 className={`flex gap-1 rounded border-1 p-2 ${
-                  (100 * (ite[1] / allAxe)).toFixed(2) >= 25 ? `bg-[#00ffaa] text-black border-none` : `border-white/20`
+                  (100 * (ite[1] / allAxe)).toFixed(2) >= 25
+                    ? `bg-[#00ffaa] text-black border-none`
+                    : `bg-[#131111] border-white/20`
                 }`}
               >
                 <img
@@ -205,7 +207,7 @@ export default function P9BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (ite[1] / allBlades)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `border-white/20`
+                    : `bg-[#131111] border-white/20`
                 }`}
               >
                 <img
@@ -233,7 +235,7 @@ export default function P9BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (ite[1] / allFlames)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `border-white/20`
+                    : `bg-[#131111] border-white/20`
                 }`}
               >
                 <img
@@ -261,7 +263,7 @@ export default function P9BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (ite[1] / allSkull)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `border-white/20`
+                    : `bg-[#131111] border-white/20`
                 }`}
               >
                 <img
@@ -289,7 +291,7 @@ export default function P9BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (ite[1] / allCoat)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `border-white/20`
+                    : `bg-[#131111] border-white/20`
                 }`}
               >
                 <img
@@ -358,7 +360,7 @@ export default function P9BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (arr[1] / displayData.length)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `border-white/20`
+                    : `bg-[#131111] border-white/20`
                 }`}
                 key={index}
               >
@@ -388,7 +390,7 @@ export default function P9BoonData() {
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#00ffaa] text-black border-none`
-                      : `border-white/20`
+                      : `bg-[#131111] border-white/20`
                   }`}
                 >
                   <img
@@ -417,7 +419,7 @@ export default function P9BoonData() {
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#00ffaa] text-black border-none`
-                      : `border-white/20`
+                      : `bg-[#131111] border-white/20`
                   }`}
                 >
                   <img
@@ -446,7 +448,7 @@ export default function P9BoonData() {
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#00ffaa] text-black border-none`
-                      : `border-white/20`
+                      : `bg-[#131111] border-white/20`
                   }`}
                 >
                   <img
@@ -480,7 +482,7 @@ export default function P9BoonData() {
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#00ffaa] text-black border-none`
-                      : `border-white/20`
+                      : `bg-[#131111] border-white/20`
                   }`}
                 >
                   <img
@@ -509,7 +511,7 @@ export default function P9BoonData() {
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#00ffaa] text-black border-none`
-                      : `border-white/20`
+                      : `bg-[#131111] border-white/20`
                   }`}
                 >
                   <img
