@@ -13,6 +13,7 @@ import {
   vowMatch,
 } from "./Data/Misc";
 import { p9data } from "./Data/P9Data";
+import { p11data } from "./Data/P11Data";
 import { testData } from "./Data/P9TestData";
 import { p9boons_reverse, p9boons, allP9 } from "./Data/P9BoonObj";
 import Background from "./Comp/Background";
@@ -44,21 +45,16 @@ export const findValue = (arr) => {
   return finalized;
 };
 //
-const highfear = p9data.slice().sort((a, b) => {
-  const feaDiff = +b.fea - +a.fea;
-  if (feaDiff !== 0) return feaDiff;
-  return parseTimetoms(a.tim) - parseTimetoms(b.tim);
-});
-//
-const entriesOnlyVod = highfear.slice().filter((obj) => obj.src !== "");
 
 const availableRegion = [`Underworld`, `Surface`];
+const allPatches = [p11data, p9data];
 
 const handleLoadMore = (updater) => {
   updater((prev) => prev + 50);
 };
 
 export default function App() {
+  const [patch, setPatch] = useState(0);
   const [region, setRegion] = useState(`All`);
   const [category, setCategory] = useState(`All`);
   const [show, setShow] = useState(20);
@@ -68,6 +64,14 @@ export default function App() {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [hasvod, setHasVod] = useState(false);
+
+  const highfear = allPatches[patch].slice().sort((a, b) => {
+    const feaDiff = +b.fea - +a.fea;
+    if (feaDiff !== 0) return feaDiff;
+    return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+  });
+  //
+  const entriesOnlyVod = highfear.slice().filter((obj) => obj.src !== "");
 
   const filteredBoons = allP9.filter((boon) => boon.toLowerCase().includes(query.toLowerCase()));
 
@@ -110,8 +114,33 @@ export default function App() {
       <Head />
       <div className="max-w-[1200px] font-[Source] text-[12px] md:text-[13px] mx-auto">
         <SideNav />
-        <section className="w-full px-2">
-          <div className="text-[15px] p-2 py-0 font-[Cinzel]">Highest Fear Patch 9 & 10</div>
+        <section className="w-full p-2">
+          <div className="flex gap-1 px-2">
+            <button
+              onClick={() => {
+                setRegion(`All`);
+                setCategory(`All`);
+                setPatch(0);
+              }}
+              className={`cursor-pointer px-2 py-1 text-black font-[Source] text-[12px] rounded ${
+                patch == 0 ? `bg-[#00ffaa]` : `bg-white`
+              }`}
+            >
+              Patch 11
+            </button>
+            <button
+              onClick={() => {
+                setRegion(`All`);
+                setCategory(`All`);
+                setPatch(1);
+              }}
+              className={`cursor-pointer px-2 py-1 text-black font-[Source] text-[12px] rounded ${
+                patch == 1 ? `bg-[#00ffaa]` : `bg-white`
+              }`}
+            >
+              Patch 9 & 10
+            </button>
+          </div>
           <div className="px-2 py-1 flex gap-1">
             <input
               type="number"
@@ -515,7 +544,7 @@ export default function App() {
               <div className="hidden md:block">
                 <img src={`/GUI_Card/${obj.fam}.png`} alt="Familiar" className="w-[80px] rounded" draggable={false} />
               </div>
-              {obj.arcana && (
+              {/* {obj.arcana && (
                 <Link target="_blank" to={obj.arcana} className="hidden md:block">
                   <img src={`/Arcane/c0.png`} alt="Arcana" className="w-[80px] rounded" draggable={false} />
                 </Link>
@@ -524,7 +553,7 @@ export default function App() {
                 <Link target="_blank" to={obj.oath} className="hidden md:block">
                   <img src={`/Misc/Oath.png`} alt="Oath" className="w-[80px] rounded" draggable={false} />
                 </Link>
-              )}
+              )} */}
             </div>
           ))}
         </section>
