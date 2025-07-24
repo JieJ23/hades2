@@ -1,6 +1,7 @@
 import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import { p9data } from "../Data/P9Data";
+import { p11data } from "../Data/P11Data";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { sToA } from "../Data/Misc";
@@ -12,7 +13,9 @@ import { findGUIcard } from "../App";
 import { deCodeArcana, deCodeVow, oathMatch, vowMatch, deckMatch } from "../Data/Misc";
 import Footer from "../Comp/Footer";
 
-const defineAllPlayers = [...new Set(p9data.map((obj) => obj.nam))].sort();
+const allData = [...p11data, ...p9data];
+
+const defineAllPlayers = [...new Set(allData.map((obj) => obj.nam))].sort();
 
 export default function Player() {
   const [query, setQuery] = useState("");
@@ -21,7 +24,9 @@ export default function Player() {
 
   const filteredName = defineAllPlayers.filter((nam) => nam.toLowerCase().includes(query.toLowerCase()));
 
-  const selectedPlayerData = p9data.filter((obj) => obj.nam == playerhistory);
+  const selectedPlayerData = allData
+    .filter((obj) => obj.nam == playerhistory)
+    .sort((a, b) => new Date(b.dat) - new Date(a.dat));
 
   const target_aspect = [...new Set(selectedPlayerData.map((obj) => obj.asp))];
   const target_uw = selectedPlayerData.filter((obj) => obj.loc === `Underworld`);
@@ -371,16 +376,6 @@ export default function Player() {
                       draggable={false}
                     />
                   </div>
-                  {obj.arcana && (
-                    <Link target="_blank" to={obj.arcana} className="hidden md:block">
-                      <img src={`/Arcane/c0.png`} alt="Arcana" className="w-[80px] rounded" draggable={false} />
-                    </Link>
-                  )}
-                  {obj.oath && (
-                    <Link target="_blank" to={obj.oath} className="hidden md:block">
-                      <img src={`/Misc/Oath.png`} alt="Oath" className="w-[80px] rounded" draggable={false} />
-                    </Link>
-                  )}
                 </div>
               ))}
             </section>

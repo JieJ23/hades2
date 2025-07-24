@@ -2,6 +2,7 @@ import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import { p9data } from "../Data/P9Data";
+import { p11data } from "../Data/P11Data";
 import { findGUIcard } from "../App";
 import { parseTimetoms } from "../Data/Misc";
 import { useState } from "react";
@@ -19,33 +20,36 @@ const weaponType = [
 
 const weaponCategory = [weaponStaff, weaponAxe, weaponBlades, weaponFlames, weaponSkull, weaponCoat];
 
-const dataOrder = p9data
-  .slice()
-  .sort((a, b) => {
-    const feaDiff = +b.fea - +a.fea;
-    if (feaDiff !== 0) return feaDiff;
-    return parseTimetoms(a.tim) - parseTimetoms(b.tim);
-  })
-  .filter((obj) => obj.fea >= 50);
-
-const fullData = [];
-
-for (let i = 0; i < weaponCategory.length; i++) {
-  const seen = new Set();
-  const uniqueByNam = dataOrder
-    .filter((obj) => weaponCategory[i].includes(obj.asp))
-    .filter((item) => {
-      const key = `${item.nam}-${item.asp}`; // Composite key
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
-  fullData.push(uniqueByNam);
-}
-
 export default function Ranking() {
   const [select, setSelect] = useState(null);
   const [selectAspect, setSelectAspect] = useState(null);
+  const [patch, setPatch] = useState(0);
+
+  const fullPatchData = [p11data, p9data];
+
+  const dataOrder = fullPatchData[patch]
+    .slice()
+    .sort((a, b) => {
+      const feaDiff = +b.fea - +a.fea;
+      if (feaDiff !== 0) return feaDiff;
+      return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+    })
+    .filter((obj) => obj.fea >= 32);
+
+  const fullData = [];
+
+  for (let i = 0; i < weaponCategory.length; i++) {
+    const seen = new Set();
+    const uniqueByNam = dataOrder
+      .filter((obj) => weaponCategory[i].includes(obj.asp))
+      .filter((item) => {
+        const key = `${item.nam}-${item.asp}`; // Composite key
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+    fullData.push(uniqueByNam);
+  }
 
   return (
     <main className="relative">
@@ -53,6 +57,30 @@ export default function Ranking() {
       <Head />
       <div className="max-w-[1400px] font-[Source] text-[11px] md:text-[12px] mx-auto text-white select-none">
         <SideNav />
+        <section className="w-full p-2">
+          <div className="flex gap-1 px-2">
+            <button
+              onClick={() => {
+                setPatch(0);
+              }}
+              className={`cursor-pointer px-2 py-1 text-black font-[Source] text-[12px] rounded ${
+                patch == 0 ? `bg-[#00ffaa]` : `bg-white`
+              }`}
+            >
+              Patch 11
+            </button>
+            <button
+              onClick={() => {
+                setPatch(1);
+              }}
+              className={`cursor-pointer px-2 py-1 text-black font-[Source] text-[12px] rounded ${
+                patch == 1 ? `bg-[#00ffaa]` : `bg-white`
+              }`}
+            >
+              Patch 9 & 10
+            </button>
+          </div>
+        </section>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-2 py-6">
           {fullData.map((weaponData, index) => (
             <div key={index} className="flex flex-col gap-1.5">

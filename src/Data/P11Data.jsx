@@ -63,4 +63,20 @@ export const p11data = [
     cor: "ZeuAttack,ApoSpecial,PosCast,ApoSprint,Magick",
     ham: "Wicked Thrasher,Aetheric Moonburst",
   },
+  {
+    dat: "2025-07-23",
+    nam: "unexplainedbacn",
+    asp: "Thanatos",
+    loc: "Surface",
+    fea: "32",
+    src: "https://www.youtube.com/watch?v=pnFrHHbeza4",
+    des: "Today's balance patch gave Thanatos a nice boost: the base axe attack combo hits way harder so it's kinda like having old Mel and old Thanatos combined now, you can build up to 16% crit and it builds twice as fast, and it feels like the Omega attack hits faster.",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM0IiwiYzUiLCJjNiIsImM3IiwiYzEwIiwiYzExIiwiYzEzIiwiYzE1IiwiYzE2IiwiYzE3IiwiYzIxIiwiYzIyIiwiYzIzIiwiYzI0Il0=",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzEsMCwwLDYsMCwzLDAsNSwxLDAsMCwwLDYsMCwyLDAsOF0=",
+    tim: "16:17.85",
+    fam: "Raven",
+    cor: "AphAttack,Special,DemCast,DemSprint,AphMagick",
+    ham: "Psychic Whirlwind,Colossus Slash,Melting Shredder",
+  },
 ];

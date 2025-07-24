@@ -2,6 +2,7 @@ import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import { p9data } from "../Data/P9Data";
+import { p11data } from "../Data/P11Data";
 import { sToA } from "../Data/Misc";
 import { p9boons_reverse } from "../Data/P9BoonObj";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
@@ -10,7 +11,7 @@ import Footer from "../Comp/Footer";
 
 const lineColor = [`#00ffaa`, `#f18043`, `#00aaff`, `#f23219`, `#f8b2bb`];
 
-const entriesByData = p9data.slice().sort((a, b) => new Date(a.dat) - new Date(b.dat));
+const entriesByData = [...p9data, ...p11data].slice().sort((a, b) => new Date(a.dat) - new Date(b.dat));
 
 function getUniqueValueCounts(data, keys, sToA) {
   const counts = {};
