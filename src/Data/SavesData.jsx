@@ -1,6 +1,7 @@
 export const savestates = [
   {
     share: `Coldshade`,
+    patch: `Patch 9/10`,
     loc: `Oceanus`,
     asp: `Moros`,
     arcana: `https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMzIiwiYzQiLCJjNSIsImM3IiwiYzEyIiwiYzEzIiwiYzE1IiwiYzE2IiwiYzE3IiwiYzE4IiwiYzIxIiwiYzIyIl0=`,
@@ -14,6 +15,7 @@ export const savestates = [
   },
   {
     share: `Foolish`,
+    patch: `Patch 9/10`,
     loc: `Tartarus`,
     asp: `Nergal`,
     arcana: `https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjQiXQ==`,
@@ -27,6 +29,7 @@ export const savestates = [
   },
   {
     share: `Foolish`,
+    patch: `Patch 9/10`,
     loc: `Tartarus`,
     asp: `Nyx`,
     fea: 62,
@@ -40,6 +43,7 @@ export const savestates = [
   },
   {
     share: `Foolish`,
+    patch: `Patch 9/10`,
     loc: `Tartarus`,
     asp: `Medea`,
     fea: 62,
@@ -53,6 +57,7 @@ export const savestates = [
   },
   {
     share: `Foolish`,
+    patch: `Patch 9/10`,
     loc: `Olympus`,
     asp: `Medea`,
     fea: 62,
@@ -66,6 +71,7 @@ export const savestates = [
   },
   {
     share: `Foolish`,
+    patch: `Patch 9/10`,
     loc: `Fields`,
     asp: `Morrigan`,
     fea: 62,
@@ -79,6 +85,7 @@ export const savestates = [
   },
   {
     share: `Coldshade`,
+    patch: `Patch 9/10`,
     loc: `Fields`,
     asp: `Supay`,
     fea: 58,
@@ -92,6 +99,7 @@ export const savestates = [
   },
   {
     share: `Coldshade`,
+    patch: `Patch 9/10`,
     loc: `Oceanus`,
     asp: `Eos`,
     fea: 58,
@@ -105,6 +113,7 @@ export const savestates = [
   },
   {
     share: `Sandwiche`,
+    patch: `Patch 9/10`,
     loc: `Tartarus`,
     asp: `Anubis`,
     fea: 62,
@@ -118,6 +127,7 @@ export const savestates = [
   },
   {
     share: `Sandwiche`,
+    patch: `Patch 9/10`,
     loc: `Fields`,
     asp: `Moros`,
     fea: 62,
@@ -131,6 +141,7 @@ export const savestates = [
   },
   {
     share: `Foolish`,
+    patch: `Patch 9/10`,
     loc: `Tartarus`,
     asp: `Hel`,
     fea: 62,
@@ -144,6 +155,7 @@ export const savestates = [
   },
   {
     share: `Foolish`,
+    patch: `Patch 9/10`,
     loc: `Fields`,
     asp: `Hel`,
     fea: 62,
@@ -155,17 +167,4 @@ export const savestates = [
     ks: `Engraved Pin`,
     save: `https://drive.google.com/file/d/19p7XvqyVkLOaEhhvrKLCVRmcuJc9P3Hw/view?usp=drive_link`,
   },
-  //     {
-  //   share: ``,
-  //   loc: ``,
-  //   asp: ``,
-  //   fea: ,
-  //   fam: ``,
-  //   arcana: ``,
-  //   oath: ``,
-  //   cor: ``,
-  //   oth: ``,
-  //   ks: ``,
-  //   save: ``,
-  // },
 ];

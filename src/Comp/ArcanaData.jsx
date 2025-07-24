@@ -1,16 +1,15 @@
-import { p9data } from "../Data/P9Data";
 import { deckMatch, deCodeArcana, reduceOathData, vowMatch } from "../Data/Misc";
 import { useState } from "react";
 import { deCodeVow } from "../Data/Misc";
 
 const allDeckCards = Object.keys(deckMatch);
 
-export default function ArcanaData() {
+export default function ArcanaData({ data }) {
   const [min, setMin] = useState(22);
   const [max, setMax] = useState(67);
 
-  const arcanaData = p9data.filter((obj) => obj.arcana);
-  const oathData = p9data.filter((obj) => obj.oath).filter((obj) => obj.fea >= min && obj.fea <= max);
+  const arcanaData = data.filter((obj) => obj.arcana);
+  const oathData = data.filter((obj) => obj.oath).filter((obj) => obj.fea >= min && obj.fea <= max);
 
   const displayData = arcanaData.filter((obj) => obj.fea >= min && obj.fea <= max);
 

@@ -1,26 +1,10 @@
 import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
-import { p9data } from "../Data/P9Data";
 import { h2AspectOrder } from "../Data/Misc";
 
-const targetData = p9data.filter((obj) => obj.loc === `Surface`);
-
-const feaCountsObj = targetData.reduce((acc, item) => {
-  const asp = item.asp;
-  acc[asp] = (acc[asp] || 0) + 1;
-  return acc;
-}, {});
-
-const orderMap = new Map(h2AspectOrder.map((num, index) => [num, index]));
-
-const feaCountsArray = Object.entries(feaCountsObj)
-  .map(([num, count]) => ({
-    num,
-    count,
-  }))
-  .sort((a, b) => orderMap.get(a.num) - orderMap.get(b.num));
-
-export default function BarSurface() {
+export default function BarSurface({ data }) {
   const highestArray = [];
+
+  const targetData = data.filter((obj) => obj.loc === `Surface`);
 
   for (let i = 0; i < h2AspectOrder.length; i++) {
     let available = 0;

@@ -42,6 +42,7 @@ export default function Savestate() {
               <div className="flex flex-wrap gap-1 text-[11px]">
                 <div className="px-2 py-1 bg-[#00ffaa] text-black rounded">{obj.share}</div>
                 <div className="px-2 py-1 bg-[#00ffaa] text-black rounded">{obj.asp}</div>
+                <div className="px-2 py-1 bg-[#00ffaa] text-black rounded">{obj.patch}</div>
                 <div className="px-2 py-1 bg-[#131111] rounded">{obj.fam}</div>
                 <div className="px-2 py-1 bg-[#131111] rounded">{obj.loc}</div>
                 <div className="px-2 py-1 bg-[#131111] rounded">{obj.ks}</div>

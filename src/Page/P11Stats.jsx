@@ -1,8 +1,8 @@
 import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import { h2AspectOrder } from "../Data/Misc";
-import { p9data } from "../Data/P9Data";
-import P9BoonData from "../Comp/P9BoonData";
+import { p11data } from "../Data/P11Data";
+import P11BoonData from "../Comp/P11BoonData";
 // import P9Unseen from "../Comp/P9UnseenData";
 import Background from "../Comp/Background";
 import BarFear from "../Comp/BarFear";
@@ -21,7 +21,7 @@ const getHighestOfEachAspect = (order, data) => {
   });
 };
 
-const highfear = p9data.sort((a, b) => (a.tim > b.tim ? 1 : -1)).sort((a, b) => (a.fea > b.fea ? -1 : 1));
+const highfear = p11data.sort((a, b) => (a.tim > b.tim ? 1 : -1)).sort((a, b) => (a.fea > b.fea ? -1 : 1));
 
 const underworld_runs = highfear.filter((obj) => obj.loc === "Underworld");
 const surface_runs = highfear.filter((obj) => obj.loc === "Surface");
@@ -29,7 +29,7 @@ const surface_runs = highfear.filter((obj) => obj.loc === "Surface");
 const overall_aspect_underworld = getHighestOfEachAspect(h2AspectOrder, underworld_runs);
 const overall_aspect_surface = getHighestOfEachAspect(h2AspectOrder, surface_runs);
 
-export default function Stats() {
+export default function P11Stats() {
   return (
     <main className="h-full min-h-lvh select-none relative">
       <Background />
@@ -81,13 +81,12 @@ export default function Stats() {
           </div>
         </section>
       </div>
-      <BarSurface />
-      <BarUW />
-      <BarAspect />
-      <BarFear />
-      {/* <P9Unseen data={p9data} /> */}
-      <ArcanaData />
-      <P9BoonData />
+      <BarSurface data={p11data} />
+      <BarUW data={p11data} />
+      <BarAspect data={p11data} />
+      <BarFear data={p11data} />
+      <ArcanaData data={p11data} />
+      <P11BoonData />
       <Footer />
     </main>
   );

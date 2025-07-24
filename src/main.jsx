@@ -4,7 +4,8 @@ import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import App from "./App.jsx";
-import Stats from "./Page/Stats.jsx";
+import P910Stats from "./Page/P910Stats.jsx";
+import P11Stats from "./Page/P11Stats.jsx";
 import Trend from "./Page/Trend.jsx";
 import Player from "./Page/Player.jsx";
 import Ranking from "./Page/Ranking.jsx";
@@ -21,7 +22,8 @@ createRoot(document.getElementById("root")).render(
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/Stats" element={<Stats />} />
+        <Route path="/P910Stats" element={<P910Stats />} />
+        <Route path="/P11Stats" element={<P11Stats />} />
         <Route path="/Trend" element={<Trend />} />
         <Route path="/Player" element={<Player />} />
         <Route path="/Ranking" element={<Ranking />} />
