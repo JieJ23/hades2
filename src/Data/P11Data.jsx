@@ -79,4 +79,20 @@ export const p11data = [
     cor: "AphAttack,Special,DemCast,DemSprint,AphMagick",
     ham: "Psychic Whirlwind,Colossus Slash,Melting Shredder",
   },
+  {
+    dat: "2025-07-24",
+    nam: "llzergll",
+    asp: "Thanatos",
+    loc: "Underworld",
+    fea: "58",
+    src: "https://youtu.be/WC703UCsCfY",
+    des: "Than 58 fear, Toula, big max health.",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMzIiwiYzYiLCJjNyIsImM4IiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE2IiwiYzE4IiwiYzIyIl0=",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsOF0=",
+    tim: "19:11.72",
+    fam: "Cat",
+    cor: "HerAttack,Special,PosCast,Sprint,AphMagick",
+    ham: "Seething Marauder,Colossus Slash",
+  },
 ];
