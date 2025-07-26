@@ -155,18 +155,6 @@ export default function Player() {
                       </div>
                     </div>
                     <div className="py-1 flex flex-wrap gap-1 text-[11px]">
-                      <div className="flex items-center gap-1 bg-[#28282b] rounded px-2 py-1">
-                        <img src={`/P9/${obj.asp}.png`} alt="Aspect" className="size-4" draggable={false} />
-                        <div>
-                          <div>{obj.asp}</div>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-1 bg-[#28282b] rounded px-2 py-1">
-                        <img src={`/P9/${obj.fam}.png`} alt="Familiar" className="size-4" draggable={false} />
-                        <div>
-                          <div>{obj.fam}</div>
-                        </div>
-                      </div>
                       <div className="flex items-center gap-0.5 bg-[#28282b] text-white rounded pe-2 p-1">
                         <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
                         <div>{obj.dat}</div>
@@ -204,6 +192,20 @@ export default function Player() {
                       )}
                     </div>
                     <div className="flex items-center flex-wrap py-1 gap-1 gap-y-1">
+                      <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                        <img
+                          draggable={false}
+                          src={`/P9/${obj.asp}.png`}
+                          alt="Core Boon"
+                          className="size-6 md:size-7 border-1 border-black rounded-lg"
+                        />
+                        <img
+                          draggable={false}
+                          src={`/P9/${obj.fam}.png`}
+                          alt="Core Boon"
+                          className="size-6 md:size-7 border-1 border-black rounded-lg"
+                        />
+                      </div>
                       <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                         {sToA(obj.cor).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
@@ -339,7 +341,7 @@ export default function Player() {
                         </div>
                       )}
                     </div>
-                    <div className="text-gray-300 z-20 p-1 pt-0 text-[11px]">{obj.des}</div>
+                    <div className="text-white z-20 p-1 pt-0 text-[11px]">{obj.des}</div>
                     <div className="flex flex-wrap gap-1 text-[10px]">
                       {obj.arcana &&
                         deCodeArcana(obj.arcana)
@@ -348,6 +350,7 @@ export default function Player() {
                     </div>
                     <div className="flex flex-wrap gap-1 text-[10px] pt-1">
                       {obj.oath &&
+                        obj.fea < 58 &&
                         deCodeVow(obj.oath)
                           .map((ite1, index) => oathMatch[index].indexOf(ite1))
                           .map(
@@ -376,6 +379,16 @@ export default function Player() {
                       draggable={false}
                     />
                   </div>
+                  {/* {obj.arcana && (
+                <Link target="_blank" to={obj.arcana} className="hidden md:block">
+                  <img src={`/Arcane/c0.png`} alt="Arcana" className="w-[80px] rounded" draggable={false} />
+                </Link>
+              )}
+              {obj.oath && (
+                <Link target="_blank" to={obj.oath} className="hidden md:block">
+                  <img src={`/Misc/Oath.png`} alt="Oath" className="w-[80px] rounded" draggable={false} />
+                </Link>
+              )} */}
                 </div>
               ))}
             </section>

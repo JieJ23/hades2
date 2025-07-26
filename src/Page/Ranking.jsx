@@ -23,7 +23,7 @@ const weaponCategory = [weaponStaff, weaponAxe, weaponBlades, weaponFlames, weap
 export default function Ranking() {
   const [select, setSelect] = useState(null);
   const [selectAspect, setSelectAspect] = useState(null);
-  const [patch, setPatch] = useState(0);
+  const [patch, setPatch] = useState(1);
 
   const fullPatchData = [p11data, p9data];
 

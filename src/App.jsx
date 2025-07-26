@@ -54,7 +54,7 @@ const handleLoadMore = (updater) => {
 };
 
 export default function App() {
-  const [patch, setPatch] = useState(0);
+  const [patch, setPatch] = useState(1);
   const [region, setRegion] = useState(`All`);
   const [category, setCategory] = useState(`All`);
   const [show, setShow] = useState(20);
@@ -327,18 +327,6 @@ export default function App() {
                   </div>
                 </div>
                 <div className="py-1 flex flex-wrap gap-1 text-[11px]">
-                  <div className="flex items-center gap-1 bg-[#28282b] rounded px-2 py-1">
-                    <img src={`/P9/${obj.asp}.png`} alt="Aspect" className="size-4" draggable={false} />
-                    <div>
-                      <div>{obj.asp}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1 bg-[#28282b] rounded px-2 py-1">
-                    <img src={`/P9/${obj.fam}.png`} alt="Familiar" className="size-4" draggable={false} />
-                    <div>
-                      <div>{obj.fam}</div>
-                    </div>
-                  </div>
                   <div className="flex items-center gap-0.5 bg-[#28282b] text-white rounded pe-2 p-1">
                     <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
                     <div>{obj.dat}</div>
@@ -376,6 +364,20 @@ export default function App() {
                   )}
                 </div>
                 <div className="flex items-center flex-wrap py-1 gap-1 gap-y-1">
+                  <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                    <img
+                      draggable={false}
+                      src={`/P9/${obj.asp}.png`}
+                      alt="Core Boon"
+                      className="size-6 md:size-7 border-1 border-black rounded-lg"
+                    />
+                    <img
+                      draggable={false}
+                      src={`/P9/${obj.fam}.png`}
+                      alt="Core Boon"
+                      className="size-6 md:size-7 border-1 border-black rounded-lg"
+                    />
+                  </div>
                   <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                     {sToA(obj.cor).map((ite, index) => (
                       <div className="tooltip shrink-0" key={index}>
