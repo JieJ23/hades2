@@ -220,4 +220,20 @@ export const p11data = [
     cor: "HesAttack,ZeuSpecial,Cast,ApoSprint,AphMagick",
     ham: "Final Slice,Banshee Brand",
   },
+  {
+    dat: "2025-07-26",
+    nam: "red",
+    asp: "Circe",
+    loc: "Surface",
+    fea: "50",
+    src: "",
+    des: "Scorch go brr",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjNiIsImM3IiwiYzgiLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTkiLCJjMjAiLCJjMjIiLCJjMjMiXQ==",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzAsMywyLDYsMywzLDIsNSwwLDIsMiwzLDMsMCwyLDIsMTJd",
+    tim: "24:17.07",
+    fam: "Raven",
+    cor: "PosAttack,ZeuSpecial,HesCast,Sprint,HesMagick",
+    ham: "Shimmering Moonshot,Rapid Thrasher",
+  },
 ];
