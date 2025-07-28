@@ -193,6 +193,8 @@ export const p11data = [
     fam: "Hound",
     cor: "ZeuAttack,Special,DemCast,Sprint,HerMagick",
     ham: "Sudden Burst,Dividing Blaze",
+    arcana: `https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjMiLCJjMjQiXQ==`,
+    oath: `https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd`,
   },
   {
     dat: "2025-07-23",
