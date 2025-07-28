@@ -403,4 +403,20 @@ export const p11data = [
     cor: "Attack,ApoSpecial,AreCast,Sprint,DemMagick",
     ham: "Sudden Cleaver,Giga Cleaver",
   },
+  {
+    dat: "2025-07-27",
+    nam: "睿智的林带雨",
+    asp: "Charon",
+    loc: "Surface",
+    fea: "62",
+    src: "https://www.bilibili.com/video/BV1r985zqELW/",
+    des: "62热斧2（通关全流程）",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjMiLCJjMjQiXQ==",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
+    tim: "17:52.48",
+    fam: "Polecat",
+    cor: "Attack,ApoSpecial,DemCast,Sprint,ApoMagick",
+    ham: "Giga Cleaver,Sudden Cleaver",
+  },
 ];
