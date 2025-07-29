@@ -558,14 +558,14 @@ export default function App() {
                 </div>
                 {(obj.arcana || obj.oath) && (
                   <div className="w-full">
-                    <div tabIndex={0} className="collapse rounded mt-1 ps-1 font-[Source] text-[11px]">
+                    <div tabIndex={0} className="collapse rounded ps-1 font-[Source] text-[11px]">
                       <div className="collapse-title p-0 min-h-[30px] flex justify-start items-center text-[11px] font-[Source]">
                         <div className="p-1 ps-2 bg-white rounded text-black flex items-center">
                           Quick View Arcana & Vows{" "}
                           <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
                         </div>
                       </div>
-                      <div className="collapse-content px-2 flex flex-col sm:flex-row gap-2">
+                      <div className="collapse-content p-0 flex flex-col sm:flex-row gap-2">
                         <div className="grid grid-cols-5 bg-[#131111] rounded">
                           {obj.arcana &&
                             (() => {
@@ -601,7 +601,11 @@ export default function App() {
                           {obj.oath && (
                             <div className="grid grid-cols-4 gap-2">
                               {allVows.map((item, index) => (
-                                <div className="rounded px-2 sm:px-4 p-1 text-[10px] bg-[#131111]">
+                                <div
+                                  className={`rounded px-2 sm:px-4 p-1 text-[10px] bg-[#131111] ${
+                                    index === 16 && `col-start-2 col-span-2`
+                                  }`}
+                                >
                                   <div className="text-center">{item}</div>
                                   <img
                                     src={`/Vows/${item}.png`}
