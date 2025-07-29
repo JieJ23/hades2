@@ -649,6 +649,22 @@ export const p11data = [
     cor: "ZeuAttack,AreSpecial,HerCast,ApoSprint,AphMagick",
     ham: "Siege Frame,Rapid Frame",
   },
+  {
+    dat: "2025-07-29",
+    nam: "睿智的林带雨",
+    asp: "Melinoe Coat",
+    loc: "Surface",
+    fea: "62",
+    src: "https://www.bilibili.com/video/BV1Ld89zzEKz/",
+    des: "62热战衣1 雷霆轰炸坤",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjMiLCJjMjQiXQ==",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
+    tim: "18:56.19",
+    fam: "Polecat",
+    cor: "PosAttack,ZeuSpecial,DemCast,Sprint,Magick",
+    ham: "Shimmering Rockets,Furious Rockets",
+  },
   // {
   //   dat: "2025-07-28",
   //   nam: "Boated",
