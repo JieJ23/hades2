@@ -617,12 +617,16 @@ export default function App() {
                           )}
                         </div>
                         <div className="flex gap-2 px-2">
-                          <div className="text-[#00ffaa]">
-                            Total Fear: {deCodeVow(obj.oath).reduce((a, b) => a + b, 0)}
-                          </div>
-                          <div className="text-[#00ffaa]">
-                            Total Grasp: {deCodeArcana(obj.arcana).reduce((a, b) => a + defineDeck(b).g, 0)}
-                          </div>
+                          {obj.oath && (
+                            <div className="text-[#00ffaa]">
+                              Total Fear: {deCodeVow(obj.oath).reduce((a, b) => a + b, 0)}
+                            </div>
+                          )}
+                          {obj.arcana && (
+                            <div className="text-[#00ffaa]">
+                              Total Grasp: {deCodeArcana(obj.arcana).reduce((a, b) => a + defineDeck(b).g, 0)}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
