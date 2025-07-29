@@ -526,6 +526,7 @@ export default function App() {
                     </div>
                     <div className="flex flex-wrap gap-1 text-[10px] pt-1">
                       {obj.oath &&
+                        obj.fea < 58 &&
                         deCodeVow(obj.oath)
                           .map((ite1, index) => oathMatch[index].indexOf(ite1))
                           .map(
@@ -615,7 +616,7 @@ export default function App() {
                             </div>
                           )}
                         </div>
-                        <div className="hidden sm:block">
+                        <div className="flex gap-2 px-2">
                           <div className="text-[#00ffaa]">
                             Total Fear: {deCodeVow(obj.oath).reduce((a, b) => a + b, 0)}
                           </div>

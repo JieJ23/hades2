@@ -122,6 +122,8 @@ export const p11data = [
     fam: "Frog",
     cor: "AreAttack,HerSpecial,DemCast,Sprint,HepMagick",
     ham: "Trick Knives,Reaper Knives,Wicked Onslaught",
+    arcana: `https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMiIsImMzIiwiYzYiLCJjNyIsImM4IiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE2IiwiYzE3IiwiYzIxIiwiYzIyIiwiYzI0Il0=`,
+    oath: `https://h2crossroads.pages.dev/FearCalculator/?vows=WzAsMiwyLDYsMywzLDIsNSwwLDAsMiwzLDYsMCwyLDIsMTJd`,
   },
   {
     dat: "2025-07-25",
@@ -208,6 +210,8 @@ export const p11data = [
     fam: "Hound",
     cor: "AphAttack,HerSpecial,DemCast,ApoSprint,HerMagick",
     ham: "Counter Supreme",
+    arcana: `https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM1IiwiYzciLCJjMTAiLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjQiXQ==`,
+    oath: `https://h2crossroads.pages.dev/FearCalculator/?vows=WzAsMywwLDYsMCwzLDIsNSwxLDAsMiwwLDYsMCwwLDAsMTJd`,
   },
   {
     dat: "2025-07-25",
