@@ -587,7 +587,7 @@ export const p11data = [
   },
   {
     dat: "2025-07-28",
-    nam: "Red",
+    nam: "red",
     asp: "Circe",
     loc: "Underworld",
     fea: "62",
