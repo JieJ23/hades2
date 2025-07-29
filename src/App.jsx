@@ -559,7 +559,8 @@ export default function App() {
                 {(obj.arcana || obj.oath) && (
                   <div className="w-full">
                     <div tabIndex={0} className="collapse rounded ps-1 font-[Source] text-[11px]">
-                      <div className="collapse-title p-0 min-h-[30px] flex justify-start items-center text-[11px] font-[Source]">
+                      <input type="checkbox" name={`accordion-${index}`} className="absolute w-0 h-0" />
+                      <div className="collapse-title min-h-0 p-0 flex justify-start items-center text-[11px] font-[Source]">
                         <div className="p-1 ps-2 bg-white rounded text-black flex items-center">
                           Quick View Arcana & Vows{" "}
                           <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
