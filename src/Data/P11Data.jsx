@@ -655,7 +655,7 @@ export const p11data = [
     asp: "Melinoe Coat",
     loc: "Surface",
     fea: "62",
-    src: "https://www.bilibili.com/video/BV1Ld89zzEKz/",
+    src: "https://www.bilibili.com/video/BV1JU89z5EwJ/",
     des: "62热战衣1 雷霆轰炸坤",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjMiLCJjMjQiXQ==",
