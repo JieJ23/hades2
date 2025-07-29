@@ -603,11 +603,11 @@ export default function App() {
                             <div className="grid grid-cols-4 gap-2">
                               {allVows.map((item, index) => (
                                 <div
-                                  className={`rounded px-2 sm:px-4 p-1 text-[10px] bg-[#131111] ${
+                                  className={`rounded p-2 sm:px-4 py-2 pt-1 bg-[#131111] relative ${
                                     index === 16 && `col-start-2 col-span-2`
                                   }`}
                                 >
-                                  <div className="text-center">{item}</div>
+                                  <div className="text-center text-white">{item}</div>
                                   <img
                                     src={`/Vows/${item}.png`}
                                     alt="Vows"
@@ -615,7 +615,9 @@ export default function App() {
                                     className="w-8 sm:w-9 mx-auto"
                                     draggable={false}
                                   />
-                                  <div className="text-center">{deCodeVow(obj.oath)[index]} Fear</div>
+                                  <div className="absolute text-[#f18043] font-mono text-[11px] right-1 bottom-0">
+                                    {deCodeVow(obj.oath)[index]}
+                                  </div>
                                 </div>
                               ))}
                             </div>
