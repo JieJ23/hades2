@@ -12,6 +12,8 @@ import RaderP from "../Comp/RadarP";
 import { findGUIcard } from "../App";
 import { deCodeArcana, deCodeVow, oathMatch, vowMatch, deckMatch } from "../Data/Misc";
 import Footer from "../Comp/Footer";
+import { allVows } from "../Data/FearTrait";
+import { defineDeck } from "../Data/DeckTrait";
 
 const allData = [...p11data, ...p9data];
 
@@ -140,255 +142,337 @@ export default function Player() {
                       />
                     </div>
                   )}
-                  <div className="w-full gap-2 ps-1">
-                    <div className="flex items-center justify-between">
-                      <div className="text-[15px] font-[Cinzel] ps-2">{obj.nam}</div>
-                      <div className="flex gap-2 font-[Cinzel]">
-                        <div className="flex items-center gap-1 font-[Source]">
-                          <img src={`/${obj.loc}.png`} alt="Region" className="size-5" draggable={false} />
-                          {obj.fea}
-                        </div>
-                        <div className="flex items-center gap-1 font-[Source]">
-                          <img src={`/Misc/Time.png`} alt="Time" className="size-5" draggable={false} />
-                          {obj.tim}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="py-1 flex flex-wrap gap-1 text-[11px]">
-                      <div className="flex items-center gap-0.5 bg-[#28282b] text-white rounded pe-2 p-1">
-                        <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
-                        <div>{obj.dat}</div>
-                      </div>
-
-                      {obj.src !== "" && (
-                        <Link
-                          className="flex items-center bg-[#fff] text-black border-1 border-black rounded ps-2 p-1"
-                          to={obj.src}
-                          target="_blank"
-                        >
-                          <div>{`Video`}</div>
-                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-                        </Link>
-                      )}
-                      {obj.arcana && (
-                        <Link
-                          to={obj.arcana}
-                          target="_blank"
-                          className="flex items-center justify-center bg-[#fff] text-black rounded ps-2 p-1"
-                        >
-                          <span>Arcana</span>
-                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-                        </Link>
-                      )}
-                      {obj.oath && (
-                        <Link
-                          to={obj.oath}
-                          target="_blank"
-                          className="flex items-center justify-center bg-[#fff] text-black rounded ps-2 p-1"
-                        >
-                          <span>Oath</span>
-                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-                        </Link>
-                      )}
-                    </div>
-                    <div className="flex items-center flex-wrap py-1 gap-1 gap-y-1">
-                      <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
-                        <img
-                          draggable={false}
-                          src={`/P9/${obj.asp}.png`}
-                          alt="Core Boon"
-                          className="size-6 md:size-7 border-1 border-black rounded-lg"
-                        />
-                        <img
-                          draggable={false}
-                          src={`/P9/${obj.fam}.png`}
-                          alt="Core Boon"
-                          className="size-6 md:size-7 border-1 border-black rounded-lg"
-                        />
-                      </div>
-                      <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
-                        {sToA(obj.cor).map((ite, index) => (
-                          <div className="tooltip shrink-0" key={index}>
-                            <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                              <div className="font-[Source] text-[12px]">{ite}</div>
+                  <div className="flex flex-col w-full">
+                    <div className="w-full flex items-center gap-2">
+                      <div className="w-full gap-2 ps-1">
+                        <div className="flex items-center justify-between">
+                          <div className="text-[15px] font-[Cinzel] ps-2">{obj.nam}</div>
+                          <div className="flex gap-2 font-[Cinzel]">
+                            <div className="flex items-center gap-1 font-[Source]">
+                              <img src={`/${obj.loc}.png`} alt="Region" className="size-5" draggable={false} />
+                              {obj.fea}
                             </div>
+                            <div className="flex items-center gap-1 font-[Source]">
+                              <img src={`/Misc/Time.png`} alt="Time" className="size-5" draggable={false} />
+                              {obj.tim}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="py-1 flex flex-wrap gap-1 text-[11px]">
+                          <div className="flex items-center gap-0.5 bg-[#28282b] text-white rounded pe-2 p-1">
+                            <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
+                            <div>{obj.dat}</div>
+                          </div>
+
+                          {obj.src !== "" && (
+                            <Link
+                              className="flex items-center bg-[#fff] text-black border-1 border-black rounded ps-2 p-1"
+                              to={obj.src}
+                              target="_blank"
+                            >
+                              <div>{`Video`}</div>
+                              <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                            </Link>
+                          )}
+                          {obj.arcana && (
+                            <Link
+                              to={obj.arcana}
+                              target="_blank"
+                              className="flex items-center justify-center bg-[#fff] text-black rounded ps-2 p-1"
+                            >
+                              <span>Arcana</span>
+                              <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                            </Link>
+                          )}
+                          {obj.oath && (
+                            <Link
+                              to={obj.oath}
+                              target="_blank"
+                              className="flex items-center justify-center bg-[#fff] text-black rounded ps-2 p-1"
+                            >
+                              <span>Oath</span>
+                              <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                            </Link>
+                          )}
+                        </div>
+                        <div className="flex items-center flex-wrap py-1 gap-1 gap-y-1">
+                          <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                             <img
                               draggable={false}
-                              src={`/H2Boons/${ite}.png`}
+                              src={`/P9/${obj.asp}.png`}
+                              alt="Core Boon"
+                              className="size-6 md:size-7 border-1 border-black rounded-lg"
+                            />
+                            <img
+                              draggable={false}
+                              src={`/P9/${obj.fam}.png`}
                               alt="Core Boon"
                               className="size-6 md:size-7 border-1 border-black rounded-lg"
                             />
                           </div>
-                        ))}
-                      </div>
-                      {obj.ham && (
-                        <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
-                          {findValue(
-                            sToA(obj.ham).sort((a, b) => {
-                              const aIndex = orderMap.get(a) ?? Infinity;
-                              const bIndex = orderMap.get(b) ?? Infinity;
-                              return aIndex - bIndex;
-                            })
-                          ).map((ite, index) => (
-                            <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
-                              </div>
-                              <img
-                                draggable={false}
-                                src={`/P9/${ite}.png`}
-                                alt="Core Boon"
-                                className="size-6 md:size-7 border-1 border-black rounded-lg"
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                      {obj.mis && (
-                        <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
-                          {findValue(
-                            sToA(obj.mis).sort((a, b) => {
-                              const aIndex = orderMap.get(a) ?? Infinity;
-                              const bIndex = orderMap.get(b) ?? Infinity;
-                              return aIndex - bIndex;
-                            })
-                          ).map((ite, index) => (
-                            <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
-                              </div>
-                              <img
-                                draggable={false}
-                                src={`/P9/${ite}.png`}
-                                alt="Core Boon"
-                                className="size-6 md:size-7 border-1 border-black rounded-lg"
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                      {(obj.duo || obj.ele) && (
-                        <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
-                          {obj.duo &&
-                            findValue(
-                              sToA(obj.duo).sort((a, b) => {
-                                const aIndex = orderMap.get(a) ?? Infinity;
-                                const bIndex = orderMap.get(b) ?? Infinity;
-                                return aIndex - bIndex;
-                              })
-                            ).map((ite, index) => (
+                          <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                            {sToA(obj.cor).map((ite, index) => (
                               <div className="tooltip shrink-0" key={index}>
                                 <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                  <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
+                                  <div className="font-[Source] text-[12px]">{ite}</div>
                                 </div>
                                 <img
                                   draggable={false}
-                                  src={`/P9/${ite}.png`}
+                                  src={`/H2Boons/${ite}.png`}
                                   alt="Core Boon"
                                   className="size-6 md:size-7 border-1 border-black rounded-lg"
                                 />
                               </div>
                             ))}
-                          {obj.ele &&
-                            findValue(sToA(obj.ele)).map((ite, index) => (
-                              <div className="tooltip shrink-0" key={index}>
-                                <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                  <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
+                          </div>
+                          {obj.ham && (
+                            <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                              {findValue(
+                                sToA(obj.ham).sort((a, b) => {
+                                  const aIndex = orderMap.get(a) ?? Infinity;
+                                  const bIndex = orderMap.get(b) ?? Infinity;
+                                  return aIndex - bIndex;
+                                })
+                              ).map((ite, index) => (
+                                <div className="tooltip shrink-0" key={index}>
+                                  <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                                    <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
+                                  </div>
+                                  <img
+                                    draggable={false}
+                                    src={`/P9/${ite}.png`}
+                                    alt="Core Boon"
+                                    className="size-6 md:size-7 border-1 border-black rounded-lg"
+                                  />
                                 </div>
-                                <img
-                                  draggable={false}
-                                  src={`/P9/${ite}.png`}
-                                  alt="Core Boon"
-                                  className="size-6 md:size-7 border-1 border-black rounded-lg"
-                                />
-                              </div>
-                            ))}
-                        </div>
-                      )}
-                      {obj.cha && (
-                        <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
-                          {findValue(
-                            sToA(obj.cha).sort((a, b) => {
-                              const aIndex = orderMap.get(a) ?? Infinity;
-                              const bIndex = orderMap.get(b) ?? Infinity;
-                              return aIndex - bIndex;
-                            })
-                          ).map((ite, index) => (
-                            <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
-                              </div>
-                              <img
-                                draggable={false}
-                                src={`/P9/${ite}.png`}
-                                alt="Core Boon"
-                                className="size-6 md:size-7 border-1 border-black rounded-lg"
-                              />
+                              ))}
                             </div>
-                          ))}
-                        </div>
-                      )}
-                      {obj.ks && (
-                        <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
-                          {sToA(obj.ks).map((ite, index) => (
-                            <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="font-[Source] text-[12px]">{ite}</div>
-                              </div>
-                              <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-7" />
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                    <div className="text-white z-20 p-1 pt-0 text-[11px]">{obj.des}</div>
-                    <div className="flex flex-wrap gap-1 text-[10px]">
-                      {obj.arcana &&
-                        deCodeArcana(obj.arcana)
-                          .map((ite) => deckMatch[ite])
-                          .map((ite) => <div className="px-1 py-0.5 bg-[#28282b] rounded">{ite}</div>)}
-                    </div>
-                    <div className="flex flex-wrap gap-1 text-[10px] pt-1">
-                      {obj.oath &&
-                        obj.fea < 58 &&
-                        deCodeVow(obj.oath)
-                          .map((ite1, index) => oathMatch[index].indexOf(ite1))
-                          .map(
-                            (ite, index) =>
-                              ite !== 0 && (
-                                <div className="px-1 py-0.5 bg-[#28282b] rounded">
-                                  {vowMatch[index]} {ite}
-                                </div>
-                              )
                           )}
+                          {obj.mis && (
+                            <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                              {findValue(
+                                sToA(obj.mis).sort((a, b) => {
+                                  const aIndex = orderMap.get(a) ?? Infinity;
+                                  const bIndex = orderMap.get(b) ?? Infinity;
+                                  return aIndex - bIndex;
+                                })
+                              ).map((ite, index) => (
+                                <div className="tooltip shrink-0" key={index}>
+                                  <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                                    <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
+                                  </div>
+                                  <img
+                                    draggable={false}
+                                    src={`/P9/${ite}.png`}
+                                    alt="Core Boon"
+                                    className="size-6 md:size-7 border-1 border-black rounded-lg"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          {(obj.duo || obj.ele) && (
+                            <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                              {obj.duo &&
+                                findValue(
+                                  sToA(obj.duo).sort((a, b) => {
+                                    const aIndex = orderMap.get(a) ?? Infinity;
+                                    const bIndex = orderMap.get(b) ?? Infinity;
+                                    return aIndex - bIndex;
+                                  })
+                                ).map((ite, index) => (
+                                  <div className="tooltip shrink-0" key={index}>
+                                    <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                                      <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
+                                    </div>
+                                    <img
+                                      draggable={false}
+                                      src={`/P9/${ite}.png`}
+                                      alt="Core Boon"
+                                      className="size-6 md:size-7 border-1 border-black rounded-lg"
+                                    />
+                                  </div>
+                                ))}
+                              {obj.ele &&
+                                findValue(sToA(obj.ele)).map((ite, index) => (
+                                  <div className="tooltip shrink-0" key={index}>
+                                    <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                                      <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
+                                    </div>
+                                    <img
+                                      draggable={false}
+                                      src={`/P9/${ite}.png`}
+                                      alt="Core Boon"
+                                      className="size-6 md:size-7 border-1 border-black rounded-lg"
+                                    />
+                                  </div>
+                                ))}
+                            </div>
+                          )}
+                          {obj.cha && (
+                            <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                              {findValue(
+                                sToA(obj.cha).sort((a, b) => {
+                                  const aIndex = orderMap.get(a) ?? Infinity;
+                                  const bIndex = orderMap.get(b) ?? Infinity;
+                                  return aIndex - bIndex;
+                                })
+                              ).map((ite, index) => (
+                                <div className="tooltip shrink-0" key={index}>
+                                  <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                                    <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
+                                  </div>
+                                  <img
+                                    draggable={false}
+                                    src={`/P9/${ite}.png`}
+                                    alt="Core Boon"
+                                    className="size-6 md:size-7 border-1 border-black rounded-lg"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          {obj.ks && (
+                            <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                              {sToA(obj.ks).map((ite, index) => (
+                                <div className="tooltip shrink-0" key={index}>
+                                  <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                                    <div className="font-[Source] text-[12px]">{ite}</div>
+                                  </div>
+                                  <img
+                                    draggable={false}
+                                    src={`/buildgui/${ite}.png`}
+                                    alt="Keepsake"
+                                    className="size-7"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                        <div className="text-white z-20 p-1 pt-0 text-[11px]">{obj.des}</div>
+                        <div className="flex flex-wrap gap-1 text-[10px]">
+                          {obj.arcana &&
+                            deCodeArcana(obj.arcana)
+                              .map((ite) => deckMatch[ite])
+                              .map((ite) => <div className="px-1 py-0.5 bg-[#28282b] rounded">{ite}</div>)}
+                        </div>
+                        <div className="flex flex-wrap gap-1 text-[10px] pt-1">
+                          {obj.oath &&
+                            obj.fea < 58 &&
+                            deCodeVow(obj.oath)
+                              .map((ite1, index) => oathMatch[index].indexOf(ite1))
+                              .map(
+                                (ite, index) =>
+                                  ite !== 0 && (
+                                    <div className="px-1 py-0.5 bg-[#28282b] rounded">
+                                      {vowMatch[index]} {ite}
+                                    </div>
+                                  )
+                              )}
+                        </div>
+                      </div>
+                      <div className="hidden md:block">
+                        <img
+                          src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
+                          alt="Aspect"
+                          className="w-[80px] rounded"
+                          draggable={false}
+                        />
+                      </div>
+                      <div className="hidden md:block">
+                        <img
+                          src={`/GUI_Card/${obj.fam}.png`}
+                          alt="Familiar"
+                          className="w-[80px] rounded"
+                          draggable={false}
+                        />
+                      </div>
                     </div>
+                    {(obj.arcana || obj.oath) && (
+                      <div className="w-full">
+                        <div tabIndex={0} className="collapse rounded ps-1 font-[Source] text-[11px]">
+                          <input type="checkbox" name={`accordion-${index}`} className="absolute w-0 h-0" />
+                          <div className="collapse-title min-h-0 p-0 flex justify-start items-center text-[11px] font-[Source]">
+                            <div className="p-1 ps-2 bg-white rounded text-black flex items-center">
+                              Quick View Arcana & Vows{" "}
+                              <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                            </div>
+                          </div>
+                          <div className="collapse-content p-0 flex flex-col sm:flex-row gap-2">
+                            <div className="grid grid-cols-5 bg-[#131111] rounded">
+                              {obj.arcana &&
+                                (() => {
+                                  const decoded = deCodeArcana(obj.arcana);
+                                  // Create an array of 25 items, filling in the decoded values or 'x'
+                                  return Array.from({ length: 25 }, (_, i) => {
+                                    const expectedValue = `c${i + 1}`;
+                                    return decoded.includes(expectedValue) ? expectedValue : "x";
+                                  });
+                                })().map((item, index) => (
+                                  <div key={index} className="w-full">
+                                    {item !== `x` ? (
+                                      <img
+                                        src={`/Arcane/${item}.png`}
+                                        alt="Arcana"
+                                        loading="lazy"
+                                        className="sm:w-14"
+                                        draggable={false}
+                                      />
+                                    ) : (
+                                      <img
+                                        src={`/Arcane/c0.png`}
+                                        alt="Arcana"
+                                        loading="lazy"
+                                        className="sm:w-14"
+                                        draggable={false}
+                                      />
+                                    )}
+                                  </div>
+                                ))}
+                            </div>
+                            <div>
+                              {obj.oath && (
+                                <div className="grid grid-cols-4 gap-2">
+                                  {allVows.map((item, index) => (
+                                    <div
+                                      className={`rounded p-2 sm:px-4 py-2 pt-1 bg-[#131111] relative ${
+                                        index === 16 && `col-start-2 col-span-2`
+                                      }`}
+                                    >
+                                      <div className="text-center text-white">{item}</div>
+                                      <img
+                                        src={`/Vows/${item}.png`}
+                                        alt="Vows"
+                                        loading="lazy"
+                                        className="w-8 sm:w-9 mx-auto"
+                                        draggable={false}
+                                      />
+                                      <div className="absolute text-[#f18043] font-mono text-[11px] right-1 bottom-0">
+                                        {deCodeVow(obj.oath)[index]}
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                            <div className="flex gap-2 px-2">
+                              {obj.oath && (
+                                <div className="text-[#00ffaa]">
+                                  Total Fear: {deCodeVow(obj.oath).reduce((a, b) => a + b, 0)}
+                                </div>
+                              )}
+                              {obj.arcana && (
+                                <div className="text-[#00ffaa]">
+                                  Total Grasp: {deCodeArcana(obj.arcana).reduce((a, b) => a + defineDeck(b).g, 0)}
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  <div className="hidden md:block">
-                    <img
-                      src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
-                      alt="Aspect"
-                      className="w-[80px] rounded"
-                      draggable={false}
-                    />
-                  </div>
-                  <div className="hidden md:block">
-                    <img
-                      src={`/GUI_Card/${obj.fam}.png`}
-                      alt="Familiar"
-                      className="w-[80px] rounded"
-                      draggable={false}
-                    />
-                  </div>
-                  {/* {obj.arcana && (
-                <Link target="_blank" to={obj.arcana} className="hidden md:block">
-                  <img src={`/Arcane/c0.png`} alt="Arcana" className="w-[80px] rounded" draggable={false} />
-                </Link>
-              )}
-              {obj.oath && (
-                <Link target="_blank" to={obj.oath} className="hidden md:block">
-                  <img src={`/Misc/Oath.png`} alt="Oath" className="w-[80px] rounded" draggable={false} />
-                </Link>
-              )} */}
                 </div>
               ))}
             </section>
