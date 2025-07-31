@@ -83,7 +83,13 @@ export default function Submit() {
                 >
                   https://h2crossroads.pages.dev/ArcanaDeck
                 </Link>
-                <input type="text" placeholder="Arcana Shareable URL" className="input input-md" name="arcana" />
+                <input
+                  type="text"
+                  placeholder="Arcana Shareable URL"
+                  className="input input-md"
+                  name="arcana"
+                  required
+                />
                 <Link
                   to={`https://h2crossroads.pages.dev/FearCalculator`}
                   target="_blank"
@@ -92,7 +98,7 @@ export default function Submit() {
                   https://h2crossroads.pages.dev/FearCalculator
                 </Link>
 
-                <input type="text" placeholder="Fear Shareable URL" className="input input-md" name="oath" />
+                <input type="text" placeholder="Fear Shareable URL" className="input input-md" name="oath" required />
                 <button
                   className="btn border-[#2efaac] bg-transparent font-[Source] border-1 rounded text-[14px] px-3"
                   type="submit"

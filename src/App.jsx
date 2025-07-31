@@ -518,13 +518,13 @@ export default function App() {
                       )}
                     </div>
                     <div className="text-white z-20 p-1 pt-0 text-[11px]">{obj.des}</div>
-                    <div className="flex flex-wrap gap-1 text-[10px]">
+                    <div className="flex flex-wrap gap-1 text-[10px] my-0.5">
                       {obj.arcana &&
                         deCodeArcana(obj.arcana)
                           .map((ite) => deckMatch[ite])
                           .map((ite) => <div className="px-1 py-0.5 bg-[#28282b] rounded">{ite}</div>)}
                     </div>
-                    <div className="flex flex-wrap gap-1 text-[10px] pt-1">
+                    <div className="flex flex-wrap gap-1 text-[10px] my-0.5">
                       {obj.oath &&
                         obj.fea < 58 &&
                         deCodeVow(obj.oath)
