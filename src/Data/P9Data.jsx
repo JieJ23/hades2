@@ -2208,7 +2208,7 @@ export const p9data = [
   },
   {
     dat: "2025-06-23",
-    nam: "red",
+    nam: "Red",
     asp: "Morrigan",
     loc: "Underworld",
     fea: "40",
@@ -2225,7 +2225,7 @@ export const p9data = [
   },
   {
     dat: "2025-06-24",
-    nam: "red",
+    nam: "Red",
     asp: "Morrigan",
     loc: "Surface",
     fea: "40",
@@ -2240,7 +2240,7 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    nam: "red",
+    nam: "Red",
     asp: "Circe",
     loc: "Underworld",
     fea: "41",
@@ -2428,7 +2428,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    nam: "red",
+    nam: "Red",
     asp: "Morrigan",
     loc: "Underworld",
     fea: "44",
@@ -4447,7 +4447,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-22",
-    nam: "red",
+    nam: "Red",
     asp: "Circe",
     loc: "Underworld",
     fea: "55",
