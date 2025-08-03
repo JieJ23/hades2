@@ -1546,7 +1546,7 @@ export const p11data = [
     des: "circe slaps so hard now.",
     tim: "18:08.62",
     fam: "Cat",
-    cor: "ZeuAttack,PosSpecial,HepCast,PosCast,AphMagick",
+    cor: "ZeuAttack,PosSpecial,HepCast,PosSprint,AphMagick",
     ham: "Dual Moonshot,Shimmering Moonshot",
   },
   {
