@@ -136,7 +136,7 @@ export default function Playground() {
             </div>
           ))}
         </div> */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 py-4">
           <div>
             <div className="text-center text-[12px] font-[Cinzel]">{`Fear >= 60`}</div>
             {fear60.map((obj, index) => (
