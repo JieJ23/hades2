@@ -15,7 +15,7 @@ import ArcanaDeck from "./Page/ArcanaDeck.jsx";
 import Boons from "./Page/Boons.jsx";
 import Hammer from "./Page/Hammer.jsx";
 import Enemy from "./Page/Enemy.jsx";
-import Savestate from "./Page/Savestate.jsx";
+import Playground from "./Page/Playground.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -33,7 +33,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/Hammer" element={<Hammer />} />
         <Route path="/Boons" element={<Boons />} />
         <Route path="/Enemy" element={<Enemy />} />
-        <Route path="/Savestate" element={<Savestate />} />
+        <Route path="/Playground" element={<Playground />} />
       </Routes>
     </Router>
   </StrictMode>

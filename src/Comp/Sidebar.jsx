@@ -7,7 +7,7 @@ export const sites = [
   { icon: `Boon2`, link: `Trend`, nam: `Boon Trend` },
   { icon: `Stats`, link: `P11Stats`, nam: `P11Stats` },
   { icon: `Stats`, link: `P910Stats`, nam: `P910Stats` },
-  { icon: `Save`, link: `Savestate`, nam: `Savestate` },
+  { icon: `Save`, link: `Playground`, nam: `Playground` },
   { icon: `Player`, link: `Player`, nam: `Player` },
   { icon: `Patch8`, link: `Patch8`, nam: `Patch 8` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
