@@ -291,7 +291,7 @@ export default function App() {
         <section className="p-1 overflow-hidden">
           {displayEntries.slice(0, show).map((obj, index) => (
             <div
-              className={`flex items-center w-full rounded px-2 py-1 gap-2 relative mb-4
+              className={`flex items-center w-full rounded px-2 gap-2 relative mb-4
             ${
               obj.fea == 67
                 ? `md:min-h-[250px] bg-gradient-to-b from-[#000000b5] md:to-[#033777bc] to-[#033777bc] border-1 border-black`
@@ -517,7 +517,7 @@ export default function App() {
                         </div>
                       )}
                     </div>
-                    <div className="text-white z-20 p-1 pt-0 text-[11px]">{obj.des}</div>
+                    <div className="text-white z-20 text-[11px]">{obj.des}</div>
                     <div className="flex flex-wrap gap-1 text-[10px] my-0.5">
                       {obj.arcana &&
                         deCodeArcana(obj.arcana)
@@ -526,7 +526,6 @@ export default function App() {
                     </div>
                     <div className="flex flex-wrap gap-1 text-[10px] my-0.5">
                       {obj.oath &&
-                        obj.fea < 58 &&
                         deCodeVow(obj.oath)
                           .map((ite1, index) => oathMatch[index].indexOf(ite1))
                           .map(
@@ -557,17 +556,17 @@ export default function App() {
                   </div>
                 </div>
                 {(obj.arcana || obj.oath) && (
-                  <div className="w-full">
+                  <div className="w-full my-0.5">
                     <div tabIndex={0} className="collapse rounded ps-1 font-[Source] text-[11px]">
-                      <input type="checkbox" name={`accordion-${index}`} className="absolute w-0 h-0" />
+                      <input type="checkbox" name={`accordion-${index}`} className="absolute w-[1px] h-[1px]" />
                       <div className="collapse-title min-h-0 p-0 flex justify-start items-center text-[11px] font-[Source]">
                         <div className="p-1 ps-2 bg-white rounded text-black flex items-center">
                           Quick View Arcana & Vows{" "}
                           <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
                         </div>
                       </div>
-                      <div className="collapse-content p-0 pt-1 flex flex-col sm:flex-row gap-1 gap-y-0">
-                        <div className="grid grid-cols-5 gap-0.5 rounded">
+                      <div className="collapse-content p-0 flex flex-col sm:flex-row">
+                        <div className="grid grid-cols-5 rounded">
                           {obj.arcana &&
                             (() => {
                               const decoded = deCodeArcana(obj.arcana);
@@ -587,17 +586,23 @@ export default function App() {
                                     draggable={false}
                                   />
                                 ) : (
-                                  <div className="bg-[#131111] h-full rounded"></div>
+                                  <img
+                                    src={`/Arcane/c0.png`}
+                                    alt="Arcana"
+                                    loading="lazy"
+                                    className="sm:w-14"
+                                    draggable={false}
+                                  />
                                 )}
                               </div>
                             ))}
                         </div>
                         <div>
                           {obj.oath && (
-                            <div className="grid grid-cols-4 gap-2">
+                            <div className="grid grid-cols-4 gap-2 py-1">
                               {allVows.map((item, index) => (
                                 <div
-                                  className={`rounded p-2 sm:px-4 py-2 pt-1 bg-[#131111] relative ${
+                                  className={`rounded p-2 sm:px-4 py-2 bg-[#131111] relative ${
                                     index === 16 && `col-start-2 col-span-2`
                                   }`}
                                 >
