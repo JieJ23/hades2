@@ -295,7 +295,7 @@ export default function App() {
             ${
               obj.fea == 67
                 ? `md:min-h-[250px] bg-gradient-to-b from-[#000000b5] md:to-[#033777bc] to-[#033777bc] border-1 border-black`
-                : `bg-[#000000b5]`
+                : `bg-[#0000007e]`
             }
             `}
               key={index}
@@ -566,8 +566,8 @@ export default function App() {
                           <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
                         </div>
                       </div>
-                      <div className="collapse-content p-0 flex flex-col sm:flex-row gap-2">
-                        <div className="grid grid-cols-5 bg-[#131111] rounded">
+                      <div className="collapse-content p-0 pt-1 flex flex-col sm:flex-row gap-1 gap-y-0">
+                        <div className="grid grid-cols-5 gap-0.5 rounded">
                           {obj.arcana &&
                             (() => {
                               const decoded = deCodeArcana(obj.arcana);
@@ -587,13 +587,7 @@ export default function App() {
                                     draggable={false}
                                   />
                                 ) : (
-                                  <img
-                                    src={`/Arcane/c0.png`}
-                                    alt="Arcana"
-                                    loading="lazy"
-                                    className="sm:w-14"
-                                    draggable={false}
-                                  />
+                                  <div className="bg-[#131111] h-full rounded"></div>
                                 )}
                               </div>
                             ))}
