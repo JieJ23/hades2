@@ -751,7 +751,7 @@ export const p9data = [
     des: "58 fear is where the sweet spot of difficulty and fun is for me right now. Unrivalled Chronos is silly and the vow setup here is literally just old 50f + Rivals 3. ",
     tim: "19:12.40",
     fam: "Raven",
-    cor: "Attack,HesAttack,DemCast,ApoSprint,AphMagick",
+    cor: "Attack,HesSpecial,DemCast,ApoSprint,AphMagick",
     ham: "Shimmering Rockets,Exhaust Riser",
     duo: "Warm Breeze,Freezer Burn",
     mis: "Support Fire,Mixed Blessings,Quick Buck,Nitro Boost",
