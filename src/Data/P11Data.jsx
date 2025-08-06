@@ -425,7 +425,7 @@ export const p11data = [
     cor: "Attack,ApoSpecial,DemCast,Sprint,ApoMagick",
     ham: "Giga Cleaver,Sudden Cleaver",
     ks: `Purest Hope,Barley Sheaf,Ghost Onion,Knuckle Bones`,
-    boon: `Hard Target,Prominence Flare,Hymn to the Eye of Night,Self Healing,Arctic Gale,Sea Star,Local Climate,Eminence,Righteous Pike,Drunken Stupor,Exceptional Talent,Visceral Impact,Nitro Boost,Cut Above,Geyser Spout,Consequence,Preparation,Magnitude,Softness,Purpose,Total Eclipse,Vastness,Blood Drop`,
+    boon: `Hard Target,Prominence Flare,Hymn to the Eye of Night,Self Healing,Arctic Gale,Sea Star,Local Climate,Eminence,Righteous Pike,Drunken Stupor,Exceptional Talent,Visceral Impact,Nitro Boost,Cut Above,Geyser Spout,Consequence,Preparation,Magnitude,Softness,Purpose,Total Eclipse,Vastness,Plasma`,
   },
   {
     dat: "2025-07-28",
