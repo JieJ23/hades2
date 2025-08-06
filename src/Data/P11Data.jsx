@@ -187,7 +187,7 @@ export const p11data = [
     asp: "Melinoe Flames",
     loc: "Surface",
     fea: "62",
-    src: "https://www.bilibili.com/video/BV1JebDzPE",
+    src: "https://www.bilibili.com/video/BV1JebDzPE7n",
     des: "普攻可选赫拉雷神火神战神，凑个起源即可 赫尔墨斯的灵动心念至少要蓝色稀有度 地表一层的npc加蓝上限的祝福很关键，没有的话拿银轮多找蓝也勉强够用",
     tim: "17:26.30",
     fam: "Hound",
@@ -195,6 +195,8 @@ export const p11data = [
     ham: "Sudden Burst,Dividing Blaze",
     arcana: `https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjMiLCJjMjQiXQ==`,
     oath: `https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd`,
+    boon: `Traces of Spirit,Racing Thoughts,Support Fire,Black Night Banishment,Spiritual Affirmation,Hard Target,Uncanny Fortitude,Drunken Stupor,Trusty Shield,Righteous Pike,Double Strike,Fine Line`,
+    ks: `Aromatic Phial,Silver Wheel,Adamant Shard,Knuckle Bones`,
   },
   {
     dat: "2025-07-23",
@@ -422,6 +424,8 @@ export const p11data = [
     fam: "Polecat",
     cor: "Attack,ApoSpecial,DemCast,Sprint,ApoMagick",
     ham: "Giga Cleaver,Sudden Cleaver",
+    ks: `Purest Hope,Barley Sheaf,Ghost Onion,Knuckle Bones`,
+    boon: `Hard Target,Prominence Flare,Hymn to the Eye of Night,Self Healing,Arctic Gale,Sea Star,Local Climate,Eminence,Righteous Pike,Drunken Stupor,Exceptional Talent,Visceral Impact,Nitro Boost,Cut Above,Geyser Spout,Consequence,Preparation,Magnitude,Softness,Purpose,Total Eclipse,Vastness`,
   },
   {
     dat: "2025-07-28",

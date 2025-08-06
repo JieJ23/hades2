@@ -20,8 +20,11 @@ import Background from "./Comp/Background";
 import Footer from "./Comp/Footer";
 import { allVows } from "./Data/FearTrait";
 import { defineDeck } from "./Data/DeckTrait";
+import { bOrder } from "./Data/Boon2";
+import { boonCodexr, boonCodex } from "./Data/Boon2";
 
 export const orderMap = new Map(allP9.map((item, index) => [item, index]));
+export const orderMap2 = new Map(bOrder.map((item, index) => [item, index]));
 
 export const findGUIcard = (asp) => {
   switch (asp) {
@@ -44,6 +47,10 @@ export const findGUIcard = (asp) => {
 
 export const findValue = (arr) => {
   const finalized = arr.map((ite) => p9boons_reverse[ite]);
+  return finalized;
+};
+export const findValue2 = (arr) => {
+  const finalized = arr.map((ite) => boonCodexr[ite]);
   return finalized;
 };
 //
@@ -420,7 +427,7 @@ export default function App() {
                           ))}
                         </div>
                       )}
-                      {obj.mis && (
+                      {/* {obj.mis && (
                         <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                           {findValue(
                             sToA(obj.mis).sort((a, b) => {
@@ -503,7 +510,7 @@ export default function App() {
                             </div>
                           ))}
                         </div>
-                      )}
+                      )} */}
                       {obj.ks && (
                         <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                           {sToA(obj.ks).map((ite, index) => (
@@ -512,6 +519,29 @@ export default function App() {
                                 <div className="font-[Source] text-[12px]">{ite}</div>
                               </div>
                               <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-7" />
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {obj.boon && (
+                        <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                          {findValue2(
+                            sToA(obj.boon).sort((a, b) => {
+                              const aIndex = orderMap2.get(a) ?? Infinity;
+                              const bIndex = orderMap2.get(b) ?? Infinity;
+                              return aIndex - bIndex;
+                            })
+                          ).map((ite, index) => (
+                            <div className="tooltip shrink-0" key={index}>
+                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                                <div className="font-[Source] text-[12px]">{boonCodex[ite]}</div>
+                              </div>
+                              <img
+                                draggable={false}
+                                src={`/P9/${ite}.png`}
+                                alt="Core Boon"
+                                className="size-6 md:size-7 border-1 border-black rounded-lg"
+                              />
                             </div>
                           ))}
                         </div>
