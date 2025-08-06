@@ -295,7 +295,7 @@ export default function App() {
             <div className="text-[#ffb700]">{displayEntries[0]?.nam ?? `Null`}</div>
           </div>
         </section>
-        <section className="p-1 overflow-hidden">
+        <section className="p-1 overflow-visible">
           {displayEntries.slice(0, show).map((obj, index) => (
             <div
               className={`flex items-center w-full rounded px-2 gap-2 relative mb-4
