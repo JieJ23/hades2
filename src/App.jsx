@@ -524,7 +524,7 @@ export default function App() {
                         </div>
                       )}
                       {obj.boon && (
-                        <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                        <div className="flex flex-wrap gap-0.5 p-1 rounded bg-[#28282b80]">
                           {findValue2(
                             sToA(obj.boon).sort((a, b) => {
                               const aIndex = orderMap2.get(a) ?? Infinity;
