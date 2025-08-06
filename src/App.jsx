@@ -374,7 +374,7 @@ export default function App() {
                         </Link>
                       )}
                     </div>
-                    <div className="flex items-center flex-wrap py-1 gap-1 gap-y-0">
+                    <div className="flex items-center flex-wrap py-1 gap-0.5">
                       <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                         <img
                           draggable={false}
@@ -518,7 +518,12 @@ export default function App() {
                               <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                                 <div className="font-[Source] text-[11px]">{ite}</div>
                               </div>
-                              <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-7" />
+                              <img
+                                draggable={false}
+                                src={`/buildgui/${ite}.png`}
+                                alt="Keepsake"
+                                className="size-5 md:size-6"
+                              />
                             </div>
                           ))}
                         </div>
