@@ -2241,6 +2241,7 @@ export const p11data = [
     fam: "Cat",
     cor: "HesAttack,Special,ZeuCast,Sprint,AphMagick",
     ham: "Mirrored Thrasher,Melting Swipe",
+    boon: `Revival,Trusty Shield,Evade Evade Evade,Uncanny Fortitude,Static Shock,Electric Overload,Precious Metals,Pyro Technique,Lightning Lance,Old Grudge`,
   },
   {
     dat: "2025-08-06",
@@ -2257,5 +2258,6 @@ export const p11data = [
     fam: "Polecat",
     cor: "ApoAttack,Special,DemCast,DemSprint,AphMagick",
     ham: "Final Slice,Wicked Onslaught",
+    boon: `Wealth from the Dead,Super Nova,Hard Target,Word of Smaller Stature,Sweet Surrender,Trusty Shield,Security System,Hearty Appetite,Martial Art,Growth,Contingency,Lineage,Extra Dose,Tension,Dazzling Display,Discovery,Focus,Bloodthirst,Dark Side,Ingenious Strike,Allure of Aphrodite`,
   },
 ];
