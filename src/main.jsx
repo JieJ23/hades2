@@ -16,6 +16,7 @@ import Boons from "./Page/Boons.jsx";
 import Hammer from "./Page/Hammer.jsx";
 import Enemy from "./Page/Enemy.jsx";
 import Playground from "./Page/Playground.jsx";
+import Play from "./Page/Play.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -34,6 +35,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/Boons" element={<Boons />} />
         <Route path="/Enemy" element={<Enemy />} />
         <Route path="/Playground" element={<Playground />} />
+        <Route path="/Play" element={<Play />} />
       </Routes>
     </Router>
   </StrictMode>
