@@ -337,7 +337,7 @@ export default function App() {
                         </div>
                       </div>
                     </div>
-                    <div className="py-1 flex flex-wrap gap-1 text-[11px]">
+                    <div className="flex flex-wrap gap-1 text-[11px]">
                       <div className="flex items-center gap-0.5 bg-[#28282b] text-white rounded pe-2 p-1">
                         <img src={`/Misc/star.png`} alt="Top" className="size-4" draggable={false} />
                         <div>{obj.dat}</div>
@@ -374,7 +374,7 @@ export default function App() {
                         </Link>
                       )}
                     </div>
-                    <div className="flex items-center flex-wrap py-1 gap-1 gap-y-1">
+                    <div className="flex items-center flex-wrap py-1 gap-1 gap-y-0">
                       <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
                         <img
                           draggable={false}
@@ -393,7 +393,7 @@ export default function App() {
                         {sToA(obj.cor).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
                             <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                              <div className="font-[Source] text-[12px]">{ite}</div>
+                              <div className="font-[Source] text-[11px]">{ite}</div>
                             </div>
                             <img
                               draggable={false}
@@ -415,7 +415,7 @@ export default function App() {
                           ).map((ite, index) => (
                             <div className="tooltip shrink-0" key={index}>
                               <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
+                                <div className="font-[Source] text-[11px]">{p9boons[ite]}</div>
                               </div>
                               <img
                                 draggable={false}
@@ -438,7 +438,7 @@ export default function App() {
                           ).map((ite, index) => (
                             <div className="tooltip shrink-0" key={index}>
                               <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
+                                <div className="font-[Source] text-[11px]">{p9boons[ite]}</div>
                               </div>
                               <img
                                 draggable={false}
@@ -462,7 +462,7 @@ export default function App() {
                             ).map((ite, index) => (
                               <div className="tooltip shrink-0" key={index}>
                                 <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                  <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
+                                  <div className="font-[Source] text-[11px]">{p9boons[ite]}</div>
                                 </div>
                                 <img
                                   draggable={false}
@@ -476,7 +476,7 @@ export default function App() {
                             findValue(sToA(obj.ele)).map((ite, index) => (
                               <div className="tooltip shrink-0" key={index}>
                                 <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                  <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
+                                  <div className="font-[Source] text-[11px]">{p9boons[ite]}</div>
                                 </div>
                                 <img
                                   draggable={false}
@@ -499,7 +499,7 @@ export default function App() {
                           ).map((ite, index) => (
                             <div className="tooltip shrink-0" key={index}>
                               <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="font-[Source] text-[12px]">{p9boons[ite]}</div>
+                                <div className="font-[Source] text-[11px]">{p9boons[ite]}</div>
                               </div>
                               <img
                                 draggable={false}
@@ -516,7 +516,7 @@ export default function App() {
                           {sToA(obj.ks).map((ite, index) => (
                             <div className="tooltip shrink-0" key={index}>
                               <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="font-[Source] text-[12px]">{ite}</div>
+                                <div className="font-[Source] text-[11px]">{ite}</div>
                               </div>
                               <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-7" />
                             </div>
@@ -524,7 +524,7 @@ export default function App() {
                         </div>
                       )}
                       {obj.boon && (
-                        <div className="flex flex-wrap gap-0.5 p-1 rounded bg-[#28282b80]">
+                        <div className="flex flex-wrap gap-0.5 p-1 rounded">
                           {findValue2(
                             sToA(obj.boon).sort((a, b) => {
                               const aIndex = orderMap2.get(a) ?? Infinity;
@@ -534,7 +534,7 @@ export default function App() {
                           ).map((ite, index) => (
                             <div className="tooltip shrink-0" key={index}>
                               <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="font-[Source] text-[12px]">{boonCodex[ite]}</div>
+                                <div className="font-[Source] text-[11px]">{boonCodex[ite]}</div>
                               </div>
                               <img
                                 draggable={false}
