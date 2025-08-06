@@ -55,6 +55,7 @@ export const bAres = {
   Ares_38: `Blood Spree`,
   Ares_35: `Cut Above`,
   Ares_41: `Sanguinary Savor`,
+  Ares_50: `Blood Drop`,
 };
 
 export const bArtemis = {
