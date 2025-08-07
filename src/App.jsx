@@ -58,7 +58,7 @@ export const findValue2 = (arr) => {
 const availableRegion = [`Underworld`, `Surface`];
 const allPatches = [p11data, p9data];
 
-const handleLoadMore = (updater) => {
+export const handleLoadMore = (updater) => {
   updater((prev) => prev + 50);
 };
 

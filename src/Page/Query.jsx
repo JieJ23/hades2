@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 
 import { aspectId, idAspect } from "../Data/QueryTrait";
 import { h2AspectOrder, sToA } from "../Data/Misc";
-import { orderMap, orderMap2, findValue, findValue2 } from "../App";
+import { orderMap, orderMap2, findValue, findValue2, handleLoadMore } from "../App";
 import { p9boons, p9boons_reverse } from "../Data/P9BoonObj";
 
 import { allP9 } from "../Data/P9BoonObj";
@@ -26,6 +26,7 @@ export default function Query() {
   const [isOpen, setIsOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const [shareableURL, setShareableURL] = useState("");
+  const [show, setShow] = useState(20);
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -83,8 +84,7 @@ export default function Query() {
     boon.toLowerCase().includes(query.toLowerCase())
   );
 
-  const displayData = allEntries
-    .filter((obj) => asp.includes(obj.asp))
+  const displayData = (asp.length <= 0 ? allEntries : allEntries.filter((obj) => asp.includes(obj.asp)))
     .filter((obj) => obj.fea >= minmax[0] && obj.fea <= minmax[1])
     .filter((item) => {
       // Combine all relevant fields into a single string (lowercase for case-insensitive)
@@ -136,6 +136,7 @@ export default function Query() {
             min={50}
             max={67}
             onChange={(e) => {
+              setShow(20);
               const newMin = Math.min(67, Math.max(50, +e.target.value)); // Clamp 50-67
               setMinMax([newMin, minmax[1]]);
             }}
@@ -147,6 +148,7 @@ export default function Query() {
             min={50}
             max={67}
             onChange={(e) => {
+              setShow(20);
               const newMax = Math.min(67, Math.max(50, +e.target.value)); // Clamp 50-67
               setMinMax([minmax[0], newMax]);
             }}
@@ -154,6 +156,7 @@ export default function Query() {
           <select
             className="select select-sm w-[120px] border-1 border-[#00ffaa] focus:outline-0 rounded"
             onChange={(e) => {
+              setShow(20);
               setAsp((prev) => {
                 if (!prev.includes(e.target.value)) {
                   return [...prev, e.target.value];
@@ -162,6 +165,7 @@ export default function Query() {
               });
             }}
           >
+            <option value={`All`}>All</option>
             {h2AspectOrder.map((ite, index) => (
               <option value={ite} key={index}>
                 {ite}
@@ -176,6 +180,7 @@ export default function Query() {
             className="input input-sm border-white w-[200px] focus:outline-0 rounded"
             value={query}
             onChange={(e) => {
+              setShow(20);
               setQuery(e.target.value);
               setIsOpen(true);
             }}
@@ -217,6 +222,7 @@ export default function Query() {
               <div
                 className="bg-[white] text-black px-2 py-0.5 rounded cursor-pointer hover:scale-[95%] hover:bg-[#00ffaa] duration-75 ease-in"
                 onClick={() => {
+                  setShow(20);
                   setAsp((prev) => prev.filter((item) => item !== ite));
                 }}
               >
@@ -231,6 +237,7 @@ export default function Query() {
               <div
                 className="bg-[white] text-black px-2 py-0.5 rounded cursor-pointer hover:scale-[95%] hover:bg-[#00ffaa] duration-75 ease-in"
                 onClick={() => {
+                  setShow(20);
                   setHas((prev) => prev.filter((item) => item !== ite));
                 }}
               >
@@ -240,10 +247,11 @@ export default function Query() {
           </div>
         )}
         <div>
-          Query: {displayData.length}/{allEntries.length}
+          Query: {displayData.length}/{allEntries.length} |{" "}
+          {((displayData.length / allEntries.length) * 100).toFixed(2)}%
         </div>
         <div className="select-none">
-          {displayData.map((obj, index) => (
+          {displayData.slice(0, show).map((obj, index) => (
             <div className="my-1 rounded bg-[#28282b70] p-2 py-1">
               <div className="flex justify-between text-[12px] items-center px-1">
                 <div className="font-[Cinzel] flex gap-1">
@@ -385,6 +393,26 @@ export default function Query() {
               <div className="text-[10px] text-gray-300 ps-1">{obj.des}</div>
             </div>
           ))}
+        </div>
+        <div className="flex justify-center my-4 gap-2">
+          {show < displayData.length && (
+            <button
+              className="btn bg-transparent rounded border-1 border-[#00ffaa] btn-sm font-[Source]"
+              onClick={() => handleLoadMore(setShow)}
+            >
+              Show More
+            </button>
+          )}
+          {displayData.length > 20 && (
+            <button
+              className="btn bg-transparent rounded border-1 border-[#00ffaa] btn-sm font-[Source]"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Back Top
+            </button>
+          )}
         </div>
       </div>
       <Footer />
