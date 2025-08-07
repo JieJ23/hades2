@@ -2283,4 +2283,22 @@ export const p11data = [
     boon: "Nitro Boost,Soul,Flourish,Hail Storm,Hasty Retreat,Last Gasp,Renewed Faith",
     ks: "Cloud Bangle,Fig Leaf,Luckier Tooth,Gorgon Amulet",
   },
+  {
+    dat: "2025-08-06",
+    nam: "Aki",
+    asp: "Melinoe Flames",
+    loc: "Surface",
+    fea: "50",
+    src: "",
+    des: "Poseidon/Apollo Heph Blasts + Dark Side",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzYiLCJjNyIsImMxMiIsImMxMyIsImMxNCIsImMxNiIsImMxNyIsImMxOCIsImMyMCIsImMyMSIsImMyMiIsImMyNCJd",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzAsMywyLDYsMywzLDIsNSwyLDAsMiwwLDYsMCwyLDIsMTJd",
+    tim: "17:32.50",
+    fam: "Hound",
+    cor: "HepAttack,HesSpecial,HerCast,ApoSprint,PosMagick",
+    ham: "Sudden Burst",
+    boon: "Rallying Cry,Water Fitness,Self Healing,Rude Awakening,Martial Art,Wispy Wiles,Seismic Servo,Reckless Abandon,Success Rate,Nimble Limbs,Travel Deal,Fine Line,Hereditary Bane,Mutual Destruction,Cut Above,Super Nova,Grand Caldera,All Together,Affluence,Horror,Savagery,Tension,Bloodthirst,Growth,Contingency,Dark Side,Focus,Resonance",
+    ks: "Aromatic Phial,Sword Hilt,Transcendent Embryo,Concave Stone",
+  },
 ];
