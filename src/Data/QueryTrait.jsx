@@ -1,0 +1,28 @@
+export const idAspect = {
+  1: `Melinoe Staff`,
+  2: `Circe`,
+  3: `Momus`,
+  4: `Anubis`,
+  5: `Melinoe Blades`,
+  6: `Artemis`,
+  7: `Pan`,
+  8: `Morrigan`,
+  9: `Melinoe Axe`,
+  10: `Charon`,
+  11: `Thanatos`,
+  12: `Nergal`,
+  13: `Melinoe Flames`,
+  14: `Eos`,
+  15: `Moros`,
+  16: `Supay`,
+  17: `Melinoe Skull`,
+  18: `Medea`,
+  19: `Persephone`,
+  20: `Hel`,
+  21: `Melinoe Coat`,
+  22: `Nyx`,
+  23: `Selene`,
+  24: `Shiva`,
+};
+
+export const aspectId = Object.fromEntries(Object.entries(idAspect).map(([key, value]) => [value, key]));

@@ -8,7 +8,7 @@ import Footer from "../Comp/Footer";
 export default function FearCalculator() {
   const [vows, setVows] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [isCopied, setIsCopied] = useState(false);
-  const [shareableURL, setShareableURL] = useState(""); // State to store the shareable URL
+  const [shareableURL, setShareableURL] = useState("");
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
