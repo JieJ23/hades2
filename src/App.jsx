@@ -522,7 +522,7 @@ export default function App() {
                                 draggable={false}
                                 src={`/buildgui/${ite}.png`}
                                 alt="Keepsake"
-                                className="size-5 md:size-6"
+                                className="size-6 md:size-7"
                               />
                             </div>
                           ))}
