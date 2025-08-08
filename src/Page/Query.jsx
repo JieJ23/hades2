@@ -137,7 +137,7 @@ export default function Query() {
             max={67}
             onChange={(e) => {
               setShow(20);
-              const newMin = Math.min(67, Math.max(50, +e.target.value)); // Clamp 50-67
+              const newMin = e.target.value; // Clamp 50-67
               setMinMax([newMin, minmax[1]]);
             }}
           />
@@ -149,12 +149,13 @@ export default function Query() {
             max={67}
             onChange={(e) => {
               setShow(20);
-              const newMax = Math.min(67, Math.max(50, +e.target.value)); // Clamp 50-67
+              const newMax = e.target.value; // Clamp 50-67
               setMinMax([minmax[0], newMax]);
             }}
           />
           <select
             className="select select-sm w-[120px] border-1 border-[#00ffaa] focus:outline-0 rounded"
+            defaultValue={`All`}
             onChange={(e) => {
               setShow(20);
               setAsp((prev) => {
@@ -165,7 +166,9 @@ export default function Query() {
               });
             }}
           >
-            <option value={`All`}>All</option>
+            <option value={`All`} disabled={true}>
+              All
+            </option>
             {h2AspectOrder.map((ite, index) => (
               <option value={ite} key={index}>
                 {ite}
