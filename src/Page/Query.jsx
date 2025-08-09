@@ -35,6 +35,10 @@ const allEntries = [...p9data, ...p11data].sort((a, b) => {
   return parseTimetoms(a.tim) - parseTimetoms(b.tim);
 });
 
+const allPlayers = [...new Set([...p9data, ...p11data].map((obj) => obj.nam))].sort((a, b) =>
+  a.toLowerCase().localeCompare(b.toLowerCase())
+);
+
 export default function Query() {
   const [asp, setAsp] = useState([]);
   const [reg, setReg] = useState(`Region`);
@@ -43,6 +47,7 @@ export default function Query() {
   const [has, setHas] = useState([]);
   const [vow, setVow] = useState([]);
   const [arc, setArc] = useState([]);
+  const [player, setPlayer] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const [shareableURL, setShareableURL] = useState("");
@@ -56,6 +61,7 @@ export default function Query() {
     const base64Vow = searchParams.get("vow");
     const base64Arc = searchParams.get("arc");
     const base64Reg = searchParams.get("reg");
+    const base64Player = searchParams.get("player");
 
     if (base64Asp) {
       try {
@@ -111,6 +117,15 @@ export default function Query() {
         console.error("Error decoding cards data from URL:", error);
       }
     }
+    if (base64Player) {
+      try {
+        const decodedPlayer = JSON.parse(atob(base64Player)); // Decode the Base64
+        setPlayer(decodedPlayer);
+        // Reset the URL back to localhost without the query
+      } catch (error) {
+        console.error("Error decoding cards data from URL:", error);
+      }
+    }
     window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
   }, []);
 
@@ -122,8 +137,9 @@ export default function Query() {
     const base64Vow = btoa(JSON.stringify(vow));
     const base64Arc = btoa(JSON.stringify(arc));
     const base64Reg = btoa(JSON.stringify(reg));
+    const base64Player = btoa(JSON.stringify(player));
 
-    const newURL = `${window.location.origin}/Query/?asp=${base64Asp}&minmax=${base64MinMax}&has=${base64Has}&vow=${base64Vow}&arcana=${base64Arc}&reg=${base64Reg}`;
+    const newURL = `${window.location.origin}/Query/?asp=${base64Asp}&minmax=${base64MinMax}&has=${base64Has}&vow=${base64Vow}&arcana=${base64Arc}&reg=${base64Reg}&player=${base64Player}`;
     setShareableURL(newURL);
   };
   const copyURLToClipboard = () => {
@@ -157,7 +173,11 @@ export default function Query() {
           .filter((obj) => obj.arcana && arc.every((sel) => deCodeArcana(obj.arcana).includes(sel)))
       : displayData;
 
-  const displayData3 = reg === `Region` ? displayData2 : displayData2.filter((obj) => obj.loc === reg);
+  const displayData3 = (reg === `Region` ? displayData2 : displayData2.filter((obj) => obj.loc === reg)).filter(
+    (obj) => {
+      return player === "" || obj.nam === player;
+    }
+  );
 
   return (
     <main className="relative">
@@ -273,7 +293,7 @@ export default function Query() {
             ))}
           </select>
           <select
-            className="select select-sm w-[100px] border-1 border-[#b300ff] focus:outline-0 rounded"
+            className="select select-sm w-[120px] border-1 border-[#b300ff] focus:outline-0 rounded"
             defaultValue={`Arcana`}
             onChange={(e) => {
               setShow(20);
@@ -289,6 +309,23 @@ export default function Query() {
               Arcana
             </option>
             {Object.values(deckMatch).map((ite, index) => (
+              <option value={ite} key={index}>
+                {ite}
+              </option>
+            ))}
+          </select>
+          <select
+            className="select select-sm w-[120px] border-1 border-[#f18043] focus:outline-0 rounded"
+            defaultValue={`Player`}
+            onChange={(e) => {
+              setShow(20);
+              setPlayer(e.target.value);
+            }}
+          >
+            <option value={`Player`} disabled={true}>
+              Player
+            </option>
+            {allPlayers.map((ite, index) => (
               <option value={ite} key={index}>
                 {ite}
               </option>
@@ -339,11 +376,12 @@ export default function Query() {
           )}
         </div>
         {reg && (
-          <div className="flex text-[10px] md:text-[11px] my-1 gap-1">
-            <div className="px-2 py-1 rounded bg-[white] text-black">Region: {reg === `Region` ? `All` : reg}</div>
-            <div className="px-2 py-1 rounded bg-[white] text-black">
+          <div className="flex flex-wrap text-[10px] md:text-[11px] my-1 gap-1">
+            <div className="px-2 py-1 rounded bg-[#f18043] text-black">Region: {reg === `Region` ? `All` : reg}</div>
+            <div className="px-2 py-1 rounded bg-[#f18043] text-black">
               Fear Range: {minmax[0]} - {minmax[1]}
             </div>
+            {player && <div className="px-2 py-1 rounded bg-[#f18043] text-black">Player: {player}</div>}
           </div>
         )}
         {asp.length > 0 && (
@@ -449,6 +487,9 @@ export default function Query() {
                       <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
                     </Link>
                   )}
+                  <div className="flex items-center bg-[white] text-black border-1 border-black rounded p-1">
+                    P{obj.pat}
+                  </div>
                   <div className="flex items-center bg-[#00ffaa] text-black border-1 border-black rounded p-1">
                     {obj.tim}
                   </div>
@@ -457,18 +498,28 @@ export default function Query() {
               </div>
               <div className="flex items-center flex-wrap my-1 gap-1">
                 <div className="flex gap-0.5 rounded">
-                  <img
-                    draggable={false}
-                    src={`/P9/${obj.asp}.png`}
-                    alt="Core Boon"
-                    className="size-6 md:size-7 border-1 border-black rounded-lg"
-                  />
-                  <img
-                    draggable={false}
-                    src={`/P9/${obj.fam}.png`}
-                    alt="Core Boon"
-                    className="size-6 md:size-7 border-1 border-black rounded-lg"
-                  />
+                  <div className="tooltip shrink-0" key={index}>
+                    <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                      <div className="font-[Source] text-[11px]">{obj.asp}</div>
+                    </div>
+                    <img
+                      draggable={false}
+                      src={`/P9/${obj.asp}.png`}
+                      alt="Core Boon"
+                      className="size-6 md:size-7 border-1 border-black rounded-lg"
+                    />
+                  </div>
+                  <div className="tooltip shrink-0" key={index}>
+                    <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
+                      <div className="font-[Source] text-[11px]">{obj.fam}</div>
+                    </div>
+                    <img
+                      draggable={false}
+                      src={`/P9/${obj.fam}.png`}
+                      alt="Core Boon"
+                      className="size-6 md:size-7 border-1 border-black rounded-lg"
+                    />
+                  </div>
                 </div>
                 <div className="flex gap-0.5 rounded">
                   {sToA(obj.cor).map((ite, index) => (
