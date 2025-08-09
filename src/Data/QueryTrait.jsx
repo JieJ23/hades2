@@ -1,4 +1,4 @@
-export const idAspect = {
+export const idaspect = {
   1: `Melinoe Staff`,
   2: `Circe`,
   3: `Momus`,
@@ -25,4 +25,4 @@ export const idAspect = {
   24: `Shiva`,
 };
 
-export const aspectId = Object.fromEntries(Object.entries(idAspect).map(([key, value]) => [value, key]));
+export const aspectid = Object.fromEntries(Object.entries(idaspect).map(([key, value]) => [value, key]));
