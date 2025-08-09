@@ -373,7 +373,7 @@ export default function Query() {
                   <div className="font-mono font-semibold text-[#f18043]">{obj.fea}</div>
                   <div>{obj.nam}</div>
                 </div>
-                <div className="flex flex-wrap justify-end gap-0.5 text-[9px]">
+                <div className="flex flex-wrap justify-end gap-0.5 text-[11px]">
                   {obj.src !== "" && (
                     <Link
                       className="flex items-center bg-[#fff] text-black border-1 border-black rounded ps-2 p-1"
@@ -505,7 +505,7 @@ export default function Query() {
                   </div>
                 </div>
               )}
-              <div className="text-[10px] text-gray-300 ps-1">{obj.des}</div>
+              <div className="text-[11px] text-gray-300 ps-1">{obj.des}</div>
               {obj.arcana && (
                 <div className="flex flex-wrap gap-1 text-[10px] my-0.5">
                   {obj.arcana &&
