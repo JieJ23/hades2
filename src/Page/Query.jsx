@@ -339,7 +339,7 @@ export default function Query() {
           )}
         </div>
         {reg !== `Region` && (
-          <div className="flex text-[10px]">
+          <div className="flex text-[10px] my-1">
             <div className="px-2 py-1 rounded bg-[white] text-black">Region: {reg}</div>
           </div>
         )}
@@ -414,9 +414,8 @@ export default function Query() {
                 <div className="font-[Cinzel] flex gap-1 items-center">
                   <div className="font-mono font-semibold text-[#f18043]">{obj.fea}</div>
                   <div>{obj.nam}</div>
-                  <div className={`w-2 h-2 rounded ${obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`}`} />
                 </div>
-                <div className="flex flex-wrap justify-end gap-0.5 text-[11px]">
+                <div className="flex flex-wrap items-center justify-end gap-0.5 text-[11px]">
                   {obj.src !== "" && (
                     <Link
                       className="flex items-center bg-[#fff] text-black border-1 border-black rounded ps-2 p-1"
@@ -450,6 +449,7 @@ export default function Query() {
                   <div className="flex items-center bg-[#00ffaa] text-black border-1 border-black rounded p-1">
                     {obj.tim}
                   </div>
+                  <img src={`/${obj.loc}.png`} alt="Region" className="size-6 rounded" />
                 </div>
               </div>
               <div className="flex items-center flex-wrap my-1 gap-1">
