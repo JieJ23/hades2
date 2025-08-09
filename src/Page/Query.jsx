@@ -191,10 +191,10 @@ export default function Query() {
         <div className="w-full max-w-[1000px] bg-[#28282b98] text-white overflow-hidden p-2 truncate text-[12px] rounded my-2">
           {shareableURL || "No URL Generated Yet"}
         </div>
-        <div className="my-2 flex gap-1">
+        <div className="my-2 flex flex-wrap gap-1">
           <input
             type="number"
-            className="input input-sm border-1 border-[#f18043] w-[50px] focus:outline-0 rounded"
+            className="input input-sm border-1 border-[#f18043] w-[60px] focus:outline-0 rounded"
             value={minmax[0]}
             min={22}
             max={67}
@@ -206,7 +206,7 @@ export default function Query() {
           />
           <input
             type="number"
-            className="input input-sm border-1 border-[#f18043] w-[50px] focus:outline-0 rounded"
+            className="input input-sm border-1 border-[#f18043] w-[60px] focus:outline-0 rounded"
             value={minmax[1]}
             min={22}
             max={67}
@@ -217,7 +217,7 @@ export default function Query() {
             }}
           />
           <select
-            className="select select-sm w-[100px] border-1 border-[#ff8000] focus:outline-0 rounded"
+            className="select select-sm w-[120px] border-1 border-[#ff8000] focus:outline-0 rounded"
             defaultValue={`Region`}
             onChange={(e) => {
               setShow(20);
@@ -251,7 +251,7 @@ export default function Query() {
             ))}
           </select>
           <select
-            className="select select-sm w-[100px] border-1 border-[#b300ff] focus:outline-0 rounded"
+            className="select select-sm w-[120px] border-1 border-[#b300ff] focus:outline-0 rounded"
             defaultValue={`Vows`}
             onChange={(e) => {
               setShow(20);
