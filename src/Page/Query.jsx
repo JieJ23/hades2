@@ -338,13 +338,16 @@ export default function Query() {
             </ul>
           )}
         </div>
-        {reg !== `Region` && (
-          <div className="flex text-[10px] my-1">
-            <div className="px-2 py-1 rounded bg-[white] text-black">Region: {reg}</div>
+        {reg && (
+          <div className="flex text-[10px] md:text-[11px] my-1 gap-1">
+            <div className="px-2 py-1 rounded bg-[white] text-black">Region: {reg === `Region` ? `All` : reg}</div>
+            <div className="px-2 py-1 rounded bg-[white] text-black">
+              Fear Range: {minmax[0]} - {minmax[1]}
+            </div>
           </div>
         )}
         {asp.length > 0 && (
-          <div className="flex flex-wrap gap-0.5 my-1 text-[10px]">
+          <div className="flex flex-wrap gap-0.5 my-1 text-[10px] md:text-[11px]">
             {asp.map((ite) => (
               <div
                 className="bg-[white] text-black px-2 py-0.5 rounded cursor-pointer hover:scale-[95%] hover:bg-[#00ffaa] duration-75 ease-in"
@@ -359,7 +362,7 @@ export default function Query() {
           </div>
         )}
         {has.length > 0 && (
-          <div className="flex flex-wrap gap-0.5 my-1 text-[10px]">
+          <div className="flex flex-wrap gap-0.5 my-1 text-[10px] md:text-[11px]">
             {has.map((ite) => (
               <div
                 className="bg-[white] text-black px-2 py-0.5 rounded cursor-pointer hover:scale-[95%] hover:bg-[#00ffaa] duration-75 ease-in"
@@ -374,7 +377,7 @@ export default function Query() {
           </div>
         )}
         {vow.length > 0 && (
-          <div className="flex flex-wrap gap-0.5 my-1 text-[10px]">
+          <div className="flex flex-wrap gap-0.5 my-1 text-[10px] md:text-[11px]">
             {vow.map((ite) => (
               <div
                 className="bg-[white] text-black px-2 py-0.5 rounded cursor-pointer hover:scale-[95%] hover:bg-[#b300ff] duration-75 ease-in"
@@ -389,7 +392,7 @@ export default function Query() {
           </div>
         )}
         {arc.length > 0 && (
-          <div className="flex flex-wrap gap-0.5 my-1 text-[10px]">
+          <div className="flex flex-wrap gap-0.5 my-1 text-[10px] md:text-[11px]">
             {arc.map((ite) => (
               <div
                 className="bg-[white] text-black px-2 py-0.5 rounded cursor-pointer hover:scale-[95%] hover:bg-[#b300ff] duration-75 ease-in"
@@ -415,7 +418,7 @@ export default function Query() {
                   <div className="font-mono font-semibold text-[#f18043]">{obj.fea}</div>
                   <div>{obj.nam}</div>
                 </div>
-                <div className="flex flex-wrap items-center justify-end gap-0.5 text-[11px]">
+                <div className="flex flex-wrap items-center justify-end gap-0.5 text-[10px] md:text-[11px]">
                   {obj.src !== "" && (
                     <Link
                       className="flex items-center bg-[#fff] text-black border-1 border-black rounded ps-2 p-1"
@@ -550,7 +553,7 @@ export default function Query() {
               )}
               <div className="text-[11px] text-gray-300 ps-1">{obj.des}</div>
               {obj.arcana && (
-                <div className="flex flex-wrap gap-1 text-[10px] my-0.5">
+                <div className="flex flex-wrap gap-1 text-[10px] md:text-[11px] my-0.5">
                   {obj.arcana &&
                     deCodeArcana(obj.arcana)
                       .map((ite) => deckMatch[ite])
@@ -566,7 +569,7 @@ export default function Query() {
                 </div>
               )}
               {obj.oath && (
-                <div className="flex flex-wrap gap-1 text-[10px] my-0.5">
+                <div className="flex flex-wrap gap-1 text-[10px] md:text-[11px] my-0.5">
                   {obj.oath &&
                     deCodeVow(obj.oath)
                       .map((ite1, index) => oathMatch[index].indexOf(ite1))
