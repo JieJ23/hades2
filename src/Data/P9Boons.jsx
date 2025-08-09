@@ -47,7 +47,7 @@ export const hammer_blades = {
   HammerDaggers_31: "Wicked Onslaught",
   HammerDaggers_37: "Reaper Knives",
   HammerDaggers_28: "Skulking Onslaught",
-  HammerDaggers_43: "Phantom Etchings",
+  HammerDaggers_43: "Phantom Brand",
   HammerDaggers_44: "Banshee Brand",
   HammerDaggers_45: "Sinister Pinion",
 };
