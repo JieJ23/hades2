@@ -163,7 +163,7 @@ export default function Query() {
           </button>
         </div>
 
-        <div className="w-full max-w-[1000px] bg-base-300/80 text-white overflow-hidden p-2 truncate text-[12px] rounded my-2">
+        <div className="w-full max-w-[1000px] bg-[#28282b98] text-white overflow-hidden p-2 truncate text-[12px] rounded my-2">
           {shareableURL || "No URL Generated Yet"}
         </div>
         <div className="my-2 flex gap-1">
@@ -367,7 +367,7 @@ export default function Query() {
         </div>
         <div className="select-none">
           {displayData2.slice(0, show).map((obj, index) => (
-            <div className="my-1 rounded bg-[#28282b70] p-2 py-1">
+            <div className="my-1 rounded bg-[#00000098] p-2 py-1">
               <div className="flex justify-between text-[12px] items-center px-1">
                 <div className="font-[Cinzel] flex gap-1">
                   <div className="font-mono font-semibold text-[#f18043]">{obj.fea}</div>

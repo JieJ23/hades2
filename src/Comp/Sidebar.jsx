@@ -3,18 +3,20 @@ import { useLocation } from "react-router-dom";
 
 export const sites = [
   { icon: `Ladder`, link: ``, nam: `Ladder` },
+  { icon: `Query`, link: `Query`, nam: `Query` },
   { icon: `Melinoe`, link: `Ranking`, nam: `Ranking` },
   { icon: `Boon2`, link: `Trend`, nam: `Boon Trend` },
   { icon: `Stats`, link: `P11Stats`, nam: `P11Stats` },
   { icon: `Stats`, link: `P910Stats`, nam: `P910Stats` },
   { icon: `Save`, link: `Playground`, nam: `Playground` },
   { icon: `Player`, link: `Player`, nam: `Player` },
-  { icon: `Patch8`, link: `Patch8`, nam: `Patch 8` },
+  // { icon: `Patch8`, link: `Patch8`, nam: `Patch 8` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },
-  { icon: `Hammer`, link: `Hammer`, nam: `Hammer` },
-  { icon: `Boons`, link: `Boons`, nam: `Boons` },
-  { icon: `Enemy`, link: `Enemy`, nam: `Enemy` },
+  { icon: `Boons`, link: `Play`, nam: `Boons` },
+  // { icon: `Hammer`, link: `Hammer`, nam: `Hammer` },
+  // { icon: `Boons`, link: `Boons`, nam: `Boons` },
+  // { icon: `Enemy`, link: `Enemy`, nam: `Enemy` },
 ];
 
 export default function SideNav() {

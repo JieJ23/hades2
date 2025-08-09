@@ -1,5 +1,6 @@
 import Head from "../Comp/Head";
 import Background from "../Comp/Background";
+import SideNav from "../Comp/Sidebar";
 import {
   bAphrodite,
   bApollo,
@@ -70,29 +71,30 @@ export default function Play() {
       <Background />
       <Head />
       <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto">
-        <div className="flex flex-wrap gap-1">
+        <SideNav />
+        <div className="flex flex-wrap gap-1 px-2 mt-4">
           {allCategoryTitle.map((item, index) => (
             <button className="btn btn-xs px-2 py-1 bg-[white] text-black rounded" onClick={() => setCategory(index)}>
               {item}
             </button>
           ))}
         </div>
-        <div className="flex flex-wrap p-2">
+        <div className="flex flex-wrap px-2 mb-2">
           {displayData.map((objs) => (
-            <section className="my-4 flex flex-wrap gap-1">
+            <section className="my-2 flex flex-wrap gap-1">
               {category === 5
                 ? objs.map((item) => (
                     <div className="flex items-center gap-2 bg-[#28282bc0] rounded px-2 py-1">
-                      <img src={`buildgui/${[item]}.png`} alt="Boons" className="size-10" />
+                      <img src={`buildgui/${[item]}.png`} alt="Boons" className="size-9" />
                       <div>{item}</div>
                     </div>
                   ))
                 : Object.keys(swapKV(objs)).map((item) => (
                     <div className="flex items-center gap-2 bg-[#28282bc0] rounded px-2 py-1">
                       {category === 2 ? (
-                        <img src={`P9/Hammer${swapKV(objs)[item]}.png`} alt="Boons" className="size-10" />
+                        <img src={`P9/Hammer${swapKV(objs)[item]}.png`} alt="Boons" className="size-9" />
                       ) : (
-                        <img src={`P9/${swapKV(objs)[item]}.png`} alt="Boons" className="size-10" />
+                        <img src={`P9/${swapKV(objs)[item]}.png`} alt="Boons" className="size-9" />
                       )}
 
                       <div>{item}</div>

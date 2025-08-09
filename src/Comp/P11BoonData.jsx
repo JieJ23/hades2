@@ -153,7 +153,7 @@ export default function P11BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (ite[1] / allStaff)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `bg-[#131111] border-white/20`
+                    : `bg-[#00000098] border-white/20`
                 }`}
               >
                 <img
@@ -181,7 +181,7 @@ export default function P11BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (ite[1] / allAxe)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `bg-[#131111] border-white/20`
+                    : `bg-[#00000098] border-white/20`
                 }`}
               >
                 <img
@@ -209,7 +209,7 @@ export default function P11BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (ite[1] / allBlades)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `bg-[#131111] border-white/20`
+                    : `bg-[#00000098] border-white/20`
                 }`}
               >
                 <img
@@ -237,7 +237,7 @@ export default function P11BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (ite[1] / allFlames)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `bg-[#131111] border-white/20`
+                    : `bg-[#00000098] border-white/20`
                 }`}
               >
                 <img
@@ -265,7 +265,7 @@ export default function P11BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (ite[1] / allSkull)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `bg-[#131111] border-white/20`
+                    : `bg-[#00000098] border-white/20`
                 }`}
               >
                 <img
@@ -293,7 +293,7 @@ export default function P11BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (ite[1] / allCoat)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `bg-[#131111] border-white/20`
+                    : `bg-[#00000098] border-white/20`
                 }`}
               >
                 <img
@@ -362,7 +362,7 @@ export default function P11BoonData() {
                 className={`flex gap-1 rounded border-1 p-2 ${
                   (100 * (arr[1] / displayData.length)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black border-none`
-                    : `bg-[#131111] border-white/20`
+                    : `bg-[#00000098] border-white/20`
                 }`}
                 key={index}
               >
@@ -392,7 +392,7 @@ export default function P11BoonData() {
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#00ffaa] text-black border-none`
-                      : `bg-[#131111] border-white/20`
+                      : `bg-[#00000098] border-white/20`
                   }`}
                 >
                   <img
@@ -421,7 +421,7 @@ export default function P11BoonData() {
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#00ffaa] text-black border-none`
-                      : `bg-[#131111] border-white/20`
+                      : `bg-[#00000098] border-white/20`
                   }`}
                 >
                   <img
@@ -450,7 +450,7 @@ export default function P11BoonData() {
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#00ffaa] text-black border-none`
-                      : `bg-[#131111] border-white/20`
+                      : `bg-[#00000098] border-white/20`
                   }`}
                 >
                   <img
@@ -484,7 +484,7 @@ export default function P11BoonData() {
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#00ffaa] text-black border-none`
-                      : `bg-[#131111] border-white/20`
+                      : `bg-[#00000098] border-white/20`
                   }`}
                 >
                   <img
@@ -513,7 +513,7 @@ export default function P11BoonData() {
                   className={`flex gap-1 rounded border-1 p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#00ffaa] text-black border-none`
-                      : `bg-[#131111] border-white/20`
+                      : `bg-[#00000098] border-white/20`
                   }`}
                 >
                   <img

@@ -37,11 +37,8 @@ export default function Submit() {
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           {/* Page content here */}
-          <label
-            htmlFor="my-drawer"
-            className="btn border-[#2efaac] bg-transparent font-[Source] border-1 rounded text-[14px] px-3"
-          >
-            Submit
+          <label htmlFor="my-drawer" className="btn text-black font-[Source] bg-[#00ffaa] rounded text-[12px] px-2">
+            Submit Run
           </label>
         </div>
         <div className="drawer-side z-40">
