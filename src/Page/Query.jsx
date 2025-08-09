@@ -37,6 +37,7 @@ const allEntries = [...p9data, ...p11data].sort((a, b) => {
 
 export default function Query() {
   const [asp, setAsp] = useState([]);
+  const [reg, setReg] = useState(`Region`);
   const [minmax, setMinMax] = useState([22, 67]);
   const [query, setQuery] = useState("");
   const [has, setHas] = useState([]);
@@ -54,6 +55,7 @@ export default function Query() {
     const base64Has = searchParams.get("has");
     const base64Vow = searchParams.get("vow");
     const base64Arc = searchParams.get("arc");
+    const base64Reg = searchParams.get("reg");
 
     if (base64Asp) {
       try {
@@ -100,6 +102,15 @@ export default function Query() {
         console.error("Error decoding cards data from URL:", error);
       }
     }
+    if (base64Reg) {
+      try {
+        const decodedReg = JSON.parse(atob(base64Reg)); // Decode the Base64
+        setReg(decodedReg);
+        // Reset the URL back to localhost without the query
+      } catch (error) {
+        console.error("Error decoding cards data from URL:", error);
+      }
+    }
     window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
   }, []);
 
@@ -110,8 +121,9 @@ export default function Query() {
     const base64Has = btoa(JSON.stringify(has));
     const base64Vow = btoa(JSON.stringify(vow));
     const base64Arc = btoa(JSON.stringify(arc));
+    const base64Reg = btoa(JSON.stringify(reg));
 
-    const newURL = `${window.location.origin}/Query/?asp=${base64Asp}&minmax=${base64MinMax}&has=${base64Has}&vow=${base64Vow}&arcana=${base64Arc}`;
+    const newURL = `${window.location.origin}/Query/?asp=${base64Asp}&minmax=${base64MinMax}&has=${base64Has}&vow=${base64Vow}&arcana=${base64Arc}&reg=${base64Reg}`;
     setShareableURL(newURL);
   };
   const copyURLToClipboard = () => {
@@ -144,6 +156,8 @@ export default function Query() {
           .filter((obj) => obj.oath && vow.every((sel) => deCodeVow(obj.oath)[sel - 1] !== 0))
           .filter((obj) => obj.arcana && arc.every((sel) => deCodeArcana(obj.arcana).includes(sel)))
       : displayData;
+
+  const displayData3 = reg === `Region` ? displayData2 : displayData2.filter((obj) => obj.loc === reg);
 
   return (
     <main className="relative">
@@ -202,6 +216,18 @@ export default function Query() {
               setMinMax([minmax[0], newMax]);
             }}
           />
+          <select
+            className="select select-sm w-[100px] border-1 border-[#ff8000] focus:outline-0 rounded"
+            defaultValue={`Region`}
+            onChange={(e) => {
+              setShow(20);
+              setReg(e.target.value);
+            }}
+          >
+            <option value={`Region`}>Region</option>
+            <option value={`Surface`}>Surface</option>
+            <option value={`Underworld`}>Underworld</option>
+          </select>
           <select
             className="select select-sm w-[120px] border-1 border-[#00ffaa] focus:outline-0 rounded"
             defaultValue={`All`}
@@ -312,6 +338,11 @@ export default function Query() {
             </ul>
           )}
         </div>
+        {reg !== `Region` && (
+          <div className="flex text-[10px]">
+            <div className="px-2 py-1 rounded bg-[white] text-black">Region: {reg}</div>
+          </div>
+        )}
         {asp.length > 0 && (
           <div className="flex flex-wrap gap-0.5 my-1 text-[10px]">
             {asp.map((ite) => (
@@ -373,16 +404,17 @@ export default function Query() {
           </div>
         )}
         <div>
-          Query: {displayData2.length}/{allEntries.length} |{" "}
-          {((displayData2.length / allEntries.length) * 100).toFixed(2)}%
+          Query: {displayData3.length}/{allEntries.length} |{" "}
+          {((displayData3.length / allEntries.length) * 100).toFixed(2)}%
         </div>
         <div className="select-none">
-          {displayData2.slice(0, show).map((obj, index) => (
+          {displayData3.slice(0, show).map((obj, index) => (
             <div className="my-1 rounded bg-[#00000098] p-2 py-1">
               <div className="flex justify-between text-[12px] items-center px-1">
-                <div className="font-[Cinzel] flex gap-1">
+                <div className="font-[Cinzel] flex gap-1 items-center">
                   <div className="font-mono font-semibold text-[#f18043]">{obj.fea}</div>
                   <div>{obj.nam}</div>
+                  <div className={`w-2 h-2 rounded ${obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`}`} />
                 </div>
                 <div className="flex flex-wrap justify-end gap-0.5 text-[11px]">
                   {obj.src !== "" && (
@@ -556,7 +588,7 @@ export default function Query() {
           ))}
         </div>
         <div className="flex justify-center my-4 gap-2">
-          {show < displayData2.length && (
+          {show < displayData3.length && (
             <button
               className="btn bg-transparent rounded border-1 border-[#00ffaa] btn-sm font-[Source]"
               onClick={() => handleLoadMore(setShow)}
@@ -564,7 +596,7 @@ export default function Query() {
               Show More
             </button>
           )}
-          {displayData2.length > 20 && (
+          {displayData3.length > 20 && (
             <button
               className="btn bg-transparent rounded border-1 border-[#00ffaa] btn-sm font-[Source]"
               onClick={() => {
