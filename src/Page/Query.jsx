@@ -8,7 +8,16 @@ import { p9data } from "../Data/P9Data";
 import { p11data } from "../Data/P11Data";
 import { useState, useEffect } from "react";
 
-import { h2AspectOrder, sToA, deCodeArcana, deckMatch, deCodeVow, oathMatch, vowMatch } from "../Data/Misc";
+import {
+  h2AspectOrder,
+  sToA,
+  deCodeArcana,
+  deckMatch,
+  deCodeVow,
+  oathMatch,
+  vowMatch,
+  parseTimetoms,
+} from "../Data/Misc";
 import { orderMap, orderMap2, findValue, findValue2, handleLoadMore } from "../App";
 import { p9boons } from "../Data/P9BoonObj";
 
@@ -20,9 +29,11 @@ import { allVows } from "../Data/FearTrait";
 import { vowid, idvow } from "../Data/Vow1";
 import { arcanaid, idarcana } from "../Data/Arcana1";
 
-const allEntries = [...p9data, ...p11data]
-  .sort((a, b) => new Date(b.dat) - new Date(a.dat))
-  .sort((a, b) => b.fea - a.fea);
+const allEntries = [...p9data, ...p11data].sort((a, b) => {
+  const feaDiff = +b.fea - +a.fea;
+  if (feaDiff !== 0) return feaDiff;
+  return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+});
 
 export default function Query() {
   const [asp, setAsp] = useState([]);
