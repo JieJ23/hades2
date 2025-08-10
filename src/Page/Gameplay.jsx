@@ -8,6 +8,7 @@ import { p11data } from "../Data/P11Data";
 import { sheet_data } from "../Data/Sheet";
 import { h2Data } from "../Data/H2Data";
 import { data_AnyFear } from "../Data/H2Fear";
+import { gameplay } from "../Data/GameplayData";
 
 import { getYTid } from "../Data/Misc";
 import { Link } from "react-router-dom";
@@ -15,14 +16,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { h2AspectOrder } from "../Data/Misc";
 
-const allYTvids = [...p9data, ...p11data, ...sheet_data, ...h2Data, ...data_AnyFear].filter((obj) => obj.src);
+const allYTvids = [...p9data, ...p11data, ...sheet_data, ...h2Data, ...data_AnyFear, ...gameplay].filter(
+  (obj) => obj.src
+);
 
 export const handleLoadMoreGameplay = (updater) => {
   updater((prev) => prev + 60);
 };
-
-const test = [...new Set(allYTvids.map((obj) => obj.src.slice(0, 10)))];
-console.log(test);
 
 export default function Gameplay() {
   const [category, setCategory] = useState(`All Aspects`);
@@ -103,7 +103,7 @@ export default function Gameplay() {
               </Link>
               <div className="p-1 text-white group-hover:text-[#00ffaa]">
                 <div>
-                  {obj.fea || obj.f} Fear {obj.asp || obj.a}
+                  {obj.fea || obj.f} Fear {obj.asp || obj.a} {obj.l || obj.loc}
                 </div>
                 <div className="flex justify-between text-gray-400">
                   <div>{obj.nam || obj.n}</div>
