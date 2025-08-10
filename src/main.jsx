@@ -18,6 +18,7 @@ import Enemy from "./Page/Enemy.jsx";
 import Playground from "./Page/Playground.jsx";
 import Play from "./Page/Play.jsx";
 import Query from "./Page/Query.jsx";
+import Gameplay from "./Page/Gameplay.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -38,6 +39,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/Playground" element={<Playground />} />
         <Route path="/Play" element={<Play />} />
         <Route path="/Query" element={<Query />} />
+        <Route path="/Gameplay" element={<Gameplay />} />
       </Routes>
     </Router>
   </StrictMode>

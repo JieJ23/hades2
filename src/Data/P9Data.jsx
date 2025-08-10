@@ -2414,7 +2414,7 @@ export const p9data = [
     asp: "Supay",
     loc: "Surface",
     fea: "35",
-    src: "sgsua062425",
+    src: "",
     des: "First Rivals Typhon kill",
     tim: "18:09.22",
     fam: "Frog",

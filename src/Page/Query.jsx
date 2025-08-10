@@ -204,21 +204,21 @@ export default function Query() {
       <Head />
       <div className="max-w-[1200px] font-[Source] text-[11px] mx-auto px-2">
         <SideNav />
-        <div className="flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-1 pt-2">
           <button
-            className="btn btn-sm bg-white text-black rounded px-2 py-1 font-[Source] text-[11px]"
+            className="bg-white text-black rounded px-2 py-1 font-[Source] text-[11px]"
             onClick={generateShareableURL}
           >
             Generate URL
           </button>
           <button
-            className="btn btn-sm bg-white text-black rounded px-2 py-1 font-[Source] text-[11px]"
+            className="bg-white text-black rounded px-2 py-1 font-[Source] text-[11px]"
             onClick={copyURLToClipboard}
           >
             {isCopied ? "Copied!" : "Copy URL"}
           </button>
           <button
-            className="btn btn-sm bg-white text-black rounded px-2 py-1 font-[Source] text-[11px]"
+            className="bg-white text-black rounded px-2 py-1 font-[Source] text-[11px]"
             onClick={() => {
               setAsp([]);
             }}
