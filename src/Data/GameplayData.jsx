@@ -87,4 +87,20 @@ export const gameplay = [
     fea: "25",
     src: "https://www.youtube.com/watch?v=WYGG5VLZBTE",
   },
+  {
+    dat: "2025-08-10",
+    nam: "Haelian",
+    asp: "Melinoe Stuff",
+    loc: "Underworld",
+    fea: "14",
+    src: "https://www.youtube.com/watch?v=QIrUWapF1lI",
+  },
+  {
+    dat: "2025-08-09",
+    nam: "Boated",
+    asp: "Anubis",
+    loc: "Underworld",
+    fea: "20",
+    src: "https://www.youtube.com/watch?v=OxISzEypZc4",
+  },
 ];
