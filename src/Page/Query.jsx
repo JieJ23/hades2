@@ -131,15 +131,34 @@ export default function Query() {
 
   //
   const generateShareableURL = () => {
-    const base64Asp = btoa(JSON.stringify(asp));
-    const base64MinMax = btoa(JSON.stringify(minmax));
-    const base64Has = btoa(JSON.stringify(has));
-    const base64Vow = btoa(JSON.stringify(vow));
-    const base64Arc = btoa(JSON.stringify(arc));
-    const base64Reg = btoa(JSON.stringify(reg));
-    const base64Player = btoa(JSON.stringify(player));
+    // Match your actual initial states
+    const defaults = {
+      asp: [],
+      reg: "Region",
+      minmax: [22, 67],
+      has: [],
+      vow: [],
+      arc: [],
+      player: "",
+    };
 
-    const newURL = `${window.location.origin}/Query/?asp=${base64Asp}&minmax=${base64MinMax}&has=${base64Has}&vow=${base64Vow}&arcana=${base64Arc}&reg=${base64Reg}&player=${base64Player}`;
+    const params = new URLSearchParams();
+
+    const addParamIfNotDefault = (key, value) => {
+      if (JSON.stringify(value) !== JSON.stringify(defaults[key])) {
+        params.set(key, btoa(JSON.stringify(value)));
+      }
+    };
+
+    addParamIfNotDefault("asp", asp);
+    addParamIfNotDefault("reg", reg);
+    addParamIfNotDefault("minmax", minmax);
+    addParamIfNotDefault("has", has);
+    addParamIfNotDefault("vow", vow);
+    addParamIfNotDefault("arc", arc);
+    addParamIfNotDefault("player", player);
+
+    const newURL = `${window.location.origin}/Query/?${params.toString()}`;
     setShareableURL(newURL);
   };
   const copyURLToClipboard = () => {
