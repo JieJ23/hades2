@@ -50,7 +50,7 @@ export default function Gameplay() {
             max={67}
             onChange={(e) => {
               setShow(60);
-              const newMin = e.target.value;
+              const newMin = Number(e.target.value);
               setMinMax([newMin, minmax[1]]);
             }}
           />
@@ -62,7 +62,7 @@ export default function Gameplay() {
             max={67}
             onChange={(e) => {
               setShow(60);
-              const newMax = e.target.value;
+              const newMax = Number(e.target.value);
               setMinMax([minmax[0], newMax]);
             }}
           />
