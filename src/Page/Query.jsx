@@ -507,7 +507,7 @@ export default function Query() {
                     </Link>
                   )}
                   <div className="flex items-center bg-[white] text-black border-1 border-black rounded p-1">
-                    P{obj.pat}
+                    {new Date(obj.dat) > new Date("2025-07-23") ? `P11` : `P9/10`}
                   </div>
                   <div className="flex items-center bg-[#00ffaa] text-black border-1 border-black rounded p-1">
                     {obj.tim}

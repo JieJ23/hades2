@@ -1,7 +1,6 @@
 export const p9data = [
   {
     dat: "2025-06-18",
-    pat: `9/10`,
     nam: "Deteggtive",
     asp: "Anubis",
     loc: "Underworld",
@@ -19,7 +18,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-19",
-    pat: `9/10`,
     nam: "星辰往昔",
     asp: "Pan",
     loc: "Underworld",
@@ -38,7 +36,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-20",
-    pat: `9/10`,
     nam: "辣味鸡",
     asp: "Supay",
     loc: "Underworld",
@@ -57,7 +54,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-20",
-    pat: `9/10`,
     nam: "Alex CA",
     asp: "Anubis",
     loc: "Underworld",
@@ -75,7 +71,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-20",
-    pat: `9/10`,
     nam: "Alex CA",
     asp: "Supay",
     loc: "Underworld",
@@ -92,7 +87,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-20",
-    pat: `9/10`,
     nam: "Tom Kulczewski",
     asp: "Supay",
     loc: "Surface",
@@ -110,7 +104,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-19",
-    pat: `9/10`,
     nam: "明石飛行社",
     asp: "Hel",
     loc: "Surface",
@@ -127,7 +120,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-18",
-    pat: `9/10`,
     nam: "Sirius_Wolf",
     asp: "Anubis",
     loc: "Surface",
@@ -145,7 +137,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "Vader501",
     asp: "Supay",
     loc: "Underworld",
@@ -163,7 +154,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "Kinken_Yuen",
     asp: "Persephone",
     loc: "Surface",
@@ -179,7 +169,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "星辰往昔",
     asp: "Nergal",
     loc: "Surface",
@@ -197,7 +186,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "鵺狮鲵蝶",
     asp: "Persephone",
     loc: "Surface",
@@ -214,7 +202,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-20",
-    pat: `9/10`,
     nam: "Freechaind",
     asp: "Anubis",
     loc: "Surface",
@@ -232,7 +219,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "老穆",
     asp: "Anubis",
     loc: "Surface",
@@ -250,7 +236,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "无好名暂定空格",
     asp: "Supay",
     loc: "Underworld",
@@ -269,7 +254,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "Sirius_Wolf",
     asp: "Morrigan",
     loc: "Surface",
@@ -287,7 +271,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "无好名暂定空格",
     asp: "Anubis",
     loc: "Surface",
@@ -306,7 +289,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "明石飛行社",
     asp: "Circe",
     loc: "Surface",
@@ -324,7 +306,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-20",
-    pat: `9/10`,
     nam: "Gamesoda",
     asp: "Supay",
     loc: "Surface",
@@ -342,7 +323,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "无好名暂定空格",
     asp: "Persephone",
     loc: "Underworld",
@@ -361,7 +341,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-19",
-    pat: `9/10`,
     nam: "鵺狮鲵蝶",
     asp: "Persephone",
     loc: "Surface",
@@ -377,7 +356,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-19",
-    pat: `9/10`,
     nam: "星辰往昔",
     asp: "Hel",
     loc: "Surface",
@@ -395,7 +373,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-19",
-    pat: `9/10`,
     nam: "睿智的林带雨",
     asp: "Nergal",
     loc: "Surface",
@@ -412,7 +389,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-20",
-    pat: `9/10`,
     nam: "手残党老杰",
     asp: "Supay",
     loc: "Surface",
@@ -430,7 +406,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-20",
-    pat: `9/10`,
     nam: "星辰往昔",
     asp: "Melinoe Staff",
     loc: "Surface",
@@ -449,7 +424,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-20",
-    pat: `9/10`,
     nam: "星辰往昔",
     asp: "Eos",
     loc: "Underworld",
@@ -468,7 +442,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-20",
-    pat: `9/10`,
     nam: "刚正不阿酸先生",
     asp: "Supay",
     loc: "Underworld",
@@ -487,7 +460,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-22",
-    pat: `9/10`,
     nam: "Shaded",
     asp: "Anubis",
     loc: "Underworld",
@@ -505,7 +477,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-23",
-    pat: `9/10`,
     nam: "星辰往昔",
     asp: "Supay",
     loc: "Surface",
@@ -524,7 +495,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-22",
-    pat: `9/10`,
     nam: "Sirius_Wolf",
     asp: "Nergal",
     loc: "Surface",
@@ -542,7 +512,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-22",
-    pat: `9/10`,
     nam: "手残党老杰",
     asp: "Melinoe Staff",
     loc: "Surface",
@@ -560,7 +529,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-22",
-    pat: `9/10`,
     nam: "睿智的林带雨",
     asp: "Hel",
     loc: "Surface",
@@ -578,7 +546,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-23",
-    pat: `9/10`,
     nam: "Deteggtive",
     asp: "Shiva",
     loc: "Underworld",
@@ -594,7 +561,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-23",
-    pat: `9/10`,
     nam: "老穆",
     asp: "Supay",
     loc: "Surface",
@@ -611,7 +577,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-24",
-    pat: `9/10`,
     nam: "辣味鸡",
     asp: "Nergal",
     loc: "Surface",
@@ -628,7 +593,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-24",
-    pat: `9/10`,
     nam: "星辰往昔",
     asp: "Supay",
     loc: "Surface",
@@ -646,7 +610,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-23",
-    pat: `9/10`,
     nam: "辣味鸡",
     asp: "Medea",
     loc: "Surface",
@@ -663,7 +626,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-23",
-    pat: `9/10`,
     nam: "Alex CA",
     asp: "Morrigan",
     loc: "Underworld",
@@ -680,7 +642,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-24",
-    pat: `9/10`,
     nam: "Alex CA",
     asp: "Shiva",
     loc: "Underworld",
@@ -698,7 +659,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "星辰往昔",
     asp: "Nyx",
     loc: "Surface",
@@ -716,7 +676,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "老穆",
     asp: "Hel",
     loc: "Surface",
@@ -734,7 +693,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "老穆",
     asp: "Hel",
     loc: "Surface",
@@ -752,7 +710,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "IIIndestructible",
     asp: "Morrigan",
     loc: "Surface",
@@ -770,7 +727,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-24",
-    pat: `9/10`,
     nam: "Biggestgeekever",
     asp: "Circe",
     loc: "Surface",
@@ -787,7 +743,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-24",
-    pat: `9/10`,
     nam: "Coldshade",
     asp: "Nyx",
     loc: "Underworld",
@@ -804,7 +759,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "睿智的林带雨",
     asp: "Circe",
     loc: "Surface",
@@ -821,7 +775,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-24",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Morrigan",
     loc: "Surface",
@@ -839,7 +792,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-23",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Hel",
     loc: "Underworld",
@@ -857,7 +809,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-22",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Nyx",
     loc: "Underworld",
@@ -875,7 +826,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-24",
-    pat: `9/10`,
     nam: "Haelian",
     asp: "Melinoe Staff",
     loc: "Underworld",
@@ -894,7 +844,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-24",
-    pat: `9/10`,
     nam: "잭프",
     asp: "Selene",
     loc: "Underworld",
@@ -912,7 +861,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-24",
-    pat: `9/10`,
     nam: "잭프",
     asp: "Selene",
     loc: "Underworld",
@@ -930,7 +878,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-22",
-    pat: `9/10`,
     nam: "Inle Orichas",
     asp: "Pan",
     loc: "Surface",
@@ -949,7 +896,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "Flower Vendor",
     asp: "Selene",
     loc: "Underworld",
@@ -967,7 +913,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "Alex CA",
     asp: "Supay",
     loc: "Underworld",
@@ -984,7 +929,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-26",
-    pat: `9/10`,
     nam: "手残党老杰",
     asp: "Persephone",
     loc: "Surface",
@@ -1002,7 +946,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "老穆",
     asp: "Nergal",
     loc: "Surface",
@@ -1020,7 +963,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "辣味鸡",
     asp: "Supay",
     loc: "Surface",
@@ -1038,7 +980,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Anubis",
     loc: "Underworld",
@@ -1057,7 +998,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-26",
-    pat: `9/10`,
     nam: "Vytautas",
     asp: "Nyx",
     loc: "Underworld",
@@ -1075,7 +1015,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-26",
-    pat: `9/10`,
     nam: "DyeSueKey90",
     asp: "Shiva",
     loc: "Surface",
@@ -1094,7 +1033,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-26",
-    pat: `9/10`,
     nam: "Haelian",
     asp: "Nergal",
     loc: "Surface",
@@ -1111,7 +1049,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    pat: `9/10`,
     nam: "IIIndestructible",
     asp: "Nergal",
     loc: "Surface",
@@ -1129,7 +1066,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    pat: `9/10`,
     nam: "睿智的林带雨",
     asp: "Pan",
     loc: "Surface",
@@ -1146,7 +1082,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    pat: `9/10`,
     nam: "Retro Shine",
     asp: "Supay",
     loc: "Surface",
@@ -1165,7 +1100,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-26",
-    pat: `9/10`,
     nam: "Sandwich",
     asp: "Anubis",
     loc: "Underworld",
@@ -1182,7 +1116,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    pat: `9/10`,
     nam: "睿智的林带雨",
     asp: "Anubis",
     loc: "Surface",
@@ -1200,7 +1133,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-19",
-    pat: `9/10`,
     nam: "Myntkaramell",
     asp: "Morrigan",
     loc: "Surface",
@@ -1217,7 +1149,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Shiva",
     loc: "Surface",
@@ -1234,7 +1165,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    pat: `9/10`,
     nam: "IIIndestructible",
     asp: "Shiva",
     loc: "Surface",
@@ -1251,7 +1181,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    pat: `9/10`,
     nam: "Haelian",
     asp: "Supay",
     loc: "Surface",
@@ -1268,7 +1197,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-24",
-    pat: `9/10`,
     nam: "Shaded",
     asp: "Anubis",
     loc: "Underworld",
@@ -1285,7 +1213,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "Myntkaramell",
     asp: "Anubis",
     loc: "Underworld",
@@ -1303,7 +1230,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-19",
-    pat: `9/10`,
     nam: "plimbo-scrimbly",
     asp: "Moros",
     loc: "Underworld",
@@ -1320,7 +1246,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "llzergll",
     asp: "Nergal",
     loc: "Underworld",
@@ -1338,7 +1263,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-19",
-    pat: `9/10`,
     nam: "llzergll",
     asp: "Supay",
     loc: "Surface",
@@ -1354,7 +1278,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-19",
-    pat: `9/10`,
     nam: "llzergll",
     asp: "Thanatos",
     loc: "Underworld",
@@ -1370,7 +1293,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "Flower Vendor",
     asp: "Anubis",
     loc: "Underworld",
@@ -1389,7 +1311,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    pat: `9/10`,
     nam: "Flower Vendor",
     asp: "Supay",
     loc: "Underworld",
@@ -1408,7 +1329,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Anubis",
     loc: "Underworld",
@@ -1426,7 +1346,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Persephone",
     loc: "Surface",
@@ -1445,7 +1364,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    pat: `9/10`,
     nam: "Vader501",
     asp: "Supay",
     loc: "Surface",
@@ -1463,7 +1381,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    pat: `9/10`,
     nam: "星辰往昔",
     asp: "Melinoe Staff",
     loc: "Surface",
@@ -1481,7 +1398,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    pat: `9/10`,
     nam: "星辰往昔",
     asp: "Persephone",
     loc: "Surface",
@@ -1499,7 +1415,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    pat: `9/10`,
     nam: "Haelian",
     asp: "Morrigan",
     loc: "Underworld",
@@ -1517,7 +1432,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    pat: `9/10`,
     nam: "Herro Yung",
     asp: "Anubis",
     loc: "Underworld",
@@ -1536,7 +1450,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    pat: `9/10`,
     nam: "IIIndestructible",
     asp: "Supay",
     loc: "Surface",
@@ -1554,7 +1467,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    pat: `9/10`,
     nam: "Shaded",
     asp: "Supay",
     loc: "Surface",
@@ -1572,7 +1484,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    pat: `9/10`,
     nam: "Kinken_Yuen",
     asp: "Melinoe Staff",
     loc: "Surface",
@@ -1589,7 +1500,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    pat: `9/10`,
     nam: "辣味鸡",
     asp: "Melinoe Staff",
     loc: "Underworld",
@@ -1608,7 +1518,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    pat: `9/10`,
     nam: "Forever_down",
     asp: "Persephone",
     loc: "Surface",
@@ -1626,7 +1535,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    pat: `9/10`,
     nam: "Haelian",
     asp: "Supay",
     loc: "Surface",
@@ -1644,7 +1552,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Morrigan",
     loc: "Underworld",
@@ -1663,7 +1570,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    pat: `9/10`,
     nam: "Alex CA",
     asp: "Anubis",
     loc: "Underworld",
@@ -1680,7 +1586,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    pat: `9/10`,
     nam: "Shaded",
     asp: "Anubis",
     loc: "Underworld",
@@ -1699,7 +1604,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    pat: `9/10`,
     nam: "SanAkiyama",
     asp: "Circe",
     loc: "Underworld",
@@ -1716,7 +1620,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-30",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Hel",
     loc: "Underworld",
@@ -1734,7 +1637,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-30",
-    pat: `9/10`,
     nam: "Vytautas",
     asp: "Supay",
     loc: "Underworld",
@@ -1751,7 +1653,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    pat: `9/10`,
     nam: "Vytautas",
     asp: "Melinoe Staff",
     loc: "Underworld",
@@ -1768,7 +1669,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-30",
-    pat: `9/10`,
     nam: "IIIndestructible",
     asp: "Anubis",
     loc: "Underworld",
@@ -1786,7 +1686,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    pat: `9/10`,
     nam: "Kinken_Yuen",
     asp: "Circe",
     loc: "Surface",
@@ -1804,7 +1703,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    pat: `9/10`,
     nam: "睿智的林带雨",
     asp: "Supay",
     loc: "Surface",
@@ -1823,7 +1721,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-30",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Hel",
     loc: "Underworld",
@@ -1841,7 +1738,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-30",
-    pat: `9/10`,
     nam: "llzergll",
     asp: "Circe",
     loc: "Underworld",
@@ -1859,7 +1755,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-30",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Circe",
     loc: "Surface",
@@ -1877,7 +1772,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-30",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Nergal",
     loc: "Surface",
@@ -1896,7 +1790,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-01",
-    pat: `9/10`,
     nam: "Kinken_Yuen",
     asp: "Anubis",
     loc: "Surface",
@@ -1914,7 +1807,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-01",
-    pat: `9/10`,
     nam: "手残党老杰",
     asp: "Supay",
     loc: "Surface",
@@ -1931,7 +1823,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    pat: `9/10`,
     nam: "Vytautas",
     asp: "Persephone",
     loc: "Underworld",
@@ -1949,7 +1840,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    pat: `9/10`,
     nam: "Vytautas",
     asp: "Anubis",
     loc: "Underworld",
@@ -1968,7 +1858,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-01",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Anubis",
     loc: "Surface",
@@ -1986,7 +1875,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-02",
-    pat: `9/10`,
     nam: "Kinken_Yuen",
     asp: "Morrigan",
     loc: "Surface",
@@ -2004,7 +1892,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-02",
-    pat: `9/10`,
     nam: "Thomas Risola",
     asp: "Momus",
     loc: "Underworld",
@@ -2022,7 +1909,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-01",
-    pat: `9/10`,
     nam: "aspect of bouldy",
     asp: "Morrigan",
     loc: "Surface",
@@ -2040,7 +1926,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-01",
-    pat: `9/10`,
     nam: "Endrix",
     asp: "Melinoe Skull",
     loc: "Surface",
@@ -2058,7 +1943,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-01",
-    pat: `9/10`,
     nam: "carcosa",
     asp: "Supay",
     loc: "Underworld",
@@ -2076,7 +1960,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-30",
-    pat: `9/10`,
     nam: "aspect of bouldy",
     asp: "Morrigan",
     loc: "Surface",
@@ -2093,7 +1976,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-30",
-    pat: `9/10`,
     nam: "Bandai",
     asp: "Anubis",
     loc: "Underworld",
@@ -2111,7 +1993,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-30",
-    pat: `9/10`,
     nam: "Bandai",
     asp: "Circe",
     loc: "Surface",
@@ -2129,7 +2010,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    pat: `9/10`,
     nam: "Dragonmancer",
     asp: "Persephone",
     loc: "Surface",
@@ -2145,7 +2025,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    pat: `9/10`,
     nam: "Navi",
     asp: "Supay",
     loc: "Surface",
@@ -2163,7 +2042,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    pat: `9/10`,
     nam: "Navi",
     asp: "Morrigan",
     loc: "Surface",
@@ -2181,7 +2059,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-27",
-    pat: `9/10`,
     nam: "Endrix",
     asp: "Supay",
     loc: "Surface",
@@ -2198,7 +2075,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "spookiboys",
     asp: "Supay",
     loc: "Underworld",
@@ -2217,7 +2093,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-23",
-    pat: `9/10`,
     nam: "Endrix",
     asp: "Charon",
     loc: "Surface",
@@ -2234,7 +2109,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "Deteggtive",
     asp: "Shiva",
     loc: "Underworld",
@@ -2251,7 +2125,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    pat: `9/10`,
     nam: "Vangetsu",
     asp: "Circe",
     loc: "Underworld",
@@ -2267,7 +2140,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-20",
-    pat: `9/10`,
     nam: "sand",
     asp: "Selene",
     loc: "Underworld",
@@ -2284,7 +2156,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-02",
-    pat: `9/10`,
     nam: "Shaded",
     asp: "Supay",
     loc: "Underworld",
@@ -2302,7 +2173,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-02",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Selene",
     loc: "Underworld",
@@ -2320,7 +2190,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-02",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Circe",
     loc: "Surface",
@@ -2339,7 +2208,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-23",
-    pat: `9/10`,
     nam: "Red",
     asp: "Morrigan",
     loc: "Underworld",
@@ -2357,7 +2225,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-24",
-    pat: `9/10`,
     nam: "Red",
     asp: "Morrigan",
     loc: "Surface",
@@ -2373,7 +2240,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-29",
-    pat: `9/10`,
     nam: "Red",
     asp: "Circe",
     loc: "Underworld",
@@ -2392,7 +2258,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-02",
-    pat: `9/10`,
     nam: "Kinken_Yuen",
     asp: "Supay",
     loc: "Surface",
@@ -2409,7 +2274,6 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    pat: `9/10`,
     nam: "Suace Face",
     asp: "Supay",
     loc: "Surface",
@@ -2427,7 +2291,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Shiva",
     loc: "Underworld",
@@ -2446,7 +2309,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    pat: `9/10`,
     nam: "茄德",
     asp: "Nergal",
     loc: "Underworld",
@@ -2465,7 +2327,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    pat: `9/10`,
     nam: "Miko",
     asp: "Nergal",
     loc: "Surface",
@@ -2483,7 +2344,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    pat: `9/10`,
     nam: "Sirius_Wolf",
     asp: "Nergal",
     loc: "Surface",
@@ -2501,7 +2361,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-02",
-    pat: `9/10`,
     nam: "Trent",
     asp: "Supay",
     loc: "Underworld",
@@ -2520,7 +2379,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-02",
-    pat: `9/10`,
     nam: "Trent",
     asp: "Supay",
     loc: "Surface",
@@ -2537,7 +2395,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    pat: `9/10`,
     nam: "Vangetsu",
     asp: "Hel",
     loc: "Underworld",
@@ -2554,7 +2411,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    pat: `9/10`,
     nam: "Vangetsu",
     asp: "Anubis",
     loc: "Underworld",
@@ -2572,7 +2428,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    pat: `9/10`,
     nam: "Red",
     asp: "Morrigan",
     loc: "Underworld",
@@ -2591,7 +2446,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Melinoe Blades",
     loc: "Underworld",
@@ -2608,7 +2462,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-04",
-    pat: `9/10`,
     nam: "睿智的林带雨",
     asp: "Hel",
     loc: "Surface",
@@ -2626,7 +2479,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    pat: `9/10`,
     nam: "Bandai",
     asp: "Momus",
     loc: "Surface",
@@ -2644,7 +2496,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-04",
-    pat: `9/10`,
     nam: "Kinken_Yuen",
     asp: "Melinoe Staff",
     loc: "Surface",
@@ -2663,7 +2514,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-04",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Persephone",
     loc: "Underworld",
@@ -2680,7 +2530,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-05",
-    pat: `9/10`,
     nam: "Deteggtive",
     asp: "Nergal",
     loc: "Underworld",
@@ -2697,7 +2546,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-05",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Charon",
     loc: "Underworld",
@@ -2715,7 +2563,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-05",
-    pat: `9/10`,
     nam: "おそろしい花音",
     asp: "Circe",
     loc: "Underworld",
@@ -2733,7 +2580,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-05",
-    pat: `9/10`,
     nam: "铲车人CCR",
     asp: "Supay",
     loc: "Underworld",
@@ -2751,7 +2597,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-06",
-    pat: `9/10`,
     nam: "Deteggtive",
     asp: "Nergal",
     loc: "Underworld",
@@ -2768,7 +2613,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-05",
-    pat: `9/10`,
     nam: "Flower Vendor",
     asp: "Morrigan",
     loc: "Underworld",
@@ -2786,7 +2630,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-05",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Persephone",
     loc: "Surface",
@@ -2804,7 +2647,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-05",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Shiva",
     loc: "Underworld",
@@ -2820,7 +2662,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-06",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Circe",
     loc: "Underworld",
@@ -2838,7 +2679,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-06",
-    pat: `9/10`,
     nam: "大示食屯",
     asp: "Pan",
     loc: "Surface",
@@ -2857,7 +2697,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-07",
-    pat: `9/10`,
     nam: "睿智的林带雨",
     asp: "Nergal",
     loc: "Surface",
@@ -2876,7 +2715,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-07",
-    pat: `9/10`,
     nam: "星辰往昔",
     asp: "Charon",
     loc: "Surface",
@@ -2894,7 +2732,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-07",
-    pat: `9/10`,
     nam: "星辰往昔",
     asp: "Shiva",
     loc: "Surface",
@@ -2912,7 +2749,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-06",
-    pat: `9/10`,
     nam: "nontimetis",
     asp: "Supay",
     loc: "Underworld",
@@ -2930,7 +2766,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-06",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Morrigan",
     loc: "Underworld",
@@ -2948,7 +2783,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-07",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Morrigan",
     loc: "Surface",
@@ -2965,7 +2799,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-07",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Supay",
     loc: "Surface",
@@ -2983,7 +2816,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-08",
-    pat: `9/10`,
     nam: "大示食屯",
     asp: "Anubis",
     loc: "Surface",
@@ -3001,7 +2833,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-08",
-    pat: `9/10`,
     nam: "睿智的林带雨",
     asp: "Morrigan",
     loc: "Surface",
@@ -3019,7 +2850,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-08",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Supay",
     loc: "Underworld",
@@ -3036,7 +2866,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-07",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Pan",
     loc: "Surface",
@@ -3054,7 +2883,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-09",
-    pat: `9/10`,
     nam: "Chozo 713",
     asp: "Hel",
     loc: "Underworld",
@@ -3073,7 +2901,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-08",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Nergal",
     loc: "Surface",
@@ -3092,7 +2919,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-09",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Pan",
     loc: "Surface",
@@ -3110,7 +2936,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-09",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Morrigan",
     loc: "Surface",
@@ -3128,7 +2953,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    pat: `9/10`,
     nam: "Chozo 713",
     asp: "Anubis",
     loc: "Underworld",
@@ -3146,7 +2970,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-09",
-    pat: `9/10`,
     nam: "Shaded",
     asp: "Supay",
     loc: "Underworld",
@@ -3163,7 +2986,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-09",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Supay",
     loc: "Surface",
@@ -3182,7 +3004,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-09",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Melinoe Flames",
     loc: "Surface",
@@ -3201,7 +3022,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Nyx",
     loc: "Surface",
@@ -3219,7 +3039,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-09",
-    pat: `9/10`,
     nam: "llzergll",
     asp: "Supay",
     loc: "Underworld",
@@ -3236,7 +3055,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-08",
-    pat: `9/10`,
     nam: "llzergll",
     asp: "Charon",
     loc: "Underworld",
@@ -3252,7 +3070,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-08",
-    pat: `9/10`,
     nam: "Frog",
     asp: "Morrigan",
     loc: "Underworld",
@@ -3270,7 +3087,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-08",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Nergal",
     loc: "Underworld",
@@ -3288,7 +3104,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-06",
-    pat: `9/10`,
     nam: "Aki",
     asp: "Anubis",
     loc: "Surface",
@@ -3306,7 +3121,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-05",
-    pat: `9/10`,
     nam: "SpicyLuchador",
     asp: "Melinoe Coat",
     loc: "Underworld",
@@ -3325,7 +3139,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    pat: `9/10`,
     nam: "Alex CA",
     asp: "Hel",
     loc: "Underworld",
@@ -3342,7 +3155,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    pat: `9/10`,
     nam: "Alex CA",
     asp: "Nergal",
     loc: "Underworld",
@@ -3359,7 +3171,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    pat: `9/10`,
     nam: "Alex CA",
     asp: "Nergal",
     loc: "Underworld",
@@ -3377,7 +3188,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Nergal",
     loc: "Underworld",
@@ -3395,7 +3205,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    pat: `9/10`,
     nam: "暗羽真的是睿智",
     asp: "Persephone",
     loc: "Surface",
@@ -3413,7 +3222,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Persephone",
     loc: "Underworld",
@@ -3431,7 +3239,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    pat: `9/10`,
     nam: "The Shinzo",
     asp: "Charon",
     loc: "Underworld",
@@ -3447,7 +3254,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-10",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Pan",
     loc: "Underworld",
@@ -3465,7 +3271,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-11",
-    pat: `9/10`,
     nam: "Malkin",
     asp: "Supay",
     loc: "Underworld",
@@ -3482,7 +3287,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-11",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Eos",
     loc: "Surface",
@@ -3499,7 +3303,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-11",
-    pat: `9/10`,
     nam: "Flower Vendor",
     asp: "Artemis",
     loc: "Underworld",
@@ -3518,7 +3321,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-06",
-    pat: `9/10`,
     nam: "Zanderthaw",
     asp: "Persephone",
     loc: "Underworld",
@@ -3535,7 +3337,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-07",
-    pat: `9/10`,
     nam: "Circe",
     asp: "Anubis",
     loc: "Underworld",
@@ -3553,7 +3354,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-11",
-    pat: `9/10`,
     nam: "Flower Vendor",
     asp: "Melinoe Axe",
     loc: "Underworld",
@@ -3572,7 +3372,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-11",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Artemis",
     loc: "Underworld",
@@ -3588,7 +3387,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-11",
-    pat: `9/10`,
     nam: "HookieDookie",
     asp: "Supay",
     loc: "Underworld",
@@ -3606,7 +3404,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-12",
-    pat: `9/10`,
     nam: "睿智的林带雨",
     asp: "Shiva",
     loc: "Surface",
@@ -3624,7 +3421,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-12",
-    pat: `9/10`,
     nam: "Foolish",
     asp: "Medea",
     loc: "Underworld",
@@ -3640,7 +3436,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-12",
-    pat: `9/10`,
     nam: "Vytautas",
     asp: "Morrigan",
     loc: "Underworld",
@@ -3657,7 +3452,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-12",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Supay",
     loc: "Surface",
@@ -3674,7 +3468,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-12",
-    pat: `9/10`,
     nam: "Trent",
     asp: "Morrigan",
     loc: "Surface",
@@ -3693,7 +3486,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-13",
-    pat: `9/10`,
     nam: "Aki",
     asp: "Hel",
     loc: "Underworld",
@@ -3711,7 +3503,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-13",
-    pat: `9/10`,
     nam: "Aki",
     asp: "Supay",
     loc: "Underworld",
@@ -3730,7 +3521,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-09",
-    pat: `9/10`,
     nam: "Aki",
     asp: "Circe",
     loc: "Underworld",
@@ -3749,7 +3539,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-13",
-    pat: `9/10`,
     nam: "Aki",
     asp: "Supay",
     loc: "Surface",
@@ -3767,7 +3556,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-13",
-    pat: `9/10`,
     nam: "llzergll",
     asp: "Circe",
     loc: "Underworld",
@@ -3784,7 +3572,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-13",
-    pat: `9/10`,
     nam: "Aki",
     asp: "Nergal",
     loc: "Underworld",
@@ -3803,7 +3590,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-14",
-    pat: `9/10`,
     nam: "Foolish",
     asp: "Nergal",
     loc: "Underworld",
@@ -3818,7 +3604,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-16",
-    pat: `9/10`,
     nam: "Flower Vendor",
     asp: "Nergal",
     loc: "Underworld",
@@ -3835,7 +3620,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-16",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Anubis",
     loc: "Surface",
@@ -3852,7 +3636,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-16",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Circe",
     loc: "Surface",
@@ -3869,7 +3652,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-16",
-    pat: `9/10`,
     nam: "Vytautas",
     asp: "Selene",
     loc: "Underworld",
@@ -3886,7 +3668,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-16",
-    pat: `9/10`,
     nam: "睿智的林带雨",
     asp: "Melinoe Staff",
     loc: "Surface",
@@ -3904,7 +3685,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-17",
-    pat: `9/10`,
     nam: "Vytautas",
     asp: "Circe",
     loc: "Underworld",
@@ -3922,7 +3702,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-17",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Nergal",
     loc: "Surface",
@@ -3940,7 +3719,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-14",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Hel",
     loc: "Surface",
@@ -3958,7 +3736,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-14",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Melinoe Staff",
     loc: "Surface",
@@ -3976,7 +3753,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-15",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Shiva",
     loc: "Surface",
@@ -3994,7 +3770,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-15",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Shiva",
     loc: "Surface",
@@ -4012,7 +3787,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-15",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Medea",
     loc: "Surface",
@@ -4029,7 +3803,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-15",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Melinoe Staff",
     loc: "Surface",
@@ -4047,7 +3820,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-16",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Morrigan",
     loc: "Underworld",
@@ -4065,7 +3837,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-16",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Circe",
     loc: "Surface",
@@ -4083,7 +3854,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-17",
-    pat: `9/10`,
     nam: "睿智的林带雨",
     asp: "Circe",
     loc: "Surface",
@@ -4101,7 +3871,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-17",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Anubis",
     loc: "Surface",
@@ -4119,7 +3888,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-17",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Circe",
     loc: "Surface",
@@ -4137,7 +3905,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-17",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Anubis",
     loc: "Underworld",
@@ -4154,7 +3921,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-18",
-    pat: `9/10`,
     nam: "llzergll",
     asp: "Hel",
     loc: "Underworld",
@@ -4171,7 +3937,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-18",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Circe",
     loc: "Underworld",
@@ -4188,7 +3953,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-18",
-    pat: `9/10`,
     nam: "Haelian",
     asp: "Momus",
     loc: "Underworld",
@@ -4205,7 +3969,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-14",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Shiva",
     loc: "Underworld",
@@ -4222,7 +3985,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-19",
-    pat: `9/10`,
     nam: "Sandwich",
     asp: "Medea",
     loc: "Underworld",
@@ -4239,7 +4001,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-19",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Melinoe Flames",
     loc: "Underworld",
@@ -4256,7 +4017,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-19",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Pan",
     loc: "Underworld",
@@ -4273,7 +4033,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-19",
-    pat: `9/10`,
     nam: "Aki",
     asp: "Thanatos",
     loc: "Surface",
@@ -4290,7 +4049,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-19",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Persephone",
     loc: "Underworld",
@@ -4307,7 +4065,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-14",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Circe",
     loc: "Underworld",
@@ -4324,7 +4081,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-12",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Circe",
     loc: "Underworld",
@@ -4341,7 +4097,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Circe",
     loc: "Underworld",
@@ -4358,7 +4113,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-14",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Pan",
     loc: "Underworld",
@@ -4375,7 +4129,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-12",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Melinoe Flames",
     loc: "Underworld",
@@ -4392,7 +4145,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-11",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Melinoe Flames",
     loc: "Underworld",
@@ -4409,7 +4161,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-15",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Persephone",
     loc: "Underworld",
@@ -4426,7 +4177,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-12",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Persephone",
     loc: "Underworld",
@@ -4443,7 +4193,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-11",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Nergal",
     loc: "Underworld",
@@ -4460,7 +4209,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-15",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Melinoe Coat",
     loc: "Underworld",
@@ -4477,7 +4225,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-13",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Melinoe Coat",
     loc: "Underworld",
@@ -4494,7 +4241,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-11",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Melinoe Coat",
     loc: "Underworld",
@@ -4511,7 +4257,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-20",
-    pat: `9/10`,
     nam: "llzergll",
     asp: "Melinoe Flames",
     loc: "Underworld",
@@ -4528,7 +4273,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-19",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Melinoe Coat",
     loc: "Underworld",
@@ -4545,7 +4289,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-20",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Hel",
     loc: "Surface",
@@ -4562,7 +4305,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-20",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Anubis",
     loc: "Underworld",
@@ -4579,7 +4321,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-20",
-    pat: `9/10`,
     nam: "Aki",
     asp: "Morrigan",
     loc: "Underworld",
@@ -4596,7 +4337,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-12",
-    pat: `9/10`,
     nam: "Aki",
     asp: "Supay",
     loc: "Underworld",
@@ -4613,7 +4353,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-20",
-    pat: `9/10`,
     nam: "Shaded",
     asp: "Supay",
     loc: "Underworld",
@@ -4629,7 +4368,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-21",
-    pat: `9/10`,
     nam: "Foolish",
     asp: "Morrigan",
     loc: "Underworld",
@@ -4646,7 +4384,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-21",
-    pat: `9/10`,
     nam: "Foolish",
     asp: "Anubis",
     loc: "Underworld",
@@ -4662,7 +4399,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-22",
-    pat: `9/10`,
     nam: "Vytautas",
     asp: "Medea",
     loc: "Underworld",
@@ -4679,7 +4415,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-22",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Melinoe Coat",
     loc: "Surface",
@@ -4696,7 +4431,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-22",
-    pat: `9/10`,
     nam: "Aki",
     asp: "Medea",
     loc: "Underworld",
@@ -4713,7 +4447,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-22",
-    pat: `9/10`,
     nam: "Red",
     asp: "Circe",
     loc: "Underworld",
@@ -4730,7 +4463,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-23",
-    pat: `9/10`,
     nam: "Foolish",
     asp: "Hel",
     loc: "Underworld",
@@ -4747,7 +4479,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-23",
-    pat: `9/10`,
     nam: "East_25",
     asp: "Melinoe Coat",
     loc: "Underworld",
@@ -4764,7 +4495,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-11",
-    pat: `9/10`,
     nam: "me0w0",
     asp: "Morrigan",
     loc: "Underworld",
@@ -4781,7 +4511,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-23",
-    pat: `9/10`,
     nam: "Vixmorf",
     asp: "Melinoe Staff",
     loc: "Underworld",
@@ -4797,7 +4526,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-23",
-    pat: `9/10`,
     nam: "unexplainedbacn",
     asp: "Morrigan",
     loc: "Surface",
@@ -4814,7 +4542,6 @@ export const p9data = [
   },
   {
     dat: "2025-07-22",
-    pat: `9/10`,
     nam: "Boated",
     asp: "Nergal",
     loc: "Surface",
