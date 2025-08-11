@@ -559,7 +559,6 @@ export const bSelene = {
   Selene_111: `Brilliance`,
   Selene_115: `Calm`,
   Selene_116: `Prism`,
-  Selene_118: `Ambition`,
   Selene_114: `Ferocity`,
   Selene_117: `Cascade`,
   Selene_131: `Lance of Ares`,
