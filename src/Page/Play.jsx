@@ -68,7 +68,7 @@ export default function Play() {
   const displayData = allCategory[category];
 
   return (
-    <main className="relative select-none">
+    <main className="relative">
       <Background />
       <Head />
       <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto">
@@ -95,7 +95,7 @@ export default function Play() {
             </button>
           ))}
         </div>
-        <div className="flex flex-wrap px-2 mb-2">
+        <div className="flex flex-wrap px-2 mb-2 select-none">
           {displayData.map((objs) => (
             <section className="my-2 flex flex-wrap gap-1">
               {category === 5
