@@ -2914,7 +2914,7 @@ export const p11data = [
     asp: "Charon",
     loc: "Underworld",
     fea: "44",
-    src: "",
+    src: "https://www.youtube.com/watch?v=fhhMnF3vyoE",
     des: "Honestly, this run is more impressive in its luck than my own skill. Spoiler alert, but I get two Special-related boons from Artemis and Chaos respectively, finally bonking Rival Scylla hard enough. (This was like… attempt 7 after multiple losses to Rival Scylla in a row.) ",
     tim: "16:47.54",
     fam: "Cat",
