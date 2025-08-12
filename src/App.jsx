@@ -70,8 +70,6 @@ export default function App() {
   const [min, setMin] = useState(22);
   const [max, setMax] = useState(67);
   const [has, setHas] = useState([]);
-  const [query, setQuery] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
   const [hasvod, setHasVod] = useState(false);
 
   const highfear = allPatches[patch].slice().sort((a, b) => {
@@ -81,8 +79,6 @@ export default function App() {
   });
   //
   const entriesOnlyVod = highfear.slice().filter((obj) => obj.src !== "");
-
-  const filteredBoons = allP9.filter((boon) => boon.toLowerCase().includes(query.toLowerCase()));
 
   const baseData = hasvod ? entriesOnlyVod : highfear;
 
@@ -207,49 +203,6 @@ export default function App() {
                 </option>
               ))}
             </select>
-          </div>
-          <div className="px-2 py-1 flex gap-2 relative">
-            <input
-              type="text"
-              placeholder="Search Boons"
-              className="input input-sm border-white w-[200px] focus:outline-0 rounded"
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setIsOpen(true);
-              }}
-              onFocus={() => setIsOpen(true)}
-              onBlur={() => setTimeout(() => setIsOpen(false), 100)} // allow click
-            />
-            {isOpen && query.length >= 3 && (
-              <ul className="absolute top-full left-0 w-[200px] bg-[black] border-1 border-white/20 rounded ml-2  z-40 overflow-y-auto">
-                {filteredBoons.length > 0 ? (
-                  filteredBoons.map((boon, index) => (
-                    <li
-                      key={index}
-                      className="px-3 py-1 hover:bg-base-200 cursor-pointer flex gap-1"
-                      onMouseDown={() => {
-                        if (has.length >= 5) {
-                          // Optionally alert or ignore
-                          alert("You can only select up to 5 boons");
-                          return;
-                        }
-                        if (!has.includes(boon)) {
-                          setHas((prev) => [...prev, boon]);
-                        }
-                        setQuery("");
-                        setIsOpen(false);
-                      }}
-                    >
-                      <img src={`P9/${p9boons_reverse[boon]}.png`} alt="Boons" className="size-6" />
-                      {boon}
-                    </li>
-                  ))
-                ) : (
-                  <li className="px-3 py-1 text-gray-500">No matches</li>
-                )}
-              </ul>
-            )}
           </div>
           <label className="label font-[Source]  p-1 text-white/80">
             Require Video
