@@ -105,9 +105,7 @@ export default function Play() {
                         list.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282bc0]`
                       }`}
                       onClick={() => {
-                        if (!list.includes(item)) {
-                          setList((prev) => [...prev, item]);
-                        }
+                        setList((prev) => [...prev, item]);
                       }}
                     >
                       <img src={`buildgui/${[item]}.png`} alt="Boons" className="size-9" draggable={false} />
