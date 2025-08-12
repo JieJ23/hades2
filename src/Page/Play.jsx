@@ -60,6 +60,7 @@ const keep = [bKeep];
 
 export default function Play() {
   const [category, setCategory] = useState(0);
+  const [list, setList] = useState([]);
 
   const allCategory = [gods, Unseen, weapons, misc, other, keep];
   const allCategoryTitle = [`Gods`, `Unseen`, `Weapons`, `Duo & Elemental`, `Chaos & Selene`, `Keepsakes`];
@@ -67,12 +68,27 @@ export default function Play() {
   const displayData = allCategory[category];
 
   return (
-    <main className="relative">
+    <main className="relative select-none">
       <Background />
       <Head />
       <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto">
         <SideNav />
-        <div className="flex flex-wrap gap-1 px-2 mt-4">
+        {list.length > 0 && (
+          <div className="px-2 my-2 text-[11px]">
+            <div className="my-2 rounded bg-[white] p-1 text-black">{list.join(",")}</div>
+            <div className="flex flex-wrap gap-0.5">
+              {list.map((item) => (
+                <div
+                  onClick={() => setList((prev) => prev.filter((ite) => ite !== item))}
+                  className="rounded bg-[#00ffaa] p-1 text-black"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        <div className="flex flex-wrap gap-1 px-2 mt-2">
           {allCategoryTitle.map((item, index) => (
             <button className="btn btn-xs px-2 py-1 bg-[white] text-black rounded" onClick={() => setCategory(index)}>
               {item}
@@ -84,17 +100,40 @@ export default function Play() {
             <section className="my-2 flex flex-wrap gap-1">
               {category === 5
                 ? objs.map((item) => (
-                    <div className="flex items-center gap-2 bg-[#28282bc0] rounded px-2 py-1">
-                      <img src={`buildgui/${[item]}.png`} alt="Boons" className="size-9" />
+                    <div
+                      className={`flex items-center gap-2 rounded px-2 py-1 ${
+                        list.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282bc0]`
+                      }`}
+                      onClick={() => {
+                        if (!list.includes(item)) {
+                          setList((prev) => [...prev, item]);
+                        }
+                      }}
+                    >
+                      <img src={`buildgui/${[item]}.png`} alt="Boons" className="size-9" draggable={false} />
                       <div>{item}</div>
                     </div>
                   ))
                 : Object.keys(swapKV(objs)).map((item) => (
-                    <div className="flex items-center gap-2 bg-[#28282bc0] rounded px-2 py-1">
+                    <div
+                      className={`flex items-center gap-2 rounded px-2 py-1 ${
+                        list.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282bc0]`
+                      }`}
+                      onClick={() => {
+                        if (!list.includes(item)) {
+                          setList((prev) => [...prev, item]);
+                        }
+                      }}
+                    >
                       {category === 2 ? (
-                        <img src={`P9/Hammer${swapKV(objs)[item]}.png`} alt="Boons" className="size-9" />
+                        <img
+                          src={`P9/Hammer${swapKV(objs)[item]}.png`}
+                          alt="Boons"
+                          className="size-9"
+                          draggable={false}
+                        />
                       ) : (
-                        <img src={`P9/${swapKV(objs)[item]}.png`} alt="Boons" className="size-9" />
+                        <img src={`P9/${swapKV(objs)[item]}.png`} alt="Boons" className="size-9" draggable={false} />
                       )}
 
                       <div>{item}</div>
