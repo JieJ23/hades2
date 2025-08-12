@@ -198,6 +198,8 @@ export default function Query() {
     }
   );
 
+  console.log(has);
+
   return (
     <main className="relative">
       <Background />
@@ -284,9 +286,7 @@ export default function Query() {
               All
             </option>
             {h2AspectOrder.map((ite, index) => (
-              <option value={ite} key={index}>
-                {ite}
-              </option>
+              <option value={ite}>{ite}</option>
             ))}
           </select>
           <select
@@ -306,9 +306,7 @@ export default function Query() {
               Vows
             </option>
             {allVows.map((ite, index) => (
-              <option value={ite} key={index}>
-                {ite}
-              </option>
+              <option value={ite}>{ite}</option>
             ))}
           </select>
           <select
@@ -328,9 +326,7 @@ export default function Query() {
               Arcana
             </option>
             {Object.values(deckMatch).map((ite, index) => (
-              <option value={ite} key={index}>
-                {ite}
-              </option>
+              <option value={ite}>{ite}</option>
             ))}
           </select>
           <select
@@ -345,9 +341,7 @@ export default function Query() {
               Player
             </option>
             {allPlayers.map((ite, index) => (
-              <option value={ite} key={index}>
-                {ite}
-              </option>
+              <option value={ite}>{ite}</option>
             ))}
           </select>
         </div>
@@ -370,7 +364,6 @@ export default function Query() {
               {filteredBoons.length > 0 ? (
                 filteredBoons.map((boon, index) => (
                   <li
-                    key={index}
                     className="px-3 py-1 hover:bg-base-200 cursor-pointer flex items-center gap-1"
                     onMouseDown={() => {
                       // if (has.length >= 5) {
@@ -517,7 +510,7 @@ export default function Query() {
               </div>
               <div className="flex items-center flex-wrap my-1 gap-1">
                 <div className="flex gap-0.5 rounded">
-                  <div className="tooltip shrink-0" key={index}>
+                  <div className="tooltip shrink-0">
                     <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                       <div className="font-[Source] text-[11px]">{obj.asp}</div>
                     </div>
@@ -528,7 +521,7 @@ export default function Query() {
                       className="size-6 md:size-7 border-1 border-black rounded-lg"
                     />
                   </div>
-                  <div className="tooltip shrink-0" key={index}>
+                  <div className="tooltip shrink-0">
                     <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                       <div className="font-[Source] text-[11px]">{obj.fam}</div>
                     </div>
@@ -542,7 +535,7 @@ export default function Query() {
                 </div>
                 <div className="flex gap-0.5 rounded">
                   {sToA(obj.cor).map((ite, index) => (
-                    <div className="tooltip shrink-0" key={index}>
+                    <div className="tooltip shrink-0">
                       <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                         <div className="font-[Source] text-[11px]">{ite}</div>
                       </div>
@@ -564,7 +557,7 @@ export default function Query() {
                         return aIndex - bIndex;
                       })
                     ).map((ite, index) => (
-                      <div className="tooltip shrink-0" key={index}>
+                      <div className="tooltip shrink-0">
                         <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                           <div className="font-[Source] text-[11px]">{p9boons[ite]}</div>
                         </div>
@@ -581,7 +574,7 @@ export default function Query() {
                 {obj.ks && (
                   <div className="flex gap-0.5 rounded">
                     {sToA(obj.ks).map((ite, index) => (
-                      <div className="tooltip shrink-0" key={index}>
+                      <div className="tooltip shrink-0">
                         <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                           <div className="font-[Source] text-[11px]">{ite}</div>
                         </div>
@@ -606,7 +599,7 @@ export default function Query() {
                         return aIndex - bIndex;
                       })
                     ).map((ite, index) => (
-                      <div className="tooltip shrink-0" key={index}>
+                      <div className="tooltip shrink-0">
                         <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
                           <div className="font-[Source] text-[11px]">{boonCodex[ite]}</div>
                         </div>
@@ -614,7 +607,9 @@ export default function Query() {
                           draggable={false}
                           src={`/P9/${ite}.png`}
                           alt="Core Boon"
-                          className="size-6 md:size-7 border-1 border-black rounded-lg"
+                          className={`size-6 md:size-7 border-1 rounded-lg ${
+                            has.includes(boonid[boonCodex[ite]]) ? `border-[#00ffaa]` : `border-black`
+                          }`}
                         />
                       </div>
                     ))}
