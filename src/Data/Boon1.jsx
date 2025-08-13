@@ -1,3 +1,66 @@
+export const bAttack = {
+  Attack: `Attack`,
+  AphAttack: `AphAttack`,
+  ApoAttack: `ApoAttack`,
+  HepAttack: `HepAttack`,
+  HerAttack: `HerAttack`,
+  HesAttack: `HesAttack`,
+  PosAttack: `PosAttack`,
+  DemAttack: `DemAttack`,
+  ZeuAttack: `ZeuAttack`,
+  AreAttack: `AreAttack`,
+};
+
+export const bSpecial = {
+  Special: `Special`,
+  AphSpecial: `AphSpecial`,
+  ApoSpecial: `ApoSpecial`,
+  HepSpecial: `HepSpecial`,
+  HerSpecial: `HerSpecial`,
+  HesSpecial: `HesSpecial`,
+  PosSpecial: `PosSpecial`,
+  DemSpecial: `DemSpecial`,
+  ZeuSpecial: `ZeuSpecial`,
+  AreSpecial: `AreSpecial`,
+};
+
+export const bCast = {
+  Cast: `Cast`,
+  AphCast: `AphCast`,
+  ApoCast: `ApoCast`,
+  HepCast: `HepCast`,
+  HerCast: `HerCast`,
+  HesCast: `HesCast`,
+  PosCast: `PosCast`,
+  DemCast: `DemCast`,
+  ZeuCast: `ZeuCast`,
+  AreCast: `AreCast`,
+};
+export const bSprint = {
+  Sprint: `Sprint`,
+  AphSprint: `AphSprint`,
+  ApoSprint: `ApoSprint`,
+  HepSprint: `HepSprint`,
+  HerSprint: `HerSprint`,
+  HesSprint: `HesSprint`,
+  PosSprint: `PosSprint`,
+  DemSprint: `DemSprint`,
+  ZeuSprint: `ZeuSprint`,
+  AreSprint: `AreSprint`,
+};
+export const bMagick = {
+  Magick: `Magick`,
+  AphMagick: `AphMagick`,
+  ApoMagick: `ApoMagick`,
+  HepMagick: `HepMagick`,
+  HerMagick: `HerMagick`,
+  HesMagick: `HesMagick`,
+  PosMagick: `PosMagick`,
+  DemMagick: `DemMagick`,
+  ZeuMagick: `ZeuMagick`,
+  AreMagick: `AreMagick`,
+};
+
 export const bAphrodite = {
   Aphrodite_27: `Flutter Strike`,
   Aphrodite_30: `Flutter Flourish`,
