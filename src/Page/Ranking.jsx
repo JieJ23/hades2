@@ -86,9 +86,9 @@ export default function Ranking() {
             <div key={index} className="flex flex-col gap-1.5">
               <div className="relative">
                 <img
-                  src={`/GUI_Card/c${findGUIcard([weaponType[index]])}.png`}
+                  src={`/NocturnalArms/${findGUIcard([weaponType[index]])}.webp`}
                   alt="Aspect"
-                  className="w-[80px] rounded mx-auto"
+                  className="h-[80px] rounded mx-auto drop-shadow-[0_0_10px_#00ffaa]"
                   draggable={false}
                 />
                 <span className="absolute -bottom-1 left-2">{weaponData.length}</span>
