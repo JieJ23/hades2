@@ -2743,7 +2743,7 @@ export const p11data = [
     loc: "Surface",
     fea: "38",
     src: "",
-    des: "rivals 2, finally a chill normal run (except aphro wouldn't give me her dodge infusion 💀) ",
+    des: "rivals 2, finally a chill normal run (except aphro wouldn't give me her dodge infusion) ",
     tim: "18:45.10",
     fam: "Hound",
     cor: "ZeuAttack,HerSpecial,AphCast,Sprint,HesMagick",

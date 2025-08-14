@@ -79,24 +79,24 @@ export default function Play() {
       <Head />
       <div className="max-w-[1200px] font-[PT] text-[12px] mx-auto">
         <SideNav />
-        {list.length > 0 && (
-          <div className="px-2 my-2 text-[11px]">
-            <div className="my-2 rounded bg-[white] p-1 text-black">{list.join(",")}</div>
-            <div className="flex flex-wrap gap-0.5">
-              <div onClick={() => setList([])} className=" cursor-pointer rounded bg-[#ffea00] p-1 text-black">
-                Reset
-              </div>
-              {list.map((item) => (
-                <div
-                  onClick={() => setList((prev) => prev.filter((ite) => ite !== item))}
-                  className="cursor-pointer rounded bg-[#00ffaa] p-1 text-black"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
+        <div className="px-2 my-2 text-[11px]">
+          <div className="my-2 rounded bg-[#28282b] p-1 text-white min-h-[30px] flex items-center">
+            {list.join(",")}
           </div>
-        )}
+          <div className="flex flex-wrap gap-0.5">
+            <div onClick={() => setList([])} className=" cursor-pointer rounded bg-[#ffea00] p-1 text-black">
+              Reset
+            </div>
+            {list.map((item) => (
+              <div
+                onClick={() => setList((prev) => prev.filter((ite) => ite !== item))}
+                className="cursor-pointer rounded bg-[#00ffaa] p-1 text-black"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="flex flex-wrap gap-1 px-2 mt-2">
           {allCategoryTitle.map((item, index) => (
             <button className="btn btn-xs px-2 py-1 bg-[white] text-black rounded" onClick={() => setCategory(index)}>
