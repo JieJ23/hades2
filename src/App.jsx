@@ -250,12 +250,30 @@ export default function App() {
         </section>
         <section className="p-1 overflow-visible">
           {displayEntries.slice(0, show).map((obj, index) => (
-            <div className={`flex items-center w-full rounded px-2 gap-2 relative mb-4`} key={index}>
+            <div
+              className={`flex items-center w-full rounded px-2 gap-2 relative mb-4
+            ${
+              obj.fea > 64
+                ? `bg-gradient-to-b from-[#00000098] md:to-[#031677bc] to-[#031677bc] border-1 border-black`
+                : `bg-[#00000098]`
+            }
+            `}
+              key={index}
+            >
               <div
                 className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
                   obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
                 } rounded-l`}
               />
+              {obj.fea > 64 && (
+                <div className="absolute top-0 left-0 w-full h-full -z-10">
+                  <img
+                    src="/Misc/max.webp"
+                    alt="Max Fear"
+                    className="w-full h-full object-cover object-[center_10%] rounded opacity-50 md:opacity-80"
+                  />
+                </div>
+              )}
               <div className="flex flex-col w-full">
                 <div className="w-full flex items-center gap-2">
                   <div className="w-full gap-2 ps-1">
@@ -414,6 +432,7 @@ export default function App() {
                     </div>
                     <div className="flex flex-wrap gap-1 text-[10px] my-0.5">
                       {obj.oath &&
+                        obj.fea < 62 &&
                         deCodeVow(obj.oath)
                           .map((ite1, index) => oathMatch[index].indexOf(ite1))
                           .map(
