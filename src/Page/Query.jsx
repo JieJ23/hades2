@@ -462,7 +462,7 @@ export default function Query() {
         </div>
         <div className="select-none">
           {displayData3.slice(0, show).map((obj, index) => (
-            <div className="my-1 rounded bg-[#00000098] p-2 py-1">
+            <div className="my-2 rounded bg-[#00000098] p-2 py-1">
               <div className="flex justify-between text-[12px] items-center px-1">
                 <div className="font-[Cinzel] flex gap-1 items-center">
                   <div className="font-mono font-semibold text-[#f18043]">{obj.fea}</div>
@@ -617,7 +617,7 @@ export default function Query() {
                 </div>
               )}
               <div className="text-[11px] text-gray-300 ps-1">{obj.des}</div>
-              {obj.arcana && (
+              {obj.arcana && obj.fea < 62 && (
                 <div className="flex flex-wrap gap-1 text-[10px] md:text-[11px] my-0.5">
                   {obj.arcana &&
                     deCodeArcana(obj.arcana)

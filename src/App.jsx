@@ -254,7 +254,7 @@ export default function App() {
               className={`flex items-center w-full rounded px-2 gap-2 relative mb-4
             ${
               obj.fea > 64
-                ? `bg-gradient-to-b from-[#00000098] md:to-[#031677bc] to-[#031677bc] border-1 border-black`
+                ? `bg-gradient-to-b from-[#00000098] md:to-[#2b1a5abc] to-[#020f50bc] border-1 border-black`
                 : `bg-[#00000098]`
             }
             `}
@@ -268,9 +268,9 @@ export default function App() {
               {obj.fea > 64 && (
                 <div className="absolute top-0 left-0 w-full h-full -z-10">
                   <img
-                    src="/Misc/max.webp"
+                    src={obj.loc === `Underworld` ? `/Misc/max.webp` : `/Misc/max2.webp`}
                     alt="Max Fear"
-                    className="w-full h-full object-cover object-[center_10%] rounded opacity-50 md:opacity-80"
+                    className="w-full h-full object-cover object-[center_20%] rounded opacity-50 md:opacity-80"
                   />
                 </div>
               )}
