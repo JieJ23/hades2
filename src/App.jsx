@@ -250,30 +250,12 @@ export default function App() {
         </section>
         <section className="p-1 overflow-visible">
           {displayEntries.slice(0, show).map((obj, index) => (
-            <div
-              className={`flex items-center w-full rounded px-2 gap-2 relative mb-4
-            ${
-              obj.fea == 67
-                ? `md:min-h-[250px] bg-gradient-to-b from-[#00000098] md:to-[#033777bc] to-[#033777bc] border-1 border-black`
-                : `bg-[#00000098]`
-            }
-            `}
-              key={index}
-            >
+            <div className={`flex items-center w-full rounded px-2 gap-2 relative mb-4`} key={index}>
               <div
                 className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
                   obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
                 } rounded-l`}
               />
-              {obj.fea == 67 && (
-                <div className="absolute top-0 left-0 w-full h-full -z-10">
-                  <img
-                    src="/Misc/max.webp"
-                    alt="Max Fear"
-                    className="w-full h-full object-cover object-[center_10%] rounded"
-                  />
-                </div>
-              )}
               <div className="flex flex-col w-full">
                 <div className="w-full flex items-center gap-2">
                   <div className="w-full gap-2 ps-1">
