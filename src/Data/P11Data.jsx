@@ -3106,4 +3106,22 @@ export const p11data = [
     ham: "Mirrored Thrasher,Rapid Thrasher",
     boon: "Quick Buck,Ancestral Offering,Deep Dissent,Death Warrant,Evade Evade Evade,Thermal Dynamics,Pyro Technique,Extended Family,Plasma,Wolf Howl",
   },
+  {
+    dat: "2025-08-16",
+    nam: "睿智的林带雨",
+    asp: "Persephone",
+    loc: "Surface",
+    fea: "62",
+    src: "https://www.bilibili.com/video/BV1xpYez3E6a/",
+    des: "62热头3 通关全流程",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjMiLCJjMjQiXQ==",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
+    tim: "17:41.20",
+    fam: "Polecat",
+    cor: "HesAttack,HesSpecial,PosCast,DemSprint,AphMagick",
+    ham: "Rapid Driver,Twisting Crash",
+    boon: "Burning Desire,Island Getaway,Scalding Vapor,Vital Signs,Black Night Banishment,Defensive Posture,Pyro Technique,Heart Breaker,Hot Pot,Snow Queen,Buried Treasure,Broken Resolve",
+    ks: "Everlasting Ember,Fig Leaf,Ghost Onion,Knuckle Bones",
+  },
 ];
