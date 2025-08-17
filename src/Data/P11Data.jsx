@@ -3124,4 +3124,18 @@ export const p11data = [
     boon: "Burning Desire,Island Getaway,Scalding Vapor,Vital Signs,Black Night Banishment,Defensive Posture,Pyro Technique,Heart Breaker,Hot Pot,Snow Queen,Buried Treasure,Broken Resolve",
     ks: "Everlasting Ember,Fig Leaf,Ghost Onion,Knuckle Bones",
   },
+  {
+    dat: "2025-08-17",
+    nam: "Foolish",
+    asp: "Medea",
+    loc: "Underworld",
+    fea: "65",
+    src: "",
+    des: "yippee",
+    tim: "17:49.32",
+    fam: "Frog",
+    cor: "HerAttack,ZeuSpecial,Cast,ApoSprint,Magick",
+    ham: "Colossus Driver,Boosted Ignition",
+    boon: "Talent,Evade Evade Evade,Self Healing,Unseen Ire,Extended Family,Double Strike,Trusty Shield,Heavy Metal,Static Shock,Furnace Blast",
+  },
 ];
