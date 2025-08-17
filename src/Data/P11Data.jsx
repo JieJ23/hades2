@@ -3138,4 +3138,22 @@ export const p11data = [
     ham: "Colossus Driver,Boosted Ignition",
     boon: "Talent,Evade Evade Evade,Self Healing,Unseen Ire,Extended Family,Double Strike,Trusty Shield,Heavy Metal,Static Shock,Furnace Blast",
   },
+  {
+    dat: "2025-08-16",
+    nam: "East_25",
+    asp: "Circe",
+    loc: "Underworld",
+    fea: "62",
+    src: "https://www.youtube.com/watch?v=WH2vReUp3OE",
+    des: "(Bangle, Sheaf, Amulet, Pin) 62 fear Rivals 4 Underworld clear with the Aspect of Circe while Frinos hops around and vibes to the detriment of my long-term eyesight.   Missed Air Quality to push the build over the edge but strong play during p1 and p2 of Chronos helped secure the W. Fun run to end my stream.",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjNiIsImM3IiwiYzgiLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjEiLCJjMjIiLCJjMjQiXQ==",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
+    tim: "20:00.39",
+    fam: "Frog",
+    cor: "ApoAttack,ZeuSpecial,ZeuCast,Sprint,AphMagick",
+    ham: "Rapid Thrasher,Wicked Thrasher",
+    boon: "Spiritual Affirmation,Shameless Attitude,Static Shock,Arctic Gale,Support Fire,Deep Dissent,Renewed Faith,Defiance,Soul,Wispy Wiles",
+    ks: "Cloud Bangle,Barley Sheaf,Gorgon Amulet,Engraved Pin",
+  },
 ];
