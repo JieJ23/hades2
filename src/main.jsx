@@ -16,7 +16,7 @@ import Boons from "./Page/Boons.jsx";
 import Hammer from "./Page/Hammer.jsx";
 import Enemy from "./Page/Enemy.jsx";
 import Playground from "./Page/Playground.jsx";
-import Play from "./Page/Play.jsx";
+import GameplaySubmission from "./Page/GameplaySubmission.jsx";
 import Query from "./Page/Query.jsx";
 import Gameplay from "./Page/Gameplay.jsx";
 
@@ -37,7 +37,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/Boons" element={<Boons />} />
         <Route path="/Enemy" element={<Enemy />} />
         <Route path="/Playground" element={<Playground />} />
-        <Route path="/Play" element={<Play />} />
+        <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
         <Route path="/Query" element={<Query />} />
         <Route path="/Gameplay" element={<Gameplay />} />
       </Routes>

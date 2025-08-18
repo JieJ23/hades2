@@ -1,4 +1,3 @@
-import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import { p9data } from "../Data/P9Data";
@@ -69,7 +68,6 @@ export default function Trend() {
   return (
     <main className="relative">
       <Background />
-      <Head />
       <div className="max-w-[1400px] font-[Source] text-[13px] md:text-[14px] mx-auto text-white select-none">
         <SideNav />
         <div className="h-[500px] mt-4 mb-2 bg-[#000000d0]">

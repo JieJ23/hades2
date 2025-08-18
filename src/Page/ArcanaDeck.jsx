@@ -1,4 +1,3 @@
-import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import { useState, useEffect } from "react";
 import { defineDeck, allCards } from "../Data/DeckTrait";
@@ -64,7 +63,6 @@ export default function ArcanaDeck() {
   return (
     <main className="select-none relative">
       <Background />
-      <Head />
       <div className="max-w-[1400px] font-[PT] text-[14px] mx-auto">
         <SideNav />
         <div className="w-full">

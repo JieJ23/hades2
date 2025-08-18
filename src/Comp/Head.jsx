@@ -40,7 +40,7 @@ export default function Head() {
           </div>
         </div>
       </div>
-      <div className="navbar-center">
+      {/* <div className="navbar-center">
         <Link
           to={"/"}
           className="btn btn-ghost text-xl font-[Cinzel] hover:scale-[95%] duration-200 ease-in transition-transform flex items-center"
@@ -52,17 +52,17 @@ export default function Head() {
           </div>
           <div>Hades 2</div>
         </Link>
-      </div>
-      <div className="navbar-end">
+      </div> */}
+      {/* <div className="navbar-end">
         <Submit />
-        {/* <Link to={"https://discord.com/users/1110261416432242758"} target="_blank`">
+        <Link to={"https://discord.com/users/1110261416432242758"} target="_blank`">
           <div className="avatar">
             <div className="w-8 rounded-xl">
               <img src="/discord.jpeg" />
             </div>
           </div>
-        </Link> */}
-      </div>
+        </Link>
+      </div> */}
     </div>
   );
 }

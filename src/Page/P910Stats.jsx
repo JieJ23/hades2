@@ -1,4 +1,3 @@
-import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import { h2AspectOrder } from "../Data/Misc";
 import { p9data } from "../Data/P9Data";
@@ -33,7 +32,6 @@ export default function P910Stats() {
   return (
     <main className="h-full min-h-lvh select-none relative">
       <Background />
-      <Head />
       <SideNav />
       <div className="max-w-[1000px] font-[Source] text-[12px] md:text-[13px] mx-auto my-2">
         <section className="w-full">

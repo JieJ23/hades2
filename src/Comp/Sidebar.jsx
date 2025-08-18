@@ -14,7 +14,7 @@ export const sites = [
   // { icon: `Patch8`, link: `Patch8`, nam: `Patch 8` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },
-  { icon: `Boons`, link: `Play`, nam: `Boons` },
+  { icon: `Submit`, link: `GameplaySubmission`, nam: `Submission` },
   // { icon: `Hammer`, link: `Hammer`, nam: `Hammer` },
   // { icon: `Boons`, link: `Boons`, nam: `Boons` },
   // { icon: `Enemy`, link: `Enemy`, nam: `Enemy` },
@@ -23,8 +23,8 @@ export const sites = [
 export default function SideNav() {
   const currentLocation = useLocation();
   return (
-    <div className="h-full w-full hidden lg:block px-2 font-[Source] text-[13px] rounded shrink-0">
-      <div className="flex justify-center items-center gap-3">
+    <div className="h-full w-full p-2 pt-4 font-[Source] text-[13px] rounded shrink-0">
+      <div className="flex flex-wrap justify-center items-center gap-3">
         {sites.map((obj, idx) => (
           <Link
             to={`/${obj.link}`}

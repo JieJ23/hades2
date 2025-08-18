@@ -1,4 +1,3 @@
-import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import { p9data } from "../Data/P9Data";
 import { p11data } from "../Data/P11Data";
@@ -38,7 +37,6 @@ export default function Player() {
   return (
     <main className="relative">
       <Background />
-      <Head />
       <div className="max-w-[1200px] font-[Source] text-[12px] md:text-[14px] mx-auto">
         <SideNav />
         <div className="px-2 relative flex gap-1 my-4 mb-2">

@@ -1,4 +1,3 @@
-import Head from "../Comp/Head";
 import Background from "../Comp/Background";
 import SideNav from "../Comp/Sidebar";
 import Footer from "../Comp/Footer";
@@ -38,7 +37,6 @@ export default function Gameplay() {
   return (
     <main className="relative">
       <Background />
-      <Head />
       <div className="max-w-[1600px] font-[PT] text-[11px] md:text-[12px] mx-auto">
         <SideNav />
         <div className="px-2 my-2 flex flex-wrap gap-1">

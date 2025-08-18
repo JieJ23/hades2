@@ -1,4 +1,3 @@
-import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
@@ -39,7 +38,6 @@ export default function Playground() {
   return (
     <main className="relative">
       <Background />
-      <Head />
       <div className="max-w-[1200px] font-[Source] text-[11px] mx-auto">
         <SideNav />
         {/* <div className="my-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-1 px-2">

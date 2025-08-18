@@ -259,3 +259,23 @@ export function reduceOathData(data) {
   }
   return result;
 }
+
+export function sortCore(raw) {
+  const customOrder = ["Attack", "Special", "Cast", "Sprint", "Magick"];
+
+  const items = raw.split(",");
+
+  const priority = Object.fromEntries(customOrder.map((name, i) => [name, i]));
+
+  function sortKey(item) {
+    for (const key of customOrder) {
+      if (item.includes(key)) {
+        return priority[key];
+      }
+    }
+    return customOrder.length; // fallback if no match
+  }
+
+  const sortedItems = items.sort((a, b) => sortKey(a) - sortKey(b));
+  return sortedItems.join(",");
+}

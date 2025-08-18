@@ -116,7 +116,6 @@ export default function App() {
   return (
     <main className="h-full min-h-lvh relative select-none overflow-hidden">
       <Background />
-      <Head />
       <div className="max-w-[1200px] font-[Source] text-[12px] md:text-[13px] mx-auto">
         <SideNav />
         <section className="w-full p-2">

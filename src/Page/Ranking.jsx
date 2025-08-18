@@ -1,4 +1,3 @@
-import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import { p9data } from "../Data/P9Data";
@@ -54,7 +53,6 @@ export default function Ranking() {
   return (
     <main className="relative">
       <Background />
-      <Head />
       <div className="max-w-[1400px] font-[Source] text-[11px] md:text-[12px] mx-auto text-white select-none">
         <SideNav />
         <section className="w-full p-2">
