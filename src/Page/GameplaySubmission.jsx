@@ -198,24 +198,28 @@ export default function GameplaySubmission() {
                 placeholder="Core Boons"
                 name="cor"
                 value={sortCore(core.join(","))}
+                readOnly={true}
               />
               <input
                 className="input w-full rounded border-1 border-[#00ffaa]/50"
                 placeholder="Hammer"
                 value={hammer.join(",")}
                 name="ham"
+                readOnly={true}
               />
               <input
                 className="input w-full rounded border-1 border-[#00ffaa]/50"
                 placeholder="Other Boons"
                 value={boons.join(",")}
                 name="boon"
+                readOnly={true}
               />
               <input
                 className="input w-full rounded border-1 border-[#00ffaa]/50"
                 placeholder="Keepsakes"
                 value={keep.join(",")}
                 name="ks"
+                readOnly={true}
               />
             </div>
           </div>
