@@ -194,25 +194,25 @@ export default function GameplaySubmission() {
               </select>
               {/* <div>Optional Full Entry Details</div> */}
               <input
-                className="input w-full rounded pointer-events-none border-1 border-[#00ffaa]/50"
+                className="input w-full rounded border-1 border-[#00ffaa]/50"
                 placeholder="Core Boons"
                 name="cor"
                 value={sortCore(core.join(","))}
               />
               <input
-                className="input w-full rounded pointer-events-none border-1 border-[#00ffaa]/50"
+                className="input w-full rounded border-1 border-[#00ffaa]/50"
                 placeholder="Hammer"
                 value={hammer.join(",")}
                 name="ham"
               />
               <input
-                className="input w-full rounded pointer-events-none border-1 border-[#00ffaa]/50"
+                className="input w-full rounded border-1 border-[#00ffaa]/50"
                 placeholder="Other Boons"
                 value={boons.join(",")}
                 name="boon"
               />
               <input
-                className="input w-full rounded pointer-events-none border-1 border-[#00ffaa]/50"
+                className="input w-full rounded border-1 border-[#00ffaa]/50"
                 placeholder="Keepsakes"
                 value={keep.join(",")}
                 name="ks"
@@ -285,7 +285,7 @@ export default function GameplaySubmission() {
             </button>
           ))}
         </div>
-        <div className="flex flex-wrap px-2 my-2 select-none">
+        <div className="flex flex-wrap px-2 my-2 mb-10 select-none">
           {displayData.map((objs) => (
             <section className="flex flex-wrap gap-1 py-2">
               {category === 6
