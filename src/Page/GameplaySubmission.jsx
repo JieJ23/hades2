@@ -74,7 +74,6 @@ export default function GameplaySubmission() {
   const [keep, setKeep] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // "https://script.google.com/macros/s/AKfycbzoCSh79R0_j_2Vu5vAHNN1IgIcMj_fXUKIA1Ah9OWTdmeUgLd3CJIl1ZQm1RQ9ygau/exec",
   async function Submit(e) {
     e.preventDefault();
 
@@ -84,7 +83,7 @@ export default function GameplaySubmission() {
 
     try {
       const res = await fetch(
-        "https://script.google.com/macros/s/AKfycbz99e1KlbUuoOZfB3L4p7YqP4JG9PMfwCczk4f5la8X_QKT6VTVqu8B6YMhkFoFwsXM/exec",
+        "https://script.google.com/macros/s/AKfycbxRKnfO9SKimv8diiCucFfCvaZ3xfwlkWPRxhK6si1pW5Q9nZ_Z15mSNgztoexazcx-/exec",
         {
           method: "POST",
           body: formDatab,
@@ -92,6 +91,10 @@ export default function GameplaySubmission() {
       );
       // This will log the selected option
       formEle.reset();
+      setCore([]);
+      setHammer([]);
+      setBoons([]);
+      setKeep([]);
       console.log(`good`);
       alert("Form submitted successfully!");
     } catch (error) {
@@ -227,7 +230,7 @@ export default function GameplaySubmission() {
           </div>
         </form>
         {/* Form End */}
-        <div className="flex flex-wrap gap-0.5 my-2 px-2">
+        <div className="flex flex-wrap gap-0.5 my-2 mt-4 px-2">
           <div
             onClick={() => {
               setCore([]);
