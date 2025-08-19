@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import App from "./App.jsx";
 import P910Stats from "./Page/P910Stats.jsx";
-import P11Stats from "./Page/P11Stats.jsx";
+import EAstats from "./Page/EAstats.jsx";
 import Trend from "./Page/Trend.jsx";
 import Player from "./Page/Player.jsx";
 import Ranking from "./Page/Ranking.jsx";
@@ -26,7 +26,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/P910Stats" element={<P910Stats />} />
-        <Route path="/P11Stats" element={<P11Stats />} />
+        <Route path="/EAstats" element={<EAstats />} />
         <Route path="/Trend" element={<Trend />} />
         <Route path="/Player" element={<Player />} />
         <Route path="/Ranking" element={<Ranking />} />

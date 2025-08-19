@@ -38,7 +38,7 @@ export default function ArcanaData({ data }) {
       <div className="px-2 py-1 flex gap-1">
         <input
           type="number"
-          className="input input-sm border-1 focus:outline-0 border-[#f18043] rounded w-[50px]"
+          className="input input-sm border-1 focus:outline-0 border-[#f18043] rounded w-[80px]"
           value={min}
           min={22}
           max={67}
@@ -48,7 +48,7 @@ export default function ArcanaData({ data }) {
         />
         <input
           type="number"
-          className="input input-sm border-1 focus:outline-0 border-[#f18043] rounded w-[50px]"
+          className="input input-sm border-1 focus:outline-0 border-[#f18043] rounded w-[80px]"
           value={max}
           min={22}
           max={67}

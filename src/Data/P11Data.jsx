@@ -1913,7 +1913,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-01",
-    nam: "LittleChain",
+    nam: "LittleChain_club",
     asp: "Pan",
     loc: "Surface",
     fea: "49",
@@ -2215,7 +2215,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-05",
-    nam: "Circe ",
+    nam: "Circe",
     asp: "Circe",
     loc: "Underworld",
     fea: "62",
@@ -2846,7 +2846,7 @@ export const p11data = [
     fam: "Hound",
     cor: "HepAttack,ZeuSpecial,DemCast,Sprint,HepMagick",
     ham: "Cross Cataclysm,Melting Swipe",
-    boon: "Colossus Slash,Cryo Pounder,Water Fitness,Glorious Disaster,Righteous Pike,Geyser Spout,Air Quality,Nitro Boost,Super Nova,Grand Caldera,Trusty Shield,Local Climate,Hasty Retreat,Ingenious Strike,Prominence Flare,Master Conductor,Ocean Swell,Static Shock,Steady Growth",
+    boon: "Cryo Pounder,Water Fitness,Glorious Disaster,Righteous Pike,Geyser Spout,Air Quality,Nitro Boost,Super Nova,Grand Caldera,Trusty Shield,Local Climate,Hasty Retreat,Ingenious Strike,Prominence Flare,Master Conductor,Ocean Swell,Static Shock,Steady Growth",
   },
   {
     dat: "2025-08-08",

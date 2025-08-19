@@ -16,7 +16,9 @@ import { defineDeck } from "../Data/DeckTrait";
 
 const allData = [...p11data, ...p9data];
 
-const defineAllPlayers = [...new Set(allData.map((obj) => obj.nam))].sort();
+const defineAllPlayers = [...new Set(allData.map((obj) => obj.nam))]
+  .sort()
+  .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
 export default function Player() {
   const [query, setQuery] = useState("");
