@@ -33,7 +33,7 @@ export default function Ranking() {
       if (feaDiff !== 0) return feaDiff;
       return parseTimetoms(a.tim) - parseTimetoms(b.tim);
     })
-    .filter((obj) => obj.fea >= 32);
+    .filter((obj) => obj.fea >= 50);
 
   const fullData = [];
 

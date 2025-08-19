@@ -201,7 +201,7 @@ export default function Query() {
   return (
     <main className="relative">
       <Background />
-      <div className="max-w-[1200px] font-[Source] text-[11px] mx-auto px-2">
+      <div className="max-w-[1200px] font-[Source] text-[11px] mx-auto">
         <SideNav />
         <div className="flex flex-wrap gap-1 pt-2">
           <button

@@ -250,29 +250,25 @@ export default function App() {
         <section className="p-1 overflow-visible">
           {displayEntries.slice(0, show).map((obj, index) => (
             <div
-              className={`flex items-center w-full rounded px-2 gap-2 relative mb-4
+              className={`flex items-center w-full rounded px-2 gap-2 relative mb-2
             ${
               obj.fea > 64
-                ? `bg-gradient-to-b from-[#00000098] md:to-[#2b1a5abc] to-[#020f50bc] border-1 border-black`
+                ? `bg-gradient-to-r from-[#00000098] via-[#131835bc] to-[#121a40bc] border-1 border-black`
                 : `bg-[#00000098]`
             }
             `}
               key={index}
             >
+              {obj.fea > 64 && (
+                <div className="absolute top-0 left-0 w-full h-full -z-10">
+                  <img src={`/Misc/pixel.webp`} alt="Max Fear" className="w-full h-full object-cover rounded" />
+                </div>
+              )}
               <div
                 className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
                   obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
                 } rounded-l`}
               />
-              {obj.fea > 64 && (
-                <div className="absolute top-0 left-0 w-full h-full -z-10">
-                  <img
-                    src={obj.loc === `Underworld` ? `/Misc/max.webp` : `/Misc/max2.webp`}
-                    alt="Max Fear"
-                    className="w-full h-full object-cover object-[center_20%] rounded opacity-50 md:opacity-80"
-                  />
-                </div>
-              )}
               <div className="flex flex-col w-full">
                 <div className="w-full flex items-center gap-2">
                   <div className="w-full gap-2 ps-1">
