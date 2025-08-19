@@ -18,8 +18,7 @@ function findBoonTotal(data, target) {
 }
 
 export default function P11BoonData() {
-  const [weapontype, setWeapontype] = useState(`All`);
-  const [hammertype, setHammertype] = useState(`Melinoe Staff`);
+  const [weapontype, setWeapontype] = useState(`Melinoe Staff`);
   const [min, setMin] = useState(22);
   const [max, setMax] = useState(67);
 
@@ -27,8 +26,8 @@ export default function P11BoonData() {
   const targetData = weapontype === `All` ? selectedDataset : selectedDataset.filter((obj) => obj.asp == weapontype);
   const displayData = weapontype === `All` ? selectedDataset : targetData;
 
-  const displayHammer = [...p11data, ...p9data]
-    .filter((obj) => obj.asp === hammertype)
+  const displayHammer = displayData
+    .filter((obj) => obj.asp === weapontype)
     .reduce((acc, entry) => {
       const hamArray = sToA(entry.ham); // Convert string to array
 
@@ -39,7 +38,7 @@ export default function P11BoonData() {
       return acc;
     }, {});
 
-  const currentAspectHammerL = [...p11data, ...p9data].filter((obj) => obj.asp === hammertype).length;
+  const currentAspectHammerL = [...p11data, ...p9data].filter((obj) => obj.asp === weapontype).length;
   //
 
   const core_Counts = displayData.reduce((acc, entry) => {
@@ -66,63 +65,12 @@ export default function P11BoonData() {
     <div className="max-w-[1200px] font-[Source] text-[11px] md:text-[12px] mx-auto my-2">
       <div className="px-2 flex gap-1 my-2">
         <select
-          value={hammertype}
-          className="select select-sm w-[150px] border-1 focus:outline-0 border-[#00ffaa] rounded"
-          onChange={(e) => {
-            setHammertype(e.target.value);
-          }}
-        >
-          {h2AspectOrder.map((ite, index) => (
-            <option value={ite} key={index}>
-              {ite}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div className="px-2 my-2 flex gap-2">
-        <div>Query Fear:</div>
-        <div className="text-[#f18043]">{hammertype}</div>
-        <div className="text-[yellow]">
-          {currentAspectHammerL}/{[...p11data, ...p9data].length}
-        </div>
-      </div>
-      <div className="flex flex-wrap gap-1 px-2 mb-4">
-        {Object.entries(displayHammer)
-          .filter((arr) => arr[0] !== "")
-          .sort((a, b) => b[1] - a[1])
-          .map((ite, index) => (
-            <div className="flex flex-wrap gap-1" key={index}>
-              <div
-                className={`flex gap-1 rounded border-1 p-2 ${
-                  (100 * (ite[1] / currentAspectHammerL)).toFixed(2) >= 25
-                    ? `bg-[#00ffaa] text-black border-none`
-                    : `bg-[#00000098] border-white/20`
-                }`}
-              >
-                <img
-                  draggable={false}
-                  loading="lazy"
-                  src={`/P9/${p9boons_reverse[ite[0]]}.png`}
-                  alt="Core Boons"
-                  className="size-7 md:size-8"
-                />
-                <div>
-                  <div>{ite[0]}</div>
-                  <div>{(100 * (ite[1] / currentAspectHammerL)).toFixed(2)}%</div>
-                </div>
-              </div>
-            </div>
-          ))}
-      </div>
-      <div className="px-2 flex gap-1 my-2">
-        <select
           value={weapontype}
           className="select select-sm w-[150px] border-1 focus:outline-0 border-[#00ffaa] rounded"
           onChange={(e) => {
             setWeapontype(e.target.value);
           }}
         >
-          <option value={`All`}>All</option>
           {h2AspectOrder.map((ite, index) => (
             <option value={ite} key={index}>
               {ite}
@@ -150,13 +98,41 @@ export default function P11BoonData() {
           }}
         />
       </div>
-      <div className="px-2 my-2 flex gap-2">
+      <div className="px-4 my-2 flex gap-2">
         <div>Query Fear:</div>
         <div className="text-[#f18043]">Min [{min}]</div>
         <div className="text-[#f18043]">Max [{max}]</div>
         <div className="text-[#fff200]">[{displayData.length}]</div>
       </div>
-      <div className="rounded px-2 my-2 mb-4">
+      <div className="flex flex-wrap gap-1 px-2 my-2">
+        {Object.entries(displayHammer)
+          .filter((arr) => arr[0] !== "")
+          .sort((a, b) => b[1] - a[1])
+          .map((ite, index) => (
+            <div className="flex flex-wrap gap-1" key={index}>
+              <div
+                className={`flex gap-1 rounded border-1 p-2 ${
+                  (100 * (ite[1] / currentAspectHammerL)).toFixed(2) >= 25
+                    ? `bg-[#00ffaa] text-black border-none`
+                    : `bg-[#00000098] border-white/20`
+                }`}
+              >
+                <img
+                  draggable={false}
+                  loading="lazy"
+                  src={`/P9/${p9boons_reverse[ite[0]]}.png`}
+                  alt="Core Boons"
+                  className="size-7 md:size-8"
+                />
+                <div>
+                  <div>{ite[0]}</div>
+                  <div>{(100 * (ite[1] / currentAspectHammerL)).toFixed(2)}%</div>
+                </div>
+              </div>
+            </div>
+          ))}
+      </div>
+      <div className="rounded px-2 my-2">
         {core_attribute.map((ite) => (
           <div className="flex flex-wrap gap-1 my-2">
             {findBoonTotal(core_Counts, ite).map((arr, index) => (
@@ -185,7 +161,7 @@ export default function P11BoonData() {
         ))}
       </div>
       <div className="rounded px-2 my-2 mb-4">
-        <div className="flex flex-wrap gap-1 py-2">
+        <div className="flex flex-wrap gap-1">
           {Object.entries(core_Fam)
             .sort((a, b) => b[1] - a[1])
             .map((ite, index) => (

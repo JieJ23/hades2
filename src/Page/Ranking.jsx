@@ -22,11 +22,10 @@ const weaponCategory = [weaponStaff, weaponAxe, weaponBlades, weaponFlames, weap
 export default function Ranking() {
   const [select, setSelect] = useState(null);
   const [selectAspect, setSelectAspect] = useState(null);
-  const [patch, setPatch] = useState(0);
 
-  const fullPatchData = [p11data, p9data];
+  const fullPatchData = [...p11data, ...p9data];
 
-  const dataOrder = fullPatchData[patch]
+  const dataOrder = fullPatchData
     .slice()
     .sort((a, b) => {
       const feaDiff = +b.fea - +a.fea;
@@ -55,30 +54,6 @@ export default function Ranking() {
       <Background />
       <div className="max-w-[1400px] font-[Source] text-[11px] md:text-[12px] mx-auto text-white select-none">
         <SideNav />
-        <section className="w-full p-2">
-          <div className="flex gap-1 px-2">
-            <button
-              onClick={() => {
-                setPatch(0);
-              }}
-              className={`cursor-pointer px-2 py-1 text-black font-[Source] text-[12px] rounded ${
-                patch == 0 ? `bg-[#00ffaa]` : `bg-white`
-              }`}
-            >
-              Patch 11
-            </button>
-            <button
-              onClick={() => {
-                setPatch(1);
-              }}
-              className={`cursor-pointer px-2 py-1 text-black font-[Source] text-[12px] rounded ${
-                patch == 1 ? `bg-[#00ffaa]` : `bg-white`
-              }`}
-            >
-              Patch 9 & 10
-            </button>
-          </div>
-        </section>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-2 py-6">
           {fullData.map((weaponData, index) => (
             <div key={index} className="flex flex-col gap-1.5">
