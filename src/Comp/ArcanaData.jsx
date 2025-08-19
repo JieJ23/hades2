@@ -1,15 +1,19 @@
 import { deckMatch, deCodeArcana, reduceOathData, vowMatch } from "../Data/Misc";
 import { useState } from "react";
 import { deCodeVow } from "../Data/Misc";
+import { h2AspectOrder } from "../Data/Misc";
 
 const allDeckCards = Object.keys(deckMatch);
 
 export default function ArcanaData({ data }) {
+  const [category, setCategory] = useState(`All Aspects`);
   const [min, setMin] = useState(22);
   const [max, setMax] = useState(67);
 
-  const arcanaData = data.filter((obj) => obj.arcana);
-  const oathData = data.filter((obj) => obj.oath).filter((obj) => obj.fea >= min && obj.fea <= max);
+  const aspectData = category === `All Aspects` ? data : data.filter((obj) => obj.asp === category);
+
+  const arcanaData = aspectData.filter((obj) => obj.arcana);
+  const oathData = aspectData.filter((obj) => obj.oath).filter((obj) => obj.fea >= min && obj.fea <= max);
 
   const displayData = arcanaData.filter((obj) => obj.fea >= min && obj.fea <= max);
 
@@ -36,6 +40,20 @@ export default function ArcanaData({ data }) {
     <div className="rounded mt-8 w-full max-w-[1200px] mx-auto font-[Source] text-[12px] md:text-[13px] py-4 px-2">
       <div className="px-2 font-[Cinzel]">Arcana & Vows</div>
       <div className="px-2 py-1 flex gap-1">
+        <select
+          value={category}
+          className="select select-sm w-[150px] border-1 focus:outline-0 border-[#00ffaa] rounded"
+          onChange={(e) => {
+            setCategory(e.target.value);
+          }}
+        >
+          <option value={`All Aspects`}>{`All Aspects`}</option>
+          {h2AspectOrder.map((ite, index) => (
+            <option value={ite} key={index}>
+              {ite}
+            </option>
+          ))}
+        </select>
         <input
           type="number"
           className="input input-sm border-1 focus:outline-0 border-[#f18043] rounded w-[80px]"
@@ -59,6 +77,7 @@ export default function ArcanaData({ data }) {
       </div>
       <div className="px-2 flex gap-2">
         <div>Query Fear:</div>
+        <div className="text-[#00ffaa]">{category}</div>
         <div className="text-[#f18043]">Min [{min}]</div>
         <div className="text-[#f18043]">Max [{max}]</div>
         <div className="text-[yellow]">[{displayData.length}]</div>
