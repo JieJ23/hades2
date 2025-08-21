@@ -253,7 +253,7 @@ export default function App() {
               className={`flex items-center w-full rounded px-2 gap-2 relative mb-2
             ${
               obj.fea > 64
-                ? `bg-gradient-to-r from-[#00000098] via-[#131835bc] to-[#121a40bc] border-1 border-black`
+                ? `bg-gradient-to-r from-[#00000098] via-[#131835bc] to-[#121a40bc] border-1 border-black shadow-[inset_0_0_100px_black]`
                 : `bg-[#00000098]`
             }
             `}
@@ -261,7 +261,7 @@ export default function App() {
             >
               {obj.fea > 64 && (
                 <div className="absolute top-0 left-0 w-full h-full -z-10">
-                  <img src={`/Misc/pixel.webp`} alt="Max Fear" className="w-full h-full object-cover rounded" />
+                  <img src={`/Misc/max.webp`} alt="Max Fear" className="w-full h-full object-cover rounded" />
                 </div>
               )}
               <div
