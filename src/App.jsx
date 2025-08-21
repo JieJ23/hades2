@@ -281,7 +281,7 @@ export default function App() {
                       obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
                     } rounded-l`}
                   />
-                  <div className="flex flex-col w-full">
+                  <div className="flex flex-col w-full pt-1">
                     <div className="w-full flex items-center gap-2">
                       <div className="w-full gap-2 ps-1">
                         <div className="flex items-center justify-between">
