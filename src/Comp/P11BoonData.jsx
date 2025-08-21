@@ -1,6 +1,4 @@
 import { sToA } from "../Data/Misc";
-import { p11data } from "../Data/P11Data";
-import { p9data } from "../Data/P9Data";
 import { p9boons_reverse } from "../Data/P9BoonObj";
 import { useState } from "react";
 import { h2AspectOrder } from "../Data/Misc";
@@ -17,12 +15,12 @@ function findBoonTotal(data, target) {
   return Object.entries(targetArray);
 }
 
-export default function P11BoonData() {
+export default function P11BoonData({ data }) {
   const [weapontype, setWeapontype] = useState(`Melinoe Staff`);
   const [min, setMin] = useState(22);
   const [max, setMax] = useState(67);
 
-  const selectedDataset = [...p11data, ...p9data].filter((obj) => obj.fea >= min && obj.fea <= max);
+  const selectedDataset = data.filter((obj) => obj.fea >= min && obj.fea <= max);
   const targetData = weapontype === `All` ? selectedDataset : selectedDataset.filter((obj) => obj.asp == weapontype);
   const displayData = weapontype === `All` ? selectedDataset : targetData;
 
@@ -38,7 +36,7 @@ export default function P11BoonData() {
       return acc;
     }, {});
 
-  const currentAspectHammerL = [...p11data, ...p9data].filter((obj) => obj.asp === weapontype).length;
+  const currentAspectHammerL = data.filter((obj) => obj.asp === weapontype).length;
   //
 
   const core_Counts = displayData.reduce((acc, entry) => {

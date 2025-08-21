@@ -20,27 +20,31 @@ import GameplaySubmission from "./Page/GameplaySubmission.jsx";
 import Query from "./Page/Query.jsx";
 import Gameplay from "./Page/Gameplay.jsx";
 
+import { DataProvider } from "./Hook/DataFetch.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/P910Stats" element={<P910Stats />} />
-        <Route path="/EAstats" element={<EAstats />} />
-        <Route path="/Trend" element={<Trend />} />
-        <Route path="/Player" element={<Player />} />
-        <Route path="/Ranking" element={<Ranking />} />
-        <Route path="/Patch8" element={<Patch8 />} />
-        <Route path="/FearCalculator" element={<FearCalculator />} />
-        <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
-        <Route path="/Hammer" element={<Hammer />} />
-        <Route path="/Boons" element={<Boons />} />
-        <Route path="/Enemy" element={<Enemy />} />
-        <Route path="/Playground" element={<Playground />} />
-        <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
-        <Route path="/Query" element={<Query />} />
-        <Route path="/Gameplay" element={<Gameplay />} />
-      </Routes>
-    </Router>
+    <DataProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/P910Stats" element={<P910Stats />} />
+          <Route path="/EAstats" element={<EAstats />} />
+          <Route path="/Trend" element={<Trend />} />
+          <Route path="/Player" element={<Player />} />
+          <Route path="/Ranking" element={<Ranking />} />
+          <Route path="/Patch8" element={<Patch8 />} />
+          <Route path="/FearCalculator" element={<FearCalculator />} />
+          <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
+          <Route path="/Hammer" element={<Hammer />} />
+          <Route path="/Boons" element={<Boons />} />
+          <Route path="/Enemy" element={<Enemy />} />
+          <Route path="/Playground" element={<Playground />} />
+          <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
+          <Route path="/Query" element={<Query />} />
+          <Route path="/Gameplay" element={<Gameplay />} />
+        </Routes>
+      </Router>
+    </DataProvider>
   </StrictMode>
 );
