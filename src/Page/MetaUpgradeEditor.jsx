@@ -3,7 +3,7 @@ import Background from "../Comp/Background";
 import { useState, useEffect } from "react";
 import Footer from "../Comp/Footer";
 import { baseLua } from "../Data/BaseLua";
-import { baseShrines, shrineObj, vowDes, shrineID, idShrine } from "./Shrine";
+import { baseShrines, shrineObj, vowDes, shrineID, idShrine, shrineInfo } from "./Shrine";
 
 export function updateRanks(luaText, updates) {
   let updatedLua = luaText;
@@ -118,7 +118,7 @@ export default function MetaUpgradeEditor() {
         <div className="grid grid-cols-4 text-[12px] gap-1 my-2 w-full max-w-[500px]">
           {baseShrines.map((ite, index) => (
             <div
-              className="px-2 py-1 bg-[#28282b] text-white rounded cursor-pointer flex flex-col border-1 border-white/10"
+              className="px-2 py-1 bg-[#131111d1] text-white rounded cursor-pointer flex flex-col border-1 border-white/10"
               key={index}
               onClick={() => {
                 setShop((prev) => {
@@ -156,6 +156,7 @@ export default function MetaUpgradeEditor() {
                     {shop[index].changeValues ? shop[index].changeValues.length : 0}
                   </div>
                   <img
+                    draggable={false}
                     src={`/Vows/${shrineObj[idShrine[obj["objectName"]]]}.png`}
                     alt="Vows"
                     className="size-8 hover:scale-[90%] cursor-pointer duration-100 ease-in transition-transform"
@@ -164,6 +165,7 @@ export default function MetaUpgradeEditor() {
                     }}
                   />
                 </div>
+                <div>*{shrineInfo[idShrine[obj["objectName"]]]}</div>
                 <div className="line-clamp-1">{[idShrine[obj["objectName"]]]}</div>
                 <div className="line-clamp-2 h-[36px] text-[12px]">
                   {vowDes[shrineObj[idShrine[obj["objectName"]]]]}
@@ -198,7 +200,7 @@ export default function MetaUpgradeEditor() {
                     {obj["points"].map((ite, index) => (
                       <div key={index}>
                         Rank {index + 1}: {ite} Fear /{" "}
-                        {obj["changeValues"] ? `${obj["changeValues"][index]} value` : `n/a`}
+                        {obj["changeValues"] ? `${obj["changeValues"][index]} Value` : `N/A`}
                       </div>
                     ))}
                   </div>

@@ -97,3 +97,23 @@ export const idShrine = {
   16: "LimitGraspShrineUpgrade",
   17: "EnemyEliteShrineUpgrade",
 };
+
+export const shrineInfo = {
+  EnemyDamageShrineUpgrade: `Multiply 100 - Initial 1.0 > 1.2`,
+  EnemyHealthShrineUpgrade: `Multiply 100 - Initial 1.0 > 1.1`,
+  EnemyShieldShrineUpgrade: `Integer - Initial 1 > 2`,
+  EnemySpeedShrineUpgrade: `Multiply 100 - Initial 1.0 > 1.2`,
+  EnemyCountShrineUpgrade: `Multiply 100 - Initial 1.0 > 1.2`,
+  NextBiomeEnemyShrineUpgrade: `Multiply 100 - Initial 0 > 0.1`,
+  EnemyRespawnShrineUpgrade: `Multiply 100 - Initial 0 > 0.25`,
+  EnemyEliteShrineUpgrade: `Integer - Initial 0 > 1`,
+  HealingReductionShrineUpgrade: `Multiply 100 - Initial 1 > 0.75`,
+  ShopPricesShrineUpgrade: `Multiply 100 - Initial 1 > 1.4`,
+  MinibossCountShrineUpgrade: `Integer - Initial 0 > 1`,
+  BoonSkipShrineUpgrade: `Integer - Initial 0 > 1`,
+  BiomeSpeedShrineUpgrade: `Integer - Initial 0 > 540 (Seconds)`,
+  LimitGraspShrineUpgrade: `Integer - Initial 100 > 60 (Percent)`,
+  BoonManaReserveShrineUpgrade: `Integer - Initial 0 > 3`,
+  BanUnpickedBoonsShrineUpgrade: `Integer - Initial 0 > 2`,
+  BossDifficultyShrineUpgrade: `Integer - Initial 0 > 1 (Max 4 Regions)`,
+};
