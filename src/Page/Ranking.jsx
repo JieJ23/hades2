@@ -25,6 +25,7 @@ export default function Ranking() {
   const [select, setSelect] = useState(null);
   const [selectAspect, setSelectAspect] = useState(null);
   const { posts, loader } = useData();
+  const [unique, setUnique] = useState(false);
 
   const fullPatchData = [...p11data, ...(posts || []), ...p9data];
 
@@ -44,7 +45,7 @@ export default function Ranking() {
     const uniqueByNam = dataOrder
       .filter((obj) => weaponCategory[i].includes(obj.asp))
       .filter((item) => {
-        const key = `${item.nam}-${item.asp}`; // Composite key
+        const key = unique ? `${item.nam}` : `${item.nam}-${item.asp}`; // Composite key
         if (seen.has(key)) return false;
         seen.add(key);
         return true;
@@ -60,64 +61,74 @@ export default function Ranking() {
         {loader ? (
           <Loading />
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-2 py-6">
-            {fullData.map((weaponData, index) => (
-              <div key={index} className="flex flex-col gap-1.5">
-                <div className="relative">
-                  <img
-                    src={`/NocturnalArms/${findGUIcard([weaponType[index]])}.webp`}
-                    alt="Aspect"
-                    className="h-[80px] rounded mx-auto drop-shadow-[0_0_10px_#00ffaa]"
-                    draggable={false}
-                  />
-                  <span className="absolute -bottom-1 left-2">{weaponData.length}</span>
-                </div>
-                {weaponData.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex items-center gap-2 px-2 ps-3 border-1 relative ${
-                      selectAspect === item.asp ? `border-[#00ff95]` : `border-white/10`
-                    }  rounded py-1 ${
-                      select === item.nam ? `bg-[#46e7a1d0] text-black` : `bg-[#000000c4] text-gray-300`
-                    }`}
-                  >
-                    <div
-                      className={`absolute top-0 left-0 h-full w-[4px] ${
-                        item.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
-                      } rounded-l`}
-                    />
+          <>
+            <div className="px-2">
+              <button
+                className="bg-white px-2 py-1 rounded text-black cursor-pointer"
+                onClick={() => setUnique(!unique)}
+              >
+                {unique ? `Unique Per Aspect` : `Unique Per Player`}
+              </button>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-2 py-6">
+              {fullData.map((weaponData, index) => (
+                <div key={index} className="flex flex-col gap-1.5">
+                  <div className="relative">
                     <img
-                      src={`/P9/${item.asp}.png`}
-                      alt={item.asp}
-                      className={`size-7 cursor-pointer`}
+                      src={`/NocturnalArms/${findGUIcard([weaponType[index]])}.webp`}
+                      alt="Aspect"
+                      className="h-[80px] rounded mx-auto drop-shadow-[0_0_10px_#00ffaa]"
                       draggable={false}
-                      onClick={() => {
-                        if (selectAspect == item.asp) {
-                          setSelectAspect(null);
-                        } else {
-                          setSelectAspect(item.asp);
-                        }
-                      }}
                     />
-                    <span>{idx + 1}.</span>
-                    <span
-                      className="line-clamp-1 cursor-pointer"
-                      onClick={() => {
-                        if (select === item.nam) {
-                          setSelect(null);
-                        } else {
-                          setSelect(item.nam);
-                        }
-                      }}
-                    >
-                      {item.nam}
-                    </span>
-                    <span className="ml-auto">{item.fea}</span>
+                    <span className="absolute -bottom-1 left-2">{weaponData.length}</span>
                   </div>
-                ))}
-              </div>
-            ))}
-          </div>
+                  {weaponData.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className={`flex items-center gap-2 px-2 ps-3 border-1 relative ${
+                        selectAspect === item.asp ? `border-[#00ff95]` : `border-white/10`
+                      }  rounded py-1 ${
+                        select === item.nam ? `bg-[#46e7a1d0] text-black` : `bg-[#000000df] text-gray-300`
+                      }`}
+                    >
+                      <div
+                        className={`absolute top-0 left-0 h-full w-[4px] ${
+                          item.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
+                        } rounded-l`}
+                      />
+                      <img
+                        src={`/P9/${item.asp}.png`}
+                        alt={item.asp}
+                        className={`size-7 cursor-pointer`}
+                        draggable={false}
+                        onClick={() => {
+                          if (selectAspect == item.asp) {
+                            setSelectAspect(null);
+                          } else {
+                            setSelectAspect(item.asp);
+                          }
+                        }}
+                      />
+                      <span>{idx + 1}.</span>
+                      <span
+                        className="line-clamp-1 cursor-pointer"
+                        onClick={() => {
+                          if (select === item.nam) {
+                            setSelect(null);
+                          } else {
+                            setSelect(item.nam);
+                          }
+                        }}
+                      >
+                        {item.nam}
+                      </span>
+                      <span className="ml-auto">{item.fea}</span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </>
         )}
       </div>
       <Footer />
