@@ -86,7 +86,7 @@ export default function MetaUpgradeEditor() {
   return (
     <div className="relative">
       <Background />
-      <div className="max-w-[1400px] font-[Source] text-[11px] md:text-[12px] mx-auto text-white select-none px-1">
+      <div className="max-w-[1200px] font-[Source] text-[11px] md:text-[12px] mx-auto text-white select-none px-1">
         <SideNav />
         <section className="">
           <div className="flex flex-wrap gap-1">
@@ -115,25 +115,38 @@ export default function MetaUpgradeEditor() {
             {shareableURL || "No URL Generated Yet"}
           </div>
         </section>
-        <div className="grid grid-cols-4 text-[12px] gap-1 my-2 w-full max-w-[500px]">
-          {baseShrines.map((ite, index) => (
-            <div
-              className="px-2 py-1 bg-[#131111d1] text-white rounded cursor-pointer flex flex-col border-1 border-white/10"
-              key={index}
-              onClick={() => {
-                setShop((prev) => {
-                  if (prev.some((item) => item.objectName === shrineID[ite])) {
-                    return prev;
-                  }
-                  return [...prev, { objectName: shrineID[ite] }];
-                });
-              }}
-            >
-              <img src={`/Vows/${shrineObj[ite]}.png`} alt="Vows" className="size-8" />
-              <span className="text-[orange]">{shrineObj[ite]}</span>
-              <span className="line-clamp-1">{ite}</span>
+        <div className="flex flex-col md:flex-row gap-2 w-full max-w-[1000px] my-2">
+          <div className="grid order-2 md:order-1 grid-cols-4 text-[12px] gap-1 w-full max-w-[500px]">
+            {baseShrines.map((ite, index) => (
+              <div
+                className="px-2 py-1 bg-[#131111d1] text-white rounded cursor-pointer flex flex-col border-1 border-white/10"
+                key={index}
+                onClick={() => {
+                  setShop((prev) => {
+                    if (prev.some((item) => item.objectName === shrineID[ite])) {
+                      return prev;
+                    }
+                    return [...prev, { objectName: shrineID[ite] }];
+                  });
+                }}
+              >
+                <img src={`/Vows/${shrineObj[ite]}.png`} alt="Vows" className="size-8" />
+                <span className="text-[orange]">{shrineObj[ite]}</span>
+                <span className="line-clamp-1">{ite}</span>
+              </div>
+            ))}
+          </div>
+          <div className="w-full order-1 md:order-2 text-[14px] font-[PT]">
+            <div className="bg-[#000000ae] rounded p-2">
+              <div>* Download the Updated Lua file generated from your chosen options and edits.</div>
+              <div>* Replace the existing file at Content/Scripts/MetaUpgradeData.lua</div>
+              <div>* The original Lua file is available for download to restore your files to their initial state.</div>
+              <div>
+                * All downloadable files are named MetaUpgradeData.lua, download-ready, and can be plugged directly into
+                your files.
+              </div>
             </div>
-          ))}
+          </div>
         </div>
         {/* Start  */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 text-black my-4">
