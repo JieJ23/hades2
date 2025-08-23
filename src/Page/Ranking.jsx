@@ -26,7 +26,7 @@ export default function Ranking() {
   const [selectAspect, setSelectAspect] = useState(null);
   const { posts, loader } = useData();
 
-  const fullPatchData = [[...p11data, ...(posts || [])], ...p9data];
+  const fullPatchData = [...p11data, ...(posts || []), ...p9data];
 
   const dataOrder = fullPatchData
     .slice()
