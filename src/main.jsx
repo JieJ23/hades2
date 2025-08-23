@@ -19,6 +19,7 @@ import Playground from "./Page/Playground.jsx";
 import GameplaySubmission from "./Page/GameplaySubmission.jsx";
 import Query from "./Page/Query.jsx";
 import Gameplay from "./Page/Gameplay.jsx";
+import MetaUpgradeEditor from "./Page/MetaUpgradeEditor.jsx";
 
 import { DataProvider } from "./Hook/DataFetch.jsx";
 
@@ -43,6 +44,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
           <Route path="/Query" element={<Query />} />
           <Route path="/Gameplay" element={<Gameplay />} />
+          <Route path="/MetaUpgradeEditor" element={<MetaUpgradeEditor />} />
         </Routes>
       </Router>
     </DataProvider>
