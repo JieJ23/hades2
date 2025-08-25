@@ -262,20 +262,10 @@ export default function App() {
             <section className="p-1 overflow-visible">
               {displayEntries.slice(0, show).map((obj, index) => (
                 <div
-                  className={`flex items-center w-full rounded px-2 gap-2 relative mb-2
-            ${
-              obj.fea > 64
-                ? `bg-gradient-to-r from-[#00000098] via-[#131835bc] to-[#121a40bc] border-1 border-black shadow-[inset_0_0_100px_black]`
-                : `bg-[#00000098]`
-            }
+                  className={`flex items-center w-full rounded px-2 gap-2 relative mb-2 bg-[#00000098]
             `}
                   key={index}
                 >
-                  {obj.fea > 64 && (
-                    <div className="absolute top-0 left-0 w-full h-full -z-10">
-                      <img src={`/Misc/max.webp`} alt="Max Fear" className="w-full h-full object-cover rounded" />
-                    </div>
-                  )}
                   <div
                     className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
                       obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
@@ -431,11 +421,11 @@ export default function App() {
                           )}
                         </div>
                         <div className="text-white z-20 text-[11px]">{obj.des}</div>
-                        <div className="flex flex-wrap gap-1 text-[10px] my-0.5">
+                        <div className="flex flex-wrap gap-0.5 text-[10px] my-0.5">
                           {obj.arcana &&
                             deCodeArcana(obj.arcana)
                               .map((ite) => deckMatch[ite])
-                              .map((ite) => <div className="px-1 py-0.5 bg-[#28282b] rounded">{ite}</div>)}
+                              .map((ite) => <div className="px-1 py-0.5 bg-[#28282b] rounded-none">{ite}</div>)}
                         </div>
                         <div className="flex flex-wrap gap-1 text-[10px] my-0.5">
                           {obj.oath &&

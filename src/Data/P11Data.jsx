@@ -3407,11 +3407,11 @@ export const p11data = [
   },
   {
     dat: "2025-08-20",
-    nam: " Haelian",
+    nam: "Haelian",
     asp: "Nergal",
     loc: "Surface",
     fea: "50",
-    src: "https://www.youtube.com/watch?v=Z5xHmLMloFU",
+    src: "https://www.youtube.com/watch?v=UHOtIL03_o0",
     des: '...Did we finally find the sauce for this "bad" boon?',
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMTgiLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjMiLCJjMjQiXQ==",

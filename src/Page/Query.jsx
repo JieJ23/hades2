@@ -475,13 +475,7 @@ export default function Query() {
             </div>
             <div className="select-none">
               {displayData3.slice(0, show).map((obj, index) => (
-                <div
-                  className={`my-2 rounded bg-[#00000098] ${
-                    obj.fea >= 64
-                      ? `bg-gradient-to-r from-[#77450b87] via-[#0d326e52] to-[#4b287650]`
-                      : `bg-[#00000098]`
-                  } p-2 py-1 flex items-center`}
-                >
+                <div className={`my-2 rounded bg-[#00000098] p-2 py-1 flex items-center`}>
                   <div className="w-full">
                     <div className="flex justify-between text-[12px] items-center px-1">
                       <div className="font-[Cinzel] flex gap-1 items-center">
