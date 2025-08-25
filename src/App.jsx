@@ -65,11 +65,15 @@ export default function App() {
             />
           </div>
         </div>
-        <img src="/Misc/Chronos.webp" alt="Chronos" className="w-[200px] mx-auto drop-shadow-[0_0_10px_#FFD700]" />
+        <img
+          src="/Misc/Chronos.webp"
+          alt="Chronos"
+          className="w-[150px] mx-auto drop-shadow-[0_0_10px_#FFD700] translate-y-10"
+        />
         <img
           src="/Misc/wanted.png"
           alt="Wanted Poster"
-          className="w-full max-w-[400px] mx-auto drop-shadow-[0_0_10px_#FFD700]"
+          className="w-full max-w-[300px] mx-auto drop-shadow-[0_0_10px_#FFD700]"
         />
       </div>
       <Footer />
