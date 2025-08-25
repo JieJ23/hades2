@@ -66,25 +66,25 @@ export default function FearCalculator() {
   return (
     <main className="select-none relative">
       <Background />
-      <div className="max-w-[1400px] font-[PT] text-[14px] mx-auto">
+      <div className="max-w-[1400px] font-[Source] text-[14px] mx-auto">
         <SideNav />
         <div className="w-full">
           <section className="p-2">
             <div className="flex flex-wrap gap-1">
               <button
-                className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
+                className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
                 onClick={generateShareableURL}
               >
                 Generate URL
               </button>
               <button
-                className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
+                className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
                 onClick={copyURLToClipboard}
               >
                 {isCopied ? "Copied!" : "Copy URL"}
               </button>
               <button
-                className="btn btn-sm border-[#00ffaa] bg-black rounded-sm font-[PT]"
+                className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
                 onClick={() => {
                   const defaultValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                   setVows(defaultValues);
@@ -95,7 +95,7 @@ export default function FearCalculator() {
               </button>
             </div>
 
-            <div className="max-w-[1000px] bg-base-300 overflow-hidden p-2 truncate text-[13px] text-white rounded-md font-[PT] mt-2">
+            <div className="w-full max-w-[1000px] bg-[#28282b98] text-white overflow-hidden p-2 truncate text-[12px] rounded my-2">
               {shareableURL || "No URL Generated Yet"}
             </div>
           </section>

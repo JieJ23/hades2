@@ -265,13 +265,6 @@ export default function App() {
                   className={`overflow-hidden flex items-center w-full rounded px-2 gap-2 relative mb-2 bg-[#00000098]`}
                   key={index}
                 >
-                  {obj.fea === 67 && (
-                    <img
-                      src={`/Misc/Medea.webp`}
-                      alt="Max Fear"
-                      className="absolute right-0 bottom-0 md:w-full h-full object-contain drop-shadow-[0_0_10px_#00ffaa] -z-10"
-                    />
-                  )}
                   <div
                     className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
                       obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
@@ -331,7 +324,7 @@ export default function App() {
                           )}
                         </div>
                         <div className="flex items-center flex-wrap py-1 gap-0.5">
-                          <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                          <div className="flex">
                             <img
                               draggable={false}
                               src={`/P9/${obj.asp}.png`}
@@ -345,7 +338,7 @@ export default function App() {
                               className="size-6 md:size-7 border-1 border-black rounded-lg"
                             />
                           </div>
-                          <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                          <div className="flex">
                             {sToA(obj.cor).map((ite, index) => (
                               <div className="tooltip shrink-0" key={index}>
                                 <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
@@ -361,7 +354,7 @@ export default function App() {
                             ))}
                           </div>
                           {obj.ham && (
-                            <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                            <div className="flex">
                               {findValue(
                                 sToA(obj.ham).sort((a, b) => {
                                   const aIndex = orderMap.get(a) ?? Infinity;
@@ -384,7 +377,7 @@ export default function App() {
                             </div>
                           )}
                           {obj.ks && (
-                            <div className="flex gap-0.5 p-1 rounded bg-[#28282b]">
+                            <div className="flex">
                               {sToA(obj.ks).map((ite, index) => (
                                 <div className="tooltip shrink-0" key={index}>
                                   <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
@@ -394,7 +387,7 @@ export default function App() {
                                     draggable={false}
                                     src={`/buildgui/${ite}.png`}
                                     alt="Keepsake"
-                                    className="size-6 md:size-7"
+                                    className="size-6"
                                   />
                                 </div>
                               ))}

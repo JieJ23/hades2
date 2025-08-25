@@ -117,7 +117,7 @@ export default function GameplaySubmission() {
         <div className="text-white text-center text-[20px] my-2 font-[Cinzel]">Gameplay Submission</div>
         <div className="flex justify-center gap-1">
           <Link
-            className="flex items-center bg-[orange] text-black border-1 border-black rounded ps-2 p-1"
+            className="flex items-center bg-white text-black border-1 border-black rounded ps-2 p-1"
             to={`https://h2crossroads.pages.dev/FearCalculator`}
             target="_blank"
           >
@@ -125,7 +125,7 @@ export default function GameplaySubmission() {
             <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
           </Link>
           <Link
-            className="flex items-center bg-[orange] text-black border-1 border-black rounded ps-2 p-1"
+            className="flex items-center bg-white text-black border-1 border-black rounded ps-2 p-1"
             to={`https://h2crossroads.pages.dev/ArcanaDeck`}
             target="_blank"
           >

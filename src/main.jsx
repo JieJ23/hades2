@@ -20,7 +20,6 @@ import GameplaySubmission from "./Page/GameplaySubmission.jsx";
 import Query from "./Page/Query.jsx";
 import Gameplay from "./Page/Gameplay.jsx";
 import MetaUpgradeEditor from "./Page/MetaUpgradeEditor.jsx";
-
 import { DataProvider } from "./Hook/DataFetch.jsx";
 
 createRoot(document.getElementById("root")).render(

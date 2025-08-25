@@ -205,7 +205,7 @@ export default function Query() {
   return (
     <main className="relative">
       <Background />
-      <div className="max-w-[1200px] font-[Source] text-[11px] mx-auto">
+      <div className="max-w-[1200px] font-[Source] text-[11px] mx-auto px-2">
         <SideNav />
         {loader ? (
           <Loading />
@@ -475,8 +475,13 @@ export default function Query() {
             </div>
             <div className="select-none">
               {displayData3.slice(0, show).map((obj, index) => (
-                <div className={`my-2 rounded bg-[#00000098] p-2 py-1 flex items-center`}>
-                  <div className="w-full">
+                <div className={`my-2 rounded bg-[#00000098] p-2 py-1 flex items-center relative`}>
+                  <div
+                    className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
+                      obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
+                    } rounded-l`}
+                  />
+                  <div className="ps-2 w-full">
                     <div className="flex justify-between text-[12px] items-center px-1">
                       <div className="font-[Cinzel] flex gap-1 items-center">
                         <div className="font-mono font-semibold text-[#f18043]">{obj.fea}</div>

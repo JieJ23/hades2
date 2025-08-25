@@ -4,13 +4,13 @@ import { useLocation } from "react-router-dom";
 export const sites = [
   { icon: `Ladder`, link: ``, nam: `Ladder` },
   { icon: `Query`, link: `Query`, nam: `Query` },
-  { icon: `Gameplay`, link: `Gameplay`, nam: `Gameplay` },
+  // { icon: `Gameplay`, link: `Gameplay`, nam: `Gameplay` },
   { icon: `Melinoe`, link: `Ranking`, nam: `Ranking` },
   // { icon: `Boon2`, link: `Trend`, nam: `Boon Trend` },
   { icon: `Stats`, link: `EAstats`, nam: `EA Stats` },
   // { icon: `Stats`, link: `P910Stats`, nam: `P910Stats` },
   // { icon: `Save`, link: `Playground`, nam: `Playground` },
-  { icon: `Player`, link: `Player`, nam: `Player` },
+  // { icon: `Player`, link: `Player`, nam: `Player` },
   // { icon: `Patch8`, link: `Patch8`, nam: `Patch 8` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },
@@ -23,7 +23,7 @@ export const sites = [
 export default function SideNav() {
   const currentLocation = useLocation();
   return (
-    <div className="h-full w-full p-2 pt-4 font-[Source] text-[13px] rounded shrink-0">
+    <div className="h-full w-full p-2 py-4 font-[Source] text-[11px] md:text-[12px] rounded shrink-0">
       <div className="flex flex-wrap justify-center items-center gap-3">
         {sites.map((obj, idx) => (
           <Link
@@ -34,9 +34,9 @@ export default function SideNav() {
             key={idx}
           >
             <div className="tooltip tooltip-bottom">
-              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded text-[12px]">{obj.nam}</div>
+              <div className="tooltip-content bg-white text-black text-[11px] md:text-[12px] rounded">{obj.nam}</div>
               <div className="avatar">
-                <div className="size-8 rounded-none">
+                <div className="size-8">
                   <img
                     src={`/${obj.icon}.png`}
                     draggable={false}
