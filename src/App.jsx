@@ -262,10 +262,16 @@ export default function App() {
             <section className="p-1 overflow-visible">
               {displayEntries.slice(0, show).map((obj, index) => (
                 <div
-                  className={`flex items-center w-full rounded px-2 gap-2 relative mb-2 bg-[#00000098]
-            `}
+                  className={`overflow-hidden flex items-center w-full rounded px-2 gap-2 relative mb-2 bg-[#00000098]`}
                   key={index}
                 >
+                  {obj.fea === 67 && (
+                    <img
+                      src={`/Misc/Medea.webp`}
+                      alt="Max Fear"
+                      className="absolute right-0 bottom-0 md:w-full h-full object-contain drop-shadow-[0_0_10px_#00ffaa] -z-10"
+                    />
+                  )}
                   <div
                     className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
                       obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
