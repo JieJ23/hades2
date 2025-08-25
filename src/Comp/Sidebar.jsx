@@ -14,6 +14,7 @@ export const sites = [
   // { icon: `Patch8`, link: `Patch8`, nam: `Patch 8` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },
+  { icon: `Editor`, link: `MetaUpgradeEditor`, nam: `Oath Editor` },
   { icon: `Submit`, link: `GameplaySubmission`, nam: `Submission` },
   // { icon: `Hammer`, link: `Hammer`, nam: `Hammer` },
   // { icon: `Boons`, link: `Boons`, nam: `Boons` },
