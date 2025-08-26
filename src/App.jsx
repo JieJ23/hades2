@@ -64,7 +64,11 @@ export default function App() {
   for (let i = 0; i < h2AspectOrder.length; i++) {
     const aspectArray = regionData
       .filter((obj) => obj.asp === h2AspectOrder[i])
-      .sort((a, b) => (category === `Speed` ? parseTimetoms(a.tim) - parseTimetoms(b.tim) : b.fea - a.fea));
+      .sort((a, b) =>
+        category === `Speed`
+          ? parseTimetoms(a.tim) - parseTimetoms(b.tim)
+          : b.fea - a.fea || parseTimetoms(a.tim) - parseTimetoms(b.tim)
+      );
     const removeDup = aspectArray.filter(
       (player, index, self) => index === self.findIndex((p) => p.nam === player.nam)
     );
