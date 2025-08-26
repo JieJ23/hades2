@@ -3342,9 +3342,8 @@ export const p11data = [
     fea: "65",
     src: "https://youtu.be/itpJIuysHw4",
     des: "Psychic Whirling",
-    arcana:
-      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjEiLCJjMjIiLCJjMjMiXQ==",
-    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
+    arcana: "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjNyIsImMyMCIsImMyMyIsImMyNSJd",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMywyLDIsMTJd",
     tim: "18:43.69",
     fam: "Frog",
     cor: "HerAttack,ZeuSpecial,ApoCast,AphSprint,HerMagick",

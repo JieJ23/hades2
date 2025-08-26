@@ -627,7 +627,7 @@ export default function Query() {
                       </div>
                     )}
                     <div className="text-[12px] ps-1 font-[Ale] text-gray-300">{obj.des}</div>
-                    {obj.arcana && obj.fea < 62 && (
+                    {obj.arcana && (
                       <div className="flex flex-wrap gap-1 text-[10px] md:text-[11px] my-0.5">
                         {obj.arcana &&
                           deCodeArcana(obj.arcana)
