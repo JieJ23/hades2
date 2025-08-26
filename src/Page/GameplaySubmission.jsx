@@ -1,4 +1,3 @@
-import Head from "../Comp/Head";
 import Background from "../Comp/Background";
 import SideNav from "../Comp/Sidebar";
 import {
@@ -112,9 +111,9 @@ export default function GameplaySubmission() {
   return (
     <main className="relative">
       <Background />
-      <div className="max-w-[1200px] font-[Source] text-[12px] mx-auto">
+      <div className="max-w-[1200px] font-[Ale] text-[12px] mx-auto">
         <SideNav />
-        <div className="text-white text-center text-[20px] my-2 font-[Cinzel]">Gameplay Submission</div>
+        <div className="text-white text-center text-[20px] my-2">Gameplay Submission</div>
         <div className="flex justify-center gap-1">
           <Link
             className="flex items-center bg-white text-black border-1 border-black rounded ps-2 p-1"
@@ -138,7 +137,7 @@ export default function GameplaySubmission() {
         </div>
         {/* Form Start */}
         <form onSubmit={Submit}>
-          <div className="w-full mx-auto my-2 grid grid-cols-1 sm:grid-cols-2 gap-4 p-2 font-[Source] max-w-[1000px]">
+          <div className="w-full mx-auto my-2 grid grid-cols-1 sm:grid-cols-2 gap-4 p-2 font-[Ale] max-w-[1000px]">
             <div className="flex flex-col gap-2">
               <input type="date" placeholder="Date" className="input w-full rounded" name="dat" required />
               <input type="text" placeholder="Name" className="input w-full rounded" name="nam" required />
@@ -225,7 +224,7 @@ export default function GameplaySubmission() {
           </div>
           <div className="flex justify-center">
             <button
-              className="border-1 rounded text-[16px] px-2 py-1 w-[150px] cursor-pointer"
+              className="border-1 rounded text-[20px] px-2 py-1 w-[150px] cursor-pointer"
               type="submit"
               name="Submit"
             >

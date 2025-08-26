@@ -18,8 +18,8 @@ export default function BarUW({ data }) {
   }
 
   return (
-    <div className="h-[300px] w-full max-w-[1200px] mx-auto px-2 text-[10px] md:text-[12px] font-[Source] mt-6">
-      <div className="text-[15px] font-[Cinzel]">Underworld Fear</div>
+    <div className="h-[300px] w-full max-w-[1200px] mx-auto px-2 text-[10px] font-[Ubuntu] mt-6">
+      <div className="text-[20px] font-[Ale]">Underworld Fear</div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={highestArray}

@@ -3,7 +3,7 @@ import Background from "../Comp/Background";
 import { useState, useEffect } from "react";
 import Footer from "../Comp/Footer";
 import { baseLua } from "../Data/BaseLua";
-import { baseShrines, shrineObj, vowDes, shrineID, idShrine, shrineInfo } from "./Shrine";
+import { baseShrines, shrineObj, vowDes, shrineID, idShrine, shrineInfo } from "../Data/Shrine";
 
 export function updateRanks(luaText, updates) {
   let updatedLua = luaText;
@@ -86,24 +86,24 @@ export default function MetaUpgradeEditor() {
   return (
     <div className="relative">
       <Background />
-      <div className="max-w-[1200px] font-[Source] text-[11px] md:text-[12px] mx-auto text-white select-none px-1">
+      <div className="max-w-[1200px] font-[Ale] text-[11px] md:text-[12px] mx-auto text-white select-none px-1">
         <SideNav />
         <section className="">
           <div className="flex flex-wrap gap-1">
             <button
-              className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
+              className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Ale]"
               onClick={generateShareableURL}
             >
               Generate URL
             </button>
             <button
-              className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
+              className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Ale]"
               onClick={copyURLToClipboard}
             >
               {isCopied ? "Copied!" : "Copy URL"}
             </button>
             <button
-              className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
+              className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Ale]"
               onClick={() => {
                 setShop([]);
               }}
@@ -136,8 +136,8 @@ export default function MetaUpgradeEditor() {
               </div>
             ))}
           </div>
-          <div className="w-full order-1 md:order-2 text-[14px] font-[PT]">
-            <div className="bg-[#000000ae] rounded p-2">
+          <div className="w-full order-1 md:order-2 text-[14px]">
+            <div className="rounded p-2">
               <div>* Download the Updated Lua file generated from your chosen options and edits.</div>
               <div>* Replace the existing file at Content/Scripts/MetaUpgradeData.lua</div>
               <div>* The original Lua file is available for download to restore your files to their initial state.</div>

@@ -63,25 +63,19 @@ export default function ArcanaDeck() {
   return (
     <main className="select-none relative">
       <Background />
-      <div className="max-w-[1400px] font-[Source] text-[14px] mx-auto">
+      <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto">
         <SideNav />
         <div className="w-full">
           <section className="p-2">
             <div className="flex flex-wrap gap-1">
-              <button
-                className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
-                onClick={generateShareableURL}
-              >
+              <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={generateShareableURL}>
                 Generate URL
               </button>
-              <button
-                className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
-                onClick={copyURLToClipboard}
-              >
+              <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={copyURLToClipboard}>
                 {isCopied ? "Copied!" : "Copy URL"}
               </button>
               <button
-                className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
+                className="bg-white cursor-pointer text-black rounded px-2 py-1"
                 onClick={() => {
                   const defaultValue = [];
                   setDeck(defaultValue);
@@ -92,7 +86,7 @@ export default function ArcanaDeck() {
               </button>
             </div>
 
-            <div className="w-full max-w-[1000px] bg-[#28282b98] text-white overflow-hidden p-2 truncate text-[12px] rounded my-2">
+            <div className="w-full max-w-[1000px] bg-[#28282b98] text-white overflow-hidden p-2 truncate rounded my-2">
               {shareableURL || "No URL Generated Yet"}
             </div>
           </section>
@@ -114,7 +108,7 @@ export default function ArcanaDeck() {
                     }`}
                   >
                     <img draggable={false} src={`/Arcane/${ite}.png`} alt="Arcane Card" />
-                    <div className="absolute top-1 right-1 bg-black rounded-full w-6 h-6 text-[14px] font-[PT] flex justify-center items-center">
+                    <div className="absolute top-1 right-1 bg-black rounded-full w-6 h-6 flex justify-center items-center">
                       {defineDeck(ite).g}
                     </div>
                   </div>
@@ -122,18 +116,14 @@ export default function ArcanaDeck() {
               ))}
             </div>
             <div className="w-full p-3">
-              <div
-                className={`text-[18px] text-[#0cf29e] font-[PT] ${
-                  currentGrasp <= 30 ? `text-[#0cf29e]` : `text-[#ee2828]`
-                }`}
-              >
+              <div className={`text-[18px] text-[#0cf29e] ${currentGrasp <= 30 ? `text-[#0cf29e]` : `text-[#ee2828]`}`}>
                 Total: {currentGrasp}/30
               </div>
               {deck
                 .sort((a, b) => +(a.slice(1) < +b.slice(1) ? -1 : 1))
                 .map((ite) => (
-                  <div className="font-[PT] text-[12px] text-white border-1 border-white/20 rounded p-2 my-1 bg-black/90">
-                    <div className="font-[Cinzel]">{defineDeck(ite).card}</div>
+                  <div className="text-white border-1 border-white/20 rounded p-2 my-1 bg-black/90">
+                    <div className="text-[14px]">{defineDeck(ite).card}</div>
                     <div>{defineDeck(ite).d}</div>
                   </div>
                 ))}

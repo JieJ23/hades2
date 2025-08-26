@@ -37,8 +37,8 @@ export default function ArcanaData({ data }) {
   const oathArrayData = reduceOathData(oathStore);
 
   return (
-    <div className="rounded mt-8 w-full max-w-[1200px] mx-auto font-[Source] text-[12px] md:text-[13px] py-4 px-2">
-      <div className="px-2 font-[Cinzel]">Arcana & Vows</div>
+    <div className="rounded mt-4 w-full max-w-[1200px] mx-auto font-[Ale] text-[11px] md:text-[12px] py-4 px-2">
+      <div className="px-2 text-[20px]">Arcana & Vows</div>
       <div className="px-2 py-1 flex gap-1">
         <select
           value={category}
@@ -91,7 +91,7 @@ export default function ArcanaData({ data }) {
           </div>
         ))}
       </div>
-      <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-4 text-[11px] font-[Source]">
+      <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-4">
         {oathArrayData.map((Litem, ind1) => (
           <div className="flex flex-col items-center min-w-[100px] bg-[#00000098] border-1 border-white/20 rounded p-2">
             <img src={`/Vows/${vowMatch[ind1]}.png`} alt="Vows" className="size-10 shrink-0" />

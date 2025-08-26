@@ -66,25 +66,19 @@ export default function FearCalculator() {
   return (
     <main className="select-none relative">
       <Background />
-      <div className="max-w-[1400px] font-[Source] text-[14px] mx-auto">
+      <div className="max-w-[1400px] font-[Ale] text-11 md:text-[12px] mx-auto">
         <SideNav />
         <div className="w-full">
           <section className="p-2">
             <div className="flex flex-wrap gap-1">
-              <button
-                className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
-                onClick={generateShareableURL}
-              >
+              <button className="bg-white cursor-pointer text-black rounded px-2 py-1 " onClick={generateShareableURL}>
                 Generate URL
               </button>
-              <button
-                className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
-                onClick={copyURLToClipboard}
-              >
+              <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={copyURLToClipboard}>
                 {isCopied ? "Copied!" : "Copy URL"}
               </button>
               <button
-                className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
+                className="bg-white cursor-pointer text-black rounded px-2 py-1"
                 onClick={() => {
                   const defaultValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                   setVows(defaultValues);
@@ -111,9 +105,7 @@ export default function FearCalculator() {
                   <div className="absolute top-0 left-1">
                     <div className="flex flex-col text-[10px]">
                       {vowArray(ite).map((item, ind) => (
-                        <div className="font-[PT]" key={ind}>
-                          {item}
-                        </div>
+                        <div key={ind}>{item}</div>
                       ))}
                     </div>
                   </div>
@@ -123,7 +115,7 @@ export default function FearCalculator() {
                     className="group-hover:scale-[125%] duration-75 transition-transform ease-in size-7 md:size-8 lg:size-9 rounded"
                     draggable={false}
                   />
-                  <div className="text-[10px] md:text-[12px] font-[Cinzel] text-white">{ite}</div>
+                  <div className="text-[10px] md:text-[12px] text-white">{ite}</div>
                   <button
                     className="btn btn-outline border-white/50 rounded bg-black btn-xs text-[12px]"
                     onClick={() => handleButtonClick(index)}
@@ -144,14 +136,14 @@ export default function FearCalculator() {
               ))}
             </div>
             <div className="w-full p-2 lg:py-0">
-              <div className={`text-[18px] text-[#0cf29e] font-[PT]`}>Total: {currentVows ? currentVows : 0}</div>
+              <div className={`text-[18px] text-[#0cf29e]`}>Total: {currentVows ? currentVows : 0}</div>
               <div className="grid grid-cols-2 gap-2">
                 {displayVow.map((item, index) => (
                   <div
-                    className="w-full font-[PT] text-[12px] text-white border-1 border-white/20 rounded p-2 bg-black/90"
+                    className="w-full text-[12px] text-white border-1 border-white/20 rounded p-2 bg-black/90"
                     key={index}
                   >
-                    <div className="font-[Cinzel]">{item}</div>
+                    <div>{item}</div>
                     <div className="text-gray-300">{defineArray(item).d}</div>
                     <div className="flex flex-wrap justify-start gap-2 mt-1">
                       {defineArray(item).rank.map((ite, index) => (

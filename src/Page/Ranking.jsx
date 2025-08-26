@@ -56,7 +56,7 @@ export default function Ranking() {
   return (
     <main className="relative">
       <Background />
-      <div className="max-w-[1400px] font-[Source] text-[11px] md:text-[12px] mx-auto text-white select-none">
+      <div className="max-w-[1400px] font-[Ubuntu] text-[11px] mx-auto text-white select-none">
         <SideNav />
         {loader ? (
           <Loading />

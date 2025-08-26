@@ -3389,7 +3389,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-20",
-    nam: " Boated",
+    nam: "Boated",
     asp: "Shiva",
     loc: "Underworld",
     fea: "62",

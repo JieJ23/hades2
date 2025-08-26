@@ -1,7 +1,7 @@
 import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { h2AspectOrder } from "../Data/Misc";
 
-export default function BarAspect({ data }) {
+export default function BarAspect({ data, title }) {
   const feaCountsObj = data.reduce((acc, item) => {
     const asp = item.asp;
     acc[asp] = (acc[asp] || 0) + 1;
@@ -18,8 +18,8 @@ export default function BarAspect({ data }) {
     .sort((a, b) => orderMap.get(a.num) - orderMap.get(b.num));
 
   return (
-    <div className="h-[300px] w-full max-w-[1200px] mx-auto px-2 text-[10px] md:text-[12px] font-[Source] mt-6">
-      <div className="text-[15px] font-[Cinzel]">Aspect Summary</div>
+    <div className="h-[300px] w-full max-w-[1200px] mx-auto px-2 text-[10px] font-[Ubuntu] mt-6">
+      <div className="text-[20px] font-[Ale]">{title} Aspect</div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={feaCountsArray}

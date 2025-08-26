@@ -44,11 +44,10 @@ export default function EAstats() {
         <Loading />
       ) : (
         <>
-          <div className="max-w-[1000px] font-[Source] text-[12px] md:text-[13px] mx-auto my-2">
+          <div className="max-w-[1000px] font-[Ale] text-[12px] mx-auto my-2">
             <section className="w-full">
-              <div className="text-[15px] p-2 py-0 font-[Cinzel]">Ladder Summary</div>
               <div className="bg-[#000000b5] rounded overflow-hidden pt-2">
-                <div className="grid grid-cols-3 px-2 pb-2 font-[Cinzel]">
+                <div className="grid grid-cols-3 px-2 pb-2 text-[16px]">
                   <div>Aspects</div>
                   <div>Underworld</div>
                   <div>Surface</div>
@@ -91,11 +90,14 @@ export default function EAstats() {
             </section>
           </div>
           <BarFear data={highfear} />
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1200px] mx-auto my-4">
             <BarSurface data={highfear} />
             <BarUW data={highfear} />
           </div>
-          <BarAspect data={highfear} />
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1200px] mx-auto my-4">
+            <BarAspect data={underworld_runs} title={`UW`} />
+            <BarAspect data={surface_runs} title={`Surface`} />
+          </div>
           <ArcanaData data={highfear} />
           <P11BoonData data={highfear} />
         </>

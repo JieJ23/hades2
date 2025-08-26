@@ -24,7 +24,7 @@ export const sites = [
 export default function SideNav() {
   const currentLocation = useLocation();
   return (
-    <div className="h-full w-full p-2 py-4 font-[Source] text-[11px] md:text-[12px] rounded shrink-0">
+    <div className="h-full w-full p-2 py-4 font-[Ale] text-[12px] rounded shrink-0">
       <div className="flex flex-wrap justify-center items-center gap-3">
         {sites.map((obj, idx) => (
           <Link
@@ -35,7 +35,7 @@ export default function SideNav() {
             key={idx}
           >
             <div className="tooltip tooltip-bottom">
-              <div className="tooltip-content bg-white text-black text-[11px] md:text-[12px] rounded">{obj.nam}</div>
+              <div className="tooltip-content bg-white text-black text-[11px] rounded">{obj.nam}</div>
               <div className="avatar">
                 <div className="size-8">
                   <img

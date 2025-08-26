@@ -1,4 +1,3 @@
-import Head from "../Comp/Head";
 import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
@@ -205,27 +204,21 @@ export default function Query() {
   return (
     <main className="relative">
       <Background />
-      <div className="max-w-[1200px] font-[Source] text-[11px] mx-auto px-2">
+      <div className="max-w-[1200px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-2">
         <SideNav />
         {loader ? (
           <Loading />
         ) : (
           <>
             <div className="flex flex-wrap gap-1 pt-2">
-              <button
-                className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
-                onClick={generateShareableURL}
-              >
+              <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={generateShareableURL}>
                 Generate URL
               </button>
-              <button
-                className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
-                onClick={copyURLToClipboard}
-              >
+              <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={copyURLToClipboard}>
                 {isCopied ? "Copied!" : "Copy URL"}
               </button>
               <button
-                className="bg-white cursor-pointer text-black rounded px-2 py-1 font-[Source] text-[11px]"
+                className="bg-white cursor-pointer text-black rounded px-2 py-1"
                 onClick={() => {
                   setAsp([]);
                   setReg(`Region`);
@@ -400,10 +393,8 @@ export default function Query() {
             </div>
             {reg && (
               <div className="flex flex-wrap text-[10px] md:text-[11px] my-1 gap-1">
-                <div className="px-2 py-1 rounded bg-[#f18043] text-black">
-                  Region: {reg === `Region` ? `All` : reg}
-                </div>
-                <div className="px-2 py-1 rounded bg-[#f18043] text-black">
+                <div className="px-2 py-1 rounded bg-white text-black">Region: {reg === `Region` ? `All` : reg}</div>
+                <div className="px-2 py-1 rounded bg-white text-black">
                   Fear Range: {minmax[0]} - {minmax[1]}
                 </div>
                 {player && <div className="px-2 py-1 rounded bg-[#f18043] text-black">Player: {player}</div>}
@@ -483,8 +474,8 @@ export default function Query() {
                   />
                   <div className="ps-2 w-full">
                     <div className="flex justify-between text-[12px] items-center px-1">
-                      <div className="font-[Cinzel] flex gap-1 items-center">
-                        <div className="font-mono font-semibold text-[#f18043]">{obj.fea}</div>
+                      <div className="text-[16px] flex gap-1 items-center">
+                        <div className="font-semibold text-[#f18043]">{obj.fea}</div>
                         <div>{obj.nam}</div>
                       </div>
                       <div className="flex flex-wrap items-center justify-end gap-0.5 text-[10px] md:text-[11px]">
@@ -530,8 +521,8 @@ export default function Query() {
                     <div className="flex items-center flex-wrap my-1 gap-1">
                       <div className="flex gap-0.5 rounded">
                         <div className="tooltip shrink-0">
-                          <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                            <div className="font-[Source] text-[11px]">{obj.asp}</div>
+                          <div className="tooltip-content bg-white text-black rounded">
+                            <div className="text-[11px]">{obj.asp}</div>
                           </div>
                           <img
                             draggable={false}
@@ -541,8 +532,8 @@ export default function Query() {
                           />
                         </div>
                         <div className="tooltip shrink-0">
-                          <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                            <div className="font-[Source] text-[11px]">{obj.fam}</div>
+                          <div className="tooltip-content bg-white text-black rounded">
+                            <div className="text-[11px]">{obj.fam}</div>
                           </div>
                           <img
                             draggable={false}
@@ -555,8 +546,8 @@ export default function Query() {
                       <div className="flex gap-0.5 rounded">
                         {sToA(obj.cor).map((ite, index) => (
                           <div className="tooltip shrink-0">
-                            <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                              <div className="font-[Source] text-[11px]">{ite}</div>
+                            <div className="tooltip-content bg-white text-black rounded">
+                              <div className="text-[11px]">{ite}</div>
                             </div>
                             <img
                               draggable={false}
@@ -577,8 +568,8 @@ export default function Query() {
                             })
                           ).map((ite, index) => (
                             <div className="tooltip shrink-0">
-                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="font-[Source] text-[11px]">{p9boons[ite]}</div>
+                              <div className="tooltip-content bg-white text-black rounded">
+                                <div className="text-[11px]">{p9boons[ite]}</div>
                               </div>
                               <img
                                 draggable={false}
@@ -594,8 +585,8 @@ export default function Query() {
                         <div className="flex gap-0.5 rounded">
                           {sToA(obj.ks).map((ite, index) => (
                             <div className="tooltip shrink-0">
-                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="font-[Source] text-[11px]">{ite}</div>
+                              <div className="tooltip-content bg-white text-black rounded">
+                                <div className="text-[11px]">{ite}</div>
                               </div>
                               <img
                                 draggable={false}
@@ -619,8 +610,8 @@ export default function Query() {
                             })
                           ).map((ite, index) => (
                             <div className="tooltip shrink-0">
-                              <div className="tooltip-content bg-black border-1 border-[#00ffaa] rounded">
-                                <div className="font-[Source] text-[11px]">{boonCodex[ite]}</div>
+                              <div className="tooltip-content bg-white text-black rounded">
+                                <div className="text-[11px]">{boonCodex[ite]}</div>
                               </div>
                               <img
                                 draggable={false}
@@ -635,7 +626,7 @@ export default function Query() {
                         </div>
                       </div>
                     )}
-                    <div className="text-[11px] text-gray-300 ps-1">{obj.des}</div>
+                    <div className="text-[12px] ps-1 font-[Ale] text-gray-300">{obj.des}</div>
                     {obj.arcana && obj.fea < 62 && (
                       <div className="flex flex-wrap gap-1 text-[10px] md:text-[11px] my-0.5">
                         {obj.arcana &&
@@ -694,7 +685,7 @@ export default function Query() {
             <div className="flex justify-center my-4 gap-2">
               {show < displayData3.length && (
                 <button
-                  className="btn bg-transparent rounded border-1 border-[#00ffaa] btn-sm font-[Source]"
+                  className="px-2 py-1 rounded bg-white text-black cursor-pointer"
                   onClick={() => handleLoadMore(setShow)}
                 >
                   Show More
@@ -702,7 +693,7 @@ export default function Query() {
               )}
               {displayData3.length > 20 && (
                 <button
-                  className="btn bg-transparent rounded border-1 border-[#00ffaa] btn-sm font-[Source]"
+                  className="px-2 py-1 rounded bg-white text-black cursor-pointer"
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
