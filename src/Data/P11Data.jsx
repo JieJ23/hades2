@@ -3581,7 +3581,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-23",
-    nam: "Plasama-dragon",
+    nam: "Plasma-dragon",
     asp: "Melinoe Staff",
     loc: "Underworld",
     fea: "18",
@@ -4075,7 +4075,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-09",
-    nam: "allahamda",
+    nam: "allahamada",
     asp: "Medea",
     loc: "Underworld",
     fea: "23",
@@ -4179,7 +4179,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-26",
-    nam: "Bearboy",
+    nam: "BearBoy",
     asp: "Supay",
     loc: "Surface",
     fea: "12",
@@ -4296,7 +4296,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-25",
-    nam: "MajNamelsJ",
+    nam: "MahNamelsJ",
     asp: "Charon",
     loc: "Surface",
     fea: "23",
@@ -4582,7 +4582,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-23",
-    nam: "Bearboy",
+    nam: "BearBoy",
     asp: "Melinoe Coat",
     loc: "Surface",
     fea: "2",
