@@ -7,7 +7,7 @@ const allDeckCards = Object.keys(deckMatch);
 
 export default function ArcanaData({ data }) {
   const [category, setCategory] = useState(`All Aspects`);
-  const [min, setMin] = useState(22);
+  const [min, setMin] = useState(1);
   const [max, setMax] = useState(67);
 
   const aspectData = category === `All Aspects` ? data : data.filter((obj) => obj.asp === category);
@@ -58,7 +58,7 @@ export default function ArcanaData({ data }) {
           type="number"
           className="input input-sm border-1 focus:outline-0 border-[#f18043] rounded w-[80px]"
           value={min}
-          min={22}
+          min={1}
           max={67}
           onChange={(e) => {
             setMin(e.target.value);
@@ -68,7 +68,7 @@ export default function ArcanaData({ data }) {
           type="number"
           className="input input-sm border-1 focus:outline-0 border-[#f18043] rounded w-[80px]"
           value={max}
-          min={22}
+          min={1}
           max={67}
           onChange={(e) => {
             setMax(e.target.value);

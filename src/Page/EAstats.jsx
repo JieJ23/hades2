@@ -1,5 +1,5 @@
 import SideNav from "../Comp/Sidebar";
-import { h2AspectOrder } from "../Data/Misc";
+import { h2AspectOrder, parseTimetoms } from "../Data/Misc";
 import { p11data } from "../Data/P11Data";
 import { p9data } from "../Data/P9Data";
 import P11BoonData from "../Comp/P11BoonData";
@@ -26,9 +26,9 @@ const getHighestOfEachAspect = (order, data) => {
 export default function EAstats() {
   const { posts, loader } = useData();
 
-  const highfear = [...p11data, ...(posts || []), ...p9data]
-    .sort((a, b) => (a.tim > b.tim ? 1 : -1))
-    .sort((a, b) => (a.fea > b.fea ? -1 : 1));
+  const highfear = [...p11data, ...(posts || []), ...p9data].sort(
+    (a, b) => b.fea - a.fea || parseTimetoms(a.tim) - parseTimetoms(b.tim)
+  );
 
   const underworld_runs = highfear.filter((obj) => obj.loc === "Underworld");
   const surface_runs = highfear.filter((obj) => obj.loc === "Surface");

@@ -17,7 +17,7 @@ function findBoonTotal(data, target) {
 
 export default function P11BoonData({ data }) {
   const [weapontype, setWeapontype] = useState(`Melinoe Staff`);
-  const [min, setMin] = useState(22);
+  const [min, setMin] = useState(1);
   const [max, setMax] = useState(67);
 
   const selectedDataset = data.filter((obj) => obj.fea >= min && obj.fea <= max);

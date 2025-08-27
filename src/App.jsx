@@ -52,7 +52,7 @@ export default function App() {
   const [category, setCategory] = useState(`Fear`);
   const [boon, setBoon] = useState(`Core`);
 
-  const fullData = [...p11data, ...p9data, ...(posts || [])].filter((obj) => obj.fea >= 32);
+  const fullData = [...p11data, ...p9data, ...(posts || [])];
   const regionData = fullData.filter((obj) => obj.loc === location);
   // const targetData = underworld.filter((obj) => obj.asp === `Supay`).sort((a, b) => b.fea - a.fea);
   // const uniquePlayers = targetData.filter(
@@ -191,7 +191,7 @@ export default function App() {
                               </div>
                             )}
                       </div>
-                      <div className="text-end">{obj.tim.slice(0, 5)}</div>
+                      <div className="text-end">{obj.tim}</div>
                     </div>
                   ))}
                 </div>

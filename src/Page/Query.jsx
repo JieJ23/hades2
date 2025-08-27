@@ -34,7 +34,7 @@ import Loading from "../Hook/Loading";
 export default function Query() {
   const [asp, setAsp] = useState([]);
   const [reg, setReg] = useState(`Region`);
-  const [minmax, setMinMax] = useState([22, 67]);
+  const [minmax, setMinMax] = useState([1, 67]);
   const [query, setQuery] = useState("");
   const [has, setHas] = useState([]);
   const [vow, setVow] = useState([]);
@@ -138,7 +138,7 @@ export default function Query() {
     const defaults = {
       asp: [],
       reg: "Region",
-      minmax: [22, 67],
+      minmax: [1, 67],
       has: [],
       vow: [],
       arc: [],
@@ -222,7 +222,7 @@ export default function Query() {
                 onClick={() => {
                   setAsp([]);
                   setReg(`Region`);
-                  setMinMax([22, 67]);
+                  setMinMax([1, 67]);
                   setHas([]);
                   setVow([]);
                   setArc([]);
@@ -241,11 +241,11 @@ export default function Query() {
                 type="number"
                 className="input input-sm border-1 border-[#f18043] w-[60px] focus:outline-0 rounded"
                 value={minmax[0]}
-                min={22}
+                min={1}
                 max={67}
                 onChange={(e) => {
                   setShow(20);
-                  const newMin = e.target.value; // Clamp 50-67
+                  const newMin = +e.target.value; // Clamp 50-67
                   setMinMax([newMin, minmax[1]]);
                 }}
               />
@@ -253,11 +253,11 @@ export default function Query() {
                 type="number"
                 className="input input-sm border-1 border-[#f18043] w-[60px] focus:outline-0 rounded"
                 value={minmax[1]}
-                min={22}
+                min={1}
                 max={67}
                 onChange={(e) => {
                   setShow(20);
-                  const newMax = e.target.value; // Clamp 50-67
+                  const newMax = +e.target.value; // Clamp 50-67
                   setMinMax([minmax[0], newMax]);
                 }}
               />

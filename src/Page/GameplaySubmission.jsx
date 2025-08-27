@@ -156,10 +156,10 @@ export default function GameplaySubmission() {
                 className="input w-full rounded"
                 name="fea"
                 max={67}
-                min={22}
+                min={1}
                 required
               />
-              <input type="text" placeholder="Gameplay Link" className="input w-full rounded" name="src" required />
+              <input type="text" placeholder="Gameplay Link" className="input w-full rounded" name="src" />
               <input type="text" placeholder="Short Description" className="input w-full rounded" name="des" required />
             </div>
             <div className="flex flex-col gap-2">
@@ -168,14 +168,12 @@ export default function GameplaySubmission() {
                 placeholder="Arcana Shareable URL"
                 className="input w-full border-1 border-[orange]/50 rounded"
                 name="arcana"
-                required
               />
               <input
                 type="text"
                 placeholder="Fear Shareable URL"
                 className="input w-full border-1 border-[orange]/50 rounded"
                 name="oath"
-                required
               />
               <input
                 type="text"
