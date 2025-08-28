@@ -3059,7 +3059,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-14",
-    nam: "nicemyth",
+    nam: "formation",
     asp: "Selene",
     loc: "Underworld",
     fea: "50",
@@ -3903,19 +3903,6 @@ export const p11data = [
     fam: "Raven",
     cor: "HepAttack,PosSpecial,HesCast,ApoSprint,Magick",
     ham: "Colossus Driver,Rapid Driver",
-  },
-  {
-    dat: "2025-08-14",
-    nam: "formation",
-    asp: "Selene",
-    loc: "Underworld",
-    fea: "50",
-    src: "",
-    des: "aspect of selene 50f",
-    tim: "19:04.29",
-    fam: "Hound",
-    cor: "Attack,PosSpecial,Cast,Sprint,AphMagick",
-    ham: "Shimmering Rockets,Furious Rockets",
   },
   {
     dat: "2025-08-13",
