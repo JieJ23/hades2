@@ -3769,7 +3769,7 @@ export const p11data = [
     fea: "55",
     src: "",
     des: "#sfotw58 this was such a griiiiiiiiiiind for me. all week. race against timer on this one. luckily had 4DD going into typhon. 55F surface PB ",
-    tim: "21:447.09",
+    tim: "21:47.09",
     fam: "Cat",
     cor: "ZeuAttack,AreSpecial,ZeuCast,ApoSprint,Magick",
     ham: "Wicked Thrasher,Rapid Thrasher",
