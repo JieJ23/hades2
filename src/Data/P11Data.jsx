@@ -3738,7 +3738,7 @@ export const p11data = [
   {
     dat: "2025-08-18",
     nam: "HookieDookie",
-    asp: "Melinoe Staff",
+    asp: "Thanatos",
     loc: "Surface",
     fea: "45",
     src: "",
@@ -3881,7 +3881,7 @@ export const p11data = [
   {
     dat: "2025-08-14",
     nam: "Splash",
-    asp: "Melinoe Staff",
+    asp: "Persephone",
     loc: "Underworld",
     fea: "50",
     src: "",
@@ -4037,7 +4037,7 @@ export const p11data = [
   {
     dat: "2025-08-09",
     nam: "blotskuld",
-    asp: "Melinoe Staff",
+    asp: "Moros",
     loc: "Underworld",
     fea: "8",
     src: "",
@@ -4206,7 +4206,7 @@ export const p11data = [
   {
     dat: "2025-08-26",
     nam: "leto",
-    asp: "Melinoe Staff",
+    asp: "Medea",
     loc: "Surface",
     fea: "25",
     src: "",
@@ -4284,7 +4284,7 @@ export const p11data = [
   {
     dat: "2025-08-25",
     nam: "louisng114",
-    asp: "Melinoe Staff",
+    asp: "Selene",
     loc: "Underworld",
     fea: "25",
     src: "",
@@ -4882,7 +4882,7 @@ export const p11data = [
   {
     dat: "2025-08-20",
     nam: "Dazed",
-    asp: "Melinoe Staff",
+    asp: "Morrigan",
     loc: "Underworld",
     fea: "13",
     src: "",
@@ -4921,7 +4921,7 @@ export const p11data = [
   {
     dat: "2025-08-20",
     nam: "Motes",
-    asp: "Melinoe Staff",
+    asp: "Eos",
     loc: "Underworld",
     fea: "38",
     src: "",
