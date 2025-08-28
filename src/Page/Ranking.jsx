@@ -9,6 +9,7 @@ import Footer from "../Comp/Footer";
 import { weaponStaff, weaponAxe, weaponBlades, weaponCoat, weaponFlames, weaponSkull } from "../Data/Misc";
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
+import { data } from "react-router-dom";
 
 const weaponType = [
   `Melinoe Staff`,
@@ -26,6 +27,7 @@ export default function Ranking() {
   const [selectAspect, setSelectAspect] = useState(null);
   const { posts, loader } = useData();
   const [unique, setUnique] = useState(false);
+  const [location, setLocation] = useState(`Both Regions`);
 
   const fullPatchData = [...p11data, ...(posts || []), ...p9data];
 
@@ -38,11 +40,13 @@ export default function Ranking() {
     })
     .filter((obj) => obj.fea >= 50);
 
+  const regionData = location === `Both Regions` ? dataOrder : dataOrder.filter((obj) => obj.loc === location);
+
   const fullData = [];
 
   for (let i = 0; i < weaponCategory.length; i++) {
     const seen = new Set();
-    const uniqueByNam = dataOrder
+    const uniqueByNam = regionData
       .filter((obj) => weaponCategory[i].includes(obj.asp))
       .filter((item) => {
         const key = unique ? `${item.nam}` : `${item.nam}-${item.asp}`; // Composite key
@@ -56,18 +60,42 @@ export default function Ranking() {
   return (
     <main className="relative">
       <Background />
-      <div className="max-w-[1400px] font-[Ubuntu] text-[11px] mx-auto text-white select-none">
+      <div className="max-w-[1400px] font-[Ubuntu] text-[11px] mx-auto text-white">
         <SideNav />
         {loader ? (
           <Loading />
         ) : (
           <>
-            <div className="px-2">
+            <div className="p-1 flex justify-center gap-1 my-2">
               <button
                 className="bg-white px-2 py-1 rounded text-black cursor-pointer"
                 onClick={() => setUnique(!unique)}
               >
-                {unique ? `Unique Per Aspect` : `Unique Per Player`}
+                {unique ? `Unique / Aspect` : `Unique / Player`}
+              </button>
+              <button
+                className={`cursor-pointer rounded p-1 ${
+                  location === `Both Regions` ? `bg-white text-black` : `bg-transparent text-white`
+                }`}
+                onClick={() => setLocation(`Both Regions`)}
+              >
+                Both Regions
+              </button>
+              <button
+                className={`cursor-pointer rounded p-1 ${
+                  location === `Underworld` ? `bg-white text-black` : `bg-transparent text-white`
+                }`}
+                onClick={() => setLocation(`Underworld`)}
+              >
+                Underworld
+              </button>
+              <button
+                className={`cursor-pointer text-black rounded p-1 ${
+                  location === `Surface` ? `bg-white text-black` : `bg-transparent text-white`
+                }`}
+                onClick={() => setLocation(`Surface`)}
+              >
+                Surface
               </button>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-2 py-6">

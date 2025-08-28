@@ -464,7 +464,7 @@ export default function Query() {
               Query: {displayData3.length}/{allEntries.length} |{" "}
               {((displayData3.length / allEntries.length) * 100).toFixed(2)}%
             </div>
-            <div className="select-none">
+            <div>
               {displayData3.slice(0, show).map((obj, index) => (
                 <div className={`my-2 rounded bg-[#00000098] p-2 py-1 flex items-center relative`}>
                   <div

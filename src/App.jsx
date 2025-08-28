@@ -76,7 +76,7 @@ export default function App() {
   }
 
   return (
-    <main className="h-full min-h-lvh relative select-none overflow-hidden">
+    <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
       <div className="max-w-[1600px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-1">
         <SideNav />
