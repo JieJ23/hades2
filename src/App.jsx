@@ -5,7 +5,7 @@ import Background from "./Comp/Background";
 import Footer from "./Comp/Footer";
 import { bOrder } from "./Data/Boon2";
 import { boonCodexr } from "./Data/Boon2";
-import { h2AspectOrder, parseTimetoms, sToA } from "./Data/Misc";
+import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA } from "./Data/Misc";
 
 import { p11data } from "./Data/P11Data";
 import { p9data } from "./Data/P9Data";
@@ -136,7 +136,11 @@ export default function App() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 my-2">
               {fulldata_ArrArrObject.map((arr, oi) => (
-                <div className="bg-[#211f1fa6] rounded px-2 py-1 relative">
+                <div
+                  className={`rounded px-2 py-1 relative border-1 border-black/40 ${
+                    arr[0].fea >= 62 ? `bg-[#0f1035a6]` : `bg-[#211f1fa6]`
+                  }`}
+                >
                   <img
                     src={`/GUI_Card/c${findGUIcard(h2AspectOrder[oi])}.png`}
                     alt="Aspect"
@@ -144,15 +148,23 @@ export default function App() {
                   />
                   <div className="grid grid-cols-3 text-center text-[12px] text-white" key={oi}>
                     <div className="text-start text-[#ffa200] text-[13px]">{h2AspectOrder[oi]}</div>
+                    <div className="text-start text-[#ffa200]">
+                      {(arr.slice(0, 10).reduce((a, b) => a + +b.fea, 0) / (arr.slice(0, 10).length || 10)).toFixed(1)}
+                    </div>
+                    <div className="text-end text-[#ffa200]">
+                      {parsemstoTime(
+                        arr.slice(0, 10).reduce((a, b) => a + parseTimetoms(b.tim), 0) / (arr.slice(0, 10).length || 10)
+                      )}
+                    </div>
                   </div>
                   {arr.slice(0, 10).map((obj, index) => (
                     <div
-                      className="grid grid-cols-4 text-center hover:bg-[#131111] hover:text-[#00ffaa] relative text-white items-center"
+                      className="grid grid-cols-4 text-center hover:bg-[#131111] hover:text-[#00ffaa] relative text-gray-300 items-center"
                       key={index}
                     >
                       <div className="text-start line-clamp-1">{obj.nam}</div>
                       <div>{obj.fea}</div>
-                      <div className="w-full flex gap-0.5">
+                      <div className="w-full flex">
                         {boon === `Core`
                           ? sToA(obj.cor).map((ite, index) => (
                               <div className="tooltip shrink-0" key={index}>

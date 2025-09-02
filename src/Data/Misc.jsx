@@ -115,7 +115,7 @@ export function parsemstoTime(ms) {
   const hundredths = Math.floor(ms % 100); // get hundredths (2 digits)
 
   // Pad with leading zeros if necessary
-  const minStr = String(minutes).padStart(2, "0");
+  const minStr = String(minutes);
   const secStr = String(seconds).padStart(2, "0");
   const hundredthsStr = String(hundredths).padStart(2, "0");
 
