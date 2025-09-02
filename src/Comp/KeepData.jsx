@@ -31,7 +31,7 @@ export default function KeepData({ data }) {
   //
 
   return (
-    <div className="rounded mt-4 w-full max-w-[1200px] mx-auto font-[Ale] text-[12px] py-4 px-2">
+    <div className="rounded my-4 w-full max-w-[1200px] mx-auto font-[Ale] text-[12px] p-2">
       <div className="px-2 text-[20px]">Keepsakes</div>
       <div className="p-1 flex flex-wrap gap-1 my-1">
         {region.map((ite) => (
