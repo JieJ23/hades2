@@ -132,8 +132,11 @@ export default function GameplaySubmission() {
             <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
           </Link>
         </div>
-        <div className="flex justify-center gap-1 text-[#00ffaa]/98 py-1 px-4">
+        <div className="flex gap-1 text-[#f6980c] py-1 px-4 mt-2 text-[14px]">
           Boon details are optional and should be provided through the boon selection section below the form.
+        </div>
+        <div className="flex gap-1 text-[#a4f60c] py-1 px-4 mb-2 text-[14px]">
+          Do not add Selene Nodes. The most important details are the Core Boons, Hammer, and Keepsakes.
         </div>
         {/* Form Start */}
         <form onSubmit={Submit}>
