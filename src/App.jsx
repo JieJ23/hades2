@@ -5,7 +5,7 @@ import Background from "./Comp/Background";
 import Footer from "./Comp/Footer";
 import { bOrder } from "./Data/Boon2";
 import { boonCodexr } from "./Data/Boon2";
-import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA } from "./Data/Misc";
+import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA, deCodeArcana, deckMatch } from "./Data/Misc";
 
 import { p11data } from "./Data/P11Data";
 import { p9data } from "./Data/P9Data";
@@ -84,7 +84,7 @@ export default function App() {
           <Loading />
         ) : (
           <>
-            <div className="p-1 flex justify-center gap-1 my-2">
+            <div className="p-1 flex flex-wrap justify-center gap-1 my-2">
               <button
                 className={`cursor-pointer rounded p-1 ${
                   location === `Underworld` ? `bg-white text-black` : `bg-transparent text-white`
@@ -133,11 +133,27 @@ export default function App() {
               >
                 Hammer
               </button>
+              <button
+                className={`cursor-pointer text-black rounded p-1 ${
+                  boon === `Keep` ? `bg-white text-black` : `bg-transparent text-white`
+                }`}
+                onClick={() => setBoon(`Keep`)}
+              >
+                Keep
+              </button>
+              <button
+                className={`cursor-pointer text-black rounded p-1 ${
+                  boon === `Arcana` ? `bg-white text-black` : `bg-transparent text-white`
+                }`}
+                onClick={() => setBoon(`Arcana`)}
+              >
+                Arcana
+              </button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 my-2">
               {fulldata_ArrArrObject.map((arr, oi) => (
                 <div
-                  className={`rounded px-2 py-1 relative border-1 border-black/40 ${
+                  className={`rounded px-2 py-1 relative border-1 border-black/40 hover:border-[#00ffaa] duration-200 ease-in transition-colors ${
                     arr[0].fea >= 62 ? `bg-[#0f1035a6]` : `bg-[#211f1fa6]`
                   }`}
                 >
@@ -165,43 +181,80 @@ export default function App() {
                       <div className="text-start line-clamp-1">{obj.nam}</div>
                       <div>{obj.fea}</div>
                       <div className="w-full flex">
-                        {boon === `Core`
-                          ? sToA(obj.cor).map((ite, index) => (
+                        {boon === `Core` &&
+                          sToA(obj.cor).map((ite, index) => (
+                            <div className="tooltip shrink-0" key={index}>
+                              <div className="tooltip-content bg-white text-black rounded">
+                                <div className="text-[11px]">{ite}</div>
+                              </div>
+                              <img
+                                draggable={false}
+                                src={`/H2Boons/${ite}.png`}
+                                alt="Core Boon"
+                                className="w-[22px] h-[22px]"
+                              />
+                            </div>
+                          ))}
+                        {boon === `Hammer` && obj.ham && (
+                          <div className="flex gap-0.5 rounded">
+                            <div className="tooltip shrink-0">
+                              <div className="tooltip-content bg-white text-black rounded">
+                                <div className="text-[11px]">{obj.fam}</div>
+                              </div>
+                              <img
+                                draggable={false}
+                                src={`/P9/${obj.fam}.png`}
+                                alt="Fam"
+                                className="w-[22px] h-[22px]"
+                              />
+                            </div>
+                            {findValue(
+                              sToA(obj.ham).sort((a, b) => {
+                                const aIndex = orderMap.get(a) ?? Infinity;
+                                const bIndex = orderMap.get(b) ?? Infinity;
+                                return aIndex - bIndex;
+                              })
+                            ).map((ite, index) => (
                               <div className="tooltip shrink-0" key={index}>
                                 <div className="tooltip-content bg-white text-black rounded">
-                                  <div className="text-[11px]">{ite}</div>
+                                  <div className="text-[11px]">{p9boons[ite]}</div>
                                 </div>
                                 <img
                                   draggable={false}
-                                  src={`/H2Boons/${ite}.png`}
-                                  alt="Core Boon"
+                                  src={`/P9/${ite}.png`}
+                                  alt="Hammer"
                                   className="w-[22px] h-[22px]"
                                 />
                               </div>
-                            ))
-                          : obj.ham && (
-                              <div className="flex gap-0.5 rounded">
-                                {findValue(
-                                  sToA(obj.ham).sort((a, b) => {
-                                    const aIndex = orderMap.get(a) ?? Infinity;
-                                    const bIndex = orderMap.get(b) ?? Infinity;
-                                    return aIndex - bIndex;
-                                  })
-                                ).map((ite, index) => (
-                                  <div className="tooltip shrink-0" key={index}>
-                                    <div className="tooltip-content bg-white text-black rounded">
-                                      <div className="text-[11px]">{p9boons[ite]}</div>
-                                    </div>
-                                    <img
-                                      draggable={false}
-                                      src={`/P9/${ite}.png`}
-                                      alt="Hammer"
-                                      className="w-[22px] h-[22px]"
-                                    />
-                                  </div>
-                                ))}
+                            ))}
+                          </div>
+                        )}
+                        {boon === `Keep` &&
+                          obj.ks &&
+                          sToA(obj.ks).map((ite, index) => (
+                            <div className="tooltip shrink-0" key={index}>
+                              <div className="tooltip-content bg-white text-black rounded">
+                                <div className="text-[11px]">{ite}</div>
                               </div>
+                              <img
+                                draggable={false}
+                                src={`/buildgui/${ite}.png`}
+                                alt="Core Boon"
+                                className="w-[22px] h-[22px]"
+                              />
+                            </div>
+                          ))}
+                        {boon === `Arcana` && obj.arcana && (
+                          <div>
+                            {deCodeArcana(obj.arcana).includes(`c12`) ? (
+                              <div className="text-red-400">Death</div>
+                            ) : deCodeArcana(obj.arcana).includes(`c23`) ? (
+                              <div className="text-orange-200">Strength</div>
+                            ) : (
+                              ``
                             )}
+                          </div>
+                        )}
                       </div>
                       <div className="text-end">{obj.tim}</div>
                     </div>

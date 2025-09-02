@@ -515,7 +515,6 @@ export default function Query() {
                         <div className="flex items-center bg-[#00ffaa] text-black border-1 border-black rounded p-1">
                           {obj.tim}
                         </div>
-                        <img src={`/${obj.loc}.png`} alt="Region" className="size-6 rounded" />
                       </div>
                     </div>
                     <div className="flex items-center flex-wrap my-1 gap-1">
