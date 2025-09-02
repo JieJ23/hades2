@@ -3070,7 +3070,7 @@ export const p11data = [
     cor: "Attack,PosSpecial,Cast,Sprint,AphMagick",
     ham: "Furious Rockets,Shimmering Rockets",
     boon: "Life Savings,Last Gasp,Quick Buck,Renewed Faith,Wispy Wiles,Sky Fall,Security System,Buried Treasure,Slippery Slope,Spiritual Affirmation",
-    ks: "Moon Beam,Moon Beam,Gorgon Amulet,Barley Sheaf,Luckier Tooth",
+    ks: "Moon Beam,Gorgon Amulet,Barley Sheaf,Luckier Tooth",
   },
   {
     dat: "2025-08-14",
