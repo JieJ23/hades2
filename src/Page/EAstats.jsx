@@ -9,6 +9,7 @@ import BarFear from "../Comp/BarFear";
 import BarAspect from "../Comp/BarAspect";
 import BarSurface from "../Comp/BarSurface";
 import BarUW from "../Comp/BarUW";
+import KeepData from "../Comp/KeepData";
 import Footer from "../Comp/Footer";
 import ArcanaData from "../Comp/ArcanaData";
 import { useData } from "../Hook/DataFetch";
@@ -99,6 +100,7 @@ export default function EAstats() {
             <BarAspect data={surface_runs} title={`Surface`} />
           </div>
           <ArcanaData data={highfear} />
+          <KeepData data={highfear} />
           <P11BoonData data={highfear} />
         </>
       )}

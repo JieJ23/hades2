@@ -75,6 +75,8 @@ export default function App() {
     fulldata_ArrArrObject.push(removeDup);
   }
 
+  const keep = fullData.filter((obj) => obj.ks);
+  console.log(keep.length);
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />

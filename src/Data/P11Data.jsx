@@ -3297,7 +3297,6 @@ export const p11data = [
     cor: "ZeuAttack,ZeuSpecial,ZeuCast,Sprint,AphMagick",
     ham: "Dual Moonshot,Rapid Thrasher",
     boon: "Total Eclipse,Revelation,Romantic Spark,Burning Desire,Thermal Dynamics,Renewed Faith,Last Gasp,Flash Fry,Pyro Technique,Double Strike,Stutter Step,Security System",
-    ks: "Engraved Pin",
   },
   {
     dat: "2025-08-20",
