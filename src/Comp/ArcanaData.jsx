@@ -61,7 +61,7 @@ export default function ArcanaData({ data }) {
           min={1}
           max={67}
           onChange={(e) => {
-            setMin(e.target.value);
+            setMin(+e.target.value);
           }}
         />
         <input
@@ -71,7 +71,7 @@ export default function ArcanaData({ data }) {
           min={1}
           max={67}
           onChange={(e) => {
-            setMax(e.target.value);
+            setMax(+e.target.value);
           }}
         />
       </div>

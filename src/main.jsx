@@ -13,6 +13,8 @@ import Query from "./Page/Query.jsx";
 import MetaUpgradeEditor from "./Page/MetaUpgradeEditor.jsx";
 import { DataProvider } from "./Hook/DataFetch.jsx";
 
+import AnyFearSRC from "./Page/AnyFearSrc.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <DataProvider>
@@ -26,6 +28,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
           <Route path="/Query" element={<Query />} />
           <Route path="/MetaUpgradeEditor" element={<MetaUpgradeEditor />} />
+          <Route path="/AnyFearSRC" element={<AnyFearSRC />} />
         </Routes>
       </Router>
     </DataProvider>

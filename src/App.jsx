@@ -76,7 +76,6 @@ export default function App() {
   }
 
   const keep = fullData.filter((obj) => obj.ks);
-  console.log(keep.length);
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />

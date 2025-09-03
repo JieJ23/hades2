@@ -79,20 +79,20 @@ export default function P11BoonData({ data }) {
           type="number"
           className="input input-sm border-1 focus:outline-0 border-[#f18043] rounded w-[80px]"
           value={min}
-          min={22}
+          min={1}
           max={67}
           onChange={(e) => {
-            setMin(e.target.value);
+            setMin(+e.target.value);
           }}
         />
         <input
           type="number"
           className="input input-sm border-1 focus:outline-0 border-[#f18043] rounded w-[80px]"
           value={max}
-          min={22}
+          min={1}
           max={67}
           onChange={(e) => {
-            setMax(e.target.value);
+            setMax(+e.target.value);
           }}
         />
       </div>
