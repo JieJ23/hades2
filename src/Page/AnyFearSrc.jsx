@@ -5,7 +5,7 @@ import Footer from "../Comp/Footer";
 import { afvariables } from "../Data/AnyFearV";
 import { Link } from "react-router-dom";
 
-import { runs } from "../Data/AnyFearData";
+// import { runs } from "../Data/AnyFearData";
 
 export function getTime(decimalSeconds) {
   const minutes = Math.floor(decimalSeconds / 60);
@@ -34,38 +34,40 @@ export default function AnyFearSRC() {
   const [patch, setPatch] = useState(`qyze29d1`);
   const [aspect, setAspect] = useState(null);
 
-  // const [feed, setFeed] = useState([]);
-  // const [loading, setLoading] = useState(true);
+  const [feed, setFeed] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   async function load() {
-  //     try {
-  //       const cached = localStorage.getItem("are");
-  //       if (cached) {
-  //         setFeed(JSON.parse(cached));
-  //         setLoading(false);
-  //         return; // Skip fetching if cached exists
-  //       }
-  //       const response = await fetch(`https://www.speedrun.com/api/v1/leaderboards/3dxy5vv6/category/wk6yjved`);
-  //       const posts = await response.json();
-  //       setFeed(posts);
-  //       localStorage.setItem("are", JSON.stringify(posts)); // save for next time
-  //       setLoading(false);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //       setLoading(false);
-  //     }
-  //   }
+  useEffect(() => {
+    async function load() {
+      try {
+        const cached = localStorage.getItem("are");
+        if (cached) {
+          setFeed(JSON.parse(cached));
+          setLoading(false);
+          return; // Skip fetching if cached exists
+        }
+        const response = await fetch(`https://www.speedrun.com/api/v1/leaderboards/3dxy5vv6/category/wk6yjved`);
+        const posts = await response.json();
+        setFeed(posts);
+        localStorage.setItem("are", JSON.stringify(posts)); // save for next time
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      }
+    }
 
-  //   load();
-  // }, []);
+    load();
+  }, []);
 
-  //
-  const srcRanking = runs.filter((obj) => obj.place);
-  const filterData = srcRanking.filter(
+  const rawData = feed;
+  const placeData = rawData.data?.runs.filter((obj) => obj.place);
+
+  // const srcRanking = runs.filter((obj) => obj.place);
+  const filterData = placeData?.filter(
     (obj) => obj.run.values["68k17yzl"] === region && obj.run.values["onv5935l"] === patch
   );
-  const allAspects = [...new Set(filterData.map((obj) => obj.run.values["2lge1eq8"]))];
+  const allAspects = [...new Set(filterData?.map((obj) => obj.run?.values["2lge1eq8"]))];
 
   const displayData = aspect === null ? filterData : filterData.filter((obj) => obj.run.values["2lge1eq8"] === aspect);
 
@@ -112,7 +114,7 @@ export default function AnyFearSRC() {
             ))}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 my-2">
-            {displayData.map((obj) => (
+            {displayData?.map((obj) => (
               <div className="bg-[#00000098] p-2 flex flex-col justify-between">
                 <div className="flex gap-4 rounded">
                   <div>
