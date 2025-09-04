@@ -95,7 +95,10 @@ export default function AnyFearSRC() {
                 className={`rounded px-2 py-1 text-[10px] uppercase cursor-pointer ${
                   patch === item ? `text-black bg-white` : `text-white`
                 }`}
-                onClick={() => setPatch(item)}
+                onClick={() => {
+                  setAspect(null);
+                  setPatch(item);
+                }}
               >
                 {afvariables[item]}
               </button>
@@ -114,9 +117,9 @@ export default function AnyFearSRC() {
             ))}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 my-2">
-            {displayData?.map((obj) => (
+            {displayData?.map((obj, index) => (
               <div className="bg-[#00000098] p-2 flex flex-col justify-between">
-                <div className="flex gap-4 rounded">
+                <div className="flex items-end gap-4 rounded">
                   <div>
                     <img
                       src={`https://www.speedrun.com/static/user/${obj.run.players[0].id}/image`}
@@ -128,8 +131,9 @@ export default function AnyFearSRC() {
                       }}
                     />
                     <div>Place #{obj.place}</div>
-                    <div>Date: {obj.run.date}</div>
+                    <div>Index #{index + 1}</div>
                     <div>Time: {getTime(obj.run.times.primary_t)}</div>
+                    <div>{obj.run.date}</div>
                   </div>
                   <div className="text-center">
                     {Object.entries(obj.run.values).map((arr) => (
