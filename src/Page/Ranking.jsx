@@ -9,7 +9,6 @@ import Footer from "../Comp/Footer";
 import { weaponStaff, weaponAxe, weaponBlades, weaponCoat, weaponFlames, weaponSkull } from "../Data/Misc";
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
-import { data } from "react-router-dom";
 
 const weaponType = [
   `Melinoe Staff`,
@@ -60,7 +59,7 @@ export default function Ranking() {
   return (
     <main className="relative">
       <Background />
-      <div className="max-w-[1400px] font-[Ubuntu] text-[11px] mx-auto text-white">
+      <div className="max-w-[1600px] font-[Ale] text-[12px] mx-auto text-white">
         <SideNav />
         {loader ? (
           <Loading />
@@ -98,10 +97,10 @@ export default function Ranking() {
                 Surface
               </button>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-2 py-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-2 py-4">
               {fullData.map((weaponData, index) => (
-                <div key={index} className="flex flex-col gap-1.5">
-                  <div className="relative">
+                <div key={index} className="flex flex-col">
+                  <div className="relative my-2">
                     <img
                       src={`/NocturnalArms/${findGUIcard([weaponType[index]])}.webp`}
                       alt="Aspect"
@@ -113,21 +112,16 @@ export default function Ranking() {
                   {weaponData.map((item, idx) => (
                     <div
                       key={idx}
-                      className={`flex items-center gap-2 px-2 ps-3 border-1 relative ${
-                        selectAspect === item.asp ? `border-[#00ff95]` : `border-white/10`
-                      }  rounded py-1 ${
-                        select === item.nam ? `bg-[#46e7a1d0] text-black` : `bg-[#000000df] text-gray-300`
+                      className={`flex items-center gap-2 px-2 relative py-1 hover:bg-[#00ffaa] hover:text-black ${
+                        select === item.nam ? `bg-[#46e7a1d0] text-black` : `bg-[#131111ae] text-gray-300`
                       }`}
                     >
-                      <div
-                        className={`absolute top-0 left-0 h-full w-[4px] ${
-                          item.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
-                        } rounded-l`}
-                      />
                       <img
                         src={`/P9/${item.asp}.png`}
                         alt={item.asp}
-                        className={`size-7 cursor-pointer`}
+                        className={`size-7 cursor-pointer border-1 rounded ${
+                          selectAspect === item.asp ? `border-[#ff0000]` : `border-white/10`
+                        }`}
                         draggable={false}
                         onClick={() => {
                           if (selectAspect == item.asp) {

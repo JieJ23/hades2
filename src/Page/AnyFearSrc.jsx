@@ -4,8 +4,23 @@ import { useState, useEffect } from "react";
 import Footer from "../Comp/Footer";
 import { afvariables } from "../Data/AnyFearV";
 import { Link } from "react-router-dom";
+import { bAttack, bSpecial, bCast, bSprint, bMagick } from "../Data/Boon1";
 
 // import { runs } from "../Data/AnyFearData";
+function randomNum() {
+  return Math.floor(Math.random() * 10);
+}
+
+function coreGenerator() {
+  const core_pools = [
+    Object.values(bAttack),
+    Object.values(bSpecial),
+    Object.values(bCast),
+    Object.values(bSprint),
+    Object.values(bMagick),
+  ];
+  return core_pools.map((arr) => arr[randomNum()]);
+}
 
 export function getTime(decimalSeconds) {
   const minutes = Math.floor(decimalSeconds / 60);
@@ -144,7 +159,12 @@ export default function AnyFearSRC() {
                     ))}
                   </div>
                 </div>
-                <div className="font-[Ubuntu] text-[10px] my-2">{obj.run.comment || `n/a`}</div>
+                <div className="font-[Ubuntu] text-[10px] my-1">{obj.run.comment || `n/a`}</div>
+                <div className="flex gap-0.5 my-1">
+                  {coreGenerator().map((ite) => (
+                    <img src={`/P9/${ite}.png`} alt="Core" className="size-7 bg-black rounded" />
+                  ))}
+                </div>
                 <div className="flex gap-1 my-1">
                   <Link
                     to={obj.run.videos.links[0].uri}
