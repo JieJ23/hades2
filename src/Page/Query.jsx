@@ -527,7 +527,7 @@ export default function Query() {
                             draggable={false}
                             src={`/P9/${obj.asp}.png`}
                             alt="Core Boon"
-                            className="size-6 md:size-7 border-1 border-black rounded-lg"
+                            className="size-7 border-1 border-black rounded-lg"
                           />
                         </div>
                         <div className="tooltip shrink-0">
@@ -538,7 +538,7 @@ export default function Query() {
                             draggable={false}
                             src={`/P9/${obj.fam}.png`}
                             alt="Core Boon"
-                            className="size-6 md:size-7 border-1 border-black rounded-lg"
+                            className="size-7 border-1 border-black rounded-lg"
                           />
                         </div>
                       </div>
@@ -552,11 +552,13 @@ export default function Query() {
                               draggable={false}
                               src={`/H2Boons/${ite}.png`}
                               alt="Core Boon"
-                              className="size-6 md:size-7 border-1 border-black rounded-lg"
+                              className="size-7 border-1 border-black rounded-lg"
                             />
                           </div>
                         ))}
                       </div>
+                    </div>
+                    <div className="flex items-center flex-wrap my-1 gap-1">
                       {obj.ham && (
                         <div className="flex gap-0.5 rounded">
                           {findValue(
@@ -574,7 +576,7 @@ export default function Query() {
                                 draggable={false}
                                 src={`/P9/${ite}.png`}
                                 alt="Core Boon"
-                                className="size-6 md:size-7 border-1 border-black rounded-lg"
+                                className="size-7 border-1 border-black rounded-lg"
                               />
                             </div>
                           ))}
@@ -587,12 +589,7 @@ export default function Query() {
                               <div className="tooltip-content bg-white text-black rounded">
                                 <div className="text-[11px]">{ite}</div>
                               </div>
-                              <img
-                                draggable={false}
-                                src={`/buildgui/${ite}.png`}
-                                alt="Keepsake"
-                                className="size-6 md:size-7"
-                              />
+                              <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
                             </div>
                           ))}
                         </div>
@@ -616,7 +613,7 @@ export default function Query() {
                                 draggable={false}
                                 src={`/P9/${ite}.png`}
                                 alt="Core Boon"
-                                className={`size-6 md:size-7 border-1 rounded-lg ${
+                                className={`size-7 border-1 rounded-lg ${
                                   has.includes(boonid[boonCodex[ite]]) ? `border-[#00ffaa]` : `border-black`
                                 }`}
                               />
@@ -666,7 +663,7 @@ export default function Query() {
                     <img
                       src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
                       alt="Aspect"
-                      className="w-[75px] rounded"
+                      className="w-[80px] h-full rounded"
                       draggable={false}
                     />
                   </div>
@@ -674,7 +671,7 @@ export default function Query() {
                     <img
                       src={`/GUI_Card/${obj.fam}.png`}
                       alt="Familiar"
-                      className="w-[75px] rounded"
+                      className="w-[80px] rounded"
                       draggable={false}
                     />
                   </div>
