@@ -204,7 +204,7 @@ export default function Query() {
   return (
     <main className="relative">
       <Background />
-      <div className="max-w-[1200px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-2">
+      <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-2">
         <SideNav />
         {loader ? (
           <Loading />
@@ -239,7 +239,7 @@ export default function Query() {
             <div className="my-2 flex flex-wrap gap-1">
               <input
                 type="number"
-                className="input input-sm border-1 border-[#f18043] w-[60px] focus:outline-0 rounded"
+                className="input input-sm w-[60px] focus:outline-0 rounded"
                 value={minmax[0]}
                 min={1}
                 max={67}
@@ -251,7 +251,7 @@ export default function Query() {
               />
               <input
                 type="number"
-                className="input input-sm border-1 border-[#f18043] w-[60px] focus:outline-0 rounded"
+                className="input input-sm w-[60px] focus:outline-0 rounded"
                 value={minmax[1]}
                 min={1}
                 max={67}
@@ -262,7 +262,7 @@ export default function Query() {
                 }}
               />
               <select
-                className="select select-sm w-[120px] border-1 border-[#ff8000] focus:outline-0 rounded"
+                className="select select-sm w-[120px] focus:outline-0 rounded"
                 defaultValue={`Region`}
                 onChange={(e) => {
                   setShow(20);
@@ -274,7 +274,7 @@ export default function Query() {
                 <option value={`Underworld`}>Underworld</option>
               </select>
               <select
-                className="select select-sm w-[120px] border-1 border-[#00ffaa] focus:outline-0 rounded"
+                className="select select-sm w-[120px] focus:outline-0 rounded"
                 defaultValue={`All`}
                 onChange={(e) => {
                   setShow(20);
@@ -294,7 +294,7 @@ export default function Query() {
                 ))}
               </select>
               <select
-                className="select select-sm w-[120px] border-1 border-[#b300ff] focus:outline-0 rounded"
+                className="select select-sm w-[120px] focus:outline-0 rounded"
                 defaultValue={`Vows`}
                 onChange={(e) => {
                   setShow(20);
@@ -314,7 +314,7 @@ export default function Query() {
                 ))}
               </select>
               <select
-                className="select select-sm w-[120px] border-1 border-[#b300ff] focus:outline-0 rounded"
+                className="select select-sm w-[120px] focus:outline-0 rounded"
                 defaultValue={`Arcana`}
                 onChange={(e) => {
                   setShow(20);
@@ -334,7 +334,7 @@ export default function Query() {
                 ))}
               </select>
               <select
-                className="select select-sm w-[120px] border-1 border-[#f18043] focus:outline-0 rounded"
+                className="select select-sm w-[120px] focus:outline-0 rounded"
                 defaultValue={`Player`}
                 onChange={(e) => {
                   setShow(20);
@@ -353,7 +353,7 @@ export default function Query() {
               <input
                 type="text"
                 placeholder="Search Boons"
-                className="input input-sm border-white w-[200px] focus:outline-0 rounded"
+                className="input input-sm w-[200px] focus:outline-0 rounded"
                 value={query}
                 onChange={(e) => {
                   setShow(20);
@@ -464,9 +464,9 @@ export default function Query() {
               Query: {displayData3.length}/{allEntries.length} |{" "}
               {((displayData3.length / allEntries.length) * 100).toFixed(2)}%
             </div>
-            <div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-2">
               {displayData3.slice(0, show).map((obj, index) => (
-                <div className={`my-2 rounded bg-[#00000098] p-2 py-1 flex items-center relative`}>
+                <div className={`bg-[#00000050] p-2 py-1 flex relative`}>
                   <div
                     className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
                       obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
@@ -478,10 +478,10 @@ export default function Query() {
                         <div className="font-semibold text-[#f18043]">{obj.fea}</div>
                         <div>{obj.nam}</div>
                       </div>
-                      <div className="flex flex-wrap items-center justify-end gap-0.5 text-[10px] md:text-[11px]">
+                      <div className="flex flex-wrap items-center justify-end gap-0.5 text-[9px] md:text-[10px] font-[Ubuntu]">
                         {obj.src !== "" && (
                           <Link
-                            className="flex items-center bg-[#fff] text-black border-1 border-black rounded ps-2 p-1"
+                            className="flex items-center bg-[#fff] text-black ps-2 p-1"
                             to={obj.src}
                             target="_blank"
                           >
@@ -493,7 +493,7 @@ export default function Query() {
                           <Link
                             to={obj.arcana}
                             target="_blank"
-                            className="flex items-center justify-center bg-[#fff] text-black rounded ps-2 p-1"
+                            className="flex items-center justify-center bg-[#fff] text-black ps-2 p-1"
                           >
                             <span>Arcana</span>
                             <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
@@ -503,18 +503,16 @@ export default function Query() {
                           <Link
                             to={obj.oath}
                             target="_blank"
-                            className="flex items-center justify-center bg-[#fff] text-black rounded ps-2 p-1"
+                            className="flex items-center justify-center bg-[#fff] text-black ps-2 p-1"
                           >
                             <span>Oath</span>
                             <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
                           </Link>
                         )}
-                        <div className="flex items-center bg-[white] text-black border-1 border-black rounded p-1">
+                        <div className="flex items-center bg-[#28282b] text-white p-1">
                           {new Date(obj.dat) > new Date("2025-07-23") ? `P11` : `P9/10`}
                         </div>
-                        <div className="flex items-center bg-[#00ffaa] text-black border-1 border-black rounded p-1">
-                          {obj.tim}
-                        </div>
+                        <div className="font-[Ubuntu]  flex items-center bg-[#28282b] text-white  p-1">{obj.tim}</div>
                       </div>
                     </div>
                     <div className="flex items-center flex-wrap my-1 gap-1">
@@ -523,23 +521,13 @@ export default function Query() {
                           <div className="tooltip-content bg-white text-black rounded">
                             <div className="text-[11px]">{obj.asp}</div>
                           </div>
-                          <img
-                            draggable={false}
-                            src={`/P9/${obj.asp}.png`}
-                            alt="Core Boon"
-                            className="size-7 border-1 border-black rounded-lg"
-                          />
+                          <img draggable={false} src={`/P9/${obj.asp}.png`} alt="Core Boon" className="size-7" />
                         </div>
                         <div className="tooltip shrink-0">
                           <div className="tooltip-content bg-white text-black rounded">
                             <div className="text-[11px]">{obj.fam}</div>
                           </div>
-                          <img
-                            draggable={false}
-                            src={`/P9/${obj.fam}.png`}
-                            alt="Core Boon"
-                            className="size-7 border-1 border-black rounded-lg"
-                          />
+                          <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Core Boon" className="size-7" />
                         </div>
                       </div>
                       <div className="flex gap-0.5 rounded">
@@ -548,12 +536,7 @@ export default function Query() {
                             <div className="tooltip-content bg-white text-black rounded">
                               <div className="text-[11px]">{ite}</div>
                             </div>
-                            <img
-                              draggable={false}
-                              src={`/H2Boons/${ite}.png`}
-                              alt="Core Boon"
-                              className="size-7 border-1 border-black rounded-lg"
-                            />
+                            <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-7" />
                           </div>
                         ))}
                       </div>
@@ -572,12 +555,7 @@ export default function Query() {
                               <div className="tooltip-content bg-white text-black rounded">
                                 <div className="text-[11px]">{p9boons[ite]}</div>
                               </div>
-                              <img
-                                draggable={false}
-                                src={`/P9/${ite}.png`}
-                                alt="Core Boon"
-                                className="size-7 border-1 border-black rounded-lg"
-                              />
+                              <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className="size-7" />
                             </div>
                           ))}
                         </div>
@@ -597,7 +575,7 @@ export default function Query() {
                     </div>
                     {obj.boon && (
                       <div className="flex items-center flex-wrap my-1">
-                        <div className="flex flex-wrap rounded">
+                        <div className="flex flex-wrap gap-0.5 rounded">
                           {findValue2(
                             sToA(obj.boon).sort((a, b) => {
                               const aIndex = orderMap2.get(a) ?? Infinity;
@@ -622,15 +600,15 @@ export default function Query() {
                         </div>
                       </div>
                     )}
-                    <div className="text-[12px] ps-1 font-[Ale] text-gray-300">{obj.des}</div>
+                    <div className="text-[10px] ps-1 font-[Ubuntu] text-white my-1">{obj.des}</div>
                     {obj.arcana && (
-                      <div className="flex flex-wrap gap-1 text-[10px] md:text-[11px] my-0.5">
+                      <div className="flex flex-wrap gap-0.5 text-[9px] md:text-[10px] font-[Ubuntu] my-0.5">
                         {obj.arcana &&
                           deCodeArcana(obj.arcana)
                             .map((ite) => deckMatch[ite])
                             .map((ite) => (
                               <div
-                                className={`px-1 py-0.5 rounded ${
+                                className={`px-1 py-0.5 ${
                                   arc.includes(arcanaid[ite]) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
                                 }`}
                               >
@@ -640,7 +618,7 @@ export default function Query() {
                       </div>
                     )}
                     {obj.oath && (
-                      <div className="flex flex-wrap gap-1 text-[10px] md:text-[11px] my-0.5">
+                      <div className="flex flex-wrap gap-0.5 text-[9px] md:text-[10px] font-[Ubuntu] my-0.5">
                         {obj.oath &&
                           deCodeVow(obj.oath)
                             .map((ite1, index) => oathMatch[index].indexOf(ite1))
@@ -648,7 +626,7 @@ export default function Query() {
                               (ite, index) =>
                                 ite !== 0 && (
                                   <div
-                                    className={`px-1 py-0.5 rounded ${
+                                    className={`px-1 py-0.5 ${
                                       vow.includes(vowid[vowMatch[index]]) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
                                     }  `}
                                   >
@@ -659,21 +637,23 @@ export default function Query() {
                       </div>
                     )}
                   </div>
-                  <div className="hidden sm:block">
-                    <img
-                      src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
-                      alt="Aspect"
-                      className="w-[80px] h-full rounded"
-                      draggable={false}
-                    />
-                  </div>
-                  <div className="hidden sm:block">
-                    <img
-                      src={`/GUI_Card/${obj.fam}.png`}
-                      alt="Familiar"
-                      className="w-[80px] rounded"
-                      draggable={false}
-                    />
+                  <div className="flex flex-col justify-center">
+                    <div className="hidden sm:block">
+                      <img
+                        src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
+                        alt="Aspect"
+                        className="w-[80px] rounded"
+                        draggable={false}
+                      />
+                    </div>
+                    <div className="hidden sm:block">
+                      <img
+                        src={`/GUI_Card/${obj.fam}.png`}
+                        alt="Familiar"
+                        className="w-[80px] rounded"
+                        draggable={false}
+                      />
+                    </div>
                   </div>
                 </div>
               ))}

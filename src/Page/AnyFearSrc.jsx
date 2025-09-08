@@ -133,7 +133,7 @@ export default function AnyFearSRC() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 my-2">
             {displayData?.map((obj, index) => (
-              <div className="bg-[#00000098] p-2 flex flex-col justify-between">
+              <div className="bg-[#13111198] p-2 border-1 border-black flex flex-col justify-between">
                 <div className="flex items-end gap-4 rounded">
                   <div>
                     <img
