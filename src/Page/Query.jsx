@@ -204,7 +204,7 @@ export default function Query() {
   return (
     <main className="relative">
       <Background />
-      <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-2">
+      <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-1">
         <SideNav />
         {loader ? (
           <Loading />
