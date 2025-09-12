@@ -27,8 +27,8 @@ createRoot(document.getElementById("root")).render(
           <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
           <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
           <Route path="/Query" element={<Query />} />
-          <Route path="/MetaUpgradeEditor" element={<MetaUpgradeEditor />} />
-          <Route path="/AnyFearSRC" element={<AnyFearSRC />} />
+          {/* <Route path="/MetaUpgradeEditor" element={<MetaUpgradeEditor />} /> */}
+          {/* <Route path="/AnyFearSRC" element={<AnyFearSRC />} /> */}
         </Routes>
       </Router>
     </DataProvider>

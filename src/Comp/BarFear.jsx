@@ -12,7 +12,7 @@ export default function BarFear({ data }) {
     count,
   }));
   return (
-    <div className="h-[300px] w-full max-w-[1200px] mx-auto px-2 text-[10px] font-[Ubuntu] mt-6">
+    <div className="h-[300px] w-full max-w-[1400px] mx-auto px-2 text-[10px] font-[Ubuntu] mt-6">
       <div className="text-[20px] font-[Ale]">Fear Summary</div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart

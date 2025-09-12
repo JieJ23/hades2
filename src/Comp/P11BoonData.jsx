@@ -60,7 +60,7 @@ export default function P11BoonData({ data }) {
   }, {});
 
   return (
-    <div className="max-w-[1200px] font-[Ale] text-[12px] mx-auto my-4 py-2">
+    <div className="max-w-[1400px] font-[Ale] text-[12px] mx-auto my-4 py-2">
       <div className="px-2 flex gap-1 my-2">
         <select
           value={weapontype}

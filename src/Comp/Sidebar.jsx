@@ -4,22 +4,13 @@ import { useLocation } from "react-router-dom";
 export const sites = [
   { icon: `Ladder`, link: ``, nam: `Ladder` },
   { icon: `Query`, link: `Query`, nam: `Query` },
-  // { icon: `Gameplay`, link: `Gameplay`, nam: `Gameplay` },
   { icon: `Melinoe`, link: `Ranking`, nam: `Ranking` },
-  // { icon: `Boon2`, link: `Trend`, nam: `Boon Trend` },
   { icon: `Stats`, link: `EAstats`, nam: `EA Stats` },
-  // { icon: `Stats`, link: `P910Stats`, nam: `P910Stats` },
-  // { icon: `Save`, link: `Playground`, nam: `Playground` },
-  // { icon: `Player`, link: `Player`, nam: `Player` },
-  // { icon: `Patch8`, link: `Patch8`, nam: `Patch 8` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },
-  { icon: `Editor`, link: `MetaUpgradeEditor`, nam: `Oath Editor` },
-  { icon: `Ladder`, link: `AnyFearSRC`, nam: `Any Fear SRC` },
+  // { icon: `Editor`, link: `MetaUpgradeEditor`, nam: `Oath Editor` },
+  // { icon: `Ladder`, link: `AnyFearSRC`, nam: `Any Fear SRC` },
   { icon: `Submit`, link: `GameplaySubmission`, nam: `Submission` },
-  // { icon: `Hammer`, link: `Hammer`, nam: `Hammer` },
-  // { icon: `Boons`, link: `Boons`, nam: `Boons` },
-  // { icon: `Enemy`, link: `Enemy`, nam: `Enemy` },
 ];
 
 export default function SideNav() {
