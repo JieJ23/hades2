@@ -610,37 +610,35 @@ export default function Query() {
                     <div className="text-[10px] ps-1 font-[Ubuntu] text-white my-1">{obj.des}</div>
                     {obj.arcana && (
                       <div className="flex flex-wrap gap-0.5 text-[9px] md:text-[10px] font-[Ubuntu] my-0.5">
-                        {obj.arcana &&
-                          deCodeArcana(obj.arcana)
-                            .map((ite) => deckMatch[ite])
-                            .map((ite) => (
-                              <div
-                                className={`px-1 py-0.5 ${
-                                  arc.includes(arcanaid[ite]) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
-                                }`}
-                              >
-                                {ite}
-                              </div>
-                            ))}
+                        {deCodeArcana(obj.arcana)
+                          .map((ite) => deckMatch[ite])
+                          .map((ite) => (
+                            <div
+                              className={`px-1 py-0.5 ${
+                                arc.includes(arcanaid[ite]) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
+                              }`}
+                            >
+                              {ite}
+                            </div>
+                          ))}
                       </div>
                     )}
                     {obj.oath && (
                       <div className="flex flex-wrap gap-0.5 text-[9px] md:text-[10px] font-[Ubuntu] my-0.5">
-                        {obj.oath &&
-                          deCodeVow(obj.oath)
-                            .map((ite1, index) => oathMatch[index].indexOf(ite1))
-                            .map(
-                              (ite, index) =>
-                                ite !== 0 && (
-                                  <div
-                                    className={`px-1 py-0.5 ${
-                                      vow.includes(vowid[vowMatch[index]]) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
-                                    }  `}
-                                  >
-                                    {vowMatch[index]} {ite}
-                                  </div>
-                                )
-                            )}
+                        {deCodeVow(obj.oath)
+                          .map((ite1, index) => oathMatch[index].indexOf(ite1))
+                          .map(
+                            (ite, index) =>
+                              ite !== 0 && (
+                                <div
+                                  className={`px-1 py-0.5 ${
+                                    vow.includes(vowid[vowMatch[index]]) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
+                                  }  `}
+                                >
+                                  {vowMatch[index]} {ite}
+                                </div>
+                              )
+                          )}
                       </div>
                     )}
                   </div>
@@ -649,7 +647,7 @@ export default function Query() {
                       <img
                         src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
                         alt="Aspect"
-                        className="w-[80px] rounded"
+                        className="w-[60px] rounded"
                         draggable={false}
                         loading="lazy"
                       />
@@ -658,7 +656,7 @@ export default function Query() {
                       <img
                         src={`/GUI_Card/${obj.fam}.png`}
                         alt="Familiar"
-                        className="w-[80px] rounded"
+                        className="w-[60px] rounded"
                         draggable={false}
                         loading="lazy"
                       />
