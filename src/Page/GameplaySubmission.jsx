@@ -103,8 +103,8 @@ export default function GameplaySubmission() {
     }
   }
 
-  const allCategory = [coreboons, weapons, gods, Unseen, misc, other, keepsakes];
-  const allCategoryTitle = [`Core`, `Weapons`, `Gods`, `Unseen`, `Duo & Elemental`, `Chaos & Selene`, `Keepsakes`];
+  const allCategory = [coreboons, weapons, Unseen, misc, keepsakes];
+  const allCategoryTitle = [`Core`, `Weapons`, `Unseen`, `Duo & Elemental`, `Keepsakes`];
 
   const displayData = allCategory[category];
 
@@ -292,7 +292,7 @@ export default function GameplaySubmission() {
         <div className="flex flex-wrap px-2 my-2 mb-10 select-none">
           {displayData.map((objs) => (
             <section className="flex flex-wrap gap-1 py-2">
-              {category === 6
+              {category === 4
                 ? objs.map((item) => (
                     <div
                       className={`cursor-pointer flex items-center gap-2 rounded px-2 py-1 ${
