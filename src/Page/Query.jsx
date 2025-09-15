@@ -226,7 +226,7 @@ export default function Query() {
                   setHas([]);
                   setVow([]);
                   setArc([]);
-                  setPlayer("");
+                  setPlayer("Player");
                 }}
               >
                 Reset Selection
@@ -397,7 +397,14 @@ export default function Query() {
                 <div className="px-2 py-1 rounded bg-white text-black">
                   Fear Range: {minmax[0]} - {minmax[1]}
                 </div>
-                {player && <div className="px-2 py-1 rounded bg-[#f18043] text-black">Player: {player}</div>}
+                {player !== "" && (
+                  <div
+                    className="px-2 py-1 rounded bg-[#f18043] text-black cursor-pointer"
+                    onClick={() => setPlayer(``)}
+                  >
+                    Player: {player}
+                  </div>
+                )}
               </div>
             )}
             {asp.length > 0 && (
@@ -466,7 +473,7 @@ export default function Query() {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-2">
               {displayData3.slice(0, show).map((obj, index) => (
-                <div className={`bg-[#00000050] p-2 py-1 flex relative`}>
+                <div className={`bg-[#131111a1] p-2 py-1 flex relative`}>
                   <div
                     className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
                       obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
@@ -515,7 +522,7 @@ export default function Query() {
                         <div className="font-[Ubuntu]  flex items-center bg-[#28282b] text-white  p-1">{obj.tim}</div>
                       </div>
                     </div>
-                    <div className="flex items-center flex-wrap my-1 gap-1">
+                    <div className="flex items-center flex-wrap my-1 gap-0.5">
                       <div className="flex gap-0.5 rounded">
                         <div className="tooltip shrink-0">
                           <div className="tooltip-content bg-white text-black rounded">
@@ -530,18 +537,6 @@ export default function Query() {
                           <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Core Boon" className="size-7" />
                         </div>
                       </div>
-                      <div className="flex gap-0.5 rounded">
-                        {sToA(obj.cor).map((ite, index) => (
-                          <div className="tooltip shrink-0">
-                            <div className="tooltip-content bg-white text-black rounded">
-                              <div className="text-[11px]">{ite}</div>
-                            </div>
-                            <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-7" />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="flex items-center flex-wrap my-1 gap-1">
                       {obj.ham && (
                         <div className="flex gap-0.5 rounded">
                           {findValue(
@@ -572,6 +567,18 @@ export default function Query() {
                           ))}
                         </div>
                       )}
+                    </div>
+                    <div className="flex items-center flex-wrap my-1 gap-1">
+                      <div className="flex gap-0.5 rounded">
+                        {sToA(obj.cor).map((ite, index) => (
+                          <div className="tooltip shrink-0">
+                            <div className="tooltip-content bg-white text-black rounded">
+                              <div className="text-[11px]">{ite}</div>
+                            </div>
+                            <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-7" />
+                          </div>
+                        ))}
+                      </div>
                     </div>
                     {obj.boon && (
                       <div className="flex items-center flex-wrap my-1">
@@ -644,6 +651,7 @@ export default function Query() {
                         alt="Aspect"
                         className="w-[80px] rounded"
                         draggable={false}
+                        loading="lazy"
                       />
                     </div>
                     <div className="hidden sm:block">
@@ -652,6 +660,7 @@ export default function Query() {
                         alt="Familiar"
                         className="w-[80px] rounded"
                         draggable={false}
+                        loading="lazy"
                       />
                     </div>
                   </div>
