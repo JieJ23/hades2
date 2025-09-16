@@ -191,7 +191,7 @@ export default function App() {
                                 draggable={false}
                                 src={`/H2Boons/${ite}.png`}
                                 alt="Core Boon"
-                                className="w-[22px] h-[22px]"
+                                className="w-[20px] h-[20px]"
                               />
                             </div>
                           ))}

@@ -525,13 +525,13 @@ export default function Query() {
                           <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                             <div className="text-[11px]">{obj.asp}</div>
                           </div>
-                          <img draggable={false} src={`/P9/${obj.asp}.png`} alt="Core Boon" className="size-7" />
+                          <img draggable={false} src={`/P9/${obj.asp}.png`} alt="Core Boon" className="size-8" />
                         </div>
                         <div className="tooltip shrink-0">
                           <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                             <div className="text-[11px]">{obj.fam}</div>
                           </div>
-                          <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Core Boon" className="size-7" />
+                          <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Core Boon" className="size-8" />
                         </div>
                       </div>
                       {obj.ham && (
@@ -547,7 +547,7 @@ export default function Query() {
                               <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                                 <div className="text-[11px]">{p9boons[ite]}</div>
                               </div>
-                              <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className="size-7" />
+                              <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className="size-8" />
                             </div>
                           ))}
                         </div>
@@ -572,7 +572,7 @@ export default function Query() {
                             <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                               <div className="text-[11px]">{ite}</div>
                             </div>
-                            <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-7" />
+                            <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-8" />
                           </div>
                         ))}
                       </div>
@@ -595,7 +595,7 @@ export default function Query() {
                                 draggable={false}
                                 src={`/P9/${ite}.png`}
                                 alt="Core Boon"
-                                className={`size-7 border-1 rounded-lg ${
+                                className={`size-7 rounded-full ${
                                   has.includes(boonid[boonCodex[ite]]) ? `border-[#00ffaa]` : `border-black`
                                 }`}
                               />
@@ -604,7 +604,7 @@ export default function Query() {
                         </div>
                       </div>
                     )}
-                    <div className="text-[10px] ps-1 font-[Ubuntu] text-white my-1">{obj.des}</div>
+                    <div className="text-[11px] ps-1 font-[Ubuntu] text-white my-1">{obj.des}</div>
                     {obj.arcana && (
                       <div className="flex flex-wrap gap-0.5 text-[9px] md:text-[10px] font-[Ubuntu] my-0.5">
                         {deCodeArcana(obj.arcana)
