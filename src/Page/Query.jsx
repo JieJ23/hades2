@@ -206,7 +206,7 @@ export default function Query() {
   return (
     <main className="relative">
       <Background />
-      <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-1">
+      <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-1 overflow-hidden">
         <SideNav />
         {loader ? (
           <Loading />
@@ -470,7 +470,7 @@ export default function Query() {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
               {displayData3.slice(0, show).map((obj, index) => (
-                <div className={`bg-[#131111a1] p-2 py-1 flex flex-col md:flex-row gap-1 relative`}>
+                <div className={`bg-[#131111a1] p-2 py-1 flex flex-col lg:flex-row gap-1 relative`}>
                   <div
                     className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
                       obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
@@ -659,7 +659,7 @@ export default function Query() {
                       />
                     </div>
                   </div> */}
-                  <div className="w-full max-w-[400px] md:max-w-[300px] aspect-video px-2 md:px-0 overflow-hidden">
+                  <div className="w-full sm:max-w-[300px] lg:max-w-[350px] px-2 sm:px-0">
                     {obj.src.includes(`youtu`) ? (
                       <div className="rounded aspect-video overflow-hidden w-full h-full">
                         <img
@@ -697,7 +697,6 @@ export default function Query() {
                           <div className="modal-box p-1 aspect-video rounded bg-[#28282b] w-full max-w-[1000px]">
                             <iframe
                               src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(obj.src)}`}
-                              title="Gameplay Video"
                               allowfullscreen="true"
                               className="w-full h-full rounded"
                               loading="lazy"
@@ -709,12 +708,14 @@ export default function Query() {
                         </dialog>
                       </div>
                     ) : (
-                      <img
-                        src="/gameplay1.webp"
-                        alt="Thumbnails"
-                        className="hidden lg:block lg:h-full lg:w-full border-1 rounded border-[#131111]"
-                        loading="lazy"
-                      />
+                      <div className="hidden md:block w-full h-full">
+                        <img
+                          src="/gameplay1.webp"
+                          alt="Thumbnails"
+                          className="border-1 rounded border-[#131111]"
+                          loading="lazy"
+                        />
+                      </div>
                     )}
                   </div>
                 </div>
