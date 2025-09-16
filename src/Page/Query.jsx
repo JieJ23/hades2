@@ -670,9 +670,10 @@ export default function Query() {
 `}
                         alt="Thumbnails"
                         className="h-full w-full"
+                        loading="lazy"
                       />
                     ) : (
-                      <img src="/Misc/bilibili.webp" alt="Thumbnails" className="h-full w-full" />
+                      <img src="/Misc/bilibili.webp" alt="Thumbnails" className="h-full w-full" loading="lazy" />
                     )}
                   </div>
                 </div>
