@@ -470,7 +470,7 @@ export default function Query() {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
               {displayData3.slice(0, show).map((obj, index) => (
-                <div className={`bg-[#131111a1] p-2 py-1 flex relative`}>
+                <div className={`bg-[#131111a1] p-2 py-1 flex flex-col md:flex-row gap-1 relative`}>
                   <div
                     className={`absolute top-0 left-0 h-full w-[4px] md:w-[6px] ${
                       obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[#fff200]`
@@ -639,7 +639,7 @@ export default function Query() {
                       </div>
                     )}
                   </div>
-                  <div className="flex flex-col justify-center sm:w-[80px]">
+                  {/* <div className="flex flex-col justify-center sm:w-[80px]">
                     <div className="hidden sm:block">
                       <img
                         src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
@@ -658,19 +658,19 @@ export default function Query() {
                         loading="lazy"
                       />
                     </div>
-                  </div>
-                  <div className="lg:w-[500px] overflow-hidden rounded hidden lg:block aspect-video ">
+                  </div> */}
+                  <div className="w-full max-w-[400px] md:max-w-[300px] aspect-video px-2 md:px-0 overflow-hidden">
                     {obj.src.includes(`youtu`) ? (
-                      <>
+                      <div className="rounded aspect-video overflow-hidden w-full h-full">
                         <img
                           src={`https://img.youtube.com/vi/${getYTid(obj.src)}/maxresdefault.jpg`}
                           alt="Gameplay Video"
-                          className="h-full w-full"
+                          className="h-full w-full border-1 rounded border-[#131111]"
                           loading="lazy"
                           onClick={() => document.getElementById(`model${index}`).showModal()}
                         />
                         <dialog id={`model${index}`} className="modal">
-                          <div className="modal-box p-1 aspect-video rounded bg-[#00ffaa] w-full max-w-[1200px]">
+                          <div className="modal-box p-1 ms-4 aspect-video rounded bg-[#28282b] w-full max-w-[1000px]">
                             <iframe
                               src={`https://www.youtube.com/embed/${getYTid(obj.src)}`}
                               title="Gameplay Video"
@@ -683,18 +683,18 @@ export default function Query() {
                             <button>close</button>
                           </form>
                         </dialog>
-                      </>
+                      </div>
                     ) : obj.src.includes(`bilibil`) ? (
-                      <>
+                      <div className="rounded aspect-video overflow-hidden w-full h-full">
                         <img
                           src="/gameplay2.webp"
                           alt="Thumbnails"
-                          className="h-full w-full"
+                          className="h-full w-full border-1 rounded border-[#131111]"
                           loading="lazy"
                           onClick={() => document.getElementById(`model${index}`).showModal()}
                         />
                         <dialog id={`model${index}`} className="modal">
-                          <div className="modal-box p-1 aspect-video rounded bg-[#00ffaa] w-full max-w-[1200px]">
+                          <div className="modal-box p-1 aspect-video rounded bg-[#28282b] w-full max-w-[1000px]">
                             <iframe
                               src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(obj.src)}`}
                               title="Gameplay Video"
@@ -707,9 +707,14 @@ export default function Query() {
                             <button>close</button>
                           </form>
                         </dialog>
-                      </>
+                      </div>
                     ) : (
-                      <img src="/gameplay1.webp" alt="Thumbnails" className="h-full w-full" loading="lazy" />
+                      <img
+                        src="/gameplay1.webp"
+                        alt="Thumbnails"
+                        className="hidden lg:block lg:h-full lg:w-full border-1 rounded border-[#131111]"
+                        loading="lazy"
+                      />
                     )}
                   </div>
                 </div>
