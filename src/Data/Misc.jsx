@@ -74,6 +74,12 @@ export function formatSentence(sentence) {
 export function getYTid(text) {
   return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
 }
+export function getBilibiliid(text) {
+  // Matches either BV ID or av ID
+  const match = text.match(/(?:\/video\/(BV[0-9A-Za-z]+))|(?:\/video\/av(\d+))/);
+  if (!match) return null;
+  return match[1] || match[2]; // return BV ID if present, otherwise av ID
+}
 
 export function constantDate(dateStr) {
   const date = new Date(dateStr);

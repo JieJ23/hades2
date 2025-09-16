@@ -17,6 +17,7 @@ import {
   vowMatch,
   parseTimetoms,
   getYTid,
+  getBilibiliid,
 } from "../Data/Misc";
 import { orderMap, orderMap2, findValue, findValue2, handleLoadMore, findGUIcard } from "../App";
 import { p9boons } from "../Data/P9BoonObj";
@@ -371,10 +372,6 @@ export default function Query() {
                       <li
                         className="px-3 py-1 hover:bg-base-200 cursor-pointer flex items-center gap-1"
                         onMouseDown={() => {
-                          // if (has.length >= 5) {
-                          //   alert("You can only select up to 5 boons");
-                          //   return;
-                          // }
                           if (!has.includes(boonid[boon])) {
                             setHas((prev) => [...prev, boonid[boon]]);
                           }
@@ -382,7 +379,6 @@ export default function Query() {
                           setIsOpen(false);
                         }}
                       >
-                        {/* <img src={`P9/${boonCodexr[boon]}.png`} alt="Boons" className="size-6" /> */}
                         {boon}
                       </li>
                     ))
@@ -526,13 +522,13 @@ export default function Query() {
                     <div className="flex items-center flex-wrap my-1 gap-0.5">
                       <div className="flex gap-0.5 rounded">
                         <div className="tooltip shrink-0">
-                          <div className="tooltip-content bg-white text-black rounded">
+                          <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                             <div className="text-[11px]">{obj.asp}</div>
                           </div>
                           <img draggable={false} src={`/P9/${obj.asp}.png`} alt="Core Boon" className="size-7" />
                         </div>
                         <div className="tooltip shrink-0">
-                          <div className="tooltip-content bg-white text-black rounded">
+                          <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                             <div className="text-[11px]">{obj.fam}</div>
                           </div>
                           <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Core Boon" className="size-7" />
@@ -548,7 +544,7 @@ export default function Query() {
                             })
                           ).map((ite, index) => (
                             <div className="tooltip shrink-0">
-                              <div className="tooltip-content bg-white text-black rounded">
+                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                                 <div className="text-[11px]">{p9boons[ite]}</div>
                               </div>
                               <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className="size-7" />
@@ -560,7 +556,7 @@ export default function Query() {
                         <div className="flex gap-0.5 rounded">
                           {sToA(obj.ks).map((ite, index) => (
                             <div className="tooltip shrink-0">
-                              <div className="tooltip-content bg-white text-black rounded">
+                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                                 <div className="text-[11px]">{ite}</div>
                               </div>
                               <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
@@ -573,7 +569,7 @@ export default function Query() {
                       <div className="flex gap-0.5 rounded">
                         {sToA(obj.cor).map((ite, index) => (
                           <div className="tooltip shrink-0">
-                            <div className="tooltip-content bg-white text-black rounded">
+                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                               <div className="text-[11px]">{ite}</div>
                             </div>
                             <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-7" />
@@ -592,7 +588,7 @@ export default function Query() {
                             })
                           ).map((ite, index) => (
                             <div className="tooltip shrink-0">
-                              <div className="tooltip-content bg-white text-black rounded">
+                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                                 <div className="text-[11px]">{boonCodex[ite]}</div>
                               </div>
                               <img
@@ -643,12 +639,12 @@ export default function Query() {
                       </div>
                     )}
                   </div>
-                  <div className="flex flex-col justify-center">
+                  <div className="flex flex-col justify-center sm:w-[80px]">
                     <div className="hidden sm:block">
                       <img
                         src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
                         alt="Aspect"
-                        className="w-[70px] rounded"
+                        className="w-full rounded"
                         draggable={false}
                         loading="lazy"
                       />
@@ -657,31 +653,63 @@ export default function Query() {
                       <img
                         src={`/GUI_Card/${obj.fam}.png`}
                         alt="Familiar"
-                        className="w-[70px] rounded"
+                        className="w-full rounded"
                         draggable={false}
                         loading="lazy"
                       />
                     </div>
                   </div>
-                  <div className="w-[400px] overflow-hidden rounded hidden lg:block aspect-video ">
+                  <div className="lg:w-[500px] overflow-hidden rounded hidden lg:block aspect-video ">
                     {obj.src.includes(`youtu`) ? (
-                      <iframe
-                        src={`https://www.youtube.com/embed/${getYTid(obj.src)}`}
-                        title="Gameplay Video"
-                        // allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-full"
-                        loading="lazy"
-                      />
+                      <>
+                        <img
+                          src={`https://img.youtube.com/vi/${getYTid(obj.src)}/maxresdefault.jpg`}
+                          alt="Gameplay Video"
+                          className="h-full w-full"
+                          loading="lazy"
+                          onClick={() => document.getElementById(`model${index}`).showModal()}
+                        />
+                        <dialog id={`model${index}`} className="modal">
+                          <div className="modal-box p-1 aspect-video rounded bg-[#00ffaa] w-full max-w-[1200px]">
+                            <iframe
+                              src={`https://www.youtube.com/embed/${getYTid(obj.src)}`}
+                              title="Gameplay Video"
+                              allowFullScreen
+                              className="w-full h-full rounded"
+                              loading="lazy"
+                            />
+                          </div>
+                          <form method="dialog" className="modal-backdrop">
+                            <button>close</button>
+                          </form>
+                        </dialog>
+                      </>
+                    ) : obj.src.includes(`bilibil`) ? (
+                      <>
+                        <img
+                          src="/gameplay2.webp"
+                          alt="Thumbnails"
+                          className="h-full w-full"
+                          loading="lazy"
+                          onClick={() => document.getElementById(`model${index}`).showModal()}
+                        />
+                        <dialog id={`model${index}`} className="modal">
+                          <div className="modal-box p-1 aspect-video rounded bg-[#00ffaa] w-full max-w-[1200px]">
+                            <iframe
+                              src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(obj.src)}`}
+                              title="Gameplay Video"
+                              allowfullscreen="true"
+                              className="w-full h-full rounded"
+                              loading="lazy"
+                            />
+                          </div>
+                          <form method="dialog" className="modal-backdrop">
+                            <button>close</button>
+                          </form>
+                        </dialog>
+                      </>
                     ) : (
-                      // <img
-                      //   src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg
-                      // `}
-                      //   alt="Thumbnails"
-                      //   className="h-full w-full"
-                      //   loading="lazy"
-                      // />
-                      <img src="/Misc/bilibili.webp" alt="Thumbnails" className="h-full w-full" loading="lazy" />
+                      <img src="/gameplay1.webp" alt="Thumbnails" className="h-full w-full" loading="lazy" />
                     )}
                   </div>
                 </div>

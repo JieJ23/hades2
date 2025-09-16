@@ -75,11 +75,10 @@ export default function App() {
     fulldata_ArrArrObject.push(removeDup);
   }
 
-  const keep = fullData.filter((obj) => obj.ks);
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
-      <div className="max-w-[1600px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-1">
+      <div className="max-w-[1600px] font-[Ubuntu] text-[10px] md:text-[11px] mx-auto px-1">
         <SideNav />
         {loader ? (
           <Loading />
@@ -163,8 +162,8 @@ export default function App() {
                     alt="Aspect"
                     className="absolute w-auto h-full top-1/2 left-1/2 -z-10 opacity-40 -translate-x-[50%] -translate-y-[50%]"
                   />
-                  <div className="grid grid-cols-3 text-center text-[12px] text-white" key={oi}>
-                    <div className="text-start text-[#ffa200] text-[13px]">{h2AspectOrder[oi]}</div>
+                  <div className="grid grid-cols-3 text-center text-white" key={oi}>
+                    <div className="text-start text-[#ffa200]">{h2AspectOrder[oi]}</div>
                     <div className="text-start text-[#ffa200]">
                       {(arr.slice(0, 10).reduce((a, b) => a + +b.fea, 0) / (arr.slice(0, 10).length || 10)).toFixed(1)}
                     </div>
@@ -185,7 +184,7 @@ export default function App() {
                         {boon === `Core` &&
                           sToA(obj.cor).map((ite, index) => (
                             <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content bg-white text-black rounded">
+                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                                 <div className="text-[11px]">{ite}</div>
                               </div>
                               <img
@@ -199,7 +198,7 @@ export default function App() {
                         {boon === `Hammer` && obj.ham && (
                           <div className="flex gap-0.5 rounded">
                             <div className="tooltip shrink-0">
-                              <div className="tooltip-content bg-white text-black rounded">
+                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                                 <div className="text-[11px]">{obj.fam}</div>
                               </div>
                               <img
@@ -217,7 +216,7 @@ export default function App() {
                               })
                             ).map((ite, index) => (
                               <div className="tooltip shrink-0" key={index}>
-                                <div className="tooltip-content bg-white text-black rounded">
+                                <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                                   <div className="text-[11px]">{p9boons[ite]}</div>
                                 </div>
                                 <img
@@ -234,7 +233,7 @@ export default function App() {
                           obj.ks &&
                           sToA(obj.ks).map((ite, index) => (
                             <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content bg-white text-black rounded">
+                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                                 <div className="text-[11px]">{ite}</div>
                               </div>
                               <img

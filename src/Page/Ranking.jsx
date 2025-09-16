@@ -65,7 +65,7 @@ export default function Ranking() {
           <Loading />
         ) : (
           <>
-            <div className="p-1 flex justify-center gap-1 my-2">
+            <div className="p-1 flex justify-center gap-1 my-2 font-[Ubuntu] text-[10px] md:text-[11px]">
               <button
                 className="bg-white px-2 py-1 rounded text-black cursor-pointer"
                 onClick={() => setUnique(!unique)}
