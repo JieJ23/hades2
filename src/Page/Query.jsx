@@ -664,15 +664,23 @@ export default function Query() {
                     </div>
                   </div>
                   <div className="w-[400px] overflow-hidden rounded hidden lg:block aspect-video ">
-                    {obj.src.includes(`youtub`) ? (
-                      <img
-                        src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg
-`}
-                        alt="Thumbnails"
-                        className="h-full w-full"
+                    {obj.src.includes(`youtu`) ? (
+                      <iframe
+                        src={`https://www.youtube.com/embed/${getYTid(obj.src)}`}
+                        title="Gameplay Video"
+                        // allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
                         loading="lazy"
                       />
                     ) : (
+                      // <img
+                      //   src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg
+                      // `}
+                      //   alt="Thumbnails"
+                      //   className="h-full w-full"
+                      //   loading="lazy"
+                      // />
                       <img src="/Misc/bilibili.webp" alt="Thumbnails" className="h-full w-full" loading="lazy" />
                     )}
                   </div>
