@@ -155,7 +155,7 @@ export default function App() {
               {fulldata_ArrArrObject.map((arr, oi) => (
                 <div
                   className={`rounded px-2 py-1 relative border-1 border-black/40 hover:border-[#00ffaa] duration-200 ease-in transition-colors ${
-                    arr[0].fea >= 62 ? `bg-[#0f1035a6]` : `bg-[#211f1fa6]`
+                    arr[0].fea >= 62 ? `bg-[#141537a6]` : `bg-[#131111a1]`
                   }`}
                 >
                   <img

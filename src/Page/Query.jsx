@@ -16,6 +16,7 @@ import {
   oathMatch,
   vowMatch,
   parseTimetoms,
+  getYTid,
 } from "../Data/Misc";
 import { orderMap, orderMap2, findValue, findValue2, handleLoadMore, findGUIcard } from "../App";
 import { p9boons } from "../Data/P9BoonObj";
@@ -471,7 +472,7 @@ export default function Query() {
               Query: {displayData3.length}/{allEntries.length} |{" "}
               {((displayData3.length / allEntries.length) * 100).toFixed(2)}%
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-2">
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
               {displayData3.slice(0, show).map((obj, index) => (
                 <div className={`bg-[#131111a1] p-2 py-1 flex relative`}>
                   <div
@@ -647,7 +648,7 @@ export default function Query() {
                       <img
                         src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
                         alt="Aspect"
-                        className="w-[60px] rounded"
+                        className="w-[70px] rounded"
                         draggable={false}
                         loading="lazy"
                       />
@@ -656,11 +657,23 @@ export default function Query() {
                       <img
                         src={`/GUI_Card/${obj.fam}.png`}
                         alt="Familiar"
-                        className="w-[60px] rounded"
+                        className="w-[70px] rounded"
                         draggable={false}
                         loading="lazy"
                       />
                     </div>
+                  </div>
+                  <div className="w-[400px] overflow-hidden rounded hidden lg:block aspect-video ">
+                    {obj.src.includes(`youtub`) ? (
+                      <img
+                        src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg
+`}
+                        alt="Thumbnails"
+                        className="h-full w-full"
+                      />
+                    ) : (
+                      <img src="/Misc/bilibili.webp" alt="Thumbnails" className="h-full w-full" />
+                    )}
                   </div>
                 </div>
               ))}

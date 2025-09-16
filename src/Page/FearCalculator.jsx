@@ -97,13 +97,13 @@ export default function FearCalculator() {
             <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start">
               {allVows.map((ite, index) => (
                 <div
-                  className={`w-full min-h-[100px] border-1 border-white/20 flex flex-col justify-center items-center gap-0.5 relative rounded transition-all duration-300 ease-in pt-1 group ${
-                    vows[index] !== 0 ? `bg-gradient-to-tr from-[#190c23] to-[#3f0a84ad]` : `bg-black/80`
+                  className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876ad] ${
+                    vows[index] !== 0 ? `bg-gradient-to-br from-[#190c23] to-[#411876ad]` : `bg-[#131111a1]`
                   } ${index === 16 && `col-start-2 col-span-2`}`}
                   key={index}
                 >
                   <div className="absolute top-0 left-1">
-                    <div className="flex flex-col text-[10px]">
+                    <div className="flex flex-col text-[12px]">
                       {vowArray(ite).map((item, ind) => (
                         <div key={ind}>{item}</div>
                       ))}
@@ -112,7 +112,7 @@ export default function FearCalculator() {
                   <img
                     src={`/Vows/${ite}.png`}
                     alt="Fear Vows"
-                    className="group-hover:scale-[125%] duration-75 transition-transform ease-in size-7 md:size-8 lg:size-9 rounded"
+                    className="size-7 md:size-8 lg:size-9 rounded"
                     draggable={false}
                   />
                   <div className="text-[10px] md:text-[12px] text-white">{ite}</div>
@@ -139,10 +139,7 @@ export default function FearCalculator() {
               <div className={`text-[18px] text-[#0cf29e]`}>Total: {currentVows ? currentVows : 0}</div>
               <div className="grid grid-cols-2 gap-2">
                 {displayVow.map((item, index) => (
-                  <div
-                    className="w-full text-[12px] text-white border-1 border-white/20 rounded p-2 bg-black/90"
-                    key={index}
-                  >
+                  <div className="w-full text-[12px] text-white rounded p-2 bg-[#131111a1]" key={index}>
                     <div>{item}</div>
                     <div className="text-gray-300">{defineArray(item).d}</div>
                     <div className="flex flex-wrap justify-start gap-2 mt-1">

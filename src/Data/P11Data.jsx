@@ -2989,7 +2989,7 @@ export const p11data = [
     cor: "HepAttack,HesSpecial,AphCast,ApoSprint,AphMagick",
     ham: "Skulking Onslaught,Reaper Knives",
     boon: "Chain Reaction,Rude Awakening,Favor,Back Burner,Perfect Image,Spiritual Affirmation,Uncanny Fortitude,Grand Caldera,Stalwart Stand,Corrosion on Sight,Self Healing,Wispy Wiles",
-    ks: "Engraved Pin,Ghost Onion,Knuckle Bones,Engraved Pin",
+    ks: "Fig Leaf,Ghost Onion,Knuckle Bones,Engraved Pin",
   },
   {
     dat: "2025-08-13",

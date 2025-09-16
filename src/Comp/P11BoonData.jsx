@@ -109,10 +109,10 @@ export default function P11BoonData({ data }) {
           .map((ite, index) => (
             <div className="flex flex-wrap gap-1" key={index}>
               <div
-                className={`flex gap-1 rounded border-1 p-2 ${
+                className={`flex gap-1 rounded p-2 ${
                   (100 * (ite[1] / currentAspectHammerL)).toFixed(2) >= 25
-                    ? `bg-[#00ffaa] text-black border-none`
-                    : `bg-[#00000098] border-white/20`
+                    ? `bg-[#00ffaa] text-black`
+                    : `bg-[#131111a1]`
                 }`}
               >
                 <img
@@ -135,10 +135,8 @@ export default function P11BoonData({ data }) {
           <div className="flex flex-wrap gap-1 my-2">
             {findBoonTotal(core_Counts, ite).map((arr, index) => (
               <div
-                className={`flex gap-1 rounded border-1 p-2 ${
-                  (100 * (arr[1] / displayData.length)).toFixed(2) >= 25
-                    ? `bg-[#00ffaa] text-black border-none`
-                    : `bg-[#00000098] border-white/20`
+                className={`flex gap-1 rounded p-2 ${
+                  (100 * (arr[1] / displayData.length)).toFixed(2) >= 25 ? `bg-[#00ffaa] text-black` : `bg-[#131111a1]`
                 }`}
                 key={index}
               >
@@ -165,10 +163,10 @@ export default function P11BoonData({ data }) {
             .map((ite, index) => (
               <div className="flex flex-wrap gap-1" key={index}>
                 <div
-                  className={`flex gap-1 rounded border-1 p-2 ${
+                  className={`flex gap-1 rounded p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
-                      ? `bg-[#00ffaa] text-black border-none`
-                      : `bg-[#00000098] border-white/20`
+                      ? `bg-[#00ffaa] text-black`
+                      : `bg-[#131111a1]`
                   }`}
                 >
                   <img

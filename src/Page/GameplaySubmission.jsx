@@ -15,7 +15,7 @@ import {
   bHestia,
   bPoseidon,
   bZeus,
-  bArachne,
+  // bArachne,
   bArtemis,
   bAthena,
   bCirce,
@@ -59,7 +59,7 @@ function swapKV(obj) {
 
 const coreboons = [bAttack, bSpecial, bCast, bSprint, bMagick];
 const gods = [bAphrodite, bApollo, bAres, bDemeter, bHephaestus, bHera, bHestia, bPoseidon, bZeus];
-const Unseen = [bArachne, bArtemis, bAthena, bCirce, bDionysus, bEcho, bHades, bHermes, bIcarus, bMedea, bNarcissus];
+const Unseen = [bArtemis, bAthena, bCirce, bDionysus, bEcho, bHades, bHermes, bIcarus, bMedea, bNarcissus];
 const weapons = [bAxe, bDagger, bLob, bStaff, bSuit, bTorch];
 const misc = [bDuo, bElemental];
 const other = [bChaos, bSelene, bTalent];
@@ -132,17 +132,12 @@ export default function GameplaySubmission() {
             <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
           </Link>
         </div>
-        <div className="flex gap-1 text-[#f6980c] py-1 px-4 mt-2 text-[14px]">
-          Boon details are optional and should be provided through the boon selection section below the form.
-        </div>
-        <div className="flex gap-1 text-[#a4f60c] py-1 px-4 mb-2 text-[14px]">
-          Do not add Selene Nodes. The most important details are the Core Boons, Hammer, and Keepsakes.
-        </div>
         {/* Form Start */}
         <form onSubmit={Submit}>
           <div className="w-full mx-auto my-2 grid grid-cols-1 sm:grid-cols-2 gap-4 p-2 font-[Ale] max-w-[1000px]">
             <div className="flex flex-col gap-2">
               <input type="date" placeholder="Date" className="input w-full rounded" name="dat" required />
+              <div className="text-[14px]">Name are case-sensitive, "Hades" and "HADES" are separated.</div>
               <input type="text" placeholder="Name" className="input w-full rounded" name="nam" required />
               <select defaultValue="Melinoe Staff" className="select select-neutral w-full rounded" name="asp">
                 {h2AspectOrder.map((ite, index) => (
@@ -162,22 +157,21 @@ export default function GameplaySubmission() {
                 min={1}
                 required
               />
+              <div className="text-[14px]">Video Gameplay are required unless otherwise specified.</div>
               <input type="text" placeholder="Gameplay Link" className="input w-full rounded" name="src" />
+              <div className="text-[14px]">
+                Recommended to leave a short description regarding the run, decision making or strategy used and etc.
+              </div>
               <input type="text" placeholder="Short Description" className="input w-full rounded" name="des" required />
             </div>
             <div className="flex flex-col gap-2">
-              <input
-                type="text"
-                placeholder="Arcana Shareable URL"
-                className="input w-full border-1 border-[orange]/50 rounded"
-                name="arcana"
-              />
-              <input
-                type="text"
-                placeholder="Fear Shareable URL"
-                className="input w-full border-1 border-[orange]/50 rounded"
-                name="oath"
-              />
+              <div className="text-[14px]">
+                Arcana and Fear setup are optional but recommended. Use the Fear Calculator and Arcana Deck to generate
+                the shareable URLs.
+              </div>
+              <input type="text" placeholder="Arcana Shareable URL" className="input w-full rounded" name="arcana" />
+              <input type="text" placeholder="Fear Shareable URL" className="input w-full rounded" name="oath" />
+              <div className="text-[14px]">Time: Between SS and MS is decimal ( . ) not colon ( : ) </div>
               <input
                 type="text"
                 placeholder="Complete Time (MM:SS.MS)"
@@ -193,29 +187,31 @@ export default function GameplaySubmission() {
                 <option>Raven</option>
               </select>
               {/* <div>Optional Full Entry Details</div> */}
+              <div className="text-[14px]">All core must be selected. ( EX: "Attack" for no attack core )</div>
               <input
-                className="input w-full rounded border-1 border-[#00ffaa]/50"
+                className="input w-full rounded"
                 placeholder="Core Boons"
                 name="cor"
                 value={sortCore(core.join(","))}
                 readOnly={true}
               />
               <input
-                className="input w-full rounded border-1 border-[#00ffaa]/50"
+                className="input w-full rounded"
                 placeholder="Hammer"
                 value={hammer.join(",")}
                 name="ham"
                 readOnly={true}
               />
               <input
-                className="input w-full rounded border-1 border-[#00ffaa]/50"
+                className="input w-full rounded"
                 placeholder="Other Boons"
                 value={boons.join(",")}
                 name="boon"
                 readOnly={true}
               />
+              <div className="text-[14px]">Must have 4 keepsakes, 1 per biome. ( Selection can be repeated )</div>
               <input
-                className="input w-full rounded border-1 border-[#00ffaa]/50"
+                className="input w-full rounded"
                 placeholder="Keepsakes"
                 value={keep.join(",")}
                 name="ks"
@@ -225,7 +221,7 @@ export default function GameplaySubmission() {
           </div>
           <div className="flex justify-center">
             <button
-              className="border-1 rounded text-[20px] px-2 py-1 w-[150px] cursor-pointer"
+              className="bg-[#131111a1] rounded text-[20px] px-2 py-1 w-[150px] cursor-pointer"
               type="submit"
               name="Submit"
             >
@@ -289,6 +285,7 @@ export default function GameplaySubmission() {
             </button>
           ))}
         </div>
+        <div className="text-[14px] px-4">To de-select a boon, click on the boon name above.</div>
         <div className="flex flex-wrap px-2 my-2 mb-10 select-none">
           {displayData.map((objs) => (
             <section className="flex flex-wrap gap-1 py-2">
@@ -315,7 +312,7 @@ export default function GameplaySubmission() {
                       className={`cursor-pointer flex items-center gap-2 rounded px-2 py-1 ${
                         core.includes(item) || hammer.includes(item) || boons.includes(item)
                           ? `bg-[#00ffaa] text-black`
-                          : `bg-[#28282bc0]`
+                          : `bg-[#131111a1]`
                       }`}
                       onClick={() => {
                         if (category === 0) {

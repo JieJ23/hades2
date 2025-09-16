@@ -19,7 +19,7 @@ export default function BarUW({ data }) {
 
   return (
     <div className="h-[300px] w-full max-w-[1200px] mx-auto px-2 text-[10px] font-[Ubuntu] mt-6">
-      <div className="text-[20px] font-[Ale]">Underworld Fear</div>
+      <div className="text-[20px] font-[Ale]">UW Fear</div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={highestArray}
@@ -42,7 +42,7 @@ export default function BarUW({ data }) {
           />
           <XAxis dataKey="num" stroke="#ffffff" angle={-45} textAnchor="end" interval={0} dy={5} />
           <YAxis stroke="#ffffff" domain={[0, 67]} />
-          <Bar dataKey="count" fill="#f18043" />
+          <Bar dataKey="count" fill="#00ffaa" />
         </BarChart>
       </ResponsiveContainer>
     </div>

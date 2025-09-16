@@ -113,7 +113,7 @@ export default function Ranking() {
                     <div
                       key={idx}
                       className={`flex items-center gap-2 px-2 relative py-1 hover:bg-[#00ffaa] hover:text-black ${
-                        select === item.nam ? `bg-[#46e7a1d0] text-black` : `bg-[#131111ae] text-gray-300`
+                        select === item.nam ? `bg-[#00ffaa] text-black` : `bg-[#131111a1] text-gray-300`
                       }`}
                     >
                       <img

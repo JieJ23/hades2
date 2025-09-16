@@ -42,7 +42,7 @@ export default function BarSurface({ data }) {
           />
           <XAxis dataKey="num" stroke="#ffffff" angle={-45} textAnchor="end" interval={0} dy={5} />
           <YAxis stroke="#ffffff" domain={[0, 67]} />
-          <Bar dataKey="count" fill="#fff200" />
+          <Bar dataKey="count" fill="#00ffaa" />
         </BarChart>
       </ResponsiveContainer>
     </div>

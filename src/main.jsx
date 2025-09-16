@@ -10,10 +10,7 @@ import FearCalculator from "./Page/FearCalculator.jsx";
 import ArcanaDeck from "./Page/ArcanaDeck.jsx";
 import GameplaySubmission from "./Page/GameplaySubmission.jsx";
 import Query from "./Page/Query.jsx";
-import MetaUpgradeEditor from "./Page/MetaUpgradeEditor.jsx";
 import { DataProvider } from "./Hook/DataFetch.jsx";
-
-import AnyFearSRC from "./Page/AnyFearSrc.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -27,8 +24,6 @@ createRoot(document.getElementById("root")).render(
           <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
           <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
           <Route path="/Query" element={<Query />} />
-          {/* <Route path="/MetaUpgradeEditor" element={<MetaUpgradeEditor />} /> */}
-          {/* <Route path="/AnyFearSRC" element={<AnyFearSRC />} /> */}
         </Routes>
       </Router>
     </DataProvider>
