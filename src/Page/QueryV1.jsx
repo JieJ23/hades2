@@ -16,8 +16,11 @@ import {
   oathMatch,
   vowMatch,
   parseTimetoms,
-  getYTid,
-  getBilibiliid,
+  // getYTid,
+  // getBilibiliid,
+  biomeS,
+  biomeU,
+  getOlympusCore,
 } from "../Data/Misc";
 import { orderMap, orderMap2, findValue, findValue2, handleLoadMore, findGUIcard } from "../App";
 import { p9boons } from "../Data/P9BoonObj";
@@ -234,7 +237,6 @@ export default function QueryV1() {
                 Reset Selection
               </button>
             </div>
-
             <div className="w-full max-w-[1000px] bg-[#28282b98] text-white overflow-hidden p-2 truncate text-[12px] rounded my-2">
               {shareableURL || "No URL Generated Yet"}
             </div>
@@ -396,7 +398,7 @@ export default function QueryV1() {
                 </div>
                 {player !== "" && (
                   <div
-                    className="px-2 py-1 rounded bg-[#f18043] text-black cursor-pointer"
+                    className="px-2 py-1 rounded bg-[#28282b] text-white cursor-pointer"
                     onClick={() => setPlayer(``)}
                   >
                     Player: {player}
@@ -404,66 +406,68 @@ export default function QueryV1() {
                 )}
               </div>
             )}
-            {asp.length > 0 && (
-              <div className="flex flex-wrap gap-0.5 my-1 text-[10px] md:text-[11px]">
-                {asp.map((ite) => (
-                  <div
-                    className="bg-[white] text-black px-2 py-0.5 rounded cursor-pointer hover:scale-[95%] hover:bg-[#00ffaa] duration-75 ease-in"
-                    onClick={() => {
-                      setShow(20);
-                      setAsp((prev) => prev.filter((item) => item !== ite));
-                    }}
-                  >
-                    {idaspect[ite]}
-                  </div>
-                ))}
-              </div>
-            )}
-            {has.length > 0 && (
-              <div className="flex flex-wrap gap-0.5 my-1 text-[10px] md:text-[11px]">
-                {has.map((ite) => (
-                  <div
-                    className="bg-[white] text-black px-2 py-0.5 rounded cursor-pointer hover:scale-[95%] hover:bg-[#00ffaa] duration-75 ease-in"
-                    onClick={() => {
-                      setShow(20);
-                      setHas((prev) => prev.filter((item) => item !== ite));
-                    }}
-                  >
-                    {idboon[ite]}
-                  </div>
-                ))}
-              </div>
-            )}
-            {vow.length > 0 && (
-              <div className="flex flex-wrap gap-0.5 my-1 text-[10px] md:text-[11px]">
-                {vow.map((ite) => (
-                  <div
-                    className="bg-[white] text-black px-2 py-0.5 rounded cursor-pointer hover:scale-[95%] hover:bg-[#b300ff] duration-75 ease-in"
-                    onClick={() => {
-                      setShow(20);
-                      setVow((prev) => prev.filter((item) => item !== ite));
-                    }}
-                  >
-                    {idvow[ite]}
-                  </div>
-                ))}
-              </div>
-            )}
-            {arc.length > 0 && (
-              <div className="flex flex-wrap gap-0.5 my-1 text-[10px] md:text-[11px]">
-                {arc.map((ite) => (
-                  <div
-                    className="bg-[white] text-black px-2 py-0.5 rounded cursor-pointer hover:scale-[95%] hover:bg-[#b300ff] duration-75 ease-in"
-                    onClick={() => {
-                      setShow(20);
-                      setArc((prev) => prev.filter((item) => item !== ite));
-                    }}
-                  >
-                    {idarcana[ite]}
-                  </div>
-                ))}
-              </div>
-            )}
+            <div className="flex flex-wrap gap-0.5 my-1">
+              {asp.length > 0 && (
+                <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
+                  {asp.map((ite) => (
+                    <div
+                      className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
+                      onClick={() => {
+                        setShow(20);
+                        setAsp((prev) => prev.filter((item) => item !== ite));
+                      }}
+                    >
+                      {idaspect[ite]}
+                    </div>
+                  ))}
+                </div>
+              )}
+              {has.length > 0 && (
+                <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
+                  {has.map((ite) => (
+                    <div
+                      className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
+                      onClick={() => {
+                        setShow(20);
+                        setHas((prev) => prev.filter((item) => item !== ite));
+                      }}
+                    >
+                      {idboon[ite]}
+                    </div>
+                  ))}
+                </div>
+              )}
+              {vow.length > 0 && (
+                <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
+                  {vow.map((ite) => (
+                    <div
+                      className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
+                      onClick={() => {
+                        setShow(20);
+                        setVow((prev) => prev.filter((item) => item !== ite));
+                      }}
+                    >
+                      {idvow[ite]}
+                    </div>
+                  ))}
+                </div>
+              )}
+              {arc.length > 0 && (
+                <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
+                  {arc.map((ite) => (
+                    <div
+                      className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
+                      onClick={() => {
+                        setShow(20);
+                        setArc((prev) => prev.filter((item) => item !== ite));
+                      }}
+                    >
+                      {idarcana[ite]}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
             <div>
               Query: {displayData3.length}/{allEntries.length} |{" "}
               {((displayData3.length / allEntries.length) * 100).toFixed(2)}%
@@ -471,62 +475,73 @@ export default function QueryV1() {
             <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
               {displayData3.slice(0, show).map((obj, index) => (
                 <div
-                  className={`bg-[#131111a1] p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden rounded`}
+                  className={`bg-[#131111a1] p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden border-1 border-[#000000b1] rounded`}
                 >
                   <div className="absolute top-0 right-0 -z-10 h-full w-full">
                     <img src={`/Misc/${obj.loc}.webp`} alt="Region" className="h-full w-full object-cover object-top" />
-                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#00000050] via-[#000000d1] from-[#000000]" />
+                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#0000007a] via-[#000000c8] from-[#00000057]" />
                     <img
                       src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
                       alt="Aspect"
-                      className="absolute top-1/2 -translate-y-[50%] right-0 w-[90px] rounded mx-auto drop-shadow-[0_0_10px_purple]"
+                      className="absolute top-1/2 -translate-y-[50%] right-0 w-[75px] rounded mx-auto drop-shadow-[0_0_10px_purple]"
                       draggable={false}
                       loading="lazy"
                     />
                   </div>
-                  <div className="w-full">
-                    <div className="flex justify-between text-[12px] items-center px-1">
-                      <div className="text-[16px] flex gap-1 items-center">
-                        <div className="font-semibold text-[#f18043]">{obj.fea}</div>
-                        <div>{obj.nam}</div>
-                      </div>
-                      <div className="flex flex-wrap items-center justify-end gap-0.5 text-[9px] md:text-[10px] font-[Ubuntu]">
-                        {obj.src !== "" && (
-                          <Link
-                            className="flex items-center bg-[#fff] text-black ps-2 p-1"
-                            to={obj.src}
-                            target="_blank"
-                          >
-                            <div>{`Video`}</div>
-                            <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-                          </Link>
-                        )}
-                        {obj.arcana && (
-                          <Link
-                            to={obj.arcana}
-                            target="_blank"
-                            className="flex items-center justify-center bg-[#fff] text-black ps-2 p-1"
-                          >
-                            <span>Arcana</span>
-                            <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-                          </Link>
-                        )}
-                        {obj.oath && (
-                          <Link
-                            to={obj.oath}
-                            target="_blank"
-                            className="flex items-center justify-center bg-[#fff] text-black ps-2 p-1"
-                          >
-                            <span>Oath</span>
-                            <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-                          </Link>
-                        )}
-                        <div className="flex items-center bg-[#131111] text-white p-1">
-                          {new Date(obj.dat) > new Date("2025-07-23") ? `P11` : `P9/10`}
-                        </div>
-                        <div className="font-[Ubuntu]  flex items-center bg-[#131111] text-white  p-1">{obj.tim}</div>
-                      </div>
+                  {/* Content */}
+                  <div className="w-full lg:w-[400px] text-[14px] text-center my-auto">
+                    <div className="flex items-center lg:flex-col justify-between text-[#00ffaa] my-1">
+                      <div className="font-semibold text-[18px]">{obj.fea}</div>
+                      <div>{obj.nam}</div>
+                      <div>{obj.tim}</div>
                     </div>
+                    <div className="flex items-center lg:justify-center gap-0.5 text-[9px] font-[Ubuntu] my-1">
+                      {obj.src !== "" && (
+                        <Link
+                          className="flex items-center rounded bg-[#fff] text-black ps-2 p-1"
+                          to={obj.src}
+                          target="_blank"
+                        >
+                          <div>{`Video`}</div>
+                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                        </Link>
+                      )}
+                      {obj.arcana && (
+                        <Link
+                          to={obj.arcana}
+                          target="_blank"
+                          className="flex items-center rounded justify-center bg-[#fff] text-black ps-2 p-1"
+                        >
+                          <span>Arcana</span>
+                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                        </Link>
+                      )}
+                      {obj.oath && (
+                        <Link
+                          to={obj.oath}
+                          target="_blank"
+                          className="flex items-center rounded justify-center bg-[#fff] text-black ps-2 p-1"
+                        >
+                          <span>Oath</span>
+                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                  <div className="w-full">
+                    {obj.ks && (
+                      <div className="flex flex-wrap gap-0.5 rounded font-[Ubuntu] text-[10px]">
+                        {sToA(obj.ks).map((ite, index) => (
+                          <div className="px-2 py-1 bg-[#00000077] rounded flex items-center gap-1">
+                            <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
+                            <div>
+                              <div>{obj.loc === `Underworld` ? biomeU[index] : biomeS[index]}</div>
+                              <div>{ite}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                     <div className="flex items-center flex-wrap my-1 gap-0.5">
                       <div className="flex gap-0.5 rounded">
                         <div className="tooltip shrink-0">
@@ -556,18 +571,6 @@ export default function QueryV1() {
                                 <div className="text-[11px]">{p9boons[ite]}</div>
                               </div>
                               <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className="size-8" />
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                      {obj.ks && (
-                        <div className="flex gap-0.5 rounded">
-                          {sToA(obj.ks).map((ite, index) => (
-                            <div className="tooltip shrink-0">
-                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                                <div className="text-[11px]">{ite}</div>
-                              </div>
-                              <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
                             </div>
                           ))}
                         </div>
@@ -603,7 +606,7 @@ export default function QueryV1() {
                                 draggable={false}
                                 src={`/P9/${ite}.png`}
                                 alt="Core Boon"
-                                className={`size-6 md:size-7 rounded-full ${
+                                className={`size-6 rounded-full ${
                                   has.includes(boonid[boonCodex[ite]]) ? `border-[#00ffaa]` : `border-black`
                                 }`}
                               />
@@ -612,15 +615,27 @@ export default function QueryV1() {
                         </div>
                       </div>
                     )}
-                    <div className="text-[11px] ps-1 font-[Ubuntu] text-white my-1">{obj.des}</div>
-                    {obj.arcana && (
+                  </div>
+                  <div className="w-full mx-auto">
+                    <div className="text-[11px] font-[Ubuntu] text-white my-1">{obj.des}</div>
+                    <div className="flex gap-1 rounded my-1">
+                      {sToA(obj.cor).map((ite, index) => (
+                        <img
+                          draggable={false}
+                          src={`/Olympus/${getOlympusCore(ite.slice(0, 3))}.png`}
+                          alt="Olympians"
+                          className="size-7 bg-[#000000b1]"
+                        />
+                      ))}
+                    </div>
+                    {/* {obj.arcana && (
                       <div className="flex flex-wrap gap-0.5 text-[9px] md:text-[10px] font-[Ubuntu] my-0.5">
                         {deCodeArcana(obj.arcana)
                           .map((ite) => deckMatch[ite])
                           .map((ite) => (
                             <div
                               className={`px-1 py-0.5 ${
-                                arc.includes(arcanaid[ite]) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
+                                arc.includes(arcanaid[ite]) ? `bg-[#00ffaa] text-black` : `bg-[#000000b1]`
                               }`}
                             >
                               {ite}
@@ -637,7 +652,7 @@ export default function QueryV1() {
                               ite !== 0 && (
                                 <div
                                   className={`px-1 py-0.5 ${
-                                    vow.includes(vowid[vowMatch[index]]) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
+                                    vow.includes(vowid[vowMatch[index]]) ? `bg-[#00ffaa] text-black` : `bg-[#000000b1]`
                                   }  `}
                                 >
                                   {vowMatch[index]} {ite}
@@ -645,7 +660,7 @@ export default function QueryV1() {
                               )
                           )}
                       </div>
-                    )}
+                    )} */}
                   </div>
                 </div>
               ))}

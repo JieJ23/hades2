@@ -285,3 +285,31 @@ export function sortCore(raw) {
   const sortedItems = items.sort((a, b) => sortKey(a) - sortKey(b));
   return sortedItems.join(",");
 }
+
+export const biomeS = [`Ephyra`, `Thessaly`, `Olympus`, `Summit`];
+export const biomeU = [`Erebus`, `Oceanus`, `Fields`, `Tartarus`];
+
+export const getOlympusCore = (core) => {
+  switch (core) {
+    case `Aph`:
+      return `Aphrodite`;
+    case `Apo`:
+      return `Apollo`;
+    case `Are`:
+      return `Ares`;
+    case `Dem`:
+      return `Demeter`;
+    case `Hep`:
+      return `Hephaestus`;
+    case `Her`:
+      return `Hera`;
+    case `Hes`:
+      return `Hestia`;
+    case `Pos`:
+      return `Poseidon`;
+    case `Zeu`:
+      return `Zeus`;
+    default:
+      return `blank`;
+  }
+};

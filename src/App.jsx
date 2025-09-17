@@ -153,14 +153,14 @@ export default function App() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 my-2">
               {fulldata_ArrArrObject.map((arr, oi) => (
                 <div
-                  className={`rounded px-2 py-1 relative border-1 border-black/40 hover:border-[#00ffaa] duration-200 ease-in transition-colors ${
+                  className={`rounded px-2 py-1 relative border-1 border-[#000000a1] hover:border-[#00ffaa] duration-200 ease-in transition-colors ${
                     arr[0].fea >= 62 ? `bg-[#141537a6]` : `bg-[#131111a1]`
                   }`}
                 >
                   <img
                     src={`/GUI_Card/c${findGUIcard(h2AspectOrder[oi])}.png`}
                     alt="Aspect"
-                    className="absolute w-auto h-full top-1/2 left-1/2 -z-10 opacity-40 -translate-x-[50%] -translate-y-[50%]"
+                    className="absolute w-auto h-full top-1/2 left-1/2 -z-10 opacity-50 -translate-x-[50%] -translate-y-[50%]"
                   />
                   <div className="grid grid-cols-3 text-center text-white" key={oi}>
                     <div className="text-start text-[#ffa200]">{h2AspectOrder[oi]}</div>
