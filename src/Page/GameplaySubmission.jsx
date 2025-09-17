@@ -33,10 +33,10 @@ import {
   bStaff,
   bSuit,
   bTorch,
-  bChaos,
-  bSelene,
+  // bChaos,
+  // bSelene,
   bElemental,
-  bTalent,
+  // bTalent,
   bKeep,
 } from "../Data/Boon1";
 import { useState } from "react";
@@ -58,11 +58,11 @@ function swapKV(obj) {
 }
 
 const coreboons = [bAttack, bSpecial, bCast, bSprint, bMagick];
-const gods = [bAphrodite, bApollo, bAres, bDemeter, bHephaestus, bHera, bHestia, bPoseidon, bZeus];
+// const gods = [bAphrodite, bApollo, bAres, bDemeter, bHephaestus, bHera, bHestia, bPoseidon, bZeus];
 const Unseen = [bArtemis, bAthena, bCirce, bDionysus, bEcho, bHades, bHermes, bIcarus, bMedea, bNarcissus];
 const weapons = [bAxe, bDagger, bLob, bStaff, bSuit, bTorch];
 const misc = [bDuo, bElemental];
-const other = [bChaos, bSelene, bTalent];
+// const other = [bChaos, bSelene, bTalent];
 const keepsakes = [bKeep];
 
 export default function GameplaySubmission() {
@@ -78,6 +78,17 @@ export default function GameplaySubmission() {
 
     const formEle = e.target;
     const formDatab = new FormData(formEle);
+
+    const minutes = parseInt(formDatab.get("min"), 10);
+    const seconds = parseInt(formDatab.get("sec"), 10);
+    const milliseconds = parseInt(formDatab.get("mls"), 10);
+
+    // Combine into a single .tim value in milliseconds
+    const tim = `${minutes}:${seconds}.${milliseconds}`;
+
+    // Add the .tim value to formData
+    formDatab.append("tim", tim);
+
     setLoading(true);
 
     try {
@@ -171,14 +182,39 @@ export default function GameplaySubmission() {
               </div>
               <input type="text" placeholder="Arcana Shareable URL" className="input w-full rounded" name="arcana" />
               <input type="text" placeholder="Fear Shareable URL" className="input w-full rounded" name="oath" />
-              <div className="text-[14px]">Time: Between SS and MS is decimal ( . ) not colon ( : ) </div>
-              <input
-                type="text"
-                placeholder="Complete Time (MM:SS.MS)"
-                className="input w-full rounded"
-                name="tim"
-                required
-              />
+              <div className="text-[14px]">Completion Time: Minutes / Seconds / Milliseconds </div>
+              <div className="flex gap-2">
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  placeholder="Minutes"
+                  className="input w-full rounded"
+                  name="min"
+                  onInput={(e) => (e.target.value = e.target.value.slice(0, 2))}
+                  required
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="59"
+                  placeholder="Seconds"
+                  className="input w-full rounded"
+                  name="sec"
+                  onInput={(e) => (e.target.value = e.target.value.slice(0, 2))}
+                  required
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  placeholder="Milliseconds"
+                  className="input w-full rounded"
+                  name="mls"
+                  onInput={(e) => (e.target.value = e.target.value.slice(0, 2))}
+                  required
+                />
+              </div>
               <select defaultValue="Frog" className="select select-neutral w-full rounded" required name="fam">
                 <option>Frog</option>
                 <option>Cat</option>

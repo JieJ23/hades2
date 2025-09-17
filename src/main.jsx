@@ -10,6 +10,7 @@ import FearCalculator from "./Page/FearCalculator.jsx";
 import ArcanaDeck from "./Page/ArcanaDeck.jsx";
 import GameplaySubmission from "./Page/GameplaySubmission.jsx";
 import Query from "./Page/Query.jsx";
+import QueryV1 from "./Page/QueryV1.jsx";
 import { DataProvider } from "./Hook/DataFetch.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -24,6 +25,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
           <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
           <Route path="/Query" element={<Query />} />
+          <Route path="/QueryV1" element={<QueryV1 />} />
         </Routes>
       </Router>
     </DataProvider>
