@@ -47,11 +47,16 @@ export default function Query() {
   const [shareableURL, setShareableURL] = useState("");
   const [show, setShow] = useState(20);
   const { posts, loader } = useData();
+  const [speed, setSpeed] = useState(false);
 
   const allEntries = [...p9data, ...p11data, ...(posts || [])].sort((a, b) => {
-    const feaDiff = +b.fea - +a.fea;
-    if (feaDiff !== 0) return feaDiff;
-    return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+    if (speed) {
+      return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+    } else {
+      const feaDiff = +b.fea - +a.fea;
+      if (feaDiff !== 0) return feaDiff;
+      return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+    }
   });
 
   const allPlayers = [...new Set([...p9data, ...p11data, ...posts].map((obj) => obj.nam))].sort((a, b) =>
@@ -350,6 +355,19 @@ export default function Query() {
                   <option value={ite}>{ite}</option>
                 ))}
               </select>
+              <select
+                className="select select-sm border-[yellow] w-[120px] focus:outline-0 rounded"
+                value={speed.toString()}
+                onChange={(e) => {
+                  setSpeed(e.target.value === "true");
+                }}
+              >
+                <option value={"false"} disabled={true}>
+                  Speed
+                </option>
+                <option value={"false"}>{`False`}</option>
+                <option value={"true"}>{`True`}</option>
+              </select>
             </div>
             <div className="my-2 flex gap-2 relative">
               <input
@@ -404,6 +422,7 @@ export default function Query() {
                 )}
               </div>
             )}
+
             {asp.length > 0 && (
               <div className="flex flex-wrap gap-0.5 my-1 text-[10px] md:text-[11px]">
                 {asp.map((ite) => (
