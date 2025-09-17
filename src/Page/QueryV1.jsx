@@ -475,15 +475,15 @@ export default function QueryV1() {
             <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
               {displayData3.slice(0, show).map((obj, index) => (
                 <div
-                  className={`bg-[#131111a1] p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden border-1 border-[#000000b1] rounded`}
+                  className={`bg-[#131111a1] p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden border-1 border-[#000000] rounded`}
                 >
                   <div className="absolute top-0 right-0 -z-10 h-full w-full">
                     <img src={`/Misc/${obj.loc}.webp`} alt="Region" className="h-full w-full object-cover object-top" />
-                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#0000007a] via-[#000000c8] from-[#00000057]" />
+                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#0000003d] via-[#000000a6] from-[#000000b0]" />
                     <img
                       src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
                       alt="Aspect"
-                      className="absolute top-1/2 -translate-y-[50%] right-0 w-[75px] rounded mx-auto drop-shadow-[0_0_10px_purple]"
+                      className="absolute top-1/2 -translate-y-[50%] right-2 w-[100px] lg:w-[75px] rounded mx-auto drop-shadow-[0_0_10px_white]"
                       draggable={false}
                       loading="lazy"
                     />
@@ -617,7 +617,12 @@ export default function QueryV1() {
                     )}
                   </div>
                   <div className="w-full mx-auto">
-                    <div className="text-[11px] font-[Ubuntu] text-white my-1">{obj.des}</div>
+                    <div className="text-[11px] font-[Ubuntu] text-gray-300 my-1">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ab dolores perferendis possimus
+                      optio! Magnam, molestiae vitae aperiam fugit tenetur fugiat error. Impedit tenetur ad architecto
+                      ex eius soluta et eos eveniet dicta, laborum quisquam magni, veniam aliquid, dolorem quos rem
+                      recusandae maiores perspiciatis? Dicta quia facere tenetur a assumenda?
+                    </div>
                     <div className="flex gap-1 rounded my-1">
                       {sToA(obj.cor).map((ite, index) => (
                         <img
