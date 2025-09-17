@@ -58,7 +58,7 @@ function swapKV(obj) {
 }
 
 const coreboons = [bAttack, bSpecial, bCast, bSprint, bMagick];
-// const gods = [bAphrodite, bApollo, bAres, bDemeter, bHephaestus, bHera, bHestia, bPoseidon, bZeus];
+const gods = [bAphrodite, bApollo, bAres, bDemeter, bHephaestus, bHera, bHestia, bPoseidon, bZeus];
 const Unseen = [bArtemis, bAthena, bCirce, bDionysus, bEcho, bHades, bHermes, bIcarus, bMedea, bNarcissus];
 const weapons = [bAxe, bDagger, bLob, bStaff, bSuit, bTorch];
 const misc = [bDuo, bElemental];
@@ -114,8 +114,8 @@ export default function GameplaySubmission() {
     }
   }
 
-  const allCategory = [coreboons, weapons, Unseen, misc, keepsakes];
-  const allCategoryTitle = [`Core`, `Weapons`, `Unseen`, `Duo & Elemental`, `Keepsakes`];
+  const allCategory = [coreboons, weapons, gods, Unseen, misc, keepsakes];
+  const allCategoryTitle = [`Core`, `Weapons`, `Olympians`, `Unseen`, `Duo & Elemental`, `Keepsakes`];
 
   const displayData = allCategory[category];
 
@@ -325,7 +325,7 @@ export default function GameplaySubmission() {
         <div className="flex flex-wrap px-2 my-2 mb-10 select-none">
           {displayData.map((objs) => (
             <section className="flex flex-wrap gap-1 py-2">
-              {category === 4
+              {category === 5
                 ? objs.map((item) => (
                     <div
                       className={`cursor-pointer flex items-center gap-2 rounded px-2 py-1 ${
