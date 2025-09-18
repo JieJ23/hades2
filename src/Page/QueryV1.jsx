@@ -502,7 +502,7 @@ export default function QueryV1() {
                 >
                   <div className="absolute top-0 right-0 -z-10 h-full w-full">
                     <img src={`/Misc/${obj.loc}.webp`} alt="Region" className="h-full w-full object-cover object-top" />
-                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#000000b1] via-[#2938bb77] from-[#000000b1]" />
+                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#000000b1] via-[#5725a289] from-[#000000b1]" />
                     <img
                       src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
                       alt="Aspect"
@@ -650,7 +650,8 @@ export default function QueryV1() {
                         />
                       ))}
                     </div>
-                    <div className="text-[11px] font-[Ubuntu] text-gray-300 my-1">{obj.des}</div>
+                    <div className="text-[12px] text-gray-300 my-0.5">{obj.des}</div>
+                    <div className="text-gray-300 my-0.5">{obj.dat}</div>
                     {/* {obj.arcana && (
                       <div className="flex flex-wrap gap-0.5 text-[9px] md:text-[10px] font-[Ubuntu] my-0.5">
                         {deCodeArcana(obj.arcana)
