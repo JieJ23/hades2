@@ -8,7 +8,7 @@ export const sites = [
   { icon: `EA`, link: `EALadder`, nam: `EA Ladder` },
   { icon: `EA`, link: `EAQuery`, nam: `EA Query` },
   { icon: `EA`, link: `EARanking`, nam: `EA Ranking` },
-  { icon: `EA`, link: `EAStats`, nam: `EA Stats` },
+  { icon: `EA`, link: `EAStat`, nam: `EA Stats` },
 
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
