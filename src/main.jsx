@@ -10,7 +10,7 @@ import QueryV1 from "./Page/QueryV1.jsx";
 import EALadder from "./Page/EALadder.jsx";
 import EAQuery from "./Page/EAQuery.jsx";
 import EARanking from "./Page/EARanking.jsx";
-import EAStats from "./Page/EAStats.jsx";
+import EAStat from "./Page/EAStat.jsx";
 
 import FearCalculator from "./Page/FearCalculator.jsx";
 import ArcanaDeck from "./Page/ArcanaDeck.jsx";
@@ -28,7 +28,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/QueryV1" element={<QueryV1 />} />
 
           <Route path="/EALadder" element={<EALadder />} />
-          <Route path="/EAStats" element={<EAStats />} />
+          <Route path="/EAStat" element={<EAStat />} />
           <Route path="/EARanking" element={<EARanking />} />
           <Route path="/EAQuery" element={<EAQuery />} />
 

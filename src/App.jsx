@@ -74,45 +74,49 @@ export default function App() {
             <div className="relative z-40 mt-20 px-4 rounded p-1 font-[Ubuntu] text-[11px] md:text-[12px]">
               <div className="chat chat-start">
                 <div className="chat-header">Zagreus</div>
-                <div className="chat-bubble bg-[white] text-black">So, sis, how's it going fighting Grandpa Time?</div>
+                <div className="chat-bubble bg-[white]/70 text-black">
+                  So, sis, how's it going fighting Grandpa Time?
+                </div>
               </div>
               <div className="chat chat-end">
                 <div className="chat-header">Melinoë</div>
-                <div className="chat-bubble bg-[#00ffaa] text-black">
+                <div className="chat-bubble bg-[#00ffaa]/70 text-black">
                   Imagine trying to punch a clock... but the clock punches back.
                 </div>
               </div>
               <div className="chat chat-start">
                 <div className="chat-header">Chronos</div>
-                <div className="chat-bubble bg-[white] text-black">Respect your elders, child. I invented bedtime.</div>
+                <div className="chat-bubble bg-[white]/70 text-black">
+                  Respect your elders, child. I invented bedtime.
+                </div>
               </div>
               <div className="chat chat-start">
                 <div className="chat-header">Zagreus</div>
-                <div className="chat-bubble bg-[white] text-black">
+                <div className="chat-bubble bg-[white]/70 text-black">
                   Pretty sure Dad invented bedtime. He keeps grounding me there.
                 </div>
               </div>
               <div className="chat chat-end">
                 <div className="chat-header">Melinoë</div>
-                <div className="chat-bubble bg-[#00ffaa] text-black">
+                <div className="chat-bubble bg-[#00ffaa]/70 text-black">
                   At least you get a bed. I've been camping in witch covens.
                 </div>
               </div>
               <div className="chat chat-start">
                 <div className="chat-header">Chronos</div>
-                <div className="chat-bubble bg-[white] text-black">
+                <div className="chat-bubble bg-[white]/70 text-black">
                   When I'm done, none of you will have time for beds.
                 </div>
               </div>
               <div className="chat chat-start">
                 <div className="chat-header">Zagreus</div>
-                <div className="chat-bubble bg-[white] text-black">
+                <div className="chat-bubble bg-[white]/70 text-black">
                   Oh wow, he made a dad joke. That's how you know he's losing.
                 </div>
               </div>
               <div className="chat chat-end">
                 <div className="chat-header">Melinoë</div>
-                <div className="chat-bubble bg-[#00ffaa] text-black">
+                <div className="chat-bubble bg-[#00ffaa]/70 text-black">
                   😂 Someone screenshot this before he rewinds it.
                 </div>
               </div>
