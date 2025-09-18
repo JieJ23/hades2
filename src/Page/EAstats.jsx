@@ -24,7 +24,7 @@ const getHighestOfEachAspect = (order, data) => {
   });
 };
 
-export default function EAstats() {
+export default function EAStats() {
   const { posts, loader } = useData();
 
   const highfear = [...p11data, ...(posts || []), ...p9data].sort(

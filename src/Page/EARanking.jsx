@@ -2,8 +2,7 @@ import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import { p9data } from "../Data/P9Data";
 import { p11data } from "../Data/P11Data";
-import { findGUIcard } from "../App";
-import { parseTimetoms } from "../Data/Misc";
+import { parseTimetoms, findGUIcard } from "../Data/Misc";
 import { useState } from "react";
 import Footer from "../Comp/Footer";
 import { weaponStaff, weaponAxe, weaponBlades, weaponCoat, weaponFlames, weaponSkull } from "../Data/Misc";
@@ -21,7 +20,7 @@ const weaponType = [
 
 const weaponCategory = [weaponStaff, weaponAxe, weaponBlades, weaponFlames, weaponSkull, weaponCoat];
 
-export default function Ranking() {
+export default function EARanking() {
   const [select, setSelect] = useState(null);
   const [selectAspect, setSelectAspect] = useState(null);
   const { posts, loader } = useData();

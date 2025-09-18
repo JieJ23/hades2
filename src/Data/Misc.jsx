@@ -1,3 +1,17 @@
+import { bOrder, boonCodexr } from "./Boon2";
+import { allP9, p9boons_reverse } from "./P9BoonObj";
+
+export const orderMap = new Map(allP9.map((item, index) => [item, index]));
+export const orderMap2 = new Map(bOrder.map((item, index) => [item, index]));
+export const findValue = (arr) => {
+  const finalized = arr.map((ite) => p9boons_reverse[ite]);
+  return finalized;
+};
+export const findValue2 = (arr) => {
+  const finalized = arr.map((ite) => boonCodexr[ite]);
+  return finalized;
+};
+
 export const h2AspectOrder = [
   `Melinoe Staff`,
   `Circe`,
@@ -312,4 +326,27 @@ export const getOlympusCore = (core) => {
     default:
       return `blank`;
   }
+};
+
+export const findGUIcard = (asp) => {
+  switch (asp) {
+    case `Anubis`:
+      return `Melinoe Staff`;
+    case `Morrigan`:
+      return `Melinoe Blades`;
+    case `Nergal`:
+      return `Melinoe Axe`;
+    case `Hel`:
+      return `Melinoe Skull`;
+    case `Shiva`:
+      return `Melinoe Coat`;
+    case `Supay`:
+      return `Melinoe Flames`;
+    default:
+      return asp;
+  }
+};
+
+export const handleLoadMore = (updater) => {
+  updater((prev) => prev + 50);
 };

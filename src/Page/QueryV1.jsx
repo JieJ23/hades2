@@ -21,8 +21,13 @@ import {
   biomeS,
   biomeU,
   getOlympusCore,
+  findGUIcard,
+  handleLoadMore,
+  orderMap,
+  orderMap2,
+  findValue,
+  findValue2,
 } from "../Data/Misc";
-import { orderMap, orderMap2, findValue, findValue2, handleLoadMore, findGUIcard } from "../App";
 import { p9boons } from "../Data/P9BoonObj";
 
 import { boonCodex, bOrder, bHamDuoEleOrder } from "../Data/Boon2";

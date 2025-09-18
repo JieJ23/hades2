@@ -18,8 +18,12 @@ import {
   parseTimetoms,
   getYTid,
   getBilibiliid,
+  handleLoadMore,
+  orderMap,
+  orderMap2,
+  findValue,
+  findValue2,
 } from "../Data/Misc";
-import { orderMap, orderMap2, findValue, findValue2, handleLoadMore, findGUIcard } from "../App";
 import { p9boons } from "../Data/P9BoonObj";
 
 import { boonCodex, bOrder, bHamDuoEleOrder } from "../Data/Boon2";
@@ -33,7 +37,7 @@ import { arcanaid, idarcana } from "../Data/Arcana1";
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
 
-export default function Query() {
+export default function EAQuery() {
   const [asp, setAsp] = useState([]);
   const [reg, setReg] = useState(`Region`);
   const [minmax, setMinMax] = useState([1, 67]);
@@ -658,26 +662,6 @@ export default function Query() {
                       </div>
                     )}
                   </div>
-                  {/* <div className="flex flex-col justify-center sm:w-[80px]">
-                    <div className="hidden sm:block">
-                      <img
-                        src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
-                        alt="Aspect"
-                        className="w-full rounded"
-                        draggable={false}
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="hidden sm:block">
-                      <img
-                        src={`/GUI_Card/${obj.fam}.png`}
-                        alt="Familiar"
-                        className="w-full rounded"
-                        draggable={false}
-                        loading="lazy"
-                      />
-                    </div>
-                  </div> */}
                   <div className="w-full sm:max-w-[300px] lg:max-w-[350px] px-2 sm:px-0">
                     {obj.src.includes(`youtu`) ? (
                       <div className="rounded aspect-video overflow-hidden w-full h-full">

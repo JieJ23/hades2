@@ -2,14 +2,17 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 export const sites = [
+  { icon: `Home`, link: ``, nam: `Home` },
   // { icon: `Query`, link: `QueryV1`, nam: `Query` },
-  { icon: `EA`, link: ``, nam: `EA Ladder` },
-  { icon: `EA`, link: `Query`, nam: `EA Query` },
-  { icon: `EA`, link: `Ranking`, nam: `EA Ranking` },
-  { icon: `EA`, link: `EAstats`, nam: `EA Stats` },
+
+  { icon: `EA`, link: `EALadder`, nam: `EA Ladder` },
+  { icon: `EA`, link: `EAQuery`, nam: `EA Query` },
+  { icon: `EA`, link: `EARanking`, nam: `EA Ranking` },
+  { icon: `EA`, link: `EAStats`, nam: `EA Stats` },
+
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },
-  { icon: `Submit`, link: `GameplaySubmission`, nam: `Submission` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
+  { icon: `Submit`, link: `GameplaySubmission`, nam: `Submission` },
 ];
 
 export default function SideNav() {
