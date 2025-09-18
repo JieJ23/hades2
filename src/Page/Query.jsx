@@ -356,7 +356,7 @@ export default function Query() {
                 ))}
               </select>
               <select
-                className="select select-sm border-[yellow] w-[120px] focus:outline-0 rounded"
+                className="select select-sm w-[120px] focus:outline-0 rounded"
                 value={speed.toString()}
                 onChange={(e) => {
                   setSpeed(e.target.value === "true");

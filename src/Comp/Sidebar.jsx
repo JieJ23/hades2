@@ -2,15 +2,14 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 export const sites = [
-  { icon: `Ladder`, link: ``, nam: `Ladder` },
-  { icon: `Query`, link: `Query`, nam: `Query` },
-  { icon: `Melinoe`, link: `Ranking`, nam: `Ranking` },
-  { icon: `Stats`, link: `EAstats`, nam: `EA Stats` },
-  { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
+  // { icon: `Query`, link: `QueryV1`, nam: `Query` },
+  { icon: `EA`, link: ``, nam: `EA Ladder` },
+  { icon: `EA`, link: `Query`, nam: `EA Query` },
+  { icon: `EA`, link: `Ranking`, nam: `EA Ranking` },
+  { icon: `EA`, link: `EAstats`, nam: `EA Stats` },
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },
-  // { icon: `Editor`, link: `MetaUpgradeEditor`, nam: `Oath Editor` },
-  // { icon: `Ladder`, link: `AnyFearSRC`, nam: `Any Fear SRC` },
   { icon: `Submit`, link: `GameplaySubmission`, nam: `Submission` },
+  { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
 ];
 
 export default function SideNav() {

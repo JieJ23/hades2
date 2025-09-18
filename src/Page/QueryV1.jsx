@@ -358,7 +358,7 @@ export default function QueryV1() {
                 ))}
               </select>
               <select
-                className="select select-sm border-[yellow] w-[120px] focus:outline-0 rounded"
+                className="select select-sm w-[120px] focus:outline-0 rounded"
                 value={speed.toString()}
                 onChange={(e) => {
                   setSpeed(e.target.value === "true");
@@ -493,11 +493,11 @@ export default function QueryV1() {
             <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
               {displayData3.slice(0, show).map((obj, index) => (
                 <div
-                  className={`bg-[#131111a1] p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden border-1 border-[#000000] rounded`}
+                  className={`bg-[#131111a1] p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden border-1 border-[#000000] rounded shadow-[0_0_20px_black]`}
                 >
                   <div className="absolute top-0 right-0 -z-10 h-full w-full">
                     <img src={`/Misc/${obj.loc}.webp`} alt="Region" className="h-full w-full object-cover object-top" />
-                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#0000003d] via-[#000000a6] from-[#000000b0]" />
+                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#000000b1] via-[#2938bb77] from-[#000000b1]" />
                     <img
                       src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
                       alt="Aspect"
@@ -550,7 +550,7 @@ export default function QueryV1() {
                     {obj.ks && (
                       <div className="flex flex-wrap gap-0.5 rounded font-[Ubuntu] text-[10px]">
                         {sToA(obj.ks).map((ite, index) => (
-                          <div className="px-2 py-1 bg-[#00000077] rounded flex items-center gap-1">
+                          <div className="px-2 py-1 bg-[#00000099] rounded flex items-center gap-1">
                             <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
                             <div>
                               <div>{obj.loc === `Underworld` ? biomeU[index] : biomeS[index]}</div>
@@ -635,22 +635,17 @@ export default function QueryV1() {
                     )}
                   </div>
                   <div className="w-full mx-auto">
-                    <div className="text-[11px] font-[Ubuntu] text-gray-300 my-1">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ab dolores perferendis possimus
-                      optio! Magnam, molestiae vitae aperiam fugit tenetur fugiat error. Impedit tenetur ad architecto
-                      ex eius soluta et eos eveniet dicta, laborum quisquam magni, veniam aliquid, dolorem quos rem
-                      recusandae maiores perspiciatis? Dicta quia facere tenetur a assumenda?
-                    </div>
                     <div className="flex gap-1 rounded my-1">
                       {sToA(obj.cor).map((ite, index) => (
                         <img
                           draggable={false}
                           src={`/Olympus/${getOlympusCore(ite.slice(0, 3))}.png`}
                           alt="Olympians"
-                          className="size-7 bg-[#000000b1]"
+                          className="size-7 bg-[#00000099] rounded"
                         />
                       ))}
                     </div>
+                    <div className="text-[11px] font-[Ubuntu] text-gray-300 my-1">{obj.des}</div>
                     {/* {obj.arcana && (
                       <div className="flex flex-wrap gap-0.5 text-[9px] md:text-[10px] font-[Ubuntu] my-0.5">
                         {deCodeArcana(obj.arcana)
