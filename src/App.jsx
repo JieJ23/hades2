@@ -5,6 +5,17 @@ import Footer from "./Comp/Footer";
 import { useState, useEffect } from "react";
 
 const targetDate = new Date("September 25, 2025 00:00:00").getTime();
+
+const row1 = ["Q", "W", "E", "R", "T", "Y", "U", "Z", "A", "Z"];
+const row2 = ["P", "L", "K", "J", "H", "G", "A", "S", "A", "D"];
+const row3 = ["M", "N", "B", "V", "C", "X", "G", "G", "F", "H"];
+const row4 = ["T", "Y", "U", "I", "O", "R", "R", "Q", "W", "P"];
+const row5 = ["E", "D", "S", "A", "F", "E", "E", "Z", "X", "C"];
+const row6 = ["C", "V", "B", "N", "U", "L", "K", "J", "H", "G"];
+const row7 = ["H", "G", "F", "S", "D", "S", "P", "O", "I", "T"];
+const row8 = ["Q", "W", "E", "R", "T", "Y", "I", "O", "P", "L"];
+const row9 = ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Z"];
+const row10 = ["Z", "X", "C", "V", "B", "N", "M", "Q", "W", "E"];
 //
 export default function App() {
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
@@ -57,74 +68,87 @@ export default function App() {
               <span>Seconds</span>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="w-full flex justify-center">
-        <div className="mockup-phone border-[#131111]">
-          <div className="mockup-phone-camera text-[14px] font-[Ale] flex items-center justify-center">
-            <div>House of Chill</div>
+          <div className="mt-10 mb-2 text-[14px] flex gap-4">
+            <div>8 5</div>
+            <div>23 9 12 12</div>
+            <div>2 5</div>
+            <div>2 1 3 11</div>
           </div>
-          <div className="mockup-phone-display relative px-4">
-            <img
-              alt="wallpaper"
-              src="/Misc/world.webp"
-              className="absolute top-0 left-0 h-full w-full object-cover object-center"
-            />
-            <div className="absolute top-0 left-0 h-full w-full bg-[#000000a1]" />
-            <div className="relative z-40 mt-20 px-4 rounded p-1 font-[Ubuntu] text-[11px] md:text-[12px]">
-              <div className="chat chat-start">
-                <div className="chat-header">Zagreus</div>
-                <div className="chat-bubble bg-[white]/70 text-black">
-                  So, sis, how's it going fighting Grandpa Time?
+          <div className="mb-10 w-full max-w-[700px] text-[11px] md:text-[14px]">
+            <div className="grid grid-cols-10 gap-0.5 my-0.5">
+              {row1.map((ite) => (
+                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
+                  {ite}
                 </div>
-              </div>
-              <div className="chat chat-end">
-                <div className="chat-header">Melinoë</div>
-                <div className="chat-bubble bg-[#00ffaa]/70 text-black">
-                  Imagine trying to punch a clock... but the clock punches back.
+              ))}
+            </div>
+            <div className="grid grid-cols-10 gap-0.5 my-0.5">
+              {row2.map((ite) => (
+                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
+                  {ite}
                 </div>
-              </div>
-              <div className="chat chat-start">
-                <div className="chat-header">Chronos</div>
-                <div className="chat-bubble bg-[white]/70 text-black">
-                  Respect your elders, child. I invented bedtime.
+              ))}
+            </div>
+            <div className="grid grid-cols-10 gap-0.5 my-0.5">
+              {row3.map((ite) => (
+                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
+                  {ite}
                 </div>
-              </div>
-              <div className="chat chat-start">
-                <div className="chat-header">Zagreus</div>
-                <div className="chat-bubble bg-[white]/70 text-black">
-                  Pretty sure Dad invented bedtime. He keeps grounding me there.
+              ))}
+            </div>
+            <div className="grid grid-cols-10 gap-0.5 my-0.5">
+              {row4.map((ite) => (
+                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
+                  {ite}
                 </div>
-              </div>
-              <div className="chat chat-end">
-                <div className="chat-header">Melinoë</div>
-                <div className="chat-bubble bg-[#00ffaa]/70 text-black">
-                  At least you get a bed. I've been camping in witch covens.
+              ))}
+            </div>
+            <div className="grid grid-cols-10 gap-0.5 my-0.5">
+              {row5.map((ite) => (
+                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
+                  {ite}
                 </div>
-              </div>
-              <div className="chat chat-start">
-                <div className="chat-header">Chronos</div>
-                <div className="chat-bubble bg-[white]/70 text-black">
-                  When I'm done, none of you will have time for beds.
+              ))}
+            </div>
+            <div className="grid grid-cols-10 gap-0.5 my-0.5">
+              {row6.map((ite) => (
+                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
+                  {ite}
                 </div>
-              </div>
-              <div className="chat chat-start">
-                <div className="chat-header">Zagreus</div>
-                <div className="chat-bubble bg-[white]/70 text-black">
-                  Oh wow, he made a dad joke. That's how you know he's losing.
+              ))}
+            </div>
+            <div className="grid grid-cols-10 gap-0.5 my-0.5">
+              {row7.map((ite) => (
+                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
+                  {ite}
                 </div>
-              </div>
-              <div className="chat chat-end">
-                <div className="chat-header">Melinoë</div>
-                <div className="chat-bubble bg-[#00ffaa]/70 text-black">
-                  😂 Someone screenshot this before he rewinds it.
+              ))}
+            </div>
+            <div className="grid grid-cols-10 gap-0.5 my-0.5">
+              {row8.map((ite) => (
+                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
+                  {ite}
                 </div>
-              </div>
-              <div className="text-center mt-10">Chronos has left the chat.</div>
+              ))}
+            </div>
+            <div className="grid grid-cols-10 gap-0.5 my-0.5">
+              {row9.map((ite) => (
+                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
+                  {ite}
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-10 gap-0.5 my-0.5">
+              {row10.map((ite) => (
+                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
+                  {ite}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
+
       <Footer />
     </main>
   );
