@@ -80,8 +80,8 @@ export default function GameplaySubmission() {
     const formDatab = new FormData(formEle);
 
     const minutes = parseInt(formDatab.get("min"), 10);
-    const seconds = parseInt(formDatab.get("sec"), 10);
-    const milliseconds = parseInt(formDatab.get("mls"), 10);
+    const seconds = parseInt(formDatab.get("sec"), 10).toString().padStart(2, "0");
+    const milliseconds = parseInt(formDatab.get("mls"), 10).toString().padStart(2, "0");
 
     // Combine into a single .tim value in milliseconds
     const tim = `${minutes}:${seconds}.${milliseconds}`;
