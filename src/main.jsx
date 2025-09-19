@@ -16,27 +16,27 @@ import FearCalculator from "./Page/FearCalculator.jsx";
 import ArcanaDeck from "./Page/ArcanaDeck.jsx";
 import GameplaySubmission from "./Page/GameplaySubmission.jsx";
 
-import { DataProvider } from "./Hook/DataFetch.jsx";
+// import { DataProvider } from "./Hook/DataFetch.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <DataProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<App />} />
+    {/* <DataProvider> */}
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />} />
 
-          <Route path="/QueryV1" element={<QueryV1 />} />
+        <Route path="/QueryV1" element={<QueryV1 />} />
 
-          <Route path="/EALadder" element={<EALadder />} />
-          <Route path="/EAStat" element={<EAStat />} />
-          <Route path="/EARanking" element={<EARanking />} />
-          <Route path="/EAQuery" element={<EAQuery />} />
+        <Route path="/EALadder" element={<EALadder />} />
+        <Route path="/EAStat" element={<EAStat />} />
+        <Route path="/EARanking" element={<EARanking />} />
+        <Route path="/EAQuery" element={<EAQuery />} />
 
-          <Route path="/FearCalculator" element={<FearCalculator />} />
-          <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
-          <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
-        </Routes>
-      </Router>
-    </DataProvider>
+        <Route path="/FearCalculator" element={<FearCalculator />} />
+        <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
+        <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
+      </Routes>
+    </Router>
+    {/* </DataProvider> */}
   </StrictMode>
 );

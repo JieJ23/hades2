@@ -37,8 +37,8 @@ import { allVows } from "../Data/FearTrait";
 import { vowid, idvow } from "../Data/Vow1";
 import { arcanaid, idarcana } from "../Data/Arcana1";
 
-import { useData } from "../Hook/DataFetch";
-import Loading from "../Hook/Loading";
+// import { useData } from "../Hook/DataFetch";
+// import Loading from "../Hook/Loading";
 
 export default function QueryV1() {
   const [asp, setAsp] = useState([]);
@@ -53,10 +53,10 @@ export default function QueryV1() {
   const [isCopied, setIsCopied] = useState(false);
   const [shareableURL, setShareableURL] = useState("");
   const [show, setShow] = useState(20);
-  const { posts, loader } = useData();
+  // const { posts, loader } = useData();
   const [speed, setSpeed] = useState(false);
 
-  const allEntries = [...v1data, ...(posts || [])].sort((a, b) => {
+  const allEntries = [...v1data].sort((a, b) => {
     if (speed) {
       return parseTimetoms(a.tim) - parseTimetoms(b.tim);
     } else {
@@ -66,7 +66,7 @@ export default function QueryV1() {
     }
   });
 
-  const allPlayers = [...new Set([v1data, ...posts].map((obj) => obj.nam))].sort((a, b) =>
+  const allPlayers = [...new Set([v1data].map((obj) => obj.nam))].sort((a, b) =>
     a.toLowerCase().localeCompare(b.toLowerCase())
   );
 
@@ -220,438 +220,435 @@ export default function QueryV1() {
       <Background />
       <div className="max-w-[1200px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-1 overflow-hidden">
         <SideNav />
-        {loader ? (
+        {/* {loader ? (
           <Loading />
-        ) : (
-          <>
-            <div className="flex flex-wrap gap-1 pt-2">
-              <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={generateShareableURL}>
-                Generate URL
-              </button>
-              <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={copyURLToClipboard}>
-                {isCopied ? "Copied!" : "Copy URL"}
-              </button>
-              <button
-                className="bg-white cursor-pointer text-black rounded px-2 py-1"
-                onClick={() => {
-                  setAsp([]);
-                  setReg(`Region`);
-                  setMinMax([1, 67]);
-                  setHas([]);
-                  setVow([]);
-                  setArc([]);
-                  setPlayer("Player");
-                }}
-              >
-                Reset Selection
-              </button>
-            </div>
-            <div className="w-full max-w-[1000px] bg-[#28282b98] text-white overflow-hidden p-2 truncate text-[12px] rounded my-2">
-              {shareableURL || "No URL Generated Yet"}
-            </div>
-            <div className="my-2 flex flex-wrap gap-1">
-              <input
-                type="number"
-                className="input input-sm w-[60px] focus:outline-0 rounded"
-                value={minmax[0]}
-                min={1}
-                max={67}
-                onChange={(e) => {
-                  setShow(20);
-                  const newMin = +e.target.value; // Clamp 50-67
-                  setMinMax([newMin, minmax[1]]);
-                }}
-              />
-              <input
-                type="number"
-                className="input input-sm w-[60px] focus:outline-0 rounded"
-                value={minmax[1]}
-                min={1}
-                max={67}
-                onChange={(e) => {
-                  setShow(20);
-                  const newMax = +e.target.value; // Clamp 50-67
-                  setMinMax([minmax[0], newMax]);
-                }}
-              />
-              <select
-                className="select select-sm w-[120px] focus:outline-0 rounded"
-                defaultValue={`Region`}
-                onChange={(e) => {
-                  setShow(20);
-                  setReg(e.target.value);
-                }}
-              >
-                <option value={`Region`}>Region</option>
-                <option value={`Surface`}>Surface</option>
-                <option value={`Underworld`}>Underworld</option>
-              </select>
-              <select
-                className="select select-sm w-[120px] focus:outline-0 rounded"
-                defaultValue={`All`}
-                onChange={(e) => {
-                  setShow(20);
-                  setAsp((prev) => {
-                    if (!prev.includes(aspectid[e.target.value])) {
-                      return [...prev, aspectid[e.target.value]];
-                    }
-                    return prev;
-                  });
-                }}
-              >
-                <option value={`All`} disabled={true}>
-                  All
-                </option>
-                {h2AspectOrder.map((ite, index) => (
-                  <option value={ite}>{ite}</option>
-                ))}
-              </select>
-              <select
-                className="select select-sm w-[120px] focus:outline-0 rounded"
-                defaultValue={`Vows`}
-                onChange={(e) => {
-                  setShow(20);
-                  setVow((prev) => {
-                    if (!prev.includes(vowid[e.target.value])) {
-                      return [...prev, vowid[e.target.value]];
-                    }
-                    return prev;
-                  });
-                }}
-              >
-                <option value={`Vows`} disabled={true}>
-                  Vows
-                </option>
-                {allVows.map((ite, index) => (
-                  <option value={ite}>{ite}</option>
-                ))}
-              </select>
-              <select
-                className="select select-sm w-[120px] focus:outline-0 rounded"
-                defaultValue={`Arcana`}
-                onChange={(e) => {
-                  setShow(20);
-                  setArc((prev) => {
-                    if (!prev.includes(arcanaid[e.target.value])) {
-                      return [...prev, arcanaid[e.target.value]];
-                    }
-                    return prev;
-                  });
-                }}
-              >
-                <option value={`Arcana`} disabled={true}>
-                  Arcana
-                </option>
-                {Object.values(deckMatch).map((ite, index) => (
-                  <option value={ite}>{ite}</option>
-                ))}
-              </select>
-              <select
-                className="select select-sm w-[120px] focus:outline-0 rounded"
-                defaultValue={`Player`}
-                onChange={(e) => {
-                  setShow(20);
-                  setPlayer(e.target.value);
-                }}
-              >
-                <option value={`Player`} disabled={true}>
-                  Player
-                </option>
-                {allPlayers.map((ite, index) => (
-                  <option value={ite}>{ite}</option>
-                ))}
-              </select>
-              <select
-                className="select select-sm w-[120px] focus:outline-0 rounded"
-                value={speed.toString()}
-                onChange={(e) => {
-                  setSpeed(e.target.value === "true");
-                }}
-              >
-                <option value={"false"} disabled={true}>
-                  Speed
-                </option>
-                <option value={"false"}>{`False`}</option>
-                <option value={"true"}>{`True`}</option>
-              </select>
-            </div>
-            <div className="my-2 flex gap-2 relative">
-              <input
-                type="text"
-                placeholder="Search Boons"
-                className="input input-sm w-[200px] focus:outline-0 rounded"
-                value={query}
-                onChange={(e) => {
-                  setShow(20);
-                  setQuery(e.target.value);
-                  setIsOpen(true);
-                }}
-                onFocus={() => setIsOpen(true)}
-                onBlur={() => setTimeout(() => setIsOpen(false), 100)} // allow click
-              />
-              {isOpen && query.length >= 3 && (
-                <ul className="absolute top-full left-0 w-[200px] bg-[black] border-1 border-white/20 rounded -mt-0.5  z-40 overflow-y-auto">
-                  {filteredBoons.length > 0 ? (
-                    filteredBoons.map((boon, index) => (
-                      <li
-                        className="px-3 py-1 hover:bg-base-200 cursor-pointer flex items-center gap-1"
-                        onMouseDown={() => {
-                          if (!has.includes(boonid[boon])) {
-                            setHas((prev) => [...prev, boonid[boon]]);
-                          }
-                          setQuery("");
-                          setIsOpen(false);
-                        }}
-                      >
-                        {boon}
-                      </li>
-                    ))
-                  ) : (
-                    <li className="px-3 py-1 text-gray-500">No matches</li>
-                  )}
-                </ul>
+        ) : ( */}
+        <>
+          <div className="flex flex-wrap gap-1 pt-2">
+            <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={generateShareableURL}>
+              Generate URL
+            </button>
+            <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={copyURLToClipboard}>
+              {isCopied ? "Copied!" : "Copy URL"}
+            </button>
+            <button
+              className="bg-white cursor-pointer text-black rounded px-2 py-1"
+              onClick={() => {
+                setAsp([]);
+                setReg(`Region`);
+                setMinMax([1, 67]);
+                setHas([]);
+                setVow([]);
+                setArc([]);
+                setPlayer("Player");
+              }}
+            >
+              Reset Selection
+            </button>
+          </div>
+          <div className="w-full max-w-[1000px] bg-[#28282b98] text-white overflow-hidden p-2 truncate text-[12px] rounded my-2">
+            {shareableURL || "No URL Generated Yet"}
+          </div>
+          <div className="my-2 flex flex-wrap gap-1">
+            <input
+              type="number"
+              className="input input-sm w-[60px] focus:outline-0 rounded"
+              value={minmax[0]}
+              min={1}
+              max={67}
+              onChange={(e) => {
+                setShow(20);
+                const newMin = +e.target.value; // Clamp 50-67
+                setMinMax([newMin, minmax[1]]);
+              }}
+            />
+            <input
+              type="number"
+              className="input input-sm w-[60px] focus:outline-0 rounded"
+              value={minmax[1]}
+              min={1}
+              max={67}
+              onChange={(e) => {
+                setShow(20);
+                const newMax = +e.target.value; // Clamp 50-67
+                setMinMax([minmax[0], newMax]);
+              }}
+            />
+            <select
+              className="select select-sm w-[120px] focus:outline-0 rounded"
+              defaultValue={`Region`}
+              onChange={(e) => {
+                setShow(20);
+                setReg(e.target.value);
+              }}
+            >
+              <option value={`Region`}>Region</option>
+              <option value={`Surface`}>Surface</option>
+              <option value={`Underworld`}>Underworld</option>
+            </select>
+            <select
+              className="select select-sm w-[120px] focus:outline-0 rounded"
+              defaultValue={`All`}
+              onChange={(e) => {
+                setShow(20);
+                setAsp((prev) => {
+                  if (!prev.includes(aspectid[e.target.value])) {
+                    return [...prev, aspectid[e.target.value]];
+                  }
+                  return prev;
+                });
+              }}
+            >
+              <option value={`All`} disabled={true}>
+                All
+              </option>
+              {h2AspectOrder.map((ite, index) => (
+                <option value={ite}>{ite}</option>
+              ))}
+            </select>
+            <select
+              className="select select-sm w-[120px] focus:outline-0 rounded"
+              defaultValue={`Vows`}
+              onChange={(e) => {
+                setShow(20);
+                setVow((prev) => {
+                  if (!prev.includes(vowid[e.target.value])) {
+                    return [...prev, vowid[e.target.value]];
+                  }
+                  return prev;
+                });
+              }}
+            >
+              <option value={`Vows`} disabled={true}>
+                Vows
+              </option>
+              {allVows.map((ite, index) => (
+                <option value={ite}>{ite}</option>
+              ))}
+            </select>
+            <select
+              className="select select-sm w-[120px] focus:outline-0 rounded"
+              defaultValue={`Arcana`}
+              onChange={(e) => {
+                setShow(20);
+                setArc((prev) => {
+                  if (!prev.includes(arcanaid[e.target.value])) {
+                    return [...prev, arcanaid[e.target.value]];
+                  }
+                  return prev;
+                });
+              }}
+            >
+              <option value={`Arcana`} disabled={true}>
+                Arcana
+              </option>
+              {Object.values(deckMatch).map((ite, index) => (
+                <option value={ite}>{ite}</option>
+              ))}
+            </select>
+            <select
+              className="select select-sm w-[120px] focus:outline-0 rounded"
+              defaultValue={`Player`}
+              onChange={(e) => {
+                setShow(20);
+                setPlayer(e.target.value);
+              }}
+            >
+              <option value={`Player`} disabled={true}>
+                Player
+              </option>
+              {allPlayers.map((ite, index) => (
+                <option value={ite}>{ite}</option>
+              ))}
+            </select>
+            <select
+              className="select select-sm w-[120px] focus:outline-0 rounded"
+              value={speed.toString()}
+              onChange={(e) => {
+                setSpeed(e.target.value === "true");
+              }}
+            >
+              <option value={"false"} disabled={true}>
+                Speed
+              </option>
+              <option value={"false"}>{`False`}</option>
+              <option value={"true"}>{`True`}</option>
+            </select>
+          </div>
+          <div className="my-2 flex gap-2 relative">
+            <input
+              type="text"
+              placeholder="Search Boons"
+              className="input input-sm w-[200px] focus:outline-0 rounded"
+              value={query}
+              onChange={(e) => {
+                setShow(20);
+                setQuery(e.target.value);
+                setIsOpen(true);
+              }}
+              onFocus={() => setIsOpen(true)}
+              onBlur={() => setTimeout(() => setIsOpen(false), 100)} // allow click
+            />
+            {isOpen && query.length >= 3 && (
+              <ul className="absolute top-full left-0 w-[200px] bg-[black] border-1 border-white/20 rounded -mt-0.5  z-40 overflow-y-auto">
+                {filteredBoons.length > 0 ? (
+                  filteredBoons.map((boon, index) => (
+                    <li
+                      className="px-3 py-1 hover:bg-base-200 cursor-pointer flex items-center gap-1"
+                      onMouseDown={() => {
+                        if (!has.includes(boonid[boon])) {
+                          setHas((prev) => [...prev, boonid[boon]]);
+                        }
+                        setQuery("");
+                        setIsOpen(false);
+                      }}
+                    >
+                      {boon}
+                    </li>
+                  ))
+                ) : (
+                  <li className="px-3 py-1 text-gray-500">No matches</li>
+                )}
+              </ul>
+            )}
+          </div>
+          {reg && (
+            <div className="flex flex-wrap text-[10px] md:text-[11px] my-1 gap-1">
+              <div className="px-2 py-1 rounded bg-white text-black">Region: {reg === `Region` ? `All` : reg}</div>
+              <div className="px-2 py-1 rounded bg-white text-black">
+                Fear Range: {minmax[0]} - {minmax[1]}
+              </div>
+              {player !== "" && (
+                <div className="px-2 py-1 rounded bg-[#28282b] text-white cursor-pointer" onClick={() => setPlayer(``)}>
+                  Player: {player}
+                </div>
               )}
             </div>
-            {reg && (
-              <div className="flex flex-wrap text-[10px] md:text-[11px] my-1 gap-1">
-                <div className="px-2 py-1 rounded bg-white text-black">Region: {reg === `Region` ? `All` : reg}</div>
-                <div className="px-2 py-1 rounded bg-white text-black">
-                  Fear Range: {minmax[0]} - {minmax[1]}
-                </div>
-                {player !== "" && (
+          )}
+          <div className="flex flex-wrap gap-0.5 my-1">
+            {asp.length > 0 && (
+              <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
+                {asp.map((ite) => (
                   <div
-                    className="px-2 py-1 rounded bg-[#28282b] text-white cursor-pointer"
-                    onClick={() => setPlayer(``)}
+                    className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
+                    onClick={() => {
+                      setShow(20);
+                      setAsp((prev) => prev.filter((item) => item !== ite));
+                    }}
                   >
-                    Player: {player}
+                    {idaspect[ite]}
                   </div>
-                )}
+                ))}
               </div>
             )}
-            <div className="flex flex-wrap gap-0.5 my-1">
-              {asp.length > 0 && (
-                <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
-                  {asp.map((ite) => (
-                    <div
-                      className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
-                      onClick={() => {
-                        setShow(20);
-                        setAsp((prev) => prev.filter((item) => item !== ite));
-                      }}
-                    >
-                      {idaspect[ite]}
-                    </div>
-                  ))}
-                </div>
-              )}
-              {has.length > 0 && (
-                <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
-                  {has.map((ite) => (
-                    <div
-                      className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
-                      onClick={() => {
-                        setShow(20);
-                        setHas((prev) => prev.filter((item) => item !== ite));
-                      }}
-                    >
-                      {idboon[ite]}
-                    </div>
-                  ))}
-                </div>
-              )}
-              {vow.length > 0 && (
-                <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
-                  {vow.map((ite) => (
-                    <div
-                      className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
-                      onClick={() => {
-                        setShow(20);
-                        setVow((prev) => prev.filter((item) => item !== ite));
-                      }}
-                    >
-                      {idvow[ite]}
-                    </div>
-                  ))}
-                </div>
-              )}
-              {arc.length > 0 && (
-                <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
-                  {arc.map((ite) => (
-                    <div
-                      className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
-                      onClick={() => {
-                        setShow(20);
-                        setArc((prev) => prev.filter((item) => item !== ite));
-                      }}
-                    >
-                      {idarcana[ite]}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-            <div>
-              Query: {displayData3.length}/{allEntries.length} |{" "}
-              {((displayData3.length / allEntries.length) * 100).toFixed(2)}%
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
-              {displayData3.slice(0, show).map((obj, index) => (
-                <div
-                  className={`bg-[#131111a1] p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden border-1 border-[#000000] rounded shadow-[0_0_20px_black]`}
-                >
-                  <div className="absolute top-0 right-0 -z-10 h-full w-full">
-                    <img src={`/Misc/${obj.loc}.webp`} alt="Region" className="h-full w-full object-cover object-top" />
-                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#000000b1] via-[#5725a289] from-[#000000b1]" />
-                    <img
-                      src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
-                      alt="Aspect"
-                      className="absolute top-1/2 -translate-y-[50%] right-2 w-[100px] lg:w-[75px] rounded mx-auto drop-shadow-[0_0_10px_white]"
-                      draggable={false}
-                      loading="lazy"
-                    />
+            {has.length > 0 && (
+              <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
+                {has.map((ite) => (
+                  <div
+                    className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
+                    onClick={() => {
+                      setShow(20);
+                      setHas((prev) => prev.filter((item) => item !== ite));
+                    }}
+                  >
+                    {idboon[ite]}
                   </div>
-                  {/* Content */}
-                  <div className="w-full lg:w-[400px] text-[14px] text-center my-auto">
-                    <div className="flex items-center lg:flex-col justify-between text-[#00ffaa] my-1">
-                      <div className="font-semibold text-[18px]">{obj.fea}</div>
-                      <div>{obj.nam}</div>
-                      <div>{obj.tim}</div>
-                    </div>
-                    <div className="flex items-center lg:justify-center gap-0.5 text-[9px] font-[Ubuntu] my-1">
-                      {obj.src !== "" && (
-                        <Link
-                          className="flex items-center rounded bg-[#fff] text-black ps-2 p-1"
-                          to={obj.src}
-                          target="_blank"
-                        >
-                          <div>{`Video`}</div>
-                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-                        </Link>
-                      )}
-                      {obj.arcana && (
-                        <Link
-                          to={obj.arcana}
-                          target="_blank"
-                          className="flex items-center rounded justify-center bg-[#fff] text-black ps-2 p-1"
-                        >
-                          <span>Arcana</span>
-                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-                        </Link>
-                      )}
-                      {obj.oath && (
-                        <Link
-                          to={obj.oath}
-                          target="_blank"
-                          className="flex items-center rounded justify-center bg-[#fff] text-black ps-2 p-1"
-                        >
-                          <span>Oath</span>
-                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-                        </Link>
-                      )}
-                    </div>
+                ))}
+              </div>
+            )}
+            {vow.length > 0 && (
+              <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
+                {vow.map((ite) => (
+                  <div
+                    className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
+                    onClick={() => {
+                      setShow(20);
+                      setVow((prev) => prev.filter((item) => item !== ite));
+                    }}
+                  >
+                    {idvow[ite]}
                   </div>
-                  <div className="w-full">
-                    {obj.ks && (
-                      <div className="flex flex-wrap gap-0.5 rounded font-[Ubuntu] text-[10px]">
-                        {sToA(obj.ks).map((ite, index) => (
-                          <div className="px-2 py-1 bg-[#00000099] rounded flex items-center gap-1">
-                            <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
-                            <div>
-                              <div>{obj.loc === `Underworld` ? biomeU[index] : biomeS[index]}</div>
-                              <div>{ite}</div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
+                ))}
+              </div>
+            )}
+            {arc.length > 0 && (
+              <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
+                {arc.map((ite) => (
+                  <div
+                    className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
+                    onClick={() => {
+                      setShow(20);
+                      setArc((prev) => prev.filter((item) => item !== ite));
+                    }}
+                  >
+                    {idarcana[ite]}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <div>
+            Query: {displayData3.length}/{allEntries.length} |{" "}
+            {((displayData3.length / allEntries.length) * 100).toFixed(2)}%
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
+            {displayData3.slice(0, show).map((obj, index) => (
+              <div
+                className={`bg-[#131111a1] p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden border-1 border-[#000000] rounded shadow-[0_0_20px_black]`}
+              >
+                <div className="absolute top-0 right-0 -z-10 h-full w-full">
+                  <img src={`/Misc/${obj.loc}.webp`} alt="Region" className="h-full w-full object-cover object-top" />
+                  <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#000000b1] via-[#5725a289] from-[#000000b1]" />
+                  <img
+                    src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
+                    alt="Aspect"
+                    className="absolute top-1/2 -translate-y-[50%] right-2 w-[100px] lg:w-[75px] rounded mx-auto drop-shadow-[0_0_10px_white]"
+                    draggable={false}
+                    loading="lazy"
+                  />
+                </div>
+                {/* Content */}
+                <div className="w-full lg:w-[400px] text-[14px] text-center my-auto">
+                  <div className="flex items-center lg:flex-col justify-between text-[#00ffaa] my-1">
+                    <div className="font-semibold text-[18px]">{obj.fea}</div>
+                    <div>{obj.nam}</div>
+                    <div>{obj.tim}</div>
+                  </div>
+                  <div className="flex items-center lg:justify-center gap-0.5 text-[9px] font-[Ubuntu] my-1">
+                    {obj.src !== "" && (
+                      <Link
+                        className="flex items-center rounded bg-[#fff] text-black ps-2 p-1"
+                        to={obj.src}
+                        target="_blank"
+                      >
+                        <div>{`Video`}</div>
+                        <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                      </Link>
                     )}
-                    <div className="flex items-center flex-wrap my-1 gap-0.5">
-                      <div className="flex gap-0.5 rounded">
-                        <div className="tooltip shrink-0">
-                          <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                            <div className="text-[11px]">{obj.asp}</div>
-                          </div>
-                          <img draggable={false} src={`/P9/${obj.asp}.png`} alt="Core Boon" className="size-8" />
-                        </div>
-                        <div className="tooltip shrink-0">
-                          <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                            <div className="text-[11px]">{obj.fam}</div>
-                          </div>
-                          <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Core Boon" className="size-8" />
-                        </div>
-                      </div>
-                      {obj.ham && (
-                        <div className="flex gap-0.5 rounded">
-                          {findValue(
-                            sToA(obj.ham).sort((a, b) => {
-                              const aIndex = orderMap.get(a) ?? Infinity;
-                              const bIndex = orderMap.get(b) ?? Infinity;
-                              return aIndex - bIndex;
-                            })
-                          ).map((ite, index) => (
-                            <div className="tooltip shrink-0">
-                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                                <div className="text-[11px]">{p9boons[ite]}</div>
-                              </div>
-                              <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className="size-8" />
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                    <div className="flex items-center flex-wrap my-1 gap-1">
-                      <div className="flex gap-0.5 rounded">
-                        {sToA(obj.cor).map((ite, index) => (
-                          <div className="tooltip shrink-0">
-                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                              <div className="text-[11px]">{ite}</div>
-                            </div>
-                            <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-8" />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    {obj.boon && (
-                      <div className="flex items-center flex-wrap my-1">
-                        <div className="flex flex-wrap gap-0.5 rounded">
-                          {findValue2(
-                            sToA(obj.boon).sort((a, b) => {
-                              const aIndex = orderMap2.get(a) ?? Infinity;
-                              const bIndex = orderMap2.get(b) ?? Infinity;
-                              return aIndex - bIndex;
-                            })
-                          ).map((ite, index) => (
-                            <div className="tooltip shrink-0">
-                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                                <div className="text-[11px]">{boonCodex[ite]}</div>
-                              </div>
-                              <img
-                                draggable={false}
-                                src={`/P9/${ite}.png`}
-                                alt="Core Boon"
-                                className={`size-6 rounded-full ${
-                                  has.includes(boonid[boonCodex[ite]]) ? `border-[#00ffaa]` : `border-black`
-                                }`}
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                    {obj.arcana && (
+                      <Link
+                        to={obj.arcana}
+                        target="_blank"
+                        className="flex items-center rounded justify-center bg-[#fff] text-black ps-2 p-1"
+                      >
+                        <span>Arcana</span>
+                        <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                      </Link>
+                    )}
+                    {obj.oath && (
+                      <Link
+                        to={obj.oath}
+                        target="_blank"
+                        className="flex items-center rounded justify-center bg-[#fff] text-black ps-2 p-1"
+                      >
+                        <span>Oath</span>
+                        <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                      </Link>
                     )}
                   </div>
-                  <div className="w-full mx-auto">
-                    <div className="flex gap-1 rounded my-1">
-                      {sToA(obj.cor).map((ite, index) => (
-                        <img
-                          draggable={false}
-                          src={`/Olympus/${getOlympusCore(ite.slice(0, 3))}.png`}
-                          alt="Olympians"
-                          className="size-7 bg-[#00000099] rounded"
-                        />
+                </div>
+                <div className="w-full">
+                  {obj.ks && (
+                    <div className="flex flex-wrap gap-0.5 rounded font-[Ubuntu] text-[10px]">
+                      {sToA(obj.ks).map((ite, index) => (
+                        <div className="px-2 py-1 bg-[#00000099] rounded flex items-center gap-1">
+                          <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
+                          <div>
+                            <div>{obj.loc === `Underworld` ? biomeU[index] : biomeS[index]}</div>
+                            <div>{ite}</div>
+                          </div>
+                        </div>
                       ))}
                     </div>
-                    <div className="text-[12px] text-gray-300 my-0.5">{obj.des}</div>
-                    <div className="text-gray-300 my-0.5">{obj.dat}</div>
-                    {/* {obj.arcana && (
+                  )}
+                  <div className="flex items-center flex-wrap my-1 gap-0.5">
+                    <div className="flex gap-0.5 rounded">
+                      <div className="tooltip shrink-0">
+                        <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                          <div className="text-[11px]">{obj.asp}</div>
+                        </div>
+                        <img draggable={false} src={`/P9/${obj.asp}.png`} alt="Core Boon" className="size-8" />
+                      </div>
+                      <div className="tooltip shrink-0">
+                        <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                          <div className="text-[11px]">{obj.fam}</div>
+                        </div>
+                        <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Core Boon" className="size-8" />
+                      </div>
+                    </div>
+                    {obj.ham && (
+                      <div className="flex gap-0.5 rounded">
+                        {findValue(
+                          sToA(obj.ham).sort((a, b) => {
+                            const aIndex = orderMap.get(a) ?? Infinity;
+                            const bIndex = orderMap.get(b) ?? Infinity;
+                            return aIndex - bIndex;
+                          })
+                        ).map((ite, index) => (
+                          <div className="tooltip shrink-0">
+                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                              <div className="text-[11px]">{p9boons[ite]}</div>
+                            </div>
+                            <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className="size-8" />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex items-center flex-wrap my-1 gap-1">
+                    <div className="flex gap-0.5 rounded">
+                      {sToA(obj.cor).map((ite, index) => (
+                        <div className="tooltip shrink-0">
+                          <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                            <div className="text-[11px]">{ite}</div>
+                          </div>
+                          <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-8" />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  {obj.boon && (
+                    <div className="flex items-center flex-wrap my-1">
+                      <div className="flex flex-wrap gap-0.5 rounded">
+                        {findValue2(
+                          sToA(obj.boon).sort((a, b) => {
+                            const aIndex = orderMap2.get(a) ?? Infinity;
+                            const bIndex = orderMap2.get(b) ?? Infinity;
+                            return aIndex - bIndex;
+                          })
+                        ).map((ite, index) => (
+                          <div className="tooltip shrink-0">
+                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                              <div className="text-[11px]">{boonCodex[ite]}</div>
+                            </div>
+                            <img
+                              draggable={false}
+                              src={`/P9/${ite}.png`}
+                              alt="Core Boon"
+                              className={`size-6 rounded-full ${
+                                has.includes(boonid[boonCodex[ite]]) ? `border-[#00ffaa]` : `border-black`
+                              }`}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="w-full mx-auto">
+                  <div className="flex gap-1 rounded my-1">
+                    {sToA(obj.cor).map((ite, index) => (
+                      <img
+                        draggable={false}
+                        src={`/Olympus/${getOlympusCore(ite.slice(0, 3))}.png`}
+                        alt="Olympians"
+                        className="size-7 bg-[#00000099] rounded"
+                      />
+                    ))}
+                  </div>
+                  <div className="text-[12px] text-gray-300 my-0.5">{obj.des}</div>
+                  <div className="text-gray-300 my-0.5">{obj.dat}</div>
+                  {/* {obj.arcana && (
                       <div className="flex flex-wrap gap-0.5 text-[9px] md:text-[10px] font-[Ubuntu] my-0.5">
                         {deCodeArcana(obj.arcana)
                           .map((ite) => deckMatch[ite])
@@ -684,32 +681,32 @@ export default function QueryV1() {
                           )}
                       </div>
                     )} */}
-                  </div>
                 </div>
-              ))}
-            </div>
-            <div className="flex justify-center my-4 gap-2">
-              {show < displayData3.length && (
-                <button
-                  className="px-2 py-1 rounded bg-white text-black cursor-pointer"
-                  onClick={() => handleLoadMore(setShow)}
-                >
-                  Show More
-                </button>
-              )}
-              {displayData3.length > 20 && (
-                <button
-                  className="px-2 py-1 rounded bg-white text-black cursor-pointer"
-                  onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                >
-                  Back Top
-                </button>
-              )}
-            </div>
-          </>
-        )}
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center my-4 gap-2">
+            {show < displayData3.length && (
+              <button
+                className="px-2 py-1 rounded bg-white text-black cursor-pointer"
+                onClick={() => handleLoadMore(setShow)}
+              >
+                Show More
+              </button>
+            )}
+            {displayData3.length > 20 && (
+              <button
+                className="px-2 py-1 rounded bg-white text-black cursor-pointer"
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                Back Top
+              </button>
+            )}
+          </div>
+        </>
+        {/* )} */}
       </div>
       <Footer />
     </main>

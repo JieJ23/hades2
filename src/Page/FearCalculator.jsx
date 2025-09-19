@@ -94,7 +94,7 @@ export default function FearCalculator() {
             </div>
           </section>
           <div className="flex flex-col lg:flex-row items-center lg:items-start py-1">
-            <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start">
+            <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start px-0.5">
               {allVows.map((ite, index) => (
                 <div
                   className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876ad] ${
