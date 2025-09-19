@@ -670,7 +670,8 @@ export default function EAQuery() {
                           alt="Gameplay Video"
                           className="h-full w-full border-1 rounded border-[#131111]"
                           loading="lazy"
-                          onClick={() => document.getElementById(`model${index}`).showModal()}
+                          // onClick={() => document.getElementById(`model${index}`).showModal()}
+                          draggable={false}
                         />
                         {/* <dialog id={`model${index}`} className="modal">
                           <div className="modal-box p-1 ms-4 aspect-video rounded bg-[#28282b] w-full max-w-[1000px]">
@@ -694,7 +695,8 @@ export default function EAQuery() {
                           alt="Thumbnails"
                           className="h-full w-full border-1 rounded border-[#131111]"
                           loading="lazy"
-                          onClick={() => document.getElementById(`model${index}`).showModal()}
+                          // onClick={() => document.getElementById(`model${index}`).showModal()}
+                          draggable={false}
                         />
                         {/* <dialog id={`model${index}`} className="modal">
                           <div className="modal-box p-1 aspect-video rounded bg-[#28282b] w-full max-w-[1000px]">
