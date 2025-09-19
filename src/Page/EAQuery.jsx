@@ -672,7 +672,7 @@ export default function EAQuery() {
                           loading="lazy"
                           onClick={() => document.getElementById(`model${index}`).showModal()}
                         />
-                        <dialog id={`model${index}`} className="modal">
+                        {/* <dialog id={`model${index}`} className="modal">
                           <div className="modal-box p-1 ms-4 aspect-video rounded bg-[#28282b] w-full max-w-[1000px]">
                             <iframe
                               src={`https://www.youtube.com/embed/${getYTid(obj.src)}`}
@@ -685,7 +685,7 @@ export default function EAQuery() {
                           <form method="dialog" className="modal-backdrop">
                             <button>close</button>
                           </form>
-                        </dialog>
+                        </dialog> */}
                       </div>
                     ) : obj.src.includes(`bilibil`) ? (
                       <div className="rounded aspect-video overflow-hidden w-full h-full">
@@ -696,7 +696,7 @@ export default function EAQuery() {
                           loading="lazy"
                           onClick={() => document.getElementById(`model${index}`).showModal()}
                         />
-                        <dialog id={`model${index}`} className="modal">
+                        {/* <dialog id={`model${index}`} className="modal">
                           <div className="modal-box p-1 aspect-video rounded bg-[#28282b] w-full max-w-[1000px]">
                             <iframe
                               src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(obj.src)}`}
@@ -708,7 +708,7 @@ export default function EAQuery() {
                           <form method="dialog" className="modal-backdrop">
                             <button>close</button>
                           </form>
-                        </dialog>
+                        </dialog> */}
                       </div>
                     ) : (
                       <div className="hidden md:block w-full h-full">
