@@ -168,7 +168,7 @@ export default function EAQuery() {
     addParamIfNotDefault("arc", arc);
     addParamIfNotDefault("player", player);
 
-    const newURL = `${window.location.origin}/Query/?${params.toString()}`;
+    const newURL = `${window.location.origin}/EAQuery/?${params.toString()}`;
     setShareableURL(newURL);
   };
   const copyURLToClipboard = () => {
