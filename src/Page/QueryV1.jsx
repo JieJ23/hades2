@@ -3,9 +3,8 @@ import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 import { Link } from "react-router-dom";
 
-import { p9data } from "../Data/P9Data";
-import { p11data } from "../Data/P11Data";
 import { useState, useEffect } from "react";
+import { v1data } from "../Data/V1data";
 
 import {
   h2AspectOrder,
@@ -57,7 +56,7 @@ export default function QueryV1() {
   const { posts, loader } = useData();
   const [speed, setSpeed] = useState(false);
 
-  const allEntries = [...p9data, ...p11data, ...(posts || [])].sort((a, b) => {
+  const allEntries = [...v1data, ...(posts || [])].sort((a, b) => {
     if (speed) {
       return parseTimetoms(a.tim) - parseTimetoms(b.tim);
     } else {
@@ -67,7 +66,7 @@ export default function QueryV1() {
     }
   });
 
-  const allPlayers = [...new Set([...p9data, ...p11data, ...posts].map((obj) => obj.nam))].sort((a, b) =>
+  const allPlayers = [...new Set([v1data, ...posts].map((obj) => obj.nam))].sort((a, b) =>
     a.toLowerCase().localeCompare(b.toLowerCase())
   );
 

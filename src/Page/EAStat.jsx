@@ -12,8 +12,6 @@ import BarUW from "../Comp/BarUW";
 import KeepData from "../Comp/KeepData";
 import Footer from "../Comp/Footer";
 import ArcanaData from "../Comp/ArcanaData";
-import { useData } from "../Hook/DataFetch";
-import Loading from "../Hook/Loading";
 
 const getHighestOfEachAspect = (order, data) => {
   return order.map((aspect) => {
@@ -25,11 +23,7 @@ const getHighestOfEachAspect = (order, data) => {
 };
 
 export default function EAStat() {
-  const { posts, loader } = useData();
-
-  const highfear = [...p11data, ...(posts || []), ...p9data].sort(
-    (a, b) => b.fea - a.fea || parseTimetoms(a.tim) - parseTimetoms(b.tim)
-  );
+  const highfear = [...p11data, ...p9data].sort((a, b) => b.fea - a.fea || parseTimetoms(a.tim) - parseTimetoms(b.tim));
 
   const underworld_runs = highfear.filter((obj) => obj.loc === "Underworld");
   const surface_runs = highfear.filter((obj) => obj.loc === "Surface");
@@ -38,24 +32,20 @@ export default function EAStat() {
     <main className="h-full min-h-lvh select-none relative">
       <Background />
       <SideNav />
-      {loader ? (
-        <Loading />
-      ) : (
-        <>
-          <BarFear data={highfear} />
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1400px] mx-auto my-4">
-            <BarSurface data={highfear} />
-            <BarUW data={highfear} />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1400px] mx-auto my-4">
-            <BarAspect data={underworld_runs} title={`UW`} />
-            <BarAspect data={surface_runs} title={`Surface`} />
-          </div>
-          <ArcanaData data={highfear} />
-          <KeepData data={highfear} />
-          <P11BoonData data={highfear} />
-        </>
-      )}
+      <>
+        <BarFear data={highfear} />
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1400px] mx-auto my-4">
+          <BarSurface data={highfear} />
+          <BarUW data={highfear} />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1400px] mx-auto my-4">
+          <BarAspect data={underworld_runs} title={`UW`} />
+          <BarAspect data={surface_runs} title={`Surface`} />
+        </div>
+        <ArcanaData data={highfear} />
+        <KeepData data={highfear} />
+        <P11BoonData data={highfear} />
+      </>
       <Footer />
     </main>
   );

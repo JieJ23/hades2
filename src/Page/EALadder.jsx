@@ -9,8 +9,6 @@ import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA, deCodeArcana, findGU
 
 import { p11data } from "../Data/P11Data";
 import { p9data } from "../Data/P9Data";
-import { useData } from "../Hook/DataFetch";
-import Loading from "../Hook/Loading";
 import { useState } from "react";
 
 //
@@ -26,12 +24,11 @@ export const findValue2 = (arr) => {
 };
 //
 export default function EALadder() {
-  const { posts, loader } = useData();
   const [location, setLocation] = useState(`Underworld`);
   const [category, setCategory] = useState(`Fear`);
   const [boon, setBoon] = useState(`Core`);
 
-  const fullData = [...p11data, ...p9data, ...(posts || [])];
+  const fullData = [...p11data, ...p9data];
   const regionData = fullData.filter((obj) => obj.loc === location);
   const fulldata_ArrArrObject = [];
 
@@ -54,190 +51,181 @@ export default function EALadder() {
       <Background />
       <div className="max-w-[1600px] font-[Ubuntu] text-[10px] md:text-[11px] mx-auto px-1">
         <SideNav />
-        {loader ? (
-          <Loading />
-        ) : (
-          <>
-            <div className="p-1 flex flex-wrap justify-center gap-1 my-2">
-              <button
-                className={`cursor-pointer rounded p-1 ${
-                  location === `Underworld` ? `bg-white text-black` : `bg-transparent text-white`
+        <>
+          <div className="p-1 flex flex-wrap justify-center gap-1 my-2">
+            <button
+              className={`cursor-pointer rounded p-1 ${
+                location === `Underworld` ? `bg-white text-black` : `bg-transparent text-white`
+              }`}
+              onClick={() => setLocation(`Underworld`)}
+            >
+              Underworld
+            </button>
+            <button
+              className={`cursor-pointer text-black rounded p-1 ${
+                location === `Surface` ? `bg-white text-black` : `bg-transparent text-white`
+              }`}
+              onClick={() => setLocation(`Surface`)}
+            >
+              Surface
+            </button>
+            <button
+              className={`cursor-pointer rounded p-1 ${
+                category === `Fear` ? `bg-white text-black` : `bg-transparent text-white`
+              }`}
+              onClick={() => setCategory(`Fear`)}
+            >
+              Fear
+            </button>
+            <button
+              className={`cursor-pointer text-black rounded p-1 ${
+                category === `Speed` ? `bg-white text-black` : `bg-transparent text-white`
+              }`}
+              onClick={() => setCategory(`Speed`)}
+            >
+              Speed
+            </button>
+            <button
+              className={`cursor-pointer rounded p-1 ${
+                boon === `Core` ? `bg-white text-black` : `bg-transparent text-white`
+              }`}
+              onClick={() => setBoon(`Core`)}
+            >
+              Core
+            </button>
+            <button
+              className={`cursor-pointer text-black rounded p-1 ${
+                boon === `Hammer` ? `bg-white text-black` : `bg-transparent text-white`
+              }`}
+              onClick={() => setBoon(`Hammer`)}
+            >
+              Hammer
+            </button>
+            <button
+              className={`cursor-pointer text-black rounded p-1 ${
+                boon === `Keep` ? `bg-white text-black` : `bg-transparent text-white`
+              }`}
+              onClick={() => setBoon(`Keep`)}
+            >
+              Keep
+            </button>
+            <button
+              className={`cursor-pointer text-black rounded p-1 ${
+                boon === `Arcana` ? `bg-white text-black` : `bg-transparent text-white`
+              }`}
+              onClick={() => setBoon(`Arcana`)}
+            >
+              Arcana
+            </button>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 my-2">
+            {fulldata_ArrArrObject.map((arr, oi) => (
+              <div
+                className={`rounded px-2 py-1 relative border-1 border-[#000000a1] hover:border-[#00ffaa] duration-200 ease-in transition-colors ${
+                  arr[0].fea >= 62 ? `bg-[#141537a6]` : `bg-[#131111a1]`
                 }`}
-                onClick={() => setLocation(`Underworld`)}
               >
-                Underworld
-              </button>
-              <button
-                className={`cursor-pointer text-black rounded p-1 ${
-                  location === `Surface` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
-                onClick={() => setLocation(`Surface`)}
-              >
-                Surface
-              </button>
-              <button
-                className={`cursor-pointer rounded p-1 ${
-                  category === `Fear` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
-                onClick={() => setCategory(`Fear`)}
-              >
-                Fear
-              </button>
-              <button
-                className={`cursor-pointer text-black rounded p-1 ${
-                  category === `Speed` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
-                onClick={() => setCategory(`Speed`)}
-              >
-                Speed
-              </button>
-              <button
-                className={`cursor-pointer rounded p-1 ${
-                  boon === `Core` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
-                onClick={() => setBoon(`Core`)}
-              >
-                Core
-              </button>
-              <button
-                className={`cursor-pointer text-black rounded p-1 ${
-                  boon === `Hammer` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
-                onClick={() => setBoon(`Hammer`)}
-              >
-                Hammer
-              </button>
-              <button
-                className={`cursor-pointer text-black rounded p-1 ${
-                  boon === `Keep` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
-                onClick={() => setBoon(`Keep`)}
-              >
-                Keep
-              </button>
-              <button
-                className={`cursor-pointer text-black rounded p-1 ${
-                  boon === `Arcana` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
-                onClick={() => setBoon(`Arcana`)}
-              >
-                Arcana
-              </button>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 my-2">
-              {fulldata_ArrArrObject.map((arr, oi) => (
-                <div
-                  className={`rounded px-2 py-1 relative border-1 border-[#000000a1] hover:border-[#00ffaa] duration-200 ease-in transition-colors ${
-                    arr[0].fea >= 62 ? `bg-[#141537a6]` : `bg-[#131111a1]`
-                  }`}
-                >
-                  <img
-                    src={`/GUI_Card/c${findGUIcard(h2AspectOrder[oi])}.png`}
-                    alt="Aspect"
-                    className="absolute w-auto h-full top-1/2 left-1/2 -z-10 opacity-50 -translate-x-[50%] -translate-y-[50%]"
-                  />
-                  <div className="grid grid-cols-3 text-center text-white" key={oi}>
-                    <div className="text-start text-[#ffa200]">{h2AspectOrder[oi]}</div>
-                    <div className="text-start text-[#ffa200]">
-                      {(arr.slice(0, 10).reduce((a, b) => a + +b.fea, 0) / (arr.slice(0, 10).length || 10)).toFixed(1)}
-                    </div>
-                    <div className="text-end text-[#ffa200]">
-                      {parsemstoTime(
-                        arr.slice(0, 10).reduce((a, b) => a + parseTimetoms(b.tim), 0) / (arr.slice(0, 10).length || 10)
+                <img
+                  src={`/GUI_Card/c${findGUIcard(h2AspectOrder[oi])}.png`}
+                  alt="Aspect"
+                  className="absolute w-auto h-full top-1/2 left-1/2 -z-10 opacity-50 -translate-x-[50%] -translate-y-[50%]"
+                />
+                <div className="grid grid-cols-3 text-center text-white" key={oi}>
+                  <div className="text-start text-[#ffa200]">{h2AspectOrder[oi]}</div>
+                  <div className="text-start text-[#ffa200]">
+                    {(arr.slice(0, 10).reduce((a, b) => a + +b.fea, 0) / (arr.slice(0, 10).length || 10)).toFixed(1)}
+                  </div>
+                  <div className="text-end text-[#ffa200]">
+                    {parsemstoTime(
+                      arr.slice(0, 10).reduce((a, b) => a + parseTimetoms(b.tim), 0) / (arr.slice(0, 10).length || 10)
+                    )}
+                  </div>
+                </div>
+                {arr.slice(0, 10).map((obj, index) => (
+                  <div
+                    className="grid grid-cols-4 text-center hover:bg-[#131111] hover:text-[#00ffaa] relative text-gray-300 items-center"
+                    key={index}
+                  >
+                    <div className="text-start line-clamp-1">{obj.nam}</div>
+                    <div>{obj.fea}</div>
+                    <div className="w-full flex">
+                      {boon === `Core` &&
+                        sToA(obj.cor).map((ite, index) => (
+                          <div className="tooltip shrink-0" key={index}>
+                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                              <div className="text-[11px]">{ite}</div>
+                            </div>
+                            <img
+                              draggable={false}
+                              src={`/H2Boons/${ite}.png`}
+                              alt="Core Boon"
+                              className="w-[20px] h-[20px]"
+                            />
+                          </div>
+                        ))}
+                      {boon === `Hammer` && obj.ham && (
+                        <div className="flex gap-0.5 rounded">
+                          <div className="tooltip shrink-0">
+                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                              <div className="text-[11px]">{obj.fam}</div>
+                            </div>
+                            <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Fam" className="w-[22px] h-[22px]" />
+                          </div>
+                          {findValue(
+                            sToA(obj.ham).sort((a, b) => {
+                              const aIndex = orderMap.get(a) ?? Infinity;
+                              const bIndex = orderMap.get(b) ?? Infinity;
+                              return aIndex - bIndex;
+                            })
+                          ).map((ite, index) => (
+                            <div className="tooltip shrink-0" key={index}>
+                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                                <div className="text-[11px]">{p9boons[ite]}</div>
+                              </div>
+                              <img
+                                draggable={false}
+                                src={`/P9/${ite}.png`}
+                                alt="Hammer"
+                                className="w-[22px] h-[22px]"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {boon === `Keep` &&
+                        obj.ks &&
+                        sToA(obj.ks).map((ite, index) => (
+                          <div className="tooltip shrink-0" key={index}>
+                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                              <div className="text-[11px]">{ite}</div>
+                            </div>
+                            <img
+                              draggable={false}
+                              src={`/buildgui/${ite}.png`}
+                              alt="Core Boon"
+                              className="w-[22px] h-[22px]"
+                            />
+                          </div>
+                        ))}
+                      {boon === `Arcana` && obj.arcana && (
+                        <div>
+                          {deCodeArcana(obj.arcana).includes(`c12`) ? (
+                            <div className="text-red-400">Death</div>
+                          ) : deCodeArcana(obj.arcana).includes(`c23`) ? (
+                            <div className="text-orange-200">Strength</div>
+                          ) : (
+                            ``
+                          )}
+                        </div>
                       )}
                     </div>
+                    <div className="text-end">{obj.tim}</div>
                   </div>
-                  {arr.slice(0, 10).map((obj, index) => (
-                    <div
-                      className="grid grid-cols-4 text-center hover:bg-[#131111] hover:text-[#00ffaa] relative text-gray-300 items-center"
-                      key={index}
-                    >
-                      <div className="text-start line-clamp-1">{obj.nam}</div>
-                      <div>{obj.fea}</div>
-                      <div className="w-full flex">
-                        {boon === `Core` &&
-                          sToA(obj.cor).map((ite, index) => (
-                            <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                                <div className="text-[11px]">{ite}</div>
-                              </div>
-                              <img
-                                draggable={false}
-                                src={`/H2Boons/${ite}.png`}
-                                alt="Core Boon"
-                                className="w-[20px] h-[20px]"
-                              />
-                            </div>
-                          ))}
-                        {boon === `Hammer` && obj.ham && (
-                          <div className="flex gap-0.5 rounded">
-                            <div className="tooltip shrink-0">
-                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                                <div className="text-[11px]">{obj.fam}</div>
-                              </div>
-                              <img
-                                draggable={false}
-                                src={`/P9/${obj.fam}.png`}
-                                alt="Fam"
-                                className="w-[22px] h-[22px]"
-                              />
-                            </div>
-                            {findValue(
-                              sToA(obj.ham).sort((a, b) => {
-                                const aIndex = orderMap.get(a) ?? Infinity;
-                                const bIndex = orderMap.get(b) ?? Infinity;
-                                return aIndex - bIndex;
-                              })
-                            ).map((ite, index) => (
-                              <div className="tooltip shrink-0" key={index}>
-                                <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                                  <div className="text-[11px]">{p9boons[ite]}</div>
-                                </div>
-                                <img
-                                  draggable={false}
-                                  src={`/P9/${ite}.png`}
-                                  alt="Hammer"
-                                  className="w-[22px] h-[22px]"
-                                />
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                        {boon === `Keep` &&
-                          obj.ks &&
-                          sToA(obj.ks).map((ite, index) => (
-                            <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                                <div className="text-[11px]">{ite}</div>
-                              </div>
-                              <img
-                                draggable={false}
-                                src={`/buildgui/${ite}.png`}
-                                alt="Core Boon"
-                                className="w-[22px] h-[22px]"
-                              />
-                            </div>
-                          ))}
-                        {boon === `Arcana` && obj.arcana && (
-                          <div>
-                            {deCodeArcana(obj.arcana).includes(`c12`) ? (
-                              <div className="text-red-400">Death</div>
-                            ) : deCodeArcana(obj.arcana).includes(`c23`) ? (
-                              <div className="text-orange-200">Strength</div>
-                            ) : (
-                              ``
-                            )}
-                          </div>
-                        )}
-                      </div>
-                      <div className="text-end">{obj.tim}</div>
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </>
-        )}
+                ))}
+              </div>
+            ))}
+          </div>
+        </>
       </div>
       <Footer />
     </main>
