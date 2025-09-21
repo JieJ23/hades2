@@ -146,7 +146,7 @@ export default function App() {
             {latest10videos.map((obj) => (
               <div
                 className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#00ffaaa1] ${
-                  obj.src === url ? `bg-[#00ffaa] text-black` : ``
+                  obj == url ? `bg-[#00ffaa] text-black` : ``
                 }`}
                 onClick={() => setURL(obj)}
               >
