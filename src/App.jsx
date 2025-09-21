@@ -75,15 +75,13 @@ export default function App() {
                 src={`https://www.youtube.com/embed/${getYTid(url.src)}`}
                 title="Gameplay Video"
                 allowFullScreen
-                className="w-full h-full rounded aspect-video"
-                loading="lazy"
+                className="w-full h-full rounded-xl aspect-video"
               />
             ) : (
               <iframe
                 src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(url.src)}&autoplay=0`}
                 allowfullscreen="true"
-                className="w-full h-full rounded aspect-video"
-                loading="lazy"
+                className="w-full h-full rounded-xl aspect-video"
               />
             )}
             <div className="px-2 py-1 bg-[#000000a1] text-white rounded mt-1">

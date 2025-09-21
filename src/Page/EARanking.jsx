@@ -7,6 +7,8 @@ import { useState } from "react";
 import Footer from "../Comp/Footer";
 import { weaponStaff, weaponAxe, weaponBlades, weaponCoat, weaponFlames, weaponSkull } from "../Data/Misc";
 
+import EAContent from "../Comp/EAContent";
+
 const weaponType = [
   `Melinoe Staff`,
   `Melinoe Axe`,
@@ -57,6 +59,7 @@ export default function EARanking() {
       <Background />
       <div className="max-w-[1600px] font-[Ale] text-[12px] mx-auto text-white">
         <SideNav />
+        <EAContent />
         <>
           <div className="p-1 flex justify-center gap-1 my-2 font-[Ubuntu] text-[10px] md:text-[11px]">
             <button className="bg-white px-2 py-1 rounded text-black cursor-pointer" onClick={() => setUnique(!unique)}>

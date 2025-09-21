@@ -5,10 +5,7 @@ export const sites = [
   { icon: `Home`, link: ``, nam: `Home` },
   // { icon: `Query`, link: `QueryV1`, nam: `Query` },
 
-  { icon: `EA`, link: `EALadder`, nam: `EA Ladder` },
-  { icon: `EA`, link: `EAQuery`, nam: `EA Query` },
-  { icon: `EA`, link: `EARanking`, nam: `EA Ranking` },
-  { icon: `EA`, link: `EAStat`, nam: `EA Stats` },
+  { icon: `EA`, link: `EALadder`, nam: `Early Access` },
 
   { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },
   { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },

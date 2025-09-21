@@ -13,6 +13,8 @@ import KeepData from "../Comp/KeepData";
 import Footer from "../Comp/Footer";
 import ArcanaData from "../Comp/ArcanaData";
 
+import EAContent from "../Comp/EAContent";
+
 const getHighestOfEachAspect = (order, data) => {
   return order.map((aspect) => {
     const found = data.find((item) => item.asp === aspect);
@@ -32,6 +34,7 @@ export default function EAStat() {
     <main className="h-full min-h-lvh select-none relative">
       <Background />
       <SideNav />
+      <EAContent />
       <>
         <BarFear data={highfear} />
         <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1400px] mx-auto my-4">

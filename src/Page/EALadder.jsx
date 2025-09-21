@@ -6,6 +6,7 @@ import Footer from "../Comp/Footer";
 import { bOrder } from "../Data/Boon2";
 import { boonCodexr } from "../Data/Boon2";
 import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA, deCodeArcana, findGUIcard } from "../Data/Misc";
+import EAContent from "../Comp/EAContent";
 
 import { p11data } from "../Data/P11Data";
 import { p9data } from "../Data/P9Data";
@@ -51,6 +52,7 @@ export default function EALadder() {
       <Background />
       <div className="max-w-[1600px] font-[Ubuntu] text-[10px] md:text-[11px] mx-auto px-1">
         <SideNav />
+        <EAContent />
         <>
           <div className="p-1 flex flex-wrap justify-center gap-1 my-2">
             <button

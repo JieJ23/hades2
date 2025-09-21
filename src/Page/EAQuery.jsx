@@ -7,6 +7,8 @@ import { p9data } from "../Data/P9Data";
 import { p11data } from "../Data/P11Data";
 import { useState, useEffect } from "react";
 
+import EAContent from "../Comp/EAContent";
+
 import {
   h2AspectOrder,
   sToA,
@@ -213,6 +215,7 @@ export default function EAQuery() {
       <Background />
       <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-1 overflow-hidden">
         <SideNav />
+        <EAContent />
         <>
           <div className="flex flex-wrap gap-1 pt-2">
             <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={generateShareableURL}>
