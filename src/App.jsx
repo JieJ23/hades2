@@ -80,7 +80,7 @@ export default function App() {
               />
             ) : (
               <iframe
-                src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(url.src)}`}
+                src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(url.src)}&autoplay=0`}
                 allowfullscreen="true"
                 className="w-full h-full rounded aspect-video"
                 loading="lazy"
