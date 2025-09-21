@@ -95,37 +95,7 @@ export default function App() {
                 <div className="text-end">{url.tim}</div>
                 <div className="text-end">{url.dat}</div>
               </div>
-              <div className="flex flex-wrap justify-between items-center my-1">
-                <div>
-                  {sToA(url.cor).map((ite, index) => (
-                    <div className="tooltip shrink-0">
-                      <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                        <div className="text-[11px]">{ite}</div>
-                      </div>
-                      <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-7" />
-                    </div>
-                  ))}
-                </div>
-                {url.boon && (
-                  <div className="flex items-center flex-wrap">
-                    <div className="flex flex-wrap gap-0.5 rounded">
-                      {findValue2(
-                        sToA(url.boon).sort((a, b) => {
-                          const aIndex = orderMap2.get(a) ?? Infinity;
-                          const bIndex = orderMap2.get(b) ?? Infinity;
-                          return aIndex - bIndex;
-                        })
-                      ).map((ite, index) => (
-                        <div className="tooltip shrink-0">
-                          <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                            <div className="text-[11px]">{boonCodex[ite]}</div>
-                          </div>
-                          <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className={`size-7`} />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
+              <div className="flex flex-wrap items-center my-0.5 gap-2">
                 {url.ks && (
                   <div className="flex gap-0.5 rounded">
                     {sToA(url.ks).map((ite, index) => (
@@ -138,7 +108,37 @@ export default function App() {
                     ))}
                   </div>
                 )}
+                <div>
+                  {sToA(url.cor).map((ite, index) => (
+                    <div className="tooltip shrink-0">
+                      <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                        <div className="text-[11px]">{ite}</div>
+                      </div>
+                      <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-7" />
+                    </div>
+                  ))}
+                </div>
               </div>
+              {url.boon && (
+                <div className="flex items-center flex-wrap my-0.5">
+                  <div className="flex flex-wrap gap-0.5 rounded">
+                    {findValue2(
+                      sToA(url.boon).sort((a, b) => {
+                        const aIndex = orderMap2.get(a) ?? Infinity;
+                        const bIndex = orderMap2.get(b) ?? Infinity;
+                        return aIndex - bIndex;
+                      })
+                    ).map((ite, index) => (
+                      <div className="tooltip shrink-0">
+                        <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                          <div className="text-[11px]">{boonCodex[ite]}</div>
+                        </div>
+                        <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className={`size-7`} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           <div className="my-4 bg-[#000000a1] rounded py-1">
