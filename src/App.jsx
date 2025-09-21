@@ -2,23 +2,22 @@ import SideNav from "./Comp/Sidebar";
 import Background from "./Comp/Background";
 import Footer from "./Comp/Footer";
 
+import { p11data } from "./Data/P11Data";
+import { sToA, getYTid, getBilibiliid, orderMap2, findValue2 } from "./Data/Misc";
+import { boonCodex } from "./Data/Boon2";
+
 import { useState, useEffect } from "react";
 
 const targetDate = new Date("September 25, 2025 00:00:00").getTime();
 
-const row1 = ["Q", "W", "E", "R", "T", "Y", "U", "Z", "A", "Z"];
-const row2 = ["P", "L", "K", "J", "H", "G", "A", "S", "A", "D"];
-const row3 = ["M", "N", "B", "V", "C", "X", "G", "G", "F", "H"];
-const row4 = ["T", "Y", "U", "I", "O", "R", "R", "Q", "W", "P"];
-const row5 = ["E", "D", "S", "A", "F", "E", "E", "Z", "X", "C"];
-const row6 = ["C", "V", "B", "N", "U", "L", "K", "J", "H", "G"];
-const row7 = ["H", "G", "F", "S", "D", "S", "P", "O", "I", "T"];
-const row8 = ["Q", "W", "E", "R", "T", "Y", "I", "O", "P", "L"];
-const row9 = ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Z"];
-const row10 = ["Z", "X", "C", "V", "B", "N", "M", "Q", "W", "E"];
-//
+const latest10videos = p11data
+  .filter((obj) => obj.src)
+  .sort((a, b) => new Date(b.dat) - new Date(a.dat))
+  .slice(0, 50);
+
 export default function App() {
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
+  const [url, setURL] = useState(latest10videos[0]);
 
   function getTimeRemaining() {
     const now = new Date().getTime();
@@ -48,7 +47,7 @@ export default function App() {
       <Background />
       <div className="max-w-[1600px] font-[Ubuntu] text-[10px] md:text-[11px] mx-auto px-1">
         <SideNav />
-        <div className="flex flex-col items-center justify-center bg-transparent my-10 p-2">
+        <div className="flex flex-col items-center justify-center bg-transparent my-4 p-2">
           <h1 className="font-[Ale] text-[24px] text-white font-bold mb-6">Countdown to September 25</h1>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center font-[Ale] text-[11px] md:text-[12px]">
             <div className="p-6 bg-[#fff] rounded shadow text-black relative">
@@ -68,87 +67,112 @@ export default function App() {
               <span>Seconds</span>
             </div>
           </div>
-          <div className="mt-10 mb-2 text-[14px] flex gap-4">
-            <div>8 5</div>
-            <div>23 9 12 12</div>
-            <div>2 5</div>
-            <div>2 1 3 11</div>
+        </div>
+        <div className="max-w-[800px] mx-auto">
+          <div className="my-4">
+            {url.src.includes(`youtu`) ? (
+              <iframe
+                src={`https://www.youtube.com/embed/${getYTid(url.src)}`}
+                title="Gameplay Video"
+                allowFullScreen
+                className="w-full h-full rounded aspect-video"
+                loading="lazy"
+              />
+            ) : (
+              <iframe
+                src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(url.src)}`}
+                allowfullscreen="true"
+                className="w-full h-full rounded aspect-video"
+                loading="lazy"
+              />
+            )}
+            <div className="px-2 py-1 bg-[#000000a1] text-white rounded mt-1">
+              <div className="flex flex-wrap justify-between items-center">
+                <div>Player: {url.nam}</div>
+                <div className="text-end">
+                  {url.asp} / {url.fea}
+                </div>
+                <div className="text-end">{url.tim}</div>
+                <div className="text-end">{url.dat}</div>
+              </div>
+              <div className="flex flex-wrap justify-between items-center my-1">
+                <div>
+                  {sToA(url.cor).map((ite, index) => (
+                    <div className="tooltip shrink-0">
+                      <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                        <div className="text-[11px]">{ite}</div>
+                      </div>
+                      <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-7" />
+                    </div>
+                  ))}
+                </div>
+                {url.boon && (
+                  <div className="flex items-center flex-wrap">
+                    <div className="flex flex-wrap gap-0.5 rounded">
+                      {findValue2(
+                        sToA(url.boon).sort((a, b) => {
+                          const aIndex = orderMap2.get(a) ?? Infinity;
+                          const bIndex = orderMap2.get(b) ?? Infinity;
+                          return aIndex - bIndex;
+                        })
+                      ).map((ite, index) => (
+                        <div className="tooltip shrink-0">
+                          <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                            <div className="text-[11px]">{boonCodex[ite]}</div>
+                          </div>
+                          <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className={`size-7`} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {url.ks && (
+                  <div className="flex gap-0.5 rounded">
+                    {sToA(url.ks).map((ite, index) => (
+                      <div className="tooltip shrink-0">
+                        <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                          <div className="text-[11px]">{ite}</div>
+                        </div>
+                        <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
-          <div className="mb-10 w-full max-w-[700px] text-[11px] md:text-[14px]">
-            <div className="grid grid-cols-10 gap-0.5 my-0.5">
-              {row1.map((ite) => (
-                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
-                  {ite}
+          <div className="my-4 bg-[#000000a1] rounded py-1">
+            <div className="px-2 text-[14px] mb-2">Latest Gameplay Videos</div>
+            {latest10videos.map((obj) => (
+              <div
+                className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#00ffaaa1] ${
+                  obj.src === url ? `bg-[#00ffaa] text-black` : ``
+                }`}
+                onClick={() => setURL(obj)}
+              >
+                <div>{obj.nam}</div>
+                <div className="hidden sm:block">
+                  <div className="flex gap-0.5 rounded">
+                    {sToA(obj.cor).map((ite, index) => (
+                      <div className="tooltip shrink-0">
+                        <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                          <div className="text-[11px]">{ite}</div>
+                        </div>
+                        <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-6" />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-10 gap-0.5 my-0.5">
-              {row2.map((ite) => (
-                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
-                  {ite}
+                <div className="text-end">
+                  {obj.asp} / {obj.fea}
                 </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-10 gap-0.5 my-0.5">
-              {row3.map((ite) => (
-                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
-                  {ite}
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-10 gap-0.5 my-0.5">
-              {row4.map((ite) => (
-                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
-                  {ite}
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-10 gap-0.5 my-0.5">
-              {row5.map((ite) => (
-                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
-                  {ite}
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-10 gap-0.5 my-0.5">
-              {row6.map((ite) => (
-                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
-                  {ite}
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-10 gap-0.5 my-0.5">
-              {row7.map((ite) => (
-                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
-                  {ite}
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-10 gap-0.5 my-0.5">
-              {row8.map((ite) => (
-                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
-                  {ite}
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-10 gap-0.5 my-0.5">
-              {row9.map((ite) => (
-                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
-                  {ite}
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-10 gap-0.5 my-0.5">
-              {row10.map((ite) => (
-                <div className="bg-[#28282b] border-black border-1 rounded aspect-square flex items-center justify-center">
-                  {ite}
-                </div>
-              ))}
-            </div>
+                <div className="text-end">{obj.tim}</div>
+                <div className="text-end">{obj.dat}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
       <Footer />
     </main>
   );
