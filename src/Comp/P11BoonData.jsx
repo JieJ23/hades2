@@ -112,7 +112,7 @@ export default function P11BoonData({ data }) {
                 className={`flex gap-1 rounded p-2 ${
                   (100 * (ite[1] / currentAspectHammerL)).toFixed(2) >= 25
                     ? `bg-[#00ffaa] text-black`
-                    : `bg-[#131111a1]`
+                    : `bg-[#000000a1]`
                 }`}
               >
                 <img
@@ -136,7 +136,7 @@ export default function P11BoonData({ data }) {
             {findBoonTotal(core_Counts, ite).map((arr, index) => (
               <div
                 className={`flex gap-1 rounded p-2 ${
-                  (100 * (arr[1] / displayData.length)).toFixed(2) >= 25 ? `bg-[#00ffaa] text-black` : `bg-[#131111a1]`
+                  (100 * (arr[1] / displayData.length)).toFixed(2) >= 25 ? `bg-[#00ffaa] text-black` : `bg-[#000000a1]`
                 }`}
                 key={index}
               >
@@ -166,7 +166,7 @@ export default function P11BoonData({ data }) {
                   className={`flex gap-1 rounded p-2 ${
                     (100 * (ite[1] / displayData.length)).toFixed(2) >= 25
                       ? `bg-[#00ffaa] text-black`
-                      : `bg-[#131111a1]`
+                      : `bg-[#000000a1]`
                   }`}
                 >
                   <img

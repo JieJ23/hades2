@@ -98,7 +98,7 @@ export default function FearCalculator() {
               {allVows.map((ite, index) => (
                 <div
                   className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876ad] ${
-                    vows[index] !== 0 ? `bg-gradient-to-br from-[#190c23] to-[#411876ad]` : `bg-[#131111a1]`
+                    vows[index] !== 0 ? `bg-gradient-to-br from-[#190c23] to-[#411876ad]` : `bg-[#000000a1]`
                   } ${index === 16 && `col-start-2 col-span-2`}`}
                   key={index}
                 >
@@ -139,7 +139,7 @@ export default function FearCalculator() {
               <div className={`text-[18px] text-[#0cf29e]`}>Total: {currentVows ? currentVows : 0}</div>
               <div className="grid grid-cols-2 gap-2">
                 {displayVow.map((item, index) => (
-                  <div className="w-full text-[12px] text-white rounded p-2 bg-[#131111a1]" key={index}>
+                  <div className="w-full text-[12px] text-white rounded p-2 bg-[#000000a1]" key={index}>
                     <div>{item}</div>
                     <div className="text-gray-300">{defineArray(item).d}</div>
                     <div className="flex flex-wrap justify-start gap-2 mt-1">

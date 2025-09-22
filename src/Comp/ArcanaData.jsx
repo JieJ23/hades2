@@ -93,7 +93,7 @@ export default function ArcanaData({ data }) {
       </div>
       <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-4">
         {oathArrayData.map((Litem, ind1) => (
-          <div className="flex flex-col items-center min-w-[100px] bg-[#131111a1] rounded p-2">
+          <div className="flex flex-col items-center min-w-[100px] bg-[#000000a1] rounded p-2">
             <img src={`/Vows/${vowMatch[ind1]}.png`} alt="Vows" className="size-10 shrink-0" />
             <div>{vowMatch[ind1]}</div>
             <div>

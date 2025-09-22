@@ -66,7 +66,7 @@ export default function QueryV1() {
     }
   });
 
-  const allPlayers = [...new Set([v1data].map((obj) => obj.nam))].sort((a, b) =>
+  const allPlayers = [...new Set([...v1data].map((obj) => obj.nam))].sort((a, b) =>
     a.toLowerCase().localeCompare(b.toLowerCase())
   );
 
@@ -487,7 +487,7 @@ export default function QueryV1() {
               </div>
             )}
           </div>
-          <div>
+          <div className="px-1 text-white">
             Query: {displayData3.length}/{allEntries.length} |{" "}
             {((displayData3.length / allEntries.length) * 100).toFixed(2)}%
           </div>
@@ -498,19 +498,19 @@ export default function QueryV1() {
               >
                 <div className="absolute top-0 right-0 -z-10 h-full w-full">
                   <img src={`/Misc/${obj.loc}.webp`} alt="Region" className="h-full w-full object-cover object-top" />
-                  <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#000000b1] via-[#5725a289] from-[#000000b1]" />
+                  <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#0505056d] via-[#222568b4] from-[#000000e1]" />
                   <img
                     src={`/GUI_Card/c${findGUIcard(obj.asp)}.png`}
                     alt="Aspect"
-                    className="absolute top-1/2 -translate-y-[50%] right-2 w-[100px] lg:w-[75px] rounded mx-auto drop-shadow-[0_0_10px_white]"
+                    className="absolute top-1/2 -translate-y-[50%] right-2 w-[100px] lg:w-[75px] rounded mx-auto drop-shadow-[0_0_10px_black]"
                     draggable={false}
                     loading="lazy"
                   />
                 </div>
                 {/* Content */}
                 <div className="w-full lg:w-[400px] text-[14px] text-center my-auto">
-                  <div className="flex items-center lg:flex-col justify-between text-[#00ffaa] my-1">
-                    <div className="font-semibold text-[18px]">{obj.fea}</div>
+                  <div className="flex items-center lg:flex-col justify-between text-[#00ffaa]">
+                    <div className="text-[18px]">{obj.fea}</div>
                     <div>{obj.nam}</div>
                     <div>{obj.tim}</div>
                   </div>
@@ -552,7 +552,12 @@ export default function QueryV1() {
                     <div className="flex flex-wrap gap-0.5 rounded font-[Ubuntu] text-[10px]">
                       {sToA(obj.ks).map((ite, index) => (
                         <div className="px-2 py-1 bg-[#00000099] rounded flex items-center gap-1">
-                          <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
+                          <img
+                            draggable={false}
+                            src={`/buildgui/${ite}.png`}
+                            alt="Keepsake"
+                            className="size-5 sm:size-6"
+                          />
                           <div>
                             <div>{obj.loc === `Underworld` ? biomeU[index] : biomeS[index]}</div>
                             <div>{ite}</div>
@@ -564,16 +569,26 @@ export default function QueryV1() {
                   <div className="flex items-center flex-wrap my-1 gap-0.5">
                     <div className="flex gap-0.5 rounded">
                       <div className="tooltip shrink-0">
-                        <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                          <div className="text-[11px]">{obj.asp}</div>
+                        <div className="tooltip-content bg-black text-[#00ffaa] border-1 font-[Ubuntu] rounded">
+                          <div className="text-[10px]">{obj.asp}</div>
                         </div>
-                        <img draggable={false} src={`/P9/${obj.asp}.png`} alt="Core Boon" className="size-8" />
+                        <img
+                          draggable={false}
+                          src={`/P9/${obj.asp}.png`}
+                          alt="Core Boon"
+                          className="size-8 rounded-full"
+                        />
                       </div>
                       <div className="tooltip shrink-0">
-                        <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                          <div className="text-[11px]">{obj.fam}</div>
+                        <div className="tooltip-content bg-black text-[#00ffaa] border-1 font-[Ubuntu] rounded">
+                          <div className="text-[10px]">{obj.fam}</div>
                         </div>
-                        <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Core Boon" className="size-8" />
+                        <img
+                          draggable={false}
+                          src={`/P9/${obj.fam}.png`}
+                          alt="Core Boon"
+                          className="size-8 rounded-full"
+                        />
                       </div>
                     </div>
                     {obj.ham && (
@@ -586,10 +601,15 @@ export default function QueryV1() {
                           })
                         ).map((ite, index) => (
                           <div className="tooltip shrink-0">
-                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                              <div className="text-[11px]">{p9boons[ite]}</div>
+                            <div className="tooltip-content bg-black text-[#00ffaa] border-1 font-[Ubuntu] rounded">
+                              <div className="text-[10px]">{p9boons[ite]}</div>
                             </div>
-                            <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className="size-8" />
+                            <img
+                              draggable={false}
+                              src={`/P9/${ite}.png`}
+                              alt="Core Boon"
+                              className="size-8 rounded-full"
+                            />
                           </div>
                         ))}
                       </div>
@@ -598,11 +618,16 @@ export default function QueryV1() {
                   <div className="flex items-center flex-wrap my-1 gap-1">
                     <div className="flex gap-0.5 rounded">
                       {sToA(obj.cor).map((ite, index) => (
-                        <div className="tooltip shrink-0">
-                          <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                            <div className="text-[11px]">{ite}</div>
+                        <div className="tooltip shrink-0" key={index}>
+                          <div className="tooltip-content bg-black text-[#00ffaa] border-1 font-[Ubuntu] rounded">
+                            <div className="text-[10px]">{ite}</div>
                           </div>
-                          <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-8" />
+                          <img
+                            draggable={false}
+                            src={`/H2Boons/${ite}.png`}
+                            alt="Core Boon"
+                            className="size-8 rounded-full"
+                          />
                         </div>
                       ))}
                     </div>
@@ -618,8 +643,8 @@ export default function QueryV1() {
                           })
                         ).map((ite, index) => (
                           <div className="tooltip shrink-0">
-                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                              <div className="text-[11px]">{boonCodex[ite]}</div>
+                            <div className="tooltip-content bg-black text-[#00ffaa] border-1 font-[Ubuntu] rounded">
+                              <div className="text-[10px]">{boonCodex[ite]}</div>
                             </div>
                             <img
                               draggable={false}
@@ -643,11 +668,12 @@ export default function QueryV1() {
                         src={`/Olympus/${getOlympusCore(ite.slice(0, 3))}.png`}
                         alt="Olympians"
                         className="size-7 bg-[#00000099] rounded"
+                        key={index}
                       />
                     ))}
                   </div>
-                  <div className="text-[12px] text-gray-300 my-0.5">{obj.des}</div>
                   <div className="text-gray-300 my-0.5">{obj.dat}</div>
+                  <div className="text-[12px] text-gray-300 my-0.5">{obj.des}</div>
                   {/* {obj.arcana && (
                       <div className="flex flex-wrap gap-0.5 text-[9px] md:text-[10px] font-[Ubuntu] my-0.5">
                         {deCodeArcana(obj.arcana)

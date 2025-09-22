@@ -8,68 +8,21 @@ import { boonCodex } from "./Data/Boon2";
 
 import { useState, useEffect } from "react";
 
-const targetDate = new Date("September 25, 2025 00:00:00").getTime();
-
 const latest10videos = p11data
   .filter((obj) => obj.src)
   .sort((a, b) => new Date(b.dat) - new Date(a.dat))
-  .slice(0, 50);
+  .slice();
 
 export default function App() {
-  const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
   const [url, setURL] = useState(latest10videos[0]);
 
-  function getTimeRemaining() {
-    const now = new Date().getTime();
-    const difference = targetDate - now;
-
-    if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
-
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-  }
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeRemaining());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
-      <div className="max-w-[1600px] font-[Ubuntu] text-[10px] md:text-[11px] mx-auto px-1">
+      <div className="max-w-[1600px] text-[10px] md:text-[11px] mx-auto px-1">
         <SideNav />
-        <div className="flex flex-col items-center justify-center bg-transparent my-4 p-2">
-          <h1 className="font-[Ale] text-[24px] text-white font-bold mb-6">Countdown to September 25</h1>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center font-[Ale] text-[11px] md:text-[12px]">
-            <div className="p-6 bg-[#fff] rounded shadow text-black relative">
-              <div className="font-[Ale] font-bold text-[28px]">{timeLeft.days}</div>
-              <span>Days</span>
-            </div>
-            <div className="p-6 bg-[#fff] rounded shadow text-black">
-              <div className="font-[Ale] font-bold text-[28px]">{timeLeft.hours}</div>
-              <span>Hours</span>
-            </div>
-            <div className="p-6 bg-[#fff] rounded shadow text-black">
-              <div className="font-[Ale] font-bold text-[28px]">{timeLeft.minutes}</div>
-              <span>Minutes</span>
-            </div>
-            <div className="p-6 bg-[#fff] rounded shadow text-black counter">
-              <div className="font-[Ale] font-bold text-[28px]">{timeLeft.seconds}</div>
-              <span>Seconds</span>
-            </div>
-          </div>
-        </div>
-        <div className="max-w-[800px] mx-auto">
-          <div className="my-4">
+        <div className="max-w-[800px] mx-auto font-[Ubuntu]">
+          <div className="my-2">
             {url.src.includes(`youtu`) ? (
               <iframe
                 src={`https://www.youtube.com/embed/${getYTid(url.src)}`}
@@ -98,8 +51,8 @@ export default function App() {
                   <div className="flex gap-0.5 rounded">
                     {sToA(url.ks).map((ite, index) => (
                       <div className="tooltip shrink-0">
-                        <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                          <div className="text-[11px]">{ite}</div>
+                        <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
+                          <div className="text-[10px]">{ite}</div>
                         </div>
                         <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
                       </div>
@@ -109,8 +62,8 @@ export default function App() {
                 <div>
                   {sToA(url.cor).map((ite, index) => (
                     <div className="tooltip shrink-0">
-                      <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                        <div className="text-[11px]">{ite}</div>
+                      <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
+                        <div className="text-[10px]">{ite}</div>
                       </div>
                       <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-7" />
                     </div>
@@ -128,8 +81,8 @@ export default function App() {
                       })
                     ).map((ite, index) => (
                       <div className="tooltip shrink-0">
-                        <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                          <div className="text-[11px]">{boonCodex[ite]}</div>
+                        <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
+                          <div className="text-[10px]">{boonCodex[ite]}</div>
                         </div>
                         <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className={`size-7`} />
                       </div>
@@ -140,21 +93,24 @@ export default function App() {
             </div>
           </div>
           <div className="my-4 bg-[#000000a1] rounded py-1">
-            <div className="px-2 text-[14px] mb-2">Latest Gameplay Videos</div>
+            <div className="px-2 text-[14px] mb-2">Gameplay Videos</div>
             {latest10videos.map((obj) => (
               <div
                 className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#00ffaaa1] ${
                   obj == url ? `bg-[#00ffaa] text-black` : ``
                 }`}
-                onClick={() => setURL(obj)}
+                onClick={() => {
+                  setURL(obj);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
               >
                 <div>{obj.nam}</div>
                 <div className="hidden sm:block">
                   <div className="flex gap-0.5 rounded">
                     {sToA(obj.cor).map((ite, index) => (
                       <div className="tooltip shrink-0">
-                        <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
-                          <div className="text-[11px]">{ite}</div>
+                        <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
+                          <div className="text-[10px]">{ite}</div>
                         </div>
                         <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-6" />
                       </div>

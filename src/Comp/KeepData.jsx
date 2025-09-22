@@ -61,7 +61,7 @@ export default function KeepData({ data }) {
             {Object.entries(parentArr)
               .sort((a, b) => b[1] - a[1])
               .map((arr, index) => (
-                <div className="flex gap-1 bg-[#131111a1] p-2 rounded" key={index}>
+                <div className="flex gap-1 bg-[#000000a1] p-2 rounded" key={index}>
                   <img src={`/buildgui/${arr[0]}.png`} alt="Keepsakes" className="size-8" />
                   <div>
                     <div className="text-[12px]">{arr[0]}</div>
