@@ -35,6 +35,7 @@ export default function App() {
                 src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(url.src)}&autoplay=0`}
                 allowfullscreen="true"
                 className="w-full h-full rounded-xl aspect-video"
+                sandbox="allow-scripts allow-same-origin"
               />
             )}
             <div className="px-2 py-1 bg-[#000000a1] text-white rounded mt-1">
