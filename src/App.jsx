@@ -37,8 +37,8 @@ export default function App() {
                 className="w-full h-full rounded-xl aspect-video"
               />
             )}
-            <div className="px-2 py-1 bg-[#000000a1] text-white rounded mt-1">
-              <div className="flex flex-wrap justify-between items-center">
+            <div className="px-2 py-1 bg-[#000000a1] text-white rounded">
+              <div className="flex flex-wrap justify-between items-center my-1">
                 <div>Player: {url.nam}</div>
                 <div className="text-end">
                   {url.asp} / {url.fea}
@@ -46,18 +46,30 @@ export default function App() {
                 <div className="text-end">{url.tim}</div>
                 <div className="text-end">{url.dat}</div>
               </div>
-              <div className="flex flex-wrap items-center my-0.5 gap-2">
-                {url.ks && (
-                  <div className="flex gap-0.5 rounded">
-                    {sToA(url.ks).map((ite, index) => (
+              {url.ks && (
+                <div className="flex my-0.5 gap-0.5">
+                  {sToA(url.ks).map((ite, index) => (
+                    <div className="tooltip shrink-0">
+                      <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
+                        <div className="text-[10px]">{ite}</div>
+                      </div>
+                      <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
+                    </div>
+                  ))}
+                </div>
+              )}
+              <div className="flex flex-wrap items-center my-0.5 gap-0.5">
+                {url.ham && (
+                  <>
+                    {sToA(url.ham).map((ite, index) => (
                       <div className="tooltip shrink-0">
                         <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
                           <div className="text-[10px]">{ite}</div>
                         </div>
-                        <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
+                        <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-7" />
                       </div>
                     ))}
-                  </div>
+                  </>
                 )}
                 <div>
                   {sToA(url.cor).map((ite, index) => (
@@ -112,7 +124,12 @@ export default function App() {
                         <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
                           <div className="text-[10px]">{ite}</div>
                         </div>
-                        <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-6" />
+                        <img
+                          draggable={false}
+                          src={`/H2Boons/${ite}.png`}
+                          alt="Core Boon"
+                          className="size-6 rounded-full"
+                        />
                       </div>
                     ))}
                   </div>
