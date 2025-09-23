@@ -5893,4 +5893,22 @@ export const p11data = [
     boon: "Power Surge,Arc Flash,Flash Fry,Double Strike,Prominence Flare,Heart Breaker,Renewed Faith,Deep Dissent,Hard Target,Nitro Boost,Reward Reward Reward,Sunny Disposition,Thermal Dynamics",
     ks: "Moon Beam,Everlasting Ember,Knuckle Bones,Gorgon Amulet",
   },
+  {
+    dat: "2025-08-29",
+    nam: "HookieDookie",
+    asp: "Medea",
+    loc: "Underworld",
+    fea: "62",
+    src: "https://youtu.be/XPL_cecZC8g?si=Pa7WlWM5yZkEdtMk",
+    des: "Decided to risk it all on Athena in chamber 2 and lose 2 DD. The gamble paid off.",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjNiIsImM3IiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE2IiwiYzE3IiwiYzIwIiwiYzIxIiwiYzIyIiwiYzI0Il0=",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
+    tim: "18:16.87",
+    fam: "Cat",
+    cor: "HerAttack,ZeuSpecial,AreCast,Sprint,Magick",
+    ham: "Volatile Array,Colossus Driver",
+    boon: "Arctic Gale,Snow Queen,Local Climate,Dying Wish,Static Shock,Double Strike,Last Gasp",
+    ks: "Cloud Bangle,Engraved Pin,Engraved Pin,Gorgon Amulet",
+  },
 ];
