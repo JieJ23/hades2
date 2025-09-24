@@ -150,7 +150,7 @@ export const defineDeck = (num) => {
       };
     case `c21`:
       return {
-        card: `XXI - The Seer`,
+        card: `XXI - The Fates`,
         d: `You have +4 Change of Fate.`,
         g: 0,
       };

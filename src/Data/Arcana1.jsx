@@ -19,7 +19,7 @@ export const idarcana = {
   c18: `Artificer`,
   c19: `Excellence`,
   c20: `Queen`,
-  c21: `Seer`,
+  c21: `Fates`,
   c22: `Champions`,
   c23: `Strength`,
   c24: `Divinity`,
