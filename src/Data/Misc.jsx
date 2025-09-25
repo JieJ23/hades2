@@ -85,6 +85,11 @@ export function formatSentence(sentence) {
     .join(" ");
 }
 
+export function getTwitchid(url) {
+  const match = url.match(/twitch\.tv\/videos\/(\d+)/);
+  return match ? match[1] : null;
+}
+
 export function getYTid(text) {
   return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
 }

@@ -3,10 +3,10 @@ import Background from "./Comp/Background";
 import Footer from "./Comp/Footer";
 
 import { p11data } from "./Data/P11Data";
-import { sToA, getYTid, getBilibiliid, orderMap2, findValue2 } from "./Data/Misc";
+import { sToA, getYTid, getBilibiliid, getTwitchid, orderMap2, findValue2 } from "./Data/Misc";
 import { boonCodex } from "./Data/Boon2";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const latest10videos = p11data
   .filter((obj) => obj.src)
@@ -30,12 +30,20 @@ export default function App() {
                 allowFullScreen
                 className="w-full h-full rounded-xl aspect-video"
               />
-            ) : (
+            ) : url.src.includes(`bilibil`) ? (
               <iframe
                 src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(url.src)}&autoplay=0`}
                 allowFullScreen
                 className="w-full h-full rounded-xl aspect-video"
               />
+            ) : (
+              <iframe
+                src={`https://player.twitch.tv/?video=${getTwitchid(
+                  url.src
+                )}&parent=h2crossroads.pages.dev&autoplay=false`}
+                className="w-full h-full rounded-xl aspect-video"
+                allowfullscreen
+              ></iframe>
             )}
             <div className="px-2 py-1 bg-[#000000a1] text-white rounded">
               <div className="flex flex-wrap justify-between items-center my-1">
