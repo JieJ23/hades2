@@ -86,7 +86,7 @@ export default function ArcanaDeck() {
               </button>
             </div>
 
-            <div className="w-full max-w-[1000px] bg-[#28282b98] text-white overflow-hidden p-2 truncate rounded my-2">
+            <div className="w-full max-w-[1000px] bg-[#28282b] text-white overflow-hidden p-2 truncate rounded my-2">
               {shareableURL || "No URL Generated Yet"}
             </div>
           </section>
@@ -108,7 +108,7 @@ export default function ArcanaDeck() {
                     }`}
                   >
                     <img draggable={false} src={`/Arcane/${ite}.png`} alt="Arcane Card" />
-                    <div className="absolute top-1 right-1 bg-black rounded-full w-6 h-6 flex justify-center items-center">
+                    <div className="absolute top-1 right-0 bg-black text-[yellow] rounded size-5 flex justify-center items-center text-[12px] font-[Ubuntu]">
                       {defineDeck(ite).g}
                     </div>
                   </div>
@@ -122,7 +122,7 @@ export default function ArcanaDeck() {
               {deck
                 .sort((a, b) => +(a.slice(1) < +b.slice(1) ? -1 : 1))
                 .map((ite) => (
-                  <div className="text-white rounded p-2 my-1 bg-[#000000a1]">
+                  <div className="text-white rounded p-2 my-1 bg-[#000000] font-[Fontin] text-[12px]">
                     <div className="text-[14px]">{defineDeck(ite).card}</div>
                     <div>{defineDeck(ite).d}</div>
                   </div>

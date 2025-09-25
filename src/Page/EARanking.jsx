@@ -2,7 +2,7 @@ import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import { p9data } from "../Data/P9Data";
 import { p11data } from "../Data/P11Data";
-import { parseTimetoms, findGUIcard } from "../Data/Misc";
+import { parseTimetoms } from "../Data/Misc";
 import { useState } from "react";
 import Footer from "../Comp/Footer";
 import { weaponStaff, weaponAxe, weaponBlades, weaponCoat, weaponFlames, weaponSkull } from "../Data/Misc";
@@ -95,7 +95,7 @@ export default function EARanking() {
               <div key={index} className="flex flex-col">
                 <div className="relative my-2">
                   <img
-                    src={`/NocturnalArms/${findGUIcard([weaponType[index]])}.webp`}
+                    src={`/NocturnalArms/${[weaponType[index]]}.webp`}
                     alt="Aspect"
                     className="h-[80px] rounded mx-auto drop-shadow-[0_0_10px_#00ffaa]"
                     draggable={false}

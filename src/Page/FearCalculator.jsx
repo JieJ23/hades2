@@ -89,7 +89,7 @@ export default function FearCalculator() {
               </button>
             </div>
 
-            <div className="w-full max-w-[1000px] bg-[#28282b98] text-white overflow-hidden p-2 truncate text-[12px] rounded my-2">
+            <div className="w-full max-w-[1000px] bg-[#28282b] text-white overflow-hidden p-2 truncate text-[12px] rounded my-2">
               {shareableURL || "No URL Generated Yet"}
             </div>
           </section>
@@ -97,8 +97,8 @@ export default function FearCalculator() {
             <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start px-0.5">
               {allVows.map((ite, index) => (
                 <div
-                  className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876ad] ${
-                    vows[index] !== 0 ? `bg-gradient-to-br from-[#190c23] to-[#411876ad]` : `bg-[#000000a1]`
+                  className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876] ${
+                    vows[index] !== 0 ? `bg-gradient-to-br from-[#190c23] to-[#411876]` : `bg-[#000000]`
                   } ${index === 16 && `col-start-2 col-span-2`}`}
                   key={index}
                 >
@@ -139,8 +139,8 @@ export default function FearCalculator() {
               <div className={`text-[18px] text-[#0cf29e]`}>Total: {currentVows ? currentVows : 0}</div>
               <div className="grid grid-cols-2 gap-2">
                 {displayVow.map((item, index) => (
-                  <div className="w-full text-[12px] text-white rounded p-2 bg-[#000000a1]" key={index}>
-                    <div>{item}</div>
+                  <div className="w-full text-[12px] text-white rounded p-2 bg-[#000000] font-[Fontin]" key={index}>
+                    <div className="text-[14px]">{item}</div>
                     <div className="text-gray-300">{defineArray(item).d}</div>
                     <div className="flex flex-wrap justify-start gap-2 mt-1">
                       {defineArray(item).rank.map((ite, index) => (

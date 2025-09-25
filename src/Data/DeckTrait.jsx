@@ -67,7 +67,7 @@ export const defineDeck = (num) => {
     case `c7`:
       return {
         card: `VII - Persistence`,
-        d: `You have +40 Max Life and Max Magick.`,
+        d: `You have +80 Max Life and Max Magick.`,
         g: 2,
       };
     case `c8`:
@@ -97,7 +97,7 @@ export const defineDeck = (num) => {
     case `c12`:
       return {
         card: `XII - Death`,
-        d: `You have +3 Death Defiance.`,
+        d: `You have +4 Death Defiance.`,
         g: 4,
       };
     case `c13`:

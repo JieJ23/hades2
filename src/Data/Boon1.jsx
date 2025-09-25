@@ -670,4 +670,7 @@ export const bKeep = [
   `Sword Hilt`,
   `Gorgon Amulet`,
   `Fig Leaf`,
+  `Calling Card`,
+  `Jeweled Pom`,
+  `Time Piece`,
 ];

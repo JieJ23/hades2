@@ -5,7 +5,7 @@ import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 import { bOrder } from "../Data/Boon2";
 import { boonCodexr } from "../Data/Boon2";
-import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA, deCodeArcana, findGUIcard } from "../Data/Misc";
+import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA, deCodeArcana } from "../Data/Misc";
 import EAContent from "../Comp/EAContent";
 
 import { p11data } from "../Data/P11Data";
@@ -128,7 +128,7 @@ export default function EALadder() {
                 }`}
               >
                 <img
-                  src={`/GUI_Card/c${findGUIcard(h2AspectOrder[oi])}.png`}
+                  src={`/GUI_Card/c${h2AspectOrder[oi]}.png`}
                   alt="Aspect"
                   className="absolute w-auto h-full top-1/2 left-1/2 -z-10 opacity-50 -translate-x-[50%] -translate-y-[50%]"
                 />

@@ -333,24 +333,24 @@ export const getOlympusCore = (core) => {
   }
 };
 
-export const findGUIcard = (asp) => {
-  switch (asp) {
-    case `Anubis`:
-      return `Melinoe Staff`;
-    case `Morrigan`:
-      return `Melinoe Blades`;
-    case `Nergal`:
-      return `Melinoe Axe`;
-    case `Hel`:
-      return `Melinoe Skull`;
-    case `Shiva`:
-      return `Melinoe Coat`;
-    case `Supay`:
-      return `Melinoe Flames`;
-    default:
-      return asp;
-  }
-};
+// export const findGUIcard = (asp) => {
+//   switch (asp) {
+//     case `Anubis`:
+//       return `Melinoe Staff`;
+//     case `Morrigan`:
+//       return `Melinoe Blades`;
+//     case `Nergal`:
+//       return `Melinoe Axe`;
+//     case `Hel`:
+//       return `Melinoe Skull`;
+//     case `Shiva`:
+//       return `Melinoe Coat`;
+//     case `Supay`:
+//       return `Melinoe Flames`;
+//     default:
+//       return asp;
+//   }
+// };
 
 export const handleLoadMore = (updater) => {
   updater((prev) => prev + 50);

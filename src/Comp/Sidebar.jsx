@@ -2,40 +2,31 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 export const sites = [
-  { icon: `Home`, link: ``, nam: `Home` },
-  // { icon: `Query`, link: `QueryV1`, nam: `Query` },
+  { link: ``, nam: `Home` },
+  // { link: `Query`, nam: `Query` },
 
-  { icon: `EA`, link: `EALadder`, nam: `Early Access` },
+  // { link: `Query`, nam: `Ladder` },
+  // { link: `Query`, nam: `Stats` },
 
-  { icon: `ArcaneDeck`, link: `ArcanaDeck`, nam: `Arcana` },
-  { icon: `Oath`, link: `FearCalculator`, nam: `Fear` },
-  { icon: `Submit`, link: `GameplaySubmission`, nam: `Submission` },
+  { link: `EALadder`, nam: `EA` },
+  { link: `ArcanaDeck`, nam: `Arcana` },
+  { link: `FearCalculator`, nam: `Fear` },
+  { link: `GameplaySubmission`, nam: `Submission` },
 ];
 
 export default function SideNav() {
   const currentLocation = useLocation();
   return (
-    <div className="h-full w-full p-2 py-4 font-[Ale] text-[12px] rounded shrink-0">
-      <div className="flex flex-wrap justify-center items-center gap-3">
+    <div className="h-full w-full p-2 pb-4 font-[Ale] text-[14px] rounded shrink-0">
+      <div className="flex justify-center items-center gap-1">
         {sites.map((obj, idx) => (
-          <Link
-            to={`/${obj.link}`}
-            className={`flex items-center gap-2 group ${
-              currentLocation.pathname == `/${obj.link}` && `text-[#f2920c]`
-            }`}
-            key={idx}
-          >
-            <div className="tooltip tooltip-bottom">
-              <div className="tooltip-content bg-white text-black text-[11px] rounded">{obj.nam}</div>
-              <div className="avatar">
-                <div className="size-8">
-                  <img
-                    src={`/${obj.icon}.png`}
-                    draggable={false}
-                    className="group-hover:scale-[80%] duration-100 ease-in transition-transform"
-                  />
-                </div>
-              </div>
+          <Link to={`/${obj.link}`} className={`flex items-center group`} key={idx}>
+            <div
+              className={`px-2 py-1 border-1 border-white/40 rounded-b-lg hover:bg-[#00ffaa] ${
+                currentLocation.pathname == `/${obj.link}` ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-white`
+              }`}
+            >
+              {obj.nam}
             </div>
           </Link>
         ))}

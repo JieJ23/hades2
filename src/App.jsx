@@ -28,26 +28,32 @@ export default function App() {
                 src={`https://www.youtube.com/embed/${getYTid(url.src)}`}
                 title="Gameplay Video"
                 allowFullScreen
-                className="w-full h-full rounded-xl aspect-video"
+                className="w-full h-full rounded aspect-video"
               />
             ) : url.src.includes(`bilibil`) ? (
               <iframe
                 src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(url.src)}&autoplay=0`}
                 allowFullScreen
-                className="w-full h-full rounded-xl aspect-video"
+                className="w-full h-full rounded aspect-video"
               />
             ) : (
               <iframe
                 src={`https://player.twitch.tv/?video=${getTwitchid(
                   url.src
                 )}&parent=h2crossroads.pages.dev&autoplay=false`}
-                className="w-full h-full rounded-xl aspect-video"
+                className="w-full h-full rounded aspect-video"
                 allowfullscreen
               ></iframe>
             )}
-            <div className="px-2 py-1 bg-[#000000a1] text-white rounded">
-              <div className="flex flex-wrap justify-between items-center my-1">
-                <div>Player: {url.nam}</div>
+            <div className="px-2 py-1 bg-[#000000] text-white rounded my-1">
+              <div className="grid grid-cols-4 mt-1">
+                <div>Player</div>
+                <div className="text-end">Aspect / Fear</div>
+                <div className="text-end">Time</div>
+                <div className="text-end">Date</div>
+              </div>
+              <div className="grid grid-cols-4 mb-1">
+                <div>{url.nam}</div>
                 <div className="text-end">
                   {url.asp} / {url.fea}
                 </div>
@@ -79,16 +85,14 @@ export default function App() {
                     ))}
                   </>
                 )}
-                <div>
-                  {sToA(url.cor).map((ite, index) => (
-                    <div className="tooltip shrink-0">
-                      <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
-                        <div className="text-[10px]">{ite}</div>
-                      </div>
-                      <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-7" />
+                {sToA(url.cor).map((ite, index) => (
+                  <div className="tooltip shrink-0">
+                    <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
+                      <div className="text-[10px]">{ite}</div>
                     </div>
-                  ))}
-                </div>
+                    <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-7" />
+                  </div>
+                ))}
               </div>
               {url.boon && (
                 <div className="flex items-center flex-wrap my-0.5">
@@ -112,7 +116,7 @@ export default function App() {
               )}
             </div>
           </div>
-          <div className="my-4 bg-[#000000a1] rounded py-1">
+          <div className="my-4 bg-[#000000] rounded py-1">
             <div className="px-2 text-[14px] mb-2">Gameplay Videos</div>
             {latest10videos.map((obj) => (
               <div
