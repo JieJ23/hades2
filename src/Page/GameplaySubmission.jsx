@@ -168,8 +168,8 @@ export default function GameplaySubmission() {
                 min={1}
                 required
               />
-              <div className="text-[14px]">Video / Discord Image URL are required.</div>
-              <input type="text" placeholder="Gameplay Link" className="input w-full rounded" name="src" />
+              <div className="text-[14px]">Video or Discord Image URL are required.</div>
+              <input type="text" placeholder="Gameplay Link" className="input w-full rounded" name="src" required />
               <div className="text-[14px]">Short description regarding the run, a brief sentence or two summary.</div>
               <input type="text" placeholder="Short Description" className="input w-full rounded" name="des" required />
             </div>
