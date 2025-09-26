@@ -168,18 +168,13 @@ export default function GameplaySubmission() {
                 min={1}
                 required
               />
-              <div className="text-[14px]">Video Gameplay are required unless otherwise specified.</div>
+              <div className="text-[14px]">Video / Discord Image URL are required.</div>
               <input type="text" placeholder="Gameplay Link" className="input w-full rounded" name="src" />
-              <div className="text-[14px]">
-                Recommended to leave a short description regarding the run, decision making or strategy used and etc.
-              </div>
+              <div className="text-[14px]">Short description regarding the run, a brief sentence or two summary.</div>
               <input type="text" placeholder="Short Description" className="input w-full rounded" name="des" required />
             </div>
             <div className="flex flex-col gap-2">
-              <div className="text-[14px]">
-                Arcana and Fear setup are optional but recommended. Use the Fear Calculator and Arcana Deck to generate
-                the shareable URLs.
-              </div>
+              <div className="text-[14px]">Optional Arcana and Fear setup, shareable tools available above.</div>
               <input type="text" placeholder="Arcana Shareable URL" className="input w-full rounded" name="arcana" />
               <input type="text" placeholder="Fear Shareable URL" className="input w-full rounded" name="oath" />
               <div className="text-[14px]">Completion Time: Minutes / Seconds / Milliseconds </div>
@@ -229,21 +224,21 @@ export default function GameplaySubmission() {
                 placeholder="Core Boons"
                 name="cor"
                 value={sortCore(core.join(","))}
-                readOnly={true}
+                required={true}
               />
               <input
                 className="input w-full rounded"
                 placeholder="Hammer"
                 value={hammer.join(",")}
                 name="ham"
-                readOnly={true}
+                required={true}
               />
               <input
                 className="input w-full rounded"
                 placeholder="Other Boons"
                 value={boons.join(",")}
                 name="boon"
-                readOnly={true}
+                required={true}
               />
               <div className="text-[14px]">Must have 4 keepsakes, 1 per biome. ( Selection can be repeated )</div>
               <input
@@ -251,7 +246,7 @@ export default function GameplaySubmission() {
                 placeholder="Keepsakes"
                 value={keep.join(",")}
                 name="ks"
-                readOnly={true}
+                required={true}
               />
             </div>
           </div>
@@ -329,7 +324,7 @@ export default function GameplaySubmission() {
                 ? objs.map((item) => (
                     <div
                       className={`cursor-pointer flex items-center gap-2 rounded px-2 py-1 ${
-                        keep.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282bc0]`
+                        keep.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#131111]`
                       }`}
                       onClick={(prev) => {
                         if (keep.length >= 4) {
@@ -348,7 +343,7 @@ export default function GameplaySubmission() {
                       className={`cursor-pointer flex items-center gap-2 rounded px-2 py-1 ${
                         core.includes(item) || hammer.includes(item) || boons.includes(item)
                           ? `bg-[#00ffaa] text-black`
-                          : `bg-[#131111a1]`
+                          : `bg-[#131111]`
                       }`}
                       onClick={() => {
                         if (category === 0) {
