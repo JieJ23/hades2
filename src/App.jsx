@@ -3,7 +3,21 @@ import Background from "./Comp/Background";
 import Footer from "./Comp/Footer";
 
 import { p11data } from "./Data/P11Data";
-import { sToA, getYTid, getBilibiliid, getTwitchid, orderMap2, findValue2 } from "./Data/Misc";
+import {
+  sToA,
+  getYTid,
+  getBilibiliid,
+  getTwitchid,
+  orderMap2,
+  findValue2,
+  deCodeArcana,
+  deCodeVow,
+  oathMatch,
+  vowMatch,
+  findValue,
+  orderMap,
+} from "./Data/Misc";
+import { p9boons } from "./Data/P9BoonObj";
 import { boonCodex } from "./Data/Boon2";
 
 import { useState } from "react";
@@ -74,16 +88,22 @@ export default function App() {
               )}
               <div className="flex flex-wrap items-center my-0.5 gap-0.5">
                 {url.ham && (
-                  <>
-                    {sToA(url.ham).map((ite, index) => (
+                  <div className="flex gap-0.5 rounded">
+                    {findValue(
+                      sToA(url.ham).sort((a, b) => {
+                        const aIndex = orderMap.get(a) ?? Infinity;
+                        const bIndex = orderMap.get(b) ?? Infinity;
+                        return aIndex - bIndex;
+                      })
+                    ).map((ite, index) => (
                       <div className="tooltip shrink-0">
                         <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
-                          <div className="text-[10px]">{ite}</div>
+                          <div className="text-[10px]">{p9boons[ite]}</div>
                         </div>
-                        <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-7" />
+                        <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className="size-7" />
                       </div>
                     ))}
-                  </>
+                  </div>
                 )}
                 {sToA(url.cor).map((ite, index) => (
                   <div className="tooltip shrink-0">
@@ -112,6 +132,52 @@ export default function App() {
                       </div>
                     ))}
                   </div>
+                </div>
+              )}
+              {(url.arcana || url.oath) && (
+                <div className="flex flex-col md:flex-row gap-x-2 items-start">
+                  {url.arcana && (
+                    <div className="grid grid-cols-5 justify-start items-start w-full max-w-[350px] my-1">
+                      {Array.from({ length: 25 }, (_, i) => {
+                        const cardId = `c${i + 1}`;
+                        const selection = deCodeArcana(url.arcana);
+
+                        return (
+                          <img
+                            key={cardId}
+                            src={`${selection.includes(cardId) ? `/Arcane/${cardId}.png` : `/Arcane/c0.png`}`}
+                            className="w-full"
+                          />
+                        );
+                      })}
+                    </div>
+                  )}
+                  {url.oath && (
+                    <div className="grid grid-cols-4 my-1 gap-1 w-full max-w-[450px]">
+                      {deCodeVow(url.oath).map((ite, index) => (
+                        <div
+                          className={`bg-[#28282b] rounded p-1 py-2 flex gap-1 items-center ${
+                            index === 16 && `col-start-2 col-span-2`
+                          }`}
+                        >
+                          <img src={`/Vows/${vowMatch[index]}.png`} alt="Vows" className="size-7 md:size-8" />
+                          <div className="flex flex-col gap-0.5">
+                            <div>{vowMatch[index]}</div>
+                            <div className="flex gap-0.5">
+                              {Array.from({ length: oathMatch[index].length - 1 }, (_, i) => (
+                                <div
+                                  key={i}
+                                  className={`w-2 h-2 rounded-full ${
+                                    i <= oathMatch[index].indexOf(ite) - 1 ? "bg-[#00ffaa]" : "bg-black"
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
             </div>
