@@ -3,6 +3,7 @@ import Background from "./Comp/Background";
 import Footer from "./Comp/Footer";
 
 import { p11data } from "./Data/P11Data";
+import { v1data } from "./Data/V1data";
 import {
   sToA,
   getYTid,
@@ -27,8 +28,13 @@ const latest10videos = p11data
   .sort((a, b) => new Date(b.dat) - new Date(a.dat))
   .slice();
 
+const latestVideos = v1data
+  .filter((obj) => obj.src)
+  .sort((a, b) => new Date(b.dat) - new Date(a.dat))
+  .slice();
+
 export default function App() {
-  const [url, setURL] = useState(latest10videos[0]);
+  const [url, setURL] = useState(latestVideos[0]);
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
@@ -183,7 +189,45 @@ export default function App() {
             </div>
           </div>
           <div className="my-4 bg-[#000000] rounded py-1">
-            <div className="px-2 text-[14px] mb-2">Gameplay Videos</div>
+            <div className="px-2 text-[14px] mb-2">v1.0 Gameplay</div>
+            {latestVideos.map((obj) => (
+              <div
+                className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#00ffaaa1] ${
+                  obj == url ? `bg-[#00ffaa] text-black` : ``
+                }`}
+                onClick={() => {
+                  setURL(obj);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                <div>{obj.nam}</div>
+                <div className="hidden sm:block">
+                  <div className="flex gap-0.5 rounded">
+                    {sToA(obj.cor).map((ite, index) => (
+                      <div className="tooltip shrink-0">
+                        <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
+                          <div className="text-[10px]">{ite}</div>
+                        </div>
+                        <img
+                          draggable={false}
+                          src={`/H2Boons/${ite}.png`}
+                          alt="Core Boon"
+                          className="size-6 rounded-full"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="text-end">
+                  {obj.asp} / {obj.fea}
+                </div>
+                <div className="text-end">{obj.tim}</div>
+                <div className="text-end">{obj.dat}</div>
+              </div>
+            ))}
+          </div>
+          <div className="my-4 bg-[#000000] rounded py-1">
+            <div className="px-2 text-[14px] mb-2">Early Access Gameplay</div>
             {latest10videos.map((obj) => (
               <div
                 className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#00ffaaa1] ${

@@ -33,10 +33,10 @@ import {
   bStaff,
   bSuit,
   bTorch,
-  // bChaos,
+  bChaos,
   // bSelene,
   bElemental,
-  // bTalent,
+  bTalent,
   bKeep,
 } from "../Data/Boon1";
 import { useState } from "react";
@@ -62,7 +62,7 @@ const gods = [bAphrodite, bApollo, bAres, bDemeter, bHephaestus, bHera, bHestia,
 const Unseen = [bArtemis, bAthena, bCirce, bDionysus, bEcho, bHades, bHermes, bIcarus, bMedea, bNarcissus];
 const weapons = [bAxe, bDagger, bLob, bStaff, bSuit, bTorch];
 const misc = [bDuo, bElemental];
-// const other = [bChaos, bSelene, bTalent];
+const other = [bChaos, bTalent];
 const keepsakes = [bKeep];
 
 export default function GameplaySubmission() {
@@ -114,8 +114,8 @@ export default function GameplaySubmission() {
     }
   }
 
-  const allCategory = [coreboons, weapons, gods, Unseen, misc, keepsakes];
-  const allCategoryTitle = [`Core`, `Weapons`, `Olympians`, `Unseen`, `Duo & Elemental`, `Keepsakes`];
+  const allCategory = [coreboons, weapons, gods, Unseen, misc, other, keepsakes];
+  const allCategoryTitle = [`Core`, `Weapons`, `Olympians`, `Unseen`, `Duo & Elemental`, `Chaos & Hex`, `Keepsakes`];
 
   const displayData = allCategory[category];
 
@@ -320,14 +320,14 @@ export default function GameplaySubmission() {
         <div className="flex flex-wrap px-2 my-2 mb-10 select-none">
           {displayData.map((objs) => (
             <section className="flex flex-wrap gap-1 py-2">
-              {category === 5
+              {category === 6
                 ? objs.map((item) => (
                     <div
                       className={`cursor-pointer flex items-center gap-2 rounded px-2 py-1 ${
                         keep.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#131111]`
                       }`}
                       onClick={(prev) => {
-                        if (keep.length >= 4) {
+                        if (keep.length >= 5) {
                           return prev;
                         } else {
                           setKeep((prev) => [...prev, item]);
