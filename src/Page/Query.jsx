@@ -508,7 +508,11 @@ export default function Query() {
                 </div>
                 {/* Content */}
                 <div className="w-full lg:w-[400px] text-[14px] text-center my-auto">
-                  <div className="flex items-center lg:flex-col justify-between text-[#00ffaa]">
+                  <div
+                    className={`flex items-center lg:flex-col justify-between ${
+                      obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`
+                    }`}
+                  >
                     <div className="text-[18px]">{obj.fea}</div>
                     <div>{obj.nam}</div>
                     <div>{obj.tim}</div>
