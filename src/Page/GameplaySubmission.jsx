@@ -218,7 +218,7 @@ export default function GameplaySubmission() {
                 <option>Raven</option>
               </select>
               {/* <div>Optional Full Entry Details</div> */}
-              <div className="text-[14px]">All core must be selected. ( EX: "Attack" for no attack core )</div>
+              <div className="text-[14px]">All 5 core must be selected. ( EX: "Attack" for no attack core )</div>
               <input
                 className="input w-full rounded"
                 placeholder="Core Boons"
@@ -233,6 +233,7 @@ export default function GameplaySubmission() {
                 name="ham"
                 required={true}
               />
+              <div className="text-[14px]">All Other Boons excluding selene boons.</div>
               <input
                 className="input w-full rounded"
                 placeholder="Other Boons"

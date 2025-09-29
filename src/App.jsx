@@ -200,7 +200,16 @@ export default function App() {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                <div>{obj.nam}</div>
+                <div className="flex items-center gap-0.5">
+                  {obj.src.includes(`twitch`) ? (
+                    <img src="/Misc/twitch.png" alt="Twitch" className="size-5" />
+                  ) : obj.src.includes(`bilibil`) ? (
+                    <img src="/Misc/bilibili.png" alt="Bilibili" className="size-5" />
+                  ) : (
+                    <img src="/Misc/youtube.png" alt="Youtube" className="size-5" />
+                  )}
+                  {obj.nam}
+                </div>
                 <div className="hidden sm:block">
                   <div className="flex gap-0.5 rounded">
                     {sToA(obj.cor).map((ite, index) => (
@@ -238,7 +247,16 @@ export default function App() {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                <div>{obj.nam}</div>
+                <div className="flex items-center gap-0.5">
+                  {obj.src.includes(`twitch`) ? (
+                    <img src="/Misc/twitch.png" alt="Twitch" className="size-5" />
+                  ) : obj.src.includes(`bilibil`) ? (
+                    <img src="/Misc/bilibili.png" alt="Bilibili" className="size-5" />
+                  ) : (
+                    <img src="/Misc/youtube.png" alt="Youtube" className="size-5" />
+                  )}
+                  {obj.nam}
+                </div>
                 <div className="hidden sm:block">
                   <div className="flex gap-0.5 rounded">
                     {sToA(obj.cor).map((ite, index) => (
