@@ -244,4 +244,22 @@ export const v1data = [
     boon: "Security System,Heavy Metal,Trusty Shield,Super Nova,Stutter Step,Bridal Glow,Gift Gift Gift,Tall Order,Martial Art,Flourish",
     ks: "Silken Sash,Silken Sash,Silken Sash,White Antler",
   },
+  {
+    dat: "2025-09-30",
+    nam: "Adam2390",
+    asp: "Circe",
+    loc: "Underworld",
+    fea: "62",
+    src: "",
+    des: "Howling soul + hestia cast because i have severe skill issue for buffed P2 of rivals chronos - i choked this like 6 times before win lol",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjNiIsImM3IiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzE4IiwiYzE5IiwiYzIwIiwiYzIxIiwiYzI0Il0=",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
+    tim: "18:27.11",
+    fam: "Cat",
+    cor: "ApoAttack,HesSpecial,HesCast,ApoSprint,AphMagick",
+    ham: "Melting Swipe,Dual Moonshot",
+    boon: "Trusty Shield,Uncanny Fortitude,Light Smite,Renewed Faith,Evade Evade Evade,Deep Dissent,Quick Buck,Paid Dues,Burning Desire,Howling Soul,Affluence",
+    ks: "Jeweled Pom,Fig Leaf,Gorgon Amulet,Ghost Onion",
+  },
 ];
