@@ -47,7 +47,7 @@ export default function Ladder() {
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
-      <div className="max-w-[1600px] font-[Fontin] text-[10px] md:text-[11px] mx-auto px-1">
+      <div className="max-w-[1600px] font-[Ubuntu] text-[10px] md:text-[11px] mx-auto px-1">
         <SideNav />
         <>
           <div className="p-1 flex flex-wrap justify-center gap-1 my-2">
@@ -119,7 +119,7 @@ export default function Ladder() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 my-2">
             {fulldata_ArrArrObject.map((arr, oi) => (
               <div
-                className={`rounded px-2 py-1 relative border-1 border-[#000000] hover:border-[#00ffaa] duration-200 ease-in transition-colors h-[227px] ${
+                className={`rounded-t-md px-2 py-1 relative border-1 border-[#000000] hover:border-[#00ffaa] duration-200 ease-in transition-colors h-[227px] ${
                   arr[0] && arr[0].fea >= 62 ? `bg-[#141537a6]` : `bg-[#0e0e0ec4]`
                 }`}
               >
@@ -150,7 +150,7 @@ export default function Ladder() {
                       {boon === `Core` &&
                         sToA(obj.cor).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
-                            <div className="tooltip-content bg-white text-black font-[Fontin] rounded-none">
+                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                               <div className="text-[11px]">{ite}</div>
                             </div>
                             <img
@@ -164,7 +164,7 @@ export default function Ladder() {
                       {boon === `Hammer` && obj.ham && (
                         <div className="flex gap-0.5 rounded">
                           <div className="tooltip shrink-0">
-                            <div className="tooltip-content bg-white text-black font-[Fontin] rounded-none">
+                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                               <div className="text-[11px]">{obj.fam}</div>
                             </div>
                             <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Fam" className="w-[22px] h-[22px]" />
@@ -177,7 +177,7 @@ export default function Ladder() {
                             })
                           ).map((ite, index) => (
                             <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content bg-white text-black font-[Fontin] rounded-none">
+                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                                 <div className="text-[11px]">{p9boons[ite]}</div>
                               </div>
                               <img
@@ -194,7 +194,7 @@ export default function Ladder() {
                         obj.ks &&
                         sToA(obj.ks).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
-                            <div className="tooltip-content bg-white text-black font-[Fontin] rounded-none">
+                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                               <div className="text-[11px]">{ite}</div>
                             </div>
                             <img
