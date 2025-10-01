@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
 
 import Query from "./Page/Query.jsx";
+import Ladder from "./Page/Ladder.jsx";
 
 import EALadder from "./Page/EALadder.jsx";
 import EAQuery from "./Page/EAQuery.jsx";
@@ -26,6 +27,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App />} />
 
         <Route path="/Query" element={<Query />} />
+        <Route path="/Ladder" element={<Ladder />} />
 
         <Route path="/EALadder" element={<EALadder />} />
         <Route path="/EAStat" element={<EAStat />} />

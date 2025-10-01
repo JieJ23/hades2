@@ -6,10 +6,8 @@ import Footer from "../Comp/Footer";
 import { bOrder } from "../Data/Boon2";
 import { boonCodexr } from "../Data/Boon2";
 import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA, deCodeArcana } from "../Data/Misc";
-import EAContent from "../Comp/EAContent";
 
-import { p11data } from "../Data/P11Data";
-import { p9data } from "../Data/P9Data";
+import { v1data } from "../Data/V1data";
 import { useState } from "react";
 
 //
@@ -24,13 +22,12 @@ export const findValue2 = (arr) => {
   return finalized;
 };
 //
-export default function EALadder() {
+export default function Ladder() {
   const [location, setLocation] = useState(`Underworld`);
   const [category, setCategory] = useState(`Fear`);
   const [boon, setBoon] = useState(`Core`);
 
-  const fullData = [...p11data, ...p9data];
-  const regionData = fullData.filter((obj) => obj.loc === location);
+  const regionData = v1data.filter((obj) => obj.loc === location);
   const fulldata_ArrArrObject = [];
 
   for (let i = 0; i < h2AspectOrder.length; i++) {
@@ -50,9 +47,8 @@ export default function EALadder() {
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
-      <div className="max-w-[1600px] font-[Ubuntu] text-[10px] md:text-[11px] mx-auto px-1">
+      <div className="max-w-[1600px] font-[Fontin] text-[10px] md:text-[11px] mx-auto px-1">
         <SideNav />
-        <EAContent />
         <>
           <div className="p-1 flex flex-wrap justify-center gap-1 my-2">
             <button
@@ -123,8 +119,8 @@ export default function EALadder() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 my-2">
             {fulldata_ArrArrObject.map((arr, oi) => (
               <div
-                className={`rounded px-2 py-1 relative border-1 border-[#000000a1] hover:border-[#00ffaa] duration-200 ease-in transition-colors h-[227px] ${
-                  arr[0].fea >= 62 ? `bg-[#141537a6]` : `bg-[#131111a1]`
+                className={`rounded px-2 py-1 relative border-1 border-[#000000] hover:border-[#00ffaa] duration-200 ease-in transition-colors h-[227px] ${
+                  arr[0] && arr[0].fea >= 62 ? `bg-[#141537a6]` : `bg-[#0e0e0ec4]`
                 }`}
               >
                 <img
@@ -133,11 +129,11 @@ export default function EALadder() {
                   className="absolute w-auto h-full top-1/2 left-1/2 -z-10 opacity-50 -translate-x-[50%] -translate-y-[50%]"
                 />
                 <div className="grid grid-cols-3 text-center text-white" key={oi}>
-                  <div className="text-start text-[#ffa200]">{h2AspectOrder[oi]}</div>
-                  <div className="text-start text-[#ffa200]">
+                  <div className="text-start text-[#00ffaa]">{h2AspectOrder[oi]}</div>
+                  <div className="text-start text-[#00ffaa]">
                     {(arr.slice(0, 10).reduce((a, b) => a + +b.fea, 0) / (arr.slice(0, 10).length || 10)).toFixed(1)}
                   </div>
-                  <div className="text-end text-[#ffa200]">
+                  <div className="text-end text-[#00ffaa]">
                     {parsemstoTime(
                       arr.slice(0, 10).reduce((a, b) => a + parseTimetoms(b.tim), 0) / (arr.slice(0, 10).length || 10)
                     )}
@@ -154,7 +150,7 @@ export default function EALadder() {
                       {boon === `Core` &&
                         sToA(obj.cor).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
-                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                            <div className="tooltip-content bg-white text-black font-[Fontin] rounded-none">
                               <div className="text-[11px]">{ite}</div>
                             </div>
                             <img
@@ -168,7 +164,7 @@ export default function EALadder() {
                       {boon === `Hammer` && obj.ham && (
                         <div className="flex gap-0.5 rounded">
                           <div className="tooltip shrink-0">
-                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                            <div className="tooltip-content bg-white text-black font-[Fontin] rounded-none">
                               <div className="text-[11px]">{obj.fam}</div>
                             </div>
                             <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Fam" className="w-[22px] h-[22px]" />
@@ -181,7 +177,7 @@ export default function EALadder() {
                             })
                           ).map((ite, index) => (
                             <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                              <div className="tooltip-content bg-white text-black font-[Fontin] rounded-none">
                                 <div className="text-[11px]">{p9boons[ite]}</div>
                               </div>
                               <img
@@ -198,7 +194,7 @@ export default function EALadder() {
                         obj.ks &&
                         sToA(obj.ks).map((ite, index) => (
                           <div className="tooltip shrink-0" key={index}>
-                            <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                            <div className="tooltip-content bg-white text-black font-[Fontin] rounded-none">
                               <div className="text-[11px]">{ite}</div>
                             </div>
                             <img
