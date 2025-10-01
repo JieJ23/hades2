@@ -1,5 +1,23 @@
 export const v1data = [
   {
+    dat: "2025-10-01",
+    nam: "Checkmate",
+    asp: "Medea",
+    loc: "Underworld",
+    fea: "55",
+    src: "https://youtu.be/y8i_01qM6nY?si=nFMVyl_LdZwc27KH",
+    des: "it's over. finally. anyways, 58 fear is the next goal even though i may never achieve it.",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMiIsImM2IiwiYzciLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjQiXQ==",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzEsMywyLDYsMiwzLDIsNSwyLDIsMiwzLDYsMCwyLDIsMTJd",
+    tim: "17:40.56",
+    fam: "Raven",
+    cor: "HerAttack,ZeuSpecial,Cast,Sprint,Magick",
+    ham: "Colossus Driver,Bolstered Array",
+    boon: "Soul,Travel Deal,Dying Wish,Gift Gift Gift,Mutual Destruction,Static Shock,Renewed Faith",
+    ks: "Cloud Bangle,Iridescent Fan,Engraved Pin,Gorgon Amulet",
+  },
+  {
     dat: "2025-09-27",
     nam: "East_25",
     asp: "Circe",
