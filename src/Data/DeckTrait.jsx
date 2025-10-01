@@ -97,7 +97,7 @@ export const defineDeck = (num) => {
     case `c12`:
       return {
         card: `XII - Death`,
-        d: `You have +4 Death Defiance.`,
+        d: `You have +3 Death Defiance.`,
         g: 4,
       };
     case `c13`:
