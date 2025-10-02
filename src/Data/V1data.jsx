@@ -53,7 +53,7 @@ export const v1data = [
   {
     dat: "2025-10-02",
     nam: "睿智的林带雨",
-    asp: "Pan",
+    asp: "Melinoe Blades",
     loc: "Underworld",
     fea: "67",
     src: "https://www.bilibili.com/video/BV1ecHNzCEXY",
