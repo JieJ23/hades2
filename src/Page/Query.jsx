@@ -493,15 +493,15 @@ export default function Query() {
           <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
             {displayData3.slice(0, show).map((obj, index) => (
               <div
-                className={`p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden border-1 border-[#000000] rounded shadow-[0_0_20px_black]`}
+                className={`p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden border-1 border-[#000000] bg-[#1013248b] rounded shadow-[0_0_20px_black]`}
               >
                 <div className="absolute top-0 right-0 -z-10 h-full w-full">
-                  <img src={`/Misc/${obj.loc}.webp`} alt="Region" className="h-full w-full object-cover object-top" />
-                  <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#131313aa] via-[#131111be] from-[#131111]" />
+                  {/* <img src={`/Misc/${obj.loc}.webp`} alt="Region" className="h-full w-full object-cover object-top" /> */}
+                  {/* <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r to-[#131313aa] via-[#131111be] from-[#131111]" /> */}
                   <img
                     src={`/GUI_Card/c${obj.asp}.png`}
                     alt="Aspect"
-                    className="absolute top-1/2 -translate-y-[50%] right-2 w-[100px] lg:w-[75px] rounded mx-auto drop-shadow-[0_0_10px_black] opacity-50"
+                    className="absolute rotate-10 top-1/2 -translate-y-[50%] right-5 w-[100px] lg:w-[75px] rounded mx-auto drop-shadow-[0_0_10px_purple]"
                     draggable={false}
                     loading="lazy"
                   />
@@ -677,8 +677,8 @@ export default function Query() {
                       ))}
                     </div>
                   </div>
-                  <div className="text-[12px] text-white my-0.5 font-[Fontin]">{obj.des}</div>
-                  <div className="text-gray-300 my-0.5 font-[Fontin]">{obj.dat}</div>
+                  <div className="text-[12px] text-white my-0.5">{obj.des}</div>
+                  <div className="text-gray-300 my-0.5">{obj.dat}</div>
                 </div>
               </div>
             ))}
