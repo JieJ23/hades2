@@ -275,23 +275,9 @@ export default function App() {
                   {obj.nam}
                 </div>
                 <div className="hidden sm:block">
-                  <div className="flex gap-0.5 rounded">
-                    {sToA(obj.cor).map((ite, index) => (
-                      <div className="tooltip shrink-0">
-                        <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
-                          <div className="text-[10px]">{ite}</div>
-                        </div>
-                        <img
-                          draggable={false}
-                          src={`/H2Boons/${ite}.png`}
-                          alt="Core Boon"
-                          className="size-6 rounded-full"
-                        />
-                      </div>
-                    ))}
-                  </div>
+                  <div className="text-end">{obj.loc}</div>
                 </div>
-                <div className="text-end">
+                <div className={`text-end ${obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`}`}>
                   {obj.asp} / {obj.fea}
                 </div>
                 <div className="text-end">{obj.tim}</div>
@@ -322,23 +308,9 @@ export default function App() {
                   {obj.nam}
                 </div>
                 <div className="hidden sm:block">
-                  <div className="flex gap-0.5 rounded">
-                    {sToA(obj.cor).map((ite, index) => (
-                      <div className="tooltip shrink-0">
-                        <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
-                          <div className="text-[10px]">{ite}</div>
-                        </div>
-                        <img
-                          draggable={false}
-                          src={`/H2Boons/${ite}.png`}
-                          alt="Core Boon"
-                          className="size-6 rounded-full"
-                        />
-                      </div>
-                    ))}
-                  </div>
+                  <div className="text-end">{obj.loc}</div>
                 </div>
-                <div className="text-end">
+                <div className={`text-end ${obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`}`}>
                   {obj.asp} / {obj.fea}
                 </div>
                 <div className="text-end">{obj.tim}</div>

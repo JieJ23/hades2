@@ -1,5 +1,23 @@
 export const v1data = [
   {
+    dat: "2025-10-03",
+    nam: "Coldshade",
+    asp: "Moros",
+    loc: "Underworld",
+    fea: "62",
+    src: "https://www.youtube.com/watch?v=Nce5Ak--1e8",
+    des: "old grudge start let's go ",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM0IiwiYzYiLCJjNyIsImM4IiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzE4Il0=",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
+    tim: "17:13.12",
+    fam: "Hound",
+    cor: "PosAttack,AreSpecial,DemCast,AreSprint,PosMagick",
+    ham: "Hidden Helix,Enduring Coil",
+    boon: "Slippery Slope,Cold Storage,Bridal Glow,Grievous Blow,Pressure Points,Mixed Blessings,Unseen Ire,Old Grudge,Soul,Flourish",
+    ks: "Jeweled Pom,Calling Card,Engraved Pin,Engraved Pin",
+  },
+  {
     dat: "2025-09-28",
     nam: "Aki",
     asp: "Anubis",
