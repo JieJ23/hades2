@@ -2,6 +2,7 @@ import SideNav from "./Comp/Sidebar";
 import Background from "./Comp/Background";
 import Footer from "./Comp/Footer";
 
+import { p9data } from "./Data/P9Data";
 import { p11data } from "./Data/P11Data";
 import { v1data } from "./Data/V1data";
 import {
@@ -17,13 +18,15 @@ import {
   vowMatch,
   findValue,
   orderMap,
+  parseTimetoms,
+  parsemstoTime,
 } from "./Data/Misc";
 import { p9boons } from "./Data/P9BoonObj";
 import { boonCodex } from "./Data/Boon2";
 
 import { useState } from "react";
 
-const latest10videos = p11data
+const latest10videos = [...p11data, ...p9data]
   .filter((obj) => obj.src)
   .sort((a, b) => new Date(b.dat) - new Date(a.dat))
   .slice();
@@ -33,6 +36,50 @@ const latestVideos = v1data
   .sort((a, b) => new Date(b.dat) - new Date(a.dat))
   .slice();
 
+const orderByFearAndTime = [...p9data, ...p11data, ...v1data].sort((a, b) => {
+  const feaDiff = +b.fea - +a.fea;
+  if (feaDiff !== 0) return feaDiff;
+  return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+});
+
+const allPBs = orderByFearAndTime.reduce(
+  (acc, curr) => {
+    const key = `${curr.nam}_${curr.asp}`;
+    if (!acc.map.has(key)) {
+      acc.map.set(key, true);
+      acc.result.push(curr);
+    }
+    return acc;
+  },
+  { map: new Map(), result: [] }
+).result;
+
+// Unique PBs
+const totalUnique_uw = allPBs.filter((obj) => obj.loc === `Underworld`);
+const totalUnique_s = allPBs.filter((obj) => obj.loc === `Surface`);
+const totalFear_uw = totalUnique_uw.reduce((arc, cur) => arc + +cur.fea, 0);
+const totalFear_s = totalUnique_s.reduce((arc, cur) => arc + +cur.fea, 0);
+
+// Raw Data
+const total_uw = orderByFearAndTime.filter((obj) => obj.loc === `Underworld`);
+const total_s = orderByFearAndTime.filter((obj) => obj.loc === `Surface`);
+const total_uwfear = total_uw.reduce((arc, cur) => arc + +cur.fea, 0);
+const total_sfear = total_s.reduce((arc, cur) => arc + +cur.fea, 0);
+
+const displayUnique = [
+  { title: `Total PBs`, dat: totalUnique_uw.length, body: `UW` },
+  { title: `Total PBs`, dat: totalUnique_s.length, body: `Surface` },
+  { title: `Total Fear`, dat: totalFear_uw, body: `UW PBs` },
+  { title: `Total Fear`, dat: totalFear_s, body: `Surface PBs` },
+];
+
+const displayRaw = [
+  { title: `EA Included`, dat: total_uw.length, body: `UW Runs` },
+  { title: `EA Included`, dat: total_s.length, body: `Surface Runs` },
+  { title: `Total Fear`, dat: total_uwfear, body: `UW Runs` },
+  { title: `Total Fear`, dat: total_sfear, body: `Surface Runs` },
+];
+
 export default function App() {
   const [url, setURL] = useState(latestVideos[0]);
 
@@ -41,6 +88,23 @@ export default function App() {
       <Background />
       <div className="max-w-[1600px] text-[10px] md:text-[11px] mx-auto px-1">
         <SideNav />
+        <div className="grid grid-cols-4 lg:grid-cols-8 gap-1 md:gap-2 md:p-1 mx-auto max-w-[1000px]">
+          {displayUnique.map((obj, index) => (
+            <div className="w-full p-2 bg-gradient-to-tr from-[#28282b] to-[#0e0e0e] rounded-sm font-[Ale] text-[12px]">
+              <div>{obj.body}</div>
+              <div className="text-[18px] md:text-[20px] text-[#00ffaa]">{obj.dat.toLocaleString(`en-US`)}</div>
+              <div>{obj.title}</div>
+            </div>
+          ))}
+          {displayRaw.map((obj, index) => (
+            <div className="w-full p-2 bg-gradient-to-tr from-[#28282b] to-[#0e0e0e] rounded-sm font-[Ale] text-[12px]">
+              <div>{obj.body}</div>
+              <div className="text-[18px] md:text-[20px] text-[#00ffaa]">{obj.dat.toLocaleString(`en-US`)}</div>
+              <div>{obj.title}</div>
+            </div>
+          ))}
+        </div>
+
         <div className="max-w-[800px] mx-auto font-[Ubuntu]">
           <div className="my-2">
             {url.src.includes(`youtu`) ? (
