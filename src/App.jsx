@@ -256,8 +256,8 @@ export default function App() {
             <div className="px-2 text-[14px] mb-2">v1.0 Gameplay</div>
             {latestVideos.map((obj) => (
               <div
-                className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#00ffaaa1] ${
-                  obj == url ? `bg-[#00ffaa] text-black` : ``
+                className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#0059ffa1] ${
+                  obj == url ? `bg-[#0059ff] text-white rounded` : ``
                 }`}
                 onClick={() => {
                   setURL(obj);
