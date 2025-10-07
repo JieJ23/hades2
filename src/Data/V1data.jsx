@@ -767,4 +767,22 @@ export const v1data = [
     boon: "Snow Queen,Static Shock,Double Strike,Hot Pot,Gigaros Dash,Travel Deal,Mystic Secrets,Unseen Ire,Freezer Burn,Renewed Faith,Wolf Howl,Strike",
     ks: "Jeweled Pom,Gorgon Amulet,Engraved Pin,Engraved Pin",
   },
+  {
+    dat: "2025-10-07",
+    nam: "PizzaPepperoni ",
+    asp: "Artemis",
+    loc: "Underworld",
+    fea: "62",
+    src: "https://youtu.be/7_GGPxsxMIM?si=RiYdQf-JV_kzpST2",
+    des: "trick knives from experimental hammer in oceanus, cerb and chronos fights were awful, carried by survive survive survive and renewed faith ",
+    arcana:
+      "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMzIiwiYzUiLCJjNiIsImM3IiwiYzEwIiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzE4IiwiYzI0Il0=",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
+    tim: "18:54.30",
+    fam: "Frog",
+    cor: "ApoAttack,AreSpecial,HesCast,ApoSprint",
+    ham: "Sweeping Ambush,Trick Knives,Hidden Knives",
+    boon: "Back Burner,Cut Above,Flash Fry,Renewed Faith,Survive Survive Survive,Unseen Ire,Old Grudge,Slow Cooker,Revival,Night Bloom",
+    ks: "Jeweled Pom,Experimental Hammer,White Antler,Gorgon Amulet",
+  },
 ];
