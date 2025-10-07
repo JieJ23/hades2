@@ -42,6 +42,7 @@ import {
 import { useState } from "react";
 import { h2AspectOrder, sortCore } from "../Data/Misc";
 import { Link } from "react-router-dom";
+import Footer from "../Comp/Footer";
 
 function swapKV(obj) {
   const swapped = {};
@@ -380,6 +381,7 @@ export default function GameplaySubmission() {
           ))}
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
