@@ -686,7 +686,7 @@ export default function Query() {
                           </div>
                         </div>
                         <div className="text-[12px] text-white my-0.5">{obj.des}</div>
-                        <div className="text-gray-300 my-0.5">{obj.dat}</div>
+                        <div className="text-gray-300 my-0.5">{obj.dat.slice(0, 10)}</div>
                       </div>
                     </div>
                     <div className="hidden xl:block w-full max-w-[300px] h-auto aspect-video">
