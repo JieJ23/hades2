@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { v1data } from "../Data/V1data";
 
+import Loading from "../Hook/Loading";
+import { useData } from "../Hook/DataFetch";
+
 import {
   h2AspectOrder,
   sToA,
@@ -55,7 +58,9 @@ export default function Query() {
   // const { posts, loader } = useData();
   const [speed, setSpeed] = useState(false);
 
-  const allEntries = [...v1data].sort((a, b) => {
+  const { posts, loader } = useData();
+
+  const allEntries = [...v1data, ...(posts || [])].sort((a, b) => {
     if (speed) {
       return parseTimetoms(a.tim) - parseTimetoms(b.tim);
     } else {
@@ -490,251 +495,257 @@ export default function Query() {
             Query: {displayData3.length}/{allEntries.length} |{" "}
             {((displayData3.length / allEntries.length) * 100).toFixed(2)}%
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
-            {displayData3.slice(0, show).map((obj, index) => (
-              <div className="flex gap-2">
-                <div
-                  className={`w-full p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden border-1 border-[#000000] bg-[#1013248b] rounded shadow-[0_0_20px_black]`}
-                >
-                  <div className="absolute top-0 right-0 -z-10 h-full w-full">
-                    <img
-                      src={`/GUI_Card/c${obj.asp}.png`}
-                      alt="Aspect"
-                      className="absolute rotate-10 top-1/2 -translate-y-[50%] right-5 w-[100px] lg:w-[75px] rounded mx-auto drop-shadow-[0_0_10px_purple]"
-                      draggable={false}
-                      loading="lazy"
-                    />
-                  </div>
-                  {/* Content */}
-                  <div className="w-full lg:w-[400px] text-[14px] text-center my-auto">
+          {loader ? (
+            <Loading />
+          ) : (
+            <>
+              <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
+                {displayData3.slice(0, show).map((obj, index) => (
+                  <div className="flex gap-2">
                     <div
-                      className={`flex items-center lg:flex-col justify-between ${
-                        obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`
-                      }`}
+                      className={`w-full p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden border-1 border-[#000000] bg-[#1013248b] rounded shadow-[0_0_20px_black]`}
                     >
-                      <div className="text-[18px]">{obj.fea}</div>
-                      <div>{obj.nam}</div>
-                      <div>{obj.tim}</div>
-                    </div>
-                    <div className="flex items-center lg:justify-center gap-0.5 text-[9px] font-[Ubuntu] my-1">
-                      {obj.src !== "" && (
-                        <Link
-                          className="flex items-center rounded bg-[#fff] text-black ps-2 p-1"
-                          to={obj.src}
-                          target="_blank"
-                        >
-                          <div>{`Video`}</div>
-                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-                        </Link>
-                      )}
-                      {obj.arcana && (
-                        <Link
-                          to={obj.arcana}
-                          target="_blank"
-                          className="flex items-center rounded justify-center bg-[#fff] text-black ps-2 p-1"
-                        >
-                          <span>Arcana</span>
-                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-                        </Link>
-                      )}
-                      {obj.oath && (
-                        <Link
-                          to={obj.oath}
-                          target="_blank"
-                          className="flex items-center rounded justify-center bg-[#fff] text-black ps-2 p-1"
-                        >
-                          <span>Oath</span>
-                          <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-                        </Link>
-                      )}
-                    </div>
-                  </div>
-                  <div className="w-full">
-                    {obj.ks && (
-                      <div className="flex flex-wrap gap-0.5 rounded font-[Ubuntu] text-[10px]">
-                        {sToA(obj.ks).map((ite, index) => (
-                          <div className="px-2 py-1 bg-[#00000099] rounded flex items-center gap-1">
-                            <img
-                              draggable={false}
-                              src={`/buildgui/${ite}.png`}
-                              alt="Keepsake"
-                              className="size-5 sm:size-6"
-                            />
-                            <div>
-                              <div>{obj.loc === `Underworld` ? biomeU[index] : biomeS[index]}</div>
-                              <div>{ite}</div>
-                            </div>
-                          </div>
-                        ))}
+                      <div className="absolute top-0 right-0 -z-10 h-full w-full">
+                        <img
+                          src={`/GUI_Card/c${obj.asp}.png`}
+                          alt="Aspect"
+                          className="absolute rotate-10 top-1/2 -translate-y-[50%] right-5 w-[100px] lg:w-[75px] rounded mx-auto drop-shadow-[0_0_10px_purple]"
+                          draggable={false}
+                          loading="lazy"
+                        />
                       </div>
-                    )}
-                    <div className="flex items-center flex-wrap my-1 gap-0.5">
-                      <div className="flex gap-0.5 rounded">
-                        <div className="tooltip shrink-0">
-                          <div className="tooltip-content bg-white text-black font-[Fontin] rounded">
-                            <div className="text-[11px]">{obj.asp}</div>
-                          </div>
-                          <img
-                            draggable={false}
-                            src={`/P9/${obj.asp}.png`}
-                            alt="Core Boon"
-                            className="size-8 rounded-full border-1 border-black"
-                          />
+                      {/* Content */}
+                      <div className="w-full lg:w-[400px] text-[14px] text-center my-auto">
+                        <div
+                          className={`flex items-center lg:flex-col justify-between ${
+                            obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`
+                          }`}
+                        >
+                          <div className="text-[18px]">{obj.fea}</div>
+                          <div>{obj.nam}</div>
+                          <div>{obj.tim}</div>
                         </div>
-                        <div className="tooltip shrink-0">
-                          <div className="tooltip-content bg-white text-black font-[Fontin] rounded">
-                            <div className="text-[11px]">{obj.fam}</div>
-                          </div>
-                          <img
-                            draggable={false}
-                            src={`/P9/${obj.fam}.png`}
-                            alt="Core Boon"
-                            className="size-8 rounded-full border-1 border-black"
-                          />
+                        <div className="flex items-center lg:justify-center gap-0.5 text-[9px] font-[Ubuntu] my-1">
+                          {obj.src !== "" && (
+                            <Link
+                              className="flex items-center rounded bg-[#fff] text-black ps-2 p-1"
+                              to={obj.src}
+                              target="_blank"
+                            >
+                              <div>{`Video`}</div>
+                              <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                            </Link>
+                          )}
+                          {obj.arcana && (
+                            <Link
+                              to={obj.arcana}
+                              target="_blank"
+                              className="flex items-center rounded justify-center bg-[#fff] text-black ps-2 p-1"
+                            >
+                              <span>Arcana</span>
+                              <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                            </Link>
+                          )}
+                          {obj.oath && (
+                            <Link
+                              to={obj.oath}
+                              target="_blank"
+                              className="flex items-center rounded justify-center bg-[#fff] text-black ps-2 p-1"
+                            >
+                              <span>Oath</span>
+                              <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
+                            </Link>
+                          )}
                         </div>
                       </div>
-                      {obj.ham && (
-                        <div className="flex gap-0.5 rounded">
-                          {findValue(
-                            sToA(obj.ham).sort((a, b) => {
-                              const aIndex = orderMap.get(a) ?? Infinity;
-                              const bIndex = orderMap.get(b) ?? Infinity;
-                              return aIndex - bIndex;
-                            })
-                          ).map((ite, index) => (
+                      <div className="w-full">
+                        {obj.ks && (
+                          <div className="flex flex-wrap gap-0.5 rounded font-[Ubuntu] text-[10px]">
+                            {sToA(obj.ks).map((ite, index) => (
+                              <div className="px-2 py-1 bg-[#00000099] rounded flex items-center gap-1">
+                                <img
+                                  draggable={false}
+                                  src={`/buildgui/${ite}.png`}
+                                  alt="Keepsake"
+                                  className="size-5 sm:size-6"
+                                />
+                                <div>
+                                  <div>{obj.loc === `Underworld` ? biomeU[index] : biomeS[index]}</div>
+                                  <div>{ite}</div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        <div className="flex items-center flex-wrap my-1 gap-0.5">
+                          <div className="flex gap-0.5 rounded">
                             <div className="tooltip shrink-0">
                               <div className="tooltip-content bg-white text-black font-[Fontin] rounded">
-                                <div className="text-[11px]">{p9boons[ite]}</div>
+                                <div className="text-[11px]">{obj.asp}</div>
                               </div>
                               <img
                                 draggable={false}
-                                src={`/P9/${ite}.png`}
+                                src={`/P9/${obj.asp}.png`}
                                 alt="Core Boon"
                                 className="size-8 rounded-full border-1 border-black"
                               />
                             </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                    <div className="flex items-center flex-wrap my-1 gap-1">
-                      <div className="flex gap-0.5 rounded">
-                        {sToA(obj.cor).map((ite, index) => (
-                          <div className="tooltip shrink-0" key={index}>
-                            <div className="tooltip-content bg-white text-black font-[Fontin] rounded">
-                              <div className="text-[11px]">{ite}</div>
-                            </div>
-                            <img
-                              draggable={false}
-                              src={`/H2Boons/${ite}.png`}
-                              alt="Core Boon"
-                              className="size-8 rounded-full border-1 border-black"
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    {obj.boon && (
-                      <div className="flex items-center flex-wrap my-1">
-                        <div className="flex flex-wrap gap-0.5 rounded">
-                          {findValue2(
-                            sToA(obj.boon).sort((a, b) => {
-                              const aIndex = orderMap2.get(a) ?? Infinity;
-                              const bIndex = orderMap2.get(b) ?? Infinity;
-                              return aIndex - bIndex;
-                            })
-                          ).map((ite, index) => (
                             <div className="tooltip shrink-0">
                               <div className="tooltip-content bg-white text-black font-[Fontin] rounded">
-                                <div className="text-[11px]">{boonCodex[ite]}</div>
+                                <div className="text-[11px]">{obj.fam}</div>
                               </div>
                               <img
                                 draggable={false}
-                                src={`/P9/${ite}.png`}
+                                src={`/P9/${obj.fam}.png`}
                                 alt="Core Boon"
-                                className={`size-7 rounded-full border-1 ${
-                                  has.includes(boonid[boonCodex[ite]]) ? `border-[#00ffaa]` : `border-black`
-                                }`}
+                                className="size-8 rounded-full border-1 border-black"
                               />
                             </div>
-                          ))}
+                          </div>
+                          {obj.ham && (
+                            <div className="flex gap-0.5 rounded">
+                              {findValue(
+                                sToA(obj.ham).sort((a, b) => {
+                                  const aIndex = orderMap.get(a) ?? Infinity;
+                                  const bIndex = orderMap.get(b) ?? Infinity;
+                                  return aIndex - bIndex;
+                                })
+                              ).map((ite, index) => (
+                                <div className="tooltip shrink-0">
+                                  <div className="tooltip-content bg-white text-black font-[Fontin] rounded">
+                                    <div className="text-[11px]">{p9boons[ite]}</div>
+                                  </div>
+                                  <img
+                                    draggable={false}
+                                    src={`/P9/${ite}.png`}
+                                    alt="Core Boon"
+                                    className="size-8 rounded-full border-1 border-black"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          )}
                         </div>
+                        <div className="flex items-center flex-wrap my-1 gap-1">
+                          <div className="flex gap-0.5 rounded">
+                            {sToA(obj.cor).map((ite, index) => (
+                              <div className="tooltip shrink-0" key={index}>
+                                <div className="tooltip-content bg-white text-black font-[Fontin] rounded">
+                                  <div className="text-[11px]">{ite}</div>
+                                </div>
+                                <img
+                                  draggable={false}
+                                  src={`/H2Boons/${ite}.png`}
+                                  alt="Core Boon"
+                                  className="size-8 rounded-full border-1 border-black"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        {obj.boon && (
+                          <div className="flex items-center flex-wrap my-1">
+                            <div className="flex flex-wrap gap-0.5 rounded">
+                              {findValue2(
+                                sToA(obj.boon).sort((a, b) => {
+                                  const aIndex = orderMap2.get(a) ?? Infinity;
+                                  const bIndex = orderMap2.get(b) ?? Infinity;
+                                  return aIndex - bIndex;
+                                })
+                              ).map((ite, index) => (
+                                <div className="tooltip shrink-0">
+                                  <div className="tooltip-content bg-white text-black font-[Fontin] rounded">
+                                    <div className="text-[11px]">{boonCodex[ite]}</div>
+                                  </div>
+                                  <img
+                                    draggable={false}
+                                    src={`/P9/${ite}.png`}
+                                    alt="Core Boon"
+                                    className={`size-7 rounded-full border-1 ${
+                                      has.includes(boonid[boonCodex[ite]]) ? `border-[#00ffaa]` : `border-black`
+                                    }`}
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
-                  <div className="w-full mx-auto">
-                    <div className="hidden lg:block">
-                      <div className="flex gap-1 rounded my-1">
-                        {sToA(obj.cor).map((ite, index) => (
+                      <div className="w-full mx-auto">
+                        <div className="hidden lg:block">
+                          <div className="flex gap-1 rounded my-1">
+                            {sToA(obj.cor).map((ite, index) => (
+                              <img
+                                draggable={false}
+                                src={`/Olympus/${getOlympusCore(ite.slice(0, 3))}.png`}
+                                alt="Olympians"
+                                className="size-7 bg-[#00000099] rounded"
+                                key={index}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                        <div className="text-[12px] text-white my-0.5">{obj.des}</div>
+                        <div className="text-gray-300 my-0.5">{obj.dat}</div>
+                      </div>
+                    </div>
+                    <div className="hidden xl:block w-full max-w-[300px] h-auto aspect-video">
+                      {obj.src.includes(`youtu`) ? (
+                        <div className="rounded aspect-video overflow-hidden w-full h-full">
                           <img
+                            src={`https://img.youtube.com/vi/${getYTid(obj.src)}/maxresdefault.jpg`}
+                            alt="Gameplay Video"
+                            className="h-full w-full rounded border-1 border-[#000000]"
+                            loading="lazy"
                             draggable={false}
-                            src={`/Olympus/${getOlympusCore(ite.slice(0, 3))}.png`}
-                            alt="Olympians"
-                            className="size-7 bg-[#00000099] rounded"
-                            key={index}
                           />
-                        ))}
-                      </div>
+                        </div>
+                      ) : obj.src.includes(`bilibil`) ? (
+                        <div className="rounded aspect-video overflow-hidden w-full h-full">
+                          <img
+                            src="/gameplay2.webp"
+                            alt="Thumbnails"
+                            className="h-full w-full rounded border-1 border-[#000000]"
+                            loading="lazy"
+                            draggable={false}
+                          />
+                        </div>
+                      ) : (
+                        <div className="hidden md:block w-full h-full">
+                          <img
+                            src="/gameplay1.webp"
+                            alt="Thumbnails"
+                            className="h-full w-full rounded border-1 border-[#000000]"
+                            loading="lazy"
+                          />
+                        </div>
+                      )}
                     </div>
-                    <div className="text-[12px] text-white my-0.5">{obj.des}</div>
-                    <div className="text-gray-300 my-0.5">{obj.dat}</div>
                   </div>
-                </div>
-                <div className="hidden xl:block w-full max-w-[300px] h-auto aspect-video">
-                  {obj.src.includes(`youtu`) ? (
-                    <div className="rounded aspect-video overflow-hidden w-full h-full">
-                      <img
-                        src={`https://img.youtube.com/vi/${getYTid(obj.src)}/maxresdefault.jpg`}
-                        alt="Gameplay Video"
-                        className="h-full w-full rounded border-1 border-[#000000]"
-                        loading="lazy"
-                        draggable={false}
-                      />
-                    </div>
-                  ) : obj.src.includes(`bilibil`) ? (
-                    <div className="rounded aspect-video overflow-hidden w-full h-full">
-                      <img
-                        src="/gameplay2.webp"
-                        alt="Thumbnails"
-                        className="h-full w-full rounded border-1 border-[#000000]"
-                        loading="lazy"
-                        draggable={false}
-                      />
-                    </div>
-                  ) : (
-                    <div className="hidden md:block w-full h-full">
-                      <img
-                        src="/gameplay1.webp"
-                        alt="Thumbnails"
-                        className="h-full w-full rounded border-1 border-[#000000]"
-                        loading="lazy"
-                      />
-                    </div>
-                  )}
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <div className="flex justify-center my-4 gap-2">
-            {show < displayData3.length && (
-              <button
-                className="px-2 py-1 rounded bg-white text-black cursor-pointer"
-                onClick={() => handleLoadMore(setShow)}
-              >
-                Show More
-              </button>
-            )}
-            {displayData3.length > 20 && (
-              <button
-                className="px-2 py-1 rounded bg-white text-black cursor-pointer"
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-              >
-                Back Top
-              </button>
-            )}
-          </div>
+              <div className="flex justify-center my-4 gap-2">
+                {show < displayData3.length && (
+                  <button
+                    className="px-2 py-1 rounded bg-white text-black cursor-pointer"
+                    onClick={() => handleLoadMore(setShow)}
+                  >
+                    Show More
+                  </button>
+                )}
+                {displayData3.length > 20 && (
+                  <button
+                    className="px-2 py-1 rounded bg-white text-black cursor-pointer"
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                  >
+                    Back Top
+                  </button>
+                )}
+              </div>
+            </>
+          )}
         </>
         {/* )} */}
       </div>
