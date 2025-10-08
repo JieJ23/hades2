@@ -7,6 +7,7 @@ import App from "./App.jsx";
 
 import Query from "./Page/Query.jsx";
 import Ladder from "./Page/Ladder.jsx";
+import StatsCodex from "./Page/StatsCodex.jsx";
 
 import EALadder from "./Page/EALadder.jsx";
 import EAQuery from "./Page/EAQuery.jsx";
@@ -28,6 +29,7 @@ createRoot(document.getElementById("root")).render(
 
           <Route path="/Query" element={<Query />} />
           <Route path="/Ladder" element={<Ladder />} />
+          <Route path="/StatsCodex" element={<StatsCodex />} />
 
           <Route path="/EALadder" element={<EALadder />} />
           <Route path="/EAStat" element={<EAStat />} />
