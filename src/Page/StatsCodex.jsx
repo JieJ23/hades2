@@ -72,7 +72,7 @@ const p11data_boon = p11data.filter((obj) => obj.boon);
 export default function StatsCodex() {
   const { posts, loader } = useData();
 
-  const availableData = [...p11data_boon, ...v1data, ...(posts || [])];
+  const availableData = [...v1data, ...(posts || [])];
 
   const store_boons = availableData.reduce((acc, entry) => {
     const boonArray = sToA(entry.boon); // Convert string to array
@@ -206,8 +206,8 @@ export default function StatsCodex() {
       {loader ? (
         <Loading />
       ) : (
-        <div className="w-full max-w-[2000px] mx-auto p-2 py-10 font-[Ale] text-[12px] select-none pointer-events-none">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-2 gap-y-6">
+        <div className="w-full max-w-[2000px] mx-auto py-10 font-[Ale] text-[12px] select-none pointer-events-none">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-2 gap-y-6 my-4">
             {boon_top3.map((arr, ind1) => (
               <div>
                 <div className="bg-black rounded-t-lg relative pt-2">
@@ -249,9 +249,9 @@ export default function StatsCodex() {
               </div>
             ))}
           </div>
-          <div className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 rounded gap-2 text-[13px]">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-2 gap-y-6 my-4 p-2">
             {Object.entries(categories).map((arr) => (
-              <div className="bg-gradient-to-b from-[black] to-transparent px-2 py-1 rounded-xl border-1 border-white/20 h-full">
+              <div className="bg-gradient-to-b from-[#131111] to-transparent px-2 py-1 rounded-xl h-full">
                 <div className="text-[16px] text-center">{arr[0]}</div>
                 {arr[1].map((obj) => {
                   const calcValue = ((obj.value / availableData.length) * 100).toFixed(2);
@@ -278,10 +278,10 @@ export default function StatsCodex() {
               </div>
             ))}
           </div>
-          <div className="w-full my-8 text-[13px] md:text-[14px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-2 gap-y-6 p-2">
             {boon_top3.map((arr, ind1) => (
               <div>
-                <div className="bg-gradient-to-b from-black to-transparent border-t-4 rounded-xl border-1 border-white/20 h-full">
+                <div className="bg-gradient-to-b from-black to-transparent rounded-xl h-full ">
                   {arr.map((obj, ind2) => {
                     const calcValue = ((obj[1] / availableData.length) * 100).toFixed(2);
                     return (
