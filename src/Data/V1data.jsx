@@ -116,7 +116,7 @@ export const v1data = [
     fam: "Frog",
     cor: "HepAttack,ZeuSpecial,PosCast,PosSprint,HesMagick",
     ham: "Hidden Helix,Dividing Blaze",
-    boon: "Flame Strike,Geyser Spout,Flash Fry,Uncanny Fortitude,Trusty Shield,Defensive Posture,Ingenious Flourish,Water Fitness,Killer Current,Nitro Boost",
+    boon: "Geyser Spout,Flash Fry,Uncanny Fortitude,Trusty Shield,Defensive Posture,Ingenious Flourish,Water Fitness,Killer Current,Nitro Boost",
     ks: "Aromatic Phial,Gorgon Amulet,Crystal Figurine,Knuckle Bones",
   },
   {
@@ -224,7 +224,7 @@ export const v1data = [
     fam: "Frog",
     cor: "ZeuAttack,ApoSpecial,Cast,ApoSprint,HepMagick",
     ham: "Melting Sickle,Rapid Onslaught",
-    boon: "Secret Crush,Flame Flourish,Hot Pot,Defensive Posture,Word of Smaller Stature,Static Shock,Life from the Dead,Master Conductor,Self Healing,Slow Cooker,Warm Breeze,Thermal Dynamics,Quick Buck,Flourish,Travel Deal",
+    boon: "Secret Crush,Hot Pot,Defensive Posture,Word of Smaller Stature,Static Shock,Life from the Dead,Master Conductor,Self Healing,Slow Cooker,Warm Breeze,Thermal Dynamics,Quick Buck,Flourish,Travel Deal",
     ks: "Aromatic Phial,Gorgon Amulet,Transcendent Embryo,Beautiful Mirror",
   },
   {

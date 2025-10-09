@@ -4998,7 +4998,7 @@ export const p11data = [
     fam: "Hound",
     cor: "HesAttack,PosSpecial,PosSprint,ZeuMagick",
     ham: "Clean Coil,Whirling Helix",
-    boon: "Phase Shift,Steadfastness,Preparation,Flame Strike,Wave Flourish,Breaker Rush,Static Shock,Ionic Gain,Electric Overload,Slippery Slope,Shameless Attitude,Defensive Posture,Hard Target,Cinerary Circle,Ancestral Offering,Revival",
+    boon: "Phase Shift,Steadfastness,Preparation,Static Shock,Ionic Gain,Electric Overload,Slippery Slope,Shameless Attitude,Defensive Posture,Hard Target,Cinerary Circle,Ancestral Offering,Revival",
     ks: "Vivid Sea,Fig Leaf,Gorgon Amulet,Blackened Fleece",
   },
   {
@@ -5119,7 +5119,7 @@ export const p11data = [
     fam: "Frog",
     cor: "HepAttack,ZeuSpecial,HesCast,ApoSprint,Magick",
     ham: "Colossus Driver,Boosted Ignition",
-    boon: "Volcanic Strike,Trusty Shield,Blinding Rush,Smolder Ring,Pyro Technique,Heaven Flourish,Double Strike,Static Shock,Support Fire,Renewed Faith,Fight Fight Fight,Deep Dissent,Self Healing,Thermal Dynamics,Soul,Mind,Neurotic",
+    boon: "Trusty Shield,Pyro Technique,Double Strike,Static Shock,Support Fire,Renewed Faith,Fight Fight Fight,Deep Dissent,Self Healing,Thermal Dynamics,Soul,Mind,Neurotic",
     ks: "Transcendent Embryo,Fig Leaf,Engraved Pin,Gorgon Amulet",
   },
   {
@@ -5553,7 +5553,7 @@ export const p11data = [
     fam: "Frog",
     cor: "HesAttack,ZeuSpecial,PosCast,ApoSprint,AphMagick",
     ham: "Clean Coil,Sudden Burst",
-    boon: "Glamour Gain,Sweet Surrender,Blinding Rush,Super Nova,Tidal Ring,Heaven Flourish,Flame Strike,Flash Fry,Black Night Banishment,Defensive Posture,Hard Target,Nitro Boost,Burning Desire,Beach Ball,Wispy Wiles,Water Fitness,Killer Current,Chant,Revival",
+    boon: "Sweet Surrender,Super Nova,Flash Fry,Black Night Banishment,Defensive Posture,Hard Target,Nitro Boost,Burning Desire,Beach Ball,Wispy Wiles,Water Fitness,Killer Current,Chant,Revival",
     ks: "Aromatic Phial,Transcendent Embryo,Silver Wheel,Engraved Pin",
   },
   {

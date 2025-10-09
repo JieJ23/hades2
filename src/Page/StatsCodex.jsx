@@ -10,6 +10,8 @@ import Loading from "../Hook/Loading";
 import { sToA } from "../Data/Misc";
 import { boonCodexr } from "../Data/Boon2";
 
+import { p11data } from "../Data/P11Data";
+
 import {
   bAphrodite,
   bZeus,
@@ -65,10 +67,13 @@ const character = [
   "Mel2",
 ];
 
+// Boon Only P11data
+const p11data_boon = p11data.filter((obj) => obj.boon);
+
 export default function StatsCodex() {
   const { posts, loader } = useData();
 
-  const availableData = [...v1data, ...(posts || [])];
+  const availableData = [...p11data_boon, ...v1data, ...(posts || [])];
 
   const store_boons = availableData.reduce((acc, entry) => {
     const boonArray = sToA(entry.boon); // Convert string to array
@@ -175,6 +180,36 @@ export default function StatsCodex() {
                 <img src={`/Character/${character[ind1]}.webp`} alt="Character" className="h-[125px] w-auto mx-auto" />
                 <div className="bg-gradient-to-b from-black to-transparent border-t-4 border-black rounded-xl">
                   {arr.slice(0, 5).map((obj, ind2) => {
+                    const calcValue = ((obj[1] / availableData.length) * 100).toFixed(2);
+                    return (
+                      <div
+                        className={`flex items-center gap-2 my-1 rounded py-0.5 px-1 ${
+                          calcValue > 25 ? `text-[#00ffaa]` : `text-white`
+                        }`}
+                        key={ind2}
+                      >
+                        <img
+                          draggable={false}
+                          src={`/P9/${boonCodexr[obj[0]]}.png`}
+                          alt="Core Boon"
+                          className="size-8 rounded-full"
+                        />
+                        <div className={`flex items-center justify-between w-full`}>
+                          <div>{obj[0]}</div>
+                          <div>{calcValue}%</div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="max-w-[1000px] mx-auto my-8 text-[14px]">
+            {boon_top3.map((arr, ind1) => (
+              <div>
+                <div className="bg-gradient-to-b from-black to-transparent border-t-4 border-black rounded-xl">
+                  {arr.map((obj, ind2) => {
                     const calcValue = ((obj[1] / availableData.length) * 100).toFixed(2);
                     return (
                       <div
