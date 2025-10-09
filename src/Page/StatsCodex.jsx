@@ -3,11 +3,10 @@ import Background from "../Comp/Background";
 import Sidebar from "../Comp/Sidebar";
 import { v1data } from "../Data/V1data";
 
-import { useState } from "react";
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
 
-import { sToA } from "../Data/Misc";
+import { sortCore, sToA } from "../Data/Misc";
 import { boonCodexr } from "../Data/Boon2";
 
 import { p11data } from "../Data/P11Data";
@@ -84,6 +83,40 @@ export default function StatsCodex() {
 
     return acc;
   }, {});
+
+  const store_core = availableData.reduce((acc, entry) => {
+    const boonArray = sToA(entry.cor); // Convert string to array
+
+    boonArray.forEach((cor) => {
+      acc[cor] = (acc[cor] || 0) + 1;
+    });
+
+    return acc;
+  }, {});
+
+  //
+  const categories = {
+    Attack: [],
+    Special: [],
+    Cast: [],
+    Sprint: [],
+    Magick: [],
+  };
+  // 1️⃣ Categorize (fast single pass)
+  for (const [key, value] of Object.entries(store_core)) {
+    if (key.endsWith("Attack")) categories.Attack.push({ key, value });
+    else if (key.endsWith("Special")) categories.Special.push({ key, value });
+    else if (key.endsWith("Cast")) categories.Cast.push({ key, value });
+    else if (key.endsWith("Sprint")) categories.Sprint.push({ key, value });
+    else if (key.endsWith("Magick")) categories.Magick.push({ key, value });
+  }
+
+  // 2️⃣ Sort each category by value (descending)
+  for (const type in categories) {
+    categories[type].sort((a, b) => b.value - a.value);
+  }
+
+  console.log(Object.entries(categories));
 
   //
   const sets = {
@@ -185,7 +218,7 @@ export default function StatsCodex() {
                     className="h-[125px] w-auto mx-auto"
                   />
                 </div>
-                <div className="bg-gradient-to-b from-[#131111] to-transparent rounded-none">
+                <div className="bg-gradient-to-b from-[#131111] to-transparent rounded-none ">
                   {arr.slice(0, 5).map((obj, ind2) => {
                     const calcValue = ((obj[1] / availableData.length) * 100).toFixed(2);
                     return (
@@ -216,10 +249,39 @@ export default function StatsCodex() {
               </div>
             ))}
           </div>
+          <div className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 rounded gap-2 text-[13px]">
+            {Object.entries(categories).map((arr) => (
+              <div className="bg-gradient-to-b from-[black] to-transparent px-2 py-1 rounded-xl border-1 border-white/20 h-full">
+                <div className="text-[16px] text-center">{arr[0]}</div>
+                {arr[1].map((obj) => {
+                  const calcValue = ((obj.value / availableData.length) * 100).toFixed(2);
+                  return (
+                    <div
+                      className={`flex items-center gap-2 rounded py-0.5 px-1 mb-0.5 ${
+                        calcValue > 25
+                          ? `bg-[orange] text-black`
+                          : calcValue > 15
+                          ? `bg-white text-black`
+                          : `text-white`
+                      }`}
+                    >
+                      <img src={`/P9/${obj.key}.png`} alt="Core" className="size-8 rounded-full" />
+                      <div className="w-full flex items-center justify-between">
+                        <div>{obj.key}</div>
+                        <div>
+                          [{obj.value}] {calcValue}%
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
           <div className="w-full my-8 text-[13px] md:text-[14px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
             {boon_top3.map((arr, ind1) => (
               <div>
-                <div className="bg-gradient-to-b from-black to-transparent border-t-4 border-black rounded-xl">
+                <div className="bg-gradient-to-b from-black to-transparent border-t-4 rounded-xl border-1 border-white/20 h-full">
                   {arr.map((obj, ind2) => {
                     const calcValue = ((obj[1] / availableData.length) * 100).toFixed(2);
                     return (
