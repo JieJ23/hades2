@@ -62,11 +62,11 @@ export const bMagick = {
 };
 
 export const bAphrodite = {
-  Aphrodite_27: `Flutter Strike`,
-  Aphrodite_30: `Flutter Flourish`,
-  Aphrodite_29: `Rapture Ring`,
-  Aphrodite_28: `Passion Rush`,
-  Aphrodite_42: `Glamour Gain`,
+  // Aphrodite_27: `Flutter Strike`,
+  // Aphrodite_30: `Flutter Flourish`,
+  // Aphrodite_29: `Rapture Ring`,
+  // Aphrodite_28: `Passion Rush`,
+  // Aphrodite_42: `Glamour Gain`,
   Aphrodite_38: `Shameless Attitude`,
   Aphrodite_35: `Spiritual Affirmation`,
   Aphrodite_34: `Healthy Rebound`,
@@ -78,12 +78,12 @@ export const bAphrodite = {
 };
 
 export const bApollo = {
-  Apollo_27: `Nova Strike`,
-  Apollo_30: `Nova Flourish`,
-  Apollo_29: `Solar Ring`,
+  // Apollo_27: `Nova Strike`,
+  // Apollo_30: `Nova Flourish`,
+  // Apollo_29: `Solar Ring`,
   Apollo_31: `Prominence Flare`,
-  Apollo_28: `Blinding Rush`,
-  Apollo_35: `Lucid Gain`,
+  // Apollo_28: `Blinding Rush`,
+  // Apollo_35: `Lucid Gain`,
   Apollo_33: `Light Smite`,
   Apollo_36: `Perfect Image`,
   Apollo_39: `Dazzling Display`,
@@ -105,11 +105,11 @@ export const bArachne = {
 };
 
 export const bAres = {
-  Ares_27: `Vicious Strike`,
-  Ares_30: `Vicious Flourish`,
-  Ares_31: `Grisly Gain`,
-  Ares_29: `Sword Ring`,
-  Ares_28: `Stabbing Rush`,
+  // Ares_27: `Vicious Strike`,
+  // Ares_30: `Vicious Flourish`,
+  // Ares_31: `Grisly Gain`,
+  // Ares_29: `Sword Ring`,
+  // Ares_28: `Stabbing Rush`,
   Ares_32: `Meat Grinder`,
   Ares_33: `Profuse Bleeding`,
   Ares_34: `Grievous Blow`,
@@ -157,11 +157,11 @@ export const bCirce = {
 };
 
 export const bDemeter = {
-  Demeter_27: `Ice Strike`,
-  Demeter_30: `Ice Flourish`,
-  Demeter_29: `Arctic Ring`,
-  Demeter_28: `Frigid Rush`,
-  Demeter_31: `Tranquil Gain`,
+  // Demeter_27: `Ice Strike`,
+  // Demeter_30: `Ice Flourish`,
+  // Demeter_29: `Arctic Ring`,
+  // Demeter_28: `Frigid Rush`,
+  // Demeter_31: `Tranquil Gain`,
   Demeter_32: `Arctic Gale`,
   Demeter_34: `Plentiful Forage`,
   Demeter_36: `Steady Growth`,
@@ -206,11 +206,11 @@ export const bHades = {
 };
 
 export const bHephaestus = {
-  Hephaestus_27: `Volcanic Strike`,
-  Hephaestus_30: `Volcanic Flourish`,
-  Hephaestus_29: `Anvil Ring`,
-  Hephaestus_28: `Smithy Rush`,
-  Hephaestus_31: `Tough Gain`,
+  // Hephaestus_27: `Volcanic Strike`,
+  // Hephaestus_30: `Volcanic Flourish`,
+  // Hephaestus_29: `Anvil Ring`,
+  // Hephaestus_28: `Smithy Rush`,
+  // Hephaestus_31: `Tough Gain`,
   Hephaestus_39: `Molten Touch`,
   Hephaestus_38: `Heavy Metal`,
   Hephaestus_32: `Trusty Shield`,
@@ -222,12 +222,12 @@ export const bHephaestus = {
 };
 
 export const bHera = {
-  Hera_27: `Sworn Strike`,
-  Hera_30: `Sworn Flourish`,
-  Hera_29: `Engagement Ring`,
+  // Hera_27: `Sworn Strike`,
+  // Hera_30: `Sworn Flourish`,
+  // Hera_29: `Engagement Ring`,
   Hera_48: `Rousing Reception`,
-  Hera_28: `Nexus Rush`,
-  Hera_32: `Born Gain`,
+  // Hera_28: `Nexus Rush`,
+  // Hera_32: `Born Gain`,
   Hera_37: `Uncommon Grace`,
   Hera_33: `Extended Family`,
   Hera_35: `Dying Wish`,
@@ -253,11 +253,11 @@ export const bHermes = {
 };
 
 export const bHestia = {
-  Hestia_27: `Flame Strike`,
-  Hestia_30: `Flame Flourish`,
-  Hestia_29: `Smolder Ring`,
-  Hestia_28: `Heat Rush`,
-  Hestia_31: `Cardio Gain`,
+  // Hestia_27: `Flame Strike`,
+  // Hestia_30: `Flame Flourish`,
+  // Hestia_29: `Smolder Ring`,
+  // Hestia_28: `Heat Rush`,
+  // Hestia_31: `Cardio Gain`,
   Hestia_36: `Snuffed Candle`,
   Hestia_35: `Highly Flammable`,
   Hestia_47: `Glowing Coal`,
@@ -303,13 +303,13 @@ export const bNarcissus = {
 };
 
 export const bPoseidon = {
-  Poseidon_27: `Wave Strike`,
-  Poseidon_30: `Wave Flourish`,
-  Poseidon_29: `Tidal Ring`,
+  // Poseidon_27: `Wave Strike`,
+  // Poseidon_30: `Wave Flourish`,
+  // Poseidon_29: `Tidal Ring`,
   Poseidon_46: `Geyser Spout`,
   Poseidon_38: `Ocean Swell`,
-  Poseidon_28: `Breaker Rush`,
-  Poseidon_31: `Flood Gain`,
+  // Poseidon_28: `Breaker Rush`,
+  // Poseidon_31: `Flood Gain`,
   Poseidon_39: `Hydraulic Might`,
   Poseidon_36: `Buried Treasure`,
   Poseidon_32: `High Surf`,
@@ -319,11 +319,11 @@ export const bPoseidon = {
 };
 
 export const bZeus = {
-  Zeus_27: `Heaven Strike`,
-  Zeus_30: `Heaven Flourish`,
-  Zeus_29: `Storm Ring`,
-  Zeus_28: `Thunder Rush`,
-  Zeus_34: `Ionic Gain`,
+  // Zeus_27: `Heaven Strike`,
+  // Zeus_30: `Heaven Flourish`,
+  // Zeus_29: `Storm Ring`,
+  // Zeus_28: `Thunder Rush`,
+  // Zeus_34: `Ionic Gain`,
   Zeus_36: `Power Surge`,
   Zeus_33: `Divine Vengeance`,
   Zeus_48: `Lightning Lance`,

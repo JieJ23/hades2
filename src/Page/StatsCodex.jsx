@@ -174,17 +174,28 @@ export default function StatsCodex() {
         <Loading />
       ) : (
         <div className="w-full max-w-[2000px] mx-auto p-2 py-10 font-[Ale] text-[12px] select-none pointer-events-none">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 gap-2 gap-y-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-2 gap-y-6">
             {boon_top3.map((arr, ind1) => (
               <div>
-                <img src={`/Character/${character[ind1]}.webp`} alt="Character" className="h-[125px] w-auto mx-auto" />
-                <div className="bg-gradient-to-b from-black to-transparent border-t-4 border-black rounded-xl">
+                <div className="bg-black rounded-t-lg relative pt-2">
+                  <div className="absolute bottom-0 h-[50%] w-full bg-gradient-to-b from-transparent to-[#131111]" />
+                  <img
+                    src={`/Character/${character[ind1]}.webp`}
+                    alt="Character"
+                    className="h-[125px] w-auto mx-auto"
+                  />
+                </div>
+                <div className="bg-gradient-to-b from-[#131111] to-transparent rounded-none">
                   {arr.slice(0, 5).map((obj, ind2) => {
                     const calcValue = ((obj[1] / availableData.length) * 100).toFixed(2);
                     return (
                       <div
-                        className={`flex items-center gap-2 my-1 rounded py-0.5 px-1 ${
-                          calcValue > 25 ? `text-[#00ffaa]` : `text-white`
+                        className={`flex items-center gap-2 rounded py-0.5 px-1 mb-0.5 ${
+                          calcValue > 25
+                            ? `bg-[orange] text-black`
+                            : calcValue > 15
+                            ? `bg-white text-black`
+                            : `text-white`
                         }`}
                         key={ind2}
                       >
@@ -205,7 +216,7 @@ export default function StatsCodex() {
               </div>
             ))}
           </div>
-          <div className="max-w-[1000px] mx-auto my-8 text-[14px]">
+          <div className="w-full my-8 text-[13px] md:text-[14px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
             {boon_top3.map((arr, ind1) => (
               <div>
                 <div className="bg-gradient-to-b from-black to-transparent border-t-4 border-black rounded-xl">
@@ -213,8 +224,12 @@ export default function StatsCodex() {
                     const calcValue = ((obj[1] / availableData.length) * 100).toFixed(2);
                     return (
                       <div
-                        className={`flex items-center gap-2 my-1 rounded py-0.5 px-1 ${
-                          calcValue > 25 ? `text-[#00ffaa]` : `text-white`
+                        className={`flex items-center gap-2 rounded py-0.5 px-1 mb-0.5 ${
+                          calcValue > 25
+                            ? `bg-[orange] text-black`
+                            : calcValue > 15
+                            ? `bg-white text-black`
+                            : `text-white`
                         }`}
                         key={ind2}
                       >
@@ -226,7 +241,9 @@ export default function StatsCodex() {
                         />
                         <div className={`flex items-center justify-between w-full`}>
                           <div>{obj[0]}</div>
-                          <div>{calcValue}%</div>
+                          <div>
+                            [{obj[1]}] {calcValue}%
+                          </div>
                         </div>
                       </div>
                     );
