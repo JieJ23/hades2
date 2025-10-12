@@ -179,7 +179,7 @@ export default function Query() {
     addParamIfNotDefault("arc", arc);
     addParamIfNotDefault("player", player);
 
-    const newURL = `${window.location.origin}/V1Query/?${params.toString()}`;
+    const newURL = `${window.location.origin}/Query/?${params.toString()}`;
     setShareableURL(newURL);
   };
   const copyURLToClipboard = () => {
