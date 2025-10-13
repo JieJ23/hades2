@@ -687,7 +687,7 @@ export const v1data = [
     asp: "Artemis",
     loc: "Underworld",
     fea: "57",
-    src: "https://media.discordapp.net/attachments/1217110523091357747/1426730121066450985/image.png?ex=68ec4978&is=68eaf7f8&hm=620f314a33ab1139d372109ca88bfb7621b42e04119914375fbb22705835ed69&=&format=webp&quality=lossless&width=2187&height=1230",
+    src: "",
     des: "Hitch trick +reaper knives and blitz",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMyIsImM2IiwiYzciLCJjOCIsImMxMSIsImMxMiIsImMxMyIsImMxNCIsImMxNSIsImMxNiIsImMxOCIsImMyMiIsImMyNCJd",
