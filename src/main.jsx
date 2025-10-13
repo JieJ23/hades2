@@ -7,6 +7,7 @@ import App from "./App.jsx";
 
 import Query from "./Page/Query.jsx";
 import Ladder from "./Page/Ladder.jsx";
+import FearPoints from "./Page/FearPoints.jsx";
 import StatsCodex from "./Page/StatsCodex.jsx";
 
 import EALadder from "./Page/EALadder.jsx";
@@ -29,6 +30,7 @@ createRoot(document.getElementById("root")).render(
 
           <Route path="/Query" element={<Query />} />
           <Route path="/Ladder" element={<Ladder />} />
+          <Route path="/FearPoints" element={<FearPoints />} />
           <Route path="/StatsCodex" element={<StatsCodex />} />
 
           <Route path="/EALadder" element={<EALadder />} />

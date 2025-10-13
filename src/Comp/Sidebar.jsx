@@ -5,6 +5,7 @@ export const sites = [
   { link: ``, nam: `Home` },
   { link: `Query`, nam: `Query` },
   { link: `Ladder`, nam: `Ladder` },
+  { link: `FearPoints`, nam: `PBs` },
   { link: `StatsCodex`, nam: `Stats` },
 
   { link: `EALadder`, nam: `EA` },
