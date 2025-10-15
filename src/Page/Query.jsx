@@ -70,7 +70,7 @@ export default function Query() {
     }
   });
 
-  const allPlayers = [...new Set([...v1data].map((obj) => obj.nam))].sort((a, b) =>
+  const allPlayers = [...new Set([...v1data, ...(posts || [])].map((obj) => obj.nam))].sort((a, b) =>
     a.toLowerCase().localeCompare(b.toLowerCase())
   );
 
