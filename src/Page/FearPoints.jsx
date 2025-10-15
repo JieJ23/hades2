@@ -17,7 +17,7 @@ export default function FearPoints() {
   const { posts, loader } = useData();
   const [category, setCategory] = useState(null);
 
-  const availableData = [...v1data, ...(posts || [])].filter((obj) => {
+  const availableData = [...p11data, ...v1data, ...(posts || [])].filter((obj) => {
     if (category === null) {
       return obj.loc;
     } else {
