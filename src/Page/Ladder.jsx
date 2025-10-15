@@ -127,7 +127,7 @@ export default function Ladder() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 my-2">
               {fulldata_ArrArrObject.map((arr, oi) => (
                 <div
-                  className={`rounded-t-md px-2 py-1 relative border-1 border-[#000000] hover:border-[#00ffaa] duration-200 ease-in transition-colors h-[227px] ${
+                  className={`rounded-t-md px-2 py-1 relative border-1 border-[#000000] hover:border-[#00ffaa] duration-200 ease-in transition-colors h-[250px] ${
                     arr[0] && arr[0].fea >= 62 ? `bg-[#141537a6]` : `bg-[#0e0e0ec4]`
                   }`}
                 >
@@ -165,7 +165,7 @@ export default function Ladder() {
                                 draggable={false}
                                 src={`/H2Boons/${ite}.png`}
                                 alt="Core Boon"
-                                className="w-[20px] h-[20px]"
+                                className="w-[22px] h-[22px]"
                               />
                             </div>
                           ))}
@@ -206,7 +206,7 @@ export default function Ladder() {
                         {boon === `Keep` &&
                           obj.ks &&
                           sToA(obj.ks).map((ite, index) => (
-                            <div className="tooltip shrink-0" key={index}>
+                            <div className="tooltip shrink-0 flex" key={index}>
                               <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
                                 <div className="text-[11px]">{ite}</div>
                               </div>
