@@ -2,6 +2,7 @@ import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
+import { p9data } from "../Data/P9Data";
 import { v1data } from "../Data/V1data";
 import { p11data } from "../Data/P11Data";
 import { useState } from "react";
@@ -9,15 +10,14 @@ import { useState } from "react";
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
 
-import { parseTimetoms } from "../Data/Misc";
-import { h2AspectOrder } from "../Data/Misc";
+import { parseTimetoms, h2AspectOrder } from "../Data/Misc";
 
 //
 export default function FearPoints() {
   const { posts, loader } = useData();
   const [category, setCategory] = useState(null);
 
-  const availableData = [...p11data, ...v1data, ...(posts || [])].filter((obj) => {
+  const availableData = [...p9data, ...p11data, ...v1data, ...(posts || [])].filter((obj) => {
     if (category === null) {
       return obj.loc;
     } else {
