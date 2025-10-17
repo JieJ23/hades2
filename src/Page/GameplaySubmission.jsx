@@ -178,7 +178,7 @@ export default function GameplaySubmission() {
               <div className="text-[14px]">Optional Arcana and Fear setup, shareable tools available above.</div>
               <input type="text" placeholder="Arcana Shareable URL" className="input w-full rounded" name="arcana" />
               <input type="text" placeholder="Fear Shareable URL" className="input w-full rounded" name="oath" />
-              <div className="text-[14px]">Completion Time: Minutes / Seconds / Milliseconds </div>
+              <div className="text-[14px]">Completion Time: Minutes / Seconds / Centiseconds </div>
               <div className="flex gap-2">
                 <input
                   type="number"
@@ -204,7 +204,7 @@ export default function GameplaySubmission() {
                   type="number"
                   min="0"
                   max="99"
-                  placeholder="Milliseconds"
+                  placeholder="Centiseconds"
                   className="input w-full rounded"
                   name="mls"
                   onInput={(e) => (e.target.value = e.target.value.slice(0, 2))}
