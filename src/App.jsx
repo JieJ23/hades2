@@ -119,7 +119,7 @@ export default function App() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 px-1">
           {homeContent.map((obj, index1) => (
             <div
-              className={`relative group select-none hover:bg-[#131111] hover:text-white transition-colors duration-150 ease-in rounded-none antialiased bg-[white] text-black ${
+              className={`relative group select-none hover:bg-[#131111] hover:text-white transition-colors duration-150 ease-in rounded-xl antialiased bg-[white] text-black ${
                 (index1 === 15 || index1 === 7) && `col-span-2`
               } ${(index1 === 4 || index1 === 12) && `row-span-2 col-span-2`}`}
               key={index1}
@@ -133,7 +133,7 @@ export default function App() {
                   />
                 </div>
               ) : (
-                <div className=" pb-1 px-3 flex flex-col justify-between">
+                <div className="p-2 pb-1 px-3 flex flex-col justify-between">
                   <div className="text-[18px] font-[Ale] my-1 flex gap-1 justify-center items-center">
                     <div>{obj.category}</div>
                     <img src={`/Misc/${obj.icon}.png`} alt="Marker" className="size-6" />
