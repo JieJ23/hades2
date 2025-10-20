@@ -16,14 +16,17 @@ import { parseTimetoms, h2AspectOrder } from "../Data/Misc";
 export default function FearPoints() {
   const { posts, loader } = useData();
   const [category, setCategory] = useState(null);
+  const [addea, setAddEa] = useState(true);
 
-  const availableData = [...p9data, ...p11data, ...v1data, ...(posts || [])].filter((obj) => {
-    if (category === null) {
-      return obj.loc;
-    } else {
-      return obj.loc === category;
+  const availableData = [...(addea ? p9data : []), ...(addea ? p11data : []), ...v1data, ...(posts || [])].filter(
+    (obj) => {
+      if (category === null) {
+        return obj.loc;
+      } else {
+        return obj.loc === category;
+      }
     }
-  });
+  );
   const availablePlayer = [...new Set(availableData.map((obj) => obj.nam))];
 
   const store_pb = [];
@@ -54,8 +57,8 @@ export default function FearPoints() {
         {loader ? (
           <Loading />
         ) : (
-          <div className="my-6 font-[Ale] text-[13px]">
-            <div className="flex gap-2 justify-center mb-2">
+          <div className="my-6 font-[Ale] text-[12px] md:text-[13px]">
+            <div className="flex flex-wrap gap-1 justify-center mb-2">
               <div
                 className={`${
                   category === null ? `bg-white text-black` : `text-white`
@@ -80,6 +83,12 @@ export default function FearPoints() {
               >
                 Underworld
               </div>
+              <div
+                className={`${addea === true ? `bg-white text-black` : `text-white`} px-2 py-1 rounded cursor-pointer`}
+                onClick={() => setAddEa(!addea)}
+              >
+                Early Access
+              </div>
             </div>
             <div>
               {finalized_store.map((arr, index) => {
@@ -98,17 +107,16 @@ export default function FearPoints() {
                       {h2AspectOrder.map((item, index2) =>
                         haveAspects.includes(item) ? (
                           <div className="flex flex-col items-center">
-                            <img
-                              src={`/P9/${item}.png`}
-                              alt="Aspects"
-                              className="size-10 rounded-full mx-auto drop-shadow-[0_0_6px_#00ffaa]"
-                            />
+                            <img src={`/P9/${item}.png`} alt="Aspects" className="size-10 mx-auto" />
                             <div className="text-[12px]">
                               {finalized_store[index].find((obj) => obj.asp === item).fea}
                             </div>
                           </div>
                         ) : (
-                          <div className={`size-10 rounded bg-[#131111] mx-auto`} />
+                          <div className="flex flex-col items-center">
+                            <div className={`size-10 rounded-sm bg-[#131111] mx-auto`} />
+                            <div className="text-[12px]">-</div>
+                          </div>
                         )
                       )}
                     </div>

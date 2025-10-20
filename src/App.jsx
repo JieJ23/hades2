@@ -1,340 +1,156 @@
 import SideNav from "./Comp/Sidebar";
 import Background from "./Comp/Background";
 import Footer from "./Comp/Footer";
+import { Link } from "react-router-dom";
 
-import { p9data } from "./Data/P9Data";
-import { p11data } from "./Data/P11Data";
-import { v1data } from "./Data/V1data";
-import {
-  sToA,
-  getYTid,
-  getBilibiliid,
-  getTwitchid,
-  orderMap2,
-  findValue2,
-  deCodeArcana,
-  deCodeVow,
-  oathMatch,
-  vowMatch,
-  findValue,
-  orderMap,
-  parseTimetoms,
-  parsemstoTime,
-} from "./Data/Misc";
-import { p9boons } from "./Data/P9BoonObj";
-import { boonCodex } from "./Data/Boon2";
-
-import { useData } from "./Hook/DataFetch";
-import Loading from "./Hook/Loading";
-import { useMemo } from "react";
-
-import { useState, useEffect } from "react";
-
-const latest10videos = [...p11data, ...p9data]
-  .filter((obj) => obj.src)
-  .sort((a, b) => new Date(b.dat) - new Date(a.dat));
-
-const orderByFearAndTime = [...p9data, ...p11data, ...v1data].sort((a, b) => {
-  const feaDiff = +b.fea - +a.fea;
-  if (feaDiff !== 0) return feaDiff;
-  return parseTimetoms(a.tim) - parseTimetoms(b.tim);
-});
-
-const allPBs = orderByFearAndTime.reduce(
-  (acc, curr) => {
-    const key = `${curr.nam}_${curr.asp}`;
-    if (!acc.map.has(key)) {
-      acc.map.set(key, true);
-      acc.result.push(curr);
-    }
-    return acc;
+const homeContent = [
+  {
+    icon: "diamond",
+    category: "Videos",
+    link: "/Archive",
+    description:
+      "An archive of all gameplay, spanning from early access to the current release, sorted by date from latest to oldest, including Boon details, Arcana, and Vows if available.",
   },
-  { map: new Map(), result: [] }
-).result;
-
-// // Unique PBs
-// const totalUnique_uw = allPBs.filter((obj) => obj.loc === `Underworld`);
-// const totalUnique_s = allPBs.filter((obj) => obj.loc === `Surface`);
-// const totalFear_uw = totalUnique_uw.reduce((arc, cur) => arc + +cur.fea, 0);
-// const totalFear_s = totalUnique_s.reduce((arc, cur) => arc + +cur.fea, 0);
-
-// // Raw Data
-// const total_uw = orderByFearAndTime.filter((obj) => obj.loc === `Underworld`);
-// const total_s = orderByFearAndTime.filter((obj) => obj.loc === `Surface`);
-// const total_uwfear = total_uw.reduce((arc, cur) => arc + +cur.fea, 0);
-// const total_sfear = total_s.reduce((arc, cur) => arc + +cur.fea, 0);
-
-// const displayUnique = [
-//   { title: `Total PBs`, dat: totalUnique_uw.length, body: `UW` },
-//   { title: `Total PBs`, dat: totalUnique_s.length, body: `Surface` },
-//   { title: `Total Fear`, dat: totalFear_uw, body: `UW PBs` },
-//   { title: `Total Fear`, dat: totalFear_s, body: `Surface PBs` },
-// ];
-
-// const displayRaw = [
-//   { title: `EA Included`, dat: total_uw.length, body: `UW Runs` },
-//   { title: `EA Included`, dat: total_s.length, body: `Surface Runs` },
-//   { title: `Total Fear`, dat: total_uwfear, body: `UW Runs` },
-//   { title: `Total Fear`, dat: total_sfear, body: `Surface Runs` },
-// ];
+  {
+    icon: "diamond",
+    category: "Query",
+    link: "/Query",
+    description:
+      "Displays all recorded runs sorted by highest Fear and fastest completion, with filters & sorting options—from basic aspects to advanced criteria like Boons, Arcana, and Vows.",
+  },
+  {
+    icon: "diamond",
+    category: "Ladder",
+    link: "/Ladder",
+    description:
+      "Core Boons, Keepsakes, and Death vs. Strength stats for all 24 aspects across both regions, highlighting top combinations. Sorted by the top 10 unique players, offering a snapshot.",
+  },
+  {
+    icon: "diamond",
+    category: "Personl Bests",
+    link: "/FearPoints",
+    description:
+      "Compiles each player’s highest aspect completions, showing their personal bests for every aspect, and by region.",
+  },
+  {
+    poster: "img1",
+  },
+  {
+    icon: "hammer",
+    category: "Shareable Arcana",
+    link: "/ArcanaDeck",
+    description:
+      "A shareable tool for creating and customizing Arcana decks, allowing you to generate and share links of your selected Arcana cards",
+  },
+  {
+    icon: "hammer",
+    category: "Shareable Vows",
+    link: "/FearCalculator",
+    description:
+      "A shareable tool for the Oath of the Unseen, allowing you to generate and share links of your selected Vows.",
+  },
+  {
+    icon: "lotus",
+    category: "Submission",
+    link: "/GameplaySubmission",
+    description:
+      "A form for players to submit their gameplay runs to the website for inclusion in the database. This community resource compiles data to provide insights and references for aspects and gameplay in general.",
+  },
+  {
+    icon: "stats",
+    category: "Boon Stats",
+    link: "/StatsCodex",
+    description:
+      "Displays detailed boon statistics for each aspect, covering everything from core boons and Olympian god boons to Daedalus hammer upgrades.",
+  },
+  {
+    icon: "stats",
+    category: "Keepsakes Stats",
+    link: "/KeepsakesStats",
+    description:
+      "Displays the most selected Keepsakes for each biome across both regions, along with the most common selection order used by players.",
+  },
+  {
+    icon: "stats",
+    category: "Arcana Stats",
+    link: "/ArcanaStats",
+    description:
+      "Displays the most common Arcana deck selections and the most frequent setups for specific Fear difficulty ranges.",
+  },
+  {
+    icon: "stats",
+    category: "Vows Stats",
+    link: "/VowsStats",
+    description:
+      "Provides information on the most common Vow setups, along with in-depth selection statistics for each Vow, including the most frequently chosen Vow levels.",
+  },
+  {
+    poster: "img2",
+  },
+  {
+    icon: "myrtle",
+    category: "EA Query",
+    link: "/EAQuery",
+    description:
+      "Displays all early access recorded runs sorted by highest Fear and fastest completion, with filters & sorting options—from basic aspects to advanced criteria like Boons, Arcana, and Vows.",
+  },
+  {
+    icon: "myrtle",
+    category: "EA Stats",
+    link: "/EAStat",
+    description:
+      "Provides detailed statistics from Early Access, including Boons, Keepsakes, Arcana, and Oaths, offering insights into common setups and trends.",
+  },
+  {
+    icon: "myrtle",
+    category: "Early Access",
+    link: "/EALadder",
+    description:
+      "Contains all entries from Early Access, providing snapshots of each aspect across both regions. Entries are sortable and filterable by Aspect, Boons, Arcana, and Fear, with detailed stats available for each aspect, and the best aspect completions ranked by weapon type.",
+  },
+];
 
 export default function App() {
-  const { posts, loader } = useData();
-
-  const latestVideos = useMemo(() => {
-    return [...v1data, ...(posts || [])].filter((obj) => obj.src).sort((a, b) => new Date(b.dat) - new Date(a.dat));
-  }, [v1data, posts]);
-
-  const [url, setURL] = useState(latestVideos[0]);
-
-  // Update when posts change
-  useEffect(() => {
-    if (latestVideos.length > 0) {
-      setURL(latestVideos[0]);
-    }
-  }, [posts]);
-
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
-      <div className="max-w-[1600px] text-[10px] md:text-[11px] mx-auto px-1">
+      <div className="max-w-[1200px] text-[12px] md:text-[13px] mx-auto px-1">
         <SideNav />
-        {/* <div className="grid grid-cols-4 lg:grid-cols-8 gap-1 md:gap-2 md:p-1 mx-auto max-w-[1000px]">
-          {displayUnique.map((obj, index) => (
-            <div className="w-full p-2 bg-gradient-to-tr from-[#28282b] to-[#0e0e0e] rounded-sm font-[Ale] text-[12px]">
-              <div>{obj.body}</div>
-              <div className="text-[18px] md:text-[20px] text-[#00ffaa]">{obj.dat.toLocaleString(`en-US`)}</div>
-              <div>{obj.title}</div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 px-1">
+          {homeContent.map((obj, index1) => (
+            <div
+              className={`relative group select-none hover:bg-[#131111] hover:text-white transition-colors duration-150 ease-in rounded-none antialiased bg-[white] text-black ${
+                (index1 === 15 || index1 === 7) && `col-span-2`
+              } ${(index1 === 4 || index1 === 12) && `row-span-2 col-span-2`}`}
+              key={index1}
+            >
+              {index1 === 4 || index1 === 12 ? (
+                <div className="min-h-[200px] h-full bg-[black]">
+                  <img
+                    src={`/Misc/${obj.poster}.webp`}
+                    alt="Banners"
+                    className="absolute h-full w-full top-0 left-0 object-cover object-center border-1 border-black opacity-60"
+                  />
+                </div>
+              ) : (
+                <div className=" pb-1 px-3 flex flex-col justify-between">
+                  <div className="text-[18px] font-[Ale] my-1 flex gap-1 justify-center items-center">
+                    <div>{obj.category}</div>
+                    <img src={`/Misc/${obj.icon}.png`} alt="Marker" className="size-6" />
+                  </div>
+                  <div className="text-[12px] font-[Ubuntu] my-1">{obj.description}</div>
+                  <div className="text-end">
+                    <Link
+                      to={`${obj.link}`}
+                      className="btn btn-xs bg-white border-0 shadow-none group-hover:animate-bounce"
+                    >
+                      <img src="/Misc/ra.png" alt="Arrow Keys" className="size-5" />
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
-          {displayRaw.map((obj, index) => (
-            <div className="w-full p-2 bg-gradient-to-tr from-[#28282b] to-[#0e0e0e] rounded-sm font-[Ale] text-[12px]">
-              <div>{obj.body}</div>
-              <div className="text-[18px] md:text-[20px] text-[#00ffaa]">{obj.dat.toLocaleString(`en-US`)}</div>
-              <div>{obj.title}</div>
-            </div>
-          ))}
-        </div> */}
-
-        <div className="max-w-[800px] mx-auto font-[Ubuntu]">
-          {loader ? (
-            <Loading />
-          ) : (
-            <>
-              <div className="my-2">
-                {url.src.includes(`youtu`) ? (
-                  <iframe
-                    src={`https://www.youtube.com/embed/${getYTid(url.src)}`}
-                    title="Gameplay Video"
-                    allowFullScreen
-                    className="w-full h-full rounded aspect-video"
-                  />
-                ) : url.src.includes(`bilibil`) ? (
-                  <iframe
-                    src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(url.src)}&autoplay=0`}
-                    allowFullScreen
-                    className="w-full h-full rounded aspect-video"
-                  />
-                ) : (
-                  <iframe
-                    src={`https://player.twitch.tv/?video=${getTwitchid(
-                      url.src
-                    )}&parent=h2crossroads.pages.dev&autoplay=false`}
-                    className="w-full h-full rounded aspect-video"
-                    allowfullscreen
-                  ></iframe>
-                )}
-                <div className="px-2 py-1 bg-[#000000] text-white rounded my-1">
-                  <div className="grid grid-cols-4 mt-1">
-                    <div>Player</div>
-                    <div className="text-end">Aspect / Fear</div>
-                    <div className="text-end">Time</div>
-                    <div className="text-end">Date</div>
-                  </div>
-                  <div className="grid grid-cols-4 mb-1">
-                    <div>{url.nam}</div>
-                    <div className="text-end">
-                      {url.asp} / {url.fea}
-                    </div>
-                    <div className="text-end">{url.tim}</div>
-                    <div className="text-end">{url.dat.slice(0, 10)}</div>
-                  </div>
-                  {url.ks && (
-                    <div className="flex my-0.5 gap-0.5">
-                      {sToA(url.ks).map((ite, index) => (
-                        <div className="tooltip shrink-0">
-                          <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
-                            <div className="text-[10px]">{ite}</div>
-                          </div>
-                          <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  <div className="flex flex-wrap items-center my-0.5 gap-0.5">
-                    {url.ham && (
-                      <div className="flex gap-0.5 rounded">
-                        {findValue(
-                          sToA(url.ham).sort((a, b) => {
-                            const aIndex = orderMap.get(a) ?? Infinity;
-                            const bIndex = orderMap.get(b) ?? Infinity;
-                            return aIndex - bIndex;
-                          })
-                        ).map((ite, index) => (
-                          <div className="tooltip shrink-0">
-                            <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
-                              <div className="text-[10px]">{p9boons[ite]}</div>
-                            </div>
-                            <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className="size-7" />
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                    {sToA(url.cor).map((ite, index) => (
-                      <div className="tooltip shrink-0">
-                        <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
-                          <div className="text-[10px]">{ite}</div>
-                        </div>
-                        <img draggable={false} src={`/H2Boons/${ite}.png`} alt="Core Boon" className="size-7" />
-                      </div>
-                    ))}
-                  </div>
-                  {url.boon && (
-                    <div className="flex items-center flex-wrap my-0.5">
-                      <div className="flex flex-wrap gap-0.5 rounded">
-                        {findValue2(
-                          sToA(url.boon).sort((a, b) => {
-                            const aIndex = orderMap2.get(a) ?? Infinity;
-                            const bIndex = orderMap2.get(b) ?? Infinity;
-                            return aIndex - bIndex;
-                          })
-                        ).map((ite, index) => (
-                          <div className="tooltip shrink-0">
-                            <div className="tooltip-content bg-black border-1 text-[#00ffaa] rounded">
-                              <div className="text-[10px]">{boonCodex[ite]}</div>
-                            </div>
-                            <img draggable={false} src={`/P9/${ite}.png`} alt="Core Boon" className={`size-7`} />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  {(url.arcana || url.oath) && (
-                    <div className="flex flex-col md:flex-row gap-x-2 items-start">
-                      {url.arcana && (
-                        <div className="grid grid-cols-5 justify-start items-start w-full max-w-[350px] my-1">
-                          {Array.from({ length: 25 }, (_, i) => {
-                            const cardId = `c${i + 1}`;
-                            const selection = deCodeArcana(url.arcana);
-
-                            return (
-                              <img
-                                key={cardId}
-                                src={`${selection.includes(cardId) ? `/Arcane/${cardId}.png` : `/Arcane/c0.png`}`}
-                                className="w-full"
-                              />
-                            );
-                          })}
-                        </div>
-                      )}
-                      {url.oath && (
-                        <div className="grid grid-cols-4 my-1 gap-1 w-full max-w-[450px]">
-                          {deCodeVow(url.oath).map((ite, index) => (
-                            <div
-                              className={`bg-[#28282b] rounded p-1 py-2 flex gap-1 items-center ${
-                                index === 16 && `col-start-2 col-span-2`
-                              }`}
-                            >
-                              <img src={`/Vows/${vowMatch[index]}.png`} alt="Vows" className="size-7 md:size-8" />
-                              <div className="flex flex-col gap-0.5">
-                                <div>{vowMatch[index]}</div>
-                                <div className="flex gap-0.5">
-                                  {Array.from({ length: oathMatch[index].length - 1 }, (_, i) => (
-                                    <div
-                                      key={i}
-                                      className={`w-2 h-2 rounded-full ${
-                                        i <= oathMatch[index].indexOf(ite) - 1 ? "bg-[#00ffaa]" : "bg-black"
-                                      }`}
-                                    />
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              </div>
-              <div className="my-4 bg-[#000000] rounded py-1">
-                <div className="px-2 text-[14px] mb-2">v1.0 Gameplay</div>
-                {latestVideos.map((obj) => (
-                  <div
-                    className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#0059ffa1] ${
-                      obj == url ? `bg-[#0059ff] text-white rounded` : ``
-                    }`}
-                    onClick={() => {
-                      setURL(obj);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                  >
-                    <div className="flex items-center gap-0.5">
-                      {obj.src.includes(`twitch`) ? (
-                        <img src="/Misc/twitch.png" alt="Twitch" className="size-5" />
-                      ) : obj.src.includes(`bilibil`) ? (
-                        <img src="/Misc/bilibili.png" alt="Bilibili" className="size-5" />
-                      ) : (
-                        <img src="/Misc/youtube.png" alt="Youtube" className="size-5" />
-                      )}
-                      {obj.nam}
-                    </div>
-                    <div className="hidden sm:block">
-                      <div className="text-end">{obj.loc}</div>
-                    </div>
-                    <div className={`text-end ${obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`}`}>
-                      {obj.asp} / {obj.fea}
-                    </div>
-                    <div className="text-end">{obj.tim}</div>
-                    <div className="text-end">{obj.dat.slice(0, 10)}</div>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
-          <div className="my-4 bg-[#000000] rounded py-1">
-            <div className="px-2 text-[14px] mb-2">Early Access Gameplay</div>
-            {latest10videos.map((obj) => (
-              <div
-                className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#00ffaaa1] ${
-                  obj == url ? `bg-[#00ffaa] text-black` : ``
-                }`}
-                onClick={() => {
-                  setURL(obj);
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-              >
-                <div className="flex items-center gap-0.5">
-                  {obj.src.includes(`twitch`) ? (
-                    <img src="/Misc/twitch.png" alt="Twitch" className="size-5" />
-                  ) : obj.src.includes(`bilibil`) ? (
-                    <img src="/Misc/bilibili.png" alt="Bilibili" className="size-5" />
-                  ) : (
-                    <img src="/Misc/youtube.png" alt="Youtube" className="size-5" />
-                  )}
-                  {obj.nam}
-                </div>
-                <div className="hidden sm:block">
-                  <div className="text-end">{obj.loc}</div>
-                </div>
-                <div className={`text-end ${obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`}`}>
-                  {obj.asp} / {obj.fea}
-                </div>
-                <div className="text-end">{obj.tim}</div>
-                <div className="text-end">{obj.dat}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
       <Footer />

@@ -29,10 +29,14 @@ export default function Ladder() {
   const [location, setLocation] = useState(`Underworld`);
   const [category, setCategory] = useState(`Fear`);
   const [boon, setBoon] = useState(`Core`);
+  const [minfear, setMinFear] = useState(1);
+  const [maxfear, setMaxFear] = useState(67);
 
   const { posts, loader } = useData();
 
-  const regionData = [...v1data, ...(posts || [])].filter((obj) => obj.loc === location);
+  const regionData = [...v1data, ...(posts || [])]
+    .filter((obj) => obj.loc === location)
+    .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear);
   const fulldata_ArrArrObject = [];
 
   for (let i = 0; i < h2AspectOrder.length; i++) {
@@ -58,6 +62,32 @@ export default function Ladder() {
           <Loading />
         ) : (
           <>
+            <div className="flex justify-center gap-1 font-[Ale]">
+              <div>
+                <div>Min Fear</div>
+                <input
+                  type="number"
+                  placeholder="Min Fear"
+                  className="input input-sm w-[80px]"
+                  onChange={(e) => setMinFear(e.target.value)}
+                  value={minfear}
+                  max={67}
+                  min={1}
+                />
+              </div>
+              <div>
+                <div>Max Fear</div>
+                <input
+                  type="number"
+                  placeholder="Max Fear"
+                  className="input input-sm w-[80px]"
+                  onChange={(e) => setMaxFear(e.target.value)}
+                  value={maxfear}
+                  max={67}
+                  min={1}
+                />
+              </div>
+            </div>
             <div className="p-1 flex flex-wrap justify-center gap-1 my-2">
               <button
                 className={`cursor-pointer rounded p-1 ${
