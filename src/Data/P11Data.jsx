@@ -3359,7 +3359,7 @@ export const p11data = [
     src: "https://youtu.be/C3eKwk1sbVs",
     des: "The widest of grins",
     arcana: "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjNyIsImMyMCIsImMyMyIsImMyNSJd",
-    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMywyLDIsMTJd",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
     tim: "16:25.00",
     fam: "Frog",
     cor: "HerAttack,DemCast,HesSprint",

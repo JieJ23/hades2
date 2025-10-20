@@ -18,7 +18,7 @@ export default function VowsStats() {
   const [maxfear, setMaxFear] = useState(67);
 
   const availableData = [...p9data, ...p11data, ...v1data, ...(posts || [])].filter(
-    (obj) => obj.fea >= +minfear && obj.fea <= +maxfear
+    (obj) => +obj.fea >= +minfear && +obj.fea <= +maxfear
   );
 
   const runs_av = availableData.filter((obj) => obj.oath);

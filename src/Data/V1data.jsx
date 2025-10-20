@@ -2447,7 +2447,7 @@ export const v1data = [
     des: "phase shift lowkey broken against the surface bosses, and it extends pin too???",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM2IiwiYzciLCJjOCIsImMxMiIsImMxMyIsImMxNCIsImMxNSIsImMxOCIsImMxOSIsImMyMCIsImMyMyIsImMyNCJd",
-    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDMsMCwyLDIsMTJd",
+    oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
     tim: "19:17.67",
     fam: "Polecat",
     cor: "PosAttack,DemSpecial,Cast,ApoSprint,HesMagick",
