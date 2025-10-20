@@ -1763,7 +1763,7 @@ export const v1data = [
     cor: "HesAttack,DemSpecial,ZeuCast,ZeuSprint,Magick",
     ham: "Final Slice,Sweeping Ambush",
     boon: "Snuffed Candle,Hot Pot,Flash Fry,Static Shock,Electric Overload,Arctic Gale,Extra Dose,Snow Queen,Weed Killer,Nitro Boost,Gigaros Dash,Lapis Lazuli Insight,Stutter Step,Ingenious Strike,Super Nova,Hail Storm,Self Healing,Wolf Howl",
-    ks: "Jeweled Pom,Calling Card,Time Piece,Time Piece,Knuckle Bones",
+    ks: "Jeweled Pom,Calling Card,Time Piece,Knuckle Bones",
   },
   {
     dat: "2025-10-08",
@@ -2504,7 +2504,7 @@ export const v1data = [
     cor: "Attack,HesSpecial,AphCast,ApoSprint,Magick",
     ham: "Trick Knives,Wicked Onslaught",
     boon: "Shameless Attitude,Sweet Surrender,Spiritual Affirmation,Perfect Image,Arctic Gale,Super Nova,Pyro Technique,Killing Stroke,Defensive Posture,Primal Psychic Connection,Enfeeblement of Cowards,Stutter Step,Paid Dues,Glowing Coal,Wolf Howl,Wispy Wiles",
-    ks: "Calling Card,Jeweled Pom,Gold Purse,Gold Purse,Time Piece",
+    ks: "Calling Card,Jeweled Pom,Gold Purse,Time Piece",
   },
   {
     dat: "2025-10-02",
