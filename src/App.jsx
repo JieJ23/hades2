@@ -119,9 +119,14 @@ export default function App() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 px-1">
           {homeContent.map((obj, index1) => (
             <div
-              className={`relative group select-none hover:bg-[#131111] hover:text-white transition-colors duration-150 ease-in rounded-xl antialiased bg-[white] text-black ${
+              className={`relative group select-none hover:bg-[#131111] hover:text-white transition-colors duration-150 ease-in antialiased text-white bg-black ${
                 (index1 === 15 || index1 === 7) && `col-span-2`
               } ${(index1 === 4 || index1 === 12) && `row-span-2 col-span-2`}`}
+              style={{
+                borderStyle: "solid", // Required
+                borderWidth: "8px",
+                borderImage: "url('/Misc/frame.webp') 40 stretch",
+              }}
               key={index1}
             >
               {index1 === 4 || index1 === 12 ? (
