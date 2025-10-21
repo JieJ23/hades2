@@ -301,7 +301,7 @@ export default function StatsCodex() {
   const boon_arms = [boonStaff, boonDagger, boonAxe, boonTorch, boonLob, boonSuit];
   //
 
-  console.log(aspect);
+  console.log(boon_top3);
   return (
     <>
       <Background />
@@ -357,7 +357,19 @@ export default function StatsCodex() {
                 const calcValue = Object.entries(arr).reduce((a, b) => a + b[1][1], 0);
                 return (
                   <div>
-                    <div className="text-[20px] font-[Cinzel] text-center bg-black rounded py-2">
+                    <div
+                      className="text-[20px] font-[Cinzel] text-center bg-black rounded-none py-2"
+                      style={{
+                        backgroundImage: `
+      url('/Misc/fl.webp'),
+      url('/Misc/fr.webp'),
+      url('/Misc/fm.webp')
+    `,
+                        backgroundPosition: "left center, right center, center center",
+                        backgroundRepeat: "no-repeat, no-repeat, repeat",
+                        backgroundSize: "contain, contain, contain",
+                      }}
+                    >
                       {weaponLabel[ind1]}
                     </div>
                     <div className="bg-gradient-to-b from-[black] via-black to-[#131111]/60 rounded-none px-2">
@@ -385,8 +397,22 @@ export default function StatsCodex() {
           )}
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 gap-y-6 my-5 p-2 w-full max-w-[1600px] mx-auto">
             {Object.entries(categories).map((arr) => (
-              <div className="bg-gradient-to-b from-[black] to-[#131111]/60 px-2 py-1 rounded h-full">
-                <div className="text-[20px] font-[Cinzel] text-center bg-black rounded py-2">{arr[0]}</div>
+              <div className="bg-gradient-to-b from-[black] to-[#131111]/60 rounded h-full">
+                <div
+                  className="text-[20px] font-[Cinzel] text-center bg-black rounded-none py-2"
+                  style={{
+                    backgroundImage: `
+      url('/Misc/fl.webp'),
+      url('/Misc/fr.webp'),
+      url('/Misc/fm.webp')
+    `,
+                    backgroundPosition: "left center, right center, center center",
+                    backgroundRepeat: "no-repeat, no-repeat, repeat",
+                    backgroundSize: "contain, contain, contain",
+                  }}
+                >
+                  {arr[0]}
+                </div>
                 {arr[1].map((obj) => {
                   const calcValue = ((obj.value / availableData.length) * 100).toFixed(2);
                   return (
@@ -404,30 +430,49 @@ export default function StatsCodex() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 gap-y-6 my-5 px-2">
-            {boon_top3.map((arr, ind1) => (
-              <div>
-                <div className="text-[20px] font-[Cinzel] text-center bg-black rounded py-2">{character[ind1]}</div>
-                <div className="bg-gradient-to-b from-[black] to-[#131111]/60 rounded-none">
-                  {arr.map((obj, ind2) => {
-                    const calcValue = ((obj[1] / availableData.length) * 100).toFixed(2);
-                    return (
-                      <div className={`flex items-center gap-2 rounded py-0.5 px-1 mb-0.5`} key={ind2}>
-                        <img
-                          draggable={false}
-                          src={`/P9/${boonCodexr[obj[0]]}.png`}
-                          alt="Core Boon"
-                          className="size-8 rounded-full"
-                        />
-                        <div className={`flex items-center justify-between w-full`}>
-                          <div>{obj[0]}</div>
-                          <div>{calcValue}%</div>
+            {boon_top3.map((arr, ind1) => {
+              if (boon_top3[ind1].length == 0) {
+                return;
+              }
+              return (
+                <div>
+                  <div
+                    className="text-[20px] font-[Cinzel] text-center text-white bg-black rounded-none py-2"
+                    style={{
+                      backgroundImage: `
+      url('/Misc/fl.webp'),
+      url('/Misc/fr.webp'),
+      url('/Misc/fm.webp')
+    `,
+                      backgroundPosition: "left center, right center, center center",
+                      backgroundRepeat: "no-repeat, no-repeat, repeat",
+                      backgroundSize: "contain, contain, contain",
+                    }}
+                  >
+                    {character[ind1]}
+                  </div>
+                  <div className="bg-gradient-to-b from-[black] to-[#131111]/60 rounded-none">
+                    {arr.map((obj, ind2) => {
+                      const calcValue = ((obj[1] / availableData.length) * 100).toFixed(2);
+                      return (
+                        <div className={`flex items-center gap-2 rounded py-0.5 px-1 mb-0.5`} key={ind2}>
+                          <img
+                            draggable={false}
+                            src={`/P9/${boonCodexr[obj[0]]}.png`}
+                            alt="Core Boon"
+                            className="size-8 rounded-full"
+                          />
+                          <div className={`flex items-center justify-between w-full`}>
+                            <div>{obj[0]}</div>
+                            <div>{calcValue}%</div>
+                          </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}
