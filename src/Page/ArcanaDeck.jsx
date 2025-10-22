@@ -93,7 +93,16 @@ export default function ArcanaDeck() {
           <div className="flex flex-col lg:flex-row">
             <div className="grid grid-cols-5 place-content-start max-w-[450px] h-auto mx-auto shrink-0 py-1">
               {allCards.map((ite, idx) => (
-                <div key={idx} className="relative" onClick={() => handleDeck(ite)}>
+                <div
+                  key={idx}
+                  className="relative"
+                  onClick={() => handleDeck(ite)}
+                  style={{
+                    borderStyle: "solid", // Required
+                    borderWidth: "4px",
+                    borderImage: "url('/Misc/frame.webp') 40 stretch",
+                  }}
+                >
                   <img
                     draggable={false}
                     src={`/Arcane/c0.png`}

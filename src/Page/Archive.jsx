@@ -78,29 +78,44 @@ export default function Archive() {
           ) : (
             <>
               <div className="my-2">
-                {url.src.includes(`youtu`) ? (
-                  <iframe
-                    src={`https://www.youtube.com/embed/${getYTid(url.src)}`}
-                    title="Gameplay Video"
-                    allowFullScreen
-                    className="w-full h-full rounded aspect-video"
-                  />
-                ) : url.src.includes(`bilibil`) ? (
-                  <iframe
-                    src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(url.src)}&autoplay=0`}
-                    allowFullScreen
-                    className="w-full h-full rounded aspect-video"
-                  />
-                ) : (
-                  <iframe
-                    src={`https://player.twitch.tv/?video=${getTwitchid(
-                      url.src
-                    )}&parent=h2crossroads.pages.dev&autoplay=false`}
-                    className="w-full h-full rounded aspect-video"
-                    allowfullscreen
-                  ></iframe>
-                )}
-                <div className="px-2 py-1 bg-[#000000] text-white rounded my-1">
+                <div
+                  style={{
+                    borderStyle: "solid", // Required
+                    borderWidth: "8px",
+                    borderImage: "url('/Misc/frame.webp') 40 stretch",
+                  }}
+                >
+                  {url.src.includes(`youtu`) ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${getYTid(url.src)}`}
+                      title="Gameplay Video"
+                      allowFullScreen
+                      className="w-full h-full rounded aspect-video"
+                    />
+                  ) : url.src.includes(`bilibil`) ? (
+                    <iframe
+                      src={`//player.bilibili.com/player.html?bvid=${getBilibiliid(url.src)}&autoplay=0`}
+                      allowFullScreen
+                      className="w-full h-full rounded aspect-video"
+                    />
+                  ) : (
+                    <iframe
+                      src={`https://player.twitch.tv/?video=${getTwitchid(
+                        url.src
+                      )}&parent=h2crossroads.pages.dev&autoplay=false`}
+                      className="w-full h-full rounded aspect-video"
+                      allowfullscreen
+                    ></iframe>
+                  )}
+                </div>
+                <div
+                  className="px-2 py-1 bg-[#000000] text-white rounded my-1"
+                  style={{
+                    borderStyle: "solid", // Required
+                    borderWidth: "8px",
+                    borderImage: "url('/Misc/frame.webp') 40 stretch",
+                  }}
+                >
                   <div className="grid grid-cols-4 mt-1">
                     <div>Player</div>
                     <div className="text-end">Aspect / Fear</div>
@@ -224,7 +239,14 @@ export default function Archive() {
                   )}
                 </div>
               </div>
-              <div className="my-4 bg-[#000000] rounded py-1">
+              <div
+                className="my-4 bg-[#000000] rounded py-1"
+                style={{
+                  borderStyle: "solid", // Required
+                  borderWidth: "8px",
+                  borderImage: "url('/Misc/frame.webp') 40 stretch",
+                }}
+              >
                 <div className="px-2 text-[14px] mb-2">v1.0 Gameplay</div>
                 {latestVideos.map((obj, index) => (
                   <div
@@ -260,7 +282,14 @@ export default function Archive() {
               </div>
             </>
           )}
-          <div className="my-4 bg-[#000000] rounded py-1">
+          <div
+            className="my-4 bg-[#000000] rounded py-1"
+            style={{
+              borderStyle: "solid", // Required
+              borderWidth: "8px",
+              borderImage: "url('/Misc/frame.webp') 40 stretch",
+            }}
+          >
             <div className="px-2 text-[14px] mb-2">Early Access Gameplay</div>
             {latest10videos.map((obj, index) => (
               <div

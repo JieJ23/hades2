@@ -89,10 +89,17 @@ export default function VowsStats() {
                   <div className="text-center text-[16px]">
                     Set: {sToA(obj[0]).reduce((acc, val) => acc + +val, 0)} ({obj[1]})
                   </div>
-                  <div className="grid grid-cols-4 gap-1">
+                  <div
+                    className="grid grid-cols-4 gap-1 bg-black"
+                    style={{
+                      borderStyle: "solid", // Required
+                      borderWidth: "6px",
+                      borderImage: "url('/Misc/frame.webp') 40 stretch",
+                    }}
+                  >
                     {sToA(obj[0]).map((ite, index) => (
                       <div
-                        className={`bg-[#28282b] rounded p-1 py-2 flex gap-1 items-center ${
+                        className={`bg-black rounded p-1 py-2 flex gap-1 items-center ${
                           index === 16 && `col-start-2 col-span-2`
                         }`}
                         key={index}
@@ -122,9 +129,14 @@ export default function VowsStats() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 px-2 my-4 max-w-[1200px] mx-auto">
               {Object.entries(store_oath).map(([key, value], index1) => (
                 <div
-                  className={`flex items-start gap-2 bg-gradient-to-br from-black via-[black] to-transparent rounded p-2 py-4 w-full ${
+                  className={`flex items-start gap-2 bg-gradient-to-r from-black to-black/75 rounded p-2 py-4 w-full ${
                     index1 === 16 && `lg:col-start-2 lg:col-span-2`
                   }`}
+                  style={{
+                    borderStyle: "solid", // Required
+                    borderWidth: "6px",
+                    borderImage: "url('/Misc/frame.webp') 40 stretch",
+                  }}
                 >
                   <img src={`/Vows/${idvow[+key + 1]}.png`} alt="Vows" className="size-10" />
                   <div className="w-full px-1">

@@ -101,6 +101,11 @@ export default function FearCalculator() {
                     vows[index] !== 0 ? `bg-gradient-to-br from-[#190c23] to-[#411876]` : `bg-[#000000]`
                   } ${index === 16 && `col-start-2 col-span-2`}`}
                   key={index}
+                  style={{
+                    borderStyle: "solid", // Required
+                    borderWidth: "4px",
+                    borderImage: "url('/Misc/frame.webp') 40 stretch",
+                  }}
                 >
                   <div className="absolute top-0 left-1">
                     <div className="flex flex-col text-[12px]">
@@ -122,7 +127,7 @@ export default function FearCalculator() {
                   >
                     {vows[index]}
                   </button>
-                  <div className="flex justify-center w-full gap-2 px-4 py-2">
+                  <div className="flex justify-center w-full gap-1 px-4 py-2">
                     {Array.from({ length: vowArray(ite).length - 1 }).map((_, idx) => (
                       <div
                         key={idx}

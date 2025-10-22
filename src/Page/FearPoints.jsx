@@ -95,7 +95,14 @@ export default function FearPoints() {
                 const haveAspects = [...new Set(finalized_store[index].map((obj) => obj.asp))];
                 const totalPoints = finalized_store[index].reduce((a, b) => a + +b.fea, 0);
                 return (
-                  <div className="bg-black/80 mb-1 p-2 rounded">
+                  <div
+                    className="bg-black mb-1 p-2 rounded"
+                    style={{
+                      borderStyle: "solid", // Required
+                      borderWidth: "6px",
+                      borderImage: "url('/Misc/frame.webp') 40 stretch",
+                    }}
+                  >
                     <div className="text-[16px] flex justify-between">
                       <div>{arr[0].nam}</div>
                       <div className="flex gap-4">

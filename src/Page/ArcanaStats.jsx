@@ -83,9 +83,12 @@ export default function ArcanaStats() {
                   Set {ind1 + 1} ({obj[1]})
                 </div>
                 <div
-                  className={`grid grid-cols-5 w-full max-w-[350px] mx-auto p-0.5 rounded ${
-                    ind1 % 2 === 0 ? `bg-black` : `bg-[#165c4f]`
-                  }`}
+                  className={`grid grid-cols-5 w-full max-w-[350px] mx-auto rounded`}
+                  style={{
+                    borderStyle: "solid", // Required
+                    borderWidth: "6px",
+                    borderImage: "url('/Misc/frame.webp') 40 stretch",
+                  }}
                 >
                   {Array.from({ length: 25 }, (_, i) => {
                     const cardId = `c${i + 1}`;
@@ -107,8 +110,13 @@ export default function ArcanaStats() {
               .sort((a, b) => +a[0].slice(1) - +b[0].slice(1))
               .map(([key, val], index) => (
                 <div
-                  className="flex items-center gap-2 bg-gradient-to-r from-black via-[black] to-transparent rounded"
+                  className="flex items-center gap-2 bg-gradient-to-r from-black to-black/75 rounded"
                   key={index}
+                  style={{
+                    borderStyle: "solid", // Required
+                    borderWidth: "6px",
+                    borderImage: "url('/Misc/frame.webp') 40 stretch",
+                  }}
                 >
                   <img src={`/Arcane/${key}.png`} alt="Arcana Cards" className="w-[60px] md:w-[80px] h-auto" />
                   <div>

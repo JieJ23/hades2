@@ -224,9 +224,6 @@ export default function Query() {
       <Background />
       <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-1 overflow-hidden">
         <SideNav />
-        {/* {loader ? (
-          <Loading />
-        ) : ( */}
         <>
           <div className="flex flex-wrap gap-1 pt-2">
             <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={generateShareableURL}>
@@ -503,7 +500,12 @@ export default function Query() {
                 {displayData3.slice(0, show).map((obj, index) => (
                   <div className="flex gap-2">
                     <div
-                      className={`w-full p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden border-1 border-[#000000] bg-[#1013248b] rounded shadow-[0_0_20px_black]`}
+                      className={`w-full p-2 py-1 flex flex-col lg:flex-row gap-1 relative overflow-hidden bg-[#1013248b] rounded shadow-[0_0_20px_black]`}
+                      style={{
+                        borderStyle: "solid", // Required
+                        borderWidth: "4px",
+                        borderImage: "url('/Misc/frame.webp') 40 stretch",
+                      }}
                     >
                       <div className="absolute top-0 right-0 -z-10 h-full w-full">
                         <img
@@ -689,13 +691,20 @@ export default function Query() {
                         <div className="text-gray-300 my-0.5">{obj.dat.slice(0, 10)}</div>
                       </div>
                     </div>
-                    <div className="hidden xl:block w-full max-w-[300px] h-auto aspect-video">
+                    <div
+                      className="hidden xl:block w-full max-w-[300px] h-auto aspect-video"
+                      style={{
+                        borderStyle: "solid", // Required
+                        borderWidth: "4px",
+                        borderImage: "url('/Misc/frame.webp') 40 stretch",
+                      }}
+                    >
                       {obj.src.includes(`youtu`) ? (
                         <div className="rounded aspect-video overflow-hidden w-full h-full">
                           <img
                             src={`https://img.youtube.com/vi/${getYTid(obj.src)}/maxresdefault.jpg`}
                             alt="Gameplay Video"
-                            className="h-full w-full rounded border-1 border-[#000000]"
+                            className="h-full w-full"
                             loading="lazy"
                             draggable={false}
                           />
@@ -705,19 +714,14 @@ export default function Query() {
                           <img
                             src="/gameplay2.webp"
                             alt="Thumbnails"
-                            className="h-full w-full rounded border-1 border-[#000000]"
+                            className="h-full w-full"
                             loading="lazy"
                             draggable={false}
                           />
                         </div>
                       ) : (
                         <div className="hidden md:block w-full h-full">
-                          <img
-                            src="/gameplay1.webp"
-                            alt="Thumbnails"
-                            className="h-full w-full rounded border-1 border-[#000000]"
-                            loading="lazy"
-                          />
+                          <img src="/gameplay1.webp" alt="Thumbnails" className="h-full w-full" loading="lazy" />
                         </div>
                       )}
                     </div>
