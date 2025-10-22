@@ -113,46 +113,81 @@ export default function () {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 px-2 my-5">
             {biomeS.map((ite, index) => (
-              <div className="bg-gradient-to-b from-[yellow]/30 via-black to-transparent rounded py-2" key={index}>
-                <div className="text-[16px] text-center">{ite}</div>
+              <div className="bg-gradient-to-b from-[yellow]/30 via-black to-transparent rounded-none my-4" key={index}>
+                <div
+                  className="text-[20px] font-[Cinzel] text-center bg-black rounded-none py-2 mb-1"
+                  style={{
+                    backgroundImage: `
+      url('/Misc/fl2.webp'),
+      url('/Misc/fr2.webp'),
+      url('/Misc/fm2.webp')
+    `,
+                    backgroundPosition: "left center, right center, center center",
+                    backgroundRepeat: "no-repeat, no-repeat, repeat",
+                    backgroundSize: "contain, contain, contain",
+                  }}
+                >
+                  {ite}
+                </div>
                 <div>
-                  {Object.entries(findBiomeKS(index, availableData, "Surface")).map(([ke, va]) => {
-                    const totalSelection = Object.entries(findBiomeKS(index, availableData, "Surface")).reduce(
-                      (a, b) => a + b[1],
-                      0
-                    );
-                    return (
-                      <div className="flex items-center gap-2 mb-1 px-2">
-                        <img src={`/buildgui/${ke}.png`} alt="Keepsakes" className="size-8 md:size-6 lg:size-5" />
-                        <div className="flex justify-between w-full">
-                          <div>{ke}</div>
-                          <div>{((va / totalSelection) * 100).toFixed(2)}%</div>
+                  {Object.entries(findBiomeKS(index, availableData, "Surface"))
+                    .slice(0, 12)
+                    .map(([ke, va]) => {
+                      const totalSelection = Object.entries(findBiomeKS(index, availableData, "Surface")).reduce(
+                        (a, b) => a + b[1],
+                        0
+                      );
+                      return (
+                        <div className="flex items-center gap-2 mb-1 px-2">
+                          <img src={`/buildgui/${ke}.png`} alt="Keepsakes" className="size-8 md:size-6 lg:size-5" />
+                          <div className="flex justify-between w-full">
+                            <div>{ke}</div>
+                            <div>{((va / totalSelection) * 100).toFixed(2)}%</div>
+                          </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
                 </div>
               </div>
             ))}
             {biomeU.map((ite, index) => (
-              <div className="bg-gradient-to-b from-[#00ffaa]/30 via-black to-transparent rounded py-2" key={index}>
-                <div className="text-[16px] text-center">{ite}</div>
+              <div
+                className="bg-gradient-to-b from-[#00ffaa]/30 via-black to-transparent rounded-none my-4"
+                key={index}
+              >
+                <div
+                  className="text-[20px] font-[Cinzel] text-center bg-black rounded-none py-2 mb-1"
+                  style={{
+                    backgroundImage: `
+      url('/Misc/fl3.webp'),
+      url('/Misc/fr3.webp'),
+      url('/Misc/fm3.webp')
+    `,
+                    backgroundPosition: "left center, right center, center center",
+                    backgroundRepeat: "no-repeat, no-repeat, repeat",
+                    backgroundSize: "contain, contain, contain",
+                  }}
+                >
+                  {ite}
+                </div>
                 <div>
-                  {Object.entries(findBiomeKS(index, availableData, "Underworld")).map(([ke, va]) => {
-                    const totalSelection = Object.entries(findBiomeKS(index, availableData, "Underworld")).reduce(
-                      (a, b) => a + b[1],
-                      0
-                    );
-                    return (
-                      <div className="flex items-center gap-2 mb-1 px-2">
-                        <img src={`/buildgui/${ke}.png`} alt="Keepsakes" className="size-8 md:size-6 lg:size-5" />
-                        <div className="flex justify-between w-full">
-                          <div>{ke}</div>
-                          <div>{((va / totalSelection) * 100).toFixed(2)}%</div>
+                  {Object.entries(findBiomeKS(index, availableData, "Underworld"))
+                    .slice(0, 12)
+                    .map(([ke, va]) => {
+                      const totalSelection = Object.entries(findBiomeKS(index, availableData, "Underworld")).reduce(
+                        (a, b) => a + b[1],
+                        0
+                      );
+                      return (
+                        <div className="flex items-center gap-2 mb-1 px-2">
+                          <img src={`/buildgui/${ke}.png`} alt="Keepsakes" className="size-8 md:size-6 lg:size-5" />
+                          <div className="flex justify-between w-full">
+                            <div>{ke}</div>
+                            <div>{((va / totalSelection) * 100).toFixed(2)}%</div>
+                          </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
                 </div>
               </div>
             ))}
