@@ -131,7 +131,14 @@ export default function ArcanaDeck() {
               {deck
                 .sort((a, b) => +(a.slice(1) < +b.slice(1) ? -1 : 1))
                 .map((ite) => (
-                  <div className="text-white rounded p-2 my-1 bg-[#000000] font-[Fontin] text-[12px]">
+                  <div
+                    className="text-white rounded p-2 my-1 bg-[#000000] font-[Fontin] text-[12px]"
+                    style={{
+                      borderStyle: "solid", // Required
+                      borderWidth: "4px",
+                      borderImage: "url('/Misc/frame.webp') 40 stretch",
+                    }}
+                  >
                     <div className="text-[14px]">{defineDeck(ite).card}</div>
                     <div>{defineDeck(ite).d}</div>
                   </div>

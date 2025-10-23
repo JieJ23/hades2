@@ -144,7 +144,15 @@ export default function FearCalculator() {
               <div className={`text-[18px] text-[#0cf29e]`}>Total: {currentVows ? currentVows : 0}</div>
               <div className="grid grid-cols-2 gap-2">
                 {displayVow.map((item, index) => (
-                  <div className="w-full text-[12px] text-white rounded p-2 bg-[#000000] font-[Fontin]" key={index}>
+                  <div
+                    className="w-full text-[12px] text-white rounded p-2 bg-[#000000] font-[Fontin]"
+                    key={index}
+                    style={{
+                      borderStyle: "solid", // Required
+                      borderWidth: "4px",
+                      borderImage: "url('/Misc/frame.webp') 40 stretch",
+                    }}
+                  >
                     <div className="text-[14px]">{item}</div>
                     <div className="text-gray-300">{defineArray(item).d}</div>
                     <div className="flex flex-wrap justify-start gap-2 mt-1">

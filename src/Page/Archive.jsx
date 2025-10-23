@@ -74,7 +74,14 @@ export default function Archive() {
         <SideNav />
         <div className="max-w-[800px] mx-auto font-[Ubuntu]">
           {loader ? (
-            <Loading />
+            <div
+              className="skeleton h-auto w-full aspect-video"
+              style={{
+                borderStyle: "solid", // Required
+                borderWidth: "8px",
+                borderImage: "url('/Misc/frame.webp') 40 stretch",
+              }}
+            />
           ) : (
             <>
               <div className="my-2">
