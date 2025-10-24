@@ -228,8 +228,6 @@ export default function Query() {
     }, {})
   ).sort((a, b) => b[1] - a[1]);
 
-  console.log(effectCounts);
-
   return (
     <main className="relative">
       <Background />
@@ -517,7 +515,7 @@ export default function Query() {
                         backgroundColor: getStatusColor(ke),
                       }}
                     >
-                      {val}
+                      {((val / displayData3.length) * 100).toFixed(2)}%
                     </div>
                   </div>
                 ))}
