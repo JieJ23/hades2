@@ -19,7 +19,6 @@ import {
   vowMatch,
   parseTimetoms,
   getYTid,
-  // getBilibiliid,
   biomeS,
   biomeU,
   getOlympusCore,
@@ -28,6 +27,8 @@ import {
   orderMap2,
   findValue,
   findValue2,
+  findStatus,
+  getStatusColor,
 } from "../Data/Misc";
 import { p9boons } from "../Data/P9BoonObj";
 
@@ -38,9 +39,6 @@ import { aspectid, idaspect } from "../Data/QueryTrait";
 import { allVows } from "../Data/FearTrait";
 import { vowid, idvow } from "../Data/Vow1";
 import { arcanaid, idarcana } from "../Data/Arcana1";
-
-// import { useData } from "../Hook/DataFetch";
-// import Loading from "../Hook/Loading";
 
 export default function Query() {
   const [asp, setAsp] = useState([]);
@@ -218,6 +216,19 @@ export default function Query() {
       return player === "" || obj.nam === player;
     }
   );
+  //
+
+  const effectCounts = Object.entries(
+    displayData3.reduce((acc, entry) => {
+      const effects = findStatus(entry);
+      for (const e of effects) {
+        acc[e] = (acc[e] || 0) + 1;
+      }
+      return acc;
+    }, {})
+  ).sort((a, b) => b[1] - a[1]);
+
+  console.log(effectCounts);
 
   return (
     <main className="relative">
@@ -496,6 +507,21 @@ export default function Query() {
             <Loading />
           ) : (
             <>
+              <div className="grid grid-cols-5 md:grid-cols-8 lg:grid-cols-12 gap-1 my-2">
+                {effectCounts.map(([ke, val], index) => (
+                  <div key={index} className="w-full px-1 py-1 text-center text-white rounded bg-[black]">
+                    <div>{ke}</div>
+                    <div
+                      className="bg-[black] text-black rounded-sm"
+                      style={{
+                        backgroundColor: getStatusColor(ke),
+                      }}
+                    >
+                      {val}
+                    </div>
+                  </div>
+                ))}
+              </div>
               <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
                 {displayData3.slice(0, show).map((obj, index) => (
                   <div className="flex gap-2">
@@ -674,18 +700,16 @@ export default function Query() {
                         )}
                       </div>
                       <div className="w-full mx-auto">
-                        <div className="hidden lg:block">
-                          <div className="flex gap-1 rounded my-1">
-                            {sToA(obj.cor).map((ite, index) => (
-                              <img
-                                draggable={false}
-                                src={`/Olympus/${getOlympusCore(ite.slice(0, 3))}.png`}
-                                alt="Olympians"
-                                className="size-7 bg-[#00000099] rounded"
-                                key={index}
-                              />
+                        <div className="flex flex-wrap gap-1 rounded my-1">
+                          {displayData3.length > 0 &&
+                            findStatus(obj).map((ite) => (
+                              <div
+                                className="px-1 py-0.5 rounded-b-md text-black min-w-[40px] text-center text-[12px]"
+                                style={{ backgroundColor: getStatusColor(ite) }}
+                              >
+                                {ite}
+                              </div>
                             ))}
-                          </div>
                         </div>
                         <div className="text-[12px] text-white my-0.5">{obj.des}</div>
                         <div className="text-gray-300 my-0.5">{obj.dat.slice(0, 10)}</div>

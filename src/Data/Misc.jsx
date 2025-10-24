@@ -333,25 +333,59 @@ export const getOlympusCore = (core) => {
   }
 };
 
-// export const findGUIcard = (asp) => {
-//   switch (asp) {
-//     case `Anubis`:
-//       return `Melinoe Staff`;
-//     case `Morrigan`:
-//       return `Melinoe Blades`;
-//     case `Nergal`:
-//       return `Melinoe Axe`;
-//     case `Hel`:
-//       return `Melinoe Skull`;
-//     case `Shiva`:
-//       return `Melinoe Coat`;
-//     case `Supay`:
-//       return `Melinoe Flames`;
-//     default:
-//       return asp;
-//   }
-// };
-
 export const handleLoadMore = (updater) => {
   updater((prev) => prev + 50);
 };
+//
+
+export const findStatus = (obj) => {
+  const checkArray = (obj.cor + obj.boon).split(",");
+
+  const entryEffects = Object.entries(statusEffects)
+    .filter(([effect, boonsList]) => boonsList.some((b) => checkArray.includes(b)))
+    .map(([effect]) => effect);
+
+  return entryEffects;
+};
+
+const statusEffects = {
+  Blitz: ["ZeuAttack", "ZeuSpecial"],
+  Hitch: ["HerAttack", "HerSpecial", "HerCast", "HerSprint"],
+  Froth: ["PosCast", "Slippery Slope"],
+  Freeze: ["DemAttack", "DemSpecial", "DemCast", ""],
+  Daze: ["ApoCast", "ApoSprint", "Light Smite", "Dazzling Display", ""],
+  Gust: ["DemSprint", "Arctic Gale"],
+  Weak: ["AphCast", "ApoRush", "ApoMagick", ""],
+  Glow: ["Furnace Blast", ""],
+  Scorch: ["HerAttack", "HerSpecial", "HerCast", "HerSprint"],
+  Wounds: ["AreAttack", "AreSpecial"],
+  Scorn: ["Gigaros Dash"],
+  Hangover: ["Drunken Stupor"],
+};
+
+export function getStatusColor(effect) {
+  switch (effect.toLowerCase()) {
+    case "blitz":
+      return "#f5d142"; // Zeus - electric gold
+    case "hitch":
+      return "#e6b3ff"; // Hera - regal violet
+    case "froth":
+      return "#00b2a9"; // Poseidon - seafoam teal
+    case "freeze":
+      return "#7fd6ff"; // Demeter - icy blue
+    case "daze":
+      return "#f7f1b5"; // Apollo - radiant light
+    case "gust":
+      return "#a3e4ff"; // Demeter (wind aspect) - pale sky blue
+    case "weak":
+      return "#ff6fae"; // Aphrodite - soft pink
+    case "glow":
+      return "#ff9248"; // Hestia - warm orange flame
+    case "scorch":
+      return "#ff4d00"; // Hera (burning aspect) - deep ember red
+    case "wounds":
+      return "#FF00FF"; // Ares - blood red
+    default:
+      return "#1DE3D1"; // fallback color for unknown effects
+  }
+}
