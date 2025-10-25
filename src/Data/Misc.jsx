@@ -357,7 +357,7 @@ const statusEffects = {
   Gust: ["DemSprint", "Arctic Gale"],
   Weak: ["AphCast", "AphRush", "AphMagick"],
   Glow: ["Furnace Blast"],
-  Scorch: ["HesAttack", "HesSpecial", "HesCast", "HesSprint"],
+  Scorch: ["HesAttack", "HesSpecial", "HesCast", "Fourth Degree", "Thermal Dynamics"],
   Wounds: ["AreAttack", "AreSpecial"],
   Scorn: ["Gigaros Dash"],
   Hangover: ["Drunken Stupor"],
