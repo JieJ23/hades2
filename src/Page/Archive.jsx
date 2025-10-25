@@ -41,12 +41,15 @@ export default function Archive() {
     return [...v1data, ...(posts || [])].sort((a, b) => new Date(b.dat) - new Date(a.dat));
   }, [v1data, posts]);
 
-  const [url, setURL] = useState(null);
+  const [url, setURL] = useState(() => {
+    const validVideo = latestVideos.find((video) => video.src);
+    return validVideo || latestVideos[0];
+  });
 
   // Update when posts change
   useEffect(() => {
     setURL(() => {
-      const validVideo = latestVideos.find((video) => video.src && video.src.trim() !== "");
+      const validVideo = latestVideos.find((video) => video.src);
       return validVideo || latestVideos[0];
     });
   }, [posts]);
