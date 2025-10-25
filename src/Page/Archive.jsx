@@ -19,12 +19,13 @@ import {
   findValue,
   orderMap,
   parseTimetoms,
+  findStatus,
+  getStatusColor,
 } from "../Data/Misc";
 import { p9boons } from "../Data/P9BoonObj";
 import { boonCodex } from "../Data/Boon2";
 
 import { useData } from "../Hook/DataFetch";
-import Loading from "../Hook/Loading";
 import { useMemo } from "react";
 
 import { useState, useEffect } from "react";
@@ -33,38 +34,21 @@ const latest10videos = [...p11data, ...p9data]
   .filter((obj) => obj.src)
   .sort((a, b) => new Date(b.dat) - new Date(a.dat));
 
-const orderByFearAndTime = [...p9data, ...p11data, ...v1data].sort((a, b) => {
-  const feaDiff = +b.fea - +a.fea;
-  if (feaDiff !== 0) return feaDiff;
-  return parseTimetoms(a.tim) - parseTimetoms(b.tim);
-});
-
-const allPBs = orderByFearAndTime.reduce(
-  (acc, curr) => {
-    const key = `${curr.nam}_${curr.asp}`;
-    if (!acc.map.has(key)) {
-      acc.map.set(key, true);
-      acc.result.push(curr);
-    }
-    return acc;
-  },
-  { map: new Map(), result: [] }
-).result;
-
 export default function Archive() {
   const { posts, loader } = useData();
 
   const latestVideos = useMemo(() => {
-    return [...v1data, ...(posts || [])].filter((obj) => obj.src).sort((a, b) => new Date(b.dat) - new Date(a.dat));
+    return [...v1data, ...(posts || [])].sort((a, b) => new Date(b.dat) - new Date(a.dat));
   }, [v1data, posts]);
 
-  const [url, setURL] = useState(latestVideos[0]);
+  const [url, setURL] = useState(null);
 
   // Update when posts change
   useEffect(() => {
-    if (latestVideos.length > 0) {
-      setURL(latestVideos[0]);
-    }
+    setURL(() => {
+      const validVideo = latestVideos.find((video) => video.src && video.src.trim() !== "");
+      return validVideo || latestVideos[0];
+    });
   }, [posts]);
 
   return (
@@ -257,29 +241,43 @@ export default function Archive() {
                 <div className="px-2 text-[14px] mb-2">v1.0 Gameplay</div>
                 {latestVideos.map((obj, index) => (
                   <div
-                    className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#0059ffa1] ${
-                      obj == url ? `bg-[#0059ff] text-white rounded` : ``
+                    className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#28282ba1] ${
+                      obj == url ? `bg-[#28282b] text-white rounded` : ``
                     }`}
                     onClick={() => {
-                      setURL(obj);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      if (obj.src) {
+                        setURL(obj);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      } else {
+                        return;
+                      }
                     }}
                     key={index}
                   >
-                    <div className="flex items-center gap-0.5">
+                    <div
+                      className={`flex items-center gap-0.5 ${
+                        obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`
+                      }`}
+                    >
                       {obj.src.includes(`twitch`) ? (
                         <img src="/Misc/twitch.png" alt="Twitch" className="size-5" />
                       ) : obj.src.includes(`bilibil`) ? (
                         <img src="/Misc/bilibili.png" alt="Bilibili" className="size-5" />
-                      ) : (
+                      ) : obj.src.includes(`youtu`) ? (
                         <img src="/Misc/youtube.png" alt="Youtube" className="size-5" />
+                      ) : (
+                        <img src={`/${obj.loc}.png`} alt="Region" className="size-5" />
                       )}
                       {obj.nam}
                     </div>
                     <div className="hidden sm:block">
-                      <div className="text-end">{obj.loc}</div>
+                      <div className="text-end flex gap-1">
+                        {findStatus(obj).map((ite) => (
+                          <div style={{ color: getStatusColor(ite) }}>{ite}</div>
+                        ))}
+                      </div>
                     </div>
-                    <div className={`text-end ${obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`}`}>
+                    <div className={`text-end`}>
                       {obj.asp} / {obj.fea}
                     </div>
                     <div className="text-end">{obj.tim}</div>
@@ -300,8 +298,8 @@ export default function Archive() {
             <div className="px-2 text-[14px] mb-2">Early Access Gameplay</div>
             {latest10videos.map((obj, index) => (
               <div
-                className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#00ffaaa1] ${
-                  obj == url ? `bg-[#00ffaa] text-black` : ``
+                className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#28282ba1] ${
+                  obj == url ? `bg-[#28282b] text-white` : ``
                 }`}
                 onClick={() => {
                   setURL(obj);
