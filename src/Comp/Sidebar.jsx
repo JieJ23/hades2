@@ -29,7 +29,7 @@ export default function SideNav() {
         {sites.map((obj, idx) => (
           <Link to={`/${obj.link}`} className={`flex items-center group`} key={idx}>
             <div
-              className={`px-2 py-1 border-1 border-white/40 rounded-b-lg hover:bg-[#00ffaa] ${
+              className={`px-2 py-1 border-1 border-white/40 rounded-sm hover:bg-[#00ffaa] ${
                 currentLocation.pathname == `/${obj.link}` ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-white`
               }`}
             >
@@ -37,12 +37,10 @@ export default function SideNav() {
             </div>
           </Link>
         ))}
-      </div>
-      <div className="flex flex-wrap justify-center items-center gap-1">
         {sites2.map((obj, idx) => (
           <Link to={`/${obj.link}`} className={`flex items-center group`} key={idx}>
             <div
-              className={`px-2 py-1 border-1 border-white/40 rounded-b-lg hover:bg-[#00ffaa] ${
+              className={`px-2 py-1 border-1 border-white/40 rounded-sm hover:bg-[#00ffaa] ${
                 currentLocation.pathname == `/${obj.link}` ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-white`
               }`}
             >
