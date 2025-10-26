@@ -36,6 +36,20 @@ const homeContent = [
     poster: "img1",
   },
   {
+    icon: "lotus",
+    category: "Weekly",
+    link: "/Weekly",
+    description:
+      "A weekly record of the highest Fear level completed by players. The compiled data serves as a reference for community comparisons, gameplay trends, and performance insights.",
+  },
+  {
+    icon: "lotus",
+    category: "Submission",
+    link: "/GameplaySubmission",
+    description:
+      "A form for players to submit their gameplay runs to the website for inclusion in the database. This community resource compiles data to provide insights and references for aspects and gameplay in general.",
+  },
+  {
     icon: "hammer",
     category: "Shareable Arcana",
     link: "/ArcanaDeck",
@@ -48,13 +62,6 @@ const homeContent = [
     link: "/FearCalculator",
     description:
       "A shareable tool for the Oath of the Unseen, allowing you to generate and share links of your selected Vows.",
-  },
-  {
-    icon: "lotus",
-    category: "Submission",
-    link: "/GameplaySubmission",
-    description:
-      "A form for players to submit their gameplay runs to the website for inclusion in the database. This community resource compiles data to provide insights and references for aspects and gameplay in general.",
   },
   {
     icon: "stats",
@@ -120,8 +127,8 @@ export default function App() {
           {homeContent.map((obj, index1) => (
             <div
               className={`relative group select-none hover:bg-[#131111] hover:text-white transition-colors duration-150 ease-in antialiased text-white bg-black ${
-                (index1 === 15 || index1 === 7) && `col-span-2`
-              } ${(index1 === 4 || index1 === 12) && `row-span-2 col-span-2`}`}
+                index1 === 16 && `col-span-2`
+              } ${(index1 === 4 || index1 === 13) && `row-span-2 col-span-2`}`}
               style={{
                 borderStyle: "solid", // Required
                 borderWidth: "8px",
@@ -129,7 +136,7 @@ export default function App() {
               }}
               key={index1}
             >
-              {index1 === 4 || index1 === 12 ? (
+              {index1 === 4 || index1 === 13 ? (
                 <div className="min-h-[200px] h-full bg-[black]">
                   <img
                     src={`/Misc/${obj.poster}.webp`}

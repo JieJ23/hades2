@@ -5,6 +5,7 @@ export const sites = [
   { link: ``, nam: `Home` },
   { link: `Archive`, nam: `Videos` },
   { link: `Query`, nam: `Query` },
+  { link: `Weekly`, nam: `Weekly` },
   { link: `Ladder`, nam: `Ladder` },
   { link: `FearPoints`, nam: `PBs` },
 

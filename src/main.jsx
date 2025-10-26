@@ -11,6 +11,7 @@ import Query from "./Page/Query.jsx";
 import Ladder from "./Page/Ladder.jsx";
 import FearPoints from "./Page/FearPoints.jsx";
 import StatsCodex from "./Page/StatsCodex.jsx";
+import Weekly from "./Page/Weekly.jsx";
 
 //
 import KeepsakesStats from "./Page/KeepsakesStats.jsx";
@@ -47,6 +48,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/KeepsakesStats" element={<KeepsakesStats />} />
           <Route path="/VowsStats" element={<VowsStats />} />
           <Route path="/ArcanaStats" element={<ArcanaStats />} />
+          <Route path="/Weekly" element={<Weekly />} />
 
           <Route path="/EALadder" element={<EALadder />} />
           <Route path="/EAStat" element={<EAStat />} />

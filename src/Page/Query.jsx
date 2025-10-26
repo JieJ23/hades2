@@ -520,7 +520,7 @@ export default function Query() {
                   </div>
                 ))}
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-4 gap-y-2">
+              <div className="grid grid-cols-1 gap-y-4">
                 {displayData3.slice(0, show).map((obj, index) => (
                   <div className="flex gap-2">
                     <div
