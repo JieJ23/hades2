@@ -21,6 +21,7 @@ import {
   biomeS,
   biomeU,
   handleLoadMore,
+  parseTimetoms,
 } from "../Data/Misc";
 import { boonCodex } from "../Data/Boon2";
 import { p9boons } from "../Data/P9BoonObj";
@@ -55,7 +56,11 @@ export default function Weekly() {
   const [week, setWeek] = useState(0);
   const [show, setShow] = useState(25);
 
-  const aData = [...p9data, ...p11data, ...v1data, ...(posts || [])].sort((a, b) => new Date(a.dat) - new Date(b.dat));
+  const aData = [...p9data, ...p11data, ...v1data, ...(posts || [])].sort((a, b) => {
+    const feaDiff = +b.fea - +a.fea;
+    if (feaDiff !== 0) return feaDiff;
+    return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+  });
 
   const groupedByWeek = aData.reduce((acc, item) => {
     const weekKey = getISOWeekKey(item.dat);
