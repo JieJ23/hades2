@@ -489,7 +489,7 @@ export const v1data = [
     fam: "Frog",
     cor: "HerAttack,AreSpecial,ZeuCast,ApoSprint,Magick",
     ham: "Melting Swipe,Mirrored Thrasher",
-    boon: "Grievous Blow,Evade Evade Evade,Unseen Ire,Lightning Lance,Old Grudge,Back Burner,Double Strike,Extended Family,Hard Target,",
+    boon: "Grievous Blow,Evade Evade Evade,Unseen Ire,Lightning Lance,Old Grudge,Back Burner,Double Strike,Extended Family,Hard Target",
     ks: "Jeweled Pom,Time Piece,Engraved Pin,Engraved Pin",
   },
   {
