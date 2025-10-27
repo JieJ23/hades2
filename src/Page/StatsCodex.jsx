@@ -70,8 +70,8 @@ const character = [
   "Nar",
   "Cha",
   "Sel",
-  "Mel",
-  "Mel2",
+  "Inf",
+  "Duo",
 ];
 
 const weaponLabel = [`Staff`, `Blades`, `Axe`, `Torch`, `Lob`, `Suit`];
