@@ -108,7 +108,7 @@ export default function Weekly() {
               <div>Entries: {displayData.length}</div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-              {displayData.slice(0, 2).map((obj, index) => (
+              {displayData.slice(0, show).map((obj, index) => (
                 <div className="flex gap-2" key={index}>
                   <div
                     className={`w-full p-2 py-1 flex flex-col relative bg-[#1013248b] rounded shadow-[0_0_20px_black]`}
@@ -241,7 +241,7 @@ export default function Weekly() {
                         </div>
                       </div>
                       {obj.boon && (
-                        <div className="flex items-center flex-wrap my-1">
+                        <div className="flex items-center flex-wrap my-1 relative">
                           <div className="flex flex-wrap gap-0.5 rounded">
                             {findValue2(
                               sToA(obj.boon).sort((a, b) => {
@@ -250,39 +250,44 @@ export default function Weekly() {
                                 return aIndex - bIndex;
                               })
                             ).map((ite, index) => (
-                              <div className="tooltip">
-                                <div className="tooltip-content text-[12px] bg-[black] text-white w-full min-w-[200px] h-auto p-0">
-                                  <div
-                                    className="flex h-[40px] items-center justify-center text-[14px]"
-                                    style={{
-                                      backgroundImage: `
-      url('/Misc/fl.webp'),
-      url('/Misc/fr.webp'),
-      url('/Misc/fm.webp')
-    `,
-                                      backgroundPosition: "left center, right center, center center",
-                                      backgroundRepeat: "no-repeat, no-repeat, repeat",
-                                      backgroundSize: "contain, contain, contain",
-                                    }}
-                                  >
-                                    {ttarray[ttID[boonCodex[ite]]]
-                                      ? ttarray[ttID[boonCodex[ite]]].BoonName
-                                      : boonCodex[ite]}
-                                  </div>
-                                  {ttarray[ttID[boonCodex[ite]]] && (
-                                    <div className="text-start flex flex-col gap-2 text-[Ubuntu] p-2 pt-1">
-                                      <div>{ttarray[ttID[boonCodex[ite]]].Category}</div>
-                                      <div>{ttarray[ttID[boonCodex[ite]]].Purpose}</div>
-                                      <div className="text-[12px]">{ttarray[ttID[boonCodex[ite]]].Description}</div>
-                                    </div>
-                                  )}
-                                </div>
+                              <div className="group inline-block">
                                 <img
                                   draggable={false}
                                   src={`/P9/${ite}.png`}
                                   alt="Core Boon"
-                                  className={`size-7 rounded border-1 border-black`}
+                                  className="size-7 rounded border border-black cursor-pointer"
                                 />
+
+                                {/* Tooltip content */}
+                                <div className="absolute left-1/2 bottom-full hidden w-[90%] -translate-x-1/2 group-hover:flex flex-col items-center z-50">
+                                  <div className="relative bg-black text-white text-[12px]">
+                                    <div
+                                      className="flex h-[40px] w-full min-w-[250px] items-center justify-center text-[14px]"
+                                      style={{
+                                        backgroundImage: `
+            url('/Misc/fl.webp'),
+            url('/Misc/fr.webp'),
+            url('/Misc/fm.webp')
+          `,
+                                        backgroundPosition: "left center, right center, center center",
+                                        backgroundRepeat: "no-repeat, no-repeat, repeat",
+                                        backgroundSize: "contain, contain, contain",
+                                      }}
+                                    >
+                                      {ttarray[ttID[boonCodex[ite]]]
+                                        ? ttarray[ttID[boonCodex[ite]]].BoonName
+                                        : boonCodex[ite]}
+                                    </div>
+
+                                    {ttarray[ttID[boonCodex[ite]]] && (
+                                      <div className="text-start flex flex-col gap-2 font-[Ubuntu] text-[11px] p-2">
+                                        <div>Category: {ttarray[ttID[boonCodex[ite]]].Category}</div>
+                                        <div>Type: {ttarray[ttID[boonCodex[ite]]].Purpose}</div>
+                                        <div>{ttarray[ttID[boonCodex[ite]]].Description}</div>
+                                      </div>
+                                    )}
+                                  </div>
+                                </div>
                               </div>
                             ))}
                           </div>
