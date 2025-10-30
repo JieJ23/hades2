@@ -77,10 +77,13 @@ export default function Weekly() {
   const displayData = weeklyData[week].items.sort((a, b) => +b.fea - +a.fea);
 
   //
-  const firstplace = [];
+  const firstplace_surface = [];
+  const firstplace_uw = [];
   for (let i = 0; i < weeklyData.length; i++) {
-    const firstEntries = weeklyData[i].items[0];
-    firstplace.push(firstEntries);
+    const firstEntries = weeklyData[i].items.filter((obj) => obj.loc === `Surface`)[0];
+    const secondEntries = weeklyData[i].items.filter((obj) => obj.loc === `Underworld`)[0];
+    firstplace_surface.push(firstEntries);
+    firstplace_uw.push(secondEntries);
   }
 
   return (
@@ -111,16 +114,29 @@ export default function Weekly() {
             {loader ? (
               <Loading />
             ) : (
-              <div className="flex gap-1 overflow-x-scroll border-2 rounded border-black">
-                {firstplace.map((obj, index) => (
-                  <div className="bg-gradient-to-b from-[black] via-[#131111] to-[#00ffaa50] min-w-[120px] text-center p-2 rounded-sm flex flex-col justify-between select-none">
-                    <div>Week #{weeklyData[index].week.slice(6)}</div>
-                    <div className="line-clamp-1 text-[#00ffaa]">{obj.nam}</div>
-                    <div>{obj.fea}</div>
-                    <div>{obj.tim}</div>
-                    <div>{obj.asp}</div>
-                  </div>
-                ))}
+              <div className="flex flex-col gap-1 overflow-x-scroll border-2 rounded border-black">
+                <div className="flex gap-1">
+                  {firstplace_surface.map((obj, index) => (
+                    <div className="bg-gradient-to-b from-[black] via-[#131111] to-[#00ffaa50] min-w-[120px] text-center p-2 rounded-sm flex flex-col justify-between select-none">
+                      <div>Week #{weeklyData[index].week.slice(6)}</div>
+                      <div className="line-clamp-1 text-[#00ffaa]">{obj.nam}</div>
+                      <div>{obj.fea}</div>
+                      <div>{obj.tim}</div>
+                      <div>{obj.asp}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex gap-1">
+                  {firstplace_uw.map((obj, index) => (
+                    <div className="bg-gradient-to-b from-[black] via-[#131111] to-[#ffff0050] min-w-[120px] text-center p-2 rounded-sm flex flex-col justify-between select-none">
+                      <div>Week #{weeklyData[index].week.slice(6)}</div>
+                      <div className="line-clamp-1 text-[yellow]">{obj.nam}</div>
+                      <div>{obj.fea}</div>
+                      <div>{obj.tim}</div>
+                      <div>{obj.asp}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
             <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1400px] mx-auto my-6">
