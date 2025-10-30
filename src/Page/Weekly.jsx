@@ -21,8 +21,9 @@ import {
   getStatusColor,
   handleLoadMore,
   parseTimetoms,
+  getYTid,
 } from "../Data/Misc";
-import { boonCodex, boonCodexr } from "../Data/Boon2";
+import { boonCodex } from "../Data/Boon2";
 import { p9boons } from "../Data/P9BoonObj";
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
@@ -75,6 +76,13 @@ export default function Weekly() {
 
   const displayData = weeklyData[week].items.sort((a, b) => +b.fea - +a.fea);
 
+  //
+  const firstplace = [];
+  for (let i = 0; i < weeklyData.length; i++) {
+    const firstEntries = weeklyData[i].items[0];
+    firstplace.push(firstEntries);
+  }
+
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
@@ -99,6 +107,22 @@ export default function Weekly() {
                 </div>
               ))}
             </div>
+            {/*  */}
+            {loader ? (
+              <Loading />
+            ) : (
+              <div className="flex gap-1 overflow-x-scroll border-2 rounded border-black">
+                {firstplace.map((obj, index) => (
+                  <div className="bg-gradient-to-b from-[black] via-[#131111] to-[#00ffaa50] min-w-[120px] text-center p-2 rounded-sm flex flex-col justify-between select-none">
+                    <div>Week #{weeklyData[index].week.slice(6)}</div>
+                    <div className="line-clamp-1 text-[#00ffaa]">{obj.nam}</div>
+                    <div>{obj.fea}</div>
+                    <div>{obj.tim}</div>
+                    <div>{obj.asp}</div>
+                  </div>
+                ))}
+              </div>
+            )}
             <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1400px] mx-auto my-6">
               <BarAspect data={displayData} title={`Aspects`} />
               <BarFear data={displayData} />
@@ -109,7 +133,18 @@ export default function Weekly() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
               {displayData.slice(0, show).map((obj, index) => (
-                <div className="flex gap-2" key={index}>
+                <div className="flex gap-2 relative" key={index}>
+                  <div className="absolute w-[55%] h-auto top-1 right-1 p-1">
+                    {obj.src.includes(`youtu`) && (
+                      <img
+                        src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`}
+                        alt="Gameplay Video"
+                        className="w-full h-full rounded"
+                        loading="lazy"
+                        draggable={false}
+                      />
+                    )}
+                  </div>
                   <div
                     className={`w-full p-2 py-1 flex flex-col relative bg-[#1013248b] rounded shadow-[0_0_20px_black]`}
                     style={{
@@ -120,7 +155,7 @@ export default function Weekly() {
                   >
                     <div className="w-full text-[14px]">
                       <div
-                        className={`flex justify-center ${
+                        className={`flex justify-start ${
                           obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`
                         }`}
                       >
@@ -299,14 +334,14 @@ export default function Weekly() {
                         {displayData.length > 0 &&
                           findStatus(obj).map((ite) => (
                             <div
-                              className="p-0.5 rounded text-black min-w-[40px] text-center text-[12px]"
+                              className="px-1 rounded-none text-black text-center"
                               style={{ backgroundColor: getStatusColor(ite) }}
                             >
                               {ite}
                             </div>
                           ))}
                       </div>
-                      <div className="text-gray-300 my-0.5">{obj.dat.slice(0, 10)}</div>
+                      <div className="text-gray-300 my-0.5 text-end">{obj.dat.slice(0, 10)}</div>
                     </div>
                   </div>
                 </div>

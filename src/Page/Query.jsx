@@ -724,7 +724,7 @@ export default function Query() {
                       {obj.src.includes(`youtu`) ? (
                         <div className="rounded aspect-video overflow-hidden w-full h-full">
                           <img
-                            src={`https://img.youtube.com/vi/${getYTid(obj.src)}/maxresdefault.jpg`}
+                            src={`https://img.youtube.com/vi/${getYTid(obj.src)}/mqdefault.jpg`}
                             alt="Gameplay Video"
                             className="h-full w-full"
                             loading="lazy"

@@ -159,7 +159,7 @@ export default function Ladder() {
                 <div
                   className={`rounded-t-md px-2 py-1 relative border-1 border-[#000000] hover:border-[#00ffaa] duration-200 ease-in transition-colors h-[250px] ${
                     arr[0] && arr[0].fea >= 67
-                      ? `bg-[#202379aa]`
+                      ? `bg-[#480b0bbf]`
                       : arr[0] && arr[0].fea >= 62
                       ? `bg-[#141537a6]`
                       : `bg-[#0e0e0ec4]`
