@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { v1data } from "../Data/V1data";
 
-import { biomeS, biomeU, sToA } from "../Data/Misc";
+import { biomeS, biomeU, h2AspectOrder, sToA } from "../Data/Misc";
 
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
@@ -40,8 +40,17 @@ export default function () {
   const { posts, loader } = useData();
   const [minfear, setMinFear] = useState(1);
   const [maxfear, setMaxFear] = useState(67);
+  const [aspect, setAspect] = useState(`All`);
 
-  const availableData = [...v1data, ...(posts || [])].filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear);
+  const availableData = [...v1data, ...(posts || [])]
+    .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear)
+    .filter((obj) => {
+      if (aspect === `All`) {
+        return obj;
+      } else {
+        return obj.asp === aspect;
+      }
+    });
 
   return (
     <>
@@ -75,6 +84,15 @@ export default function () {
                 max={67}
                 min={1}
               />
+            </div>
+            <div>
+              <div>Aspect</div>
+              <select className="select select-sm" value={aspect} onChange={(e) => setAspect(e.target.value)}>
+                <option value="All">All</option>
+                {h2AspectOrder.map((ite) => (
+                  <option value={ite}>{ite}</option>
+                ))}
+              </select>
             </div>
           </div>
           <div className="my-4 grid grid-cols-1 lg:grid-cols-2 gap-y-6 text-[12px] place-items-center text-center">

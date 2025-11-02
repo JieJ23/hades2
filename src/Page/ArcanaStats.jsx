@@ -16,10 +16,17 @@ export default function ArcanaStats() {
   const { posts, loader } = useData();
   const [minfear, setMinFear] = useState(1);
   const [maxfear, setMaxFear] = useState(67);
+  const [region, setRegion] = useState(`All`);
 
-  const availableData = [...p9data, ...p11data, ...v1data, ...(posts || [])].filter(
-    (obj) => obj.fea >= +minfear && obj.fea <= +maxfear
-  );
+  const availableData = [...p9data, ...p11data, ...v1data, ...(posts || [])]
+    .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear)
+    .filter((obj) => {
+      if (region === `All`) {
+        return obj;
+      } else {
+        return obj.loc === region;
+      }
+    });
 
   const runs_av = availableData.filter((obj) => obj.arcana);
 
@@ -74,6 +81,14 @@ export default function ArcanaStats() {
                 max={67}
                 min={1}
               />
+            </div>
+            <div>
+              <div>Region</div>
+              <select className="select select-sm" value={region} onChange={(e) => setRegion(e.target.value)}>
+                <option value="All">All</option>
+                <option value="Surface">Surface</option>
+                <option value="Underworld">Underworld</option>
+              </select>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 justify-center gap-1 md:gap-2 my-4 px-2">
