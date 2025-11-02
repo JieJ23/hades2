@@ -655,7 +655,7 @@ export const bKeep = [
   `Iridescent Fan`,
   `Vivid Sea`,
   `Barley Sheaf`,
-  `Purest Hope`,
+  `Harmonic Photon`,
   `Beautiful Mirror`,
   `Adamant Shard`,
   `Everlasting Ember`,

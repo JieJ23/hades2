@@ -417,7 +417,7 @@ export const boonid = {
   "Iridescent Fan": 417,
   "Vivid Sea": 418,
   "Barley Sheaf": 419,
-  "Purest Hope": 420,
+  "Harmonic Photon": 420,
   "Beautiful Mirror": 421,
   "Adamant Shard": 422,
   "Everlasting Ember": 423,

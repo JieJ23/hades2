@@ -1821,7 +1821,7 @@ export const v1data = [
     cor: "Attack,ApoSpecial,ApoCast,ApoSprint,HerMagick",
     ham: "Sudden Cleaver,Giga Cleaver",
     boon: "Prominence Flare,Local Climate,Hydraulic Might,Geyser Spout,Snow Queen,Plentiful Forage,Back Burner,Reward Reward Reward,Sun Worshiper,Tropical Cyclone,Self Healing,Wolf Howl,Steady Growth,Unseen Ire,Racing Thoughts",
-    ks: "Purest Hope,Barley Sheaf,Experimental Hammer,Metallic Droplet",
+    ks: "Harmonic Photon,Barley Sheaf,Experimental Hammer,Metallic Droplet",
   },
   {
     dat: "2025-10-17",
@@ -2261,7 +2261,7 @@ export const v1data = [
     cor: "Attack,HerSpecial,PosCast,ApoSprint,ApoMagick",
     ham: "Sudden Cleaver,Giga Cleaver",
     boon: "Heart Breaker,Geyser Spout,Ocean Swell,Renewed Faith,Hard Target,Evade Evade Evade,Beach Ball",
-    ks: "Purest Hope,Engraved Pin,Gorgon Amulet,Luckier Tooth",
+    ks: "Harmonic Photon,Engraved Pin,Gorgon Amulet,Luckier Tooth",
   },
   {
     dat: "2025-10-14",
@@ -2459,7 +2459,7 @@ export const v1data = [
     cor: "ApoAttack,AreSpecial,HepCast,ApoSprint,ApoMagick",
     ham: "Reaper Frame,Counter Supreme",
     boon: "Weed Killer,Steady Growth,Plentiful Forage,Perfect Image,Heavy Metal,Profuse Bleeding,Renewed Faith,Racing Thoughts,Deep Dissent,Wolf Howl,Pom Pom Pom",
-    ks: "Purest Hope,Barley Sheaf,Moon Beam,Gorgon Amulet",
+    ks: "Harmonic Photon,Barley Sheaf,Moon Beam,Gorgon Amulet",
   },
   {
     dat: "2025-10-14",
@@ -2477,7 +2477,7 @@ export const v1data = [
     cor: "Attack,HerSpecial,DemCast,Sprint,ApoMagick",
     ham: "Melting Shredder,Colossus Slash",
     boon: "Twilight Curse,Revelation,Chasm,Deep Dissent,Hard Target,Mean Streak,Perfect Image,Light Smite,Prominence Flare,Plentiful Forage,Geyser Spout,Ocean Swell,Rousing Reception,Bridal Glow,Proper Upbringing,Slothful,Caustic",
-    ks: "Purest Hope,Iridescent Fan,Metallic Droplet,Engraved Pin",
+    ks: "Harmonic Photon,Iridescent Fan,Metallic Droplet,Engraved Pin",
   },
   {
     dat: "2025-10-06",
@@ -3290,7 +3290,7 @@ export const v1data = [
     cor: "Attack,ZeuSpecial,AphCast,ApoSprint,ApoMagick",
     ham: "Rapid Slash,Dashing Heave",
     boon: "Revelation,Creation,Arc Flash,Snow Queen,Super Nova,Gift Gift Gift,Prominence Flare,Air Quality,Racing Thoughts",
-    ks: "Purest Hope,Fig Leaf,White Antler,Metallic Droplet",
+    ks: "Harmonic Photon,Fig Leaf,White Antler,Metallic Droplet",
   },
   {
     dat: "2025-10-07",
@@ -3956,7 +3956,7 @@ export const v1data = [
     cor: "HepAttack,PosSpecial,HesCast,ApoSprint,PosMagick",
     ham: "Sudden Burst,Rising Helix",
     boon: "Chain Reaction,Seismic Servo,Slippery Slope,Furnace Blast,Glowing Coal,Snuffed Candle,Renewed Faith,Pressure Points,Nitro Boost,Beach Ball,Warm Breeze,Scalding Vapor",
-    ks: "Adamant Shard,Purest Hope,Gorgon Amulet,Luckier Tooth",
+    ks: "Adamant Shard,Harmonic Photon,Gorgon Amulet,Luckier Tooth",
   },
   {
     dat: "2025-10-02",
@@ -4004,7 +4004,7 @@ export const v1data = [
     cor: "ApoAttack,Special,ZeuCast,HerSprint,HepMagick",
     ham: "Colossus Slash,Seething Marauder",
     boon: "Nimble Limbs,Unseen Ire,Twilight Curse,Lethal Snare,Molten Touch,Bridal Glow,Light Smite,Divine Vengeance,Hereditary Bane,Extra Dose,Secret Crush,Wispy Wiles,Static Shock",
-    ks: "Purest Hope,Adamant Shard,Beautiful Mirror,Evil Eye",
+    ks: "Harmonic Photon,Adamant Shard,Beautiful Mirror,Evil Eye",
   },
   {
     dat: "2025-10-01",
@@ -4123,7 +4123,7 @@ export const v1data = [
     cor: "ApoAttack,AreSpecial,HerCast,HerSprint,PosMagick",
     ham: "Psychic Whirlwind,Seething Marauder",
     boon: "Dazzling Display,Mutual Destruction,Back Burner,Sea Star,Super Nova,Extra Dose,Nitro Boost,Happy Haze,Corrosion on Sight,Racing Thoughts,Divine Dash,Old Herbal Remedy,Self Healing,Water Fitness",
-    ks: "Purest Hope,Iridescent Fan,Aromatic Phial,Knuckle Bones",
+    ks: "Harmonic Photon,Iridescent Fan,Aromatic Phial,Knuckle Bones",
   },
   {
     dat: "2025-09-28",
@@ -4141,7 +4141,7 @@ export const v1data = [
     cor: "ApoAttack,ZeuSpecial,DemCast,HerSprint,ApoMagick",
     ham: "Final Slice",
     boon: "Arctic Gale,Snow Queen,Cold Storage,Bridal Glow,Rousing Reception,Dazzling Display,Exceptional Talent,Mixed Blessings,Frosty Veneer,Super Nova,Hard Target",
-    ks: "Purest Hope,Gorgon Amulet,Aromatic Phial,Iridescent Fan",
+    ks: "Harmonic Photon,Gorgon Amulet,Aromatic Phial,Iridescent Fan",
   },
   {
     dat: "2025-09-28",
@@ -4225,7 +4225,7 @@ export const v1data = [
     cor: "HesAttack,AphSpecial,ApoCast,Sprint,AphMagick",
     ham: "Giga Cleaver,Colossus Slash",
     boon: "Prominence Flare,Exceptional Talent,Back Burner,Sea Star,Snuffed Candle,Killing Stroke,Geyser Spout,Sweet Surrender,Buried Treasure,Hard Target,Warm Breeze,Burning Desire,Moon Water",
-    ks: "Purest Hope,Beautiful Mirror,Silken Sash,Luckier Tooth",
+    ks: "Harmonic Photon,Beautiful Mirror,Silken Sash,Luckier Tooth",
   },
   {
     dat: "2025-09-29",

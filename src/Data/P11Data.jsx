@@ -424,7 +424,7 @@ export const p11data = [
     fam: "Polecat",
     cor: "Attack,ApoSpecial,DemCast,Sprint,ApoMagick",
     ham: "Giga Cleaver,Sudden Cleaver",
-    ks: `Purest Hope,Barley Sheaf,Ghost Onion,Knuckle Bones`,
+    ks: `Harmonic Photon,Barley Sheaf,Ghost Onion,Knuckle Bones`,
     boon: `Hard Target,Prominence Flare,Hymn to the Eye of Night,Self Healing,Arctic Gale,Sea Star,Local Climate,Eminence,Righteous Pike,Drunken Stupor,Exceptional Talent,Visceral Impact,Nitro Boost,Cut Above,Geyser Spout,Consequence,Preparation,Magnitude,Softness,Purpose,Total Eclipse,Vastness,Plasma`,
   },
   {
@@ -2490,7 +2490,7 @@ export const p11data = [
     cor: "HepAttack,ZeuSpecial,ZeuCast,ApoSprint,HesMagick",
     ham: "Extending Wallop,Melting Swipe",
     boon: "Static Shock,Furnace Blast,Trusty Shield,Back Burner,Security System,Vital Signs,Precious Metals,Twilight Curse,Growth,Exposure,Decline",
-    ks: "Cloud Bangle,Fig Leaf,Purest Hope,White Antler",
+    ks: "Cloud Bangle,Fig Leaf,Harmonic Photon,White Antler",
   },
   {
     dat: "2025-08-04",
@@ -2921,7 +2921,7 @@ export const p11data = [
     cor: "Attack,ApoSpecial,PosCast,Sprint,ApoMagick",
     ham: "Colossus Slash,Rapid Slash,Melting Shredder,Dashing Heave",
     boon: "Exceptional Talent,Controlled Burn,Killing Stroke,Self Healing,Nitro Boost,Gift Gift Gift,Perfect Image,Travel Deal,Flourish,Renewed Faith,Cinerary Circle,Local Climate,Night Bloom",
-    ks: "Purest Hope,Knuckle Bones,Experimental Hammer,Gorgon Amulet",
+    ks: "Harmonic Photon,Knuckle Bones,Experimental Hammer,Gorgon Amulet",
   },
   {
     dat: "2025-08-12",
@@ -5245,7 +5245,7 @@ export const p11data = [
     cor: "ApoAttack,Special,DemCast,ApoSprint,HepMagick",
     ham: "Colossus Slash,Psychic Whirlwind",
     boon: "Secret Crush,Security System,Molten Touch,Renewed Faith,Gigaros Dash,Nimble Limbs,Wolf Howl",
-    ks: "Gorgon Amulet,Purest Hope,Engraved Pin,Ghost Onion",
+    ks: "Gorgon Amulet,Harmonic Photon,Engraved Pin,Ghost Onion",
   },
   {
     dat: "2025-08-31",
@@ -5385,7 +5385,7 @@ export const p11data = [
     cor: "Attack,HerSpecial,ApoCast,Sprint,ApoMagick",
     ham: "Giga Cleaver",
     boon: "Soul,Travel Deal,Easy Shot,Renewed Faith,Mystic Secrets,Total Eclipse,Eminence,Buried Treasure,High Surf,Last Gasp",
-    ks: "Purest Hope,Gorgon Amulet,Engraved Pin,Engraved Pin",
+    ks: "Harmonic Photon,Gorgon Amulet,Engraved Pin,Engraved Pin",
   },
   {
     dat: "2025-09-04",
@@ -5464,7 +5464,7 @@ export const p11data = [
     cor: "ZeuAttack,HesSpecial,PosCast,ApoSprint,Magick",
     ham: "Trick Knives,Hidden Knives",
     boon: "Static Shock,High Surf,Flash Fry,Pyro Technique,Hot Pot,Buried Treasure,Gift Gift Gift,Last Gasp,Heavenly Splendor,Slow Cooker,Expiring,Creation",
-    ks: "Cloud Bangle,Purest Hope,Engraved Pin,Luckier Tooth",
+    ks: "Cloud Bangle,Harmonic Photon,Engraved Pin,Luckier Tooth",
   },
   {
     dat: "2025-09-07",
@@ -5500,7 +5500,7 @@ export const p11data = [
     cor: "HerAttack,HesSpecial,Cast,ApoSprint,AphMagick",
     ham: "Sudden Burst,Clean Coil,Mega Blaze",
     boon: "Lunar Ray,Shine of Apollo",
-    ks: "Everlasting Ember,Purest Hope,Gorgon Amulet,Engraved Pin",
+    ks: "Everlasting Ember,Harmonic Photon,Gorgon Amulet,Engraved Pin",
   },
   {
     dat: "2025-09-09",
@@ -5536,7 +5536,7 @@ export const p11data = [
     cor: "HerAttack,Special,HesCast,ApoSprint,AphMagick",
     ham: "Melting Swipe,Wicked Thrasher",
     boon: "Corrosion on Sight,Rousing Reception,Spiritual Affirmation,Bridal Glow,Arctic Gale,Snow Queen,Word of Smaller Stature,Plentiful Forage,Pyro Technique",
-    ks: "Everlasting Ember,Purest Hope,Engraved Pin,Engraved Pin",
+    ks: "Everlasting Ember,Harmonic Photon,Engraved Pin,Engraved Pin",
   },
   {
     dat: "2025-09-11",
@@ -5680,7 +5680,7 @@ export const p11data = [
     cor: "Attack,HesSpecial,HerCast,ApoSprint,AphMagick",
     ham: "Shimmering Rockets,Siege Frame",
     boon: "Burning Desire,Self Healing,Support Fire,Renewed Faith,Fight Fight Fight,Deep Dissent",
-    ks: "Everlasting Ember,Purest Hope,Knuckle Bones,Gorgon Amulet",
+    ks: "Everlasting Ember,Harmonic Photon,Knuckle Bones,Gorgon Amulet",
   },
   {
     dat: "2025-09-16",
@@ -5788,7 +5788,7 @@ export const p11data = [
     cor: "ZeuAttack,Special,HesCast,ApoSprint,Magick",
     ham: "",
     boon: "Uncanny Fortitude,Static Shock,Light Smite,Thermal Dynamics,Self Healing,Renewed Faith,Mystic Secrets,Gold Gold Gold,Unseen Ire",
-    ks: "Everlasting Ember,Fig Leaf,Purest Hope,Gorgon Amulet",
+    ks: "Everlasting Ember,Fig Leaf,Harmonic Photon,Gorgon Amulet",
   },
   {
     dat: "2025-09-20",
@@ -5823,7 +5823,7 @@ export const p11data = [
     cor: "ApoAttack,Special,DemCast,Sprint,HerMagick",
     ham: "Psychic Whirlwind,Seething Marauder",
     boon: "Dazzling Display,Trusty Shield,Bridal Glow,Shadow Pounce,Mental Block,Drunken Stupor,Nitro Boost,Travel Deal,Traces of Spirit,Cherished Heirloom,Self Healing,Back Burner",
-    ks: "Purest Hope,Fig Leaf,Knuckle Bones,White Antler",
+    ks: "Harmonic Photon,Fig Leaf,Knuckle Bones,White Antler",
   },
   {
     dat: "2025-09-17",

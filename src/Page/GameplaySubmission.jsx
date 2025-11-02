@@ -329,7 +329,7 @@ export default function GameplaySubmission() {
                         keep.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#131111]`
                       }`}
                       onClick={(prev) => {
-                        if (keep.length >= 5) {
+                        if (keep.length >= 4) {
                           return prev;
                         } else {
                           setKeep((prev) => [...prev, item]);
