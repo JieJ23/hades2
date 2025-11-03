@@ -2,7 +2,7 @@ import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
-import { sav1 } from "../SaveFile/sav1";
+import { sav1 } from "../SaveFile/Sav1";
 import { sav2 } from "../SaveFile/Sav2";
 import { parsemstoTime } from "../Data/Misc";
 
