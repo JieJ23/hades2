@@ -117,7 +117,7 @@ export const defineArray = (vow) => {
     case `Scars`:
       return {
         d: `Any Health effects are less effective.	`,
-        rank: [`75%`, `60%`, `0%`],
+        rank: [`75%`, `50%`, `0%`],
       };
     case `Shadow`:
       return {
