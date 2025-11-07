@@ -227,13 +227,7 @@ export default function GameplaySubmission() {
                 value={sortCore(core.join(","))}
                 required={true}
               />
-              <input
-                className="input w-full rounded"
-                placeholder="Hammer"
-                value={hammer.join(",")}
-                name="ham"
-                required={true}
-              />
+              <input className="input w-full rounded" placeholder="Hammer" value={hammer.join(",")} name="ham" />
               <div className="text-[14px]">All Other Boons excluding selene boons.</div>
               <input
                 className="input w-full rounded"
