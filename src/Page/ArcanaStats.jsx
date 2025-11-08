@@ -107,7 +107,7 @@ export default function ArcanaStats() {
                 >
                   {Array.from({ length: 25 }, (_, i) => {
                     const cardId = `c${i + 1}`;
-                    const selection = popularArcana[ind1][0];
+                    const selection = popularArcana[ind1][0].split(","); // ensure it’s an array
                     return (
                       <img
                         key={cardId}
