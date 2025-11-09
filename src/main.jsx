@@ -7,6 +7,8 @@ import App from "./App.jsx";
 
 import Archive from "./Page/Archive.jsx";
 
+import SixTwo from "./Page/SixTwo.jsx";
+
 import Query from "./Page/Query.jsx";
 import Ladder from "./Page/Ladder.jsx";
 import FearPoints from "./Page/FearPoints.jsx";
@@ -40,6 +42,8 @@ createRoot(document.getElementById("root")).render(
 
           <Route path="/Query" element={<Query />} />
           <Route path="/Archive" element={<Archive />} />
+
+          <Route path="/SixTwo" element={<SixTwo />} />
 
           <Route path="/Ladder" element={<Ladder />} />
           <Route path="/FearPoints" element={<FearPoints />} />
