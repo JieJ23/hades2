@@ -12,7 +12,7 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     async function load() {
       try {
-        // const cached = localStorage.getItem("peanu2");
+        // const cached = localStorage.getItem("divine");
         // if (cached) {
         //   setPosts(JSON.parse(cached));
         //   setLoader(false);
@@ -24,7 +24,7 @@ export const DataProvider = ({ children }) => {
         const posts = await response.json();
         // const posts = await data.filter((obj) => obj.v === "y");
         setPosts(posts);
-        // localStorage.setItem("peanu2", JSON.stringify(posts)); // save for next time
+        // localStorage.setItem("divine", JSON.stringify(posts)); // save for next time
 
         setLoader(false);
       } catch (error) {
