@@ -117,9 +117,9 @@ export default function Weekly() {
               <div className="flex flex-col gap-1 overflow-x-scroll border-2 rounded border-black">
                 <div className="flex gap-1">
                   {firstplace_surface.map((obj, index) => (
-                    <div className="bg-gradient-to-b from-[black] via-[#131111] to-[#00ffaa50] min-w-[120px] text-center p-2 rounded-sm flex flex-col justify-between select-none">
+                    <div className="bg-gradient-to-b from-[black] via-[#131111] to-[#ffff0050] min-w-[120px] text-center p-2 rounded-sm flex flex-col justify-between select-none">
                       <div>Week #{weeklyData[index].week.slice(6)}</div>
-                      <div className="line-clamp-1 text-[#00ffaa]">{obj.nam}</div>
+                      <div className="line-clamp-1 text-[yellow]">{obj.nam}</div>
                       <div>{obj.fea}</div>
                       <div>{obj.tim}</div>
                       <div>{obj.asp}</div>
@@ -128,9 +128,9 @@ export default function Weekly() {
                 </div>
                 <div className="flex gap-1">
                   {firstplace_uw.map((obj, index) => (
-                    <div className="bg-gradient-to-b from-[black] via-[#131111] to-[#ffff0050] min-w-[120px] text-center p-2 rounded-sm flex flex-col justify-between select-none">
+                    <div className="bg-gradient-to-b from-[black] via-[#131111] to-[#00ffaa50] min-w-[120px] text-center p-2 rounded-sm flex flex-col justify-between select-none">
                       <div>Week #{weeklyData[index].week.slice(6)}</div>
-                      <div className="line-clamp-1 text-[yellow]">{obj.nam}</div>
+                      <div className="line-clamp-1 text-[#00ffaa]">{obj.nam}</div>
                       <div>{obj.fea}</div>
                       <div>{obj.tim}</div>
                       <div>{obj.asp}</div>
