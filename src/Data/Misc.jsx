@@ -339,7 +339,7 @@ export const handleLoadMore = (updater) => {
 //
 
 export const findStatus = (obj) => {
-  const checkArray = [...obj.cor.split(","), ...obj.boon.split(",")];
+  const checkArray = [...obj.cor.split(","), ...(obj.boon ? obj.boon.split(",") : [])];
   const entryEffects = Object.entries(statusEffects)
     .filter(([effect, boonsList]) => boonsList.some((b) => checkArray.includes(b)))
     .map(([effect]) => effect);
