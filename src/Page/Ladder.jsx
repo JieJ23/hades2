@@ -254,9 +254,9 @@ export default function Ladder() {
                           ))}
                         {boon === `Arcana` && obj.arcana && (
                           <div>
-                            {deCodeArcana(obj.arcana).includes(`c12`) ? (
+                            {deCodeArcana(obj.arcana)?.includes(`c12`) ? (
                               <div className="text-red-400">Death</div>
-                            ) : deCodeArcana(obj.arcana).includes(`c23`) ? (
+                            ) : deCodeArcana(obj.arcana)?.includes(`c23`) ? (
                               <div className="text-orange-200">Strength</div>
                             ) : (
                               ``
