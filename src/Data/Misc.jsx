@@ -147,6 +147,19 @@ export function parsemstoTime(ms) {
   return `${minStr}:${secStr}.${hundredthsStr}`;
 }
 
+export function parsesectoTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  const centiseconds = Math.round((seconds - Math.floor(seconds)) * 100);
+
+  // Pad minutes and seconds with leading zeros
+  const mm = String(minutes).padStart(2, "0");
+  const ss = String(secs).padStart(2, "0");
+  const cs = String(centiseconds).padStart(2, "0");
+
+  return `${mm}:${ss}.${cs}`;
+}
+
 //
 
 export function deCodeVow(base64String) {

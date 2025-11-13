@@ -22,6 +22,7 @@ export const sites2 = [
   { link: `KeepsakesStats`, nam: `KS Stats` },
   { link: `ArcanaStats`, nam: `Arcana Stats` },
   { link: `VowsStats`, nam: `Vow Stats` },
+  // { link: `Savefile`, nam: `Savefile` },
 ];
 
 export default function SideNav() {
