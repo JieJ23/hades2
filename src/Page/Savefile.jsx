@@ -39,12 +39,23 @@ export default function Savefile() {
     const formEle = e.target;
     const formDatab = new FormData(formEle);
 
-    formDatab.append("dat", info.runNumber);
+    const now = new Date();
+    const month = (now.getMonth() + 1).toString().padStart(2, "0"); // months are 0-based
+    const day = now.getDate().toString().padStart(2, "0");
+    const year = now.getFullYear();
+
+    const formatted = `${month}/${day}/${year}`;
+
+    formDatab.append("dat", formatted);
     formDatab.append("aspect", info.weapon);
-    formDatab.append("gp1", `${info.bossFight[0][0]}/${info.bossFight[0][1].ClearTime}`);
-    formDatab.append("gp2", `${info.bossFight[1][0]}/${info.bossFight[1][1].ClearTime}`);
-    formDatab.append("gp3", `${info.bossFight[2][0]}/${info.bossFight[2][1].ClearTime}`);
-    formDatab.append("gp4", `${info.bossFight[3][0]}/${info.bossFight[3][1].ClearTime}`);
+    formDatab.append(
+      "boss",
+      `${info.bossFight[0][0]},${info.bossFight[1][0]},${info.bossFight[2][0]},${info.bossFight[3][0]}`
+    );
+    formDatab.append("gp1", `${info.bossFight[0][1].ClearTime}`);
+    formDatab.append("gp2", `${info.bossFight[1][1].ClearTime}`);
+    formDatab.append("gp3", `${info.bossFight[2][1].ClearTime}`);
+    formDatab.append("gp4", `${info.bossFight[3][1].ClearTime}`);
     formDatab.append("bio1", info.biomesGTime[0][1]);
     formDatab.append("bio2", info.biomesGTime[1][1]);
     formDatab.append("bio3", info.biomesGTime[2][1]);
@@ -61,7 +72,7 @@ export default function Savefile() {
 
     try {
       const res = await fetch(
-        "https://script.google.com/macros/s/AKfycbwIXkzLUQ1SoBencqgbLNruneO3RunQsElmz0pBO5O4qzO_ItFjaanQa2c-k76S0SWU/exec",
+        "https://script.google.com/macros/s/AKfycbyXgyycFBvjMkPdemgyAripxhtOTUXEydun7HVciNOCzJSGQMpMTPtKsbBL-THKAZVH/exec",
         {
           method: "POST",
           body: formDatab,
