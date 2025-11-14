@@ -34,40 +34,43 @@ import ArcanaDeck from "./Page/ArcanaDeck.jsx";
 import GameplaySubmission from "./Page/GameplaySubmission.jsx";
 
 import { DataProvider } from "./Hook/DataFetch.jsx";
+import { DataProvider2 } from "./Hook/DataFetch2.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <DataProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<App />} />
+    <DataProvider2>
+      <DataProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<App />} />
 
-          <Route path="/Query" element={<Query />} />
-          <Route path="/Archive" element={<Archive />} />
+            <Route path="/Query" element={<Query />} />
+            <Route path="/Archive" element={<Archive />} />
 
-          <Route path="/SixTwo" element={<SixTwo />} />
-          <Route path="/Savefile" element={<Savefile />} />
-          <Route path="/BossSpeedrun" element={<BossSpeedrun />} />
+            <Route path="/SixTwo" element={<SixTwo />} />
+            <Route path="/Savefile" element={<Savefile />} />
+            <Route path="/BossSpeedrun" element={<BossSpeedrun />} />
 
-          <Route path="/Ladder" element={<Ladder />} />
-          <Route path="/FearPoints" element={<FearPoints />} />
-          <Route path="/StatsCodex" element={<StatsCodex />} />
+            <Route path="/Ladder" element={<Ladder />} />
+            <Route path="/FearPoints" element={<FearPoints />} />
+            <Route path="/StatsCodex" element={<StatsCodex />} />
 
-          <Route path="/KeepsakesStats" element={<KeepsakesStats />} />
-          <Route path="/VowsStats" element={<VowsStats />} />
-          <Route path="/ArcanaStats" element={<ArcanaStats />} />
-          <Route path="/Weekly" element={<Weekly />} />
+            <Route path="/KeepsakesStats" element={<KeepsakesStats />} />
+            <Route path="/VowsStats" element={<VowsStats />} />
+            <Route path="/ArcanaStats" element={<ArcanaStats />} />
+            <Route path="/Weekly" element={<Weekly />} />
 
-          <Route path="/EALadder" element={<EALadder />} />
-          <Route path="/EAStat" element={<EAStat />} />
-          <Route path="/EARanking" element={<EARanking />} />
-          <Route path="/EAQuery" element={<EAQuery />} />
+            <Route path="/EALadder" element={<EALadder />} />
+            <Route path="/EAStat" element={<EAStat />} />
+            <Route path="/EARanking" element={<EARanking />} />
+            <Route path="/EAQuery" element={<EAQuery />} />
 
-          <Route path="/FearCalculator" element={<FearCalculator />} />
-          <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
-          <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
-        </Routes>
-      </Router>
-    </DataProvider>
+            <Route path="/FearCalculator" element={<FearCalculator />} />
+            <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
+            <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
+          </Routes>
+        </Router>
+      </DataProvider>
+    </DataProvider2>
   </StrictMode>
 );

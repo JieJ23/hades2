@@ -1,41 +1,25 @@
-import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
+import SideNav from "../Comp/Sidebar";
 import Footer from "../Comp/Footer";
 
-import { parsesectoTime, aspectsFinder, traitAspect } from "../Data/Misc";
+import { parsesectoTime, aspectsFinder } from "../Data/Misc";
 
-import { useState, useEffect } from "react";
+import { useData2 } from "../Hook/DataFetch2";
 import Loading from "../Hook/Loading";
 
 export const BossSpeedrun = () => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    async function load() {
-      try {
-        const response = await fetch(
-          `https://script.google.com/macros/s/AKfycbzedKfMhWQu9CpJw6Z4b9PM5xiLg7C2bC2reyA4CUeqe3QKk6ZE3rayQe9NDJN-K3nz/exec`
-        );
-        const posts = await response.json();
-        setPosts(posts);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-
-    load();
-  }, []);
+  const { posts2, loader2 } = useData2();
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
       <div className="max-w-[1200px] font-[Ale] text-[14px] mx-auto px-1">
         <SideNav />
-        {posts.length == 0 ? (
+        {loader2 ? (
           <Loading />
         ) : (
           <div className="my-4">
-            {posts.map((obj) => (
+            {posts2.map((obj) => (
               <div
                 className="border bg-black rounded mb-2"
                 style={{
@@ -44,7 +28,7 @@ export const BossSpeedrun = () => {
                   borderImage: "url('/Misc/frame.webp') 40 stretch",
                 }}
               >
-                <div className="text-center my-1 text-[16px]">
+                <div className="text-center my-2 text-[16px]">
                   <div>
                     {obj.nam} | {aspectsFinder(obj.aspect)} | {parsesectoTime(obj.bio4)}
                   </div>
@@ -92,7 +76,7 @@ export const BossSpeedrun = () => {
                     return (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-2 my-2">
                         <div className="w-full">
-                          <div className="text-center">
+                          <div className="text-center my-1">
                             Damage Given: {obj.herototal.toLocaleString("en-US")} / Top 3,
                           </div>
                           <div>
@@ -113,7 +97,7 @@ export const BossSpeedrun = () => {
                           </div>
                         </div>
                         <div className="w-full">
-                          <div className="text-center">
+                          <div className="text-center my-1">
                             Damage Taken: {obj.enemytotal.toLocaleString("en-US")} / Top 3,
                           </div>
                           <div>
@@ -141,6 +125,7 @@ export const BossSpeedrun = () => {
           </div>
         )}
       </div>
+      <Footer />
     </main>
   );
 };

@@ -339,7 +339,7 @@ export const v1data = [
     fea: 65,
     src: "",
     des: "DIDNT EXPECT TO GET THIS IN ABOUT 5 HOURS BABY LFGGGGGGGG",
-    arcana: "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjNyIsImMyMyIsImMyNSJd",
+    arcana: "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjNyIsImMyMCIsImMyMyIsImMyNSJd",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMywyLDIsMTJd",
     tim: "19:50.60",
     fam: "Raven",
