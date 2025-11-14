@@ -400,3 +400,85 @@ export function getStatusColor(effect) {
       return "#1DE3D1"; // fallback color for unknown effects
   }
 }
+// Savefile
+
+export const aspectsFinder = (id) => {
+  switch (id) {
+    case `BaseStaffAspect`:
+      return `Melinoe Staff`;
+    case `StaffClearCastAspect`:
+      return `Circe`;
+    case `StaffSelfHitAspect`:
+      return `Momus`;
+    case `StaffRaiseDeadAspect`:
+      return `Anubis`;
+    case `DaggerBackstabAspect`:
+      return `Melinoe Blades`;
+    case `DaggerBlockAspect`:
+      return `Artemis`;
+    case `DaggerHomingThrowAspect`:
+      return `Pan`;
+    case `DaggerTripleAspect`:
+      return `Morrigan`;
+    case `TorchSpecialDurationAspect`:
+      return `Melinoe Flames`;
+    case `TorchDetonateAspect`:
+      return `Moros`;
+    case `TorchSprintRecallAspect`:
+      return `Eos`;
+    case `TorchAutofireAspect`:
+      return `Supay`;
+    case `AxeRecoveryAspect`:
+      return `Melinoe Axe`;
+    case `AxeArmCastAspect`:
+      return `Charon`;
+    case `AxePerfectCriticalAspect`:
+      return `Thanatos`;
+    case `AxeRallyAspect`:
+      return `Nergal`;
+    case `LobAmmoBoostAspect`:
+      return `Melinoe Skull`;
+    case `LobCloseAttackAspect`:
+      return `Medea`;
+    case `LobImpulseAspect`:
+      return `Persephone`;
+    case `LobGunAspect`:
+      return `Hel`;
+    case `BaseSuitAspect`:
+      return `Melinoe Coat`;
+    case `SuitHexAspect`:
+      return `Selene`;
+    case `SuitComboAspect`:
+      return `Shiva`;
+    case `SuitMarkCritAspect`:
+      return `Nyx`;
+    default:
+      return `N/A`;
+  }
+};
+export const traitAspect = [
+  `BaseStaffAspect`,
+  `StaffClearCastAspect`,
+  `StaffSelfHitAspect`,
+  `StaffRaiseDeadAspect`,
+  `DaggerBackstabAspect`,
+  `DaggerBlockAspect`,
+  `DaggerHomingThrowAspect`,
+  `DaggerTripleAspect`,
+  `TorchSpecialDurationAspect`,
+  `TorchDetonateAspect`,
+  `TorchSprintRecallAspect`,
+  `TorchAutofireAspect`,
+  `AxeRecoveryAspect`,
+  `AxeArmCastAspect`,
+  `AxePerfectCriticalAspect`,
+  `AxeRallyAspect`,
+  `LobAmmoBoostAspect`,
+  `LobCloseAttackAspect`,
+  `LobImpulseAspect`,
+  `LobGunAspect`,
+  `BaseSuitAspect`,
+  `SuitHexAspect`,
+  `SuitComboAspect`,
+  `SuitMarkCritAspect`,
+];

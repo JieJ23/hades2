@@ -3,9 +3,12 @@ import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 import { Link } from "react-router-dom";
 
-import { parsesectoTime } from "../Data/Misc";
+import { parsesectoTime, traitAspect, aspectsFinder } from "../Data/Misc";
 
 import { useState } from "react";
+
+// https://script.google.com/macros/s/AKfycbzedKfMhWQu9CpJw6Z4b9PM5xiLg7C2bC2reyA4CUeqe3QKk6ZE3rayQe9NDJN-K3nz/exec
+//
 
 const rarity = (r) => {
   switch (r) {
@@ -22,9 +25,61 @@ const rarity = (r) => {
   }
 };
 
+//
+
 export default function Savefile() {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
+  // Form
+
+  async function Submit(e) {
+    e.preventDefault();
+
+    const formEle = e.target;
+    const formDatab = new FormData(formEle);
+
+    formDatab.append("dat", info.runNumber);
+    formDatab.append("aspect", info.weapon);
+    formDatab.append("gp1", `${info.bossFight[0][0]}/${info.bossFight[0][1].ClearTime}`);
+    formDatab.append("gp2", `${info.bossFight[1][0]}/${info.bossFight[1][1].ClearTime}`);
+    formDatab.append("gp3", `${info.bossFight[2][0]}/${info.bossFight[2][1].ClearTime}`);
+    formDatab.append("gp4", `${info.bossFight[3][0]}/${info.bossFight[3][1].ClearTime}`);
+    formDatab.append("bio1", info.biomesGTime[0][1]);
+    formDatab.append("bio2", info.biomesGTime[0][1]);
+    formDatab.append("bio3", info.biomesGTime[0][1]);
+    formDatab.append("bio4", info.biomesGTime[0][1]);
+    formDatab.append("herototal", info.heroDamageTotal);
+    formDatab.append("enemytotal", info.enemyDamageTotal);
+    formDatab.append("herot3", `${info.heroDamage[0][0]},${info.heroDamage[1][0]},${info.heroDamage[2][0]}`);
+    formDatab.append("enemyt3", `${info.enemyDamage[0][0]},${info.enemyDamage[1][0]},${info.enemyDamage[2][0]}`);
+
+    formDatab.append("herot3num", `${info.heroDamage[0][1]}/${info.heroDamage[1][1]}/${info.heroDamage[2][1]}`);
+    formDatab.append("enemyt3num", `${info.enemyDamage[0][1]}/${info.enemyDamage[1][1]}/${info.enemyDamage[2][1]}`);
+
+    setLoading(true);
+
+    try {
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbwIXkzLUQ1SoBencqgbLNruneO3RunQsElmz0pBO5O4qzO_ItFjaanQa2c-k76S0SWU/exec",
+        {
+          method: "POST",
+          body: formDatab,
+        }
+      );
+      // This will log the selected option
+      const text = await res.text();
+      console.log("Response:", text);
+      console.log(`good`);
+      alert("Form submitted successfully!");
+      formEle.reset();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+  //
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -52,6 +107,7 @@ export default function Savefile() {
 
     info = {
       runNumber: lastRunKey,
+      weapon: traitAspect.find((obj) => Object.keys(lastRunObject.TraitCache).includes(obj)),
       dataObject: lastRunObject,
       biomesGTime: Object.entries(lastRunObject.BiomeGameplayTimes),
       biomesTTime: Object.entries(lastRunObject.BiomeTotalTimes),
@@ -61,12 +117,16 @@ export default function Savefile() {
       boonRarity: Object.entries(lastRunObject.TraitRarityCache),
       moneySpent: Object.entries(lastRunObject.ResourcesSpent),
       bossFight: Object.entries(lastRunObject.EncounterClearStats),
+      enemyDamage: Object.entries(lastRunObject.DamageTakenFromRecord).sort((a, b) => b[1] - a[1]),
+      enemyDamageTotal: Object.entries(lastRunObject.DamageTakenFromRecord).reduce((acc, ite) => acc + ite[1], 0),
+      heroDamage: Object.entries(lastRunObject.DamageDealtByHeroRecord).sort((a, b) => b[1] - a[1]),
+      heroDamageTotal: Object.entries(lastRunObject.DamageDealtByHeroRecord).reduce((acc, ite) => acc + ite[1], 0),
     };
   }
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
-      <Background />
+      {/* <Background /> */}
       <div className="max-w-[1400px] font-[Ale] text-[14px] mx-auto px-2">
         <SideNav />
 
@@ -84,9 +144,26 @@ export default function Savefile() {
 
         {data && (
           <div>
+            {/* Form Start */}
+            {info.dataObject.Cleared === true && (
+              <form onSubmit={Submit}>
+                <div className="flex justify-center gap-2">
+                  <input className="input" placeholder="Player Name" name="nam" required></input>
+                  <button
+                    className="bg-[#00ffaa] text-black rounded text-[20px] px-2 py-1 w-[150px] cursor-pointer"
+                    type="submit"
+                    name="Submit"
+                  >
+                    {loading ? <span className="loading loading-spinner loading-sm"></span> : "Submit"}
+                  </button>
+                </div>
+              </form>
+            )}
+            {/* Form End */}
             <div>Run # {info.runNumber}</div>
+            <div>Weapon: {aspectsFinder(info.weapon)}</div>
             <div>Fear: {info.dataObject.ShrinePointsCache}</div>
-            <div className="text-[red]">Killed By Name: {info.dataObject.KilledByName}</div>
+            <div className="text-[#00ffaa]">Cleared: {info.dataObject.Cleared === true ? `True` : `False`}</div>
             <div>Biome Time: {parsesectoTime(info.dataObject.BiomeTime)}</div>
             <div>Gameplay Time: {parsesectoTime(info.dataObject.GameplayTime)}</div>
             <div>Total Time: {parsesectoTime(info.dataObject.TotalTime)}</div>
@@ -175,6 +252,26 @@ export default function Savefile() {
               {info.boonRarity.map((obj, index) => (
                 <div key={index}>
                   {obj[0]} | <span style={{ color: rarity(obj[1]) }}>{obj[1]}</span>
+                </div>
+              ))}
+            </div>
+            <div className="divider">Break</div>
+            <div>Hero Damage Total - {info.heroDamageTotal.toLocaleString()}</div>
+            <div>
+              {info.heroDamage.map((obj, index) => (
+                <div className="flex gap-2" key={index}>
+                  <div>{obj[0]}</div>
+                  <div>{obj[1]}</div>
+                </div>
+              ))}
+            </div>
+            <div className="divider">Break</div>
+            <div>Enemies Damage - {info.enemyDamageTotal.toLocaleString()}</div>
+            <div>
+              {info.enemyDamage.map((obj, index) => (
+                <div className="flex gap-2" key={index}>
+                  <div>{obj[0]}</div>
+                  <div>{obj[1]}</div>
                 </div>
               ))}
             </div>
