@@ -34,7 +34,7 @@ export const BossSpeedrun = () => {
         {posts.length == 0 ? (
           <Loading />
         ) : (
-          <div className="w-full max-w-[1000px] mx-auto my-4">
+          <div className="my-4">
             {posts.map((obj) => (
               <div
                 className="border bg-black rounded mb-2"
@@ -90,9 +90,11 @@ export const BossSpeedrun = () => {
                     );
 
                     return (
-                      <>
-                        <div className="my-2">
-                          <div className="text-center">Damage Given: {obj.herototal.toLocaleString("en-US")}</div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-2 my-2">
+                        <div className="w-full">
+                          <div className="text-center">
+                            Damage Given: {obj.herototal.toLocaleString("en-US")} / Top 3,
+                          </div>
                           <div>
                             {highestGiven.map((ite, index) => (
                               <>
@@ -110,14 +112,16 @@ export const BossSpeedrun = () => {
                             ))}
                           </div>
                         </div>
-                        <div className="my-2">
-                          <div className="text-center">Damage Taken: {obj.enemytotal.toLocaleString("en-US")}</div>
+                        <div className="w-full">
+                          <div className="text-center">
+                            Damage Taken: {obj.enemytotal.toLocaleString("en-US")} / Top 3,
+                          </div>
                           <div>
                             {highestTaken.map((ite, index) => (
                               <>
                                 <div>
                                   {ite}: {(+highestTakenNum[index]).toLocaleString("en-US")} (
-                                  {highestTakenPercent[index]}) %
+                                  {highestTakenPercent[index]})%
                                 </div>
                                 <progress
                                   className="progress progress-error"
@@ -128,7 +132,7 @@ export const BossSpeedrun = () => {
                             ))}
                           </div>
                         </div>
-                      </>
+                      </div>
                     );
                   })()}
                 </div>
