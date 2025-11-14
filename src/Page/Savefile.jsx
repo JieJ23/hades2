@@ -60,6 +60,7 @@ export default function Savefile() {
       traitsPicked: Object.keys(lastRunObject.PickedTraits),
       boonRarity: Object.entries(lastRunObject.TraitRarityCache),
       moneySpent: Object.entries(lastRunObject.ResourcesSpent),
+      bossFight: Object.entries(lastRunObject.EncounterClearStats),
     };
   }
 
@@ -101,7 +102,10 @@ export default function Savefile() {
               {info.biomesGTime.map((obj, index) => (
                 <div className="flex gap-2" key={index}>
                   <div>{obj[0]}</div>
-                  <div>{parsesectoTime(obj[1])}</div>
+                  <div>
+                    {parsesectoTime(obj[1])} |{" "}
+                    {index != 0 && parsesectoTime(info.biomesGTime[index][1] - info.biomesGTime[index - 1][1])}
+                  </div>
                 </div>
               ))}
             </div>
@@ -112,6 +116,18 @@ export default function Savefile() {
                 <div className="flex gap-2" key={index}>
                   <div>{obj[0]}</div>
                   <div>{parsesectoTime(obj[1])}</div>
+                </div>
+              ))}
+            </div>
+            <div className="divider">Break</div>
+            <div>Boss Time</div>
+            <div>
+              {info.bossFight.map((obj, index) => (
+                <div className="flex gap-2" key={index}>
+                  <div>{obj[0]}</div>
+                  <div>
+                    {parsesectoTime(obj[1].ClearTime)} | {!obj[1].TookDamage && `Damageless`}
+                  </div>
                 </div>
               ))}
             </div>

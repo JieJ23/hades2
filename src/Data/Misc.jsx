@@ -150,9 +150,8 @@ export function parsemstoTime(ms) {
 export function parsesectoTime(seconds) {
   const minutes = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);
-  const centiseconds = Math.round((seconds - Math.floor(seconds)) * 100);
+  const centiseconds = Math.floor((seconds - Math.floor(seconds)) * 100); // <--- floor
 
-  // Pad minutes and seconds with leading zeros
   const mm = String(minutes).padStart(2, "0");
   const ss = String(secs).padStart(2, "0");
   const cs = String(centiseconds).padStart(2, "0");
