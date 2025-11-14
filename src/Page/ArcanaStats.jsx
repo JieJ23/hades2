@@ -31,7 +31,7 @@ export default function ArcanaStats() {
   const runs_av = availableData.filter((obj) => obj.arcana);
 
   const store_arcana = [...new Set(runs_av.map((obj) => deCodeArcana(obj.arcana)))].reduce((acc, entry) => {
-    entry.forEach((cor) => {
+    entry?.forEach((cor) => {
       acc[cor] = (acc[cor] || 0) + 1;
     });
 

@@ -65,7 +65,7 @@ export default function Savefile() {
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
-      {/* <Background /> */}
+      <Background />
       <div className="max-w-[1400px] font-[Ale] text-[14px] mx-auto px-2">
         <SideNav />
 
