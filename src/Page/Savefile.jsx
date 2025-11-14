@@ -121,7 +121,6 @@ export default function Savefile() {
       weapon: traitAspect.find((obj) => Object.keys(lastRunObject.TraitCache).includes(obj)),
       dataObject: lastRunObject,
       biomesGTime: Object.entries(lastRunObject.BiomeGameplayTimes),
-      biomesTTime: Object.entries(lastRunObject.BiomeTotalTimes),
       keepsakes: Object.entries(lastRunObject.KeepsakeCache),
       lootHistory: lastRunObject.LootChoiceHistory ? Object.entries(lastRunObject.LootChoiceHistory) : null,
       traitsPicked: Object.keys(lastRunObject.PickedTraits),
@@ -137,7 +136,7 @@ export default function Savefile() {
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
-      {/* <Background /> */}
+      <Background />
       <div className="max-w-[1400px] font-[Ale] text-[14px] mx-auto px-2">
         <SideNav />
 
@@ -184,6 +183,12 @@ export default function Savefile() {
             <div className="divider">Break</div>
             <div>Total Max HP: {info.dataObject.TooltipHeroMaxHealth}</div>
             <div>Total Damage Taken: {info.dataObject.TotalDamageTaken}</div>
+            {info.keepsakes.map((obj, index) => (
+              <div className="flex gap-2" key={index}>
+                <div>{obj[0]}</div>
+                <div>{obj[1]}</div>
+              </div>
+            ))}
             <div className="divider">Break</div>
             <div>
               <div>Gameplay Time</div>
@@ -194,16 +199,6 @@ export default function Savefile() {
                     {parsesectoTime(obj[1])} |{" "}
                     {index != 0 && parsesectoTime(info.biomesGTime[index][1] - info.biomesGTime[index - 1][1])}
                   </div>
-                </div>
-              ))}
-            </div>
-            <div className="divider">Break</div>
-            <div>Total Time</div>
-            <div>
-              {info.biomesTTime.map((obj, index) => (
-                <div className="flex gap-2" key={index}>
-                  <div>{obj[0]}</div>
-                  <div>{parsesectoTime(obj[1])}</div>
                 </div>
               ))}
             </div>
@@ -219,14 +214,6 @@ export default function Savefile() {
                 </div>
               ))}
             </div>
-            <div className="divider">Break</div>
-            <div>Keepsakes</div>
-            {info.keepsakes.map((obj, index) => (
-              <div className="flex gap-2" key={index}>
-                <div>{obj[0]}</div>
-                <div>{obj[1]}</div>
-              </div>
-            ))}
             <div className="divider">Break</div>
             <div>Loot History</div>
             {info.lootHistory &&

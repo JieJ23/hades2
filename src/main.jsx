@@ -9,6 +9,7 @@ import Archive from "./Page/Archive.jsx";
 
 import SixTwo from "./Page/SixTwo.jsx";
 import Savefile from "./Page/Savefile.jsx";
+import { BossSpeedrun } from "./Page/BossSpeedrun.jsx";
 
 import Query from "./Page/Query.jsx";
 import Ladder from "./Page/Ladder.jsx";
@@ -46,6 +47,7 @@ createRoot(document.getElementById("root")).render(
 
           <Route path="/SixTwo" element={<SixTwo />} />
           <Route path="/Savefile" element={<Savefile />} />
+          <Route path="/BossSpeedrun" element={<BossSpeedrun />} />
 
           <Route path="/Ladder" element={<Ladder />} />
           <Route path="/FearPoints" element={<FearPoints />} />
