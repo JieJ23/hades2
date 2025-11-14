@@ -46,9 +46,9 @@ export default function Savefile() {
     formDatab.append("gp3", `${info.bossFight[2][0]}/${info.bossFight[2][1].ClearTime}`);
     formDatab.append("gp4", `${info.bossFight[3][0]}/${info.bossFight[3][1].ClearTime}`);
     formDatab.append("bio1", info.biomesGTime[0][1]);
-    formDatab.append("bio2", info.biomesGTime[0][1]);
-    formDatab.append("bio3", info.biomesGTime[0][1]);
-    formDatab.append("bio4", info.biomesGTime[0][1]);
+    formDatab.append("bio2", info.biomesGTime[1][1]);
+    formDatab.append("bio3", info.biomesGTime[2][1]);
+    formDatab.append("bio4", info.biomesGTime[3][1]);
     formDatab.append("herototal", info.heroDamageTotal);
     formDatab.append("enemytotal", info.enemyDamageTotal);
     formDatab.append("herot3", `${info.heroDamage[0][0]},${info.heroDamage[1][0]},${info.heroDamage[2][0]}`);
