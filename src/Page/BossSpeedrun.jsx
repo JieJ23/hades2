@@ -34,29 +34,45 @@ export const BossSpeedrun = () => {
                   </div>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-1 my-2 px-2 text-gray-300">
+                  <>
+                    <div className="border border-white/20 p-2 rounded-sm">
+                      <div>Biome 1</div>
+                      <div>{parsesectoTime(obj.bio1)}</div>
+                    </div>
+                    <div className="border border-white/20 p-2 rounded-sm">
+                      <div>Biome 2</div>
+                      <div>{parsesectoTime(obj.bio2 - obj.bio1)}</div>
+                    </div>
+                    <div className="border border-white/20 p-2 rounded-sm">
+                      <div>Biome 3</div>
+                      <div>{parsesectoTime(obj.bio3 - obj.bio2)}</div>
+                    </div>
+                    <div className="border border-white/20 p-2 rounded-sm">
+                      <div>Biome 4</div>
+                      <div>{parsesectoTime(obj.bio4 - obj.bio3)}</div>
+                    </div>
+                  </>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-1 my-2 px-2 text-gray-300">
                   {(() => {
                     const boss = obj.boss.split(",");
                     return (
                       <>
                         <div className="border border-white/20 p-2 rounded-sm">
-                          <div>Biome 1 | {boss[0].replace("Boss", "")}</div>
-                          <div>Total: {parsesectoTime(obj.bio1)}</div>
-                          <div>Boss: {parsesectoTime(obj.gp1)}</div>
+                          <div>{boss[0].replace("Boss", "")}</div>
+                          <div>{parsesectoTime(obj.gp1)}</div>
                         </div>
                         <div className="border border-white/20 p-2 rounded-sm">
-                          <div>Biome 2 | {boss[1].replace("Boss", "")}</div>
-                          <div>Total: {parsesectoTime(obj.bio2 - obj.bio1)}</div>
-                          <div>Boss: {parsesectoTime(obj.gp2)}</div>
+                          <div>{boss[1].replace("Boss", "")}</div>
+                          <div>{parsesectoTime(obj.gp2)}</div>
                         </div>
                         <div className="border border-white/20 p-2 rounded-sm">
-                          <div>Biome 3 | {boss[2].replace("Boss", "")}</div>
-                          <div>Total: {parsesectoTime(obj.bio3 - obj.bio2)}</div>
-                          <div>Boss: {parsesectoTime(obj.gp3)}</div>
+                          <div>{boss[2].replace("Boss", "")}</div>
+                          <div>{parsesectoTime(obj.gp3)}</div>
                         </div>
                         <div className="border border-white/20 p-2 rounded-sm">
-                          <div>Biome 4 | {boss[3].replace("Boss", "")}</div>
-                          <div>Total: {parsesectoTime(obj.bio4 - obj.bio3)}</div>
-                          <div>Boss: {parsesectoTime(obj.gp4)}</div>
+                          <div>{boss[3].replace("Boss", "")}</div>
+                          <div>{parsesectoTime(obj.gp4)}</div>
                         </div>
                       </>
                     );
