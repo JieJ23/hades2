@@ -10,8 +10,8 @@ import Loading from "../Hook/Loading";
 export const BossSpeedrun = () => {
   const { posts2, loader2 } = useData2();
 
-  const surface = posts2.filter((obj) => obj.boss.includes("Eris")).sorted((a, b) => a.bio4 - b.bio4);
-  const underworld = posts2.filter((obj) => obj.boss.includes("Chronos")).sorted((a, b) => a.bio4 - b.bio4);
+  const surface = posts2.filter((obj) => obj.boss.includes("Eris")).sort((a, b) => a.bio4 - b.bio4);
+  const underworld = posts2.filter((obj) => obj.boss.includes("Chronos")).sort((a, b) => a.bio4 - b.bio4);
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
