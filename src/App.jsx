@@ -101,7 +101,7 @@ export default function App() {
             </div>
             {/* Entries Data  */}
             <div
-              className="my-2 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-2 p-1 text-gray-300 bg-black"
+              className="my-2 grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-2 p-1 text-gray-300 bg-black/50"
               style={{
                 borderStyle: "solid", // Required
                 borderWidth: "6px",
@@ -111,9 +111,9 @@ export default function App() {
               <div>
                 <div className="text-[16px]">Best {aspect}:</div>
                 {highestFear.map((obj, index) => (
-                  <div key={index} className="p-1 mb-0.5 bg-[#131111] rounded relative">
+                  <div key={index} className="p-1 mb-0.5 rounded relative hover:bg-black/70">
                     <div
-                      className={`absolute right-0 top-0 h-full rounded-r-md w-2 ${
+                      className={`absolute right-0 top-0 h-full w-2 ${
                         obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[yellow]`
                       }`}
                     />
@@ -187,9 +187,9 @@ export default function App() {
               <div>
                 <div className="text-[16px]">Latest {aspect}:</div>
                 {latestGame.map((obj, index) => (
-                  <div key={index} className="p-1 mb-0.5 bg-[#131111] rounded relative">
+                  <div key={index} className="p-1 mb-0.5 rounded relative hover:bg-black/70">
                     <div
-                      className={`absolute right-0 top-0 h-full rounded-r-md w-2 ${
+                      className={`absolute right-0 top-0 h-full w-2 ${
                         obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[yellow]`
                       }`}
                     />
@@ -265,9 +265,9 @@ export default function App() {
               <div>
                 <div className="text-[16px]">Fastest {aspect}:</div>
                 {fastestGame.map((obj, index) => (
-                  <div key={index} className="p-1 mb-0.5 bg-[#131111] rounded relative">
+                  <div key={index} className="p-1 mb-0.5 rounded relative hover:bg-black/70">
                     <div
-                      className={`absolute right-0 top-0 h-full rounded-r-md w-2 ${
+                      className={`absolute right-0 top-0 h-full w-2 ${
                         obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[yellow]`
                       }`}
                     />
@@ -344,7 +344,7 @@ export default function App() {
             {/* Aspect Oath && Arcana */}
             <div className="flex flex-col lg:flex-row gap-x-2 select-none">
               <div
-                className="my-2 text-gray-300 w-full flex gap-4 overflow-x-scroll p-1 bg-black rounded select-none"
+                className="my-2 text-gray-300 w-full flex gap-4 overflow-x-scroll p-1 bg-black/50 rounded select-none"
                 style={{
                   borderStyle: "solid", // Required
                   borderWidth: "6px",
@@ -352,14 +352,14 @@ export default function App() {
                 }}
               >
                 {store_oath.map((obj, ind1) => (
-                  <div className="p-2 mx-auto min-w-[400px] bg-[#131111] rounded">
+                  <div className="p-2 mx-auto min-w-[400px] rounded">
                     <div className="text-center text-[16px]">
                       Fear {sToA(obj[0]).reduce((acc, val) => acc + +val, 0)}
                     </div>
                     <div className="grid grid-cols-4 gap-1 rounded">
                       {sToA(obj[0]).map((ite, index) => (
                         <div
-                          className={`bg-[black] min-h-[75px] rounded p-1 py-2 flex gap-1 items-center ${
+                          className={`bg-[#131111] min-h-[75px] rounded border border-white/10 p-1 py-2 flex gap-1 items-center ${
                             index === 16 && `col-start-2 col-span-2`
                           }`}
                           key={index}
@@ -385,7 +385,7 @@ export default function App() {
                 ))}
               </div>
               <div
-                className="my-2 text-gray-300 w-full flex overflow-x-scroll gap-2 p-1 bg-[black] rounded"
+                className="my-2 text-gray-300 w-full flex overflow-x-scroll gap-2 p-1 bg-black/50 rounded"
                 style={{
                   borderStyle: "solid", // Required
                   borderWidth: "6px",
