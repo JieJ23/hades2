@@ -68,7 +68,7 @@ export default function TheGameAward() {
       <Background />
       <div className="max-w-[1400px] font-[Ale] text-[16px] mx-auto p-4">
         <form onSubmit={Submit}>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center my-6">
             <img src="/Hades2.png" alt="Hades 2" className="w-[100px]" />
             <div className="text-[20px] font-[Cinzel]">
               <div>The</div>
@@ -76,7 +76,8 @@ export default function TheGameAward() {
               <div>Award</div>
             </div>
           </div>
-          <div className="my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 text-white">
+          <div className="px-2">* Results will be available on December 1st.</div>
+          <div className="my-4 mt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 text-white">
             {tga_categories.map((obj, index) => (
               <div
                 className="w-full flex flex-col justify-center gap-2 h-[150px] p-2 bg-[#030303] rounded relative"
