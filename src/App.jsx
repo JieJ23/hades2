@@ -111,7 +111,7 @@ export default function App() {
               <div>
                 <div className="text-[16px]">Best {aspect}:</div>
                 {highestFear.map((obj, index) => (
-                  <div key={index} className="p-1 mb-0.5 bg-[#050505] rounded relative">
+                  <div key={index} className="p-1 mb-0.5 bg-[#131111] rounded relative">
                     <div
                       className={`absolute right-0 top-0 h-full rounded-r-md w-2 ${
                         obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[yellow]`
@@ -187,7 +187,7 @@ export default function App() {
               <div>
                 <div className="text-[16px]">Latest {aspect}:</div>
                 {latestGame.map((obj, index) => (
-                  <div key={index} className="p-1 mb-0.5 bg-[#050505] rounded relative">
+                  <div key={index} className="p-1 mb-0.5 bg-[#131111] rounded relative">
                     <div
                       className={`absolute right-0 top-0 h-full rounded-r-md w-2 ${
                         obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[yellow]`
@@ -265,7 +265,7 @@ export default function App() {
               <div>
                 <div className="text-[16px]">Fastest {aspect}:</div>
                 {fastestGame.map((obj, index) => (
-                  <div key={index} className="p-1 mb-0.5 bg-[#050505] rounded relative">
+                  <div key={index} className="p-1 mb-0.5 bg-[#131111] rounded relative">
                     <div
                       className={`absolute right-0 top-0 h-full rounded-r-md w-2 ${
                         obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[yellow]`
@@ -342,7 +342,7 @@ export default function App() {
               </div>
             </div>
             {/* Aspect Oath && Arcana */}
-            <div className="flex flex-col lg:flex-row gap-x-2">
+            <div className="flex flex-col lg:flex-row gap-x-2 select-none">
               <div
                 className="my-2 text-gray-300 w-full flex gap-4 overflow-x-scroll p-1 bg-black rounded select-none"
                 style={{
@@ -352,14 +352,14 @@ export default function App() {
                 }}
               >
                 {store_oath.map((obj, ind1) => (
-                  <div className="p-2 mx-auto min-w-[400px] bg-black rounded">
+                  <div className="p-2 mx-auto min-w-[400px] bg-[#131111] rounded">
                     <div className="text-center text-[16px]">
                       Fear {sToA(obj[0]).reduce((acc, val) => acc + +val, 0)}
                     </div>
                     <div className="grid grid-cols-4 gap-1 rounded">
                       {sToA(obj[0]).map((ite, index) => (
                         <div
-                          className={`bg-[#131111] min-h-[75px] rounded p-1 py-2 flex gap-1 items-center ${
+                          className={`bg-[black] min-h-[75px] rounded p-1 py-2 flex gap-1 items-center ${
                             index === 16 && `col-start-2 col-span-2`
                           }`}
                           key={index}
@@ -372,7 +372,7 @@ export default function App() {
                                 <div
                                   key={i}
                                   className={`w-2 h-2 rounded-full ${
-                                    i <= oathMatch[index].indexOf(+ite) - 1 ? "bg-[#00ffaa]" : "bg-black"
+                                    i <= oathMatch[index].indexOf(+ite) - 1 ? "bg-[#00ffaa]" : "bg-[#474749]"
                                   }`}
                                 />
                               ))}
@@ -385,7 +385,7 @@ export default function App() {
                 ))}
               </div>
               <div
-                className="my-2 text-gray-300 w-full flex overflow-x-scroll gap-1 p-1 bg-black rounded"
+                className="my-2 text-gray-300 w-full flex overflow-x-scroll gap-2 p-1 bg-[black] rounded"
                 style={{
                   borderStyle: "solid", // Required
                   borderWidth: "6px",
@@ -393,7 +393,7 @@ export default function App() {
                 }}
               >
                 {store_arcana.map((obj, ind1) => (
-                  <div className="min-w-[350px] bg-[black] py-1 pb-2 rounded">
+                  <div className="min-w-[320px] p-2 rounded">
                     <div className="text-center">
                       (
                       {sToA(obj[0])
