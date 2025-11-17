@@ -5,7 +5,6 @@ export const sites = [
   { link: ``, nam: `Home` },
   { link: `Archive`, nam: `Videos` },
   { link: `Query`, nam: `Query` },
-  { link: `SixTwo`, nam: `62` },
 
   { link: `Weekly`, nam: `Weekly` },
   { link: `Ladder`, nam: `Ladder` },
@@ -29,7 +28,7 @@ export const sites2 = [
 export default function SideNav() {
   const currentLocation = useLocation();
   return (
-    <div className="h-full w-full flex flex-col gap-2 p-2 pb-4 font-[Ale] text-[14px] rounded shrink-0">
+    <div className="w-full p-2 pb-4 font-[Ale] text-[14px] rounded shrink-0">
       <div className="flex flex-wrap justify-center items-center gap-1">
         {sites.map((obj, idx) => (
           <Link to={`/${obj.link}`} className={`flex items-center group`} key={idx}>

@@ -3366,7 +3366,7 @@ export const v1data = [
   {
     dat: "2025-10-16",
     nam: "星辰-往昔",
-    asp: "Melinoe Staff",
+    asp: "Persephone",
     loc: "Surface",
     fea: "62",
     src: "https://www.bilibili.com/video/BV13tWqzAEPB/",

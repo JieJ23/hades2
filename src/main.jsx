@@ -7,7 +7,6 @@ import App from "./App.jsx";
 
 import Archive from "./Page/Archive.jsx";
 
-import SixTwo from "./Page/SixTwo.jsx";
 import Savefile from "./Page/Savefile.jsx";
 import { BossSpeedrun } from "./Page/BossSpeedrun.jsx";
 
@@ -47,7 +46,6 @@ createRoot(document.getElementById("root")).render(
             <Route path="/Query" element={<Query />} />
             <Route path="/Archive" element={<Archive />} />
 
-            <Route path="/SixTwo" element={<SixTwo />} />
             <Route path="/Savefile" element={<Savefile />} />
             <Route path="/BossSpeedrun" element={<BossSpeedrun />} />
 
