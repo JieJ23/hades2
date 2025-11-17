@@ -119,10 +119,14 @@ export default function Weekly() {
                   {firstplace_surface.map((obj, index) => (
                     <div className="bg-gradient-to-b from-[black] via-[#131111] to-[#ffff0050] min-w-[120px] text-center p-2 rounded-sm flex flex-col justify-between select-none">
                       <div>Week #{weeklyData[index].week.slice(6)}</div>
-                      <div className="line-clamp-1 text-[yellow]">{obj.nam}</div>
-                      <div>{obj.fea}</div>
-                      <div>{obj.tim}</div>
-                      <div>{obj.asp}</div>
+                      {firstplace_surface[index] != undefined && (
+                        <>
+                          <div className="line-clamp-1 text-[yellow]">{obj.nam}</div>
+                          <div>{obj.fea}</div>
+                          <div>{obj.tim}</div>
+                          <div>{obj.asp}</div>
+                        </>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -130,10 +134,14 @@ export default function Weekly() {
                   {firstplace_uw.map((obj, index) => (
                     <div className="bg-gradient-to-b from-[black] via-[#131111] to-[#00ffaa50] min-w-[120px] text-center p-2 rounded-sm flex flex-col justify-between select-none">
                       <div>Week #{weeklyData[index].week.slice(6)}</div>
-                      <div className="line-clamp-1 text-[#00ffaa]">{obj.nam}</div>
-                      <div>{obj.fea}</div>
-                      <div>{obj.tim}</div>
-                      <div>{obj.asp}</div>
+                      {firstplace_uw != undefined && (
+                        <>
+                          <div className="line-clamp-1 text-[#00ffaa]">{obj.nam}</div>
+                          <div>{obj.fea}</div>
+                          <div>{obj.tim}</div>
+                          <div>{obj.asp}</div>
+                        </>
+                      )}
                     </div>
                   ))}
                 </div>
