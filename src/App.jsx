@@ -397,7 +397,7 @@ export default function App() {
                     <div className="text-center">
                       (
                       {sToA(obj[0])
-                        .map((ite) => defineDeck(ite).g)
+                        .map((ite) => defineDeck(ite)?.g)
                         .reduce((a, b) => a + b, 0)}
                       ) Deck #{ind1 + 1}
                     </div>
