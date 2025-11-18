@@ -10,28 +10,40 @@ import { Link } from "react-router-dom";
 
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
+import { useState } from "react";
 
 export default function Root() {
   const { posts, loader } = useData();
+  const [type, setType] = useState(`Fear`);
+  const [region, setRegion] = useState(`All Region`);
 
   const bundle = [...p9data, ...p11data, ...v1data, ...(posts || [])];
+
   const fullAspectData = [];
 
   for (let i = 0; i < h2AspectOrder.length; i++) {
-    let aspectArray = bundle.filter((obj) => obj.asp === h2AspectOrder[i]);
-    aspectArray = Object.values(
-      aspectArray.reduce((acc, item) => {
-        if (!acc[item.nam]) acc[item.nam] = item;
-        return acc;
-      }, {})
-    );
-    const orderedArray = aspectArray
-      .sort((a, b) => {
+    const aspectArray = bundle.filter((obj) => {
+      if (region === `All Region`) {
+        return obj.asp === h2AspectOrder[i];
+      } else {
+        return obj.asp === h2AspectOrder[i] && obj.loc === region;
+      }
+    });
+    let orderedArray = aspectArray.sort((a, b) => {
+      if (type === `Fear`) {
         const feaDiff = +b.fea - +a.fea;
         if (feaDiff !== 0) return feaDiff;
         return parseTimetoms(a.tim) - parseTimetoms(b.tim);
-      })
-      .slice(0, 12);
+      } else {
+        return new Date(b.dat) - new Date(a.dat);
+      }
+    });
+    orderedArray = Object.values(
+      orderedArray.reduce((acc, item) => {
+        if (!acc[item.nam]) acc[item.nam] = item;
+        return acc;
+      }, {})
+    ).slice(0, 12);
     fullAspectData.push(orderedArray);
   }
 
@@ -42,6 +54,49 @@ export default function Root() {
         <Loading />
       ) : (
         <div className="px-1 flex gap-2 overflow-x-scroll w-full min-h-screen">
+          <div className="w-full min-w-[80px]">
+            <div className="bg-[black] text-white text-center text-[12px] font-[Ale] rounded">Setting</div>
+            <div
+              className={`p-1 cursor-pointer my-0.5 border-1 border-white/10 rounded-none text-center ${
+                type === `Fear` ? `bg-[#00ffaa] text-black` : `bg-black text-white`
+              }`}
+              onClick={() => setType(`Fear`)}
+            >
+              Fear
+            </div>
+            <div
+              className={`p-1 cursor-pointer my-0.5 border-1 border-white/10 rounded-none text-center ${
+                type === `Latest` ? `bg-[#00ffaa] text-black` : `bg-black text-white`
+              }`}
+              onClick={() => setType(`Latest`)}
+            >
+              Latest
+            </div>
+            <div
+              className={`p-1 cursor-pointer my-0.5 border-1 border-white/10 rounded-none text-center ${
+                region === `All Region` ? `bg-[#00ffaa] text-black` : `bg-black text-white`
+              }`}
+              onClick={() => setRegion(`All Region`)}
+            >
+              All Region
+            </div>
+            <div
+              className={`p-1 cursor-pointer my-0.5 border-1 border-white/10 rounded-none text-center ${
+                region === `Underworld` ? `bg-[#00ffaa] text-black` : `bg-black text-white`
+              }`}
+              onClick={() => setRegion(`Underworld`)}
+            >
+              Underworld
+            </div>
+            <div
+              className={`p-1 cursor-pointer my-0.5 border-1 border-white/10 rounded-none text-center ${
+                region === `Surface` ? `bg-[#00ffaa] text-black` : `bg-black text-white`
+              }`}
+              onClick={() => setRegion(`Surface`)}
+            >
+              Surface
+            </div>
+          </div>
           {fullAspectData.map((holder, index) => (
             <div className="w-full min-w-[250px]">
               <div className="bg-[black] text-white text-center text-[12px] font-[Ale] rounded">
@@ -54,7 +109,7 @@ export default function Root() {
                       obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[yellow] rotate-45`
                     }`}
                   />
-                  <div className="flex gap-0.5">
+                  <div className="flex items-end gap-0.5">
                     <div className="text-[11px]">
                       {obj.nam} ({obj.fea}) - {obj.tim}
                     </div>
