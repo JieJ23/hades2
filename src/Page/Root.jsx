@@ -36,7 +36,7 @@ export default function Root() {
   }
 
   return (
-    <main className="h-full min-h-lvh relative overflow-hidden font-[Source] text-[12px]">
+    <main className="h-full min-h-lvh relative overflow-hidden font-[Source] text-[12px] text-gray-300">
       <Background />
       {loader ? (
         <Loading />
@@ -53,7 +53,7 @@ export default function Root() {
                     }`}
                   />
                   <div className="flex gap-0.5">
-                    <div>
+                    <div className="text-[11px]">
                       {obj.nam} ({obj.fea}) - {obj.tim}
                     </div>
                     {obj.src && (
@@ -119,10 +119,10 @@ export default function Root() {
                       </div>
                     )}
                   </div>
-                  <div className="flex flex-wrap gap-1 rounded my-1">
+                  <div className="flex flex-wrap gap-0.5 mt-1">
                     {findStatus(obj).map((ite) => (
                       <div
-                        className="px-1 py-0.5 rounded-none text-black min-w-[40px] text-center font-[Ubuntu] text-[10px]"
+                        className="px-1 pt-0.5 rounded-xs text-black min-w-[40px] text-center text-[11px]"
                         style={{ backgroundColor: getStatusColor(ite) }}
                       >
                         {ite}

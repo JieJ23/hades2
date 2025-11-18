@@ -1876,7 +1876,7 @@ export const v1data = [
     tim: "19:03.94",
     fam: "Polecat",
     cor: "ZeuAttack,HesSpecial,HesCast,ApoSprint,Magick",
-    ham: "Rapid Thrasher,Vampiric Catacylsm",
+    ham: "Rapid Thrasher,Vampiric Cataclysm",
     boon: "Arc Flash,Static Shock,Heavy Metal,Pyro Technique,Renewed Faith,Word of Greater Girth,Suffering on Sight,Gigaros Dash,Thermal Dynamics,Slow Cooker,Night Bloom,Nitro Boost,Mean Streak",
     ks: "Jeweled Pom,Fig Leaf,Silver Wheel,Gorgon Amulet",
   },
