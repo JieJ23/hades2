@@ -102,6 +102,7 @@ const Unseen = [
   `Artemis`,
   `Circe`,
   `Medea`,
+  `Hermes`,
   `Icarus`,
   `Dionysus`,
   `Hades`,
