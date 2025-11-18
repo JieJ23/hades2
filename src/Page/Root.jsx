@@ -41,15 +41,17 @@ export default function Root() {
       {loader ? (
         <Loading />
       ) : (
-        <div className="p-1 flex gap-2 overflow-x-scroll w-full min-h-screen border">
+        <div className="px-1 flex gap-2 overflow-x-scroll w-full min-h-screen">
           {fullAspectData.map((holder, index) => (
             <div className="w-full min-w-[250px]">
-              <div className="bg-[#00ffaa] text-black text-center text-[14px]">{h2AspectOrder[index]}</div>
+              <div className="bg-[black] text-white text-center text-[12px] font-[Ale] rounded">
+                {h2AspectOrder[index]}
+              </div>
               {holder.map((obj, index) => (
                 <div key={index} className="p-1 my-0.5 border-1 border-white/10 bg-[#050505] rounded relative">
                   <div
                     className={`absolute right-2 top-2 h-2 w-2 rounded-none ${
-                      obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[yellow]`
+                      obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[yellow] rotate-45`
                     }`}
                   />
                   <div className="flex gap-0.5">
@@ -119,7 +121,7 @@ export default function Root() {
                       </div>
                     )}
                   </div>
-                  <div className="flex flex-wrap gap-0.5 mt-1">
+                  <div className="flex flex-wrap gap-0.5 mt-0.5">
                     {findStatus(obj).map((ite) => (
                       <div
                         className="px-1 pt-0.5 rounded-xs text-black min-w-[40px] text-center text-[11px]"
