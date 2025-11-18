@@ -8,6 +8,8 @@ import App from "./App.jsx";
 import Archive from "./Page/Archive.jsx";
 import TheGameAward from "./Page/TheGameAward.jsx";
 
+import Root from "./Page/Root.jsx";
+
 import Query from "./Page/Query.jsx";
 import Ladder from "./Page/Ladder.jsx";
 import FearPoints from "./Page/FearPoints.jsx";
@@ -41,6 +43,8 @@ createRoot(document.getElementById("root")).render(
 
           <Route path="/Query" element={<Query />} />
           <Route path="/Archive" element={<Archive />} />
+
+          <Route path="/Root" element={<Root />} />
 
           <Route path="/TheGameAward" element={<TheGameAward />} />
 

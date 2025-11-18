@@ -1,7 +1,9 @@
 import Background from "../Comp/Background";
+import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { tga_categories } from "../Data/TGAdata";
 
 import { useState } from "react";
+import { response } from "../Data/TGAresponse";
 
 const imgBase = [
   `gameplay1.webp`,
@@ -24,6 +26,7 @@ const imgBase = [
 
 export default function TheGameAward() {
   const [loading, setLoading] = useState(false);
+  const [category, setCategory] = useState(0);
 
   async function Submit(e) {
     e.preventDefault();
@@ -62,6 +65,30 @@ export default function TheGameAward() {
       setLoading(false);
     }
   }
+  // Gather Data
+  const questions = Array.from({ length: 16 }, (_, i) => `qa${i + 1}`);
+
+  const result = response.reduce((acc, item) => {
+    questions.forEach((q) => {
+      const val = item[q];
+      if (val !== undefined) {
+        acc[q] = acc[q] || {};
+        acc[q][val] = (acc[q][val] || 0) + 1;
+      }
+    });
+    return acc;
+  }, {});
+
+  const orderResults = Object.entries(result).map((obj) => {
+    return Object.entries(obj[1]).sort((a, b) => b[1] - a[1]);
+  });
+  //
+
+  const displayResults = orderResults[category];
+
+  const graphResults = orderResults[category].map((obj) => {
+    return { num: obj[0], count: obj[1] };
+  });
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
@@ -91,6 +118,7 @@ export default function TheGameAward() {
                   src={`/${imgBase[index]}`}
                   className="absolute h-full w-full top-0 right-0 opacity-30 object-cover object-center"
                 />
+                <div className="absolute top-1 left-1 text-[12px] text-gray-300">Q{index + 1}.</div>
                 <div className="text-center font-[Ale] relative">{obj.qa}</div>
                 <select
                   defaultValue="Select"
@@ -116,6 +144,68 @@ export default function TheGameAward() {
             </button>
           </div>
         </form>
+        {/* Data Display */}
+        {/* <div
+          className="my-8 bg-black/70 py-4 rounded"
+          style={{
+            borderStyle: "solid",
+            borderWidth: "8px",
+            borderImage: "url('/Misc/frame.webp') 60 stretch",
+          }}
+        >
+          <div className="px-2 flex flex-wrap justify-center gap-2 mb-4">
+            {questions.map((ite, index) => (
+              <div
+                className={`text-black px-2 py-0.5 rounded hover:cursor-pointer hover:bg-[#00ffaa] ${
+                  category == index ? `bg-[#00ffaa]` : `bg-white`
+                }`}
+                onClick={() => setCategory(index)}
+                key={index}
+              >
+                {ite.replace("qa", "Q")}
+              </div>
+            ))}
+          </div>
+          <div className="text-center text-[18px] font-[Cinzel] my-2 bg-[#131111]">{tga_categories[category].qa}</div>
+
+          <div className="h-[400px] w-full max-w-[1200px] mx-auto text-[12px] my-4">
+            <div className="text-[20px] font-[Ale]"></div>
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={graphResults}
+                margin={{
+                  top: 5,
+                  right: 10,
+                  left: -20,
+                  bottom: 80,
+                }}
+              >
+                <CartesianGrid stroke="#80808080" strokeDasharray="" vertical={false} />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: "#000", // dark background
+                    border: "1px solid #00ffaa",
+                    borderRadius: "rounded",
+                    color: "#ffffff", // text color (doesn't always work, use labelStyle too)
+                  }}
+                  labelStyle={{ color: "#fff" }} // controls the label text color
+                />
+                <XAxis dataKey="num" stroke="#ffffff" angle={-45} textAnchor="end" interval={0} dy={5} />
+                <YAxis stroke="#ffffff" domain={[0, 67]} />
+                <Bar dataKey="count" fill="#00ffaa" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+          <div className="max-w-[1200px] mx-auto rounded">
+            {displayResults.map((obj, index) => (
+              <div className="grid grid-cols-3 place-items-center my-1 hover:bg-[#28282b]" key={index}>
+                <div className="text-center">{obj[0]}</div>
+                <div>{obj[1]} votes</div>
+                <div>{((obj[1] / response.length) * 100).toFixed(2)}%</div>
+              </div>
+            ))}
+          </div>
+        </div> */}
       </div>
     </main>
   );
