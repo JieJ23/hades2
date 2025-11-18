@@ -103,7 +103,12 @@ export default function Root() {
                 {h2AspectOrder[index]}
               </div>
               {holder.map((obj, index) => (
-                <div key={index} className="p-1 my-0.5 border-1 border-white/10 bg-[#050505] rounded relative">
+                <div
+                  key={index}
+                  className={`p-1 my-0.5 border-1 border-white/10 ${
+                    +obj.fea == 67 ? `bg-[#00ffaa] text-black` : `bg-[#050505]`
+                  } rounded relative`}
+                >
                   <div
                     className={`absolute right-2 top-2 h-2 w-2 rounded-none ${
                       obj.loc === `Underworld` ? `bg-[#00ffaa]` : `bg-[yellow] rotate-45`
