@@ -78,7 +78,7 @@ export default function App() {
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
-      <div className="max-w-[1600px] font-[Ale] text-[14px] mx-auto">
+      <div className="max-w-[1400px] font-[Ale] text-[14px] mx-auto">
         <SideNav />
         {/* Main Section */}
         {loader ? (
@@ -98,6 +98,84 @@ export default function App() {
                 ))}
               </select>
               {check1.length}/{displayData.length}/{bundle.length}
+            </div>
+            {/* Aspect Oath && Arcana */}
+            <div className="flex flex-col lg:flex-row gap-x-2 select-none">
+              <div
+                className="my-2 text-gray-300 w-full flex gap-4 overflow-x-scroll p-1 bg-black/50 rounded select-none"
+                style={{
+                  borderStyle: "solid", // Required
+                  borderWidth: "6px",
+                  borderImage: "url('/Misc/frame.webp') 40 stretch",
+                }}
+              >
+                {store_oath.map((obj, ind1) => (
+                  <div className="p-2 mx-auto min-w-[400px] rounded">
+                    <div className="text-center text-[16px]">
+                      Fear {sToA(obj[0]).reduce((acc, val) => acc + +val, 0)}
+                    </div>
+                    <div className="grid grid-cols-4 gap-1 rounded">
+                      {sToA(obj[0]).map((ite, index) => (
+                        <div
+                          className={`bg-[#131111] min-h-[75px] rounded border border-white/10 p-1 py-2 flex gap-1 items-center ${
+                            index === 16 && `col-start-2 col-span-2`
+                          }`}
+                          key={index}
+                        >
+                          <img src={`/Vows/${vowMatch[index]}.png`} alt="Vows" className="size-7" />
+                          <div className="flex flex-col gap-0.5">
+                            <div className="text-[12px]">{vowMatch[index]}</div>
+                            <div className="flex gap-0.5">
+                              {Array.from({ length: oathMatch[index].length - 1 }, (_, i) => (
+                                <div
+                                  key={i}
+                                  className={`w-2 h-2 rounded-full ${
+                                    i <= oathMatch[index].indexOf(+ite) - 1 ? "bg-[#00ffaa]" : "bg-[#474749]"
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div
+                className="my-2 text-gray-300 w-full flex overflow-x-scroll gap-2 p-1 bg-black/50 rounded"
+                style={{
+                  borderStyle: "solid", // Required
+                  borderWidth: "6px",
+                  borderImage: "url('/Misc/frame.webp') 40 stretch",
+                }}
+              >
+                {store_arcana.map((obj, ind1) => (
+                  <div className="min-w-[320px] p-2 rounded">
+                    <div className="text-center">
+                      (
+                      {sToA(obj[0])
+                        .map((ite) => defineDeck(ite)?.g)
+                        .reduce((a, b) => a + b, 0)}
+                      ) Deck #{ind1 + 1}
+                    </div>
+                    <div className={`grid grid-cols-5 w-full max-w-[300px] mx-auto rounded`}>
+                      {Array.from({ length: 25 }, (_, i) => {
+                        const cardId = `c${i + 1}`;
+                        const selection = store_arcana[ind1][0].split(","); // ensure it’s an array
+                        return (
+                          <img
+                            key={cardId}
+                            src={`${selection.includes(cardId) ? `/Arcane/${cardId}.png` : `/Arcane/c0.png`}`}
+                            className="w-full"
+                            loading="lazy"
+                          />
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             {/* Entries Data  */}
             <div
@@ -336,84 +414,6 @@ export default function App() {
                           {ite}
                         </div>
                       ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* Aspect Oath && Arcana */}
-            <div className="flex flex-col lg:flex-row gap-x-2 select-none">
-              <div
-                className="my-2 text-gray-300 w-full flex gap-4 overflow-x-scroll p-1 bg-black/50 rounded select-none"
-                style={{
-                  borderStyle: "solid", // Required
-                  borderWidth: "6px",
-                  borderImage: "url('/Misc/frame.webp') 40 stretch",
-                }}
-              >
-                {store_oath.map((obj, ind1) => (
-                  <div className="p-2 mx-auto min-w-[400px] rounded">
-                    <div className="text-center text-[16px]">
-                      Fear {sToA(obj[0]).reduce((acc, val) => acc + +val, 0)}
-                    </div>
-                    <div className="grid grid-cols-4 gap-1 rounded">
-                      {sToA(obj[0]).map((ite, index) => (
-                        <div
-                          className={`bg-[#131111] min-h-[75px] rounded border border-white/10 p-1 py-2 flex gap-1 items-center ${
-                            index === 16 && `col-start-2 col-span-2`
-                          }`}
-                          key={index}
-                        >
-                          <img src={`/Vows/${vowMatch[index]}.png`} alt="Vows" className="size-7" />
-                          <div className="flex flex-col gap-0.5">
-                            <div className="text-[12px]">{vowMatch[index]}</div>
-                            <div className="flex gap-0.5">
-                              {Array.from({ length: oathMatch[index].length - 1 }, (_, i) => (
-                                <div
-                                  key={i}
-                                  className={`w-2 h-2 rounded-full ${
-                                    i <= oathMatch[index].indexOf(+ite) - 1 ? "bg-[#00ffaa]" : "bg-[#474749]"
-                                  }`}
-                                />
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div
-                className="my-2 text-gray-300 w-full flex overflow-x-scroll gap-2 p-1 bg-black/50 rounded"
-                style={{
-                  borderStyle: "solid", // Required
-                  borderWidth: "6px",
-                  borderImage: "url('/Misc/frame.webp') 40 stretch",
-                }}
-              >
-                {store_arcana.map((obj, ind1) => (
-                  <div className="min-w-[320px] p-2 rounded">
-                    <div className="text-center">
-                      (
-                      {sToA(obj[0])
-                        .map((ite) => defineDeck(ite)?.g)
-                        .reduce((a, b) => a + b, 0)}
-                      ) Deck #{ind1 + 1}
-                    </div>
-                    <div className={`grid grid-cols-5 w-full max-w-[300px] mx-auto rounded`}>
-                      {Array.from({ length: 25 }, (_, i) => {
-                        const cardId = `c${i + 1}`;
-                        const selection = store_arcana[ind1][0].split(","); // ensure it’s an array
-                        return (
-                          <img
-                            key={cardId}
-                            src={`${selection.includes(cardId) ? `/Arcane/${cardId}.png` : `/Arcane/c0.png`}`}
-                            className="w-full"
-                            loading="lazy"
-                          />
-                        );
-                      })}
                     </div>
                   </div>
                 ))}
