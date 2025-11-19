@@ -61,7 +61,7 @@ export default function Root() {
         {loader ? (
           <Loading />
         ) : (
-          <div className="flex gap-2 overflow-x-scroll w-full min-h-screen relative" id="scroll-container">
+          <div className="flex gap-2 overflow-x-scroll w-full min-h-screen relative pe-2" id="scroll-container">
             <div
               className="fixed cursor-pointer bottom-5 right-2 bg-[white] w-8 h-8 text-black text-[20px] flex justify-center items-center rounded z-40"
               onClick={() => {
