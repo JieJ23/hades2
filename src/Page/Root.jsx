@@ -54,7 +54,7 @@ export default function Root() {
           seen[item.nam] = true;
           return true;
         })
-        .slice(0, 20);
+        .slice(0, 15);
     } else {
       orderedArray = orderedArray.slice(0, 20);
     }
@@ -67,7 +67,7 @@ export default function Root() {
         {loader ? (
           <Loading />
         ) : (
-          <div className="flex gap-2 overflow-x-scroll w-full min-h-screen relative pe-2" id="scroll-container">
+          <div className="flex gap-2 overflow-x-scroll w-full min-h-screen relative p-2" id="scroll-container">
             <div
               className="fixed cursor-pointer bottom-5 right-2 bg-[white] w-8 h-8 text-black text-[20px] flex justify-center items-center rounded z-40"
               onClick={() => {
@@ -78,7 +78,7 @@ export default function Root() {
             >
               {"<"}
             </div>
-            <div className="w-full bg-[black]/90 min-w-[120px] font-[Ale] sticky left-0 z-40 px-1">
+            <div className="w-full min-w-[120px] font-[Ale]">
               <div className="bg-[black] text-white text-center text-[12px] font-[Ale] rounded">Setting</div>
               <div
                 className={`p-1 cursor-pointer my-0.5 border-1 border-white/10 rounded-none text-center ${
@@ -177,6 +177,9 @@ export default function Root() {
                 >
                   Match Oath
                 </div>
+                <Link to={"/"} className="my-0.5 text-center bg-[#28282b] border-white/10 border p-1 text-white">
+                  Main Menu
+                </Link>
               </div>
             </div>
             {fullAspectData.map((holder, index) => (

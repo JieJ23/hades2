@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 
 export const sites = [
   { link: ``, nam: `Home` },
+  { link: `Root`, nam: `Summary` },
   { link: `Archive`, nam: `Videos` },
   { link: `Query`, nam: `Query` },
 
