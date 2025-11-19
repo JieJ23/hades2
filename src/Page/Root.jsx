@@ -21,6 +21,7 @@ export default function Root() {
   const [bili, setBili] = useState(false);
   const [arc, setArc] = useState(null);
   const [fea, setFea] = useState(null);
+  const [unique, setUnique] = useState(true);
 
   const bundle = [...p9data, ...p11data, ...v1data, ...(posts || [])];
 
@@ -45,15 +46,20 @@ export default function Root() {
         return new Date(b.dat) - new Date(a.dat);
       }
     });
-    orderedArray = Object.values(
-      orderedArray.reduce((acc, item) => {
-        if (!acc[item.nam]) acc[item.nam] = item;
-        return acc;
-      }, {})
-    ).slice(0, 15);
+    if (unique) {
+      const seen = {};
+      orderedArray = orderedArray
+        .filter((item) => {
+          if (seen[item.nam]) return false;
+          seen[item.nam] = true;
+          return true;
+        })
+        .slice(0, 20);
+    } else {
+      orderedArray = orderedArray.slice(0, 20);
+    }
     fullAspectData.push(orderedArray);
   }
-  console.log(arc);
   return (
     <main className="relative font-[Source] text-[12px] text-gray-300 select-none">
       <Background />
@@ -116,6 +122,14 @@ export default function Root() {
               </div>
               <div
                 className={`p-1 cursor-pointer my-0.5 border-1 border-white/10 rounded-none text-center ${
+                  unique === true ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-white`
+                }`}
+                onClick={() => setUnique(!unique)}
+              >
+                PB Unique
+              </div>
+              <div
+                className={`p-1 cursor-pointer my-0.5 border-1 border-white/10 rounded-none text-center ${
                   video === true ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-white`
                 }`}
                 onClick={() => setVideo(!video)}
@@ -151,7 +165,7 @@ export default function Root() {
                 <input
                   type="text"
                   className={`${
-                    fea !== "" && arc !== null ? `bg-[#00ffaa]` : `bg-white`
+                    fea !== "" && fea !== null ? `bg-[#00ffaa]` : `bg-white`
                   } w-full text-black px-1 focus:outline-none focus:border-transparent`}
                   value={fea}
                   onChange={(e) => setFea(e.target.value)}
