@@ -20,41 +20,50 @@ const surface_name = [`City of Ephyra`, `Rift of Thessaly`, `Olympus`, `Summit`]
 
 export default function Enemy() {
   return (
-    <main className="relative">
+    <main className="relative select-none">
       <Background />
-      <div className="max-w-[1200px] font-[PT] text-[12px] md:text-[14px] mx-auto">
-        <SideNav />
-        <div className="flex flex-wrap gap-4 my-6 text-[12px] font-[PT]">
+      <div className="max-w-[1400px] font-[Ale] text-[12px] md:text-[13px] mx-auto">
+        {/* <SideNav /> */}
+        <div className="flex flex-wrap gap-4 py-4">
           {surface.map((obj, outeridx) => (
-            <div className="bg-black/80 w-full p-2 rounded border-1 border-white/20">
-              <div className="text-[16px] font-[Cinzel]">{surface_name[outeridx]}</div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
+            <div
+              className="bg-black/80 w-full p-2"
+              style={{
+                borderStyle: "solid", // Required
+                borderWidth: "6px",
+                borderImage: "url('/Misc/frame.webp') 40 stretch",
+              }}
+            >
+              <div className="text-[16px] mb-2">{surface_name[outeridx]}</div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
                 {obj.map((item) => (
-                  <div className="text-[11px] flex gap-2 items-center">
-                    <img src={`/Enemy/${item}.png`} alt="Enemy" className="w-16" />
-                    <div>
-                      <div>{item}</div>
-                      <div>HP: {enemy_data[item].hp}</div>
-                      {/*  */}
-                      <div>Difficulty: {enemy_data[item].rat1}</div>
-                      {enemy_data[item].elitehp && (
-                        <div className="text-[#f18043]">Elite HP: {enemy_data[item].elitehp}</div>
-                      )}
-                      {enemy_data[item].elitebuff && (
-                        <div className="text-[#f18043]">Elite HP Buff: {enemy_data[item].elitebuff}</div>
-                      )}
-                      {enemy_data[item].rat2 && (
-                        <div className="text-[#f18043]">Difficulty: {enemy_data[item].rat2}</div>
-                      )}
-                      {enemy_data[item].superhp && (
-                        <div className="text-[#f05bdc]">Super Elite HP: {enemy_data[item].superhp}</div>
-                      )}
-                      {enemy_data[item].superbuff && (
-                        <div className="text-[#f05bdc]">Super HP Buff: {enemy_data[item].superbuff}</div>
-                      )}
-                      {enemy_data[item].hp1 && <div className="text-[#00ffaa]">P1 HP: {enemy_data[item].hp1}</div>}
-                      {enemy_data[item].hp2 && <div className="text-[#00ffaa]">P2 HP: {enemy_data[item].hp2}</div>}
-                      {/*  */}
+                  <div className="my-1">
+                    <div>{item}</div>
+                    <div className="flex gap-2 items-start">
+                      <img src={`/Enemy/${item}.png`} alt="Enemy" className="w-16" loading="lazy" />
+                      <div>
+                        <div>HP: {enemy_data[item].hp}</div>
+                        {/*  */}
+                        <div>Difficulty: {enemy_data[item].rat1}</div>
+                        {enemy_data[item].elitehp && (
+                          <div className="text-[#f18043]">Elite HP: {enemy_data[item].elitehp}</div>
+                        )}
+                        {enemy_data[item].elitebuff && (
+                          <div className="text-[#f18043]">Elite Armor: {enemy_data[item].elitebuff}</div>
+                        )}
+                        {enemy_data[item].rat2 && (
+                          <div className="text-[#f18043]">Difficulty: {enemy_data[item].rat2}</div>
+                        )}
+                        {enemy_data[item].superhp && (
+                          <div className="text-[#f05bdc]">Super HP: {enemy_data[item].superhp}</div>
+                        )}
+                        {enemy_data[item].superbuff && (
+                          <div className="text-[#f05bdc]">Super Armor: {enemy_data[item].superbuff}</div>
+                        )}
+                        {enemy_data[item].hp1 && <div className="text-[#00ffaa]">P1 HP: {enemy_data[item].hp1}</div>}
+                        {enemy_data[item].hp2 && <div className="text-[#00ffaa]">P2 HP: {enemy_data[item].hp2}</div>}
+                        {/*  */}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -63,35 +72,44 @@ export default function Enemy() {
           ))}
         </div>
         <div className="divider font-[Cinzel] text-[20px] divider-warning">The Crossroad</div>
-        <div className="flex flex-wrap gap-4 my-6 text-[12px] font-[PT]">
+        <div className="flex flex-wrap gap-4 my-6">
           {underworld.map((obj, outeridx) => (
-            <div className="bg-black/80 w-full p-2 rounded border-1 border-white/20">
-              <div className="text-[16px] font-[Cinzel]">{underworld_name[outeridx]}</div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
+            <div
+              className="bg-black/80 w-full p-2"
+              style={{
+                borderStyle: "solid", // Required
+                borderWidth: "6px",
+                borderImage: "url('/Misc/frame.webp') 40 stretch",
+              }}
+            >
+              <div className="text-[16px] mb-2">{underworld_name[outeridx]}</div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
                 {obj.map((item) => (
-                  <div className="text-[12px] flex gap-2 items-center">
-                    <img src={`/Enemy/${item}.png`} alt="Enemy" className="w-16" />
-                    <div>
-                      <div>{item}</div>
-                      <div>HP: {enemy_data[item].hp}</div>
-                      {/*  */}
-                      <div>Difficulty: {enemy_data[item].rat1}</div>
-                      {enemy_data[item].elitehp && (
-                        <div className="text-[#f18043]">Elite HP: {enemy_data[item].elitehp}</div>
-                      )}
-                      {enemy_data[item].elitebuff && (
-                        <div className="text-[#f18043]">Elite HP Buff: {enemy_data[item].elitebuff}</div>
-                      )}
-                      {enemy_data[item].rat2 && (
-                        <div className="text-[#f18043]">Difficulty: {enemy_data[item].rat2}</div>
-                      )}
-                      {enemy_data[item].superhp && (
-                        <div className="text-[#f05bdc]">Super Elite HP: {enemy_data[item].superhp}</div>
-                      )}
-                      {enemy_data[item].superbuff && (
-                        <div className="text-[#f05bdc]">Super HP Buff: {enemy_data[item].superbuff}</div>
-                      )}
-                      {/*  */}
+                  <div className="my-1">
+                    <div>{item}</div>
+                    <div className="flex gap-2 items-start">
+                      <img src={`/Enemy/${item}.png`} alt="Enemy" className="w-16" loading="lazy" />
+                      <div>
+                        <div>HP: {enemy_data[item].hp}</div>
+                        {/*  */}
+                        <div>Difficulty: {enemy_data[item].rat1}</div>
+                        {enemy_data[item].elitehp && (
+                          <div className="text-[#f18043]">Elite HP: {enemy_data[item].elitehp}</div>
+                        )}
+                        {enemy_data[item].elitebuff && (
+                          <div className="text-[#f18043]">Elite Armor: {enemy_data[item].elitebuff}</div>
+                        )}
+                        {enemy_data[item].rat2 && (
+                          <div className="text-[#f18043]">Difficulty: {enemy_data[item].rat2}</div>
+                        )}
+                        {enemy_data[item].superhp && (
+                          <div className="text-[#f05bdc]">Super HP: {enemy_data[item].superhp}</div>
+                        )}
+                        {enemy_data[item].superbuff && (
+                          <div className="text-[#f05bdc]">Super Armor: {enemy_data[item].superbuff}</div>
+                        )}
+                        {/*  */}
+                      </div>
                     </div>
                   </div>
                 ))}

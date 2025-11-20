@@ -193,7 +193,6 @@ export const enemy_data = {
 
   WaterElemental: { hp: 140, rat1: 13, elitebuff: 140, rat2: 24 },
   Scimiterror: { hp: 260, rat1: 30, elitebuff: 260, rat2: 65 },
-  Mage2: { hp: 415, rat1: 40, elitebuff: 415, rat2: 90 },
   DeadSeaStickler: { hp: 480, rat1: 50, elitebuff: 380, rat2: 135 },
   DeadSeaDrunk: { hp: 490, rat1: 50, elitebuff: 490, rat2: 105 },
   DeadSeaSwab: { hp: 1030, rat1: 65, elitebuff: 730, rat2: 155 },
