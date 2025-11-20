@@ -112,7 +112,7 @@ export default function Enemy() {
                         {enemy_data[item].key && <div>Keytarist HP: {enemy_data[item].key}</div>}
 
                         {enemy_data[item].Rivalp2 && (
-                          <div className="text-[#00ffaa]">RivalP2 HP: {enemy_data[item].Rivalp2}</div>
+                          <div className="text-[#00ffaa]">Rival P2 HP: {enemy_data[item].Rivalp2}</div>
                         )}
                         {enemy_data[item].Rivalp3 && (
                           <div className="text-[#00ffaa]">Rival P3 HP: {enemy_data[item].Rivalp3}</div>
