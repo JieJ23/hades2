@@ -15,6 +15,7 @@ export const uw_erebus = [
   "Wisp",
   "ZombieAssassinMiniBoss",
   "LightRanged",
+  "Hecate",
 ];
 
 export const uw_asphodel = [
@@ -38,6 +39,7 @@ export const uw_oceanus = [
   "ThiefMineLayer",
   "OctoFishMiniboss",
   "CrawlerMiniBoss",
+  "Scylla",
 ];
 
 export const uw_fields = [
@@ -53,6 +55,7 @@ export const uw_fields = [
   "Vampire",
   "Lamia",
   "LamiaMiniBoss",
+  "Cerberus",
 ];
 
 export const uw_tartarus = [
@@ -67,6 +70,7 @@ export const uw_tartarus = [
   "SatyrLancer",
   "SatyrRatCatcher",
   "SatyrRatCatcherMiniBoss",
+  "Chronos",
 ];
 
 export const s_ephyra = [
@@ -79,6 +83,8 @@ export const s_ephyra = [
   "ZombieSpawner",
   "Mudman",
   "Boar",
+  "Polyphemus",
+  "Medea",
 ];
 
 export const s_thessaly = [
@@ -92,6 +98,7 @@ export const s_thessaly = [
   "HarpyDropper",
   "ZombieCaptain",
   "Charybdis",
+  "Eris",
 ];
 
 export const s_olympus = [
@@ -105,6 +112,8 @@ export const s_olympus = [
   "AutomatonBeamer",
   "AutomatonEnforcer",
   "Talos",
+  "Heracles",
+  "Prometheus",
 ];
 
 export const s_summit = [
@@ -116,9 +125,23 @@ export const s_summit = [
   "TyphonSupportMiniboss",
   "TyphonBrute",
   "TyphonBruteMiniboss",
+  "TyphonHead",
 ];
 
 export const enemy_data = {
+  // Bosses
+  Hecate: { hp: 6050, Rival: 7250, Clone: 999999 },
+  Scylla: { hp: 7750, drum: 7100, key: 5100 },
+  Cerberus: { hp: 21500, Rival: 31500 },
+  Chronos: { hp: 20000, p3: 22000, p2: 16000, Rivalp2: 18000, Rivalp3: 26000 },
+
+  Polyphemus: { hp: 8400, Rival: 10200 },
+  Medea: { hp: 9999 },
+  Eris: { hp: 16000, Rival: 18500 },
+  Prometheus: { hp: 33000, Rival: 36000, Eagle: 8000 },
+  Heracles: { hp: 34000 },
+  TyphonHead: { hp: 65000, Baba: 10000, StaggeredDummy: 9999999, Egg: "1450/3000/2550/1500", Other: 3500, Part: 25000 },
+
   Guard: { hp: 60, rat1: 5, elitebuff: 80, rat2: 12 },
   Guard2: { hp: 190, rat1: 12, elitebuff: 190, rat2: 29 },
   Brawler: { hp: 255, rat1: 18, elitebuff: 330, rat2: 39 },
@@ -199,7 +222,7 @@ export const enemy_data = {
   HarpyTalonCutter: { hp: 925, rat1: 75, elitebuff: 655, rat2: 165 },
   HarpyDropper: { hp: 890, rat1: 90, elitebuff: 750, rat2: 190 },
   ZombieCaptain: { hp: 1000, hpbuff: 8800, rat1: 200, superbuff: 6000, superhp: 3000 },
-  Charybdis: { hp: 1, rat1: 1000, hp1: 2800, hp2: 2100 },
+  Charybdis: { hp: 1, rat1: 1000, Tentacle2: 2800, Tentacle1: 2100 },
 
   SatyrLancer2: { hp: 1090, rat1: 220, elitebuff: 880, rat2: 260 },
   SatyrSapper: { hp: 1530, rat1: 105, elitebuff: 1130, rat2: 280 },

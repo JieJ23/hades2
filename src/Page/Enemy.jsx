@@ -22,7 +22,7 @@ export default function Enemy() {
   return (
     <main className="relative select-none">
       <Background />
-      <div className="max-w-[1400px] font-[Ale] text-[12px] md:text-[13px] mx-auto">
+      <div className="max-w-[1400px] font-[Ale] text-[13px] md:text-[14px] mx-auto">
         {/* <SideNav /> */}
         <div className="flex flex-wrap gap-4 py-4">
           {surface.map((obj, outeridx) => (
@@ -43,8 +43,19 @@ export default function Enemy() {
                       <img src={`/Enemy/${item}.png`} alt="Enemy" className="w-16" loading="lazy" />
                       <div>
                         <div>HP: {enemy_data[item].hp}</div>
+                        {enemy_data[item].Rival && (
+                          <div className="text-[#00ffaa]">Rival HP: {enemy_data[item].Rival}</div>
+                        )}
+                        {enemy_data[item].Clone && <div>Clone HP: {enemy_data[item].Clone}</div>}
+                        {enemy_data[item].Eagle && <div>Eagle HP: {enemy_data[item].Eagle}</div>}
+                        {enemy_data[item].Baba && <div>Baba HP: {enemy_data[item].Baba}</div>}
+                        {enemy_data[item].StaggeredDummy && <div>Stag. Dumb HP: {enemy_data[item].StaggeredDummy}</div>}
+                        {enemy_data[item].Egg && <div>Eggs HP: {enemy_data[item].Egg}</div>}
+                        {enemy_data[item].Other && <div>Cap/Boar/Drag HP: {enemy_data[item].Other}</div>}
+                        {enemy_data[item].Part && <div>Eye/Arm HP: {enemy_data[item].Part}</div>}
+
                         {/*  */}
-                        <div>Difficulty: {enemy_data[item].rat1}</div>
+                        {enemy_data[item].rat1 && <div>Difficulty: {enemy_data[item].rat1}</div>}
                         {enemy_data[item].elitehp && (
                           <div className="text-[#f18043]">Elite HP: {enemy_data[item].elitehp}</div>
                         )}
@@ -60,8 +71,8 @@ export default function Enemy() {
                         {enemy_data[item].superbuff && (
                           <div className="text-[#f05bdc]">Super Armor: {enemy_data[item].superbuff}</div>
                         )}
-                        {enemy_data[item].hp1 && <div className="text-[#00ffaa]">P1 HP: {enemy_data[item].hp1}</div>}
-                        {enemy_data[item].hp2 && <div className="text-[#00ffaa]">P2 HP: {enemy_data[item].hp2}</div>}
+                        {enemy_data[item].Tentacle1 && <div>Tentacle 1: {enemy_data[item].Tentacle1}</div>}
+                        {enemy_data[item].Tentacle2 && <div>Tentacle 2: {enemy_data[item].Tentacle2}</div>}
                         {/*  */}
                       </div>
                     </div>
@@ -91,8 +102,23 @@ export default function Enemy() {
                       <img src={`/Enemy/${item}.png`} alt="Enemy" className="w-16" loading="lazy" />
                       <div>
                         <div>HP: {enemy_data[item].hp}</div>
+                        {enemy_data[item].Rival && (
+                          <div className="text-[#00ffaa]">Rival HP: {enemy_data[item].Rival}</div>
+                        )}
+                        {enemy_data[item].Clone && <div>Clone HP: {enemy_data[item].Clone}</div>}
+                        {enemy_data[item].p2 && <div>P2 HP: {enemy_data[item].p2}</div>}
+                        {enemy_data[item].p3 && <div>P3 HP: {enemy_data[item].p3}</div>}
+                        {enemy_data[item].drum && <div>Drummer HP: {enemy_data[item].drum}</div>}
+                        {enemy_data[item].key && <div>Keytarist HP: {enemy_data[item].key}</div>}
+
+                        {enemy_data[item].Rivalp2 && (
+                          <div className="text-[#00ffaa]">RivalP2 HP: {enemy_data[item].Rivalp2}</div>
+                        )}
+                        {enemy_data[item].Rivalp3 && (
+                          <div className="text-[#00ffaa]">Rival P3 HP: {enemy_data[item].Rivalp3}</div>
+                        )}
                         {/*  */}
-                        <div>Difficulty: {enemy_data[item].rat1}</div>
+                        {enemy_data[item].rat1 && <div>Difficulty: {enemy_data[item].rat1}</div>}
                         {enemy_data[item].elitehp && (
                           <div className="text-[#f18043]">Elite HP: {enemy_data[item].elitehp}</div>
                         )}
