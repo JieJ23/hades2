@@ -103,7 +103,8 @@ export default function TheGameAward() {
               <div>Award</div>
             </div>
           </div>
-          <div className="px-2">* Results will be available on December 1st.</div>
+          <div className="px-2 line-through">* Results will be available on December 1st.</div>
+          <div className="px-2">* Results will be available on November 24th.</div>
           <div className="my-4 mt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 text-white">
             {tga_categories.map((obj, index) => (
               <div
@@ -166,7 +167,7 @@ export default function TheGameAward() {
               </div>
             ))}
           </div>
-          <div className="text-center text-[18px] font-[Cinzel] my-2 bg-[#131111]">{tga_categories[category].qa}</div>
+          <div className="text-center text-[18px] my-2 p-2 bg-[#131111]">{tga_categories[category].qa}</div>
 
           <div className="h-[400px] w-full max-w-[1200px] mx-auto text-[12px] my-4">
             <div className="text-[20px] font-[Ale]"></div>
@@ -198,10 +199,12 @@ export default function TheGameAward() {
           </div>
           <div className="max-w-[1200px] mx-auto rounded">
             {displayResults.map((obj, index) => (
-              <div className="grid grid-cols-3 place-items-center my-1 hover:bg-[#28282b]" key={index}>
-                <div className="text-center">{obj[0]}</div>
-                <div>{obj[1]} votes</div>
-                <div>{((obj[1] / response.length) * 100).toFixed(2)}%</div>
+              <div className="grid grid-cols-3 my-1 hover:bg-[#28282b] px-4 mx-auto max-w-[1000px]" key={index}>
+                <div className="self-start">
+                  {index + 1}. {obj[0]}
+                </div>
+                <div className="text-end">{obj[1]} votes</div>
+                <div className="text-end">{((obj[1] / response.length) * 100).toFixed(2)}%</div>
               </div>
             ))}
           </div>
