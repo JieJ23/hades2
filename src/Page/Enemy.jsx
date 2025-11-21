@@ -25,7 +25,7 @@ export default function Enemy() {
   return (
     <main className="relative">
       <Background />
-      <div className="max-w-[1200px] font-[Ale] text-[13px] md:text-[14px] mx-auto px-1">
+      <div className="max-w-[1200px] font-[Ale] text-[12px] md:text-[13px] lg:text-[14px] mx-auto px-1">
         <SideNav />
         <div className="flex flex-wrap gap-4 py-2">
           {surface.map((obj, outeridx) => (
@@ -80,7 +80,7 @@ export default function Enemy() {
                     </div>
                     <div>
                       {groupProject[item]?.map((ite) => (
-                        <div className="grid grid-cols-3">
+                        <div className="grid grid-cols-3 hover:bg-[#131111]">
                           <div>{ite}</div>
                           <div className="text-end">
                             {(() => {
@@ -88,7 +88,7 @@ export default function Enemy() {
                               let level = 0;
                               const maxLevel = 10;
                               while (current && level < maxLevel) {
-                                if (current.Type) return current.Type;
+                                if (current.Damage) return current.Damage;
                                 current = fullEnemyProj.find((p) => p.Name === current.InheritFrom);
                                 level++;
                               }
@@ -101,7 +101,7 @@ export default function Enemy() {
                               let level = 0;
                               const maxLevel = 10;
                               while (current && level < maxLevel) {
-                                if (current.Damage) return current.Damage;
+                                if (current.Type) return current.Type;
                                 current = fullEnemyProj.find((p) => p.Name === current.InheritFrom);
                                 level++;
                               }
@@ -174,7 +174,7 @@ export default function Enemy() {
                     </div>
                     <div>
                       {groupProject[item]?.map((ite) => (
-                        <div className="grid grid-cols-3">
+                        <div className="grid grid-cols-3 hover:bg-[#131111]">
                           <div>{ite}</div>
                           <div className="text-end">
                             {(() => {
@@ -182,7 +182,7 @@ export default function Enemy() {
                               let level = 0;
                               const maxLevel = 10;
                               while (current && level < maxLevel) {
-                                if (current.Type) return current.Type;
+                                if (current.Damage) return current.Damage;
                                 current = fullEnemyProj.find((p) => p.Name === current.InheritFrom);
                                 level++;
                               }
@@ -195,7 +195,7 @@ export default function Enemy() {
                               let level = 0;
                               const maxLevel = 10;
                               while (current && level < maxLevel) {
-                                if (current.Damage) return current.Damage;
+                                if (current.Type) return current.Type;
                                 current = fullEnemyProj.find((p) => p.Name === current.InheritFrom);
                                 level++;
                               }
