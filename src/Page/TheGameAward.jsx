@@ -1,6 +1,7 @@
 import Background from "../Comp/Background";
 import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { tga_categories } from "../Data/TGAdata";
+import SideNav from "../Comp/Sidebar";
 
 import { useState } from "react";
 import { response } from "../Data/TGAresponse";
@@ -89,10 +90,10 @@ export default function TheGameAward() {
   const graphResults = orderResults[category].map((obj) => {
     return { num: obj[0], count: obj[1] };
   });
-
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
+      <SideNav />
       <div className="max-w-[1400px] font-[Ale] text-[16px] mx-auto p-4">
         <form onSubmit={Submit}>
           <div className="flex justify-center items-center my-6">
@@ -105,6 +106,7 @@ export default function TheGameAward() {
           </div>
           <div className="px-2 line-through">* Results will be available on December 1st.</div>
           <div className="px-2">* Results will be available on November 24th.</div>
+          <div className="px-2 text-[#00ffaa]">** {response.length} votes were cast.</div>
           <div className="my-4 mt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 text-white">
             {tga_categories.map((obj, index) => (
               <div
@@ -120,8 +122,19 @@ export default function TheGameAward() {
                   className="absolute h-full w-full top-0 right-0 opacity-30 object-cover object-center"
                 />
                 <div className="absolute top-1 left-1 text-[12px] text-gray-300">Q{index + 1}.</div>
-                <div className="text-center font-[Ale] relative">{obj.qa}</div>
-                <select
+                <div className="text-center font-[Ale] text-gray-300 relative">{obj.qa}</div>
+                <div className="text-center relative bg-black/80 rounded py-1">
+                  <div className="text-[18px] text-[#00ffaa] font-[]">{orderResults[index][0][0]}</div>
+                  <div className="flex gap-1 justify-center text-gray-200 text-[14px]">
+                    <div>{orderResults[index][0][1]} Votes</div>
+                    {`-`}
+                    <div>{((orderResults[index][0][1] / response.length) * 100).toFixed(2)}%</div>
+                  </div>
+                </div>
+                <div className="absolute right-1 bottom-0 text-[14px] text-[lightgreen]">
+                  +{orderResults[index][0][1] - orderResults[index][1][1]}
+                </div>
+                {/* <select
                   defaultValue="Select"
                   name={`qa${index + 1}`}
                   className={`select select-sm w-[80%] mx-auto focus:outline-none focus:border-transparent text-[14px] relative`}
@@ -130,11 +143,11 @@ export default function TheGameAward() {
                   {obj.option.map((ite) => (
                     <option value={ite}>{ite}</option>
                   ))}
-                </select>
+                </select> */}
               </div>
             ))}
           </div>
-          <div className="flex justify-center gap-2">
+          {/* <div className="flex justify-center gap-2">
             <input className="input" placeholder="Your Name" name="nam" required></input>
             <button
               className="bg-[#00ffaa] text-black rounded text-[20px] px-2 py-1 w-[150px] cursor-pointer"
@@ -143,10 +156,10 @@ export default function TheGameAward() {
             >
               {loading ? <span className="loading loading-spinner loading-sm"></span> : "Submit"}
             </button>
-          </div>
+          </div> */}
         </form>
         {/* Data Display */}
-        {/* <div
+        <div
           className="my-8 bg-black/70 py-4 rounded"
           style={{
             borderStyle: "solid",
@@ -167,7 +180,7 @@ export default function TheGameAward() {
               </div>
             ))}
           </div>
-          <div className="text-center text-[18px] my-2 p-2 bg-[#131111]">{tga_categories[category].qa}</div>
+          <div className="text-center text-[20px] my-2 p-2">{tga_categories[category].qa}</div>
 
           <div className="h-[400px] w-full max-w-[1200px] mx-auto text-[12px] my-4">
             <div className="text-[20px] font-[Ale]"></div>
@@ -208,7 +221,7 @@ export default function TheGameAward() {
               </div>
             ))}
           </div>
-        </div> */}
+        </div>
       </div>
     </main>
   );
