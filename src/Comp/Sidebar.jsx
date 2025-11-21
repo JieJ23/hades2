@@ -14,6 +14,7 @@ export const sites = [
   { link: `EALadder`, nam: `EA` },
   { link: `ArcanaDeck`, nam: `Arcana` },
   { link: `FearCalculator`, nam: `Fear` },
+  { link: `Enemy`, nam: `Enemy` },
   { link: `GameplaySubmission`, nam: `Submission` },
 ];
 

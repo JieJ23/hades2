@@ -1,4 +1,5 @@
 import SideNav from "../Comp/Sidebar";
+import Footer from "../Comp/Footer";
 import Background from "../Comp/Background";
 import {
   uw_erebus,
@@ -23,8 +24,8 @@ export default function Enemy() {
     <main className="relative select-none">
       <Background />
       <div className="max-w-[1400px] font-[Ale] text-[13px] md:text-[14px] mx-auto">
-        {/* <SideNav /> */}
-        <div className="flex flex-wrap gap-4 py-4">
+        <SideNav />
+        <div className="flex flex-wrap gap-4 py-2">
           {surface.map((obj, outeridx) => (
             <div
               className="bg-black/80 w-full p-2"
@@ -143,6 +144,7 @@ export default function Enemy() {
             </div>
           ))}
         </div>
+        <Footer />
       </div>
     </main>
   );
