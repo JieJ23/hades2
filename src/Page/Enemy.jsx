@@ -37,7 +37,7 @@ export default function Enemy() {
                 borderImage: "url('/Misc/frame.webp') 40 stretch",
               }}
             >
-              <div className="text-[16px] mb-2">{surface_name[outeridx]}</div>
+              <div className="text-[24px] my-1 text-center font-[Cinzel]">{surface_name[outeridx]}</div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {obj.map((item) => (
                   <div className="my-1 border border-white/10 rounded px-2 py-1">
@@ -128,7 +128,7 @@ export default function Enemy() {
                 borderImage: "url('/Misc/frame.webp') 40 stretch",
               }}
             >
-              <div className="text-[16px] mb-2">{underworld_name[outeridx]}</div>
+              <div className="text-[24px] my-1 text-center font-[Cinzel]">{underworld_name[outeridx]}</div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {obj.map((item) => (
                   <div className="my-1 border border-white/10 rounded px-2 py-1">
