@@ -1161,5 +1161,3 @@ proj.forEach((proj, i) => {
   if (!groupProject[owner]) groupProject[owner] = [];
   groupProject[owner].push(proj);
 });
-
-console.log(groupProject);

@@ -17,6 +17,7 @@ export const sites = [
   { link: `Enemy`, nam: `Enemy` },
   { link: `GameplaySubmission`, nam: `Submission` },
   { link: `TheGameAward`, nam: `Game Award` },
+  { link: `ProfileSum`, nam: `Profile` },
 ];
 
 export const sites2 = [
