@@ -3,7 +3,7 @@ import Background from "../Comp/Background";
 import Sidebar from "../Comp/Sidebar";
 import { useState } from "react";
 
-import { v1data } from "../Data/V1data";
+import { v1bundle } from "../Data/DataBundle";
 
 import { biomeS, biomeU, h2AspectOrder, sToA } from "../Data/Misc";
 
@@ -42,7 +42,7 @@ export default function () {
   const [maxfear, setMaxFear] = useState(67);
   const [aspect, setAspect] = useState(`All`);
 
-  const availableData = [...v1data, ...(posts || [])]
+  const availableData = [...v1bundle, ...(posts || [])]
     .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear)
     .filter((obj) => {
       if (aspect === `All`) {

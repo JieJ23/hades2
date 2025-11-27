@@ -2,9 +2,8 @@ import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
-import { p9data } from "../Data/P9Data";
-import { p11data } from "../Data/P11Data";
-import { v1data } from "../Data/V1data";
+import { bundleData } from "../Data/DataBundle";
+
 import { Link } from "react-router-dom";
 import BarAspect from "../Comp/BarAspect";
 import BarFear from "../Comp/BarFear";
@@ -55,7 +54,7 @@ export default function Weekly() {
   const [week, setWeek] = useState(0);
   const [show, setShow] = useState(20);
 
-  const aData = [...p9data, ...p11data, ...v1data, ...(posts || [])].sort((a, b) => {
+  const aData = [...bundleData, ...(posts || [])].sort((a, b) => {
     const feaDiff = +b.fea - +a.fea;
     if (feaDiff !== 0) return feaDiff;
     return parseTimetoms(a.tim) - parseTimetoms(b.tim);
@@ -89,8 +88,8 @@ export default function Weekly() {
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
+      <SideNav />
       <div className="max-w-[1500px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-1">
-        <SideNav />
         {loader ? (
           <Loading />
         ) : (
@@ -114,8 +113,8 @@ export default function Weekly() {
             {loader ? (
               <Loading />
             ) : (
-              <div className="flex flex-col gap-1 overflow-x-scroll border-2 rounded border-black">
-                <div className="flex gap-1">
+              <div className="flex flex-col gap-0.5 overflow-x-scroll">
+                <div className="flex gap-0.5">
                   {firstplace_surface.map((obj, index) => (
                     <div className="bg-gradient-to-b from-[black] via-[#131111] to-[#ffff0050] min-w-[120px] text-center p-2 rounded-sm flex flex-col justify-between select-none">
                       <div>Week #{weeklyData[index].week.slice(6)}</div>
@@ -130,7 +129,7 @@ export default function Weekly() {
                     </div>
                   ))}
                 </div>
-                <div className="flex gap-1">
+                <div className="flex gap-0.5">
                   {firstplace_uw.map((obj, index) => (
                     <div className="bg-gradient-to-b from-[black] via-[#131111] to-[#00ffaa50] min-w-[120px] text-center p-2 rounded-sm flex flex-col justify-between select-none">
                       <div>Week #{weeklyData[index].week.slice(6)}</div>

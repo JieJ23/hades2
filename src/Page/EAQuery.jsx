@@ -213,8 +213,8 @@ export default function EAQuery() {
   return (
     <main className="relative">
       <Background />
+      <SideNav />
       <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-1 overflow-hidden">
-        <SideNav />
         <EAContent />
         <>
           <div className="flex flex-wrap gap-1 pt-2">

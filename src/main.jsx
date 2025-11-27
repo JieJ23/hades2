@@ -10,8 +10,6 @@ import TheGameAward from "./Page/TheGameAward.jsx";
 import ProfileSum from "./Page/ProfileSum.jsx";
 import Enemy from "./Page/Enemy.jsx";
 
-import Root from "./Page/Root.jsx";
-
 import Query from "./Page/Query.jsx";
 import Ladder from "./Page/Ladder.jsx";
 import FearPoints from "./Page/FearPoints.jsx";
@@ -36,32 +34,29 @@ import GameplaySubmission from "./Page/GameplaySubmission.jsx";
 
 import { DataProvider } from "./Hook/DataFetch.jsx";
 
-import Service from "./Page/Service.jsx";
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <DataProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Service />} />
+          <Route path="/" element={<App />} />
 
-          <Route path="/Query" element={<Service />} />
-          <Route path="/Archive" element={<Service />} />
+          <Route path="/Query" element={<Query />} />
+          <Route path="/Archive" element={<Archive />} />
 
-          <Route path="/Root" element={<Service />} />
           <Route path="/Enemy" element={<Enemy />} />
           <Route path="/ProfileSum" element={<ProfileSum />} />
 
           <Route path="/TheGameAward" element={<TheGameAward />} />
 
-          <Route path="/Ladder" element={<Service />} />
-          <Route path="/FearPoints" element={<Service />} />
-          <Route path="/StatsCodex" element={<Service />} />
+          <Route path="/Ladder" element={<Ladder />} />
+          <Route path="/FearPoints" element={<FearPoints />} />
+          <Route path="/StatsCodex" element={<StatsCodex />} />
 
-          <Route path="/KeepsakesStats" element={<Service />} />
-          <Route path="/VowsStats" element={<Service />} />
-          <Route path="/ArcanaStats" element={<Service />} />
-          <Route path="/Weekly" element={<Service />} />
+          <Route path="/KeepsakesStats" element={<KeepsakesStats />} />
+          <Route path="/VowsStats" element={<VowsStats />} />
+          <Route path="/ArcanaStats" element={<ArcanaStats />} />
+          <Route path="/Weekly" element={<Weekly />} />
 
           <Route path="/EALadder" element={<EALadder />} />
           <Route path="/EAStat" element={<EAStat />} />

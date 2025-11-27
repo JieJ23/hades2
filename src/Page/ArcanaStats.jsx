@@ -5,9 +5,8 @@ import Sidebar from "../Comp/Sidebar";
 import { deCodeArcana } from "../Data/Misc";
 import { idarcana } from "../Data/Arcana1";
 
-import { p9data } from "../Data/P9Data";
-import { p11data } from "../Data/P11Data";
-import { v1data } from "../Data/V1data";
+import { bundleData } from "../Data/DataBundle";
+
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
 import { useState } from "react";
@@ -18,7 +17,7 @@ export default function ArcanaStats() {
   const [maxfear, setMaxFear] = useState(67);
   const [region, setRegion] = useState(`All`);
 
-  const availableData = [...p9data, ...p11data, ...v1data, ...(posts || [])]
+  const availableData = [...bundleData, ...(posts || [])]
     .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear)
     .filter((obj) => {
       if (region === `All`) {

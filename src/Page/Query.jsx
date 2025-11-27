@@ -4,7 +4,7 @@ import Footer from "../Comp/Footer";
 import { Link } from "react-router-dom";
 
 import { useState, useEffect } from "react";
-import { v1data } from "../Data/V1data";
+import { v1bundle } from "../Data/DataBundle";
 
 import Loading from "../Hook/Loading";
 import { useData } from "../Hook/DataFetch";
@@ -58,7 +58,7 @@ export default function Query() {
 
   const { posts, loader } = useData();
 
-  const allEntries = [...v1data, ...(posts || [])].sort((a, b) => {
+  const allEntries = [...v1bundle, ...(posts || [])].sort((a, b) => {
     if (speed) {
       return parseTimetoms(a.tim) - parseTimetoms(b.tim);
     } else {
@@ -68,7 +68,7 @@ export default function Query() {
     }
   });
 
-  const allPlayers = [...new Set([...v1data, ...(posts || [])].map((obj) => obj.nam))].sort((a, b) =>
+  const allPlayers = [...new Set([...v1bundle, ...(posts || [])].map((obj) => obj.nam))].sort((a, b) =>
     a.toLowerCase().localeCompare(b.toLowerCase())
   );
 
@@ -77,8 +77,6 @@ export default function Query() {
     const base64Asp = searchParams.get("asp");
     const base64MinMax = searchParams.get("minmax");
     const base64Has = searchParams.get("has");
-    const base64Vow = searchParams.get("vow");
-    const base64Arc = searchParams.get("arc");
     const base64Reg = searchParams.get("reg");
     const base64Player = searchParams.get("player");
 
@@ -104,24 +102,6 @@ export default function Query() {
       try {
         const decodedMinMax = JSON.parse(atob(base64MinMax)); // Decode the Base64
         setMinMax(decodedMinMax);
-        // Reset the URL back to localhost without the query
-      } catch (error) {
-        console.error("Error decoding cards data from URL:", error);
-      }
-    }
-    if (base64Vow) {
-      try {
-        const decodedVow = JSON.parse(atob(base64Vow)); // Decode the Base64
-        setVow(decodedVow);
-        // Reset the URL back to localhost without the query
-      } catch (error) {
-        console.error("Error decoding cards data from URL:", error);
-      }
-    }
-    if (base64Arc) {
-      try {
-        const decodedArc = JSON.parse(atob(base64Arc)); // Decode the Base64
-        setArc(decodedArc);
         // Reset the URL back to localhost without the query
       } catch (error) {
         console.error("Error decoding cards data from URL:", error);
@@ -156,8 +136,6 @@ export default function Query() {
       reg: "Region",
       minmax: [1, 67],
       has: [],
-      vow: [],
-      arc: [],
       player: "",
     };
 
@@ -173,8 +151,6 @@ export default function Query() {
     addParamIfNotDefault("reg", reg);
     addParamIfNotDefault("minmax", minmax);
     addParamIfNotDefault("has", has);
-    addParamIfNotDefault("vow", vow);
-    addParamIfNotDefault("arc", arc);
     addParamIfNotDefault("player", player);
 
     const newURL = `${window.location.origin}/Query/?${params.toString()}`;
@@ -231,8 +207,8 @@ export default function Query() {
   return (
     <main className="relative">
       <Background />
+      <SideNav />
       <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto px-1 overflow-hidden">
-        <SideNav />
         <>
           <div className="flex flex-wrap gap-1 pt-2">
             <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={generateShareableURL}>
@@ -245,12 +221,10 @@ export default function Query() {
               className="bg-white cursor-pointer text-black rounded px-2 py-1"
               onClick={() => {
                 setAsp([]);
-                setReg(`Region`);
                 setMinMax([1, 67]);
                 setHas([]);
-                setVow([]);
-                setArc([]);
-                setPlayer("Player");
+                setPlayer("");
+                setReg(`Region`);
               }}
             >
               Reset Selection
@@ -286,7 +260,7 @@ export default function Query() {
             />
             <select
               className="select select-sm w-[120px] focus:outline-0 rounded"
-              defaultValue={`Region`}
+              value={reg}
               onChange={(e) => {
                 setShow(20);
                 setReg(e.target.value);
@@ -313,46 +287,6 @@ export default function Query() {
                 All
               </option>
               {h2AspectOrder.map((ite, index) => (
-                <option value={ite}>{ite}</option>
-              ))}
-            </select>
-            <select
-              className="select select-sm w-[120px] focus:outline-0 rounded"
-              defaultValue={`Vows`}
-              onChange={(e) => {
-                setShow(20);
-                setVow((prev) => {
-                  if (!prev.includes(vowid[e.target.value])) {
-                    return [...prev, vowid[e.target.value]];
-                  }
-                  return prev;
-                });
-              }}
-            >
-              <option value={`Vows`} disabled={true}>
-                Vows
-              </option>
-              {allVows.map((ite, index) => (
-                <option value={ite}>{ite}</option>
-              ))}
-            </select>
-            <select
-              className="select select-sm w-[120px] focus:outline-0 rounded"
-              defaultValue={`Arcana`}
-              onChange={(e) => {
-                setShow(20);
-                setArc((prev) => {
-                  if (!prev.includes(arcanaid[e.target.value])) {
-                    return [...prev, arcanaid[e.target.value]];
-                  }
-                  return prev;
-                });
-              }}
-            >
-              <option value={`Arcana`} disabled={true}>
-                Arcana
-              </option>
-              {Object.values(deckMatch).map((ite, index) => (
                 <option value={ite}>{ite}</option>
               ))}
             </select>
@@ -423,7 +357,7 @@ export default function Query() {
             )}
           </div>
           {reg && (
-            <div className="flex flex-wrap text-[11px] my-1 gap-1">
+            <div className="flex flex-wrap text-[12px] my-1 gap-1">
               <div className="px-2 py-1 rounded bg-white text-black">Region: {reg === `Region` ? `All` : reg}</div>
               <div className="px-2 py-1 rounded bg-white text-black">
                 Fear Range: {minmax[0]} - {minmax[1]}
@@ -466,36 +400,6 @@ export default function Query() {
                 ))}
               </div>
             )}
-            {vow.length > 0 && (
-              <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
-                {vow.map((ite) => (
-                  <div
-                    className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
-                    onClick={() => {
-                      setShow(20);
-                      setVow((prev) => prev.filter((item) => item !== ite));
-                    }}
-                  >
-                    {idvow[ite]}
-                  </div>
-                ))}
-              </div>
-            )}
-            {arc.length > 0 && (
-              <div className="flex flex-wrap gap-0.5 text-[10px] md:text-[11px]">
-                {arc.map((ite) => (
-                  <div
-                    className="bg-[#28282b] text-white px-2 py-0.5 rounded cursor-pointer hover:bg-[#fff] hover:text-black duration-100 ease-in"
-                    onClick={() => {
-                      setShow(20);
-                      setArc((prev) => prev.filter((item) => item !== ite));
-                    }}
-                  >
-                    {idarcana[ite]}
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
           <div className="px-1 text-white">
             Query: {displayData3.length}/{allEntries.length} |{" "}
@@ -507,7 +411,7 @@ export default function Query() {
             <>
               <div className="grid grid-cols-5 md:grid-cols-8 lg:grid-cols-12 gap-1 my-2">
                 {effectCounts.map(([ke, val], index) => (
-                  <div key={index} className="w-full px-1 py-1 text-center text-white rounded bg-[black]">
+                  <div key={index} className="w-full px-1 py-1 text-center text-white rounded bg-black/80">
                     <div>{ke}</div>
                     <div
                       className="bg-[black] text-black rounded-sm"
@@ -586,7 +490,7 @@ export default function Query() {
                       </div>
                       <div className="w-full">
                         {obj.ks && (
-                          <div className="flex flex-wrap gap-0.5 rounded font-[Ubuntu] text-[10px]">
+                          <div className="grid grid-cols-4 gap-0.5 rounded font-[Ubuntu] text-[10px]">
                             {sToA(obj.ks).map((ite, index) => (
                               <div className="px-2 py-1 bg-[#00000099] rounded flex items-center gap-1">
                                 <img
@@ -597,7 +501,7 @@ export default function Query() {
                                 />
                                 <div>
                                   <div>{obj.loc === `Underworld` ? biomeU[index] : biomeS[index]}</div>
-                                  <div>{ite}</div>
+                                  <div className="line-clamp-1">{ite}</div>
                                 </div>
                               </div>
                             ))}
@@ -709,7 +613,7 @@ export default function Query() {
                               </div>
                             ))}
                         </div>
-                        <div className="text-[12px] text-white my-0.5">{obj.des}</div>
+                        <div className="text-[12px] text-white my-0.5 line-clamp-5">{obj.des}</div>
                         <div className="text-gray-300 my-0.5">{obj.dat.slice(0, 10)}</div>
                       </div>
                     </div>

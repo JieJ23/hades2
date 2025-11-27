@@ -50,8 +50,8 @@ export default function EALadder() {
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
+      <SideNav />
       <div className="max-w-[1600px] font-[Ubuntu] text-[10px] md:text-[11px] mx-auto px-1">
-        <SideNav />
         <EAContent />
         <>
           <div className="p-1 flex flex-wrap justify-center gap-1 my-2">

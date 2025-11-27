@@ -2,9 +2,8 @@ import Footer from "../Comp/Footer";
 import Background from "../Comp/Background";
 import Sidebar from "../Comp/Sidebar";
 
-import { p9data } from "../Data/P9Data";
-import { p11data } from "../Data/P11Data";
-import { v1data } from "../Data/V1data";
+import { bundleData } from "../Data/DataBundle";
+
 import { deCodeVow, vowMatch, oathMatch, sToA } from "../Data/Misc";
 import { idvow } from "../Data/Vow1";
 
@@ -17,9 +16,7 @@ export default function VowsStats() {
   const [minfear, setMinFear] = useState(1);
   const [maxfear, setMaxFear] = useState(67);
 
-  const availableData = [...p9data, ...p11data, ...v1data, ...(posts || [])].filter(
-    (obj) => +obj.fea >= +minfear && +obj.fea <= +maxfear
-  );
+  const availableData = [...bundleData, ...(posts || [])].filter((obj) => +obj.fea >= +minfear && +obj.fea <= +maxfear);
 
   const runs_av = availableData.filter((obj) => obj.oath);
   const oathArray = [...new Set(runs_av.map((obj) => deCodeVow(obj.oath)))];

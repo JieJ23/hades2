@@ -1,9 +1,8 @@
 import Footer from "../Comp/Footer";
 import Background from "../Comp/Background";
 import Sidebar from "../Comp/Sidebar";
-import { v1data } from "../Data/V1data";
-import { p9data } from "../Data/P9Data";
-import { p11data } from "../Data/P11Data";
+
+import { v1bundle, eabundle } from "../Data/DataBundle";
 
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
@@ -82,9 +81,9 @@ export default function StatsCodex() {
   const [maxfear, setMaxFear] = useState(67);
   const [aspect, setAspect] = useState("All");
 
-  const boonAvailableData = [...p9data, ...p11data].filter((obj) => obj.boon);
+  const boonAvailableData = [...eabundle].filter((obj) => obj.boon);
 
-  const availableData = [...boonAvailableData, ...v1data, ...(posts || [])]
+  const availableData = [...boonAvailableData, ...v1bundle, ...(posts || [])]
     .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear)
     .filter((obj) => {
       if (aspect === "All") {

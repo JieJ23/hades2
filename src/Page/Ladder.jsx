@@ -7,7 +7,7 @@ import { bOrder } from "../Data/Boon2";
 import { boonCodexr } from "../Data/Boon2";
 import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA, deCodeArcana } from "../Data/Misc";
 
-import { v1data } from "../Data/V1data";
+import { v1bundle } from "../Data/DataBundle";
 import { useState } from "react";
 
 import { useData } from "../Hook/DataFetch";
@@ -27,14 +27,13 @@ export const findValue2 = (arr) => {
 //
 export default function Ladder() {
   const [location, setLocation] = useState(`Underworld`);
-  const [category, setCategory] = useState(`Fear`);
   const [boon, setBoon] = useState(`Core`);
   const [minfear, setMinFear] = useState(1);
   const [maxfear, setMaxFear] = useState(67);
 
   const { posts, loader } = useData();
 
-  const regionData = [...v1data, ...(posts || [])]
+  const regionData = [...v1bundle, ...(posts || [])]
     .filter((obj) => obj.loc === location)
     .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear);
   const fulldata_ArrArrObject = [];
@@ -42,11 +41,7 @@ export default function Ladder() {
   for (let i = 0; i < h2AspectOrder.length; i++) {
     const aspectArray = regionData
       .filter((obj) => obj.asp === h2AspectOrder[i])
-      .sort((a, b) =>
-        category === `Speed`
-          ? parseTimetoms(a.tim) - parseTimetoms(b.tim)
-          : b.fea - a.fea || parseTimetoms(a.tim) - parseTimetoms(b.tim)
-      );
+      .sort((a, b) => b.fea - a.fea || parseTimetoms(a.tim) - parseTimetoms(b.tim));
     const removeDup = aspectArray.filter(
       (player, index, self) => index === self.findIndex((p) => p.nam === player.nam)
     );
@@ -56,8 +51,8 @@ export default function Ladder() {
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
+      <SideNav />
       <div className="max-w-[1600px] font-[Ubuntu] text-[10px] md:text-[11px] mx-auto px-1">
-        <SideNav />
         {loader ? (
           <Loading />
         ) : (
@@ -107,22 +102,6 @@ export default function Ladder() {
               </button>
               <button
                 className={`cursor-pointer rounded p-1 ${
-                  category === `Fear` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
-                onClick={() => setCategory(`Fear`)}
-              >
-                Fear
-              </button>
-              <button
-                className={`cursor-pointer text-black rounded p-1 ${
-                  category === `Speed` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
-                onClick={() => setCategory(`Speed`)}
-              >
-                Speed
-              </button>
-              <button
-                className={`cursor-pointer rounded p-1 ${
                   boon === `Core` ? `bg-white text-black` : `bg-transparent text-white`
                 }`}
                 onClick={() => setBoon(`Core`)}
@@ -158,11 +137,7 @@ export default function Ladder() {
               {fulldata_ArrArrObject.map((arr, oi) => (
                 <div
                   className={`rounded-t-md px-2 py-1 relative border-1 border-[#000000] hover:border-[#00ffaa] duration-200 ease-in transition-colors h-[250px] ${
-                    arr[0] && arr[0].fea >= 67
-                      ? `bg-[#480b0bbf]`
-                      : arr[0] && arr[0].fea >= 62
-                      ? `bg-[#141537a6]`
-                      : `bg-[#0e0e0ec4]`
+                    arr[0] && arr[0].fea >= 62 ? `bg-[#141537a6]` : `bg-[#0e0e0ec4]`
                   }`}
                 >
                   <img

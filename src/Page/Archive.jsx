@@ -2,9 +2,8 @@ import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
-import { p9data } from "../Data/P9Data";
-import { p11data } from "../Data/P11Data";
-import { v1data } from "../Data/V1data";
+import { eabundle, v1bundle } from "../Data/DataBundle";
+
 import {
   sToA,
   getYTid,
@@ -30,16 +29,14 @@ import { useMemo } from "react";
 
 import { useState, useEffect } from "react";
 
-const latest10videos = [...p11data, ...p9data]
-  .filter((obj) => obj.src)
-  .sort((a, b) => new Date(b.dat) - new Date(a.dat));
+const latest10videos = eabundle.filter((obj) => obj.src).sort((a, b) => new Date(b.dat) - new Date(a.dat));
 
 export default function Archive() {
   const { posts, loader } = useData();
 
   const latestVideos = useMemo(() => {
-    return [...v1data, ...(posts || [])].sort((a, b) => new Date(b.dat) - new Date(a.dat));
-  }, [v1data, posts]);
+    return [...v1bundle, ...(posts || [])].sort((a, b) => new Date(b.dat) - new Date(a.dat));
+  }, [v1bundle, posts]);
 
   const [url, setURL] = useState(() => {
     const validVideo = latestVideos.find((video) => video.src);
@@ -57,9 +54,9 @@ export default function Archive() {
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
-      <div className="max-w-[1600px] text-[10px] md:text-[11px] mx-auto px-1">
-        <SideNav />
-        <div className="max-w-[800px] mx-auto font-[Ubuntu]">
+      <SideNav />
+      <div className="max-w-[1600px] font-[Ale] text-[12px] md:text-[13px] mx-auto px-1">
+        <div className="max-w-[1000px] mx-auto">
           {loader ? (
             <div
               className="skeleton h-auto w-full aspect-video"
@@ -103,26 +100,26 @@ export default function Archive() {
                   )}
                 </div>
                 <div
-                  className="px-2 py-1 bg-[#000000] text-white rounded my-1"
+                  className="px-2 py-1 bg-[#000000]/80 text-white rounded my-1"
                   style={{
                     borderStyle: "solid", // Required
                     borderWidth: "8px",
                     borderImage: "url('/Misc/frame.webp') 40 stretch",
                   }}
                 >
-                  <div className="grid grid-cols-4 mt-1">
+                  <div className="grid grid-cols-4 mt-1 text-gray-300">
                     <div>Player</div>
-                    <div className="text-end">Aspect / Fear</div>
-                    <div className="text-end">Time</div>
-                    <div className="text-end">Date</div>
+                    <div className="text-center">Aspect / Fear</div>
+                    <div className="text-center">Time</div>
+                    <div className="text-center">Date</div>
                   </div>
                   <div className="grid grid-cols-4 mb-1">
                     <div>{url.nam}</div>
-                    <div className="text-end">
+                    <div className="text-center">
                       {url.asp} / {url.fea}
                     </div>
-                    <div className="text-end">{url.tim}</div>
-                    <div className="text-end">{url.dat.slice(0, 10)}</div>
+                    <div className="text-center">{url.tim}</div>
+                    <div className="text-center">{url.dat.slice(0, 10)}</div>
                   </div>
                   {url.ks && (
                     <div className="flex my-0.5 gap-0.5">
@@ -234,7 +231,7 @@ export default function Archive() {
                 </div>
               </div>
               <div
-                className="my-4 bg-[#000000] rounded py-1"
+                className="my-2 max-h-[400px] overflow-y-scroll bg-[#000000]/80 rounded py-1"
                 style={{
                   borderStyle: "solid", // Required
                   borderWidth: "8px",
@@ -244,7 +241,7 @@ export default function Archive() {
                 <div className="px-2 text-[14px] mb-2">v1.0 Gameplay</div>
                 {latestVideos.map((obj, index) => (
                   <div
-                    className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#28282ba1] ${
+                    className={`grid grid-cols-3 sm:grid-cols-4 items-center cursor-pointer px-2 hover:bg-[#28282ba1] ${
                       obj == url ? `bg-[#28282b] text-white rounded` : ``
                     }`}
                     onClick={() => {
@@ -283,15 +280,16 @@ export default function Archive() {
                     <div className={`text-end`}>
                       {obj.asp} / {obj.fea}
                     </div>
-                    <div className="text-end">{obj.tim}</div>
-                    <div className="text-end">{obj.dat.slice(0, 10)}</div>
+                    <div className="text-end">
+                      {obj.tim} | {obj.dat.slice(0, 10)}
+                    </div>
                   </div>
                 ))}
               </div>
             </>
           )}
           <div
-            className="my-4 bg-[#000000] rounded py-1"
+            className="my-2 max-h-[400px] overflow-y-scroll bg-[#000000]/80 rounded py-1"
             style={{
               borderStyle: "solid", // Required
               borderWidth: "8px",
@@ -301,7 +299,7 @@ export default function Archive() {
             <div className="px-2 text-[14px] mb-2">Early Access Gameplay</div>
             {latest10videos.map((obj, index) => (
               <div
-                className={`grid grid-cols-4 sm:grid-cols-5 items-center cursor-pointer px-2 hover:bg-[#28282ba1] ${
+                className={`grid grid-cols-3 sm:grid-cols-4 items-center cursor-pointer px-2 hover:bg-[#28282ba1] ${
                   obj == url ? `bg-[#28282b] text-white` : ``
                 }`}
                 onClick={() => {
@@ -321,13 +319,14 @@ export default function Archive() {
                   {obj.nam}
                 </div>
                 <div className="hidden sm:block">
-                  <div className="text-end">{obj.loc}</div>
+                  <div className="text-start">{obj.loc}</div>
                 </div>
                 <div className={`text-end ${obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`}`}>
                   {obj.asp} / {obj.fea}
                 </div>
-                <div className="text-end">{obj.tim}</div>
-                <div className="text-end">{obj.dat}</div>
+                <div className="text-end">
+                  {obj.tim} | {obj.dat.slice(0, 10)}
+                </div>
               </div>
             ))}
           </div>

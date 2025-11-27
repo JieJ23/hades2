@@ -57,8 +57,8 @@ export default function EARanking() {
   return (
     <main className="relative">
       <Background />
+      <SideNav />
       <div className="max-w-[1600px] font-[Ale] text-[12px] mx-auto text-white">
-        <SideNav />
         <EAContent />
         <>
           <div className="p-1 flex justify-center gap-1 my-2 font-[Ubuntu] text-[10px] md:text-[11px]">

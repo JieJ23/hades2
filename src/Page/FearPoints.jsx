@@ -2,9 +2,7 @@ import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
-import { p9data } from "../Data/P9Data";
-import { v1data } from "../Data/V1data";
-import { p11data } from "../Data/P11Data";
+import { v1bundle, eabundle } from "../Data/DataBundle";
 import { useState } from "react";
 
 import { useData } from "../Hook/DataFetch";
@@ -18,15 +16,13 @@ export default function FearPoints() {
   const [category, setCategory] = useState(null);
   const [addea, setAddEa] = useState(true);
 
-  const availableData = [...(addea ? p9data : []), ...(addea ? p11data : []), ...v1data, ...(posts || [])].filter(
-    (obj) => {
-      if (category === null) {
-        return obj.loc;
-      } else {
-        return obj.loc === category;
-      }
+  const availableData = [...(addea ? eabundle : []), ...v1bundle, ...(posts || [])].filter((obj) => {
+    if (category === null) {
+      return obj.loc;
+    } else {
+      return obj.loc === category;
     }
-  );
+  });
   const availablePlayer = [...new Set(availableData.map((obj) => obj.nam))];
 
   const store_pb = [];
@@ -45,15 +41,15 @@ export default function FearPoints() {
     }
     store_pb.push(store);
   }
-  const finalized_store = store_pb.sort(
-    (a, b) => b.reduce((a, b) => a + +b.fea, 0) - a.reduce((a, b) => a + +b.fea, 0)
-  );
+  const finalized_store = store_pb
+    .sort((a, b) => b.reduce((a, b) => a + +b.fea, 0) - a.reduce((a, b) => a + +b.fea, 0))
+    .slice(0, 20);
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
+      <SideNav />
       <div className="max-w-[1400px] mx-auto px-2">
-        <SideNav />
         {loader ? (
           <Loading />
         ) : (
@@ -104,7 +100,9 @@ export default function FearPoints() {
                     }}
                   >
                     <div className="text-[16px] flex justify-between">
-                      <div>{arr[0].nam}</div>
+                      <div>
+                        {index + 1}. {arr[0].nam}
+                      </div>
                       <div className="flex gap-4">
                         <div>{finalized_store[index].length} Aspects</div>
                         <div>{totalPoints} Points</div>

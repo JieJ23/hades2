@@ -63,8 +63,8 @@ export default function ArcanaDeck() {
   return (
     <main className="select-none relative">
       <Background />
+      <SideNav />
       <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto">
-        <SideNav />
         <div className="w-full">
           <section className="p-2">
             <div className="flex flex-wrap gap-1">
