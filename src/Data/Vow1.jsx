@@ -19,3 +19,23 @@ export const vowid = {
 };
 
 export const idvow = Object.fromEntries(Object.entries(vowid).map(([key, value]) => [value, key]));
+
+export const idShrine = {
+  EnemyDamageShrineUpgrade: "Pain",
+  EnemyHealthShrineUpgrade: "Grit",
+  EnemyShieldShrineUpgrade: "Wards",
+  EnemySpeedShrineUpgrade: "Frenzy",
+  EnemyCountShrineUpgrade: "Hordes",
+  NextBiomeEnemyShrineUpgrade: "Menace",
+  EnemyRespawnShrineUpgrade: "Return",
+  EnemyEliteShrineUpgrade: "Fangs",
+  HealingReductionShrineUpgrade: "Scars",
+  ShopPricesShrineUpgrade: "Debt",
+  MinibossCountShrineUpgrade: "Shadow",
+  BoonSkipShrineUpgrade: "Forfeit",
+  BiomeSpeedShrineUpgrade: "Time",
+  LimitGraspShrineUpgrade: "Void",
+  BoonManaReserveShrineUpgrade: "Hubris",
+  BanUnpickedBoonsShrineUpgrade: "Denial",
+  BossDifficultyShrineUpgrade: "Rivals",
+};

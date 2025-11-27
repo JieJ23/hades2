@@ -7,7 +7,9 @@ import { useState } from "react";
 
 import { sdata } from "../Data/SData";
 
-import { parsesectoTime } from "../Data/Misc";
+import { parsesectoTime, oathMatch } from "../Data/Misc";
+import { idMetaUpgrade } from "../Data/Arcana1";
+import { idShrine, vowid } from "../Data/Vow1";
 
 const findBiomeName = (bio) => {
   switch (bio) {
@@ -62,38 +64,34 @@ export default function ProfileSum() {
   let info = null;
 
   if (data) {
-    const gameState = data.GameState;
+    const gameState = data.CurrentRun;
 
     info = {
-      totalRuns: gameState.CompletedRunsCache,
-      totalClearRuns: gameState.ClearedRunsCache,
-      totalClearRuns_UW: gameState.ClearedUnderworldRunsCache,
-      totalClearRuns_S: gameState.ClearedSurfaceRunsCache,
-      fastestSurfaceRun: gameState.FastestSurfaceClearTimeCache,
-      fastestUWRun: gameState.FastestUnderworldClearTimeCache,
-      highestFearSurface: gameState.HighestShrinePointClearSurfaceCache,
-      highestFearUW: gameState.HighestShrinePointClearUnderworldCache,
-      //   Misc
-      //   damage_em: gameState.DamageDealtByEnemiesRecord,
-      //   damage_hero: gameState.DamageDealtByHeroRecord,
-      //   em_killed: gameState.EnemyKills,
-      //   roomEntered: gameState.RoomsEntered,
-      biomeVisits: gameState.BiomeVisits,
-
-      //  Boon/KS
-      keepsakes_store: gameState.KeepsakeChambers,
-      loot_pickup: gameState.LootPickups,
-      codexStats: gameState.LifetimeTraitStats,
+      biomeTimes: Object.entries(gameState.BiomeGameplayTimes),
+      keepsakes: Object.entries(gameState.KeepsakeCache),
+      shrinePoints: gameState.ShrinePointsCache,
+      runTime: gameState.GameplayTime,
+      traitCache: Object.entries(gameState.TraitRarityCache).filter(
+        (ite) => !ite[0].toLowerCase().includes("metaupgrade")
+      ),
+      bossEncounter: Object.keys(gameState.BossHealthBarRecord),
+      bossRunTime: Object.entries(gameState.EncounterClearStats),
+      depthCache: Object.entries(gameState.EncountersDepthCache).sort((a, b) => a[1] - b[1]),
+      // Misc
+      shrineCache: Object.entries(gameState.ShrineUpgradesCache).sort(
+        (a, b) => vowid[idShrine[a[0]]] - vowid[idShrine[b[0]]]
+      ),
+      metaCards: Object.keys(gameState.TraitRarityCache).filter((ite) => ite.toLowerCase().includes("metaupgrade")),
     };
   }
 
   //   Other Calculations
-
+  console.log(data);
   return (
     <div className="h-full min-h-lvh relative overflow-hidden">
-      <Background />
+      {/* <Background /> */}
       <SideNav />
-      <div className="max-w-[1800px] font-[Ale] text-[12px] md:text-[13px] mx-auto px-1 my-4">
+      <div className="max-w-[1400px] font-[Ale] text-[14px] mx-auto px-1 my-4">
         <div className="my-4 flex flex-col gap-1">
           <input
             type="file"
@@ -128,169 +126,131 @@ export default function ProfileSum() {
               borderImage: "url('/Misc/frame.webp') 40 stretch",
             }}
           >
-            <div className="flex flex-col gap-4">
-              {/* Main Entries */}
-              <div className="grid grid-cols-2 md:grid-cols-4 text-gray-300">
-                <div className="flex flex-col">
-                  <div>Total Runs / Cleared</div>
-                  <div>
-                    {info.totalRuns} | {info.totalClearRuns}
+            <div className="flex flex-wrap gap-6 my-4">
+              <div className="gap-4">
+                {info.biomeTimes.map((arr, index) => (
+                  <div className="flex gap-2">
+                    <div>{findBiomeName(arr[0])}:</div>
+                    <div>
+                      {index === 0
+                        ? parsesectoTime(arr[1])
+                        : parsesectoTime(info.biomeTimes[index][1] - info.biomeTimes[index - 1][1])}
+                    </div>
                   </div>
-                </div>
-                <div className="flex flex-col">
-                  <div>Clear Region S/UW</div>
-                  <div>
-                    {info.totalClearRuns_S} | {info.totalClearRuns_UW}
+                ))}
+              </div>
+              <div className="gap-4">
+                {info.keepsakes.map((arr, index) => (
+                  <div className="flex flex-col gap-2">
+                    <div>
+                      {arr[0]}: {sdata[arr[1]]}
+                    </div>
                   </div>
+                ))}
+              </div>
+              <div>Fear: {info.shrinePoints}</div>
+              <div>Time: {parsesectoTime(info.runTime)}</div>
+            </div>
+            <div className="flex flex-wrap gap-1 my-4">
+              {info.bossEncounter.map((ite) => (
+                <div className="border border-white/20 p-2 py-1 rounded">{ite}</div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-1 my-4">
+              {info.bossRunTime.map((arr) => (
+                <div className="border border-white/20 p-2 py-1 rounded">
+                  <div>{arr[0]}</div>
+                  <div className="text-center">{parsesectoTime(arr[1].ClearTime)}</div>
+                  <div className="text-center">{arr[1].TookDamage ? "-" : `Damageless`}</div>
                 </div>
-                <div className="flex flex-col">
-                  <div>Speed S/UW</div>
+              ))}
+            </div>
+            {/* Arcana & Shrine */}
+            <div className="flex flex-wrap gap-2 my-4">
+              <div>
+                {(() => {
+                  const deckCards = info.metaCards
+                    .map((ite) => idMetaUpgrade[ite])
+                    .sort((a, b) => a.slice(1) - b.slice(1));
+
+                  let newDeck = [];
+
+                  for (let i = 0; i < 25; i++) {
+                    let order = `c${i + 1}`;
+                    if (deckCards.includes(order)) {
+                      newDeck.push(order);
+                    } else {
+                      newDeck.push(`c0`);
+                    }
+                  }
+
+                  return (
+                    <div className="grid grid-cols-5 justify-start items-start w-full max-w-[350px]">
+                      {newDeck.map((ite) => (
+                        <img src={`/Arcane/${ite}.png`} className="w-full" />
+                      ))}
+                    </div>
+                  );
+                })()}
+              </div>
+              <div>
+                {info.metaCards.map((item) => (
                   <div>
-                    {parsesectoTime(info.fastestSurfaceRun)} | {parsesectoTime(info.fastestUWRun)}
+                    {item} | {idMetaUpgrade[item]}
                   </div>
-                </div>
-                <div className="flex flex-col">
-                  <div>Fear S/UW</div>
-                  <div>
-                    {info.highestFearSurface} | {info.highestFearUW}
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2 my-4">
+              <div className="grid grid-cols-4 gap-1 w-full max-w-[450px] font-[Ubuntu] text-[12px]">
+                {info.shrineCache.map((arr, index) => (
+                  <div
+                    className={`bg-[#28282b] rounded p-1 py-2 flex gap-1 items-center ${
+                      index === 16 && `col-start-2 col-span-2`
+                    }`}
+                    key={index}
+                  >
+                    <img src={`/Vows/${idShrine[arr[0]]}.png`} alt="Vows" className="size-7 md:size-8" />
+                    <div>
+                      <div>{idShrine[arr[0]]}</div>
+                      <div className="flex gap-0.5">
+                        {Array.from({ length: oathMatch[vowid[idShrine[arr[0]]] - 1].length - 1 }, (_, i) => (
+                          <div
+                            key={i}
+                            className={`w-2 h-2 rounded-full ${i < arr[1] ? `bg-[#00ffaa]` : `bg-[black]`}`}
+                          />
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              {/* Rooms Stats */}
-              {/* <div>
-                <div className="grid grid-cols-5">
-                  {Object.entries(info.roomEntered)
-                    .sort((a, b) => b[1] - a[1])
-                    .slice(0, 100)
-                    .map(([ky, idx]) => (
-                      <div>
-                        {ky} : {idx}
-                      </div>
-                    ))}
-                </div>
-              </div> */}
-              <div>
-                <div className="grid grid-cols-4 text-gray-300">
-                  {Object.entries(info.biomeVisits)
-                    .sort((a, b) => b[1] - a[1])
-                    .slice(0, 100)
-                    .map(([ky, idx]) => (
-                      <div>
-                        {findBiomeName(ky)} : {idx}
-                      </div>
-                    ))}
-                </div>
+                ))}
               </div>
               <div>
-                <div className="grid grid-cols-4 text-gray-300">
-                  {Object.entries(info.loot_pickup)
-                    .sort((a, b) => b[1] - a[1])
-                    .slice(0, 200)
-                    .map(([ky, idx]) => (
-                      <div>
-                        {ky} : {Math.round(idx).toLocaleString("en-US")}
-                      </div>
-                    ))}
-                </div>
+                {info.shrineCache.map((arr) => (
+                  <div className="grid grid-cols-2 max-w-[500px]">
+                    <div>{idShrine[arr[0]]}</div>
+                    <div>{arr[1]}</div>
+                  </div>
+                ))}
               </div>
-              {/* EM Dmg / Hero Dmg / EM Killed / Elite Attribute Killed */}
-              {/* <div>
-                <div className="grid grid-cols-5">
-                  {Object.entries(info.damage_em)
-                    .sort((a, b) => b[1] - a[1])
-                    .slice(0, 100)
-                    .map(([ky, idx]) => (
-                      <div>
-                        {ky} : {Math.round(idx).toLocaleString("en-US")}
-                      </div>
-                    ))}
+            </div>
+            {/*  */}
+            <div className="gap-4">
+              {info.traitCache.map((arr, index) => (
+                <div className="text-[#00ffaa]">
+                  {index + 1}.{sdata[arr[0]]}
+                  <span className="text-gray-300">({arr[0]})</span>
+                  <span className="text-[orange]">({arr[1]})</span>
                 </div>
-              </div>
-              <div>
-                <div className="grid grid-cols-5">
-                  {Object.entries(info.damage_hero)
-                    .sort((a, b) => b[1] - a[1])
-                    .slice(0, 100)
-                    .map(([ky, idx]) => (
-                      <div>
-                        {ky} : {Math.round(idx).toLocaleString("en-US")}
-                      </div>
-                    ))}
+              ))}
+            </div>
+            <div className="my-4 w-full max-w-[600px]">
+              {info.depthCache.map((arr) => (
+                <div className="grid grid-cols-2">
+                  <div>{arr[0]}</div>
+                  <div>{arr[1]}</div>
                 </div>
-              </div>
-              <div>
-                <div className="grid grid-cols-5">
-                  {Object.entries(info.damage_em)
-                    .sort((a, b) => b[1] - a[1])
-                    .slice(0, 100)
-                    .map(([ky, idx]) => (
-                      <div>
-                        {ky} : {Math.round(idx).toLocaleString("en-US")}
-                      </div>
-                    ))}
-                </div>
-              </div> */}
-              {/* Keep / Loot / */}
-              <div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 text-gray-300">
-                  {Object.entries(info.keepsakes_store)
-                    .sort((a, b) => b[1] - a[1])
-                    .slice(0, 100)
-                    .map(([ky, idx]) => (
-                      <div className="flex gap-1 py-1">
-                        <img src={`/buildgui/${sdata[ky]}.png`} alt="Keeps" className="size-8" />
-                        <div className="flex flex-col">
-                          <div>{sdata[ky]}</div>
-                          <div>{Math.round(idx).toLocaleString("en-US")}</div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              {/* Codex */}
-              <div className="overflow-x-scroll w-full">
-                <div className="flex w-full text-gray-300">
-                  <div className="w-full min-w-[300px]">Name</div>
-                  <div className="w-full min-w-[150px] text-center">Clear</div>
-                  <div className="w-full min-w-[150px] text-center">Surface Clear</div>
-                  <div className="w-full min-w-[150px] text-center">UW Clear</div>
-                  <div className="w-full min-w-[150px] text-center">Fastest Surface</div>
-                  <div className="w-full min-w-[150px] text-center">Fastest UW</div>
-                  <div className="w-full min-w-[150px] text-center">H.F. Surface</div>
-                  <div className="w-full min-w-[150px] text-center">H.F. UW</div>
-                  <div className="w-full min-w-[150px] text-center">Total Use</div>
-                </div>
-                <div className="flex flex-col text-gray-300">
-                  {Object.entries(info.codexStats)
-                    .sort((a, b) => b[1] - a[1])
-                    .slice(0, 200)
-                    .map(([ky, idx], index) => (
-                      <div className={`flex`}>
-                        <div className="w-full min-w-[300px] flex flex-col">
-                          <div>
-                            {index + 1}. {sdata[ky]} ({ky})
-                          </div>
-                        </div>
-                        <div className="w-full min-w-[150px] text-center bg-[#131111]/50">{idx.ClearCount}</div>
-                        <div className="w-full min-w-[150px] text-center ">{idx.ClearCountSurface}</div>
-                        <div className="w-full min-w-[150px] text-center bg-[#131111]/50">
-                          {idx.ClearCountUnderworld}
-                        </div>
-                        <div className="w-full min-w-[150px] text-center">
-                          {idx.FastestTimeSurface && parsesectoTime(idx.FastestTimeSurface)}
-                        </div>
-                        <div className="w-full min-w-[150px] text-center bg-[#131111]/50">
-                          {idx.FastestTimeUnderworld && parsesectoTime(idx.FastestTimeUnderworld)}
-                        </div>
-                        <div className="w-full min-w-[150px] text-center">{idx.HighestShrinePointsSurface}</div>
-                        <div className="w-full min-w-[150px] text-center bg-[#131111]/50">
-                          {idx.HighestShrinePointsUnderworld}
-                        </div>
-                        <div className="w-full min-w-[150px] text-center">{idx.UseCount}</div>
-                      </div>
-                    ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         )}

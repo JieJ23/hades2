@@ -27,3 +27,31 @@ export const idarcana = {
 };
 
 export const arcanaid = Object.fromEntries(Object.entries(idarcana).map(([key, value]) => [value, key]));
+
+export const idMetaUpgrade = {
+  ChannelSlowMetaUpgrade: "c1",
+  DoorHealMetaUpgrade: "c2",
+  LowManaDamageMetaupgrade: "c3",
+  CastDamageMetaUpgrade: "c4",
+  SorceryRegenMetaUpgrade: "c5",
+  InsideCastBuffMetaUpgrade: "c6",
+  HealthManaBonusMetaUpgrade: "c7",
+  DodgeBonusMetaUpgrade: "c8",
+  ManaOverTimeMetaUpgrade: "c9",
+  MagicCritMetaUpgrade: "c10",
+  SprintShieldMetaUpgrade: "c11",
+  LastStandSlowTimeMetaUpgrade: "c12",
+  ChamberHealthMetaUpgrade: "c13",
+  EffectVulnerabilityMetaUpgrade: "c14",
+  BossShieldMetaUpgrade: "c15",
+  DoorRerollMetaUpgrade: "c16",
+  StartingGoldMetaUpgrade: "c17",
+  MetaToRunMetaUpgrade: "c18",
+  RarityBoostMetaUpgrade: "c19",
+  DuoRarityBoostMetaUpgrade: "c20",
+  RerollTradeOffMetaUpgrade: "c21",
+  PanelRerollMetaUpgrade: "c22",
+  LowHealthBuffMetaUpgrade: "c23",
+  EpicRarityBoostMetaUpgrade: "c24",
+  BossProgressionMetaUpgrade: "c25",
+};
