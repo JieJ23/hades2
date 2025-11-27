@@ -1,6 +1,5 @@
 export const response = [
   {
-    dat: "11/18/2025",
     nam: "Mel's barely disguised fetish",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -20,7 +19,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ryan G",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -40,7 +38,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Hellish",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -60,7 +57,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Joe",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -80,7 +76,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Taylor",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -100,7 +95,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Lambchops",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -120,7 +114,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Yxdisa",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -140,7 +133,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jess",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -160,7 +152,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "zach",
     qa1: "Xinth / Black Coat",
     qa2: "Nergal",
@@ -180,7 +171,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "jim",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Staff",
@@ -200,7 +190,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "James B.",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -220,7 +209,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Goon Lord",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -240,7 +228,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Guitarbow",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -260,7 +247,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Cainabob",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -280,7 +266,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "lun",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -300,7 +285,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ssnessy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -320,7 +304,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "fry",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -340,7 +323,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "M",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -360,7 +342,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Mj ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Abstain",
@@ -380,7 +361,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Serge",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
@@ -400,7 +380,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Mike",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -420,7 +399,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Khylah",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -440,7 +418,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "BMG",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Pan",
@@ -460,7 +437,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Marboreus",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -480,7 +456,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "aggrobuns",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -500,7 +475,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jacob",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -520,7 +494,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "V",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -540,7 +513,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "ParanoidDrone",
     qa1: "Revaal / Argent Skull",
     qa2: "Moros",
@@ -560,7 +532,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "colorsdontgo ",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -580,7 +551,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ExplodeBallZ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -600,7 +570,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Balls",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
@@ -620,7 +589,6 @@ export const response = [
     qa16: "Abstain",
   },
   {
-    dat: "11/17/2025",
     nam: "Stevo ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -640,7 +608,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Devonic",
     qa1: "Xinth / Black Coat",
     qa2: "Morrigan",
@@ -660,7 +627,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sean d.",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
@@ -680,7 +646,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Robert",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -700,7 +665,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Z",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
@@ -720,7 +684,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "IKSB",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -740,7 +703,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Morgan",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -760,7 +722,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Vincent",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -780,7 +741,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Erick N",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -800,7 +760,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "b",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -820,7 +779,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Cryptic",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -840,7 +798,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sliver",
     qa1: "Xinth / Black Coat",
     qa2: "Shiva",
@@ -860,7 +817,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bec",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -880,7 +836,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Alex",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -900,7 +855,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "T",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -920,7 +874,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Tay",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -940,7 +893,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sheen",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -960,7 +912,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Viggo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -980,7 +931,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Rick",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -1000,7 +950,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Trace",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -1020,7 +969,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "lux",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -1040,7 +988,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Zack",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -1060,7 +1007,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Miles ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -1080,7 +1026,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "may",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -1100,7 +1045,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "E",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
@@ -1120,7 +1064,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sam",
     qa1: "Revaal / Argent Skull",
     qa2: "Thanatos",
@@ -1140,7 +1083,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Alibanian",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -1160,7 +1102,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Supercatsup",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -1180,7 +1121,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Lankygit",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -1200,7 +1140,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Will S.",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -1220,7 +1159,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "E",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -1240,7 +1178,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Buu",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -1260,7 +1197,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "C",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -1280,7 +1216,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "parasuko",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -1300,7 +1235,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ant",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Supay",
@@ -1320,7 +1254,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jo",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -1340,7 +1273,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "austin",
     qa1: "Xinth / Black Coat",
     qa2: "Momus",
@@ -1360,7 +1292,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Andrew",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -1380,7 +1311,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "AltzQ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -1400,7 +1330,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "N",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -1420,7 +1349,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Looseseal",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -1440,7 +1368,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "GAGIK ",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -1460,7 +1387,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Crump’s Brother",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -1480,7 +1406,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Endo213",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -1500,7 +1425,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Skychrono2 ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -1520,7 +1444,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Roie",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Nergal",
@@ -1540,7 +1463,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "echothesıs",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -1560,7 +1482,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "DarkNinjaMole ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -1580,7 +1501,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Mitch",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -1600,7 +1520,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Name",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -1620,7 +1539,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Senerio",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -1640,7 +1558,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Neck",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -1660,7 +1577,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "mwssias",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -1680,7 +1596,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Daniel",
     qa1: "Descura / Witch's Staff",
     qa2: "Supay",
@@ -1700,7 +1615,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jordan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -1720,7 +1634,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "LorenzoT",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -1740,7 +1653,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kratos",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -1760,7 +1672,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Souchouz",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
@@ -1780,7 +1691,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Chavtastic",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -1800,7 +1710,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Fontofwisdom",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -1820,7 +1729,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Celene",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -1840,7 +1748,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mike",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -1860,7 +1767,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jack Lucas",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
@@ -1880,7 +1786,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Carl Benson",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -1900,7 +1805,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jacob",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
@@ -1920,7 +1824,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "jam",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -1940,7 +1843,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Rhia",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -1960,7 +1862,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Vinícius ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -1980,7 +1881,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Rooster",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
@@ -2000,7 +1900,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Whitney joe",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
@@ -2020,7 +1919,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ren",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -2040,7 +1938,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "foobar",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -2060,7 +1957,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Liam Doyle",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -2080,7 +1976,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Miranda",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -2100,7 +1995,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Avery",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -2120,7 +2014,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Matt D",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -2140,7 +2033,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Barbara",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Selene",
@@ -2160,7 +2052,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "MC Clap Yo Handz",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -2180,7 +2071,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Kkn'",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -2200,7 +2090,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Vin",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Staff",
@@ -2220,7 +2109,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "jo",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
@@ -2240,7 +2128,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Emma ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Moros",
@@ -2260,7 +2147,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ben",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -2280,7 +2166,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ringabel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -2300,7 +2185,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "K",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Blades",
@@ -2320,7 +2204,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Vg",
     qa1: "Xinth / Black Coat",
     qa2: "Moros",
@@ -2340,7 +2223,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Eric",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -2360,7 +2242,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Fight Money",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -2380,7 +2261,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "William",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -2400,7 +2280,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "NJL",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Anubis",
@@ -2420,7 +2299,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "rifkadm",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -2440,7 +2318,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Miccles",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -2460,7 +2337,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Eureka",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -2480,7 +2356,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jake",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -2500,7 +2375,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "anon",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
@@ -2520,7 +2394,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "AnderNoob ",
     qa1: "Descura / Witch's Staff",
     qa2: "Persephone",
@@ -2540,7 +2413,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Skye",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -2560,7 +2432,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Walter",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -2580,7 +2451,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "ienjoyhotdogs",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -2600,7 +2470,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Pame",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -2620,7 +2489,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "ZZZ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -2640,7 +2508,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dragoncat",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -2660,7 +2527,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "B",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -2680,7 +2546,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "heskitgel",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -2700,7 +2565,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Cephandrius ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -2720,7 +2584,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Allanon",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Nergal",
@@ -2740,7 +2603,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Savage8251199",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -2760,7 +2622,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "MaverickMTA",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -2780,7 +2641,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sara ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -2800,7 +2660,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Godmodium",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -2820,7 +2679,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "JediHunter27",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -2840,7 +2698,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Grace",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -2860,7 +2717,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "yax2bxc",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Artemis",
@@ -2880,7 +2736,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bandana_dee ",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -2900,7 +2755,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Maya",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
@@ -2920,7 +2774,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "sc",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -2940,7 +2793,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Flygon_jin",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -2960,7 +2812,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jonathan",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -2980,7 +2831,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ninjanayr",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -3000,7 +2850,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ykdp",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -3020,7 +2869,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rob",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -3040,7 +2888,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "hades ii",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -3060,7 +2907,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Batat ",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
@@ -3080,7 +2926,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "iplexed",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -3100,7 +2945,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Do we really have to say what our name is tho?",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -3120,7 +2964,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jake",
     qa1: "Xinth / Black Coat",
     qa2: "Supay",
@@ -3140,7 +2983,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "M b ",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -3160,7 +3002,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Spike",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -3180,7 +3021,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Infoskip",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -3200,7 +3040,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Danny",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -3220,7 +3059,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sniv ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -3240,7 +3078,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Paul",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -3260,7 +3097,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jim",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Supay",
@@ -3280,7 +3116,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sav",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -3300,7 +3135,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sol Soof Solonga Solaris Oof",
     qa1: "Xinth / Black Coat",
     qa2: "Shiva",
@@ -3320,7 +3154,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Dan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -3340,7 +3173,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Thar",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
@@ -3360,7 +3192,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Widget",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -3380,7 +3211,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "nick",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -3400,7 +3230,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mrunfunny7",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -3420,7 +3249,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "John",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -3440,7 +3268,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "G",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
@@ -3460,7 +3287,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "God",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Nergal",
@@ -3480,7 +3306,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Vic",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -3500,7 +3325,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Spal",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
@@ -3520,7 +3344,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bob",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -3540,7 +3363,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Thomas",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -3560,7 +3382,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Gerald",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
@@ -3580,7 +3401,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Gull",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -3600,7 +3420,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Fart",
     qa1: "Revaal / Argent Skull",
     qa2: "Moros",
@@ -3620,7 +3439,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ramne",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Persephone",
@@ -3640,7 +3458,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "summer",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -3660,7 +3477,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "KatkaDragon",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -3680,7 +3496,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "memmie",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -3700,7 +3515,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Willy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -3720,7 +3534,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Momo🩷",
     qa1: "Descura / Witch's Staff",
     qa2: "Hel",
@@ -3740,7 +3553,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "tofu",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Hel",
@@ -3760,7 +3572,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "silex_trombone",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -3780,7 +3591,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Angel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
@@ -3800,7 +3610,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Nazvar",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
@@ -3820,7 +3629,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Daniel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -3840,7 +3648,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ryderd ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -3860,7 +3667,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Azra",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Artemis",
@@ -3880,7 +3686,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "JF",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
@@ -3900,7 +3705,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "locitronki",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -3920,7 +3724,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Conor B",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
@@ -3940,7 +3743,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Parker",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Nergal",
@@ -3960,7 +3762,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bloo",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Staff",
@@ -3980,7 +3781,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bloo",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Staff",
@@ -4000,7 +3800,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Michael",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -4020,7 +3819,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "cc",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Persephone",
@@ -4040,7 +3838,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Shelby",
     qa1: "Xinth / Black Coat",
     qa2: "Thanatos",
@@ -4060,7 +3857,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jynx",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -4080,7 +3876,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "RidiculousHat",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -4100,7 +3895,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Nick",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -4120,7 +3914,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "kindly_del",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
@@ -4140,7 +3933,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Fiery",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -4160,7 +3952,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "synx",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -4180,7 +3971,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Simplyjules89",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -4200,7 +3990,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bryan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -4220,7 +4009,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Aly",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -4240,7 +4028,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Slickricks",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
@@ -4260,7 +4047,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Shinya",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -4280,7 +4066,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Pete",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -4300,7 +4085,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "wha",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -4320,7 +4104,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Declan",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -4340,7 +4123,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Colly",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -4360,7 +4142,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Chloe",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
@@ -4380,7 +4161,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Gawen",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -4400,7 +4180,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "haunting chain",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -4420,7 +4199,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jade",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -4440,7 +4218,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jonny Lasagna",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Artemis",
@@ -4460,7 +4237,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: " Eep",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -4480,7 +4256,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sz",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
@@ -4500,7 +4275,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Random",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
@@ -4520,7 +4294,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "mango77",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -4540,7 +4313,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Amy",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -4560,7 +4332,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "KinkyThoughtMan",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -4580,7 +4351,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "JB",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -4600,7 +4370,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Dee",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
@@ -4620,7 +4389,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Halapino13",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Abstain",
@@ -4640,7 +4408,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Nilastra",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -4660,7 +4427,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "J",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -4680,7 +4446,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Random",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -4700,7 +4465,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Agata",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -4720,7 +4484,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "blank",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -4740,7 +4503,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "blank",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -4760,7 +4522,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "piloaf",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -4780,7 +4541,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Chel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Selene",
@@ -4800,7 +4560,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Echo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -4820,7 +4579,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Dan",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -4840,7 +4598,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "mntydf ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -4860,7 +4617,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ed",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -4880,7 +4636,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "melinoe",
     qa1: "Revaal / Argent Skull",
     qa2: "Artemis",
@@ -4900,7 +4655,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Logan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -4920,7 +4674,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Alex K",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -4940,7 +4693,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "G",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
@@ -4960,7 +4712,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Charlie",
     qa1: "Xinth / Black Coat",
     qa2: "Eos",
@@ -4980,7 +4731,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Tristan j",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -5000,7 +4750,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Alex",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -5020,7 +4769,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Chukmag",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -5040,7 +4788,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Yves",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -5060,7 +4807,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "d",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -5080,7 +4826,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jay",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -5100,7 +4845,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mark",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -5120,7 +4864,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Socks",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -5140,7 +4883,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ss",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -5160,7 +4902,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Supay Enjoyer",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -5180,7 +4921,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "FrozenDino",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -5200,7 +4940,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Talia",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -5220,7 +4959,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Zagmzp",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -5240,7 +4978,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ezb",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -5260,7 +4997,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Guy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -5280,7 +5016,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Daniel ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -5300,7 +5035,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Creative",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -5320,7 +5054,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Lezz",
     qa1: "Xinth / Black Coat",
     qa2: "Morrigan",
@@ -5340,7 +5073,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bluedragoncultist",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -5360,7 +5092,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Xxx",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -5380,7 +5111,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Brandon",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Staff",
@@ -5400,7 +5130,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "John Hades",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
@@ -5420,7 +5149,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Chimp",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -5440,7 +5168,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "R",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Staff",
@@ -5460,7 +5187,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Arthur ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -5480,7 +5206,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Biblio-Phil",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
@@ -5500,7 +5225,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "tt",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -5520,7 +5244,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Grey Johnston",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -5540,7 +5263,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Magi",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -5560,7 +5282,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "TheWallaby",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -5580,7 +5301,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "D",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Supay",
@@ -5600,7 +5320,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "FLYING_POTATO",
     qa1: "Descura / Witch's Staff",
     qa2: "Moros",
@@ -5620,7 +5339,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "November ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Selene",
@@ -5640,7 +5358,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jmoon",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -5660,7 +5377,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "TwistedSalsa",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -5680,7 +5396,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Avery",
     qa1: "Xinth / Black Coat",
     qa2: "Supay",
@@ -5700,7 +5415,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jb",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -5720,7 +5434,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Femi",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
@@ -5740,7 +5453,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Josh ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Pan",
@@ -5760,7 +5472,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jared",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
@@ -5780,7 +5491,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Fogwoggler",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -5800,7 +5510,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Zachary",
     qa1: "Descura / Witch's Staff",
     qa2: "Supay",
@@ -5820,7 +5529,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Connor",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -5840,7 +5548,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Skullblade",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -5860,7 +5567,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "DJ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -5880,7 +5586,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Emmett ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -5900,7 +5605,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "VickyB",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Supay",
@@ -5920,7 +5624,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Hyacinthus",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -5940,7 +5643,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Booradley ",
     qa1: "Revaal / Argent Skull",
     qa2: "Melinoe Staff",
@@ -5960,7 +5662,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bruce",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -5980,7 +5681,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "jared m",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
@@ -6000,7 +5700,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Devin ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -6020,7 +5719,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "noybe",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -6040,7 +5738,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "juls",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Nergal",
@@ -6060,7 +5757,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Marcello Reis",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Nergal",
@@ -6080,7 +5776,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jake",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -6100,7 +5795,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Beary",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -6120,7 +5814,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Gee",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -6140,7 +5833,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "D",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Momus",
@@ -6160,7 +5852,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Yesh",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -6180,7 +5871,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "A",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
@@ -6200,7 +5890,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "CP",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Selene",
@@ -6220,7 +5909,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "AJB",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Artemis",
@@ -6240,7 +5928,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "henrijsvp",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -6260,7 +5947,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Gully",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -6280,7 +5966,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rowailez",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -6300,7 +5985,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "ImaginaryCat ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -6320,7 +6004,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Aweea",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -6340,7 +6023,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ali",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Eos",
@@ -6360,7 +6042,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Kiwi",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Anubis",
@@ -6380,7 +6061,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Monika#5",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -6400,7 +6080,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jimmy",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -6420,7 +6099,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Dylan",
     qa1: "Xinth / Black Coat",
     qa2: "Nyx",
@@ -6440,7 +6118,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Y",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -6460,7 +6137,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "J",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -6480,7 +6156,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sávio ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -6500,7 +6175,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "soup",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
@@ -6520,7 +6194,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sid",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -6540,7 +6213,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Cody",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -6560,7 +6232,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Z",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
@@ -6580,7 +6251,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "G",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
@@ -6600,7 +6270,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "WJ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -6620,7 +6289,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Robert",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -6640,7 +6308,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "ML",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -6660,7 +6327,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "...",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -6680,7 +6346,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "MA",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -6700,7 +6365,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Anthony T",
     qa1: "Descura / Witch's Staff",
     qa2: "Nergal",
@@ -6720,7 +6384,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bossy",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -6740,7 +6403,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "LeBlur",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -6760,7 +6422,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Alex",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -6780,7 +6441,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dmtm",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -6800,7 +6460,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Richie",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -6820,7 +6479,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "TheFrith",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
@@ -6840,7 +6498,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Wh3t",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -6860,7 +6517,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "PGZ4sheezy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
@@ -6880,7 +6536,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "cosmopluto",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
@@ -6900,7 +6555,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "IVM",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
@@ -6920,7 +6574,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Zac",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -6940,7 +6593,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Zarys",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -6960,7 +6612,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "TJ salter",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -6980,7 +6631,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bee",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -7000,7 +6650,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Rags",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -7020,7 +6669,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Noah",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
@@ -7040,7 +6688,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "XF",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -7060,7 +6707,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Henry",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -7080,7 +6726,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bethany",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -7100,7 +6745,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Billy R",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -7120,7 +6764,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bry",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -7140,7 +6783,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Max",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -7160,7 +6802,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Montregloe",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -7180,7 +6821,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "y",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -7200,7 +6840,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "SavageBeaver",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -7220,7 +6859,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Eris for life",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -7240,7 +6878,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Grey painter",
     qa1: "Xinth / Black Coat",
     qa2: "Anubis",
@@ -7260,7 +6897,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Serafin",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -7280,7 +6916,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "John",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
@@ -7300,7 +6935,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Chicken",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
@@ -7320,7 +6954,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Test",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
@@ -7340,7 +6973,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jellyvine",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -7360,7 +6992,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rachael",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -7380,7 +7011,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "tortuga",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -7400,7 +7030,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Grim4d",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -7420,7 +7049,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Qnibi",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
@@ -7440,7 +7068,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Megan",
     qa1: "Xinth / Black Coat",
     qa2: "Persephone",
@@ -7460,7 +7087,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Shinigami ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -7480,7 +7106,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "hay",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -7500,7 +7125,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "dracula",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -7520,7 +7144,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jake",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Artemis",
@@ -7540,7 +7163,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "jules",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -7560,7 +7182,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "#1 Conflicted Opnion Haver",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -7580,7 +7201,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Rowan Bishop",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -7600,7 +7220,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Cadoc",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -7620,7 +7239,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "JT",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -7640,7 +7258,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Shockcroc",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Persephone",
@@ -7660,7 +7277,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dylan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -7680,7 +7296,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "LordTwigo",
     qa1: "Descura / Witch's Staff",
     qa2: "Persephone",
@@ -7700,7 +7315,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Mike",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Supay",
@@ -7720,7 +7334,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Yanhuk",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -7740,7 +7353,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Mel",
     qa1: "Revaal / Argent Skull",
     qa2: "Eos",
@@ -7760,7 +7372,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "john hades",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -7780,7 +7391,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Oisin",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
@@ -7800,7 +7410,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "G",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -7820,7 +7429,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "M",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -7840,7 +7448,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "O",
     qa1: "Xinth / Black Coat",
     qa2: "Moros",
@@ -7860,7 +7467,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Nixks",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -7880,7 +7486,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "salad",
     qa1: "Revaal / Argent Skull",
     qa2: "Abstain",
@@ -7900,7 +7505,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "dave jones",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -7920,7 +7524,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sybersmoke68",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
@@ -7940,7 +7543,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ralph Elver",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -7960,7 +7562,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Apparition1136",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -7980,7 +7581,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Midnite",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -8000,7 +7600,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "nico",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -8020,7 +7619,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "kaio",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -8040,7 +7638,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dane",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -8060,7 +7657,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Miv",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
@@ -8080,7 +7676,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Gerardo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -8100,7 +7695,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "b",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -8120,7 +7714,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "beanie",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -8140,7 +7733,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Chang",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Momus",
@@ -8160,7 +7752,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Lex",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -8180,7 +7771,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hydrogon",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -8200,7 +7790,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Coomage ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -8220,7 +7809,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sam ",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -8240,7 +7828,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Yanahilator",
     qa1: "Xinth / Black Coat",
     qa2: "Thanatos",
@@ -8260,7 +7847,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "liz",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
@@ -8280,7 +7866,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "R",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -8300,7 +7885,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "BlueGuy17",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -8320,7 +7904,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Pedro",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -8340,7 +7923,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ronan",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -8360,7 +7942,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dantas ",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -8380,7 +7961,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "UD",
     qa1: "Descura / Witch's Staff",
     qa2: "Hel",
@@ -8400,7 +7980,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "kv",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -8420,7 +7999,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Guy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -8440,7 +8018,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "CiciPipski",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
@@ -8460,7 +8037,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tortillas",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -8480,7 +8056,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "DD52",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -8500,7 +8075,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Velin",
     qa1: "Xinth / Black Coat",
     qa2: "Artemis",
@@ -8520,7 +8094,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "brblaundry",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -8540,7 +8113,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Randall",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -8560,7 +8132,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "iDango",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -8580,7 +8151,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "gundra",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
@@ -8600,7 +8170,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Carol",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -8620,7 +8189,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "TheCookieMan ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Flames",
@@ -8640,7 +8208,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Tim",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
@@ -8660,7 +8227,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Oreollama ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -8680,7 +8246,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "moist_wet_socks",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -8700,7 +8265,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Daniel M",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -8720,7 +8284,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jj",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -8740,7 +8303,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Krystal",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -8760,7 +8322,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Charlie h",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -8780,7 +8341,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Nyx",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -8800,7 +8360,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Will",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
@@ -8820,7 +8379,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Nolan",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -8840,7 +8398,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Noah",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -8860,7 +8417,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "john",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -8880,7 +8436,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Vognerful",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -8900,7 +8455,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "K",
     qa1: "Xinth / Black Coat",
     qa2: "Morrigan",
@@ -8920,7 +8474,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Isaac ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -8940,7 +8493,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sandy",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -8960,7 +8512,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Kaylee",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
@@ -8980,7 +8531,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "jackmeoff",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -9000,7 +8550,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Armando",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -9020,7 +8569,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ed",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -9040,7 +8588,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "N",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -9060,7 +8607,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Lucas C",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -9080,7 +8626,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ghosty",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -9100,7 +8645,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "dxxander",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -9120,7 +8664,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Omzo",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -9140,7 +8683,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bruno",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -9160,7 +8702,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "marzu",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -9180,7 +8721,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Fayt",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -9200,7 +8740,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Hotrodsnickers",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -9220,7 +8759,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Mcdammit ",
     qa1: "Descura / Witch's Staff",
     qa2: "Moros",
@@ -9240,7 +8778,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "TeaLeaf29",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Anubis",
@@ -9260,7 +8797,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Pb",
     qa1: "Descura / Witch's Staff",
     qa2: "Nergal",
@@ -9280,7 +8816,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tufgirl",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -9300,7 +8835,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Aniruddha",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -9320,7 +8854,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Chip",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
@@ -9340,7 +8873,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hhhh",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
@@ -9360,7 +8892,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dion",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -9380,7 +8911,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "라이언",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
@@ -9400,7 +8930,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Y/N",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -9420,7 +8949,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "rae",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -9440,7 +8968,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "A",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -9460,7 +8987,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ccrabb",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
@@ -9480,7 +9006,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kenobi411",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -9500,7 +9025,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Frankito",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
@@ -9520,7 +9044,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sean O.",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -9540,7 +9063,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "nialesemo ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -9560,7 +9082,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "tao",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -9580,7 +9101,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "YK",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -9600,7 +9120,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Garner",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -9620,7 +9139,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sam",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -9640,7 +9158,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -9660,7 +9177,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Daniel armstrong",
     qa1: "Xinth / Black Coat",
     qa2: "Morrigan",
@@ -9680,7 +9196,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Castor",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -9700,7 +9215,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Cris",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -9720,7 +9234,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Takyon",
     qa1: "Descura / Witch's Staff",
     qa2: "Nergal",
@@ -9740,7 +9253,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Dono",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -9760,7 +9272,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sarah",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -9780,7 +9291,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kal",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -9800,7 +9310,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Nox",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
@@ -9820,7 +9329,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Rin",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
@@ -9840,7 +9348,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Cam",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Eos",
@@ -9860,7 +9367,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "CheeseBurgare",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -9880,7 +9386,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Skelly",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -9900,7 +9405,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sean Hanrahan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -9920,7 +9424,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Victor",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
@@ -9940,7 +9443,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Corey",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -9960,7 +9462,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Brad",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -9980,7 +9481,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tman",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
@@ -10000,7 +9500,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Tristan ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -10020,7 +9519,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Shay",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
@@ -10040,7 +9538,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "LegoNoah123",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -10060,7 +9557,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "rob N",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -10080,7 +9576,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Maria",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -10100,7 +9595,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ziggy W",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -10120,7 +9614,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rockchip ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Anubis",
@@ -10140,7 +9633,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Uncle Cronos",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
@@ -10160,7 +9652,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Mxlespxles ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -10180,7 +9671,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Red shade",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -10200,7 +9690,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Chad",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -10220,7 +9709,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jake",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -10240,7 +9728,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "B",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -10260,7 +9747,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Cabo",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Shiva",
@@ -10280,7 +9766,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "AFC",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -10300,7 +9785,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nice Try :)",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -10320,7 +9804,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Garcia Jason",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -10340,7 +9823,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Endercat65",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
@@ -10360,7 +9842,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "tredmasta",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -10380,7 +9861,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "cake",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -10400,7 +9880,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jn",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -10420,7 +9899,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Max",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -10440,7 +9918,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Clayton",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -10460,7 +9937,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Pumpkin",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -10480,7 +9956,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Johnson",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -10500,7 +9975,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "d",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -10520,7 +9994,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ella",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -10540,7 +10013,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "MissterMiles",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -10560,7 +10032,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Razorgrin",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -10580,7 +10051,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Al",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -10600,7 +10070,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "DexterHawkins",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -10620,7 +10089,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Wahabsmash",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -10640,7 +10108,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "illnevertell",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -10660,7 +10127,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "raf",
     qa1: "Descura / Witch's Staff",
     qa2: "Moros",
@@ -10680,7 +10146,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Carlos ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -10700,7 +10165,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "TPucks",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
@@ -10720,7 +10184,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Joe ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -10740,7 +10203,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "goose",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -10760,7 +10222,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "poops",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -10780,7 +10241,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "john",
     qa1: "Revaal / Argent Skull",
     qa2: "Artemis",
@@ -10800,7 +10260,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Elliot",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -10820,7 +10279,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Eric",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -10840,7 +10298,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Auraniac",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Selene",
@@ -10860,7 +10317,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Riley",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -10880,7 +10336,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dreamscape",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -10900,7 +10355,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "00-Void",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -10920,7 +10374,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "H",
     qa1: "Descura / Witch's Staff",
     qa2: "Persephone",
@@ -10940,7 +10393,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ray V",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -10960,7 +10412,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Hannah",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -10980,7 +10431,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ren :) ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
@@ -11000,7 +10450,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Rosas",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -11020,7 +10469,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Anom player",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -11040,7 +10488,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Wiwi",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
@@ -11060,7 +10507,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Zagreus",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -11080,7 +10526,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Suto",
     qa1: "Xinth / Black Coat",
     qa2: "Eos",
@@ -11100,7 +10545,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Hut",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
@@ -11120,7 +10564,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Anwar",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -11140,7 +10583,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "DLBlaze",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -11160,7 +10602,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sonia",
     qa1: "Xinth / Black Coat",
     qa2: "Anubis",
@@ -11180,7 +10621,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bob",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -11200,7 +10640,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Olivia Everett",
     qa1: "Xinth / Black Coat",
     qa2: "Abstain",
@@ -11220,7 +10659,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Leo",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -11240,7 +10678,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bazz ",
     qa1: "Revaal / Argent Skull",
     qa2: "Artemis",
@@ -11260,7 +10697,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Xero",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -11280,7 +10716,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Iiam Scully",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -11300,7 +10735,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "John_aka_alwayz",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
@@ -11320,7 +10754,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "X",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -11340,7 +10773,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Eddie S",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -11360,7 +10792,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Boris",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -11380,7 +10811,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Teuchi",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -11400,7 +10830,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Surya",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -11420,7 +10849,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Brannon",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -11440,7 +10868,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jonathan Gildesgaard",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -11460,7 +10887,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "K",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -11480,7 +10906,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "SAMURAI",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -11500,7 +10925,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Disraeli",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -11520,7 +10944,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "drdoctor ",
     qa1: "Descura / Witch's Staff",
     qa2: "Moros",
@@ -11540,7 +10963,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "May Stone",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -11560,7 +10982,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "purp",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -11580,7 +11001,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Abe",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -11600,7 +11020,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Brian",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
@@ -11620,7 +11039,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "skiji",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -11640,7 +11058,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "panic",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -11660,7 +11077,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Rae",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
@@ -11680,7 +11096,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "sam",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Selene",
@@ -11700,7 +11115,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Adam Achy",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Blades",
@@ -11720,7 +11134,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hamish P",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -11740,7 +11153,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Adam Achy",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Blades",
@@ -11760,7 +11172,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "seeimrick",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Moros",
@@ -11780,7 +11191,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sid Bonzo",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
@@ -11800,7 +11210,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Khunal",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Blades",
@@ -11820,7 +11229,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jaickop",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Artemis",
@@ -11840,7 +11248,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Niklas",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -11860,7 +11267,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "CW",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Momus",
@@ -11880,7 +11286,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ray",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -11900,7 +11305,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Hector ",
     qa1: "Xinth / Black Coat",
     qa2: "Moros",
@@ -11920,7 +11324,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kossuplex",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -11940,7 +11343,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "R",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -11960,7 +11362,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Eddie",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -11980,7 +11381,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bloom",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -12000,7 +11400,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Josh C",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -12020,7 +11419,6 @@ export const response = [
     qa16: "Abstain",
   },
   {
-    dat: "11/18/2025",
     nam: "Hades",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -12040,7 +11438,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Chad",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -12060,7 +11457,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Caeo ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -12080,7 +11476,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Braden",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -12100,7 +11495,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "hoc",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -12120,7 +11514,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Evan",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
@@ -12140,7 +11533,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "HomeSlicedToast",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -12160,7 +11552,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Meatwadx",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -12180,7 +11571,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Connor Peters",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -12200,7 +11590,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hi",
     qa1: "Xinth / Black Coat",
     qa2: "Momus",
@@ -12220,7 +11609,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Sam",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
@@ -12240,7 +11628,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Prometheus",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -12260,7 +11647,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Jaren Anderson",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -12280,7 +11666,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dan",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -12300,7 +11685,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Finn",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -12320,7 +11704,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Logan House",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -12340,7 +11723,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Darkitchay ",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -12360,7 +11742,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Gordo",
     qa1: "Descura / Witch's Staff",
     qa2: "Nyx",
@@ -12380,7 +11761,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Gordo",
     qa1: "Descura / Witch's Staff",
     qa2: "Nyx",
@@ -12400,7 +11780,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Boat4d",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
@@ -12420,7 +11799,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Amb",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -12440,7 +11818,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Ragnarok ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -12460,7 +11837,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "pyro",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
@@ -12480,7 +11856,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "AJ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -12500,7 +11875,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Winnie",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -12520,7 +11894,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Celes",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -12540,7 +11913,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "TWrecks310",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -12560,7 +11932,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "kekepi314",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -12580,7 +11951,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Grap3J3lly",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -12600,7 +11970,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mitts",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -12620,7 +11989,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Omid-wm",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -12640,7 +12008,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ray",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -12660,7 +12027,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "MightierToaster",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -12680,7 +12046,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ollie",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -12700,7 +12065,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bex",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -12720,7 +12084,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Berk",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -12740,7 +12103,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ryo",
     qa1: "Xinth / Black Coat",
     qa2: "Morrigan",
@@ -12760,7 +12122,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "salt",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -12780,7 +12141,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bernie Chu",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -12800,7 +12160,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "smt",
     qa1: "Revaal / Argent Skull",
     qa2: "Thanatos",
@@ -12820,7 +12179,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Csanad",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -12840,7 +12198,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "billgun",
     qa1: "Descura / Witch's Staff",
     qa2: "Persephone",
@@ -12860,7 +12217,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "D",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -12880,7 +12236,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Victor",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Persephone",
@@ -12900,7 +12255,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Cat",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -12920,7 +12274,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Fated",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -12940,7 +12293,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Luke",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -12960,7 +12312,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "CaptWrath",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
@@ -12980,7 +12331,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Noctifer",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
@@ -13000,7 +12350,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "s",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -13020,7 +12369,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hylind",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Moros",
@@ -13040,7 +12388,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tomino",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -13060,7 +12407,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Goose",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Medea",
@@ -13080,7 +12426,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Milderling ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -13100,7 +12445,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Bunko!!",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -13120,7 +12464,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Todd Howard",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -13140,7 +12483,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Timon",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -13160,7 +12502,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "LC",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -13180,7 +12521,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Milan ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -13200,7 +12540,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Anatole",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -13220,7 +12559,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "arvid",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -13240,7 +12578,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Louniël ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -13260,7 +12597,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "h",
     qa1: "Revaal / Argent Skull",
     qa2: "Moros",
@@ -13280,7 +12616,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "RJ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -13300,7 +12635,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Quasar",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
@@ -13320,7 +12654,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "TJ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -13340,7 +12673,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "aedinfell",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -13360,7 +12692,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "S",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -13380,7 +12711,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Lethe",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Supay",
@@ -13400,7 +12730,6 @@ export const response = [
     qa16: "Abstain",
   },
   {
-    dat: "11/17/2025",
     nam: "Posneg",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -13420,7 +12749,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bobby",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -13440,7 +12768,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Wes",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
@@ -13460,7 +12787,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "chaos enjoyer",
     qa1: "Xinth / Black Coat",
     qa2: "Shiva",
@@ -13480,7 +12806,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "If Eris calls me trouble I will lose melt",
     qa1: "Xinth / Black Coat",
     qa2: "Persephone",
@@ -13500,7 +12825,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Samjaza ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -13520,7 +12844,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kate",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -13540,7 +12863,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Lin",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -13560,7 +12882,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jack",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Staff",
@@ -13580,7 +12901,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Steb",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -13600,7 +12920,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Phoenix",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -13620,7 +12939,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "I",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -13640,7 +12958,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "N/a",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -13660,7 +12977,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Aron",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -13680,7 +12996,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Vedant",
     qa1: "Xinth / Black Coat",
     qa2: "Shiva",
@@ -13700,7 +13015,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Güngör ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -13720,7 +13034,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Pr1sme ",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
@@ -13740,7 +13053,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "joshwew95",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -13760,7 +13072,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kungun",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -13780,7 +13091,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Chargala",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -13800,7 +13110,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Thebe",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -13820,7 +13129,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Simone ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -13840,7 +13148,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "LP",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -13860,7 +13167,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "George",
     qa1: "Xinth / Black Coat",
     qa2: "Hel",
@@ -13880,7 +13186,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Eric ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
@@ -13900,7 +13205,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Alejandro Figueroa",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Eos",
@@ -13920,7 +13224,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "s",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -13940,7 +13243,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Brendan ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Persephone",
@@ -13960,7 +13262,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Craftaxlb",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -13980,7 +13281,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Byzer",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -14000,7 +13300,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Zys",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
@@ -14020,7 +13319,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Adam",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -14040,7 +13338,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ananke",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Eos",
@@ -14060,7 +13357,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rishon",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -14080,7 +13376,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "No name ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -14100,7 +13395,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Markus ",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -14120,7 +13414,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Michael",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
@@ -14140,7 +13433,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Pecha",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -14160,7 +13452,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Saber ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -14180,7 +13471,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Murloghton ",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
@@ -14200,7 +13490,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "octop",
     qa1: "Revaal / Argent Skull",
     qa2: "Anubis",
@@ -14220,7 +13509,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Svbear65",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -14240,7 +13528,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kelly",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Artemis",
@@ -14260,7 +13547,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "J",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -14280,7 +13566,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Arn",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -14300,7 +13585,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "X",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -14320,7 +13604,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "CCC",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -14340,7 +13623,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Acasez",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -14360,7 +13642,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ally ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -14380,7 +13661,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mannis",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -14400,7 +13680,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Banjzo",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -14420,7 +13699,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Renna",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -14440,7 +13718,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "kcobalt",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -14460,7 +13737,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Steven",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -14480,7 +13756,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Karl",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -14500,7 +13775,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Omar",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -14520,7 +13794,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "no",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Persephone",
@@ -14540,7 +13813,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Joebotnik",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -14560,7 +13832,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Vaelomre",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
@@ -14580,7 +13851,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Davie",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -14600,7 +13870,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jay e",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Pan",
@@ -14620,7 +13889,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Steven ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -14640,7 +13908,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Steven ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -14660,7 +13927,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Why would you need a name",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -14680,7 +13946,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Benjamin ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -14700,7 +13965,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Cero",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -14720,7 +13984,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jadeolantern",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -14740,7 +14003,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Pyre guy",
     qa1: "Revaal / Argent Skull",
     qa2: "Anubis",
@@ -14760,7 +14022,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nikki",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -14780,7 +14041,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "JackJac",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -14800,7 +14060,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mo",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
@@ -14820,7 +14079,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Drakjc",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -14840,7 +14098,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ally",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -14860,7 +14117,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "L",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Supay",
@@ -14880,7 +14136,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jaspe",
     qa1: "Descura / Witch's Staff",
     qa2: "Eos",
@@ -14900,7 +14155,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Celeste",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -14920,7 +14174,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "tirutira",
     qa1: "Revaal / Argent Skull",
     qa2: "Melinoe Skull",
@@ -14940,7 +14193,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mohamed almheiri",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -14960,7 +14212,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "...",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -14980,7 +14231,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Wayne Gretzky ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -15000,7 +14250,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "Lynsey Hannahs",
     qa1: "Descura / Witch's Staff",
     qa2: "Persephone",
@@ -15020,7 +14269,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dayuuum76",
     qa1: "Descura / Witch's Staff",
     qa2: "Hel",
@@ -15040,7 +14288,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Anonymous ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -15060,7 +14307,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/17/2025",
     nam: "M",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -15080,7 +14326,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Gunko",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -15100,7 +14345,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Xcomlord",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Skull",
@@ -15120,7 +14364,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Félix ",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
@@ -15140,7 +14383,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Marius",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
@@ -15160,7 +14402,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Slug ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -15180,7 +14421,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "hunted_violin",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -15200,7 +14440,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tiago ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -15220,7 +14459,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rik",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -15240,7 +14478,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "BB",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Artemis",
@@ -15260,7 +14497,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ben",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Axe",
@@ -15280,7 +14516,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tahiri",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -15300,7 +14535,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Umang",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Flames",
@@ -15320,7 +14554,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "zilly",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Anubis",
@@ -15340,7 +14573,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Narnia Rose",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -15360,7 +14592,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "renzhoes",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -15380,7 +14611,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Eastheus",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -15400,7 +14630,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Carthage",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -15420,7 +14649,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Aven",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -15440,7 +14668,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Baka",
     qa1: "Revaal / Argent Skull",
     qa2: "Moros",
@@ -15460,7 +14687,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Melinoe Fan ",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
@@ -15480,7 +14706,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Veronika ",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
@@ -15500,7 +14725,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "A",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -15520,7 +14744,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Caffeine ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -15540,7 +14763,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "balls",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -15560,7 +14782,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ivan Rakic",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -15580,7 +14801,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "T",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -15600,7 +14820,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Anonymous",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
@@ -15620,7 +14839,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jonas",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -15640,7 +14858,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kezza",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
@@ -15660,7 +14877,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tux Pirate",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Momus",
@@ -15680,7 +14896,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hermes",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Axe",
@@ -15700,7 +14915,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Higulz ",
     qa1: "Xinth / Black Coat",
     qa2: "Hel",
@@ -15720,7 +14934,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sahachan Tippimwong ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -15740,7 +14953,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Vizz",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
@@ -15760,7 +14972,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jordy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Blades",
@@ -15780,7 +14991,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Semjuel21",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -15800,7 +15010,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "a",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Abstain",
@@ -15820,7 +15029,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Adam",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -15840,7 +15048,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Cory",
     qa1: "Descura / Witch's Staff",
     qa2: "Eos",
@@ -15860,7 +15067,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "akleos",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -15880,7 +15086,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "LT",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -15900,7 +15105,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Elias",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -15920,7 +15124,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Percival W.",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -15940,7 +15143,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "DazOceanGuard ",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -15960,7 +15162,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Boorelom",
     qa1: "Xinth / Black Coat",
     qa2: "Nyx",
@@ -15980,7 +15181,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Arcana",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -16000,7 +15200,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "PutoElQueLee",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -16020,7 +15219,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "s",
     qa1: "Revaal / Argent Skull",
     qa2: "Melinoe Skull",
@@ -16040,7 +15238,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Matt",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -16060,7 +15257,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hoang Minh",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -16080,7 +15276,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Muhammad alif b as'shaari",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -16100,7 +15295,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Me",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -16120,7 +15314,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Remar",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -16140,7 +15333,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ld",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -16160,7 +15352,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Cheesewheel",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -16180,7 +15371,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hex",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -16200,7 +15390,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Steven Evans",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -16220,7 +15409,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bib",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -16240,7 +15428,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rongue",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -16260,7 +15447,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ninox",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
@@ -16280,7 +15466,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "rio",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -16300,7 +15485,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dakota",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -16320,7 +15504,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Swev",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -16340,7 +15523,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Escogriffe",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
@@ -16360,7 +15542,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Albatros",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
@@ -16380,7 +15561,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Zag",
     qa1: "Xinth / Black Coat",
     qa2: "Thanatos",
@@ -16400,7 +15580,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Scorry",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -16420,7 +15599,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "L",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -16440,7 +15618,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Emma",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -16460,7 +15637,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "altercube",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -16480,7 +15656,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Cryla",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -16500,7 +15675,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Eteat",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Hel",
@@ -16520,7 +15694,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Alespuma",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -16540,7 +15713,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mel",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
@@ -16560,7 +15732,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mori",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -16580,7 +15751,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Soraky",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -16600,7 +15770,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dominik",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -16620,7 +15789,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jonas",
     qa1: "Xinth / Black Coat",
     qa2: "Thanatos",
@@ -16640,7 +15808,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nialled",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -16660,7 +15827,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Thootjuh ",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -16680,7 +15846,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Miru",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -16700,7 +15865,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "f",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -16720,7 +15884,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ally",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
@@ -16740,7 +15903,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "T",
     qa1: "Revaal / Argent Skull",
     qa2: "Abstain",
@@ -16760,7 +15922,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Zar",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
@@ -16780,7 +15941,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "JCL",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -16800,7 +15960,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ySteece",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -16820,7 +15979,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "T",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -16840,7 +15998,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "laszlonator",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -16860,7 +16017,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ryan",
     qa1: "Descura / Witch's Staff",
     qa2: "Supay",
@@ -16880,7 +16036,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Olive",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -16900,7 +16055,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "AwesomeGuyAlpha",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -16920,7 +16074,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jakiller",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Medea",
@@ -16940,7 +16093,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "vini",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -16960,7 +16112,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bloodiest",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -16980,7 +16131,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hades",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -17000,7 +16150,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "DT",
     qa1: "Xinth / Black Coat",
     qa2: "Eos",
@@ -17020,7 +16169,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tzaiyn",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -17040,7 +16188,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Awkin",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -17060,7 +16207,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tincture",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -17080,7 +16226,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kay",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -17100,7 +16245,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Marie",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -17120,7 +16264,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Primus",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -17140,7 +16283,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Renz",
     qa1: "Descura / Witch's Staff",
     qa2: "Pan",
@@ -17160,7 +16302,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Guilherme Machado",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -17180,7 +16321,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "clary",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -17200,7 +16340,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "FightWM",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -17220,7 +16359,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Alex Chow",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
@@ -17240,7 +16378,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Djo",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Nergal",
@@ -17260,7 +16397,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "N.A.",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -17280,7 +16416,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jewel Kemerena",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -17300,7 +16435,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Michael",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -17320,7 +16454,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Taylor ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -17340,7 +16473,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sophie",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
@@ -17360,7 +16492,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Logener",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
@@ -17380,7 +16511,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "SSnoopy",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
@@ -17400,7 +16530,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Anonymous",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -17420,7 +16549,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Satie",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -17440,7 +16568,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Luis",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -17460,7 +16587,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Db",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -17480,7 +16606,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Carson B",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -17500,7 +16625,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Aetos",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -17520,7 +16644,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Cordelia",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -17540,7 +16663,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Salkazko",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -17560,7 +16682,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ONEAL",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -17580,7 +16701,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "protheph",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -17600,7 +16720,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "mc",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Moros",
@@ -17620,7 +16739,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "LaLight",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -17640,7 +16758,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bushu",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -17660,7 +16777,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "TriadAddict",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -17680,7 +16796,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jonas",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -17700,7 +16815,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rhi",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Supay",
@@ -17720,7 +16834,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Luciel",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -17740,7 +16853,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Matide",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -17760,7 +16872,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Fran",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -17780,7 +16891,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Lucius",
     qa1: "Descura / Witch's Staff",
     qa2: "Selene",
@@ -17800,7 +16910,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sigma",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -17820,7 +16929,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kyou",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
@@ -17840,7 +16948,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nunnett",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -17860,7 +16967,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Michalinh0",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
@@ -17880,7 +16986,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hades2",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -17900,7 +17005,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sc",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -17920,7 +17024,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "N",
     qa1: "Revaal / Argent Skull",
     qa2: "Thanatos",
@@ -17940,7 +17043,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Zhydoo",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -17960,7 +17062,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sam",
     qa1: "Descura / Witch's Staff",
     qa2: "Moros",
@@ -17980,7 +17081,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sharkbaithooha",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -18000,7 +17100,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Unseen",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -18020,7 +17119,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "MattLovelace",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
@@ -18040,7 +17138,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "DrAwesomew",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -18060,7 +17157,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nicky",
     qa1: "Xinth / Black Coat",
     qa2: "Supay",
@@ -18080,7 +17176,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "manhha251",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -18100,7 +17195,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Stilghar",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -18120,7 +17214,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jay Johnston",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
@@ -18140,7 +17233,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Shelly",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -18160,7 +17252,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Joe",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -18180,7 +17271,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jupoter",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -18200,7 +17290,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Cameron",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -18220,7 +17309,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mia",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -18240,7 +17328,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "IcarusLuver69",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -18260,7 +17347,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Miljan",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -18280,7 +17366,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hoojiwat",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -18300,7 +17385,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Alarik ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
@@ -18320,7 +17404,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Caro",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -18340,7 +17423,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Koby",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -18360,7 +17442,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "rugpjutuke",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -18380,7 +17461,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Emil Vasilev",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -18400,7 +17480,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Big Ol'Dingus",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -18420,7 +17499,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Oscar da Silva",
     qa1: "Revaal / Argent Skull",
     qa2: "Moros",
@@ -18440,7 +17518,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "R",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -18460,7 +17537,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Skryter",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -18480,7 +17556,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "urmom",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -18500,7 +17575,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "wander",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -18520,7 +17594,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "BDD",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -18540,7 +17613,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "YD",
     qa1: "Xinth / Black Coat",
     qa2: "Moros",
@@ -18560,7 +17632,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sanjay Kannan",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
@@ -18580,7 +17651,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Stephen",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -18600,7 +17670,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rejdan",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
@@ -18620,7 +17689,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dmitry",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -18640,7 +17708,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mad bookworm ",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -18660,7 +17727,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "pointe31",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -18680,7 +17746,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tyzo",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -18700,7 +17765,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "adrian",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Supay",
@@ -18720,7 +17784,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "pirata",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -18740,7 +17803,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Lucas Tagliapietra Verlengia",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -18760,7 +17822,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "lcbzz",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -18780,7 +17841,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nab",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
@@ -18800,7 +17860,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Miguel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Blades",
@@ -18820,7 +17879,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "J",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -18840,7 +17898,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "meowie",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -18860,7 +17917,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "M",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
@@ -18880,7 +17936,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Noss",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -18900,7 +17955,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Emily",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
@@ -18920,7 +17974,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Anonymous ",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -18940,7 +17993,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ahola",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -18960,7 +18012,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -18980,7 +18031,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "M",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Coat",
@@ -19000,7 +18050,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jade",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
@@ -19020,7 +18069,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Andreuus",
     qa1: "Descura / Witch's Staff",
     qa2: "Hel",
@@ -19040,7 +18088,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "B",
     qa1: "Xinth / Black Coat",
     qa2: "Artemis",
@@ -19060,7 +18107,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "MattT",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -19080,7 +18126,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "vrunuz",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -19100,7 +18145,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Oeffes",
     qa1: "Revaal / Argent Skull",
     qa2: "Melinoe Skull",
@@ -19120,7 +18164,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "smilercat",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -19140,7 +18183,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: " S",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -19160,7 +18202,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Thomasse",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
@@ -19180,7 +18221,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Andrei",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
@@ -19200,7 +18240,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Stephanie tay",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -19220,7 +18259,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "TJ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Momus",
@@ -19240,7 +18278,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rick",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -19260,7 +18297,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ridiem",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -19280,7 +18316,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Crawler",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -19300,7 +18335,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kaining Yao",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -19320,7 +18354,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Johnny Swallows",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
@@ -19340,7 +18373,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ura.exe",
     qa1: "Xinth / Black Coat",
     qa2: "Anubis",
@@ -19360,7 +18392,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Gatsby",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -19380,7 +18411,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jordan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -19400,7 +18430,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: ".",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -19420,7 +18449,6 @@ export const response = [
     qa16: "Abstain",
   },
   {
-    dat: "11/18/2025",
     nam: "Foxdra",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
@@ -19440,7 +18468,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rob",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Artemis",
@@ -19460,7 +18487,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Declan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -19480,7 +18506,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "TDR",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
@@ -19500,7 +18525,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Lucas",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Moros",
@@ -19520,7 +18544,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "pkent10",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -19540,7 +18563,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Glados",
     qa1: "Xinth / Black Coat",
     qa2: "Persephone",
@@ -19560,7 +18582,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Edzzio",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -19580,7 +18601,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Fredrik Gustafsson",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -19600,7 +18620,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Lucas",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -19620,7 +18639,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Reinaldo",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -19640,7 +18658,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Reinaldo",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -19660,7 +18677,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Coldes",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Flames",
@@ -19680,7 +18696,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Coldes",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Flames",
@@ -19700,7 +18715,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Vice",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -19720,7 +18734,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "G",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -19740,7 +18753,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "FlashBerry",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Selene",
@@ -19760,7 +18772,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "reese",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -19780,7 +18791,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "J",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -19800,7 +18810,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bruh",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -19820,7 +18829,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mel's whip",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -19840,7 +18848,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mars",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -19860,7 +18867,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Fs32",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
@@ -19880,7 +18886,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Lanadelrey",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -19900,7 +18905,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "brianna",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -19920,7 +18924,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Elijah",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -19940,7 +18943,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sinter",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -19960,7 +18962,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "AUSARI",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
@@ -19980,7 +18981,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "cowboycthulhu",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
@@ -20000,7 +19000,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jane",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
@@ -20020,7 +19019,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "magemana42",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -20040,7 +19038,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "robu",
     qa1: "Xinth / Black Coat",
     qa2: "Anubis",
@@ -20060,7 +19057,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sud",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -20080,7 +19076,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Pablo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -20100,7 +19095,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sam",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -20120,7 +19114,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "J",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -20140,7 +19133,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Oliver",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -20160,7 +19152,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Doggo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -20180,7 +19171,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "TrollerCZ ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -20200,7 +19190,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Chironyxaltair",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -20220,7 +19209,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "nina",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -20240,7 +19228,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tropicarcinogen",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -20260,7 +19247,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Goose",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Eos",
@@ -20280,7 +19266,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Anvenjade",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
@@ -20300,7 +19285,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Lexi",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -20320,7 +19304,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Potato",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -20340,7 +19323,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Will",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -20360,7 +19342,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Matthew Pinto ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -20380,7 +19361,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "rainee",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -20400,7 +19380,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "VacuumoV",
     qa1: "Revaal / Argent Skull",
     qa2: "Melinoe Skull",
@@ -20420,7 +19399,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Spirite",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Moros",
@@ -20440,7 +19418,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "SC",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Nergal",
@@ -20460,7 +19437,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Trevor ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -20480,7 +19456,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "TinySpectrum",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -20500,7 +19475,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Yuyutsu",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -20520,7 +19494,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Apollo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Pan",
@@ -20540,7 +19513,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Anon",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -20560,7 +19532,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "OPTIONS Lord",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -20580,7 +19551,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Alex",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -20600,7 +19570,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Scott W",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
@@ -20620,7 +19589,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Adam Oswald Miller ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -20640,7 +19608,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "alpine",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Anubis",
@@ -20660,7 +19627,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "logan",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -20680,7 +19646,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nurdred",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -20700,7 +19665,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Boot",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
@@ -20720,7 +19684,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kristina",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -20740,7 +19703,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "MRPOTATO",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -20760,7 +19722,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ProjectSAM",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -20780,7 +19741,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "KV",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -20800,7 +19760,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Jess",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Persephone",
@@ -20820,7 +19779,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tom",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -20840,7 +19798,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "melnoefan69420",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -20860,7 +19817,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Blub1rd",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -20880,7 +19836,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "George",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -20900,7 +19855,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mitchell",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
@@ -20920,7 +19874,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Vitefish",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -20940,7 +19893,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Karthuria",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -20960,7 +19912,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "James",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -20980,7 +19931,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jake benich ",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
@@ -21000,7 +19950,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Lala",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -21020,7 +19969,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Pam",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -21040,7 +19988,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hi",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -21060,7 +20007,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Shadokin",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -21080,7 +20026,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Szef",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Artemis",
@@ -21100,7 +20045,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Grace",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
@@ -21120,7 +20064,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "haanss",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Shiva",
@@ -21140,7 +20083,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "thomas",
     qa1: "Xinth / Black Coat",
     qa2: "Shiva",
@@ -21160,7 +20102,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Enenke",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -21180,7 +20121,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kale",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -21200,7 +20140,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Ron",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -21220,7 +20159,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nobody ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -21240,7 +20178,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Soko",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -21260,7 +20197,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Saporito",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -21280,7 +20216,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jay ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -21300,7 +20235,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Colton",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -21320,7 +20254,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "CerpinTheMute",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -21340,7 +20273,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ShinniEvvk ",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -21360,7 +20292,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ben",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Persephone",
@@ -21380,7 +20311,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Natalia",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -21400,7 +20330,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Blank",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -21420,7 +20349,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kerle",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -21440,7 +20368,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "voxmoochina ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Momus",
@@ -21460,7 +20387,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "rotom",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -21480,7 +20406,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "FlyingTank",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -21500,7 +20425,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hash",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -21520,7 +20444,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nawid",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -21540,7 +20463,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sodium",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -21560,7 +20482,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ecota",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -21580,7 +20501,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Grax",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -21600,7 +20520,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kona",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -21620,7 +20539,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Raspa",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -21640,7 +20558,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Boop",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -21660,7 +20577,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Toprak",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -21680,7 +20596,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Fman ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -21700,7 +20615,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Pork Spud ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Moros",
@@ -21720,7 +20634,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Zach",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Pan",
@@ -21740,7 +20653,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Scout P",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Moros",
@@ -21760,7 +20672,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Daniel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -21780,7 +20691,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Neyir",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -21800,7 +20710,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "boop",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -21820,7 +20729,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jasper",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -21840,7 +20748,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "TAB",
     qa1: "Xinth / Black Coat",
     qa2: "Anubis",
@@ -21860,7 +20767,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Scylla fan #1",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Artemis",
@@ -21880,7 +20786,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "محمد",
     qa1: "Xinth / Black Coat",
     qa2: "Abstain",
@@ -21900,7 +20805,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "simo_900",
     qa1: "Xinth / Black Coat",
     qa2: "Nyx",
@@ -21920,7 +20824,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sean",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -21940,7 +20843,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Mayood",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
@@ -21960,7 +20862,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Stok",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -21980,7 +20881,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Iaya",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -22000,7 +20900,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jawge",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -22020,7 +20919,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "idontwantto givemyname",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -22040,7 +20938,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nessy",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Anubis",
@@ -22060,7 +20957,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bianca",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -22080,7 +20976,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Taylor ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -22100,7 +20995,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Cooper",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -22120,7 +21014,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rick",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -22140,7 +21033,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Proxian",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -22160,7 +21052,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Diego",
     qa1: "Descura / Witch's Staff",
     qa2: "Pan",
@@ -22180,7 +21071,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Rich",
     qa1: "Abstain",
     qa2: "Abstain",
@@ -22200,7 +21090,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kiyon",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Hel",
@@ -22220,7 +21109,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "a",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -22240,7 +21128,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jasper",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
@@ -22260,7 +21147,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Drew",
     qa1: "Revaal / Argent Skull",
     qa2: "Supay",
@@ -22280,7 +21166,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "1000Spir",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -22300,7 +21185,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Dio",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
@@ -22320,7 +21204,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bob",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -22340,7 +21223,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "footy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
@@ -22360,7 +21242,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "HMD",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -22380,7 +21261,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Kieran",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -22400,7 +21280,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jack Seidl ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -22420,7 +21299,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "John Beatty",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -22440,7 +21318,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "gio",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
@@ -22460,7 +21337,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Christian v",
     qa1: "Xinth / Black Coat",
     qa2: "Persephone",
@@ -22480,7 +21356,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "tony",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -22500,7 +21375,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "LONELY_BONES",
     qa1: "Xinth / Black Coat",
     qa2: "Morrigan",
@@ -22520,7 +21394,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "bstockz",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -22540,7 +21413,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nakasa",
     qa1: "Xinth / Black Coat",
     qa2: "Supay",
@@ -22560,7 +21432,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ru",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -22580,7 +21451,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Hoov",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -22600,7 +21470,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ro",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
@@ -22620,7 +21489,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Clarice",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -22640,7 +21508,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "JoshRamen",
     qa1: "Revaal / Argent Skull",
     qa2: "Thanatos",
@@ -22660,7 +21527,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Winterbabyy",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -22680,7 +21546,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Cailie",
     qa1: "Revaal / Argent Skull",
     qa2: "Pan",
@@ -22700,7 +21565,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Toni",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
@@ -22720,7 +21584,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Craig Lee",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
@@ -22740,7 +21603,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nah",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -22760,7 +21622,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nancy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -22780,7 +21641,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nick",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -22800,7 +21660,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Jedibaligi",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
@@ -22820,7 +21679,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Norrok",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -22840,7 +21698,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Big Al",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Blades",
@@ -22860,7 +21717,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Peter",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -22880,7 +21736,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Groovy_Ass_Rat",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -22900,7 +21755,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Andrew",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -22920,7 +21774,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Luca",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Nergal",
@@ -22940,7 +21793,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Jesus",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -22960,7 +21812,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Bryson",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
@@ -22980,7 +21831,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "zag's third bloodstone",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Moros",
@@ -23000,7 +21850,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Jake",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -23020,7 +21869,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Pug",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -23040,7 +21888,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "brudned",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
@@ -23060,7 +21907,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Linus Andersson",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Momus",
@@ -23080,7 +21926,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Vortex",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -23100,7 +21945,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Shiraz",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
@@ -23120,7 +21964,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Sagittariano",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
@@ -23140,7 +21983,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Vini",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
@@ -23160,7 +22002,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ND",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
@@ -23180,7 +22021,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Eris's footstool",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -23200,7 +22040,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "nemesis loving lesbian <3",
     qa1: "Revaal / Argent Skull",
     qa2: "Momus",
@@ -23220,7 +22059,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Shauna",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -23240,7 +22078,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Jonathan Arundel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -23260,7 +22097,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Barthelon",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -23280,7 +22116,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Hjondarr",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -23300,7 +22135,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Rory",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -23320,7 +22154,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "kajiit4",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Axe",
@@ -23340,7 +22173,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Braden ",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -23360,7 +22192,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nate",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -23380,7 +22211,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "roso",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -23400,7 +22230,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Ethan Dale",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -23420,7 +22249,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Anonymous ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
@@ -23440,7 +22268,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Nick",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -23460,7 +22287,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "ProjectBarett",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -23480,7 +22306,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Armand",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -23500,7 +22325,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Kazamaew ",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
@@ -23520,7 +22344,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "namesaretoohard",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -23540,7 +22363,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: ".",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -23560,7 +22382,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Tanya",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -23580,7 +22401,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Tom S",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -23600,7 +22420,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "jd",
     qa1: "Xinth / Black Coat",
     qa2: "Nyx",
@@ -23620,7 +22439,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "jay",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
@@ -23640,7 +22458,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Butts",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -23660,7 +22477,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: " No you. ",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -23680,7 +22496,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "woody",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
@@ -23700,7 +22515,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Roj",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
@@ -23720,7 +22534,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "yep",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -23740,7 +22553,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "C",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -23760,7 +22572,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Cavan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
@@ -23780,7 +22591,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "meow",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -23800,7 +22610,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Adam",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Eos",
@@ -23820,7 +22629,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Evelyn Bondy-villa",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -23840,7 +22648,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Doink",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -23860,7 +22667,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Leaf",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
@@ -23880,7 +22686,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "terrormisu",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -23900,7 +22705,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Sophie",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -23920,7 +22724,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "M",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -23940,7 +22743,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "name",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -23960,7 +22762,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "BumblingIdiot",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Axe",
@@ -23980,7 +22781,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Heber",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -24000,7 +22800,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Suhroom",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -24020,7 +22819,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Ash",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
@@ -24040,7 +22838,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Persephone",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -24060,7 +22857,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "kronophobia",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -24080,7 +22876,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Carson",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
@@ -24100,7 +22895,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Dante of Tamriel ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
@@ -24120,7 +22914,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Suace Face",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -24140,7 +22933,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Loland ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -24160,7 +22952,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/18/2025",
     nam: "Stirling ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -24180,7 +22971,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Zasz",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -24200,7 +22990,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Slinger",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -24220,7 +23009,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Marty",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -24240,7 +23028,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Max",
     qa1: "Xinth / Black Coat",
     qa2: "Thanatos",
@@ -24260,7 +23047,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Skull",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -24280,7 +23066,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "roarti ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -24300,7 +23085,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "tmb",
     qa1: "Descura / Witch's Staff",
     qa2: "Persephone",
@@ -24320,7 +23104,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Maladroit",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Pan",
@@ -24340,7 +23123,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Watanuki",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Moros",
@@ -24360,7 +23142,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "N3vermore73 ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -24380,7 +23161,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Christian Hörtenhuber",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -24400,7 +23180,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Zezao",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Abstain",
@@ -24420,7 +23199,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Doom",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -24440,7 +23218,6 @@ export const response = [
     qa16: "Abstain",
   },
   {
-    dat: "11/19/2025",
     nam: "Tns",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Anubis",
@@ -24460,7 +23237,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "M",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -24480,7 +23256,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Malcrow",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
@@ -24500,7 +23275,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Thomas",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -24520,7 +23294,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Aoife ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -24540,7 +23313,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "YJL",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -24560,7 +23332,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "CD",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -24580,7 +23351,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "lolbas",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -24600,7 +23370,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "glonyr",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Anubis",
@@ -24620,7 +23389,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Scylla fan#738264",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
@@ -24640,7 +23408,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "WordMagus",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -24660,7 +23427,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Nemmy",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -24680,7 +23446,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Shebby",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -24700,7 +23465,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Dio's Jaguar",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -24720,7 +23484,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Zach L",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -24740,7 +23503,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "A",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -24760,7 +23522,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Fluffy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -24780,7 +23541,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Andrej",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -24800,7 +23560,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "josie",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -24820,7 +23579,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Ohyzda",
     qa1: "Xinth / Black Coat",
     qa2: "Hel",
@@ -24840,7 +23598,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "A",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -24860,7 +23617,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "saif",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -24880,7 +23636,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "CosmanCosmin",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -24900,7 +23655,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "M",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -24920,7 +23674,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Mo_le",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -24940,7 +23693,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Thomas ",
     qa1: "Xinth / Black Coat",
     qa2: "Momus",
@@ -24960,7 +23712,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Nikolas",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
@@ -24980,7 +23731,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "b",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Staff",
@@ -25000,7 +23750,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "David",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
@@ -25020,7 +23769,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "kajsa",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -25040,7 +23788,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Bbq ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -25060,7 +23807,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Cam",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -25080,7 +23826,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Baskim",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -25100,7 +23845,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Ariel",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -25120,7 +23864,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Elbama",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -25140,7 +23883,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Stel Kirk ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -25160,7 +23902,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Jay",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Medea",
@@ -25180,7 +23921,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Trappy",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
@@ -25200,7 +23940,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "SLP",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -25220,7 +23959,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Nachin",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
@@ -25240,7 +23978,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Why tho",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
@@ -25260,7 +23997,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Guilherme ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
@@ -25280,7 +24016,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "MemedSama",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -25300,7 +24035,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Moonx",
     qa1: "Xinth / Black Coat",
     qa2: "Nyx",
@@ -25320,7 +24054,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Gus",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
@@ -25340,7 +24073,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "adalive8099",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
@@ -25360,7 +24092,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "ben",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
@@ -25380,7 +24111,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Logan",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
@@ -25400,7 +24130,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "FEET",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -25420,7 +24149,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "buddy",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -25440,7 +24168,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "V",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
@@ -25460,7 +24187,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Kaboose",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -25480,7 +24206,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/19/2025",
     nam: "Chloe",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
@@ -25500,7 +24225,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "GoodLuckAlba",
     qa1: "Abstain",
     qa2: "Thanatos",
@@ -25520,7 +24244,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "yzzi",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
@@ -25540,7 +24263,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "Alex Sandström",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
@@ -25560,7 +24282,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "Nicky",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
@@ -25580,7 +24301,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "Karan Shaurya Baranwal ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -25600,7 +24320,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "Milan",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -25620,7 +24339,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "LAF",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
@@ -25640,7 +24358,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "DJMiko",
     qa1: "Xinth / Black Coat",
     qa2: "Moros",
@@ -25660,7 +24377,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "A",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -25680,7 +24396,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "Semira",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
@@ -25700,7 +24415,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/20/2025",
     nam: "Haleckson Henrick",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -25720,7 +24434,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/21/2025",
     nam: "Do",
     qa1: "Descura / Witch's Staff",
     qa2: "Moros",
@@ -25740,7 +24453,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/21/2025",
     nam: "Arokenerr",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
@@ -25760,7 +24472,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/21/2025",
     nam: "Luka ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
@@ -25780,7 +24491,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/21/2025",
     nam: "Jaryd p ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
@@ -25800,7 +24510,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/21/2025",
     nam: "Aki",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
@@ -25820,7 +24529,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/21/2025",
     nam: "Erin",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
@@ -25840,7 +24548,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/22/2025",
     nam: "XarrotD",
     qa1: "Descura / Witch's Staff",
     qa2: "Artemis",
@@ -25860,7 +24567,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/21/2025",
     nam: "bari",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Abstain",
@@ -25880,7 +24586,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/22/2025",
     nam: "vippy",
     qa1: "Revaal / Argent Skull",
     qa2: "Pan",
@@ -25900,7 +24605,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/22/2025",
     nam: "llzergll",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Eos",
@@ -25920,7 +24624,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/22/2025",
     nam: "PizzaPepperoni ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
@@ -25940,7 +24643,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/22/2025",
     nam: "Greg r",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
@@ -25960,7 +24662,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/22/2025",
     nam: "J",
     qa1: "Revaal / Argent Skull",
     qa2: "Supay",
@@ -25980,7 +24681,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/23/2025",
     nam: "K",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
@@ -26000,7 +24700,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/23/2025",
     nam: "Red",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Coat",
@@ -26020,7 +24719,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/23/2025",
     nam: "Frei",
     qa1: "Xinth / Black Coat",
     qa2: "Moros",
@@ -26040,7 +24738,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/23/2025",
     nam: "Paolo",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
@@ -26060,7 +24757,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/23/2025",
     nam: "plimbo",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
@@ -26080,7 +24776,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/23/2025",
     nam: "Silly",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Blades",
@@ -26100,7 +24795,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/23/2025",
     nam: "Checkmate",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
@@ -26120,7 +24814,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/23/2025",
     nam: "Kirk",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
@@ -26140,7 +24833,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/23/2025",
     nam: "Nateal",
     qa1: "Xinth / Black Coat",
     qa2: "Nyx",
@@ -26160,7 +24852,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/23/2025",
     nam: "Six",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -26180,7 +24871,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/24/2025",
     nam: "taltus",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
@@ -26200,7 +24890,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/24/2025",
     nam: "Mystic2D",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
@@ -26220,7 +24909,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/23/2025",
     nam: "HookieDookie",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
@@ -26240,7 +24928,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    dat: "11/24/2025",
     nam: "Malkin Grey",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
