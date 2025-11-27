@@ -89,7 +89,7 @@ export default function ProfileSum() {
   console.log(data);
   return (
     <div className="h-full min-h-lvh relative overflow-hidden">
-      {/* <Background /> */}
+      <Background />
       <SideNav />
       <div className="max-w-[1400px] font-[Ale] text-[14px] mx-auto px-1 my-4">
         <div className="my-4 flex flex-col gap-1">

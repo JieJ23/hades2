@@ -25,8 +25,8 @@ export default function Enemy() {
   return (
     <main className="relative">
       <Background />
+      <SideNav />
       <div className="max-w-[1200px] font-[Ale] text-[12px] md:text-[13px] lg:text-[14px] mx-auto px-1">
-        <SideNav />
         <div className="flex flex-wrap gap-4 py-2">
           {surface.map((obj, outeridx) => (
             <div

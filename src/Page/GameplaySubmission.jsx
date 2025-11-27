@@ -123,8 +123,8 @@ export default function GameplaySubmission() {
   return (
     <main className="relative">
       <Background />
+      <SideNav />
       <div className="max-w-[1200px] font-[Ale] text-[12px] mx-auto">
-        <SideNav />
         <div className="text-white text-center text-[20px] my-2">Gameplay Submission</div>
         <div className="flex justify-center gap-1">
           <Link
