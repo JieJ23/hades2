@@ -14,7 +14,7 @@ export default function App() {
   const sortedByOrder = [...bundleData, ...(posts || [])]
     .sort((a, b) => new Date(b.dat) - new Date(a.dat))
     .filter((obj) => obj.src.includes(`youtu`))
-    .slice(0, 50);
+    .slice(0, 25);
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">

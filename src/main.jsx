@@ -7,6 +7,8 @@ import App from "./App.jsx";
 
 import Archive from "./Page/Archive.jsx";
 import TheGameAward from "./Page/TheGameAward.jsx";
+import MyTeam from "./Page/MyTeam.jsx";
+
 import ProfileSum from "./Page/ProfileSum.jsx";
 import Enemy from "./Page/Enemy.jsx";
 
@@ -48,6 +50,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/ProfileSum" element={<ProfileSum />} />
 
           <Route path="/TheGameAward" element={<TheGameAward />} />
+          <Route path="/MyTeam" element={<MyTeam />} />
 
           <Route path="/Ladder" element={<Ladder />} />
           <Route path="/FearPoints" element={<FearPoints />} />
