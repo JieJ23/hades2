@@ -1,13 +1,16 @@
 import SideNav from "../Comp/Sidebar";
 import { allVows, vowArray, defineArray } from "../Data/FearTrait";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
+const initialVows = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
 export default function FearCalculator() {
-  const [vows, setVows] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const [vows, setVows] = useState(initialVows);
   const [isCopied, setIsCopied] = useState(false);
   const [shareableURL, setShareableURL] = useState("");
+
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -17,7 +20,7 @@ export default function FearCalculator() {
       try {
         const decodedVows = JSON.parse(atob(base64Vows)); // Decode the Base64
         setVows(decodedVows);
-        window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
+        // window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
         return;
         // Reset the URL back to localhost without the query
       } catch (error) {
@@ -29,6 +32,24 @@ export default function FearCalculator() {
       setVows(JSON.parse(stored));
     }
   }, []);
+
+  useEffect(() => {
+    const url = new URL(window.location);
+
+    const isInitial = vows.every((v, i) => v === initialVows[i]);
+
+    if (isInitial) {
+      // Remove the 'vows' parameter when state is initial
+      url.searchParams.delete("vows");
+      window.history.replaceState({}, document.title, url);
+      return;
+    }
+
+    // Otherwise, encode and update the URL
+    const encoded = btoa(JSON.stringify(vows));
+    url.searchParams.set("vows", encoded);
+    window.history.replaceState({}, document.title, url);
+  }, [vows]);
 
   const handleButtonClick = (index) => {
     setVows((prevValues) => {
@@ -80,9 +101,8 @@ export default function FearCalculator() {
               <button
                 className="bg-white cursor-pointer text-black rounded px-2 py-1"
                 onClick={() => {
-                  const defaultValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-                  setVows(defaultValues);
-                  localStorage.setItem("myVows", JSON.stringify(defaultValues));
+                  setVows(initialVows);
+                  localStorage.setItem("myVows", JSON.stringify(initialVows));
                 }}
               >
                 Reset Selection
@@ -97,9 +117,8 @@ export default function FearCalculator() {
             <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start px-0.5">
               {allVows.map((ite, index) => (
                 <div
-                  className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876] ${
-                    vows[index] !== 0 ? `bg-gradient-to-br from-[#190c23] to-[#411876]` : `bg-[#000000]`
-                  } ${index === 16 && `col-start-2 col-span-2`}`}
+                  className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876] ${vows[index] !== 0 ? `bg-gradient-to-br from-[#190c23] to-[#411876]` : `bg-[#000000]`
+                    } ${index === 16 && `col-start-2 col-span-2`}`}
                   key={index}
                   style={{
                     borderStyle: "solid", // Required
@@ -131,9 +150,8 @@ export default function FearCalculator() {
                     {Array.from({ length: vowArray(ite).length - 1 }).map((_, idx) => (
                       <div
                         key={idx}
-                        className={`h-1 w-full max-w-[25px] ${
-                          vowArray(ite).indexOf(vows[index]) >= idx + 1 ? `bg-[#00ffaa]` : `bg-gray-600`
-                        }`}
+                        className={`h-1 w-full max-w-[25px] ${vowArray(ite).indexOf(vows[index]) >= idx + 1 ? `bg-[#00ffaa]` : `bg-gray-600`
+                          }`}
                       ></div>
                     ))}
                   </div>
@@ -165,10 +183,10 @@ export default function FearCalculator() {
                                   index == 0
                                     ? `/Level/Common.png`
                                     : index == 1
-                                    ? `/Level/Rare.png`
-                                    : index == 2
-                                    ? `/Level/Epic.png`
-                                    : `/Level/Heroic.png`
+                                      ? `/Level/Rare.png`
+                                      : index == 2
+                                        ? `/Level/Epic.png`
+                                        : `/Level/Heroic.png`
                                 }
                                 alt="Vow Rank"
                                 draggable={false}
