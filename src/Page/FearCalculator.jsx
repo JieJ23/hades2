@@ -21,6 +21,7 @@ export default function FearCalculator() {
         const decodedVows = JSON.parse(atob(base64Vows)); // Decode the Base64
         setVows(decodedVows);
         // window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
+        // Testing
         return;
         // Reset the URL back to localhost without the query
       } catch (error) {
