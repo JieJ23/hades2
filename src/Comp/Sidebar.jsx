@@ -15,8 +15,8 @@ export const sites = [
   { link: `FearCalculator`, nam: `Fear` },
   { link: `Enemy`, nam: `Enemy` },
   { link: `GameplaySubmission`, nam: `Submission` },
-  { link: `TheGameAward`, nam: `Game Award` },
-  { link: `MyTeam`, nam: `My Team` },
+  // { link: `TheGameAward`, nam: `Game Award` },
+  // { link: `MyTeam`, nam: `My Team` },
   { link: `ProfileSum`, nam: `Profile` },
 ];
 

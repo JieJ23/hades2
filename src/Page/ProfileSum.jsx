@@ -78,7 +78,7 @@ export default function ProfileSum() {
         .filter((item) => mainID[item[0]] !== undefined),
       bossEncounter: Object.keys(gameState.BossHealthBarRecord),
       bossRunTime: Object.entries(gameState.EncounterClearStats),
-      lootHistory: Object.entries(gameState.LootChoiceHistory),
+      lootHistory: Object.entries(gameState.LootChoiceHistory ?? {}),
       // Misc
       shrineCache: Object.entries(gameState.ShrineUpgradesCache).sort(
         (a, b) => vowid[idShrine[a[0]]] - vowid[idShrine[b[0]]]
@@ -87,6 +87,8 @@ export default function ProfileSum() {
     };
   }
   //   Other Calculations
+
+  console.log(data);
   return (
     <div className="h-full min-h-lvh relative overflow-hidden">
       <Background />
@@ -117,7 +119,7 @@ export default function ProfileSum() {
             <div className="text-blue-400 hover:underline">https://jakobhellermann.github.io/hades2-tools/</div>
           </div>
         </Link>
-        {data && info.clearRun === true ? (
+        {data ? (
           <div
             className="bg-black/70 rounded p-2"
             style={{
