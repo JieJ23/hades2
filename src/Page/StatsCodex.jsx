@@ -300,7 +300,6 @@ export default function StatsCodex() {
   const boon_arms = [boonStaff, boonDagger, boonAxe, boonTorch, boonLob, boonSuit];
   //
 
-  console.log(boon_top3);
   return (
     <>
       <Background />
@@ -350,7 +349,7 @@ export default function StatsCodex() {
               </select>
             </div>
           </div>
-          {aspect === "All" && (
+          {
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-1 gap-y-6 my-5 px-2">
               {boon_arms.map((arr, ind1) => {
                 const calcValue = Object.entries(arr).reduce((a, b) => a + b[1][1], 0);
@@ -376,6 +375,7 @@ export default function StatsCodex() {
                         return (
                           <div className={`flex items-center gap-1 rounded py-0.5 px-1 mb-0.5`} key={ind2}>
                             <img
+                              loading="lazy"
                               draggable={false}
                               src={`/P9/${p9boons_reverse[obj[0]]}.png`}
                               alt="Core Boon"
@@ -393,7 +393,7 @@ export default function StatsCodex() {
                 );
               })}
             </div>
-          )}
+          }
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 gap-y-6 my-5 p-2 w-full max-w-[1600px] mx-auto">
             {Object.entries(categories).map((arr) => (
               <div className="bg-gradient-to-b from-[black] to-[#131111]/60 rounded h-full">
@@ -416,7 +416,7 @@ export default function StatsCodex() {
                   const calcValue = ((obj.value / availableData.length) * 100).toFixed(2);
                   return (
                     <div className={`flex items-center gap-2 rounded py-0.5 px-1 mb-0.5`}>
-                      <img src={`/P9/${obj.key}.png`} alt="Core" className="size-8 rounded-full" />
+                      <img loading="lazy" src={`/P9/${obj.key}.png`} alt="Core" className="size-8 rounded-full" />
                       <div className="w-full flex items-center justify-between">
                         <div>{obj.key}</div>
                         <div>{calcValue}%</div>
@@ -456,6 +456,7 @@ export default function StatsCodex() {
                       return (
                         <div className={`flex items-center gap-2 rounded py-0.5 px-1 mb-0.5`} key={ind2}>
                           <img
+                            loading="lazy"
                             draggable={false}
                             src={`/P9/${boonCodexr[obj[0]]}.png`}
                             alt="Core Boon"

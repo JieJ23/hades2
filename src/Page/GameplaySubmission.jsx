@@ -125,32 +125,14 @@ export default function GameplaySubmission() {
       <Background />
       <SideNav />
       <div className="max-w-[1200px] font-[Ale] text-[12px] mx-auto">
-        <div className="text-white text-center text-[20px] my-2">Gameplay Submission</div>
-        <div className="flex justify-center gap-1">
-          <Link
-            className="flex items-center bg-white text-black border-1 border-black rounded ps-2 p-1"
-            to={`https://h2crossroads.pages.dev/FearCalculator`}
-            target="_blank"
-          >
-            <div>{`Fear Calculator`}</div>
-            <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-          </Link>
-          <Link
-            className="flex items-center bg-white text-black border-1 border-black rounded ps-2 p-1"
-            to={`https://h2crossroads.pages.dev/ArcanaDeck`}
-            target="_blank"
-          >
-            <div>{`Arcana Deck`}</div>
-            <img src={`/Misc/ra.png`} alt="Oath" className="size-3" draggable={false} />
-          </Link>
-        </div>
+        <div className="text-white text-center text-[20px] my-2">Submission</div>
         {/* Form Start */}
         <form onSubmit={Submit}>
           <div className="w-full mx-auto my-2 grid grid-cols-1 sm:grid-cols-2 gap-4 p-2 font-[Ale] max-w-[1000px]">
             <div className="flex flex-col gap-2">
-              <input type="date" placeholder="Date" className="input w-full rounded" name="dat" required />
               <div className="text-[14px]">Name are case-sensitive, "Hades" and "HADES" are separated.</div>
               <input type="text" placeholder="Name" className="input w-full rounded" name="nam" required />
+              <input type="date" placeholder="Date" className="input w-full rounded" name="dat" required />
               <select defaultValue="Melinoe Staff" className="select select-neutral w-full rounded" name="asp">
                 {h2AspectOrder.map((ite, index) => (
                   <option key={index}>{ite}</option>
@@ -169,16 +151,9 @@ export default function GameplaySubmission() {
                 min={1}
                 required
               />
-              <div className="text-[14px]">Video or Discord Image URL are required.</div>
-              <input type="text" placeholder="Gameplay Link" className="input w-full rounded" name="src" required />
-              <div className="text-[14px]">Short description regarding the run, a brief sentence or two summary.</div>
-              <input type="text" placeholder="Short Description" className="input w-full rounded" name="des" required />
             </div>
             <div className="flex flex-col gap-2">
-              <div className="text-[14px]">Optional Arcana and Fear setup, shareable tools available above.</div>
-              <input type="text" placeholder="Arcana Shareable URL" className="input w-full rounded" name="arcana" />
-              <input type="text" placeholder="Fear Shareable URL" className="input w-full rounded" name="oath" />
-              <div className="text-[14px]">Completion Time: Minutes / Seconds / Centiseconds </div>
+              <div className="text-[14px]">Select Core and Hammer Boons below the form.</div>
               <div className="flex gap-2">
                 <input
                   type="number"
@@ -219,7 +194,6 @@ export default function GameplaySubmission() {
                 <option>Raven</option>
               </select>
               {/* <div>Optional Full Entry Details</div> */}
-              <div className="text-[14px]">All 5 core must be selected. ( EX: "Attack" for no attack core )</div>
               <input
                 className="input w-full rounded"
                 placeholder="Core Boons"
@@ -228,27 +202,33 @@ export default function GameplaySubmission() {
                 required={true}
               />
               <input className="input w-full rounded" placeholder="Hammer" value={hammer.join(",")} name="ham" />
-              <div className="text-[14px]">All Other Boons excluding selene boons.</div>
               <input
+                type="text"
+                placeholder="Gameplay / Image Link"
                 className="input w-full rounded"
-                placeholder="Other Boons"
-                value={boons.join(",")}
-                name="boon"
-                required={true}
-              />
-              <div className="text-[14px]">Must have 4 keepsakes, 1 per biome. ( Selection can be repeated )</div>
-              <input
-                className="input w-full rounded"
-                placeholder="Keepsakes"
-                value={keep.join(",")}
-                name="ks"
-                required={true}
+                name="src"
+                required
               />
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className="divider"></div>
+          <div className="text-center text-[20px] my-4">Optional Information</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[1000px] mx-auto">
+            <div className="flex flex-col gap-2">
+              <div className="text-[14px]">Short description regarding the run, a brief sentence is ideal.</div>
+              <input type="text" placeholder="Short Description" className="input w-full rounded" name="des" />
+              <input className="input w-full rounded" placeholder="Keepsakes" value={keep.join(",")} name="ks" />
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="text-[14px]">Arcana and Fear Shareable links.</div>
+              <input type="text" placeholder="Arcana Shareable URL" className="input w-full rounded" name="arcana" />
+              <input type="text" placeholder="Fear Shareable URL" className="input w-full rounded" name="oath" />
+              <input className="input w-full rounded" placeholder="Other Boons" value={boons.join(",")} name="boon" />
+            </div>
+          </div>
+          <div className="flex justify-center my-4">
             <button
-              className="bg-[#131111a1] rounded text-[20px] px-2 py-1 w-[150px] cursor-pointer"
+              className="bg-[#00ffaa] text-black rounded text-[20px] px-2 py-1 w-[150px] cursor-pointer"
               type="submit"
               name="Submit"
             >

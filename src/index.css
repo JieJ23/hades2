@@ -1,25 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "daisyui" {
-    themes: black  --default, black --prefersdark;
-  }
-
-  @font-face {
-    font-family: Cinzel;
-    font-style: normal;
-    src: url("/src/fonts/Cinzel-Regular.ttf") format("truetype");
-  }
-
-  @font-face {
-    font-family: PT;
-    font-style: normal;
-    src: url("/src/fonts/PTSans-Regular.ttf") format("truetype");
-  }
-
-    @font-face {
-    font-family: Source;
-    font-style: normal;
-    src: url("/src/fonts/SourceSans3.ttf") format("truetype");
+    themes: sunset  --default, sunset --prefersdark;
   }
 
       @font-face {
@@ -32,10 +14,4 @@
     font-family: Ubuntu;
     font-style: normal;
     src: url("/src/fonts/Ubuntu.ttf") format("truetype");
-  }
-
-          @font-face {
-    font-family: Fontin;
-    font-style: normal;
-    src: url("/src/fonts/Fontin.otf") format("opentype");
   }

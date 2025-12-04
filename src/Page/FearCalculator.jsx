@@ -4,13 +4,12 @@ import { useState, useEffect, useRef } from "react";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
-const initialVows = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+const initialVows = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 export default function FearCalculator() {
   const [vows, setVows] = useState(initialVows);
   const [isCopied, setIsCopied] = useState(false);
   const [shareableURL, setShareableURL] = useState("");
-
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -118,8 +117,9 @@ export default function FearCalculator() {
             <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start px-0.5">
               {allVows.map((ite, index) => (
                 <div
-                  className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876] ${vows[index] !== 0 ? `bg-gradient-to-br from-[#190c23] to-[#411876]` : `bg-[#000000]`
-                    } ${index === 16 && `col-start-2 col-span-2`}`}
+                  className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876] ${
+                    vows[index] !== 0 ? `bg-gradient-to-br from-[#190c23] to-[#411876]` : `bg-[#000000]`
+                  } ${index === 16 && `col-start-2 col-span-2`}`}
                   key={index}
                   style={{
                     borderStyle: "solid", // Required
@@ -151,8 +151,9 @@ export default function FearCalculator() {
                     {Array.from({ length: vowArray(ite).length - 1 }).map((_, idx) => (
                       <div
                         key={idx}
-                        className={`h-1 w-full max-w-[25px] ${vowArray(ite).indexOf(vows[index]) >= idx + 1 ? `bg-[#00ffaa]` : `bg-gray-600`
-                          }`}
+                        className={`h-1 w-full max-w-[25px] ${
+                          vowArray(ite).indexOf(vows[index]) >= idx + 1 ? `bg-[#00ffaa]` : `bg-gray-600`
+                        }`}
                       ></div>
                     ))}
                   </div>
@@ -164,7 +165,7 @@ export default function FearCalculator() {
               <div className="grid grid-cols-2 gap-2">
                 {displayVow.map((item, index) => (
                   <div
-                    className="w-full text-[12px] text-white rounded p-2 bg-[#000000] font-[Fontin]"
+                    className="w-full text-[12px] text-white rounded p-2 bg-[#000000] font-[Ubuntu]"
                     key={index}
                     style={{
                       borderStyle: "solid", // Required
@@ -172,7 +173,7 @@ export default function FearCalculator() {
                       borderImage: "url('/Misc/frame.webp') 40 stretch",
                     }}
                   >
-                    <div className="text-[14px]">{item}</div>
+                    <div className="text-[14px] font-[Ale]">{item}</div>
                     <div className="text-gray-300">{defineArray(item).d}</div>
                     <div className="flex flex-wrap justify-start gap-2 mt-1">
                       {defineArray(item).rank.map((ite, index) => (
@@ -184,10 +185,10 @@ export default function FearCalculator() {
                                   index == 0
                                     ? `/Level/Common.png`
                                     : index == 1
-                                      ? `/Level/Rare.png`
-                                      : index == 2
-                                        ? `/Level/Epic.png`
-                                        : `/Level/Heroic.png`
+                                    ? `/Level/Rare.png`
+                                    : index == 2
+                                    ? `/Level/Epic.png`
+                                    : `/Level/Heroic.png`
                                 }
                                 alt="Vow Rank"
                                 draggable={false}

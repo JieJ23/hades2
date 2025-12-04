@@ -4,10 +4,10 @@ import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import App from "./App.jsx";
+import Stats from "./Page/Stats.jsx";
 
 import Archive from "./Page/Archive.jsx";
 import TheGameAward from "./Page/TheGameAward.jsx";
-import MyTeam from "./Page/MyTeam.jsx";
 
 import ProfileSum from "./Page/ProfileSum.jsx";
 import Enemy from "./Page/Enemy.jsx";
@@ -42,6 +42,11 @@ createRoot(document.getElementById("root")).render(
       <Router>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/Stats" element={<Stats />} />
+
+          <Route path="/FearCalculator" element={<FearCalculator />} />
+          <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
+          <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
 
           <Route path="/Query" element={<Query />} />
           <Route path="/Archive" element={<Archive />} />
@@ -50,7 +55,6 @@ createRoot(document.getElementById("root")).render(
           <Route path="/ProfileSum" element={<ProfileSum />} />
 
           <Route path="/TheGameAward" element={<TheGameAward />} />
-          <Route path="/MyTeam" element={<MyTeam />} />
 
           <Route path="/Ladder" element={<Ladder />} />
           <Route path="/FearPoints" element={<FearPoints />} />
@@ -65,10 +69,6 @@ createRoot(document.getElementById("root")).render(
           <Route path="/EAStat" element={<EAStat />} />
           <Route path="/EARanking" element={<EARanking />} />
           <Route path="/EAQuery" element={<EAQuery />} />
-
-          <Route path="/FearCalculator" element={<FearCalculator />} />
-          <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
-          <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
         </Routes>
       </Router>
     </DataProvider>

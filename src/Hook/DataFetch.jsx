@@ -12,19 +12,19 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     async function load() {
       try {
-        // const cached = localStorage.getItem("divine");
-        // if (cached) {
-        //   setPosts(JSON.parse(cached));
-        //   setLoader(false);
-        //   return; // Skip fetching if cached exists
-        // }
+        const cached = localStorage.getItem("primee");
+        if (cached) {
+          setPosts(JSON.parse(cached));
+          setLoader(false);
+          return; // Skip fetching if cached exists
+        }
         const response = await fetch(
           `https://script.google.com/macros/s/AKfycbw1iX5AdD32YcXYohQLAgEx3SDPTsH3V41RGCGts2bNk3-yYfSlEpZgufNt-G60gc7t/exec`
         );
         const posts = await response.json();
         // const posts = await data.filter((obj) => obj.v === "y");
         setPosts(posts);
-        // localStorage.setItem("divine", JSON.stringify(posts)); // save for next time
+        localStorage.setItem("primee", JSON.stringify(posts)); // save for next time
 
         setLoader(false);
       } catch (error) {
