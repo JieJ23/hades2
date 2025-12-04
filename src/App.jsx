@@ -158,11 +158,13 @@ export default function App() {
                   <th>Name</th>
                   <th>Fear</th>
                   <th>Aspect</th>
+                  <th className="min-w-[120px]">Keep</th>
                   <th className="min-w-[120px]">Fammer</th>
-                  <th className="min-w-[170px]">Core</th>
+                  <th className="min-w-[150px]">Core</th>
                   <th>Time</th>
                   <th>Date</th>
                   <th className="min-w-[100px]">Link</th>
+                  {/* <th>God Pool</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -186,7 +188,7 @@ export default function App() {
                     </td>
                     <td>
                       <div className="flex gap-2 justify-between items-center">
-                        {obj.asp}{" "}
+                        <div>{obj.asp}</div>
                         {obj.des && (
                           <div className="w-[25px]">
                             <div
@@ -204,6 +206,22 @@ export default function App() {
                           </div>
                         )}
                       </div>
+                    </td>
+                    <td>
+                      {obj.ks && (
+                        <div className="flex gap-1">
+                          {sToA(obj.ks).map((ite, index) => (
+                            <div className="tooltip">
+                              <div className="tooltip-content p-0">
+                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                  {ite}
+                                </div>
+                              </div>
+                              <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </td>
                     <td>
                       <div className="flex gap-0.5">
@@ -284,6 +302,15 @@ export default function App() {
                         )}
                       </div>
                     </td>
+                    {/* <td>
+                      {obj.pool && (
+                        <div className="flex flex-wrap gap-0.5">
+                          {sToA(obj.pool).map((ite) => (
+                            <div className="bg-[#28282b] text-white px-1">{ite.slice(0, 4)}.</div>
+                          ))}
+                        </div>
+                      )}
+                    </td> */}
                   </tr>
                 ))}
               </tbody>

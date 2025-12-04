@@ -84,6 +84,7 @@ export default function StatsCodex() {
   const boonAvailableData = [...eabundle].filter((obj) => obj.boon);
 
   const availableData = [...boonAvailableData, ...v1bundle, ...(posts || [])]
+    .filter((obj) => obj.boon)
     .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear)
     .filter((obj) => {
       if (aspect === "All") {
