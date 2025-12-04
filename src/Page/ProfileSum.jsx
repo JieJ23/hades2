@@ -79,6 +79,7 @@ export default function ProfileSum() {
       bossEncounter: Object.keys(gameState.BossHealthBarRecord),
       bossRunTime: Object.entries(gameState.EncounterClearStats),
       lootHistory: Object.entries(gameState.LootChoiceHistory ?? {}),
+      roomHistory: Object.entries(gameState.RoomHistory),
       // Misc
       shrineCache: Object.entries(gameState.ShrineUpgradesCache).sort(
         (a, b) => vowid[idShrine[a[0]]] - vowid[idShrine[b[0]]]
@@ -87,7 +88,6 @@ export default function ProfileSum() {
     };
   }
   //   Other Calculations
-
   console.log(data);
   return (
     <div className="h-full min-h-lvh relative overflow-hidden">
@@ -238,7 +238,6 @@ export default function ProfileSum() {
                 </div> */}
               </div>
             </div>
-            {/*  */}
             <div className="gap-2 flex flex-wrap">
               {info.traitCache.map((arr, index) => (
                 <div className="flex gap-1 text-[12px] min-w-[220px]">
@@ -258,34 +257,70 @@ export default function ProfileSum() {
               ))}
             </div>
             {/* Room History */}
-            <div className="my-4 w-full text-[12px] text-gray-300">
-              {info.lootHistory.map((arr) => (
-                <div className="my-2 rounded p-1">
-                  <div>
-                    Depth: {arr[1].Depth} | {arr[1].UpgradeName}
-                  </div>
-                  <div className="grid grid-cols-3 gap-2 max-w-[500px]">
-                    {Object.entries(arr[1].UpgradeChoices).map((arr) => (
-                      <div
-                        className={`border border-white/20 rounded p-1 ${
-                          arr[1].Chosen === "true" ? `bg-[#141736]` : ``
-                        }`}
-                      >
-                        <div className="text-center truncate">{sdata[arr[1].Name]}</div>
-                        <div className="relative flex justify-center">
-                          <img
-                            src={`/BoonBorder/${arr[1].Rarity}.png`}
-                            alt="Boon Border"
-                            className="absolute top-0 left-1/2 -translate-x-[50%] h-full"
-                          />
-                          <img src={`/P9/${mainID[arr[1].Name]}.png`} alt="Boon" className="size-10 p-1" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+            {/* Start */}
+            <div className="overflow-x-auto my-8">
+              <table className="table whitespace-nowrap table-xs table-zebra font-[Ubuntu] backdrop-blur-sm border-separate border-spacing-0.5">
+                <thead className="font-[Ale]">
+                  <tr>
+                    <th>Depth</th>
+                    <th>UpgradeName</th>
+                    <th>Choice 1</th>
+                    <th>Choice 2</th>
+                    <th>Choice 3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {info.lootHistory.map((arr) => (
+                    <tr>
+                      <td>{arr[1].Depth}</td>
+                      <td>{arr[1].UpgradeName}</td>
+                      {Object.entries(arr[1].UpgradeChoices).map((arr) => (
+                        <td className={`${arr[1].Chosen === "true" && `text-[#00ffaa]`}`}>
+                          <div>{sdata[arr[1].Name]}</div>
+                          <div>
+                            {arr[1].Name} ({arr[1].Rarity})
+                          </div>
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+            {/* End */}
+            <div className="overflow-x-auto my-8">
+              <table className="table whitespace-nowrap table-xs table-zebra font-[Ubuntu] backdrop-blur-sm border-separate border-spacing-0.5">
+                <thead className="font-[Ale]">
+                  <tr>
+                    <th>Room</th>
+                    <th>Encounter</th>
+                    <th>Encounter Name</th>
+                    <th>Chosen Reward Type</th>
+                    <th>Use Record</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {info.roomHistory.map((arr) => (
+                    <tr>
+                      <td>{arr[0]}</td>
+                      <td>{arr[1].Name}</td>
+                      <td>{arr[1].Encounter.Name}</td>
+                      <td>{arr[1].ChosenRewardType}</td>
+                      <td>
+                        <div className="">
+                          {Object.entries(arr[1].UseRecord).map((arr) => (
+                            <div>
+                              {arr[0]}({arr[1]})
+                            </div>
+                          ))}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {/* End 2 */}
           </div>
         ) : (
           <div className="text-[#00ffaa] px-2 text-[16px]">*Latest Run Must be Clear</div>
