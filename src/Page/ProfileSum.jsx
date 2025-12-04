@@ -7,8 +7,8 @@ import { useState } from "react";
 
 import { sdata } from "../Data/SData";
 
-import { parsesectoTime, oathMatch } from "../Data/Misc";
-import { idMetaUpgrade } from "../Data/Arcana1";
+import { parsesectoTime, oathMatch, traitAspect, aspectsFinder } from "../Data/Misc";
+// import { idMetaUpgrade } from "../Data/Arcana1";
 import { idShrine, vowid } from "../Data/Vow1";
 import { mainID } from "../Data/MainID";
 
@@ -61,34 +61,33 @@ export default function ProfileSum() {
   };
 
   //   Assignment
-
   let info = null;
 
   if (data) {
     const gameState = data.CurrentRun;
 
     info = {
-      clearRun: gameState.Cleared,
       biomeTimes: Object.entries(gameState.BiomeGameplayTimes),
       keepsakes: Object.entries(gameState.KeepsakeCache),
       shrinePoints: gameState.ShrinePointsCache,
       runTime: gameState.GameplayTime,
-      traitCache: Object.entries(gameState.TraitRarityCache)
-        .filter((ite) => !ite[0].toLowerCase().includes("metaupgrade"))
-        .filter((item) => mainID[item[0]] !== undefined),
+      // traitCache: Object.entries(gameState.TraitRarityCache)
+      //   .filter((ite) => !ite[0].toLowerCase().includes("metaupgrade"))
+      //   .filter((item) => mainID[item[0]] !== undefined),
       bossEncounter: Object.keys(gameState.BossHealthBarRecord),
       bossRunTime: Object.entries(gameState.EncounterClearStats),
       lootHistory: Object.entries(gameState.LootChoiceHistory ?? {}),
       roomHistory: Object.entries(gameState.RoomHistory),
+      runHistory: Object.entries(data.GameState.RunHistory).filter((arr) => Object.entries(arr[1]).length > 2),
       // Misc
-      shrineCache: Object.entries(gameState.ShrineUpgradesCache).sort(
-        (a, b) => vowid[idShrine[a[0]]] - vowid[idShrine[b[0]]]
-      ),
-      metaCards: Object.keys(gameState.TraitRarityCache).filter((ite) => ite.toLowerCase().includes("metaupgrade")),
+      // shrineCache: Object.entries(gameState.ShrineUpgradesCache).sort(
+      //   (a, b) => vowid[idShrine[a[0]]] - vowid[idShrine[b[0]]]
+      // ),
+      // metaCards: Object.keys(gameState.TraitRarityCache).filter((ite) => ite.toLowerCase().includes("metaupgrade")),
     };
   }
-  //   Other Calculations
-  console.log(data);
+
+  console.log(info?.runHistory);
   return (
     <div className="h-full min-h-lvh relative overflow-hidden">
       <Background />
@@ -121,54 +120,65 @@ export default function ProfileSum() {
         </Link>
         {data ? (
           <div
-            className="bg-black/70 rounded p-2"
+            className="bg-black/70 rounded p-2 py-4"
             style={{
               borderStyle: "solid", // Required
               borderWidth: "6px",
               borderImage: "url('/Misc/frame.webp') 40 stretch",
             }}
           >
-            <div className="flex flex-wrap gap-6 my-4">
-              <div className="gap-4">
-                {info.biomeTimes.map((arr, index) => (
-                  <div className="flex gap-2">
-                    <div>{findBiomeName(arr[0])}:</div>
-                    <div>
-                      {index === 0
-                        ? parsesectoTime(arr[1])
-                        : parsesectoTime(info.biomeTimes[index][1] - info.biomeTimes[index - 1][1])}
+            {/* Current Run Summary */}
+            <div>
+              <div className="px-2">Current Run Summary:</div>
+              <div className="flex flex-wrap gap-1 font-[Ubuntu] text-[11px]">
+                <div className="gap-4 border border-white/10 px-2 py-1 rounded">
+                  {info.biomeTimes.map((arr, index) => (
+                    <div className="flex justify-between gap-2">
+                      <div>{findBiomeName(arr[0])}:</div>
+                      <div>
+                        {index === 0
+                          ? parsesectoTime(arr[1])
+                          : parsesectoTime(info.biomeTimes[index][1] - info.biomeTimes[index - 1][1])}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-              <div className="gap-4">
-                {info.keepsakes.map((arr, index) => (
-                  <div className="flex flex-col gap-2">
-                    <div>
-                      {arr[0]}: {sdata[arr[1]]}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div>Fear: {info.shrinePoints}</div>
-              <div>Time: {parsesectoTime(info.runTime)}</div>
-            </div>
-            <div className="flex flex-wrap gap-1 my-4">
-              {info.bossEncounter.map((ite) => (
-                <div className="border border-white/20 p-2 py-1 rounded">{ite}</div>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-1 my-4">
-              {info.bossRunTime.map((arr) => (
-                <div className="border border-white/20 p-2 py-1 rounded">
-                  <div>{arr[0]}</div>
-                  <div className="text-center">{parsesectoTime(arr[1].ClearTime)}</div>
-                  <div className="text-center">{arr[1].TookDamage ? "-" : `Damageless`}</div>
+                  ))}
                 </div>
-              ))}
+                <div className="gap-4 border border-white/10 px-2 py-1 rounded">
+                  {info.keepsakes.map((arr, index) => (
+                    <div className="flex justify-baseline gap-2">
+                      <div>{arr[0]}:</div>
+                      <div>{sdata[arr[1]]}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="border border-white/10 px-2 py-1 rounded">Fear: {info.shrinePoints}</div>
+                <div className="border border-white/10 px-2 py-1 rounded">Time: {parsesectoTime(info.runTime)}</div>
+              </div>
+            </div>
+            {/* Miniboss / Bosses */}
+            <div className="my-4">
+              <div className="px-2">All Minibosses/Bosses:</div>
+              <div className="flex flex-wrap gap-1 font-[Ubuntu] text-[11px]">
+                {info.bossEncounter.map((ite) => (
+                  <div className="border border-white/20 p-2 py-1 rounded">{ite}</div>
+                ))}
+              </div>
+            </div>
+            {/* Biome Bosses */}
+            <div className="my-4">
+              <div className="px-2">All Bosses Time:</div>
+              <div className="flex flex-wrap gap-1 font-[Ubuntu] text-[11px]">
+                {info.bossRunTime.map((arr) => (
+                  <div className="border border-white/20 p-2 py-1 rounded">
+                    <div>{arr[0]}</div>
+                    <div className="text-center">{parsesectoTime(arr[1].ClearTime)}</div>
+                    <div className="text-center">{arr[1].TookDamage ? "-" : `Damageless`}</div>
+                  </div>
+                ))}
+              </div>
             </div>
             {/* Arcana & Shrine */}
-            <div className="flex flex-wrap gap-4 my-4">
+            {/* <div className="flex flex-wrap gap-4 my-4">
               <div>
                 <div>
                   {(() => {
@@ -196,13 +206,13 @@ export default function ProfileSum() {
                     );
                   })()}
                 </div>
-                {/* <div>
+                <div>
                   {info.metaCards.map((item) => (
                     <div>
                       {item} | {idMetaUpgrade[item]}
                     </div>
                   ))}
-                </div> */}
+                </div>
               </div>
               <div>
                 <div className="grid grid-cols-4 gap-1 w-full max-w-[450px] font-[Ubuntu] text-[12px]">
@@ -228,14 +238,14 @@ export default function ProfileSum() {
                     </div>
                   ))}
                 </div>
-                {/* <div>
+                <div>
                   {info.shrineCache.map((arr) => (
                     <div className="grid grid-cols-2 max-w-[500px]">
                       <div>{idShrine[arr[0]]}</div>
                       <div>{arr[1]}</div>
                     </div>
                   ))}
-                </div> */}
+                </div>
               </div>
             </div>
             <div className="gap-2 flex flex-wrap">
@@ -255,10 +265,10 @@ export default function ProfileSum() {
                   </div>
                 </div>
               ))}
-            </div>
-            {/* Room History */}
-            {/* Start */}
-            <div className="overflow-x-auto my-8">
+            </div> */}
+            {/* Reward Chamber */}
+            <div className="px-2 mt-8">Depth Reward Selection:</div>
+            <div className="overflow-x-auto mb-4">
               <table className="table whitespace-nowrap table-xs table-zebra font-[Ubuntu] backdrop-blur-sm border-separate border-spacing-0.5">
                 <thead className="font-[Ale]">
                   <tr>
@@ -287,8 +297,9 @@ export default function ProfileSum() {
                 </tbody>
               </table>
             </div>
-            {/* End */}
-            <div className="overflow-x-auto my-8">
+            {/* All Chamber */}
+            <div className="px-2 mt-8">All Depth Encounter:</div>
+            <div className="overflow-x-auto mb-4">
               <table className="table whitespace-nowrap table-xs table-zebra font-[Ubuntu] backdrop-blur-sm border-separate border-spacing-0.5">
                 <thead className="font-[Ale]">
                   <tr>
@@ -307,7 +318,7 @@ export default function ProfileSum() {
                       <td>{arr[1].Encounter.Name}</td>
                       <td>{arr[1].ChosenRewardType}</td>
                       <td>
-                        <div className="">
+                        <div className="flex gap-2">
                           {Object.entries(arr[1].UseRecord).map((arr) => (
                             <div>
                               {arr[0]}({arr[1]})
@@ -320,10 +331,55 @@ export default function ProfileSum() {
                 </tbody>
               </table>
             </div>
-            {/* End 2 */}
+            {/* Previous History */}
+            <div className="px-2 mt-8">Previous History</div>
+            <div className="overflow-x-auto mb-4">
+              <table className="table whitespace-nowrap table-xs table-zebra font-[Ubuntu] backdrop-blur-sm border-separate border-spacing-0.5">
+                <thead className="font-[Ale]">
+                  <tr>
+                    <th>Run #</th>
+                    <th>Result</th>
+                    <th>Aspect</th>
+                    <th>Gameplay Time</th>
+                    <th>Region</th>
+                    <th>Ending Room</th>
+                    <th>Killed?</th>
+                    <th>Fear</th>
+                    <th>Meta Points</th>
+                    <th>Keepsakes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {info.runHistory.map((arr) => (
+                    <tr>
+                      <td>{arr[0]}</td>
+                      <td>{arr[1].RunResult}</td>
+                      <td>
+                        {aspectsFinder(
+                          traitAspect.find((ite) => Object.keys(arr[1].TraitCache).some((a) => a === ite))
+                        )}
+                      </td>
+                      <td>{parsesectoTime(arr[1].GameplayTime)}</td>
+                      <td>{arr[1].RunResult === 1 || arr[1].RunResult === 1 ? `Underworld` : `Surface`}</td>
+                      <td>{arr[1].EndingRoomName}</td>
+                      <td>{arr[1].KilledByName}</td>
+                      <td>{arr[1].ShrinePointsCache}</td>
+                      <td>{arr[1].MetaUpgradeCostCache}</td>
+                      <td>
+                        <div className="flex gap-2">
+                          {Object.entries(arr[1].KeepsakeCache).map((arr) => (
+                            <div>{sdata[arr[1]]}</div>
+                          ))}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         ) : (
-          <div className="text-[#00ffaa] px-2 text-[16px]">*Latest Run Must be Clear</div>
+          <div className="text-[#00ffaa] px-2 text-[16px]">*Parsing Error</div>
         )}
       </div>
       <Footer />
