@@ -66,10 +66,36 @@ const misc = [bDuo, bElemental];
 const other = [bChaos, bTalent];
 const keepsakes = [bKeep];
 
+const selectPool = [
+  `Athena`,
+  `Artemis`,
+  `Circe`,
+  `Medea`,
+  `Hermes`,
+  `Icarus`,
+  `Dionysus`,
+  `Hades`,
+  `Arachne`,
+  `Narcissus`,
+  `Echo`,
+  `Chaos`,
+  `Selene`,
+  `Aphrodite`,
+  `Apollo`,
+  `Ares`,
+  `Demeter`,
+  `Hephaestus`,
+  `Hera`,
+  `Hestia`,
+  `Poseidon`,
+  `Zeus`,
+].sort();
+
 export default function GameplaySubmission() {
   const [category, setCategory] = useState(0);
   const [core, setCore] = useState([]);
   const [hammer, setHammer] = useState([]);
+  const [godpool, setGodpool] = useState([]);
   const [boons, setBoons] = useState([]);
   const [keep, setKeep] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -91,10 +117,10 @@ export default function GameplaySubmission() {
     formDatab.append("tim", tim);
 
     setLoading(true);
-
+    // https://script.google.com/macros/s/AKfycbxRKnfO9SKimv8diiCucFfCvaZ3xfwlkWPRxhK6si1pW5Q9nZ_Z15mSNgztoexazcx-/exec
     try {
       const res = await fetch(
-        "https://script.google.com/macros/s/AKfycbxRKnfO9SKimv8diiCucFfCvaZ3xfwlkWPRxhK6si1pW5Q9nZ_Z15mSNgztoexazcx-/exec",
+        "https://script.google.com/macros/s/AKfycbxiQRnYrLAiWL0xV9eaauhwobborCkr5sJa4MJuDS3K_5uWxNliv3yrsnin-VxqdqyI/exec",
         {
           method: "POST",
           body: formDatab,
@@ -104,6 +130,7 @@ export default function GameplaySubmission() {
       formEle.reset();
       setCore([]);
       setHammer([]);
+      setGodpool([]);
       setBoons([]);
       setKeep([]);
       console.log(`good`);
@@ -115,8 +142,11 @@ export default function GameplaySubmission() {
     }
   }
 
-  const allCategory = [coreboons, weapons, gods, Unseen, misc, other, keepsakes];
-  const allCategoryTitle = [`Core`, `Weapons`, `Olympians`, `Unseen`, `Duo & Elemental`, `Chaos & Hex`, `Keepsakes`];
+  // const allCategory = [coreboons, weapons, gods, Unseen, misc, other, keepsakes];
+  const allCategory = [coreboons, weapons, keepsakes];
+
+  // const allCategoryTitle = [`Core`, `Weapons`, `Olympians`, `Unseen`, `Duo & Elemental`, `Chaos & Hex`, `Keepsakes`];
+  const allCategoryTitle = [`Core`, `Weapons`, `Keepsakes`];
 
   const displayData = allCategory[category];
 
@@ -149,6 +179,13 @@ export default function GameplaySubmission() {
                 name="fea"
                 max={67}
                 min={1}
+                required
+              />
+              <input
+                type="text"
+                placeholder="Gameplay / Image Link"
+                className="input w-full rounded"
+                name="src"
                 required
               />
             </div>
@@ -202,13 +239,7 @@ export default function GameplaySubmission() {
                 required={true}
               />
               <input className="input w-full rounded" placeholder="Hammer" value={hammer.join(",")} name="ham" />
-              <input
-                type="text"
-                placeholder="Gameplay / Image Link"
-                className="input w-full rounded"
-                name="src"
-                required
-              />
+              <input className="input w-full rounded" placeholder="God Pool" value={godpool.join(",")} name="pool" />
             </div>
           </div>
           <div className="divider"></div>
@@ -242,6 +273,7 @@ export default function GameplaySubmission() {
             onClick={() => {
               setCore([]);
               setHammer([]);
+              setGodpool([]);
               setBoons([]);
               setKeep([]);
             }}
@@ -261,6 +293,14 @@ export default function GameplaySubmission() {
             <div
               onClick={() => setHammer((prev) => prev.filter((ite) => ite !== item))}
               className="cursor-pointer rounded bg-[#2f00ff] p-1 text-white"
+            >
+              {item}
+            </div>
+          ))}
+          {godpool.map((item) => (
+            <div
+              onClick={() => setGodpool((prev) => prev.filter((ite) => ite !== item))}
+              className="cursor-pointer rounded bg-[#403088] p-1 text-white"
             >
               {item}
             </div>
@@ -292,15 +332,33 @@ export default function GameplaySubmission() {
             </button>
           ))}
         </div>
-        <div className="text-[14px] px-4">To de-select a boon, click on the boon name above.</div>
-        <div className="flex flex-wrap px-2 my-2 mb-10 select-none">
+        <div className="text-[14px] px-2 mb-4">To de-select a boon, click on the boon name above.</div>
+        <div className="text-[14px] px-4">Select God Pool:</div>
+        <div className="flex flex-wrap gap-1 px-2 my-2 mt-1 select-none">
+          {selectPool.map((item) => (
+            <div
+              className={` px-2 py-1 rounded-none cursor-pointer ${
+                godpool.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
+              }`}
+              onClick={() => {
+                if (!godpool.includes(item)) {
+                  setGodpool((prev) => [...prev, item]);
+                }
+              }}
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+        <div className="text-[14px] px-4">Select Boons/Keeps:</div>
+        <div className="flex flex-wrap px-2 mt-1 mb-10 select-none">
           {displayData.map((objs) => (
-            <section className="flex flex-wrap gap-1 py-2">
-              {category === 6
+            <section className="flex flex-wrap gap-1 my-1">
+              {category === 2
                 ? objs.map((item) => (
                     <div
-                      className={`cursor-pointer flex items-center gap-2 rounded px-2 py-1 ${
-                        keep.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#131111]`
+                      className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${
+                        keep.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
                       }`}
                       onClick={(prev) => {
                         if (keep.length >= 4) {
@@ -310,16 +368,16 @@ export default function GameplaySubmission() {
                         }
                       }}
                     >
-                      <img src={`buildgui/${[item]}.png`} alt="Boons" className="size-9" draggable={false} />
+                      <img src={`buildgui/${[item]}.png`} alt="Boons" className="size-8" draggable={false} />
                       <div>{item}</div>
                     </div>
                   ))
                 : Object.keys(swapKV(objs)).map((item) => (
                     <div
-                      className={`cursor-pointer flex items-center gap-2 rounded px-2 py-1 ${
+                      className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${
                         core.includes(item) || hammer.includes(item) || boons.includes(item)
                           ? `bg-[#00ffaa] text-black`
-                          : `bg-[#131111]`
+                          : `bg-[#28282b]`
                       }`}
                       onClick={() => {
                         if (category === 0) {
@@ -341,11 +399,11 @@ export default function GameplaySubmission() {
                         <img
                           src={`P9/Hammer${swapKV(objs)[item]}.png`}
                           alt="Boons"
-                          className="size-9"
+                          className="size-8"
                           draggable={false}
                         />
                       ) : (
-                        <img src={`P9/${swapKV(objs)[item]}.png`} alt="Boons" className="size-9" draggable={false} />
+                        <img src={`P9/${swapKV(objs)[item]}.png`} alt="Boons" className="size-8" draggable={false} />
                       )}
 
                       <div>{item}</div>
