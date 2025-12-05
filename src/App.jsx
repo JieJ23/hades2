@@ -108,12 +108,11 @@ export default function App() {
     }
 
     window.history.replaceState({}, document.title, url);
-  }, [pageIndex, region, category, fill, mounted]);
+  }, [pageIndex, region, category, fill, mounted, player]);
 
   const allPlayers = [...new Set([...bundleData, ...(posts || [])].map((obj) => obj.nam))].sort((a, b) =>
     a.toLowerCase().localeCompare(b.toLowerCase())
   );
-  console.log(player);
   return (
     <main className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ale] select-none">
       <Background />
