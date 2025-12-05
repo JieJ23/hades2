@@ -347,6 +347,7 @@ export default function ProfileSum() {
                     <th>Fear</th>
                     <th>Meta Points</th>
                     <th>Keepsakes</th>
+                    {/* <th>Traits</th> */}
                   </tr>
                 </thead>
                 <tbody>
@@ -372,6 +373,17 @@ export default function ProfileSum() {
                           ))}
                         </div>
                       </td>
+                      {/* <td>
+                        <div className="flex gap-0.5">
+                          {Object.keys(arr[1].TraitCache)
+                            .filter((ite) => !ite.toLowerCase().includes("metaupgrade"))
+                            .filter((item) => mainID[item] !== undefined)
+                            .map((arr) => (
+                              <img src={`/P9/${mainID[arr]}.png`} alt="Boons" className="size-6" />
+                              <div>{arr}</div>
+                            ))}
+                        </div>
+                      </td> */}
                     </tr>
                   ))}
                 </tbody>

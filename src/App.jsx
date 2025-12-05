@@ -20,9 +20,17 @@ export default function App() {
   const [category, setCategory] = useState("");
   const [region, setRegion] = useState("");
   const [fill, setFill] = useState("Latest");
+  const [player, setPlayer] = useState("");
 
   const orderData = useMemo(() => {
     return [...bundleData, ...posts]
+      .filter((obj) => {
+        const playerMatch = player === "" || obj.nam === player;
+        const categoryMatch = category === "" || obj.asp === category;
+        const regionMatch = region === "" || obj.loc === region;
+
+        return categoryMatch && regionMatch && playerMatch;
+      })
       .sort((a, b) => {
         if (fill === "Latest") return new Date(b.dat) - new Date(a.dat);
         else {
@@ -30,14 +38,8 @@ export default function App() {
           if (feaDiff !== 0) return feaDiff;
           return parseTimetoms(a.tim) - parseTimetoms(b.tim);
         }
-      })
-      .filter((obj) => {
-        const categoryMatch = category === "" || obj.asp === category;
-        const regionMatch = region === "" || obj.loc === region;
-
-        return categoryMatch && regionMatch;
       });
-  }, [posts, category, region, fill]);
+  }, [posts, category, region, fill, player]);
 
   // Pagnition
   const ITEMS_PER_PAGE = 50;
@@ -57,11 +59,13 @@ export default function App() {
     const region = params.get("region");
     const aspect = params.get("aspect");
     const sort = params.get("sort");
+    const player = params.get("player");
 
     if (page && !isNaN(+page)) setPageIndex(+page);
     if (region) setRegion(region);
     if (aspect) setCategory(aspect);
     if (sort) setFill(sort);
+    if (player) setPlayer(player);
 
     setMounted(true);
   }, []);
@@ -97,9 +101,19 @@ export default function App() {
       url.searchParams.delete("sort");
     }
 
+    if (player !== "") {
+      url.searchParams.set("player", player);
+    } else {
+      url.searchParams.delete("player");
+    }
+
     window.history.replaceState({}, document.title, url);
   }, [pageIndex, region, category, fill, mounted]);
 
+  const allPlayers = [...new Set([...bundleData, ...(posts || [])].map((obj) => obj.nam))].sort((a, b) =>
+    a.toLowerCase().localeCompare(b.toLowerCase())
+  );
+  console.log(player);
   return (
     <main className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ale] select-none">
       <Background />
@@ -147,11 +161,27 @@ export default function App() {
                 <option value={`Latest`}>Latest</option>
                 <option value={`Fear`}>Fear</option>
               </select>
+              <select
+                className="select select-sm rounded-none focus:outline-none focus:border-transparent text-[13px]"
+                value={player}
+                onChange={(e) => {
+                  setPageIndex(1);
+                  setFill("Latest");
+                  setCategory("");
+                  setRegion("");
+                  setPlayer(e.target.value);
+                }}
+              >
+                <option value={""}>All Player</option>
+                {allPlayers.map((ite) => (
+                  <option value={ite}>{ite}</option>
+                ))}
+              </select>
             </div>
           </div>
           {/* Table Content */}
           <div className="overflow-x-scroll my-4">
-            <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] backdrop-blur-sm border-separate border-spacing-0.5">
+            <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/50 border-separate border-spacing-0.5">
               <thead className="font-[Ale]">
                 <tr>
                   <th>Idx</th>
@@ -164,7 +194,7 @@ export default function App() {
                   <th>Time</th>
                   <th>Date</th>
                   <th className="min-w-[100px]">Link</th>
-                  {/* <th>God Pool</th> */}
+                  <th>God Pool / Support</th>
                 </tr>
               </thead>
               <tbody>
@@ -302,15 +332,17 @@ export default function App() {
                         )}
                       </div>
                     </td>
-                    {/* <td>
+                    <td>
                       {obj.pool && (
-                        <div className="flex flex-wrap gap-0.5">
-                          {sToA(obj.pool).map((ite) => (
-                            <div className="bg-[#28282b] text-white px-1">{ite.slice(0, 4)}.</div>
-                          ))}
+                        <div className="flex gap-0.5">
+                          {sToA(obj.pool)
+                            .sort()
+                            .map((ite) => (
+                              <div className="bg-[white] text-black px-1">{ite.slice(0, 4)}.</div>
+                            ))}
                         </div>
                       )}
-                    </td> */}
+                    </td>
                   </tr>
                 ))}
               </tbody>

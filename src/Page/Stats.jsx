@@ -62,7 +62,7 @@ export default function Stats() {
             ))}
           </div>
           <div className="overflow-x-scroll my-4">
-            <table className="table whitespace-nowrap table-xs table-zebra font-[Ubuntu] backdrop-blur-sm border-separate border-spacing-0.5">
+            <table className="table whitespace-nowrap table-xs table-zebra font-[Ubuntu] bg-black/50 border-separate border-spacing-0.5">
               <thead className="font-[Ale]">
                 <tr>
                   <th>Aspect</th>
