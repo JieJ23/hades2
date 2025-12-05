@@ -54,7 +54,7 @@ export const v2data = [
   },
   {
     dat: "2025-11-13",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Morrigan",
     loc: "Underworld",
     fea: "62",
@@ -72,7 +72,7 @@ export const v2data = [
   },
   {
     dat: "2025-11-13",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Supay",
     loc: "Underworld",
     fea: "62",
@@ -981,7 +981,7 @@ export const v2data = [
   },
   {
     dat: "2025-11-20",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Melinoe Axe",
     loc: "Underworld",
     fea: "62",
@@ -1365,7 +1365,7 @@ export const v2data = [
   },
   {
     dat: "2025-11-22",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Circe",
     loc: "Surface",
     fea: "62",
@@ -1657,7 +1657,7 @@ export const v2data = [
   },
   {
     dat: "2025-11-24",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Moros",
     loc: "Underworld",
     fea: "62",
@@ -1674,7 +1674,7 @@ export const v2data = [
   },
   {
     dat: "2025-11-24",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Moros",
     loc: "Surface",
     fea: "62",
@@ -2783,7 +2783,7 @@ export const v2data = [
   },
   {
     dat: "2025-11-30",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Charon",
     loc: "Surface",
     fea: "62",
@@ -2963,7 +2963,7 @@ export const v2data = [
   },
   {
     dat: "2025-12-01",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Shiva",
     loc: "Underworld",
     fea: "62",

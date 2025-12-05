@@ -939,7 +939,7 @@ export const v1data = [
   },
   {
     dat: "2025-11-06",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Medea",
     loc: "Underworld",
     fea: 62,
@@ -2877,7 +2877,7 @@ export const v1data = [
   },
   {
     dat: "2025-10-22",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Melinoe Coat",
     loc: "Underworld",
     fea: "62",
@@ -4405,7 +4405,7 @@ export const v1data = [
   },
   {
     dat: "2025-10-15",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Charon",
     loc: "Underworld",
     fea: "62",
@@ -6119,7 +6119,7 @@ export const v1data = [
   },
   {
     dat: "2025-10-07",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Artemis",
     loc: "Underworld",
     fea: "62",

@@ -1432,7 +1432,7 @@ export const p9data = [
   },
   {
     dat: "2025-06-28",
-    nam: "Herro Yung",
+    nam: "herroyung",
     asp: "Anubis",
     loc: "Underworld",
     fea: "62",
@@ -2125,7 +2125,7 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    nam: "Vangetsu",
+    nam: "VANGETSU",
     asp: "Circe",
     loc: "Underworld",
     fea: "40",
@@ -2274,7 +2274,7 @@ export const p9data = [
   },
   {
     dat: "2025-06-25",
-    nam: "Suace Face",
+    nam: "SuaceFace",
     asp: "Supay",
     loc: "Surface",
     fea: "35",
@@ -2395,7 +2395,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    nam: "Vangetsu",
+    nam: "VANGETSU",
     asp: "Hel",
     loc: "Underworld",
     fea: "42",
@@ -2411,7 +2411,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    nam: "Vangetsu",
+    nam: "VANGETSU",
     asp: "Anubis",
     loc: "Underworld",
     fea: "41",
@@ -3271,7 +3271,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-11",
-    nam: "Malkin",
+    nam: "Malkin Grey",
     asp: "Supay",
     loc: "Underworld",
     fea: "36",

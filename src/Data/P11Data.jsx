@@ -749,7 +749,7 @@ export const p11data = [
   },
   {
     dat: "2025-07-30",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Nergal",
     loc: "Surface",
     fea: "32",
@@ -801,7 +801,7 @@ export const p11data = [
   },
   {
     dat: "2025-07-30",
-    nam: "Malkin",
+    nam: "Malkin Grey",
     asp: "Pan",
     loc: "Surface",
     fea: "32",
@@ -892,7 +892,7 @@ export const p11data = [
   },
   {
     dat: "2025-07-29",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Supay",
     loc: "Underworld",
     fea: "32",
@@ -1074,7 +1074,7 @@ export const p11data = [
   },
   {
     dat: "2025-07-28",
-    nam: "Malkin",
+    nam: "Malkin Grey",
     asp: "Medea",
     loc: "Surface",
     fea: "36",
@@ -1558,7 +1558,7 @@ export const p11data = [
   },
   {
     dat: "2025-07-30",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Melinoe Axe",
     loc: "Surface",
     fea: "40",
@@ -1759,7 +1759,7 @@ export const p11data = [
   },
   {
     dat: "2025-07-30",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Anubis",
     loc: "Surface",
     fea: "32",
@@ -1837,7 +1837,7 @@ export const p11data = [
   },
   {
     dat: "2025-07-31",
-    nam: "Malkin",
+    nam: "Malkin Grey",
     asp: "Melinoe Staff",
     loc: "Surface",
     fea: "40",
@@ -1882,7 +1882,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-01",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Melinoe Axe",
     loc: "Underworld",
     fea: "45",
@@ -1939,7 +1939,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-03",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Nyx",
     loc: "Surface",
     fea: "50",
@@ -2654,7 +2654,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-09",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Medea",
     loc: "Surface",
     fea: "40",
@@ -4139,7 +4139,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-27",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Medea",
     loc: "Underworld",
     fea: "8",
@@ -4230,7 +4230,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-26",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Medea",
     loc: "Surface",
     fea: "4",
@@ -4412,7 +4412,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-24",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Melinoe Staff",
     loc: "Surface",
     fea: "32",
@@ -4659,7 +4659,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-22",
-    nam: "Vangetsu",
+    nam: "VANGETSU",
     asp: "Supay",
     loc: "Surface",
     fea: "50",
@@ -4763,7 +4763,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-21",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Melinoe Staff",
     loc: "Underworld",
     fea: "23",
@@ -4841,7 +4841,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-21",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Melinoe Staff",
     loc: "Surface",
     fea: "32",
@@ -4880,7 +4880,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-20",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Medea",
     loc: "Underworld",
     fea: "50",
@@ -4950,7 +4950,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-21",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Melinoe Staff",
     loc: "Underworld",
     fea: "55",
@@ -5124,7 +5124,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-28",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Circe",
     loc: "Underworld",
     fea: "62",
@@ -5468,7 +5468,7 @@ export const p11data = [
   },
   {
     dat: "2025-09-07",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Melinoe Staff",
     loc: "Underworld",
     fea: "48",
@@ -5522,7 +5522,7 @@ export const p11data = [
   },
   {
     dat: "2025-09-10",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Circe",
     loc: "Surface",
     fea: "48",
@@ -5558,7 +5558,7 @@ export const p11data = [
   },
   {
     dat: "2025-09-11",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Momus",
     loc: "Underworld",
     fea: "48",
@@ -5648,7 +5648,7 @@ export const p11data = [
   },
   {
     dat: "2025-09-17",
-    nam: "checkmate",
+    nam: "Checkmate",
     asp: "Anubis",
     loc: "Surface",
     fea: "48",
@@ -5738,7 +5738,7 @@ export const p11data = [
   },
   {
     dat: "2025-09-19",
-    nam: "PizzaPepperoni ",
+    nam: "PizzaPepperoni",
     asp: "Charon",
     loc: "Surface",
     fea: "50",

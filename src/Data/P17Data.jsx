@@ -2102,7 +2102,7 @@ export const p17data = [
   {
     dat: "7/20/2024",
     loc: "Underworld",
-    nam: "LeeReamsnyder",
+    nam: "unexplainedbacn",
     fea: "50",
     asp: "Moros",
     src: "https://www.youtube.com/watch?v=kH365oiX7LI",
@@ -2112,7 +2112,7 @@ export const p17data = [
   {
     dat: "7/19/2024",
     loc: "Underworld",
-    nam: "LeeReamsnyder",
+    nam: "unexplainedbacn",
     fea: "32",
     asp: "Melinoe Blades",
     src: "https://www.youtube.com/watch?v=gO-4U_Mq2sA&t=160s",
@@ -2122,7 +2122,7 @@ export const p17data = [
   {
     dat: "7/18/2024",
     loc: "Underworld",
-    nam: "LeeReamsnyder",
+    nam: "unexplainedbacn",
     fea: "32",
     asp: "Medea",
     src: "https://www.youtube.com/watch?v=H8Lv263amYY&t=14s",
@@ -2132,7 +2132,7 @@ export const p17data = [
   {
     dat: "7/18/2024",
     loc: "Underworld",
-    nam: "LeeReamsnyder",
+    nam: "unexplainedbacn",
     fea: "32",
     asp: "Thanatos",
     src: "https://www.youtube.com/watch?v=PVGioQIYwCE",
@@ -2142,7 +2142,7 @@ export const p17data = [
   {
     dat: "7/18/2024",
     loc: "Underworld",
-    nam: "LeeReamsnyder",
+    nam: "unexplainedbacn",
     fea: "50",
     asp: "Melinoe Axe",
     src: "https://www.youtube.com/watch?v=FIOs6rP3rj0",
@@ -2252,7 +2252,7 @@ export const p17data = [
   {
     dat: "7/23/2024",
     loc: "Underworld",
-    nam: "LeeReamsnyder",
+    nam: "unexplainedbacn",
     fea: "50",
     asp: "Persephone",
     src: "https://www.youtube.com/watch?v=4jGN5C5rSjY",
@@ -2828,7 +2828,7 @@ export const p17data = [
     dat: "1/1/2025",
   },
   {
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     loc: "Underworld",
     asp: "Melinoe Staff",
     fam: "Raven",
@@ -2894,7 +2894,7 @@ export const p17data = [
     dat: "1/1/2025",
   },
   {
-    nam: "Adam 2390k",
+    nam: "Adam2390",
     loc: "Underworld",
     asp: "Melinoe Staff",
     fam: "Frog",
@@ -3136,7 +3136,7 @@ export const p17data = [
     dat: "1/1/2025",
   },
   {
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     loc: "Surface",
     asp: "Artemis",
     fam: "Frog",
@@ -3290,7 +3290,7 @@ export const p17data = [
     dat: "1/1/2025",
   },
   {
-    nam: "Lee Reamsnyder",
+    nam: "unexplainedbacn",
     loc: "Surface",
     asp: "Moros",
     fam: "Hound",
@@ -3411,7 +3411,7 @@ export const p17data = [
     dat: "10/18/2025",
   },
   {
-    nam: "Poshboy",
+    nam: "poshboy",
     loc: "Underworld",
     asp: "Medea",
     fam: "Frog",
