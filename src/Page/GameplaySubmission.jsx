@@ -239,7 +239,20 @@ export default function GameplaySubmission() {
                 required={true}
               />
               <input className="input w-full rounded" placeholder="Hammer" value={hammer.join(",")} name="ham" />
-              <input className="input w-full rounded" placeholder="God Pool" value={godpool.join(",")} name="pool" />
+              <input
+                className="input w-full rounded"
+                placeholder="God Pool"
+                value={godpool.join(",")}
+                name="pool"
+                required={true}
+              />
+              <input
+                className="input w-full rounded"
+                placeholder="Keepsakes"
+                value={keep.join(",")}
+                name="ks"
+                required={true}
+              />
             </div>
           </div>
           <div className="divider"></div>
@@ -248,7 +261,6 @@ export default function GameplaySubmission() {
             <div className="flex flex-col gap-2">
               <div className="text-[14px]">Short description regarding the run, a brief sentence is ideal.</div>
               <input type="text" placeholder="Short Description" className="input w-full rounded" name="des" />
-              <input className="input w-full rounded" placeholder="Keepsakes" value={keep.join(",")} name="ks" />
             </div>
             <div className="flex flex-col gap-2">
               <div className="text-[14px]">Arcana and Fear Shareable links.</div>

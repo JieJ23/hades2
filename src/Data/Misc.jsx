@@ -482,3 +482,37 @@ export const traitAspect = [
   `SuitComboAspect`,
   `SuitMarkCritAspect`,
 ];
+
+// God Pool Colors
+export function getPoolColor(name) {
+  switch (name) {
+    case "Artemis":
+    case "Athena":
+    case "Medea":
+    case "Circe":
+    case "Medea":
+    case "Hermes":
+    case "Icarus":
+    case "Dionysus":
+    case "Hades":
+    case "Arachne":
+    case "Narcissus":
+    case "Echo":
+      return "#9B59B6"; // mystical purple
+    case "Chaos":
+    case "Selene":
+      return "#AED6F1"; // silvery moonlight
+    case "Aphrodite":
+    case "Apollo":
+    case "Ares":
+    case "Demeter":
+    case "Hephaestus":
+    case "Hestia":
+    case "Hera":
+    case "Poseidon":
+    case "Zeus":
+      return "#E67E22"; // fiery forge-orange
+    default:
+      return "#fff"; // neutral gray for unknown
+  }
+}

@@ -2282,7 +2282,7 @@ export const p17data = [
   {
     dat: "7/29/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Thanatos",
     src: "https://www.youtube.com/watch?v=aZsvhPch0t8",
@@ -2302,7 +2302,7 @@ export const p17data = [
   {
     dat: "8/1/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Melinoe Axe",
     src: "https://www.youtube.com/watch?v=3CNdZKa_WiY",
@@ -2342,7 +2342,7 @@ export const p17data = [
   {
     dat: "8/1/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Momus",
     src: "https://www.youtube.com/watch?v=F9-IEZiNjXw",
@@ -2352,7 +2352,7 @@ export const p17data = [
   {
     dat: "8/2/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Melinoe Staff",
     src: "https://www.youtube.com/watch?v=T3UE2JnrzJM",
@@ -2362,7 +2362,7 @@ export const p17data = [
   {
     dat: "8/4/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Artemis",
     src: "https://www.youtube.com/watch?v=CFd6hX3GJ4A",
@@ -2372,7 +2372,7 @@ export const p17data = [
   {
     dat: "8/12/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Pan",
     src: "https://www.youtube.com/watch?v=U3csrKYg4P0",
@@ -2382,7 +2382,7 @@ export const p17data = [
   {
     dat: "8/13/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Moros",
     src: "https://www.youtube.com/watch?v=Yuy-2UTxjkI",
@@ -2392,7 +2392,7 @@ export const p17data = [
   {
     dat: "8/13/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Eos",
     src: "https://www.youtube.com/watch?v=swtM8Y4FhyM",
@@ -2402,7 +2402,7 @@ export const p17data = [
   {
     dat: "8/13/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Melinoe Flames",
     src: "https://www.youtube.com/watch?v=DGZwYoP3NoU",
@@ -2412,7 +2412,7 @@ export const p17data = [
   {
     dat: "8/13/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Melinoe Skull",
     src: "https://www.youtube.com/watch?v=Y02dbGfmAjA",
@@ -2422,7 +2422,7 @@ export const p17data = [
   {
     dat: "8/14/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Charon",
     src: "https://www.youtube.com/watch?v=XY_-JLlvQ28",
@@ -2432,7 +2432,7 @@ export const p17data = [
   {
     dat: "8/16/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Persephone",
     src: "https://www.youtube.com/watch?v=tnmwMZvNYMI",
@@ -2442,7 +2442,7 @@ export const p17data = [
   {
     dat: "8/18/2024",
     loc: "Underworld",
-    nam: "Red",
+    nam: "RED",
     fea: "50",
     asp: "Medea",
     src: "https://www.youtube.com/watch?v=yTHnmd4yDXk",
@@ -3312,7 +3312,7 @@ export const p17data = [
     dat: "1/1/2025",
   },
   {
-    nam: "Red",
+    nam: "RED",
     loc: "Underworld",
     asp: "Melinoe Axe",
     fam: "Frog",

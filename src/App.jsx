@@ -6,7 +6,7 @@ import { useData } from "./Hook/DataFetch";
 import Loading from "./Hook/Loading";
 import { bundleData } from "./Data/DataBundle";
 // Utility
-import { sToA, findValue, orderMap, parseTimetoms } from "./Data/Misc";
+import { sToA, findValue, orderMap, parseTimetoms, getPoolColor } from "./Data/Misc";
 import { p9boons } from "./Data/P9BoonObj";
 import { Link } from "react-router-dom";
 import { h2AspectOrder } from "./Data/Misc";
@@ -193,7 +193,7 @@ export default function App() {
                   <th>Time</th>
                   <th>Date</th>
                   <th className="min-w-[100px]">Link</th>
-                  <th>God Pool / Support</th>
+                  <th className="min-w-[250px]">Pool</th>
                 </tr>
               </thead>
               <tbody>
@@ -333,11 +333,18 @@ export default function App() {
                     </td>
                     <td>
                       {obj.pool && (
-                        <div className="flex gap-0.5">
+                        <div className="flex flex-wrap gap-0.5">
                           {sToA(obj.pool)
                             .sort()
                             .map((ite) => (
-                              <div className="bg-[white] text-black px-1">{ite.slice(0, 4)}.</div>
+                              <div
+                                className="text-black px-1 rounded-t-sm"
+                                style={{
+                                  backgroundColor: getPoolColor(ite),
+                                }}
+                              >
+                                {ite.slice(0, 4)}.
+                              </div>
                             ))}
                         </div>
                       )}
