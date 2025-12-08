@@ -2125,7 +2125,7 @@ export const p9data = [
   },
   {
     dat: "2025-06-21",
-    nam: "VANGETSU",
+    nam: "Vangetsu",
     asp: "Circe",
     loc: "Underworld",
     fea: "40",
@@ -2395,7 +2395,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    nam: "VANGETSU",
+    nam: "Vangetsu",
     asp: "Hel",
     loc: "Underworld",
     fea: "42",
@@ -2411,7 +2411,7 @@ export const p9data = [
   },
   {
     dat: "2025-07-03",
-    nam: "VANGETSU",
+    nam: "Vangetsu",
     asp: "Anubis",
     loc: "Underworld",
     fea: "41",

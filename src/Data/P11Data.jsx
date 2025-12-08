@@ -4659,7 +4659,7 @@ export const p11data = [
   },
   {
     dat: "2025-08-22",
-    nam: "VANGETSU",
+    nam: "Vangetsu",
     asp: "Supay",
     loc: "Surface",
     fea: "50",

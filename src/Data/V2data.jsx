@@ -2360,7 +2360,7 @@ export const v2data = [
   },
   {
     dat: "2025-11-28",
-    nam: "VANGETSU",
+    nam: "Vangetsu",
     asp: "Medea",
     loc: "Underworld",
     fea: "62",

@@ -1918,7 +1918,7 @@ export const v1data = [
   },
   {
     dat: "2025-10-25",
-    nam: "VANGETSU",
+    nam: "Vangetsu",
     asp: "Melinoe Staff",
     loc: "Underworld",
     fea: "62",
