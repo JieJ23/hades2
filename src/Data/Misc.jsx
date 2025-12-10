@@ -490,7 +490,6 @@ export function getPoolColor(name) {
     case "Athena":
     case "Medea":
     case "Circe":
-    case "Medea":
     case "Hermes":
     case "Icarus":
     case "Dionysus":
