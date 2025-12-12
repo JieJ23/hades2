@@ -133,7 +133,7 @@ export default function () {
             {biomeS.map((ite, index) => (
               <div className="bg-gradient-to-b from-[yellow]/30 via-black to-transparent rounded-none my-4" key={index}>
                 <div
-                  className="text-[20px] font-[Cinzel] text-center bg-black rounded-none py-2 mb-1"
+                  className="text-[20px] font-[Ale] text-center bg-black rounded-none py-2 mb-1"
                   style={{
                     backgroundImage: `
       url('/Misc/fl2.webp'),
@@ -174,7 +174,7 @@ export default function () {
                 key={index}
               >
                 <div
-                  className="text-[20px] font-[Cinzel] text-center bg-black rounded-none py-2 mb-1"
+                  className="text-[20px] font-[Ale] text-center bg-black rounded-none py-2 mb-1"
                   style={{
                     backgroundImage: `
       url('/Misc/fl3.webp'),

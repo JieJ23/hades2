@@ -357,7 +357,7 @@ export default function StatsCodex() {
                 return (
                   <div>
                     <div
-                      className="text-[20px] font-[Cinzel] text-center bg-black rounded-none py-2"
+                      className="text-[20px] font-[Ale] text-center bg-black rounded-none py-2"
                       style={{
                         backgroundImage: `
       url('/Misc/fl.webp'),
@@ -399,7 +399,7 @@ export default function StatsCodex() {
             {Object.entries(categories).map((arr) => (
               <div className="bg-gradient-to-b from-[black] to-[#131111]/60 rounded h-full">
                 <div
-                  className="text-[20px] font-[Cinzel] text-center bg-black rounded-none py-2"
+                  className="text-[20px] font-[Ale] text-center bg-black rounded-none py-2"
                   style={{
                     backgroundImage: `
       url('/Misc/fl.webp'),
@@ -437,7 +437,7 @@ export default function StatsCodex() {
               return (
                 <div>
                   <div
-                    className="text-[20px] font-[Cinzel] text-center text-white bg-black rounded-none py-2"
+                    className="text-[20px] font-[Ale] text-center bg-black rounded-none py-2"
                     style={{
                       backgroundImage: `
       url('/Misc/fl.webp'),
