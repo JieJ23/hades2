@@ -266,7 +266,7 @@ export default function GameplaySubmission() {
               <div className="text-[14px]">Arcana and Fear Shareable links.</div>
               <input type="text" placeholder="Arcana Shareable URL" className="input w-full rounded" name="arcana" />
               <input type="text" placeholder="Fear Shareable URL" className="input w-full rounded" name="oath" />
-              <input className="input w-full rounded" placeholder="Other Boons" value={boons.join(",")} name="boon" />
+              {/* <input className="input w-full rounded" placeholder="Other Boons" value={boons.join(",")} name="boon" /> */}
             </div>
           </div>
           <div className="flex justify-center my-4">
@@ -349,9 +349,8 @@ export default function GameplaySubmission() {
         <div className="flex flex-wrap gap-1 px-2 my-2 mt-1 select-none">
           {selectPool.map((item) => (
             <div
-              className={` px-2 py-1 rounded-none cursor-pointer ${
-                godpool.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
-              }`}
+              className={` px-2 py-1 rounded-none cursor-pointer ${godpool.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
+                }`}
               onClick={() => {
                 if (!godpool.includes(item)) {
                   setGodpool((prev) => [...prev, item]);
@@ -368,59 +367,57 @@ export default function GameplaySubmission() {
             <section className="flex flex-wrap gap-1 my-1">
               {category === 2
                 ? objs.map((item) => (
-                    <div
-                      className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${
-                        keep.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
+                  <div
+                    className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${keep.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
                       }`}
-                      onClick={(prev) => {
-                        if (keep.length >= 4) {
-                          return prev;
-                        } else {
-                          setKeep((prev) => [...prev, item]);
-                        }
-                      }}
-                    >
-                      <img src={`buildgui/${[item]}.png`} alt="Boons" className="size-8" draggable={false} />
-                      <div>{item}</div>
-                    </div>
-                  ))
+                    onClick={(prev) => {
+                      if (keep.length >= 4) {
+                        return prev;
+                      } else {
+                        setKeep((prev) => [...prev, item]);
+                      }
+                    }}
+                  >
+                    <img src={`buildgui/${[item]}.png`} alt="Boons" className="size-8" draggable={false} />
+                    <div>{item}</div>
+                  </div>
+                ))
                 : Object.keys(swapKV(objs)).map((item) => (
-                    <div
-                      className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${
-                        core.includes(item) || hammer.includes(item) || boons.includes(item)
-                          ? `bg-[#00ffaa] text-black`
-                          : `bg-[#28282b]`
+                  <div
+                    className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${core.includes(item) || hammer.includes(item) || boons.includes(item)
+                        ? `bg-[#00ffaa] text-black`
+                        : `bg-[#28282b]`
                       }`}
-                      onClick={() => {
-                        if (category === 0) {
-                          if (!core.includes(item) && core.length < 5) {
-                            setCore((prev) => [...prev, item]);
-                          }
-                        } else if (category === 1) {
-                          if (!hammer.includes(item)) {
-                            setHammer((prev) => [...prev, item]);
-                          }
-                        } else {
-                          if (!boons.includes(item)) {
-                            setBoons((prev) => [...prev, item]);
-                          }
+                    onClick={() => {
+                      if (category === 0) {
+                        if (!core.includes(item) && core.length < 5) {
+                          setCore((prev) => [...prev, item]);
                         }
-                      }}
-                    >
-                      {category === 1 ? (
-                        <img
-                          src={`P9/Hammer${swapKV(objs)[item]}.png`}
-                          alt="Boons"
-                          className="size-8"
-                          draggable={false}
-                        />
-                      ) : (
-                        <img src={`P9/${swapKV(objs)[item]}.png`} alt="Boons" className="size-8" draggable={false} />
-                      )}
+                      } else if (category === 1) {
+                        if (!hammer.includes(item)) {
+                          setHammer((prev) => [...prev, item]);
+                        }
+                      } else {
+                        if (!boons.includes(item)) {
+                          setBoons((prev) => [...prev, item]);
+                        }
+                      }
+                    }}
+                  >
+                    {category === 1 ? (
+                      <img
+                        src={`P9/Hammer${swapKV(objs)[item]}.png`}
+                        alt="Boons"
+                        className="size-8"
+                        draggable={false}
+                      />
+                    ) : (
+                      <img src={`P9/${swapKV(objs)[item]}.png`} alt="Boons" className="size-8" draggable={false} />
+                    )}
 
-                      <div>{item}</div>
-                    </div>
-                  ))}
+                    <div>{item}</div>
+                  </div>
+                ))}
             </section>
           ))}
         </div>
