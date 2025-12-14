@@ -111,9 +111,8 @@ export default function CustomChaos() {
         <div className="grid grid-cols-5 mb-6 gap-2 font-[Ale]">
           {metaCardMap.map((item, index) => (
             <div
-              className={`border border-white/10 rounded-none px-2 py-1 ${
-                metaCard.includes(item) ? `bg-[#27277f] text-white` : `bg-[#131111]`
-              }`}
+              className={`border border-white/10 rounded-none px-2 py-1 ${metaCard.includes(item) ? `bg-[#27277f] text-white` : `bg-[#131111]`
+                }`}
               key={index}
               onClick={() =>
                 setMetaCard((prev) => {
@@ -134,9 +133,8 @@ export default function CustomChaos() {
         <div className="grid grid-cols-4 gap-2 mb-6">
           {shrineMap.map((item, index) => (
             <div
-              className={`border border-white/10 rounded-none p-2 flex flex-col lg:flex-row ${
-                shrine.some((i) => i.startsWith(item)) ? `bg-[#27277f] text-white` : `bg-[#131111]`
-              }`}
+              className={`border border-white/10 rounded-none p-2 flex flex-col lg:flex-row ${shrine.some((i) => i.startsWith(item)) ? `bg-[#27277f] text-white` : `bg-[#131111]`
+                }`}
               key={index}
             >
               <div className="flex items-center gap-1 mb-1 w-full">
@@ -213,15 +211,14 @@ export default function CustomChaos() {
             <div className="flex flex-wrap gap-0.5 text-[12px]">
               {boon.map((item) => (
                 <div
-                  className={`text-black p-1 py-0.5 rounded-none cursor-pointer ${
-                    item.split("_")[1] === `Heroic`
+                  className={`text-black p-1 py-0.5 rounded-none cursor-pointer ${item.split("_")[1] === `Heroic`
                       ? `bg-[orange]`
                       : item.split("_")[1] === `Rare`
-                      ? `bg-[cyan]`
-                      : item.split("_")[1] === `Epic`
-                      ? `bg-[#eb4aeb]`
-                      : `bg-white`
-                  }`}
+                        ? `bg-[cyan]`
+                        : item.split("_")[1] === `Epic`
+                          ? `bg-[#eb4aeb]`
+                          : `bg-white`
+                    }`}
                   onClick={() =>
                     setBoon((prev) => {
                       const filtered = prev.filter((i) => i !== item);
@@ -279,8 +276,8 @@ export default function CustomChaos() {
               <a href="/new/DeathLoopLogic.lua" className="underline" download="DeathLoopLogic.lua">
                 DeathLoopLogic.lua
               </a>
-              <a href="/new/RewardPresentation.lua" className="underline" download="RewardPresentation.lua">
-                RewardPresentation.lua
+              <a href="/new/RoomPresentation.lua" className="underline" download="RoomPresentation.lua">
+                RoomPresentation.lua
               </a>
             </div>
           </div>
@@ -298,8 +295,8 @@ export default function CustomChaos() {
               <a href="/old/DeathLoopLogic.lua" className="underline" download="DeathLoopLogic.lua">
                 DeathLoopLogic.lua
               </a>
-              <a href="/old/RewardPresentation.lua" className="underline" download="RewardPresentation.lua">
-                RewardPresentation.lua
+              <a href="/old/RoomPresentation.lua" className="underline" download="RoomPresentation.lua">
+                RoomPresentation.lua
               </a>
             </div>
           </div>
