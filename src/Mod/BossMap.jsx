@@ -1,10 +1,11 @@
 export const bossMap = {
-  F_MiniBoss01: `Root Stalker`,
-  F_MiniBoss02: `Shadow Spiller`,
-  F_MiniBoss03: `Master Slicer`,
 
   F_Boss01: `Hecate V1`,
   F_Boss02: `Hecate V2`,
+
+  F_MiniBoss01: `Root Stalker`,
+  F_MiniBoss02: `Shadow Spiller`,
+  F_MiniBoss03: `Master Slicer`,
 
   G_Boss01: `Scylla V1`,
   G_Boss02: `Scylla V2`,
