@@ -67,7 +67,7 @@ export default function CustomChaos() {
 
     const a = document.createElement("a");
     a.href = url;
-    a.download = "BountyData123.lua";
+    a.download = "BountyData.lua";
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -75,7 +75,7 @@ export default function CustomChaos() {
   };
 
   //
-
+  console.log(room)
   return (
     <div className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ubuntu] select-none">
       <Background />
@@ -88,9 +88,9 @@ export default function CustomChaos() {
             value={room}
             onChange={(e) => setRoom(e.target.value)}
           >
-            {allBosses.map((item, index) => (
-              <option value={item} key={index}>
-                {allBossesID[index]} - {item}
+            {Object.entries(bossMap).map(([ke, val], index) => (
+              <option value={ke} key={index}>
+                {ke} - {val}
               </option>
             ))}
           </select>
@@ -212,12 +212,12 @@ export default function CustomChaos() {
               {boon.map((item) => (
                 <div
                   className={`text-black p-1 py-0.5 rounded-none cursor-pointer ${item.split("_")[1] === `Heroic`
-                      ? `bg-[orange]`
-                      : item.split("_")[1] === `Rare`
-                        ? `bg-[cyan]`
-                        : item.split("_")[1] === `Epic`
-                          ? `bg-[#eb4aeb]`
-                          : `bg-white`
+                    ? `bg-[orange]`
+                    : item.split("_")[1] === `Rare`
+                      ? `bg-[cyan]`
+                      : item.split("_")[1] === `Epic`
+                        ? `bg-[#eb4aeb]`
+                        : `bg-white`
                     }`}
                   onClick={() =>
                     setBoon((prev) => {
