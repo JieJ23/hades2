@@ -19,6 +19,15 @@ import { useState } from "react";
 // LowHealthCritKeepsake - White Antler
 // LowHealthBonus - Strength
 
+// Template
+// PackageBountyHestia
+// RoomName = "Encounter"
+// WeaponUpgradeName = "Aspect"
+// KeepsakeName = "LowHealthCritKeepsake" [Hardcored]
+// StartingTraits = Object of Objects, Name / Rarity Properties
+// MetaUpgradeStateEquipped = Object of Strings
+// ShrineUpgradesActive =. Object of VowName = Rank
+
 export default function CustomChaos() {
   const [room, setRoom] = useState("F_Boss01");
   const [aspect, setAspect] = useState("BaseStaffAspect");
@@ -27,8 +36,45 @@ export default function CustomChaos() {
   const [boon, setBoon] = useState([]);
   const [currentBoon, setCurrentBoon] = useState("AphroditeWeaponBoon");
   const [currentRarity, setCurrentRarity] = useState("Common");
+  // Blob
+  const editAndDownloadLua = async () => {
+    const res = await fetch("/new/BountyData.lua");
+    let content = await res.text();
 
-  console.log(boon);
+    // Match the PackageBountyHestia block more reliably
+    const blockRegex = /(PackageBountyHestia\s*=\s*\{[\s\S]*?\n\s*\},)/m;
+    const match = content.match(blockRegex);
+
+    if (!match) {
+      console.error("PackageBountyHestia block not found!");
+      return;
+    }
+
+    let blockContent = match[0];
+
+    // Replace RoomName inside this block
+    blockContent = blockContent.replace(/RoomName\s*=\s*".*?"/, `RoomName = "${room}"`);
+
+    // Replace WeaponUpgradeName inside this block
+    blockContent = blockContent.replace(/WeaponUpgradeName\s*=\s*".*?"/, `WeaponUpgradeName = "${aspect}"`);
+
+    // Replace the original block in the file
+    content = content.replace(blockRegex, blockContent);
+
+    // Trigger download
+    const blob = new Blob([content], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "BountyData123.lua";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  };
+
+  //
 
   return (
     <div className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ubuntu] select-none">
@@ -213,6 +259,48 @@ export default function CustomChaos() {
                   {shrineObj[item.slice(0, -1)]} {item.slice(-1)}
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+        {/* Divider */}
+        <div className="divider">Download</div>
+        <div className="my-4">
+          <div>
+            <div>Modified Files</div>
+            <div className="my-4">
+              <button onClick={editAndDownloadLua} className="btn btn-sm rounded-none">
+                Download Modified Lua
+              </button>
+            </div>
+            <div className="flex gap-2">
+              <a href="/new/BountyLogic.lua" className="underline" download="BountyLogic.lua">
+                BountyLogic.lua
+              </a>
+              <a href="/new/DeathLoopLogic.lua" className="underline" download="DeathLoopLogic.lua">
+                DeathLoopLogic.lua
+              </a>
+              <a href="/new/RewardPresentation.lua" className="underline" download="RewardPresentation.lua">
+                RewardPresentation.lua
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="my-4">
+          <div>
+            <div>Original Files</div>
+            <div className="flex gap-2">
+              <a href="/old/BountyData.lua" className="underline" download="BountyData.lua">
+                BountyData.lua
+              </a>
+              <a href="/old/BountyLogic.lua" className="underline" download="BountyLogic.lua">
+                BountyLogic.lua
+              </a>
+              <a href="/old/DeathLoopLogic.lua" className="underline" download="DeathLoopLogic.lua">
+                DeathLoopLogic.lua
+              </a>
+              <a href="/old/RewardPresentation.lua" className="underline" download="RewardPresentation.lua">
+                RewardPresentation.lua
+              </a>
             </div>
           </div>
         </div>
