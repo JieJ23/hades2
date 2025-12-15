@@ -19,6 +19,7 @@ export const sites = [
   { link: `EALadder`, nam: `Early Access` },
   // { link: `TheGameAward`, nam: `Game Award` },
   { link: `ProfileSum`, nam: `Profile` },
+  { link: `CustomChaos`, nam: `Custom Chaos` },
 ];
 
 export default function SideNav() {
