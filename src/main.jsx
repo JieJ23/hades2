@@ -45,7 +45,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/" element={<App />} />
           <Route path="/Stats" element={<Stats />} />
 
-          <Route path="/CustomChaos" element={<CustomChaos />} />
+          {/* <Route path="/CustomChaos" element={<CustomChaos />} /> */}
 
           <Route path="/FearCalculator" element={<FearCalculator />} />
           <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
