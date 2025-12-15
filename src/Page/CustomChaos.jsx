@@ -127,6 +127,7 @@ export default function CustomChaos() {
         console.error("Error decoding cards data from URL:", error);
       }
     }
+    window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
   }, []);
   const generateShareableURL = () => {
     const params = new URLSearchParams();
