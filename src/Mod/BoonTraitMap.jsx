@@ -427,3 +427,137 @@ export const ksMap = [
   "HadesAndPersephoneKeepsake",
   "GoldifyKeepsake",
 ];
+
+export const seleneMap = [
+  "SpellTimeSlowTrait",
+  "SpellPolymorphTrait",
+  "SpellLaserTrait",
+  "SpellLeapTrait",
+  "SpellPotionTrait",
+  "SpellSummonTrait",
+  "SpellMeteorTrait",
+  "SpellTransformTrait",
+  "SpellMoonBeamTrait",
+
+  "CooldownDamageTalent",
+  "ChargeRegenTalent",
+  "PreChargeTalent",
+
+  "TimeSlowAmountTalent",
+  "CooldownDefenseTalent",
+
+  "TimeSlowDestroyProjectilesTalent",
+  "TimeSlowSpeedTalent",
+  "TimeSlowLastStandRechargeTalent",
+  "TimeSlowCumulativeBuffTalent",
+
+  "TimeSlowCritTalent",
+  "TimeSlowFreezeTimeTalent",
+  "TimeSlowDemeterTalent",
+
+  "PolymorphDurationTalent",
+  "PolymorphDamageTalent",
+
+  "PolymorphBossDamageTalent",
+  "PolymorphDeathExplodeTalent",
+  "PolymorphTauntTalent",
+  "PolymorphTeleportCastTalent",
+  "PolymorphHealthCrushTalent",
+
+  "PolymorphSandwichTalent",
+  "PolymorphCurseTalent",
+  "PolymorphZeusTalent",
+
+  "LaserDamageTalent",
+  "LaserDefenseTalent",
+
+  "LaserAoETalent",
+  "LaserStartAoETalent",
+  "LaserPenetrationTalent",
+  "LaserDurationTalent",
+  "LaserFirstHitDamageTalent",
+
+  "LaserTripleTalent",
+  "LaserCrystalTalent",
+  "LaserApolloTalent",
+
+  "LeapDamageTalent",
+  "LeapArmorDamageTalent",
+  "LeapCooldownSpeedTalent",
+
+  "LeapLaunchAoETalent",
+  "LeapAoETalent",
+  "LeapCritTalent",
+  "LeapSprintTalent",
+
+  "LeapShieldTalent",
+  "LeapTwiceTalent",
+  "LeapHephaestusTalent",
+
+  "PotionManaRestoreTalent",
+  "PotionUsesTalent",
+  "HealAmountTalent",
+  "CurrencyUseTalent",
+
+  "DamageBuffTalent",
+  "ShieldTalent",
+  "RolloverUsesTalent",
+  "HealLastTalent",
+
+  "ClearCastTalent",
+  "HealRetaliateTalent",
+  "PotionExCastTalent",
+  "PotionPoseidonTalent",
+
+  "SummonDamageTalent",
+
+  "SummonSpeedTalent",
+  "SummonTeleportTalent",
+  "SummonPermanenceTalent",
+  "SummonRetaliateTalent",
+
+  "SummonDamageSplitTalent",
+  "SummonExplodeTalent",
+  "SummonHeraTalent",
+
+  "MeteorSizeTalent",
+  "MeteorDamageTalent",
+
+  "MeteorVulnerabilityDecalTalent",
+  "MeteorSlowDecalTalent",
+  "MeteorShowerTalent",
+  "MeteorChargeTalent",
+
+  "MeteorInvulnerableChargeTalent",
+  "MeteorDoubleTalent",
+  "MeteorExCastTalent",
+  "MeteorHestiaTalent",
+
+  "TransformDurationTalent",
+  "TransformDamageTalent",
+  "TransformCooldownDodgeTalent",
+
+  "TransformCastDamageTalent",
+  "TransformLastStandRechargeTalent",
+  "TransformSpecialCritTalent",
+  "TransformAttackSpeedTalent",
+
+  "TransformPrimaryTalent",
+  "TransformSpecialTalent",
+  "TransformExCastTalent",
+  "TransformAphroditeTalent",
+
+  "MoonBeamVulnerabilityTalent",
+  "MoonBeamDamageTalent",
+  "MoonBeamCountTalent",
+
+  "MoonBeamConsecutiveDamageTalent",
+  "MoonBeamDefenseTalent",
+  "MoonBeamPrimaryTalent",
+
+  "MoonBeamTargetTalent",
+  "MoonBeamExBeamBonusTalent",
+  "MoonBeamAresTalent",
+
+  "OlympianSpellCountTalent",
+];

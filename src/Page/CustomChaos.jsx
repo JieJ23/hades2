@@ -17,6 +17,7 @@ import {
   boonNpcMap,
   boonOtherMap,
   ksMap,
+  seleneMap,
 } from "../Mod/BoonTraitMap";
 
 import { shrineObj } from "../Data/Shrine";
@@ -71,6 +72,7 @@ export default function CustomChaos() {
   const [currentBoon, setCurrentBoon] = useState("AphroditeWeaponBoon");
   const [currentRarity, setCurrentRarity] = useState("Common");
   // Other Parameters
+  const [currentNode, setCurrentNode] = useState("SpellTimeSlowTrait");
   const [currentHammer, setCurrentHammer] = useState("StaffSecondStageTrait");
   const [currentOther, setCurrentOther] = useState("RoomRewardMaxManaTrait");
   const [currentTrait, setCurrentTrait] = useState("HighHealthOffenseBoon");
@@ -381,7 +383,8 @@ export default function CustomChaos() {
           })}
         </div>
         {/* Divider */}
-        <div className="font-[Ale] ps-1 mt-6">Boon Traits & Rarity Selection</div>
+        <div className="font-[Ale] ps-1 mt-6 mb-2">Boon Traits & Rarity Selection</div>
+        <div className="font-[Ale] ps-1">Core Traits</div>
         <div className="mb-1 flex gap-1">
           <select
             className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
@@ -417,6 +420,7 @@ export default function CustomChaos() {
           </button>
         </div>
         {/* God Traits */}
+        <div className="font-[Ale] ps-1">God Traits</div>
         <div className="mb-1 flex gap-1">
           <select
             className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
@@ -452,6 +456,7 @@ export default function CustomChaos() {
           </button>
         </div>
         {/* Duo Traits */}
+        <div className="font-[Ale] ps-1">Duo Traits</div>
         <div className="mb-1 flex gap-1">
           <select
             className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
@@ -487,6 +492,7 @@ export default function CustomChaos() {
           </button>
         </div>
         {/* Npc Traits */}
+        <div className="font-[Ale] ps-1">NPC Traits</div>
         <div className="mb-1 flex gap-1">
           <select
             className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
@@ -522,6 +528,7 @@ export default function CustomChaos() {
           </button>
         </div>
         {/* Hammer Section */}
+        <div className="font-[Ale] ps-1">Hammer Traits</div>
         <div className="mb-1 flex gap-1">
           <select
             className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
@@ -547,7 +554,35 @@ export default function CustomChaos() {
             Add
           </button>
         </div>
+        {/* Selene Section */}
+        <div className="font-[Ale] ps-1">Selene Traits</div>
+        <div className="mb-1 flex gap-1">
+          <select
+            className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
+            onChange={(e) => setCurrentNode(e.target.value)}
+          >
+            {seleneMap.map((item) => (
+              <option value={item}>{sdata[item]}</option>
+            ))}
+          </select>
+          <button
+            className="btn btn-sm rounded-none bg-[#131111] border border-white/10"
+            onClick={() =>
+              setBoon((prev) => {
+                const value = `${currentNode}_Common`;
+
+                // remove any existing entry for the same boon
+                const filtered = prev.filter((i) => !i.startsWith(`${currentNode}_`));
+
+                return [...filtered, value];
+              })
+            }
+          >
+            Add
+          </button>
+        </div>
         {/* Health + Mana */}
+        <div className="font-[Ale] ps-1">Max Hp / Max Mana</div>
         <div className="mb-6 flex gap-1">
           <select
             className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
