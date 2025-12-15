@@ -1,6 +1,5 @@
 export const response = [
   {
-    nam: "Mel's barely disguised fetish",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Ares",
@@ -19,7 +18,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ryan G",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -38,7 +36,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hellish",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Apollo",
@@ -57,7 +54,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Joe",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -76,7 +72,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Taylor",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -95,7 +90,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lambchops",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Aphrodite",
@@ -114,7 +108,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Yxdisa",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -133,7 +126,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jess",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Hestia",
@@ -152,7 +144,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "zach",
     qa1: "Xinth / Black Coat",
     qa2: "Nergal",
     qa3: "Zeus",
@@ -171,7 +162,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "jim",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Staff",
     qa3: "Zeus",
@@ -190,7 +180,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "James B.",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hestia",
@@ -209,7 +198,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Goon Lord",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -228,7 +216,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Guitarbow",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -247,7 +234,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cainabob",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -266,7 +252,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "lun",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Apollo",
@@ -285,7 +270,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ssnessy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -304,7 +288,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "fry",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hera",
@@ -323,7 +306,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "M",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hestia",
@@ -342,7 +324,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mj ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Abstain",
     qa3: "Hera",
@@ -361,7 +342,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Serge",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
     qa3: "Hera",
@@ -380,7 +360,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mike",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Aphrodite",
@@ -399,7 +378,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Khylah",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -418,7 +396,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "BMG",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Pan",
     qa3: "Hephaestus",
@@ -437,7 +414,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Marboreus",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Demeter",
@@ -456,7 +432,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "aggrobuns",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hera",
@@ -475,7 +450,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jacob",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -494,7 +468,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "V",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -513,7 +486,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ParanoidDrone",
     qa1: "Revaal / Argent Skull",
     qa2: "Moros",
     qa3: "Zeus",
@@ -532,7 +504,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "colorsdontgo ",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -551,7 +522,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ExplodeBallZ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Zeus",
@@ -570,7 +540,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Balls",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
     qa3: "Apollo",
@@ -589,7 +558,6 @@ export const response = [
     qa16: "Abstain",
   },
   {
-    nam: "Stevo ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -608,7 +576,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Devonic",
     qa1: "Xinth / Black Coat",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -627,7 +594,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sean d.",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
     qa3: "Abstain",
@@ -646,7 +612,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Robert",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Aphrodite",
@@ -665,7 +630,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Z",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
     qa3: "Poseidon",
@@ -684,7 +648,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "IKSB",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Hera",
@@ -703,7 +666,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Morgan",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Demeter",
@@ -722,7 +684,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vincent",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Apollo",
@@ -741,7 +702,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Erick N",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -760,7 +720,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "b",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Zeus",
@@ -779,7 +738,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cryptic",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -798,7 +756,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sliver",
     qa1: "Xinth / Black Coat",
     qa2: "Shiva",
     qa3: "Zeus",
@@ -817,7 +774,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bec",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Demeter",
@@ -836,7 +792,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Alex",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -855,7 +810,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "T",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -874,7 +828,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tay",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Demeter",
@@ -893,7 +846,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sheen",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -912,7 +864,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Viggo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -931,7 +882,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rick",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Hestia",
@@ -950,7 +900,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Trace",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -969,7 +918,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "lux",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -988,7 +936,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zack",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -1007,7 +954,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Miles ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -1026,7 +972,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "may",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Hestia",
@@ -1045,7 +990,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "E",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
     qa3: "Hephaestus",
@@ -1064,7 +1008,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sam",
     qa1: "Revaal / Argent Skull",
     qa2: "Thanatos",
     qa3: "Hera",
@@ -1083,7 +1026,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Alibanian",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Ares",
@@ -1102,7 +1044,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Supercatsup",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -1121,7 +1062,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lankygit",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -1140,7 +1080,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Will S.",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -1159,7 +1098,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "E",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -1178,7 +1116,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Buu",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -1197,7 +1134,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "C",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Zeus",
@@ -1216,7 +1152,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "parasuko",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Demeter",
@@ -1235,7 +1170,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ant",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Supay",
     qa3: "Poseidon",
@@ -1254,7 +1188,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jo",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Apollo",
@@ -1273,7 +1206,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "austin",
     qa1: "Xinth / Black Coat",
     qa2: "Momus",
     qa3: "Apollo",
@@ -1292,7 +1224,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Andrew",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Hestia",
@@ -1311,7 +1242,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "AltzQ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -1330,7 +1260,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "N",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hephaestus",
@@ -1349,7 +1278,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Looseseal",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -1368,7 +1296,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "GAGIK ",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Hestia",
@@ -1387,7 +1314,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Crump’s Brother",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hestia",
@@ -1406,7 +1332,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Endo213",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Ares",
@@ -1425,7 +1350,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Skychrono2 ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Hera",
@@ -1444,7 +1368,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Roie",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Nergal",
     qa3: "Poseidon",
@@ -1463,7 +1386,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "echothesıs",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -1482,7 +1404,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "DarkNinjaMole ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Zeus",
@@ -1501,7 +1422,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mitch",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hestia",
@@ -1520,7 +1440,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Name",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Hestia",
@@ -1539,7 +1458,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Senerio",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Poseidon",
@@ -1558,7 +1476,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Neck",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Hephaestus",
@@ -1577,7 +1494,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "mwssias",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -1596,7 +1512,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Daniel",
     qa1: "Descura / Witch's Staff",
     qa2: "Supay",
     qa3: "Aphrodite",
@@ -1615,7 +1530,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jordan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -1634,7 +1548,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "LorenzoT",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Hera",
@@ -1653,7 +1566,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kratos",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -1672,7 +1584,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Souchouz",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
     qa3: "Hephaestus",
@@ -1691,7 +1602,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chavtastic",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Hestia",
@@ -1710,7 +1620,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Fontofwisdom",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -1729,7 +1638,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Celene",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Demeter",
@@ -1748,7 +1656,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mike",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -1767,7 +1674,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jack Lucas",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -1786,7 +1692,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Carl Benson",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -1805,7 +1710,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jacob",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
     qa3: "Zeus",
@@ -1824,7 +1728,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "jam",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Hestia",
@@ -1843,7 +1746,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rhia",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Demeter",
@@ -1862,7 +1764,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vinícius ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Hera",
@@ -1881,7 +1782,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rooster",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
     qa3: "Zeus",
@@ -1900,7 +1800,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Whitney joe",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
     qa3: "Hestia",
@@ -1919,7 +1818,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ren",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -1938,7 +1836,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "foobar",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -1957,7 +1854,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Liam Doyle",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -1976,7 +1872,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Miranda",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Demeter",
@@ -1995,7 +1890,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Avery",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -2014,7 +1908,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Matt D",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -2033,7 +1926,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Barbara",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Selene",
     qa3: "Zeus",
@@ -2052,7 +1944,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "MC Clap Yo Handz",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -2071,7 +1962,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kkn'",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -2090,7 +1980,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vin",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Staff",
     qa3: "Poseidon",
@@ -2109,7 +1998,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "jo",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
     qa3: "Poseidon",
@@ -2128,7 +2016,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Emma ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Moros",
     qa3: "Hera",
@@ -2147,7 +2034,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ben",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Hera",
@@ -2166,7 +2052,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ringabel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Zeus",
@@ -2185,7 +2070,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "K",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Blades",
     qa3: "Poseidon",
@@ -2204,7 +2088,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vg",
     qa1: "Xinth / Black Coat",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -2223,7 +2106,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Eric",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -2242,7 +2124,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Fight Money",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -2261,7 +2142,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "William",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -2280,7 +2160,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "NJL",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Anubis",
     qa3: "Apollo",
@@ -2299,7 +2178,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "rifkadm",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -2318,7 +2196,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Miccles",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Aphrodite",
@@ -2337,7 +2214,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Eureka",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -2356,7 +2232,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jake",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -2375,7 +2250,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "anon",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
     qa3: "Hera",
@@ -2394,7 +2268,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "AnderNoob ",
     qa1: "Descura / Witch's Staff",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -2413,7 +2286,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Skye",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -2432,7 +2304,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Walter",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hephaestus",
@@ -2451,7 +2322,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ienjoyhotdogs",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -2470,7 +2340,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Pame",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Poseidon",
@@ -2489,7 +2358,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ZZZ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hera",
@@ -2508,7 +2376,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dragoncat",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Demeter",
@@ -2527,7 +2394,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "B",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Poseidon",
@@ -2546,7 +2412,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "heskitgel",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -2565,7 +2430,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cephandrius ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -2584,7 +2448,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Allanon",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Nergal",
     qa3: "Hestia",
@@ -2603,7 +2466,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Savage8251199",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -2622,7 +2484,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "MaverickMTA",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Zeus",
@@ -2641,7 +2502,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sara ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -2660,7 +2520,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Godmodium",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Hera",
@@ -2679,7 +2538,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "JediHunter27",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Hera",
@@ -2698,7 +2556,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Grace",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Hephaestus",
@@ -2717,7 +2574,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "yax2bxc",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Artemis",
     qa3: "Demeter",
@@ -2736,7 +2592,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bandana_dee ",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Zeus",
@@ -2755,7 +2610,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Maya",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
     qa3: "Ares",
@@ -2774,7 +2628,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "sc",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -2793,7 +2646,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Flygon_jin",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Apollo",
@@ -2812,7 +2664,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jonathan",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -2831,7 +2682,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ninjanayr",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Demeter",
@@ -2850,7 +2700,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ykdp",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Demeter",
@@ -2869,7 +2718,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rob",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Apollo",
@@ -2888,7 +2736,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "hades ii",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Hera",
@@ -2907,7 +2754,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Batat ",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
     qa3: "Apollo",
@@ -2926,7 +2772,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "iplexed",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -2945,7 +2790,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Do we really have to say what our name is tho?",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -2964,7 +2808,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jake",
     qa1: "Xinth / Black Coat",
     qa2: "Supay",
     qa3: "Hestia",
@@ -2983,7 +2826,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "M b ",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -3002,7 +2844,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Spike",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hephaestus",
@@ -3021,7 +2862,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Infoskip",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -3040,7 +2880,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Danny",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Apollo",
@@ -3059,7 +2898,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sniv ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hephaestus",
@@ -3078,7 +2916,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Paul",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -3097,7 +2934,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jim",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Supay",
     qa3: "Hephaestus",
@@ -3116,7 +2952,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sav",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -3135,7 +2970,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sol Soof Solonga Solaris Oof",
     qa1: "Xinth / Black Coat",
     qa2: "Shiva",
     qa3: "Hera",
@@ -3154,7 +2988,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -3173,7 +3006,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Thar",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
     qa3: "Hera",
@@ -3192,7 +3024,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Widget",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -3211,7 +3042,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "nick",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Apollo",
@@ -3230,7 +3060,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mrunfunny7",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hera",
@@ -3249,7 +3078,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "John",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Apollo",
@@ -3268,7 +3096,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "G",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
     qa3: "Hephaestus",
@@ -3287,7 +3114,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "God",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Nergal",
     qa3: "Hephaestus",
@@ -3306,7 +3132,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vic",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -3325,7 +3150,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Spal",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
     qa3: "Hera",
@@ -3344,7 +3168,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bob",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -3363,7 +3186,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Thomas",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Hera",
@@ -3382,7 +3204,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Gerald",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
     qa3: "Hephaestus",
@@ -3401,7 +3222,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Gull",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Apollo",
@@ -3420,7 +3240,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Fart",
     qa1: "Revaal / Argent Skull",
     qa2: "Moros",
     qa3: "Zeus",
@@ -3439,7 +3258,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ramne",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Persephone",
     qa3: "Apollo",
@@ -3458,7 +3276,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "summer",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Zeus",
@@ -3477,7 +3294,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "KatkaDragon",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Hera",
@@ -3496,7 +3312,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "memmie",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Hestia",
@@ -3515,7 +3330,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Willy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -3534,7 +3348,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Momo🩷",
     qa1: "Descura / Witch's Staff",
     qa2: "Hel",
     qa3: "Ares",
@@ -3553,7 +3366,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "tofu",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Hel",
     qa3: "Zeus",
@@ -3572,7 +3384,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "silex_trombone",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Ares",
@@ -3591,7 +3402,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Angel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
     qa3: "Hestia",
@@ -3610,7 +3420,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nazvar",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
     qa3: "Poseidon",
@@ -3629,7 +3438,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Daniel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -3648,7 +3456,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ryderd ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Zeus",
@@ -3667,7 +3474,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Azra",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Artemis",
     qa3: "Hephaestus",
@@ -3686,7 +3492,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "JF",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
     qa3: "Demeter",
@@ -3705,7 +3510,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "locitronki",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Apollo",
@@ -3724,7 +3528,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Conor B",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
     qa3: "Hestia",
@@ -3743,7 +3546,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Parker",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Nergal",
     qa3: "Poseidon",
@@ -3762,7 +3564,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bloo",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Staff",
     qa3: "Aphrodite",
@@ -3781,7 +3582,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bloo",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Staff",
     qa3: "Aphrodite",
@@ -3800,7 +3600,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Michael",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -3819,7 +3618,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "cc",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Persephone",
     qa3: "Poseidon",
@@ -3838,7 +3636,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Shelby",
     qa1: "Xinth / Black Coat",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -3857,7 +3654,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jynx",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -3876,7 +3672,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "RidiculousHat",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -3895,7 +3690,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nick",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -3914,7 +3708,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "kindly_del",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
     qa3: "Hephaestus",
@@ -3933,7 +3726,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Fiery",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -3952,7 +3744,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "synx",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hestia",
@@ -3971,7 +3762,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Simplyjules89",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Hephaestus",
@@ -3990,7 +3780,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bryan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hera",
@@ -4009,7 +3798,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Aly",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Aphrodite",
@@ -4028,7 +3816,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Slickricks",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
     qa3: "Poseidon",
@@ -4047,7 +3834,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Shinya",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Zeus",
@@ -4066,7 +3852,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Pete",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -4085,7 +3870,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "wha",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -4104,7 +3888,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Declan",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -4123,7 +3906,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Colly",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -4142,7 +3924,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chloe",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
     qa3: "Hestia",
@@ -4161,7 +3942,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Gawen",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -4180,7 +3960,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "haunting chain",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Hera",
@@ -4199,7 +3978,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jade",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -4218,7 +3996,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jonny Lasagna",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Artemis",
     qa3: "Aphrodite",
@@ -4237,7 +4014,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: " Eep",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Zeus",
@@ -4256,7 +4032,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sz",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -4275,7 +4050,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Random",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
     qa3: "Aphrodite",
@@ -4294,7 +4068,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "mango77",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -4313,7 +4086,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Amy",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -4332,7 +4104,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "KinkyThoughtMan",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Aphrodite",
@@ -4351,7 +4122,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "JB",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -4370,7 +4140,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dee",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
     qa3: "Hestia",
@@ -4389,7 +4158,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Halapino13",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Abstain",
     qa3: "Hephaestus",
@@ -4408,7 +4176,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nilastra",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -4427,7 +4194,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "J",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Hestia",
@@ -4446,7 +4212,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Random",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -4465,7 +4230,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Agata",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Aphrodite",
@@ -4484,7 +4248,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "blank",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -4503,7 +4266,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "blank",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -4522,7 +4284,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "piloaf",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Zeus",
@@ -4541,7 +4302,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Selene",
     qa3: "Zeus",
@@ -4560,7 +4320,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Echo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hestia",
@@ -4579,7 +4338,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dan",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Hephaestus",
@@ -4598,7 +4356,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "mntydf ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -4617,7 +4374,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ed",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -4636,7 +4392,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "melinoe",
     qa1: "Revaal / Argent Skull",
     qa2: "Artemis",
     qa3: "Hera",
@@ -4655,7 +4410,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Logan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hephaestus",
@@ -4674,7 +4428,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Alex K",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Demeter",
@@ -4693,7 +4446,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "G",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
     qa3: "Zeus",
@@ -4712,7 +4464,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Charlie",
     qa1: "Xinth / Black Coat",
     qa2: "Eos",
     qa3: "Hestia",
@@ -4731,7 +4482,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tristan j",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -4750,7 +4500,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Alex",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -4769,7 +4518,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chukmag",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -4788,7 +4536,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Yves",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Demeter",
@@ -4807,7 +4554,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "d",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Demeter",
@@ -4826,7 +4572,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jay",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hestia",
@@ -4845,7 +4590,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mark",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -4864,7 +4608,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Socks",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Demeter",
@@ -4883,7 +4626,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ss",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -4902,7 +4644,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Supay Enjoyer",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Apollo",
@@ -4921,7 +4662,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "FrozenDino",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Hestia",
@@ -4940,7 +4680,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Talia",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -4959,7 +4698,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zagmzp",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -4978,7 +4716,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ezb",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hera",
@@ -4997,7 +4734,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Guy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Poseidon",
@@ -5016,7 +4752,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Daniel ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Aphrodite",
@@ -5035,7 +4770,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Creative",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Aphrodite",
@@ -5054,7 +4788,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lezz",
     qa1: "Xinth / Black Coat",
     qa2: "Morrigan",
     qa3: "Hephaestus",
@@ -5073,7 +4806,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bluedragoncultist",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Hephaestus",
@@ -5092,7 +4824,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Xxx",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Hephaestus",
@@ -5111,7 +4842,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Brandon",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Staff",
     qa3: "Demeter",
@@ -5130,7 +4860,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "John Hades",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
     qa3: "Hera",
@@ -5149,7 +4878,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chimp",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -5168,7 +4896,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "R",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Staff",
     qa3: "Aphrodite",
@@ -5187,7 +4914,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Arthur ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -5206,7 +4932,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Biblio-Phil",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
     qa3: "Poseidon",
@@ -5225,7 +4950,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "tt",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -5244,7 +4968,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Grey Johnston",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Zeus",
@@ -5263,7 +4986,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Magi",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -5282,7 +5004,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TheWallaby",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -5301,7 +5022,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "D",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Supay",
     qa3: "Demeter",
@@ -5320,7 +5040,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "FLYING_POTATO",
     qa1: "Descura / Witch's Staff",
     qa2: "Moros",
     qa3: "Zeus",
@@ -5339,7 +5058,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "November ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Selene",
     qa3: "Hephaestus",
@@ -5358,7 +5076,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jmoon",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Apollo",
@@ -5377,7 +5094,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TwistedSalsa",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hera",
@@ -5396,7 +5112,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Avery",
     qa1: "Xinth / Black Coat",
     qa2: "Supay",
     qa3: "Zeus",
@@ -5415,7 +5130,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jb",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -5434,7 +5148,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Femi",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
     qa3: "Ares",
@@ -5453,7 +5166,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Josh ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Pan",
     qa3: "Zeus",
@@ -5472,7 +5184,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jared",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
     qa3: "Aphrodite",
@@ -5491,7 +5202,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Fogwoggler",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -5510,7 +5220,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zachary",
     qa1: "Descura / Witch's Staff",
     qa2: "Supay",
     qa3: "Zeus",
@@ -5529,7 +5238,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Connor",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -5548,7 +5256,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Skullblade",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -5567,7 +5274,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "DJ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Hephaestus",
@@ -5586,7 +5292,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Emmett ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Zeus",
@@ -5605,7 +5310,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "VickyB",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Supay",
     qa3: "Hestia",
@@ -5624,7 +5328,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hyacinthus",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Aphrodite",
@@ -5643,7 +5346,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Booradley ",
     qa1: "Revaal / Argent Skull",
     qa2: "Melinoe Staff",
     qa3: "Hephaestus",
@@ -5662,7 +5364,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bruce",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -5681,7 +5382,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "jared m",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
     qa3: "Apollo",
@@ -5700,7 +5400,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Devin ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -5719,7 +5418,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "noybe",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hephaestus",
@@ -5738,7 +5436,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "juls",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Nergal",
     qa3: "Hera",
@@ -5757,7 +5454,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Marcello Reis",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Nergal",
     qa3: "Aphrodite",
@@ -5776,7 +5472,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jake",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Hephaestus",
@@ -5795,7 +5490,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Beary",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -5814,7 +5508,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Gee",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -5833,7 +5526,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "D",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Momus",
     qa3: "Demeter",
@@ -5852,7 +5544,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Yesh",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Zeus",
@@ -5871,7 +5562,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "A",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
     qa3: "Hestia",
@@ -5890,7 +5580,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "CP",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Selene",
     qa3: "Hephaestus",
@@ -5909,7 +5598,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "AJB",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Artemis",
     qa3: "Hestia",
@@ -5928,7 +5616,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "henrijsvp",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Hestia",
@@ -5947,7 +5634,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Gully",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Hestia",
@@ -5966,7 +5652,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rowailez",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -5985,7 +5670,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ImaginaryCat ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hephaestus",
@@ -6004,7 +5688,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Aweea",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Aphrodite",
@@ -6023,7 +5706,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ali",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Eos",
     qa3: "Demeter",
@@ -6042,7 +5724,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kiwi",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Anubis",
     qa3: "Poseidon",
@@ -6061,7 +5742,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Monika#5",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Apollo",
@@ -6080,7 +5760,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jimmy",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -6099,7 +5778,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dylan",
     qa1: "Xinth / Black Coat",
     qa2: "Nyx",
     qa3: "Apollo",
@@ -6118,7 +5796,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Y",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -6137,7 +5814,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "J",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hera",
@@ -6156,7 +5832,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sávio ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -6175,7 +5850,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "soup",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
     qa3: "Zeus",
@@ -6194,7 +5868,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sid",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hestia",
@@ -6213,7 +5886,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cody",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hephaestus",
@@ -6232,7 +5904,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Z",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
     qa3: "Zeus",
@@ -6251,7 +5922,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "G",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
     qa3: "Hestia",
@@ -6270,7 +5940,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "WJ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Hera",
@@ -6289,7 +5958,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Robert",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Zeus",
@@ -6308,7 +5976,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ML",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -6327,7 +5994,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "...",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Ares",
@@ -6346,7 +6012,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "MA",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -6365,7 +6030,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Anthony T",
     qa1: "Descura / Witch's Staff",
     qa2: "Nergal",
     qa3: "Zeus",
@@ -6384,7 +6048,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bossy",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -6403,7 +6066,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "LeBlur",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hestia",
@@ -6422,7 +6084,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Alex",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Demeter",
@@ -6441,7 +6102,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dmtm",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -6460,7 +6120,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Richie",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -6479,7 +6138,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TheFrith",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -6498,7 +6156,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Wh3t",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -6517,7 +6174,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "PGZ4sheezy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
     qa3: "Aphrodite",
@@ -6536,7 +6192,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "cosmopluto",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
     qa3: "Hestia",
@@ -6555,7 +6210,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "IVM",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
     qa3: "Aphrodite",
@@ -6574,7 +6228,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zac",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Apollo",
@@ -6593,7 +6246,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zarys",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hera",
@@ -6612,7 +6264,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TJ salter",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -6631,7 +6282,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bee",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Hephaestus",
@@ -6650,7 +6300,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rags",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -6669,7 +6318,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Noah",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -6688,7 +6336,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "XF",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Hephaestus",
@@ -6707,7 +6354,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Henry",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -6726,7 +6372,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bethany",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -6745,7 +6390,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Billy R",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Apollo",
@@ -6764,7 +6408,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bry",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -6783,7 +6426,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Max",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hestia",
@@ -6802,7 +6444,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Montregloe",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hestia",
@@ -6821,7 +6462,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "y",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Hestia",
@@ -6840,7 +6480,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "SavageBeaver",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -6859,7 +6498,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Eris for life",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -6878,7 +6516,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Grey painter",
     qa1: "Xinth / Black Coat",
     qa2: "Anubis",
     qa3: "Poseidon",
@@ -6897,7 +6534,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Serafin",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Zeus",
@@ -6916,7 +6552,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "John",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -6935,7 +6570,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chicken",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -6954,7 +6588,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Test",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
     qa3: "Poseidon",
@@ -6973,7 +6606,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jellyvine",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -6992,7 +6624,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rachael",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Zeus",
@@ -7011,7 +6642,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "tortuga",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -7030,7 +6660,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Grim4d",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Ares",
@@ -7049,7 +6678,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Qnibi",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
     qa3: "Demeter",
@@ -7068,7 +6696,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Megan",
     qa1: "Xinth / Black Coat",
     qa2: "Persephone",
     qa3: "Hestia",
@@ -7087,7 +6714,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Shinigami ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -7106,7 +6732,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "hay",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Apollo",
@@ -7125,7 +6750,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "dracula",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Apollo",
@@ -7144,7 +6768,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jake",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Artemis",
     qa3: "Hestia",
@@ -7163,7 +6786,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "jules",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -7182,7 +6804,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "#1 Conflicted Opnion Haver",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hera",
@@ -7201,7 +6822,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rowan Bishop",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -7220,7 +6840,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cadoc",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Aphrodite",
@@ -7239,7 +6858,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "JT",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Demeter",
@@ -7258,7 +6876,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Shockcroc",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Persephone",
     qa3: "Hera",
@@ -7277,7 +6894,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dylan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -7296,7 +6912,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "LordTwigo",
     qa1: "Descura / Witch's Staff",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -7315,7 +6930,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mike",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Supay",
     qa3: "Aphrodite",
@@ -7334,7 +6948,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Yanhuk",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -7353,7 +6966,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mel",
     qa1: "Revaal / Argent Skull",
     qa2: "Eos",
     qa3: "Aphrodite",
@@ -7372,7 +6984,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "john hades",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hephaestus",
@@ -7391,7 +7002,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Oisin",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
     qa3: "Aphrodite",
@@ -7410,7 +7020,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "G",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -7429,7 +7038,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "M",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -7448,7 +7056,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "O",
     qa1: "Xinth / Black Coat",
     qa2: "Moros",
     qa3: "Zeus",
@@ -7467,7 +7074,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nixks",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -7486,7 +7092,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "salad",
     qa1: "Revaal / Argent Skull",
     qa2: "Abstain",
     qa3: "Hestia",
@@ -7505,7 +7110,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "dave jones",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -7524,7 +7128,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sybersmoke68",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
     qa3: "Hera",
@@ -7543,7 +7146,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ralph Elver",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -7562,7 +7164,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Apparition1136",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -7581,7 +7182,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Midnite",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -7600,7 +7200,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "nico",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Hestia",
@@ -7619,7 +7218,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "kaio",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -7638,7 +7236,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dane",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Demeter",
@@ -7657,7 +7254,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Miv",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
     qa3: "Hephaestus",
@@ -7676,7 +7272,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Gerardo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Hestia",
@@ -7695,7 +7290,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "b",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Apollo",
@@ -7714,7 +7308,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "beanie",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -7733,7 +7326,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chang",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Momus",
     qa3: "Zeus",
@@ -7752,7 +7344,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lex",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Apollo",
@@ -7771,7 +7362,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hydrogon",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -7790,7 +7380,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Coomage ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Zeus",
@@ -7809,7 +7398,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sam ",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -7828,7 +7416,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Yanahilator",
     qa1: "Xinth / Black Coat",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -7847,7 +7434,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "liz",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
     qa3: "Zeus",
@@ -7866,7 +7452,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "R",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Apollo",
@@ -7885,7 +7470,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "BlueGuy17",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Hestia",
@@ -7904,7 +7488,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Pedro",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Hera",
@@ -7923,7 +7506,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ronan",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -7942,7 +7524,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dantas ",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hera",
@@ -7961,7 +7542,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "UD",
     qa1: "Descura / Witch's Staff",
     qa2: "Hel",
     qa3: "Hestia",
@@ -7980,7 +7560,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "kv",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -7999,7 +7578,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Guy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -8018,7 +7596,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "CiciPipski",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
     qa3: "Zeus",
@@ -8037,7 +7614,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tortillas",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -8056,7 +7632,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "DD52",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -8075,7 +7650,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Velin",
     qa1: "Xinth / Black Coat",
     qa2: "Artemis",
     qa3: "Hera",
@@ -8094,7 +7668,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "brblaundry",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Hera",
@@ -8113,7 +7686,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Randall",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hera",
@@ -8132,7 +7704,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "iDango",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Hera",
@@ -8151,7 +7722,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "gundra",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
     qa3: "Hera",
@@ -8170,7 +7740,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Carol",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -8189,7 +7758,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TheCookieMan ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Flames",
     qa3: "Demeter",
@@ -8208,7 +7776,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tim",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
     qa3: "Poseidon",
@@ -8227,7 +7794,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Oreollama ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -8246,7 +7812,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "moist_wet_socks",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hephaestus",
@@ -8265,7 +7830,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Daniel M",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Hera",
@@ -8284,7 +7848,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jj",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Apollo",
@@ -8303,7 +7866,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Krystal",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hephaestus",
@@ -8322,7 +7884,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Charlie h",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Aphrodite",
@@ -8341,7 +7902,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nyx",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Hephaestus",
@@ -8360,7 +7920,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Will",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
     qa3: "Poseidon",
@@ -8379,7 +7938,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nolan",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Hephaestus",
@@ -8398,7 +7956,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Noah",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -8417,7 +7974,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "john",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -8436,7 +7992,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vognerful",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Hephaestus",
@@ -8455,7 +8010,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "K",
     qa1: "Xinth / Black Coat",
     qa2: "Morrigan",
     qa3: "Demeter",
@@ -8474,7 +8028,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Isaac ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -8493,7 +8046,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sandy",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -8512,7 +8064,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kaylee",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
     qa3: "Zeus",
@@ -8531,7 +8082,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "jackmeoff",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Poseidon",
@@ -8550,7 +8100,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Armando",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -8569,7 +8118,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ed",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -8588,7 +8136,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "N",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -8607,7 +8154,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lucas C",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -8626,7 +8172,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ghosty",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hestia",
@@ -8645,7 +8190,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "dxxander",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -8664,7 +8208,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Omzo",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hestia",
@@ -8683,7 +8226,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bruno",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -8702,7 +8244,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "marzu",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -8721,7 +8262,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Fayt",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -8740,7 +8280,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hotrodsnickers",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Aphrodite",
@@ -8759,7 +8298,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mcdammit ",
     qa1: "Descura / Witch's Staff",
     qa2: "Moros",
     qa3: "Apollo",
@@ -8778,7 +8316,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TeaLeaf29",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Anubis",
     qa3: "Ares",
@@ -8797,7 +8334,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Pb",
     qa1: "Descura / Witch's Staff",
     qa2: "Nergal",
     qa3: "Aphrodite",
@@ -8816,7 +8352,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tufgirl",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -8835,7 +8370,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Aniruddha",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Abstain",
@@ -8854,7 +8388,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chip",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
     qa3: "Ares",
@@ -8873,7 +8406,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hhhh",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
     qa3: "Zeus",
@@ -8892,7 +8424,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dion",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -8911,7 +8442,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "라이언",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
     qa3: "Zeus",
@@ -8930,7 +8460,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Y/N",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Ares",
@@ -8949,7 +8478,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "rae",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hera",
@@ -8968,7 +8496,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "A",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -8987,7 +8514,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ccrabb",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
     qa3: "Demeter",
@@ -9006,7 +8532,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kenobi411",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Demeter",
@@ -9025,7 +8550,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Frankito",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
     qa3: "Zeus",
@@ -9044,7 +8568,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sean O.",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Poseidon",
@@ -9063,7 +8586,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "nialesemo ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Hestia",
@@ -9082,7 +8604,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "tao",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Apollo",
@@ -9101,7 +8622,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "YK",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hestia",
@@ -9120,7 +8640,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Garner",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Zeus",
@@ -9139,7 +8658,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sam",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Hestia",
@@ -9158,7 +8676,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Hestia",
@@ -9177,7 +8694,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Daniel armstrong",
     qa1: "Xinth / Black Coat",
     qa2: "Morrigan",
     qa3: "Demeter",
@@ -9196,7 +8712,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Castor",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Poseidon",
@@ -9215,7 +8730,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cris",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Zeus",
@@ -9234,7 +8748,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Takyon",
     qa1: "Descura / Witch's Staff",
     qa2: "Nergal",
     qa3: "Aphrodite",
@@ -9253,7 +8766,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dono",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Demeter",
@@ -9272,7 +8784,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sarah",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Hera",
@@ -9291,7 +8802,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kal",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Demeter",
@@ -9310,7 +8820,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nox",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
     qa3: "Zeus",
@@ -9329,7 +8838,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rin",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
     qa3: "Hestia",
@@ -9348,7 +8856,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cam",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Eos",
     qa3: "Hephaestus",
@@ -9367,7 +8874,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "CheeseBurgare",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Hera",
@@ -9386,7 +8892,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Skelly",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Aphrodite",
@@ -9405,7 +8910,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sean Hanrahan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -9424,7 +8928,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Victor",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
     qa3: "Apollo",
@@ -9443,7 +8946,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Corey",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Apollo",
@@ -9462,7 +8964,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Brad",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Demeter",
@@ -9481,7 +8982,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tman",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
     qa3: "Ares",
@@ -9500,7 +9000,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tristan ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -9519,7 +9018,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Shay",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
     qa3: "Zeus",
@@ -9538,7 +9036,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "LegoNoah123",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Hera",
@@ -9557,7 +9054,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "rob N",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -9576,7 +9072,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Maria",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Apollo",
@@ -9595,7 +9090,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ziggy W",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Hephaestus",
@@ -9614,7 +9108,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rockchip ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Anubis",
     qa3: "Apollo",
@@ -9633,7 +9126,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Uncle Cronos",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
     qa3: "Demeter",
@@ -9652,7 +9144,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mxlespxles ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Demeter",
@@ -9671,7 +9162,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Red shade",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Hestia",
@@ -9690,7 +9180,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chad",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -9709,7 +9198,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jake",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Hera",
@@ -9728,7 +9216,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "B",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Aphrodite",
@@ -9747,7 +9234,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cabo",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Shiva",
     qa3: "Zeus",
@@ -9766,7 +9252,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "AFC",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -9785,7 +9270,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nice Try :)",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -9804,7 +9288,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Garcia Jason",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Hera",
@@ -9823,7 +9306,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Endercat65",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
     qa3: "Hephaestus",
@@ -9842,7 +9324,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "tredmasta",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Zeus",
@@ -9861,7 +9342,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "cake",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -9880,7 +9360,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jn",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -9899,7 +9378,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Max",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Zeus",
@@ -9918,7 +9396,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Clayton",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hera",
@@ -9937,7 +9414,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Pumpkin",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Ares",
@@ -9956,7 +9432,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Johnson",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Zeus",
@@ -9975,7 +9450,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "d",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Aphrodite",
@@ -9994,7 +9468,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ella",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -10013,7 +9486,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "MissterMiles",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Aphrodite",
@@ -10032,7 +9504,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Razorgrin",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -10051,7 +9522,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Al",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Aphrodite",
@@ -10070,7 +9540,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "DexterHawkins",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -10089,7 +9558,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Wahabsmash",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Poseidon",
@@ -10108,7 +9576,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "illnevertell",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hera",
@@ -10127,7 +9594,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "raf",
     qa1: "Descura / Witch's Staff",
     qa2: "Moros",
     qa3: "Zeus",
@@ -10146,7 +9612,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Carlos ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -10165,7 +9630,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TPucks",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
     qa3: "Poseidon",
@@ -10184,7 +9648,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Joe ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Demeter",
@@ -10203,7 +9666,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "goose",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -10222,7 +9684,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "poops",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Hestia",
@@ -10241,7 +9702,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "john",
     qa1: "Revaal / Argent Skull",
     qa2: "Artemis",
     qa3: "Zeus",
@@ -10260,7 +9720,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Elliot",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -10279,7 +9738,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Eric",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Demeter",
@@ -10298,7 +9756,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Auraniac",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Selene",
     qa3: "Zeus",
@@ -10317,7 +9774,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Riley",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hera",
@@ -10336,7 +9792,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dreamscape",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Zeus",
@@ -10355,7 +9810,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "00-Void",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -10374,7 +9828,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "H",
     qa1: "Descura / Witch's Staff",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -10393,7 +9846,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ray V",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -10412,7 +9864,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hannah",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -10431,7 +9882,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ren :) ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
     qa3: "Hestia",
@@ -10450,7 +9900,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rosas",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hephaestus",
@@ -10469,7 +9918,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Anom player",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Hera",
@@ -10488,7 +9936,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Wiwi",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
     qa3: "Zeus",
@@ -10507,7 +9954,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zagreus",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Zeus",
@@ -10526,7 +9972,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Suto",
     qa1: "Xinth / Black Coat",
     qa2: "Eos",
     qa3: "Zeus",
@@ -10545,7 +9990,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hut",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -10564,7 +10008,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Anwar",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -10583,7 +10026,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "DLBlaze",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Apollo",
@@ -10602,7 +10044,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sonia",
     qa1: "Xinth / Black Coat",
     qa2: "Anubis",
     qa3: "Hera",
@@ -10621,7 +10062,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bob",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Aphrodite",
@@ -10640,7 +10080,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Olivia Everett",
     qa1: "Xinth / Black Coat",
     qa2: "Abstain",
     qa3: "Poseidon",
@@ -10659,7 +10098,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Leo",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Hephaestus",
@@ -10678,7 +10116,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bazz ",
     qa1: "Revaal / Argent Skull",
     qa2: "Artemis",
     qa3: "Demeter",
@@ -10697,7 +10134,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Xero",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Hestia",
@@ -10716,7 +10152,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Iiam Scully",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Aphrodite",
@@ -10735,7 +10170,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "John_aka_alwayz",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
     qa3: "Zeus",
@@ -10754,7 +10188,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "X",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Aphrodite",
@@ -10773,7 +10206,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Eddie S",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Hephaestus",
@@ -10792,7 +10224,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Boris",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Hephaestus",
@@ -10811,7 +10242,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Teuchi",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hera",
@@ -10830,7 +10260,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Surya",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Apollo",
@@ -10849,7 +10278,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Brannon",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -10868,7 +10296,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jonathan Gildesgaard",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -10887,7 +10314,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "K",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Zeus",
@@ -10906,7 +10332,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "SAMURAI",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -10925,7 +10350,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Disraeli",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hephaestus",
@@ -10944,7 +10368,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "drdoctor ",
     qa1: "Descura / Witch's Staff",
     qa2: "Moros",
     qa3: "Zeus",
@@ -10963,7 +10386,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "May Stone",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Demeter",
@@ -10982,7 +10404,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "purp",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Apollo",
@@ -11001,7 +10422,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Abe",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Apollo",
@@ -11020,7 +10440,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Brian",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
     qa3: "Hephaestus",
@@ -11039,7 +10458,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "skiji",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Poseidon",
@@ -11058,7 +10476,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "panic",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -11077,7 +10494,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rae",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
     qa3: "Apollo",
@@ -11096,7 +10512,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "sam",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Selene",
     qa3: "Hestia",
@@ -11115,7 +10530,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Adam Achy",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Blades",
     qa3: "Abstain",
@@ -11134,7 +10548,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hamish P",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -11153,7 +10566,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Adam Achy",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Blades",
     qa3: "Abstain",
@@ -11172,7 +10584,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "seeimrick",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Moros",
     qa3: "Hephaestus",
@@ -11191,7 +10602,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sid Bonzo",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
     qa3: "Apollo",
@@ -11210,7 +10620,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Khunal",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Blades",
     qa3: "Demeter",
@@ -11229,7 +10638,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jaickop",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Artemis",
     qa3: "Demeter",
@@ -11248,7 +10656,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Niklas",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Zeus",
@@ -11267,7 +10674,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "CW",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Momus",
     qa3: "Apollo",
@@ -11286,7 +10692,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ray",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Apollo",
@@ -11305,7 +10710,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hector ",
     qa1: "Xinth / Black Coat",
     qa2: "Moros",
     qa3: "Apollo",
@@ -11324,7 +10728,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kossuplex",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -11343,7 +10746,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "R",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Demeter",
@@ -11362,7 +10764,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Eddie",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -11381,7 +10782,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bloom",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Hera",
@@ -11400,7 +10800,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Josh C",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Aphrodite",
@@ -11419,7 +10818,6 @@ export const response = [
     qa16: "Abstain",
   },
   {
-    nam: "Hades",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -11438,7 +10836,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chad",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -11457,7 +10854,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Caeo ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Apollo",
@@ -11476,7 +10872,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Braden",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hera",
@@ -11495,7 +10890,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "hoc",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -11514,7 +10908,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Evan",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
     qa3: "Hera",
@@ -11533,7 +10926,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "HomeSlicedToast",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Hera",
@@ -11552,7 +10944,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Meatwadx",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Hephaestus",
@@ -11571,7 +10962,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Connor Peters",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Aphrodite",
@@ -11590,7 +10980,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hi",
     qa1: "Xinth / Black Coat",
     qa2: "Momus",
     qa3: "Demeter",
@@ -11609,7 +10998,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sam",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
     qa3: "Aphrodite",
@@ -11628,7 +11016,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Prometheus",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Zeus",
@@ -11647,7 +11034,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jaren Anderson",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Hestia",
@@ -11666,7 +11052,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dan",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -11685,7 +11070,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Finn",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -11704,7 +11088,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Logan House",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hera",
@@ -11723,7 +11106,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Darkitchay ",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Hestia",
@@ -11742,7 +11124,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Gordo",
     qa1: "Descura / Witch's Staff",
     qa2: "Nyx",
     qa3: "Demeter",
@@ -11761,7 +11142,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Gordo",
     qa1: "Descura / Witch's Staff",
     qa2: "Nyx",
     qa3: "Demeter",
@@ -11780,7 +11160,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Boat4d",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
     qa3: "Zeus",
@@ -11799,7 +11178,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Amb",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -11818,7 +11196,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ragnarok ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Hera",
@@ -11837,7 +11214,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "pyro",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
     qa3: "Hestia",
@@ -11856,7 +11232,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "AJ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Hera",
@@ -11875,7 +11250,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Winnie",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Hestia",
@@ -11894,7 +11268,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Celes",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -11913,7 +11286,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TWrecks310",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Zeus",
@@ -11932,7 +11304,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "kekepi314",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Hephaestus",
@@ -11951,7 +11322,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Grap3J3lly",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -11970,7 +11340,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mitts",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Poseidon",
@@ -11989,7 +11358,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Omid-wm",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -12008,7 +11376,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ray",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Apollo",
@@ -12027,7 +11394,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "MightierToaster",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Demeter",
@@ -12046,7 +11412,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ollie",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Poseidon",
@@ -12065,7 +11430,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bex",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Poseidon",
@@ -12084,7 +11448,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Berk",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Aphrodite",
@@ -12103,7 +11466,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ryo",
     qa1: "Xinth / Black Coat",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -12122,7 +11484,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "salt",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -12141,7 +11502,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bernie Chu",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Demeter",
@@ -12160,7 +11520,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "smt",
     qa1: "Revaal / Argent Skull",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -12179,7 +11538,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Csanad",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Aphrodite",
@@ -12198,7 +11556,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "billgun",
     qa1: "Descura / Witch's Staff",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -12217,7 +11574,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "D",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -12236,7 +11592,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Victor",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Persephone",
     qa3: "Aphrodite",
@@ -12255,7 +11610,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cat",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Ares",
@@ -12274,7 +11628,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Fated",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -12293,7 +11646,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Luke",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -12312,7 +11664,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "CaptWrath",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
     qa3: "Hestia",
@@ -12331,7 +11682,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Noctifer",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
     qa3: "Hera",
@@ -12350,7 +11700,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "s",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Zeus",
@@ -12369,7 +11718,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hylind",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Moros",
     qa3: "Poseidon",
@@ -12388,7 +11736,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tomino",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Apollo",
@@ -12407,7 +11754,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Goose",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Medea",
     qa3: "Hestia",
@@ -12426,7 +11772,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Milderling ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -12445,7 +11790,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bunko!!",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Hephaestus",
@@ -12464,7 +11808,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Todd Howard",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hestia",
@@ -12483,7 +11826,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Timon",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -12502,7 +11844,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "LC",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Zeus",
@@ -12521,7 +11862,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Milan ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -12540,7 +11880,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Anatole",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Demeter",
@@ -12559,7 +11898,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "arvid",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -12578,7 +11916,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Louniël ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hestia",
@@ -12597,7 +11934,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "h",
     qa1: "Revaal / Argent Skull",
     qa2: "Moros",
     qa3: "Zeus",
@@ -12616,7 +11952,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "RJ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Ares",
@@ -12635,7 +11970,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Quasar",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
     qa3: "Zeus",
@@ -12654,7 +11988,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TJ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hera",
@@ -12673,7 +12006,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "aedinfell",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Zeus",
@@ -12692,7 +12024,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "S",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Abstain",
@@ -12711,7 +12042,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lethe",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Supay",
     qa3: "Zeus",
@@ -12730,7 +12060,6 @@ export const response = [
     qa16: "Abstain",
   },
   {
-    nam: "Posneg",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -12749,7 +12078,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bobby",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -12768,7 +12096,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Wes",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
     qa3: "Zeus",
@@ -12787,7 +12114,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "chaos enjoyer",
     qa1: "Xinth / Black Coat",
     qa2: "Shiva",
     qa3: "Apollo",
@@ -12806,7 +12132,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "If Eris calls me trouble I will lose melt",
     qa1: "Xinth / Black Coat",
     qa2: "Persephone",
     qa3: "Hestia",
@@ -12825,7 +12150,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Samjaza ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -12844,7 +12168,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kate",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Apollo",
@@ -12863,7 +12186,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lin",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -12882,7 +12204,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jack",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Staff",
     qa3: "Zeus",
@@ -12901,7 +12222,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Steb",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hephaestus",
@@ -12920,7 +12240,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Phoenix",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Aphrodite",
@@ -12939,7 +12258,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "I",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Demeter",
@@ -12958,7 +12276,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "N/a",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -12977,7 +12294,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Aron",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Apollo",
@@ -12996,7 +12312,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vedant",
     qa1: "Xinth / Black Coat",
     qa2: "Shiva",
     qa3: "Poseidon",
@@ -13015,7 +12330,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Güngör ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -13034,7 +12348,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Pr1sme ",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
     qa3: "Zeus",
@@ -13053,7 +12366,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "joshwew95",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hephaestus",
@@ -13072,7 +12384,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kungun",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Poseidon",
@@ -13091,7 +12402,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chargala",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Apollo",
@@ -13110,7 +12420,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Thebe",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Hera",
@@ -13129,7 +12438,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Simone ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Zeus",
@@ -13148,7 +12456,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "LP",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Poseidon",
@@ -13167,7 +12474,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "George",
     qa1: "Xinth / Black Coat",
     qa2: "Hel",
     qa3: "Hephaestus",
@@ -13186,7 +12492,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Eric ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
     qa3: "Apollo",
@@ -13205,7 +12510,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Alejandro Figueroa",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Eos",
     qa3: "Hestia",
@@ -13224,7 +12528,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "s",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -13243,7 +12546,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Brendan ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Persephone",
     qa3: "Hestia",
@@ -13262,7 +12564,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Craftaxlb",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -13281,7 +12582,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Byzer",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -13300,7 +12600,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zys",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -13319,7 +12618,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Adam",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Poseidon",
@@ -13338,7 +12636,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ananke",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Eos",
     qa3: "Poseidon",
@@ -13357,7 +12654,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rishon",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -13376,7 +12672,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "No name ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Aphrodite",
@@ -13395,7 +12690,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Markus ",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Demeter",
@@ -13414,7 +12708,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Michael",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
     qa3: "Apollo",
@@ -13433,7 +12726,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Pecha",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Hestia",
@@ -13452,7 +12744,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Saber ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Zeus",
@@ -13471,7 +12762,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Murloghton ",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
     qa3: "Zeus",
@@ -13490,7 +12780,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "octop",
     qa1: "Revaal / Argent Skull",
     qa2: "Anubis",
     qa3: "Hera",
@@ -13509,7 +12798,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Svbear65",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Zeus",
@@ -13528,7 +12816,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kelly",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Artemis",
     qa3: "Apollo",
@@ -13547,7 +12834,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "J",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Aphrodite",
@@ -13566,7 +12852,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Arn",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hephaestus",
@@ -13585,7 +12870,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "X",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -13604,7 +12888,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "CCC",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -13623,7 +12906,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Acasez",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Hera",
@@ -13642,7 +12924,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ally ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -13661,7 +12942,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mannis",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Zeus",
@@ -13680,7 +12960,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Banjzo",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -13699,7 +12978,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Renna",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Zeus",
@@ -13718,7 +12996,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "kcobalt",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hephaestus",
@@ -13737,7 +13014,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Steven",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Hera",
@@ -13756,7 +13032,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Karl",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Apollo",
@@ -13775,7 +13050,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Omar",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Ares",
@@ -13794,7 +13068,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "no",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Persephone",
     qa3: "Hestia",
@@ -13813,7 +13086,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Joebotnik",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -13832,7 +13104,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vaelomre",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
     qa3: "Zeus",
@@ -13851,7 +13122,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Davie",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -13870,7 +13140,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jay e",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Pan",
     qa3: "Apollo",
@@ -13889,7 +13158,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Steven ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Hera",
@@ -13908,7 +13176,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Steven ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Hera",
@@ -13927,7 +13194,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Why would you need a name",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Zeus",
@@ -13946,7 +13212,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Benjamin ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -13965,7 +13230,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cero",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Zeus",
@@ -13984,7 +13248,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jadeolantern",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Hestia",
@@ -14003,7 +13266,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Pyre guy",
     qa1: "Revaal / Argent Skull",
     qa2: "Anubis",
     qa3: "Hephaestus",
@@ -14022,7 +13284,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nikki",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -14041,7 +13302,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "JackJac",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -14060,7 +13320,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mo",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
     qa3: "Hera",
@@ -14079,7 +13338,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Drakjc",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Zeus",
@@ -14098,7 +13356,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ally",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Apollo",
@@ -14117,7 +13374,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "L",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Supay",
     qa3: "Zeus",
@@ -14136,7 +13392,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jaspe",
     qa1: "Descura / Witch's Staff",
     qa2: "Eos",
     qa3: "Hephaestus",
@@ -14155,7 +13410,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Celeste",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Hestia",
@@ -14174,7 +13428,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "tirutira",
     qa1: "Revaal / Argent Skull",
     qa2: "Melinoe Skull",
     qa3: "Hera",
@@ -14193,7 +13446,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mohamed almheiri",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Zeus",
@@ -14212,7 +13464,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "...",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -14231,7 +13482,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Wayne Gretzky ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Hestia",
@@ -14250,7 +13500,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lynsey Hannahs",
     qa1: "Descura / Witch's Staff",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -14269,7 +13518,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dayuuum76",
     qa1: "Descura / Witch's Staff",
     qa2: "Hel",
     qa3: "Apollo",
@@ -14288,7 +13536,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Anonymous ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Apollo",
@@ -14307,7 +13554,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "M",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Zeus",
@@ -14326,7 +13572,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Gunko",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -14345,7 +13590,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Xcomlord",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Skull",
     qa3: "Apollo",
@@ -14364,7 +13608,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Félix ",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
     qa3: "Zeus",
@@ -14383,7 +13626,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Marius",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
     qa3: "Zeus",
@@ -14402,7 +13644,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Slug ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hephaestus",
@@ -14421,7 +13662,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "hunted_violin",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -14440,7 +13680,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tiago ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -14459,7 +13698,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rik",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Zeus",
@@ -14478,7 +13716,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "BB",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Artemis",
     qa3: "Poseidon",
@@ -14497,7 +13734,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ben",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Axe",
     qa3: "Zeus",
@@ -14516,7 +13752,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tahiri",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Aphrodite",
@@ -14535,7 +13770,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Umang",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Flames",
     qa3: "Hestia",
@@ -14554,7 +13788,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "zilly",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Anubis",
     qa3: "Zeus",
@@ -14573,7 +13806,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Narnia Rose",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Hestia",
@@ -14592,7 +13824,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "renzhoes",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Zeus",
@@ -14611,7 +13842,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Eastheus",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Demeter",
@@ -14630,7 +13860,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Carthage",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Hestia",
@@ -14649,7 +13878,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Aven",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hera",
@@ -14668,7 +13896,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Baka",
     qa1: "Revaal / Argent Skull",
     qa2: "Moros",
     qa3: "Zeus",
@@ -14687,7 +13914,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Melinoe Fan ",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -14706,7 +13932,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Veronika ",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
     qa3: "Hestia",
@@ -14725,7 +13950,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "A",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Zeus",
@@ -14744,7 +13968,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Caffeine ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Hera",
@@ -14763,7 +13986,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "balls",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -14782,7 +14004,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ivan Rakic",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -14801,7 +14022,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "T",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -14820,7 +14040,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Anonymous",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
     qa3: "Demeter",
@@ -14839,7 +14058,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jonas",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Poseidon",
@@ -14858,7 +14076,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kezza",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
     qa3: "Demeter",
@@ -14877,7 +14094,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tux Pirate",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Momus",
     qa3: "Apollo",
@@ -14896,7 +14112,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hermes",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Axe",
     qa3: "Hephaestus",
@@ -14915,7 +14130,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Higulz ",
     qa1: "Xinth / Black Coat",
     qa2: "Hel",
     qa3: "Aphrodite",
@@ -14934,7 +14148,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sahachan Tippimwong ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Apollo",
@@ -14953,7 +14166,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vizz",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
     qa3: "Hestia",
@@ -14972,7 +14184,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jordy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Blades",
     qa3: "Hestia",
@@ -14991,7 +14202,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Semjuel21",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Hestia",
@@ -15010,7 +14220,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "a",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Abstain",
     qa3: "Hestia",
@@ -15029,7 +14238,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Adam",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -15048,7 +14256,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cory",
     qa1: "Descura / Witch's Staff",
     qa2: "Eos",
     qa3: "Zeus",
@@ -15067,7 +14274,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "akleos",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -15086,7 +14292,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "LT",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -15105,7 +14310,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Elias",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Demeter",
@@ -15124,7 +14328,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Percival W.",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Hera",
@@ -15143,7 +14346,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "DazOceanGuard ",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Hera",
@@ -15162,7 +14364,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Boorelom",
     qa1: "Xinth / Black Coat",
     qa2: "Nyx",
     qa3: "Ares",
@@ -15181,7 +14382,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Arcana",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Apollo",
@@ -15200,7 +14400,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "PutoElQueLee",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Aphrodite",
@@ -15219,7 +14418,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "s",
     qa1: "Revaal / Argent Skull",
     qa2: "Melinoe Skull",
     qa3: "Poseidon",
@@ -15238,7 +14436,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Matt",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Hestia",
@@ -15257,7 +14454,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hoang Minh",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -15276,7 +14472,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Muhammad alif b as'shaari",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Poseidon",
@@ -15295,7 +14490,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Me",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -15314,7 +14508,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Remar",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -15333,7 +14526,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ld",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Zeus",
@@ -15352,7 +14544,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cheesewheel",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Apollo",
@@ -15371,7 +14562,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hex",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hephaestus",
@@ -15390,7 +14580,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Steven Evans",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -15409,7 +14598,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bib",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hephaestus",
@@ -15428,7 +14616,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rongue",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Apollo",
@@ -15447,7 +14634,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ninox",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
     qa3: "Zeus",
@@ -15466,7 +14652,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "rio",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Demeter",
@@ -15485,7 +14670,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dakota",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Apollo",
@@ -15504,7 +14688,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Swev",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Hephaestus",
@@ -15523,7 +14706,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Escogriffe",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
     qa3: "Aphrodite",
@@ -15542,7 +14724,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Albatros",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
     qa3: "Poseidon",
@@ -15561,7 +14742,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zag",
     qa1: "Xinth / Black Coat",
     qa2: "Thanatos",
     qa3: "Hera",
@@ -15580,7 +14760,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Scorry",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -15599,7 +14778,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "L",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hephaestus",
@@ -15618,7 +14796,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Emma",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Demeter",
@@ -15637,7 +14814,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "altercube",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Hera",
@@ -15656,7 +14832,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cryla",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -15675,7 +14850,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Eteat",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Hel",
     qa3: "Aphrodite",
@@ -15694,7 +14868,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Alespuma",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Demeter",
@@ -15713,7 +14886,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mel",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
     qa3: "Zeus",
@@ -15732,7 +14904,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mori",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Hephaestus",
@@ -15751,7 +14922,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Soraky",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Aphrodite",
@@ -15770,7 +14940,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dominik",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -15789,7 +14958,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jonas",
     qa1: "Xinth / Black Coat",
     qa2: "Thanatos",
     qa3: "Poseidon",
@@ -15808,7 +14976,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nialled",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Zeus",
@@ -15827,7 +14994,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Thootjuh ",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hephaestus",
@@ -15846,7 +15012,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Miru",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Poseidon",
@@ -15865,7 +15030,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "f",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -15884,7 +15048,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ally",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
     qa3: "Hephaestus",
@@ -15903,7 +15066,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "T",
     qa1: "Revaal / Argent Skull",
     qa2: "Abstain",
     qa3: "Zeus",
@@ -15922,7 +15084,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zar",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -15941,7 +15102,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "JCL",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Apollo",
@@ -15960,7 +15120,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ySteece",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Aphrodite",
@@ -15979,7 +15138,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "T",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Apollo",
@@ -15998,7 +15156,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "laszlonator",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -16017,7 +15174,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ryan",
     qa1: "Descura / Witch's Staff",
     qa2: "Supay",
     qa3: "Zeus",
@@ -16036,7 +15192,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Olive",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -16055,7 +15210,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "AwesomeGuyAlpha",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Apollo",
@@ -16074,7 +15228,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jakiller",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Medea",
     qa3: "Aphrodite",
@@ -16093,7 +15246,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "vini",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -16112,7 +15264,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bloodiest",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Zeus",
@@ -16131,7 +15282,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hades",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Demeter",
@@ -16150,7 +15300,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "DT",
     qa1: "Xinth / Black Coat",
     qa2: "Eos",
     qa3: "Hestia",
@@ -16169,7 +15318,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tzaiyn",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hephaestus",
@@ -16188,7 +15336,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Awkin",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -16207,7 +15354,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tincture",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Zeus",
@@ -16226,7 +15372,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kay",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Poseidon",
@@ -16245,7 +15390,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Marie",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -16264,7 +15408,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Primus",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Abstain",
@@ -16283,7 +15426,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Renz",
     qa1: "Descura / Witch's Staff",
     qa2: "Pan",
     qa3: "Hera",
@@ -16302,7 +15444,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Guilherme Machado",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Zeus",
@@ -16321,7 +15462,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "clary",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Hera",
@@ -16340,7 +15480,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "FightWM",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Hephaestus",
@@ -16359,7 +15498,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Alex Chow",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
     qa3: "Zeus",
@@ -16378,7 +15516,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Djo",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Nergal",
     qa3: "Ares",
@@ -16397,7 +15534,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "N.A.",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -16416,7 +15552,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jewel Kemerena",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hera",
@@ -16435,7 +15570,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Michael",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Poseidon",
@@ -16454,7 +15588,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Taylor ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -16473,7 +15606,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sophie",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
     qa3: "Hera",
@@ -16492,7 +15624,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Logener",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
     qa3: "Demeter",
@@ -16511,7 +15642,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "SSnoopy",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -16530,7 +15660,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Anonymous",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Hera",
@@ -16549,7 +15678,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Satie",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Hephaestus",
@@ -16568,7 +15696,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Luis",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -16587,7 +15714,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Db",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -16606,7 +15732,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Carson B",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Hephaestus",
@@ -16625,7 +15750,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Aetos",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Demeter",
@@ -16644,7 +15768,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cordelia",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Demeter",
@@ -16663,7 +15786,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Salkazko",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hestia",
@@ -16682,7 +15804,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ONEAL",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Aphrodite",
@@ -16701,7 +15822,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "protheph",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -16720,7 +15840,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "mc",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Moros",
     qa3: "Zeus",
@@ -16739,7 +15858,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "LaLight",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Aphrodite",
@@ -16758,7 +15876,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bushu",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Aphrodite",
@@ -16777,7 +15894,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TriadAddict",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hephaestus",
@@ -16796,7 +15912,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jonas",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Demeter",
@@ -16815,7 +15930,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rhi",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Supay",
     qa3: "Poseidon",
@@ -16834,7 +15948,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Luciel",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Ares",
@@ -16853,7 +15966,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Matide",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Demeter",
@@ -16872,7 +15984,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Fran",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Hestia",
@@ -16891,7 +16002,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lucius",
     qa1: "Descura / Witch's Staff",
     qa2: "Selene",
     qa3: "Apollo",
@@ -16910,7 +16020,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sigma",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -16929,7 +16038,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kyou",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
     qa3: "Hera",
@@ -16948,7 +16056,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nunnett",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Demeter",
@@ -16967,7 +16074,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Michalinh0",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
     qa3: "Hera",
@@ -16986,7 +16092,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hades2",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Hestia",
@@ -17005,7 +16110,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sc",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -17024,7 +16128,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "N",
     qa1: "Revaal / Argent Skull",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -17043,7 +16146,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zhydoo",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Zeus",
@@ -17062,7 +16164,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sam",
     qa1: "Descura / Witch's Staff",
     qa2: "Moros",
     qa3: "Zeus",
@@ -17081,7 +16182,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sharkbaithooha",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -17100,7 +16200,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Unseen",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -17119,7 +16218,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "MattLovelace",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
     qa3: "Zeus",
@@ -17138,7 +16236,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "DrAwesomew",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Apollo",
@@ -17157,7 +16254,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nicky",
     qa1: "Xinth / Black Coat",
     qa2: "Supay",
     qa3: "Apollo",
@@ -17176,7 +16272,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "manhha251",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Apollo",
@@ -17195,7 +16290,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Stilghar",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -17214,7 +16308,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jay Johnston",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
     qa3: "Ares",
@@ -17233,7 +16326,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Shelly",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Poseidon",
@@ -17252,7 +16344,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Joe",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -17271,7 +16362,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jupoter",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Poseidon",
@@ -17290,7 +16380,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cameron",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Apollo",
@@ -17309,7 +16398,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mia",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Ares",
@@ -17328,7 +16416,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "IcarusLuver69",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Hera",
@@ -17347,7 +16434,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Miljan",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Hera",
@@ -17366,7 +16452,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hoojiwat",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Zeus",
@@ -17385,7 +16470,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Alarik ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
     qa3: "Apollo",
@@ -17404,7 +16488,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Caro",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hephaestus",
@@ -17423,7 +16506,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Koby",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Hera",
@@ -17442,7 +16524,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "rugpjutuke",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Hestia",
@@ -17461,7 +16542,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Emil Vasilev",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -17480,7 +16560,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Big Ol'Dingus",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Hephaestus",
@@ -17499,7 +16578,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Oscar da Silva",
     qa1: "Revaal / Argent Skull",
     qa2: "Moros",
     qa3: "Ares",
@@ -17518,7 +16596,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "R",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Hephaestus",
@@ -17537,7 +16614,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Skryter",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -17556,7 +16632,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "urmom",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -17575,7 +16650,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "wander",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -17594,7 +16668,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "BDD",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Zeus",
@@ -17613,7 +16686,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "YD",
     qa1: "Xinth / Black Coat",
     qa2: "Moros",
     qa3: "Hephaestus",
@@ -17632,7 +16704,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sanjay Kannan",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
     qa3: "Apollo",
@@ -17651,7 +16722,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Stephen",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hephaestus",
@@ -17670,7 +16740,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rejdan",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
     qa3: "Zeus",
@@ -17689,7 +16758,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dmitry",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -17708,7 +16776,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mad bookworm ",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -17727,7 +16794,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "pointe31",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Demeter",
@@ -17746,7 +16812,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tyzo",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Apollo",
@@ -17765,7 +16830,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "adrian",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Supay",
     qa3: "Hestia",
@@ -17784,7 +16848,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "pirata",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -17803,7 +16866,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lucas Tagliapietra Verlengia",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -17822,7 +16884,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "lcbzz",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -17841,7 +16902,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nab",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
     qa3: "Zeus",
@@ -17860,7 +16920,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Miguel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Blades",
     qa3: "Hephaestus",
@@ -17879,7 +16938,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "J",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Zeus",
@@ -17898,7 +16956,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "meowie",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Ares",
@@ -17917,7 +16974,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "M",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
     qa3: "Poseidon",
@@ -17936,7 +16992,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Noss",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Apollo",
@@ -17955,7 +17010,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Emily",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
     qa3: "Demeter",
@@ -17974,7 +17028,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Anonymous ",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Aphrodite",
@@ -17993,7 +17046,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ahola",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -18012,7 +17064,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Ares",
@@ -18031,7 +17082,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "M",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Coat",
     qa3: "Hephaestus",
@@ -18050,7 +17100,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jade",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
     qa3: "Demeter",
@@ -18069,7 +17118,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Andreuus",
     qa1: "Descura / Witch's Staff",
     qa2: "Hel",
     qa3: "Hera",
@@ -18088,7 +17136,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "B",
     qa1: "Xinth / Black Coat",
     qa2: "Artemis",
     qa3: "Aphrodite",
@@ -18107,7 +17154,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "MattT",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -18126,7 +17172,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "vrunuz",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -18145,7 +17190,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Oeffes",
     qa1: "Revaal / Argent Skull",
     qa2: "Melinoe Skull",
     qa3: "Ares",
@@ -18164,7 +17208,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "smilercat",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hera",
@@ -18183,7 +17226,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: " S",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Zeus",
@@ -18202,7 +17244,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Thomasse",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
     qa3: "Demeter",
@@ -18221,7 +17262,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Andrei",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
     qa3: "Zeus",
@@ -18240,7 +17280,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Stephanie tay",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Hera",
@@ -18259,7 +17298,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TJ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Momus",
     qa3: "Aphrodite",
@@ -18278,7 +17316,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rick",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hestia",
@@ -18297,7 +17334,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ridiem",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -18316,7 +17352,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Crawler",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -18335,7 +17370,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kaining Yao",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Hera",
@@ -18354,7 +17388,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Johnny Swallows",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
     qa3: "Demeter",
@@ -18373,7 +17406,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ura.exe",
     qa1: "Xinth / Black Coat",
     qa2: "Anubis",
     qa3: "Hera",
@@ -18392,7 +17424,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Gatsby",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -18411,7 +17442,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jordan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Hephaestus",
@@ -18430,7 +17460,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: ".",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -18449,7 +17478,6 @@ export const response = [
     qa16: "Abstain",
   },
   {
-    nam: "Foxdra",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
     qa3: "Hestia",
@@ -18468,7 +17496,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rob",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Artemis",
     qa3: "Hephaestus",
@@ -18487,7 +17514,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Declan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Hephaestus",
@@ -18506,7 +17532,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TDR",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
     qa3: "Zeus",
@@ -18525,7 +17550,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lucas",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Moros",
     qa3: "Zeus",
@@ -18544,7 +17568,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "pkent10",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -18563,7 +17586,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Glados",
     qa1: "Xinth / Black Coat",
     qa2: "Persephone",
     qa3: "Poseidon",
@@ -18582,7 +17604,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Edzzio",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -18601,7 +17622,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Fredrik Gustafsson",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Hephaestus",
@@ -18620,7 +17640,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lucas",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -18639,7 +17658,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Reinaldo",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -18658,7 +17676,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Reinaldo",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -18677,7 +17694,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Coldes",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Flames",
     qa3: "Zeus",
@@ -18696,7 +17712,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Coldes",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Flames",
     qa3: "Zeus",
@@ -18715,7 +17730,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vice",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Aphrodite",
@@ -18734,7 +17748,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "G",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Apollo",
@@ -18753,7 +17766,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "FlashBerry",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Selene",
     qa3: "Apollo",
@@ -18772,7 +17784,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "reese",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hestia",
@@ -18791,7 +17802,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "J",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Hephaestus",
@@ -18810,7 +17820,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bruh",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -18829,7 +17838,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mel's whip",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Aphrodite",
@@ -18848,7 +17856,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mars",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Demeter",
@@ -18867,7 +17874,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Fs32",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
     qa3: "Zeus",
@@ -18886,7 +17892,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lanadelrey",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Apollo",
@@ -18905,7 +17910,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "brianna",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Hestia",
@@ -18924,7 +17928,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Elijah",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -18943,7 +17946,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sinter",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -18962,7 +17964,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "AUSARI",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
     qa3: "Aphrodite",
@@ -18981,7 +17982,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "cowboycthulhu",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -19000,7 +18000,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jane",
     qa1: "Xinth / Black Coat",
     qa2: "Selene",
     qa3: "Hera",
@@ -19019,7 +18018,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "magemana42",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Hera",
@@ -19038,7 +18036,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "robu",
     qa1: "Xinth / Black Coat",
     qa2: "Anubis",
     qa3: "Zeus",
@@ -19057,7 +18054,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sud",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -19076,7 +18072,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Pablo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Zeus",
@@ -19095,7 +18090,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sam",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hephaestus",
@@ -19114,7 +18108,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "J",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Hestia",
@@ -19133,7 +18126,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Oliver",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -19152,7 +18144,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Doggo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Apollo",
@@ -19171,7 +18162,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TrollerCZ ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -19190,7 +18180,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chironyxaltair",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Zeus",
@@ -19209,7 +18198,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "nina",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Zeus",
@@ -19228,7 +18216,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tropicarcinogen",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -19247,7 +18234,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Goose",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Eos",
     qa3: "Aphrodite",
@@ -19266,7 +18252,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Anvenjade",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
     qa3: "Zeus",
@@ -19285,7 +18270,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lexi",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Apollo",
@@ -19304,7 +18288,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Potato",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -19323,7 +18306,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Will",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hephaestus",
@@ -19342,7 +18324,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Matthew Pinto ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Demeter",
@@ -19361,7 +18342,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "rainee",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -19380,7 +18360,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "VacuumoV",
     qa1: "Revaal / Argent Skull",
     qa2: "Melinoe Skull",
     qa3: "Ares",
@@ -19399,7 +18378,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Spirite",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Moros",
     qa3: "Zeus",
@@ -19418,7 +18396,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "SC",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Nergal",
     qa3: "Zeus",
@@ -19437,7 +18414,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Trevor ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Zeus",
@@ -19456,7 +18432,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TinySpectrum",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Poseidon",
@@ -19475,7 +18450,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Yuyutsu",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -19494,7 +18468,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Apollo",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Pan",
     qa3: "Apollo",
@@ -19513,7 +18486,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Anon",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -19532,7 +18504,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "OPTIONS Lord",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -19551,7 +18522,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Alex",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hephaestus",
@@ -19570,7 +18540,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Scott W",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
     qa3: "Demeter",
@@ -19589,7 +18558,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Adam Oswald Miller ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Zeus",
@@ -19608,7 +18576,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "alpine",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Anubis",
     qa3: "Aphrodite",
@@ -19627,7 +18594,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "logan",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Aphrodite",
@@ -19646,7 +18612,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nurdred",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Poseidon",
@@ -19665,7 +18630,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Boot",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
     qa3: "Hestia",
@@ -19684,7 +18648,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kristina",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Hephaestus",
@@ -19703,7 +18666,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "MRPOTATO",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Aphrodite",
@@ -19722,7 +18684,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ProjectSAM",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -19741,7 +18702,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "KV",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -19760,7 +18720,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jess",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Persephone",
     qa3: "Apollo",
@@ -19779,7 +18738,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tom",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Apollo",
@@ -19798,7 +18756,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "melnoefan69420",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -19817,7 +18774,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Blub1rd",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Hera",
@@ -19836,7 +18792,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "George",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hestia",
@@ -19855,7 +18810,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mitchell",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
     qa3: "Demeter",
@@ -19874,7 +18828,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vitefish",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -19893,7 +18846,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Karthuria",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -19912,7 +18864,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "James",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Apollo",
@@ -19931,7 +18882,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jake benich ",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
     qa3: "Zeus",
@@ -19950,7 +18900,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Lala",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hera",
@@ -19969,7 +18918,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Pam",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Demeter",
@@ -19988,7 +18936,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hi",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -20007,7 +18954,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Shadokin",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Apollo",
@@ -20026,7 +18972,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Szef",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Artemis",
     qa3: "Zeus",
@@ -20045,7 +18990,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Grace",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
     qa3: "Hestia",
@@ -20064,7 +19008,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "haanss",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Shiva",
     qa3: "Aphrodite",
@@ -20083,7 +19026,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "thomas",
     qa1: "Xinth / Black Coat",
     qa2: "Shiva",
     qa3: "Zeus",
@@ -20102,7 +19044,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Enenke",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Hestia",
@@ -20121,7 +19062,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kale",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Demeter",
@@ -20140,7 +19080,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ron",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Zeus",
@@ -20159,7 +19098,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nobody ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Hestia",
@@ -20178,7 +19116,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Soko",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -20197,7 +19134,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Saporito",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Ares",
@@ -20216,7 +19152,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jay ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hera",
@@ -20235,7 +19170,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Colton",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hestia",
@@ -20254,7 +19188,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "CerpinTheMute",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hestia",
@@ -20273,7 +19206,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ShinniEvvk ",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -20292,7 +19224,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ben",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Persephone",
     qa3: "Hera",
@@ -20311,7 +19242,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Natalia",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Demeter",
@@ -20330,7 +19260,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Blank",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Hephaestus",
@@ -20349,7 +19278,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kerle",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Zeus",
@@ -20368,7 +19296,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "voxmoochina ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Momus",
     qa3: "Zeus",
@@ -20387,7 +19314,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "rotom",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Poseidon",
@@ -20406,7 +19332,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "FlyingTank",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Poseidon",
@@ -20425,7 +19350,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hash",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -20444,7 +19368,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nawid",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Zeus",
@@ -20463,7 +19386,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sodium",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -20482,7 +19404,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ecota",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hera",
@@ -20501,7 +19422,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Grax",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -20520,7 +19440,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kona",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Hephaestus",
@@ -20539,7 +19458,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Raspa",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Hephaestus",
@@ -20558,7 +19476,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Boop",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Aphrodite",
@@ -20577,7 +19494,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Toprak",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -20596,7 +19512,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Fman ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -20615,7 +19530,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Pork Spud ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Moros",
     qa3: "Hestia",
@@ -20634,7 +19548,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zach",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Pan",
     qa3: "Apollo",
@@ -20653,7 +19566,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Scout P",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Moros",
     qa3: "Apollo",
@@ -20672,7 +19584,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Daniel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Poseidon",
@@ -20691,7 +19602,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Neyir",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Aphrodite",
@@ -20710,7 +19620,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "boop",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Apollo",
@@ -20729,7 +19638,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jasper",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -20748,7 +19656,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "TAB",
     qa1: "Xinth / Black Coat",
     qa2: "Anubis",
     qa3: "Hera",
@@ -20767,7 +19674,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Scylla fan #1",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Artemis",
     qa3: "Aphrodite",
@@ -20786,7 +19692,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "محمد",
     qa1: "Xinth / Black Coat",
     qa2: "Abstain",
     qa3: "Hestia",
@@ -20805,7 +19710,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "simo_900",
     qa1: "Xinth / Black Coat",
     qa2: "Nyx",
     qa3: "Poseidon",
@@ -20824,7 +19728,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sean",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -20843,7 +19746,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mayood",
     qa1: "Revaal / Argent Skull",
     qa2: "Hel",
     qa3: "Poseidon",
@@ -20862,7 +19764,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Stok",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -20881,7 +19782,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Iaya",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Aphrodite",
@@ -20900,7 +19800,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jawge",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hera",
@@ -20919,7 +19818,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "idontwantto givemyname",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Aphrodite",
@@ -20938,7 +19836,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nessy",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Anubis",
     qa3: "Hera",
@@ -20957,7 +19854,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bianca",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Zeus",
@@ -20976,7 +19872,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Taylor ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Zeus",
@@ -20995,7 +19890,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cooper",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Zeus",
@@ -21014,7 +19908,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rick",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Hephaestus",
@@ -21033,7 +19926,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Proxian",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -21052,7 +19944,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Diego",
     qa1: "Descura / Witch's Staff",
     qa2: "Pan",
     qa3: "Demeter",
@@ -21071,7 +19962,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rich",
     qa1: "Abstain",
     qa2: "Abstain",
     qa3: "Abstain",
@@ -21090,7 +19980,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kiyon",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Hel",
     qa3: "Hestia",
@@ -21109,7 +19998,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "a",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hephaestus",
@@ -21128,7 +20016,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jasper",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
     qa3: "Apollo",
@@ -21147,7 +20034,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Drew",
     qa1: "Revaal / Argent Skull",
     qa2: "Supay",
     qa3: "Hephaestus",
@@ -21166,7 +20052,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "1000Spir",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -21185,7 +20070,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dio",
     qa1: "Descura / Witch's Staff",
     qa2: "Thanatos",
     qa3: "Demeter",
@@ -21204,7 +20088,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bob",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Zeus",
@@ -21223,7 +20106,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "footy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
     qa3: "Hestia",
@@ -21242,7 +20124,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "HMD",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -21261,7 +20142,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kieran",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Zeus",
@@ -21280,7 +20160,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jack Seidl ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Demeter",
@@ -21299,7 +20178,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "John Beatty",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Apollo",
@@ -21318,7 +20196,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "gio",
     qa1: "Descura / Witch's Staff",
     qa2: "Charon",
     qa3: "Aphrodite",
@@ -21337,7 +20214,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Christian v",
     qa1: "Xinth / Black Coat",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -21356,7 +20232,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "tony",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -21375,7 +20250,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "LONELY_BONES",
     qa1: "Xinth / Black Coat",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -21394,7 +20268,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "bstockz",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hestia",
@@ -21413,7 +20286,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nakasa",
     qa1: "Xinth / Black Coat",
     qa2: "Supay",
     qa3: "Hestia",
@@ -21432,7 +20304,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ru",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -21451,7 +20322,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hoov",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hestia",
@@ -21470,7 +20340,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ro",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Hel",
     qa3: "Hestia",
@@ -21489,7 +20358,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Clarice",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Apollo",
@@ -21508,7 +20376,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "JoshRamen",
     qa1: "Revaal / Argent Skull",
     qa2: "Thanatos",
     qa3: "Demeter",
@@ -21527,7 +20394,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Winterbabyy",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Aphrodite",
@@ -21546,7 +20412,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cailie",
     qa1: "Revaal / Argent Skull",
     qa2: "Pan",
     qa3: "Zeus",
@@ -21565,7 +20430,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Toni",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
     qa3: "Poseidon",
@@ -21584,7 +20448,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Craig Lee",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
     qa3: "Hephaestus",
@@ -21603,7 +20466,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nah",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Zeus",
@@ -21622,7 +20484,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nancy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hera",
@@ -21641,7 +20502,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nick",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Aphrodite",
@@ -21660,7 +20520,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jedibaligi",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
     qa3: "Zeus",
@@ -21679,7 +20538,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Norrok",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -21698,7 +20556,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Big Al",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Blades",
     qa3: "Aphrodite",
@@ -21717,7 +20574,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Peter",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Poseidon",
@@ -21736,7 +20592,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Groovy_Ass_Rat",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Poseidon",
@@ -21755,7 +20610,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Andrew",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -21774,7 +20628,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Luca",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Nergal",
     qa3: "Aphrodite",
@@ -21793,7 +20646,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jesus",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -21812,7 +20664,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bryson",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
     qa3: "Zeus",
@@ -21831,7 +20682,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "zag's third bloodstone",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Moros",
     qa3: "Zeus",
@@ -21850,7 +20700,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jake",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -21869,7 +20718,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Pug",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Hestia",
@@ -21888,7 +20736,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "brudned",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Thanatos",
     qa3: "Hephaestus",
@@ -21907,7 +20754,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Linus Andersson",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Momus",
     qa3: "Aphrodite",
@@ -21926,7 +20772,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vortex",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Zeus",
@@ -21945,7 +20790,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Shiraz",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
     qa3: "Apollo",
@@ -21964,7 +20808,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sagittariano",
     qa1: "Revaal / Argent Skull",
     qa2: "Circe",
     qa3: "Zeus",
@@ -21983,7 +20826,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Vini",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
     qa3: "Hera",
@@ -22002,7 +20844,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ND",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
     qa3: "Zeus",
@@ -22021,7 +20862,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Eris's footstool",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Hera",
@@ -22040,7 +20880,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "nemesis loving lesbian <3",
     qa1: "Revaal / Argent Skull",
     qa2: "Momus",
     qa3: "Hestia",
@@ -22059,7 +20898,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Shauna",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -22078,7 +20916,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jonathan Arundel",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Apollo",
@@ -22097,7 +20934,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Barthelon",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -22116,7 +20952,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Hjondarr",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Apollo",
@@ -22135,7 +20970,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Rory",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hestia",
@@ -22154,7 +20988,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "kajiit4",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Axe",
     qa3: "Aphrodite",
@@ -22173,7 +21006,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Braden ",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hephaestus",
@@ -22192,7 +21024,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nate",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Apollo",
@@ -22211,7 +21042,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "roso",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Apollo",
@@ -22230,7 +21060,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ethan Dale",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -22249,7 +21078,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Anonymous ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Melinoe Axe",
     qa3: "Hera",
@@ -22268,7 +21096,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nick",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Poseidon",
@@ -22287,7 +21114,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ProjectBarett",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Apollo",
@@ -22306,7 +21132,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Armand",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Hera",
@@ -22325,7 +21150,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kazamaew ",
     qa1: "Descura / Witch's Staff",
     qa2: "Momus",
     qa3: "Hestia",
@@ -22344,7 +21168,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "namesaretoohard",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Demeter",
@@ -22363,7 +21186,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: ".",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Apollo",
@@ -22382,7 +21204,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tanya",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Aphrodite",
@@ -22401,7 +21222,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Tom S",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -22420,7 +21240,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "jd",
     qa1: "Xinth / Black Coat",
     qa2: "Nyx",
     qa3: "Hephaestus",
@@ -22439,7 +21258,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "jay",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
     qa3: "Apollo",
@@ -22458,7 +21276,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Butts",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Apollo",
@@ -22477,7 +21294,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: " No you. ",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Apollo",
@@ -22496,7 +21312,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "woody",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Thanatos",
     qa3: "Hephaestus",
@@ -22515,7 +21330,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Roj",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
     qa3: "Apollo",
@@ -22534,7 +21348,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "yep",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Demeter",
@@ -22553,7 +21366,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "C",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -22572,7 +21384,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cavan",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
     qa3: "Demeter",
@@ -22591,7 +21402,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "meow",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Demeter",
@@ -22610,7 +21420,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Adam",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Eos",
     qa3: "Zeus",
@@ -22629,7 +21438,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Evelyn Bondy-villa",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -22648,7 +21456,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Doink",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Aphrodite",
@@ -22667,7 +21474,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Leaf",
     qa1: "Revaal / Argent Skull",
     qa2: "Charon",
     qa3: "Hephaestus",
@@ -22686,7 +21492,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "terrormisu",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hestia",
@@ -22705,7 +21510,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Sophie",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hephaestus",
@@ -22724,7 +21528,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "M",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Demeter",
@@ -22743,7 +21546,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "name",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -22762,7 +21564,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "BumblingIdiot",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Axe",
     qa3: "Zeus",
@@ -22781,7 +21582,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Heber",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -22800,7 +21600,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Suhroom",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -22819,7 +21618,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ash",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Apollo",
@@ -22838,7 +21636,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Persephone",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -22857,7 +21654,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "kronophobia",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -22876,7 +21672,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Carson",
     qa1: "Revaal / Argent Skull",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -22895,7 +21690,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dante of Tamriel ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Hel",
     qa3: "Apollo",
@@ -22914,7 +21708,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Suace Face",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -22933,7 +21726,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Loland ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Ares",
@@ -22952,7 +21744,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Stirling ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -22971,7 +21762,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zasz",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -22990,7 +21780,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Slinger",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Apollo",
@@ -23009,7 +21798,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Marty",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hera",
@@ -23028,7 +21816,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Max",
     qa1: "Xinth / Black Coat",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -23047,7 +21834,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Skull",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -23066,7 +21852,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "roarti ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -23085,7 +21870,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "tmb",
     qa1: "Descura / Witch's Staff",
     qa2: "Persephone",
     qa3: "Hestia",
@@ -23104,7 +21888,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Maladroit",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Pan",
     qa3: "Apollo",
@@ -23123,7 +21906,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Watanuki",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Moros",
     qa3: "Zeus",
@@ -23142,7 +21924,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "N3vermore73 ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Demeter",
@@ -23161,7 +21942,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Christian Hörtenhuber",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Apollo",
@@ -23180,7 +21960,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zezao",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Abstain",
     qa3: "Hera",
@@ -23199,7 +21978,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Doom",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -23218,7 +21996,6 @@ export const response = [
     qa16: "Abstain",
   },
   {
-    nam: "Tns",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Anubis",
     qa3: "Ares",
@@ -23237,7 +22014,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "M",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Hephaestus",
@@ -23256,7 +22032,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Malcrow",
     qa1: "Xinth / Black Coat",
     qa2: "Medea",
     qa3: "Zeus",
@@ -23275,7 +22050,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Thomas",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Aphrodite",
@@ -23294,7 +22068,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Aoife ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Zeus",
@@ -23313,7 +22086,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "YJL",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -23332,7 +22104,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "CD",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -23351,7 +22122,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "lolbas",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -23370,7 +22140,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "glonyr",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Anubis",
     qa3: "Hera",
@@ -23389,7 +22158,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Scylla fan#738264",
     qa1: "Descura / Witch's Staff",
     qa2: "Morrigan",
     qa3: "Hera",
@@ -23408,7 +22176,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "WordMagus",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Poseidon",
@@ -23427,7 +22194,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nemmy",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Zeus",
@@ -23446,7 +22212,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Shebby",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Zeus",
@@ -23465,7 +22230,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Dio's Jaguar",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Hera",
@@ -23484,7 +22248,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Zach L",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Hera",
@@ -23503,7 +22266,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "A",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Apollo",
@@ -23522,7 +22284,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Fluffy",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -23541,7 +22302,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Andrej",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Hephaestus",
@@ -23560,7 +22320,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "josie",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Zeus",
@@ -23579,7 +22338,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ohyzda",
     qa1: "Xinth / Black Coat",
     qa2: "Hel",
     qa3: "Demeter",
@@ -23598,7 +22356,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "A",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Demeter",
@@ -23617,7 +22374,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "saif",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -23636,7 +22392,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "CosmanCosmin",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -23655,7 +22410,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "M",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Hera",
@@ -23674,7 +22428,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mo_le",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Hera",
@@ -23693,7 +22446,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Thomas ",
     qa1: "Xinth / Black Coat",
     qa2: "Momus",
     qa3: "Aphrodite",
@@ -23712,7 +22464,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nikolas",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -23731,7 +22482,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "b",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Staff",
     qa3: "Aphrodite",
@@ -23750,7 +22500,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "David",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
     qa3: "Zeus",
@@ -23769,7 +22518,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "kajsa",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Demeter",
@@ -23788,7 +22536,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Bbq ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -23807,7 +22554,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Cam",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -23826,7 +22572,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Baskim",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Poseidon",
@@ -23845,7 +22590,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Ariel",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Apollo",
@@ -23864,7 +22608,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Elbama",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -23883,7 +22626,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Stel Kirk ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hestia",
@@ -23902,7 +22644,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jay",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Medea",
     qa3: "Aphrodite",
@@ -23921,7 +22662,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Trappy",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Circe",
     qa3: "Hera",
@@ -23940,7 +22680,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "SLP",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Aphrodite",
@@ -23959,7 +22698,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nachin",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Moros",
     qa3: "Zeus",
@@ -23978,7 +22716,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Why tho",
     qa1: "Descura / Witch's Staff",
     qa2: "Anubis",
     qa3: "Apollo",
@@ -23997,7 +22734,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Guilherme ",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Melinoe Flames",
     qa3: "Aphrodite",
@@ -24016,7 +22752,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "MemedSama",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Aphrodite",
@@ -24035,7 +22770,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Moonx",
     qa1: "Xinth / Black Coat",
     qa2: "Nyx",
     qa3: "Demeter",
@@ -24054,7 +22788,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Gus",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Charon",
     qa3: "Hera",
@@ -24073,7 +22806,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "adalive8099",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Circe",
     qa3: "Zeus",
@@ -24092,7 +22824,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "ben",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Persephone",
     qa3: "Hephaestus",
@@ -24111,7 +22842,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Logan",
     qa1: "Revaal / Argent Skull",
     qa2: "Persephone",
     qa3: "Hestia",
@@ -24130,7 +22860,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "FEET",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -24149,7 +22878,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "buddy",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -24168,7 +22896,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "V",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Supay",
     qa3: "Hera",
@@ -24187,7 +22914,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kaboose",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Zeus",
@@ -24206,7 +22932,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Chloe",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Melinoe Blades",
     qa3: "Hera",
@@ -24225,7 +22950,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "GoodLuckAlba",
     qa1: "Abstain",
     qa2: "Thanatos",
     qa3: "Poseidon",
@@ -24244,7 +22968,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "yzzi",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Nergal",
     qa3: "Demeter",
@@ -24263,7 +22986,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Alex Sandström",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
     qa3: "Hestia",
@@ -24282,7 +23004,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nicky",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Medea",
     qa3: "Zeus",
@@ -24301,7 +23022,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Karan Shaurya Baranwal ",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -24320,7 +23040,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Milan",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hephaestus",
@@ -24339,7 +23058,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "LAF",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Pan",
     qa3: "Aphrodite",
@@ -24358,7 +23076,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "DJMiko",
     qa1: "Xinth / Black Coat",
     qa2: "Moros",
     qa3: "Hestia",
@@ -24377,7 +23094,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "A",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Demeter",
@@ -24396,7 +23112,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Semira",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Charon",
     qa3: "Apollo",
@@ -24415,7 +23130,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Haleckson Henrick",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Zeus",
@@ -24434,7 +23148,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Do",
     qa1: "Descura / Witch's Staff",
     qa2: "Moros",
     qa3: "Zeus",
@@ -24453,7 +23166,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Arokenerr",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Charon",
     qa3: "Hephaestus",
@@ -24472,7 +23184,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Luka ",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Artemis",
     qa3: "Aphrodite",
@@ -24491,7 +23202,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Jaryd p ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Morrigan",
     qa3: "Apollo",
@@ -24510,7 +23220,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Aki",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Anubis",
     qa3: "Abstain",
@@ -24529,7 +23238,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Erin",
     qa1: "Descura / Witch's Staff",
     qa2: "Circe",
     qa3: "Demeter",
@@ -24548,7 +23256,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "XarrotD",
     qa1: "Descura / Witch's Staff",
     qa2: "Artemis",
     qa3: "Hera",
@@ -24567,7 +23274,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "bari",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Abstain",
     qa3: "Hera",
@@ -24586,7 +23292,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "vippy",
     qa1: "Revaal / Argent Skull",
     qa2: "Pan",
     qa3: "Aphrodite",
@@ -24605,7 +23310,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "llzergll",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Eos",
     qa3: "Zeus",
@@ -24624,7 +23328,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "PizzaPepperoni ",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Circe",
     qa3: "Zeus",
@@ -24643,7 +23346,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Greg r",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Momus",
     qa3: "Apollo",
@@ -24662,7 +23364,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "J",
     qa1: "Revaal / Argent Skull",
     qa2: "Supay",
     qa3: "Aphrodite",
@@ -24681,7 +23382,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "K",
     qa1: "Xinth / Black Coat",
     qa2: "Melinoe Coat",
     qa3: "Hephaestus",
@@ -24700,7 +23400,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Red",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Coat",
     qa3: "Zeus",
@@ -24719,7 +23418,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Frei",
     qa1: "Xinth / Black Coat",
     qa2: "Moros",
     qa3: "Abstain",
@@ -24738,7 +23436,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Paolo",
     qa1: "Xinth / Black Coat",
     qa2: "Circe",
     qa3: "Zeus",
@@ -24757,7 +23454,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "plimbo",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Staff",
     qa3: "Zeus",
@@ -24776,7 +23472,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Silly",
     qa1: "Descura / Witch's Staff",
     qa2: "Melinoe Blades",
     qa3: "Zeus",
@@ -24795,7 +23490,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Checkmate",
     qa1: "Revaal / Argent Skull",
     qa2: "Medea",
     qa3: "Zeus",
@@ -24814,7 +23508,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Kirk",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Medea",
     qa3: "Zeus",
@@ -24833,7 +23526,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Nateal",
     qa1: "Xinth / Black Coat",
     qa2: "Nyx",
     qa3: "Poseidon",
@@ -24852,7 +23544,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Six",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -24871,7 +23562,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "taltus",
     qa1: "Lim and Oros / Sister Blades",
     qa2: "Morrigan",
     qa3: "Zeus",
@@ -24890,7 +23580,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Mystic2D",
     qa1: "Zorephet / Moonstone Axe",
     qa2: "Thanatos",
     qa3: "Hera",
@@ -24909,7 +23598,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "HookieDookie",
     qa1: "Descura / Witch's Staff",
     qa2: "Medea",
     qa3: "Zeus",
@@ -24928,7 +23616,6 @@ export const response = [
     qa16: "Hades II",
   },
   {
-    nam: "Malkin Grey",
     qa1: "Ygnium / Umbral Flames",
     qa2: "Eos",
     qa3: "Hera",

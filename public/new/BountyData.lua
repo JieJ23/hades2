@@ -2217,6 +2217,7 @@ BountyData =
 
 		RoomName = "Q_Boss01",
 
+		WeaponKitName = "WeaponLob",
 		WeaponUpgradeName = "LobCloseAttackAspect",
 		KeepsakeName = "LowHealthCritKeepsake",
 

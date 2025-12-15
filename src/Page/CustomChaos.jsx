@@ -2,10 +2,12 @@ import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
+import LZString from "lz-string"
+
 import { sdata } from "../Data/SData";
 
 import { bossMap } from "../Mod/BossMap";
-import { weaponMap } from "../Mod/WeaponMap";
+import { weaponMap, findWeaponKit } from "../Mod/WeaponMap";
 import { metaCardMap, shrineMap } from "../Mod/MetaCard";
 import { boonTraitMap } from "../Mod/BoonTraitMap";
 
@@ -15,7 +17,7 @@ import { oathMatch } from "../Data/Misc";
 const allBosses = Object.values(bossMap);
 const allBossesID = Object.keys(bossMap);
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // LowHealthCritKeepsake - White Antler
 // LowHealthBonus - Strength
 
@@ -36,6 +38,92 @@ export default function CustomChaos() {
   const [boon, setBoon] = useState([]);
   const [currentBoon, setCurrentBoon] = useState("AphroditeWeaponBoon");
   const [currentRarity, setCurrentRarity] = useState("Common");
+  // 
+  const [isCopied, setIsCopied] = useState(false);
+  const [shareableURL, setShareableURL] = useState("");
+
+  // Generate and Share URLs
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const baseRoom = searchParams.get("room");
+    const baseAspect = searchParams.get("aspect");
+    const baseMetaCard = searchParams.get("metaCard");
+    const baseShrine = searchParams.get("shrine");
+    const baseBoon = searchParams.get("boon");
+
+    if (baseBoon) {
+      try {
+        const decodeBoon = JSON.parse(LZString.decompressFromEncodedURIComponent(baseBoon));
+        setBoon(decodeBoon);
+      } catch (error) {
+        console.error("Error decoding cards data from URL:", error);
+      }
+    }
+    if (baseShrine) {
+      try {
+        const decodeShrine = JSON.parse(LZString.decompressFromEncodedURIComponent(baseShrine));
+        setShrine(decodeShrine);
+      } catch (error) {
+        console.error("Error decoding cards data from URL:", error);
+      }
+    }
+    if (baseMetaCard) {
+      try {
+        const decodeMeta = JSON.parse(LZString.decompressFromEncodedURIComponent(baseMetaCard));
+        setMetaCard(decodeMeta);
+      } catch (error) {
+        console.error("Error decoding cards data from URL:", error);
+      }
+    }
+    if (baseRoom) {
+      try {
+        const decodeRoom = JSON.parse(LZString.decompressFromEncodedURIComponent(baseRoom));
+        setRoom(decodeRoom);
+      } catch (error) {
+        console.error("Error decoding cards data from URL:", error);
+      }
+    }
+    if (baseAspect) {
+      try {
+        const decodeAspect = JSON.parse(LZString.decompressFromEncodedURIComponent(baseAspect));
+        setAspect(decodeAspect);
+      } catch (error) {
+        console.error("Error decoding cards data from URL:", error);
+      }
+    }
+  }, []);
+  const generateShareableURL = () => {
+    const params = new URLSearchParams();
+
+    if (room !== "F_Boss01") {
+      params.set("room", LZString.compressToEncodedURIComponent(JSON.stringify(room)));
+    }
+
+    if (aspect !== "BaseStaffAspect") {
+      params.set("aspect", LZString.compressToEncodedURIComponent(JSON.stringify(aspect)));
+    }
+
+    if (metaCard.length > 0) {
+      params.set("metaCard", LZString.compressToEncodedURIComponent(JSON.stringify(metaCard)));
+    }
+
+    if (shrine.length > 0) {
+      params.set("shrine", LZString.compressToEncodedURIComponent(JSON.stringify(shrine)));
+    }
+
+    if (boon.length > 0) {
+      params.set("boon", LZString.compressToEncodedURIComponent(JSON.stringify(boon)));
+    }
+
+    const newURL = `${window.location.origin}/CustomChaos/?${params.toString()}`;
+    setShareableURL(newURL);
+  };
+  const copyURLToClipboard = () => {
+    navigator.clipboard.writeText(shareableURL).then(() => {
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000); // Reset "Copied!" message after 2 seconds
+    });
+  };
   // Blob
   const editAndDownloadLua = async () => {
     const res = await fetch("/new/BountyData.lua");
@@ -51,6 +139,8 @@ export default function CustomChaos() {
     }
 
     let blockContent = match[0];
+
+    blockContent = blockContent.replace(/WeaponKitName\s*=\s*".*?"/, `WeaponKitName = "${findWeaponKit(aspect)}"`);
 
     // Replace RoomName inside this block
     blockContent = blockContent.replace(/RoomName\s*=\s*".*?"/, `RoomName = "${room}"`);
@@ -73,15 +163,33 @@ export default function CustomChaos() {
     a.remove();
     URL.revokeObjectURL(url);
   };
-
   //
-  console.log(room)
   return (
     <div className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ubuntu] select-none">
       <Background />
       <SideNav />
       <div className="w-full max-w-[1200px] mx-auto border bg-black border-white/20 rounded p-2">
-        <div className="font-[Ale] ps-1">Encounter / Aspect Selection</div>
+        <section>
+          <div className="flex flex-wrap gap-1">
+            <button
+
+              className="btn btn-sm rounded-none bg-white text-black font-normal border border-white/10"
+              onClick={generateShareableURL}>
+              Generate URL
+            </button>
+            <button
+              className="btn btn-sm rounded-none bg-white text-black font-normal border border-white/10"
+              onClick={copyURLToClipboard}>
+              {isCopied ? "Copied!" : "Copy URL"}
+            </button>
+          </div>
+
+          <div className="w-full max-w-[1000px] bg-[#28282b] text-white overflow-hidden p-2 truncate text-[12px] rounded-none my-2">
+            {shareableURL || "No URL Generated Yet"}
+          </div>
+        </section>
+        {/* Content */}
+        <div className="font-[Ale] ps-1 mt-6">Encounter / Aspect Selection</div>
         <div className="flex gap-2">
           <select
             className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
