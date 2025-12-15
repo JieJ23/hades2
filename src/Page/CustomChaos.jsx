@@ -2,20 +2,17 @@ import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
-import LZString from "lz-string"
+import LZString from "lz-string";
 
 import { sdata } from "../Data/SData";
 
 import { bossMap } from "../Mod/BossMap";
 import { weaponMap, findWeaponKit } from "../Mod/WeaponMap";
 import { metaCardMap, shrineMap } from "../Mod/MetaCard";
-import { boonTraitMap } from "../Mod/BoonTraitMap";
+import { boonTraitMap, boonTraitHammerMap, boonTraitTraitMap, boonDuoMap } from "../Mod/BoonTraitMap";
 
 import { shrineObj } from "../Data/Shrine";
 import { oathMatch } from "../Data/Misc";
-
-const allBosses = Object.values(bossMap);
-const allBossesID = Object.keys(bossMap);
 
 import { useState, useEffect } from "react";
 // LowHealthCritKeepsake - White Antler
@@ -30,26 +27,30 @@ import { useState, useEffect } from "react";
 // MetaUpgradeStateEquipped = Object of Strings
 // ShrineUpgradesActive =. Object of VowName = Rank
 const convertShrineArray = (arr) => {
-  return arr.map(item => {
-    // Extract the last character as number
-    const lastChar = item.slice(-1);
-    const nameChar = item.slice(0, -1)
-    const number = parseInt(lastChar) || 0;
-    return `${nameChar} = ${number}`;
-  }).join(", ");
+  return arr
+    .map((item) => {
+      // Extract the last character as number
+      const lastChar = item.slice(-1);
+      const nameChar = item.slice(0, -1);
+      const number = parseInt(lastChar) || 0;
+      return `${nameChar} = ${number}`;
+    })
+    .join(", ");
 };
 
 const convertTraitsArray = (traitsArray) => {
-  return traitsArray.map(trait => {
-    // Split by underscore to get boon name and rarity
-    const [boonPart, rarityPart] = trait.split('_');
+  return traitsArray
+    .map((trait) => {
+      // Split by underscore to get boon name and rarity
+      const [boonPart, rarityPart] = trait.split("_");
 
-    // Convert to proper format
-    const name = boonPart; // e.g., "AphroditeWeaponBoon"
-    const rarity = rarityPart.charAt(0).toUpperCase() + rarityPart.slice(1).toLowerCase(); // e.g., "Common"
+      // Convert to proper format
+      const name = boonPart; // e.g., "AphroditeWeaponBoon"
+      const rarity = rarityPart.charAt(0).toUpperCase() + rarityPart.slice(1).toLowerCase(); // e.g., "Common"
 
-    return `\t\t\t{ Name = "${name}", Rarity = "${rarity}", },`;
-  }).join('\n');
+      return `\t\t\t{ Name = "${name}", Rarity = "${rarity}", },`;
+    })
+    .join("\n");
 };
 
 export default function CustomChaos() {
@@ -60,16 +61,21 @@ export default function CustomChaos() {
   const [boon, setBoon] = useState([]);
   const [currentBoon, setCurrentBoon] = useState("AphroditeWeaponBoon");
   const [currentRarity, setCurrentRarity] = useState("Common");
-  // 
+  // Other Parameters
+  const [currentHammer, setCurrentHammer] = useState("StaffSecondStageTrait");
+  const [currentTrait, setCurrentTrait] = useState("HighHealthOffenseBoon");
+  const [currentTraitRarity, setCurrentTraitRarity] = useState("Common");
+  const [currentDuo, setCurrentDuo] = useState("ManaBurstCountBoon");
+  const [currentDuoRarity, setCurrentDuoRarity] = useState("Common");
+  //
   const [isCopied, setIsCopied] = useState(false);
   const [shareableURL, setShareableURL] = useState("");
 
-
-  // 
-  const metaString = metaCard.map(s => `"${s}"`).join(",");
-  const shrineString = convertShrineArray(shrine)
-  const boonString = convertTraitsArray(boon)
-  // 
+  //
+  const metaString = metaCard.map((s) => `"${s}"`).join(",");
+  const shrineString = convertShrineArray(shrine);
+  const boonString = convertTraitsArray(boon);
+  //
   // Generate and Share URLs
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -170,22 +176,13 @@ export default function CustomChaos() {
     const originalBlock = match[0];
 
     // Replace WeaponKitName
-    blockContent = blockContent.replace(
-      /WeaponKitName\s*=\s*"[^"]*"/,
-      `WeaponKitName = "${findWeaponKit(aspect)}"`
-    );
+    blockContent = blockContent.replace(/WeaponKitName\s*=\s*"[^"]*"/, `WeaponKitName = "${findWeaponKit(aspect)}"`);
 
     // Replace RoomName
-    blockContent = blockContent.replace(
-      /RoomName\s*=\s*"[^"]*"/,
-      `RoomName = "${room}"`
-    );
+    blockContent = blockContent.replace(/RoomName\s*=\s*"[^"]*"/, `RoomName = "${room}"`);
 
     // Replace WeaponUpgradeName
-    blockContent = blockContent.replace(
-      /WeaponUpgradeName\s*=\s*"[^"]*"/,
-      `WeaponUpgradeName = "${aspect}"`
-    );
+    blockContent = blockContent.replace(/WeaponUpgradeName\s*=\s*"[^"]*"/, `WeaponUpgradeName = "${aspect}"`);
 
     // Replace MetaUpgradeStateEquipped
     blockContent = blockContent.replace(
@@ -196,13 +193,15 @@ export default function CustomChaos() {
     const metaInsertPoint = blockContent.indexOf("MetaUpgradeStateEquipped = {");
     if (metaInsertPoint !== -1) {
       const metaEnd = blockContent.indexOf("},", metaInsertPoint) + 2;
-      blockContent = blockContent.slice(0, metaEnd) +
+      blockContent =
+        blockContent.slice(0, metaEnd) +
         `\n\n\t\tShrineUpgradesActive = {${shrineString}},` +
         `\n\n\t\tStartingTraits =\n\t\t{${boonString}},` +
         blockContent.slice(metaEnd);
     } else {
       const lastBrace = blockContent.lastIndexOf("\t},");
-      blockContent = blockContent.slice(0, lastBrace) +
+      blockContent =
+        blockContent.slice(0, lastBrace) +
         `\n\n\t\tShrineUpgradesActive = {${shrineString}},` +
         `\n\n\t\tStartingTraits =\n\t\t{${boonString}},` +
         blockContent.slice(lastBrace);
@@ -232,14 +231,15 @@ export default function CustomChaos() {
         <section>
           <div className="flex flex-wrap gap-1">
             <button
-
               className="btn btn-sm rounded-none bg-white text-black font-normal border border-white/10"
-              onClick={generateShareableURL}>
+              onClick={generateShareableURL}
+            >
               Generate URL
             </button>
             <button
               className="btn btn-sm rounded-none bg-white text-black font-normal border border-white/10"
-              onClick={copyURLToClipboard}>
+              onClick={copyURLToClipboard}
+            >
               {isCopied ? "Copied!" : "Copy URL"}
             </button>
           </div>
@@ -279,8 +279,9 @@ export default function CustomChaos() {
         <div className="grid grid-cols-5 mb-6 gap-2 font-[Ale]">
           {metaCardMap.map((item, index) => (
             <div
-              className={`border border-white/10 rounded-none px-2 py-1 ${metaCard.includes(item) ? `bg-[#27277f] text-white` : `bg-[#131111]`
-                }`}
+              className={`border border-white/10 rounded-none px-2 py-1 ${
+                metaCard.includes(item) ? `bg-[#27277f] text-white` : `bg-[#131111]`
+              }`}
               key={index}
               onClick={() =>
                 setMetaCard((prev) => {
@@ -301,8 +302,9 @@ export default function CustomChaos() {
         <div className="grid grid-cols-4 gap-2 mb-6">
           {shrineMap.map((item, index) => (
             <div
-              className={`border border-white/10 rounded-none p-2 flex flex-col lg:flex-row ${shrine.some((i) => i.startsWith(item)) ? `bg-[#27277f] text-white` : `bg-[#131111]`
-                }`}
+              className={`border border-white/10 rounded-none p-2 flex flex-col lg:flex-row ${
+                shrine.some((i) => i.startsWith(item)) ? `bg-[#27277f] text-white` : `bg-[#131111]`
+              }`}
               key={index}
             >
               <div className="flex items-center gap-1 mb-1 w-full">
@@ -337,7 +339,7 @@ export default function CustomChaos() {
         </div>
         {/* Divider */}
         <div className="font-[Ale] ps-1 mt-6">Boon Traits & Rarity Selection</div>
-        <div className="mb-6 flex gap-1">
+        <div className="mb-1 flex gap-1">
           <select
             className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
             onChange={(e) => setCurrentBoon(e.target.value)}
@@ -371,22 +373,119 @@ export default function CustomChaos() {
             Add
           </button>
         </div>
+        {/* God Traits */}
+        <div className="mb-1 flex gap-1">
+          <select
+            className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
+            onChange={(e) => setCurrentTrait(e.target.value)}
+          >
+            {boonTraitTraitMap.map((item) => (
+              <option value={item}>{sdata[item]}</option>
+            ))}
+          </select>
+          <select
+            className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
+            onChange={(e) => setCurrentTraitRarity(e.target.value)}
+          >
+            <option value="Common">Common</option>
+            <option value="Rare">Rare</option>
+            <option value="Epic">Epic</option>
+            <option value="Heroic">Heroic</option>
+          </select>
+          <button
+            className="btn btn-sm rounded-none bg-[#131111] border border-white/10"
+            onClick={() =>
+              setBoon((prev) => {
+                const value = `${currentTrait}_${currentTraitRarity}`;
+
+                // remove any existing entry for the same boon
+                const filtered = prev.filter((i) => !i.startsWith(`${currentTrait}_`));
+
+                return [...filtered, value];
+              })
+            }
+          >
+            Add
+          </button>
+        </div>
+        {/* Duo Traits */}
+        <div className="mb-1 flex gap-1">
+          <select
+            className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
+            onChange={(e) => setCurrentDuo(e.target.value)}
+          >
+            {boonDuoMap.map((item) => (
+              <option value={item}>{sdata[item]}</option>
+            ))}
+          </select>
+          <select
+            className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
+            onChange={(e) => setCurrentDuoRarity(e.target.value)}
+          >
+            <option value="Common">Common</option>
+            <option value="Rare">Rare</option>
+            <option value="Epic">Epic</option>
+            <option value="Heroic">Heroic</option>
+          </select>
+          <button
+            className="btn btn-sm rounded-none bg-[#131111] border border-white/10"
+            onClick={() =>
+              setBoon((prev) => {
+                const value = `${currentDuo}_${currentDuoRarity}`;
+
+                // remove any existing entry for the same boon
+                const filtered = prev.filter((i) => !i.startsWith(`${currentDuo}_`));
+
+                return [...filtered, value];
+              })
+            }
+          >
+            Add
+          </button>
+        </div>
+        {/* Hammer Section */}
+        <div className="mb-6 flex gap-1">
+          <select
+            className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
+            onChange={(e) => setCurrentHammer(e.target.value)}
+          >
+            {boonTraitHammerMap.map((item) => (
+              <option value={item}>{sdata[item]}</option>
+            ))}
+          </select>
+          <button
+            className="btn btn-sm rounded-none bg-[#131111] border border-white/10"
+            onClick={() =>
+              setBoon((prev) => {
+                const value = `${currentHammer}_Common`;
+
+                // remove any existing entry for the same boon
+                const filtered = prev.filter((i) => !i.startsWith(`${currentHammer}_`));
+
+                return [...filtered, value];
+              })
+            }
+          >
+            Add
+          </button>
+        </div>
 
         {/* Divider */}
         <div>
           <div className="my-1">
-            Selected Traits:
+            Selected Traits (Click on selected trait to remove):
             <div className="flex flex-wrap gap-0.5 text-[12px]">
               {boon.map((item) => (
                 <div
-                  className={`text-black p-1 py-0.5 rounded-none cursor-pointer ${item.split("_")[1] === `Heroic`
-                    ? `bg-[orange]`
-                    : item.split("_")[1] === `Rare`
+                  className={`text-black p-1 py-0.5 rounded-none cursor-pointer ${
+                    item.split("_")[1] === `Heroic`
+                      ? `bg-[orange]`
+                      : item.split("_")[1] === `Rare`
                       ? `bg-[cyan]`
                       : item.split("_")[1] === `Epic`
-                        ? `bg-[#eb4aeb]`
-                        : `bg-white`
-                    }`}
+                      ? `bg-[#eb4aeb]`
+                      : `bg-white`
+                  }`}
                   onClick={() =>
                     setBoon((prev) => {
                       const filtered = prev.filter((i) => i !== item);
@@ -433,7 +532,10 @@ export default function CustomChaos() {
           <div>
             <div>Modified Files:</div>
             <div className="my-2">
-              <button onClick={editAndDownloadLua} className="btn btn-sm rounded-none font-normal bg-[#00ffaa] text-black">
+              <button
+                onClick={editAndDownloadLua}
+                className="btn btn-sm rounded-none font-normal bg-[#00ffaa] text-black"
+              >
                 Download Modified Lua
               </button>
             </div>
