@@ -29,6 +29,28 @@ import { useState, useEffect } from "react";
 // StartingTraits = Object of Objects, Name / Rarity Properties
 // MetaUpgradeStateEquipped = Object of Strings
 // ShrineUpgradesActive =. Object of VowName = Rank
+const convertShrineArray = (arr) => {
+  return arr.map(item => {
+    // Extract the last character as number
+    const lastChar = item.slice(-1);
+    const nameChar = item.slice(0, -1)
+    const number = parseInt(lastChar) || 0;
+    return `${nameChar} = ${number}`;
+  }).join(", ");
+};
+
+const convertTraitsArray = (traitsArray) => {
+  return traitsArray.map(trait => {
+    // Split by underscore to get boon name and rarity
+    const [boonPart, rarityPart] = trait.split('_');
+
+    // Convert to proper format
+    const name = boonPart; // e.g., "AphroditeWeaponBoon"
+    const rarity = rarityPart.charAt(0).toUpperCase() + rarityPart.slice(1).toLowerCase(); // e.g., "Common"
+
+    return `\t\t\t{ Name = "${name}", Rarity = "${rarity}", },`;
+  }).join('\n');
+};
 
 export default function CustomChaos() {
   const [room, setRoom] = useState("F_Boss01");
@@ -42,6 +64,12 @@ export default function CustomChaos() {
   const [isCopied, setIsCopied] = useState(false);
   const [shareableURL, setShareableURL] = useState("");
 
+
+  // 
+  const metaString = metaCard.map(s => `"${s}"`).join(",");
+  const shrineString = convertShrineArray(shrine)
+  const boonString = convertTraitsArray(boon)
+  // 
   // Generate and Share URLs
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -129,7 +157,7 @@ export default function CustomChaos() {
     const res = await fetch("/new/BountyData.lua");
     let content = await res.text();
 
-    // Match the PackageBountyHestia block more reliably
+    // Match the PackageBountyHestia block
     const blockRegex = /(PackageBountyHestia\s*=\s*\{[\s\S]*?\n\s*\},)/m;
     const match = content.match(blockRegex);
 
@@ -139,17 +167,49 @@ export default function CustomChaos() {
     }
 
     let blockContent = match[0];
+    const originalBlock = match[0];
 
-    blockContent = blockContent.replace(/WeaponKitName\s*=\s*".*?"/, `WeaponKitName = "${findWeaponKit(aspect)}"`);
+    // Replace WeaponKitName
+    blockContent = blockContent.replace(
+      /WeaponKitName\s*=\s*"[^"]*"/,
+      `WeaponKitName = "${findWeaponKit(aspect)}"`
+    );
 
-    // Replace RoomName inside this block
-    blockContent = blockContent.replace(/RoomName\s*=\s*".*?"/, `RoomName = "${room}"`);
+    // Replace RoomName
+    blockContent = blockContent.replace(
+      /RoomName\s*=\s*"[^"]*"/,
+      `RoomName = "${room}"`
+    );
 
-    // Replace WeaponUpgradeName inside this block
-    blockContent = blockContent.replace(/WeaponUpgradeName\s*=\s*".*?"/, `WeaponUpgradeName = "${aspect}"`);
+    // Replace WeaponUpgradeName
+    blockContent = blockContent.replace(
+      /WeaponUpgradeName\s*=\s*"[^"]*"/,
+      `WeaponUpgradeName = "${aspect}"`
+    );
 
-    // Replace the original block in the file
-    content = content.replace(blockRegex, blockContent);
+    // Replace MetaUpgradeStateEquipped
+    blockContent = blockContent.replace(
+      /MetaUpgradeStateEquipped\s*=\s*\{[^}]*\}/,
+      `MetaUpgradeStateEquipped = {${metaString}}`
+    );
+
+    const metaInsertPoint = blockContent.indexOf("MetaUpgradeStateEquipped = {");
+    if (metaInsertPoint !== -1) {
+      const metaEnd = blockContent.indexOf("},", metaInsertPoint) + 2;
+      blockContent = blockContent.slice(0, metaEnd) +
+        `\n\n\t\tShrineUpgradesActive = {${shrineString}},` +
+        `\n\n\t\tStartingTraits =\n\t\t{${boonString}},` +
+        blockContent.slice(metaEnd);
+    } else {
+      const lastBrace = blockContent.lastIndexOf("\t},");
+      blockContent = blockContent.slice(0, lastBrace) +
+        `\n\n\t\tShrineUpgradesActive = {${shrineString}},` +
+        `\n\n\t\tStartingTraits =\n\t\t{${boonString}},` +
+        blockContent.slice(lastBrace);
+    }
+
+    // Replace the original block
+    content = content.replace(originalBlock, blockContent);
 
     // Trigger download
     const blob = new Blob([content], { type: "text/plain" });
@@ -160,7 +220,7 @@ export default function CustomChaos() {
     a.download = "BountyData.lua";
     document.body.appendChild(a);
     a.click();
-    a.remove();
+    document.body.removeChild(a);
     URL.revokeObjectURL(url);
   };
   //
@@ -371,9 +431,9 @@ export default function CustomChaos() {
         <div className="divider">Download</div>
         <div className="my-4">
           <div>
-            <div>Modified Files</div>
-            <div className="my-4">
-              <button onClick={editAndDownloadLua} className="btn btn-sm rounded-none">
+            <div>Modified Files:</div>
+            <div className="my-2">
+              <button onClick={editAndDownloadLua} className="btn btn-sm rounded-none font-normal bg-[#00ffaa] text-black">
                 Download Modified Lua
               </button>
             </div>
@@ -392,7 +452,7 @@ export default function CustomChaos() {
         </div>
         <div className="my-4">
           <div>
-            <div>Original Files</div>
+            <div>Original Files:</div>
             <div className="flex gap-2">
               <a href="/old/BountyData.lua" className="underline" download="BountyData.lua">
                 BountyData.lua

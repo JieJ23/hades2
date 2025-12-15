@@ -2220,21 +2220,8 @@ BountyData =
 		WeaponKitName = "WeaponLob",
 		WeaponUpgradeName = "LobCloseAttackAspect",
 		KeepsakeName = "LowHealthCritKeepsake",
+		MetaUpgradeStateEquipped = {"HealthRegen","CardDraw"},
 
-		StartingTraits =
-		{
-			{ Name = "ZeusWeaponBoon", Rarity = "Common", },
-		},
-
-		MetaUpgradeStateEquipped =
-		{
-			"HealthRegen",
-		},
-
-		ShrineUpgradesActive =
-		{
-			BossDifficultyShrineUpgrade = 4,
-		},
 	},
 	PackageBountyAres =
 	{
