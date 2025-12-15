@@ -226,6 +226,7 @@ export default function CustomChaos() {
     URL.revokeObjectURL(url);
   };
   //
+  console.log(shrine);
   return (
     <div className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ubuntu] select-none">
       <Background />
@@ -277,7 +278,7 @@ export default function CustomChaos() {
             ))}
           </select>
         </div>
-        {/* Divider */}
+        {/* Arcana */}
         <div className="font-[Ale] ps-1 mt-6">Arcana Meta Selection</div>
         <div className="grid grid-cols-5 mb-6 gap-2 font-[Ale]">
           {metaCardMap.map((item, index) => (
@@ -300,45 +301,49 @@ export default function CustomChaos() {
             </div>
           ))}
         </div>
-        {/* Divider */}
+        {/* Shrine */}
         <div className="font-[Ale] ps-1 mt-6">Oath Of Vows Selection</div>
         <div className="grid grid-cols-4 gap-2 mb-6">
-          {shrineMap.map((item, index) => (
-            <div
-              className={`border border-white/10 rounded-none p-2 flex flex-col lg:flex-row ${
-                shrine.some((i) => i.startsWith(item)) ? `bg-[#27277f] text-white` : `bg-[#131111]`
-              }`}
-              key={index}
-            >
-              <div className="flex items-center gap-1 mb-1 w-full">
-                <img src={`/Vows/${shrineObj[item]}.png`} alt="Vows" className="size-6" />
-                <div className="font-[Ale]">{shrineObj[item]}</div>
-              </div>
-              <select
-                className="select select-xs bg-[#131111] text-white w-full rounded-none focus:outline-none focus:border-white/20 font-[Ubuntu]"
-                onChange={(e) =>
-                  setShrine((prev) => {
-                    const rank = e.target.value;
-
-                    // Always remove existing entries for this item
-                    const filtered = prev.filter((i) => !i.startsWith(item));
-
-                    // If rank is 0, do not add it back
-                    if (rank === "0" || rank === 0) {
-                      return filtered;
-                    }
-
-                    // Otherwise, add the updated value
-                    return [...filtered, `${item}${rank}`];
-                  })
-                }
+          {shrineMap.map((item, index) => {
+            const selectedRank = shrine.find((i) => i.startsWith(item))?.replace(item, "") || "0";
+            return (
+              <div
+                className={`border border-white/10 rounded-none p-2 flex flex-col lg:flex-row ${
+                  shrine.some((i) => i.startsWith(item)) ? `bg-[#27277f] text-white` : `bg-[#131111]`
+                }`}
+                key={index}
               >
-                {Array.from({ length: oathMatch[index].length }, (_, index) => (
-                  <option value={index}>{index}</option>
-                ))}
-              </select>
-            </div>
-          ))}
+                <div className="flex items-center gap-1 mb-1 w-full">
+                  <img src={`/Vows/${shrineObj[item]}.png`} alt="Vows" className="size-6" />
+                  <div className="font-[Ale]">{shrineObj[item]}</div>
+                </div>
+                <select
+                  className="select select-xs bg-[#131111] text-white w-full rounded-none focus:outline-none focus:border-white/20 font-[Ubuntu]"
+                  value={selectedRank}
+                  onChange={(e) =>
+                    setShrine((prev) => {
+                      const rank = e.target.value;
+
+                      // Always remove existing entries for this item
+                      const filtered = prev.filter((i) => !i.startsWith(item));
+
+                      // If rank is 0, do not add it back
+                      if (rank === "0" || rank === 0) {
+                        return filtered;
+                      }
+
+                      // Otherwise, add the updated value
+                      return [...filtered, `${item}${rank}`];
+                    })
+                  }
+                >
+                  {Array.from({ length: oathMatch[index].length }, (_, index) => (
+                    <option value={index}>{index}</option>
+                  ))}
+                </select>
+              </div>
+            );
+          })}
         </div>
         {/* Divider */}
         <div className="font-[Ale] ps-1 mt-6">Boon Traits & Rarity Selection</div>
