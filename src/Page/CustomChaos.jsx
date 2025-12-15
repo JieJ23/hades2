@@ -9,7 +9,7 @@ import { sdata } from "../Data/SData";
 import { bossMap } from "../Mod/BossMap";
 import { weaponMap, findWeaponKit } from "../Mod/WeaponMap";
 import { metaCardMap, shrineMap } from "../Mod/MetaCard";
-import { boonTraitMap, boonTraitHammerMap, boonTraitTraitMap, boonDuoMap } from "../Mod/BoonTraitMap";
+import { boonTraitMap, boonTraitHammerMap, boonTraitTraitMap, boonDuoMap, boonNpcMap } from "../Mod/BoonTraitMap";
 
 import { shrineObj } from "../Data/Shrine";
 import { oathMatch } from "../Data/Misc";
@@ -67,6 +67,8 @@ export default function CustomChaos() {
   const [currentTraitRarity, setCurrentTraitRarity] = useState("Common");
   const [currentDuo, setCurrentDuo] = useState("ManaBurstCountBoon");
   const [currentDuoRarity, setCurrentDuoRarity] = useState("Common");
+  const [currentNpc, setCurrentNpc] = useState("AgilityCostume");
+  const [currentNpcRarity, setCurrentNpcRarity] = useState("Common");
   //
   const [isCopied, setIsCopied] = useState(false);
   const [shareableURL, setShareableURL] = useState("");
@@ -443,6 +445,41 @@ export default function CustomChaos() {
             Add
           </button>
         </div>
+        {/* Npc Traits */}
+        <div className="mb-1 flex gap-1">
+          <select
+            className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
+            onChange={(e) => setCurrentNpc(e.target.value)}
+          >
+            {boonNpcMap.map((item) => (
+              <option value={item}>{sdata[item]}</option>
+            ))}
+          </select>
+          <select
+            className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
+            onChange={(e) => setCurrentNpcRarity(e.target.value)}
+          >
+            <option value="Common">Common</option>
+            <option value="Rare">Rare</option>
+            <option value="Epic">Epic</option>
+            <option value="Heroic">Heroic</option>
+          </select>
+          <button
+            className="btn btn-sm rounded-none bg-[#131111] border border-white/10"
+            onClick={() =>
+              setBoon((prev) => {
+                const value = `${currentNpc}_${currentNpcRarity}`;
+
+                // remove any existing entry for the same boon
+                const filtered = prev.filter((i) => !i.startsWith(`${currentNpc}_`));
+
+                return [...filtered, value];
+              })
+            }
+          >
+            Add
+          </button>
+        </div>
         {/* Hammer Section */}
         <div className="mb-6 flex gap-1">
           <select
@@ -469,7 +506,6 @@ export default function CustomChaos() {
             Add
           </button>
         </div>
-
         {/* Divider */}
         <div>
           <div className="my-1">
