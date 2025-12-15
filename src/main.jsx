@@ -35,7 +35,7 @@ import ArcanaDeck from "./Page/ArcanaDeck.jsx";
 import GameplaySubmission from "./Page/GameplaySubmission.jsx";
 
 import { DataProvider } from "./Hook/DataFetch.jsx";
-import CustomChaos from "./Page/CustomChaos.jsx";
+// import CustomChaos from "./Page/CustomChaos.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
