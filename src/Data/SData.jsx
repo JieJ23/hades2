@@ -1,4 +1,6 @@
 export const sdata = {
+  RoomRewardMaxHealthTrait: `Max Health`,
+  RoomRewardMaxManaTrait: `Max Mana`,
   IncreaseMetaUpgradeCard: `Grasp of the Arcana`,
   ChanneledCast: `The Sorceress`,
   ChanneledCast_FlavorText01: `Left to her own devices, she learned to confront the world on her own terms.`,

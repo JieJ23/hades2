@@ -9,7 +9,15 @@ import { sdata } from "../Data/SData";
 import { bossMap } from "../Mod/BossMap";
 import { weaponMap, findWeaponKit } from "../Mod/WeaponMap";
 import { metaCardMap, shrineMap } from "../Mod/MetaCard";
-import { boonTraitMap, boonTraitHammerMap, boonTraitTraitMap, boonDuoMap, boonNpcMap } from "../Mod/BoonTraitMap";
+import {
+  boonTraitMap,
+  boonTraitHammerMap,
+  boonTraitTraitMap,
+  boonDuoMap,
+  boonNpcMap,
+  boonOtherMap,
+  ksMap,
+} from "../Mod/BoonTraitMap";
 
 import { shrineObj } from "../Data/Shrine";
 import { oathMatch } from "../Data/Misc";
@@ -56,6 +64,7 @@ const convertTraitsArray = (traitsArray) => {
 export default function CustomChaos() {
   const [room, setRoom] = useState("F_Boss01");
   const [aspect, setAspect] = useState("BaseStaffAspect");
+  const [keep, setKeep] = useState("ManaOverTimeRefundKeepsake");
   const [metaCard, setMetaCard] = useState([]);
   const [shrine, setShrine] = useState([]);
   const [boon, setBoon] = useState([]);
@@ -63,6 +72,7 @@ export default function CustomChaos() {
   const [currentRarity, setCurrentRarity] = useState("Common");
   // Other Parameters
   const [currentHammer, setCurrentHammer] = useState("StaffSecondStageTrait");
+  const [currentOther, setCurrentOther] = useState("RoomRewardMaxManaTrait");
   const [currentTrait, setCurrentTrait] = useState("HighHealthOffenseBoon");
   const [currentTraitRarity, setCurrentTraitRarity] = useState("Common");
   const [currentDuo, setCurrentDuo] = useState("ManaBurstCountBoon");
@@ -83,6 +93,7 @@ export default function CustomChaos() {
     const searchParams = new URLSearchParams(window.location.search);
     const baseRoom = searchParams.get("room");
     const baseAspect = searchParams.get("aspect");
+    const baseKeep = searchParams.get("keep");
     const baseMetaCard = searchParams.get("metaCard");
     const baseShrine = searchParams.get("shrine");
     const baseBoon = searchParams.get("boon");
@@ -127,6 +138,14 @@ export default function CustomChaos() {
         console.error("Error decoding cards data from URL:", error);
       }
     }
+    if (baseKeep) {
+      try {
+        const decodeKeep = JSON.parse(LZString.decompressFromEncodedURIComponent(baseKeep));
+        setKeep(decodeKeep);
+      } catch (error) {
+        console.error("Error decoding cards data from URL:", error);
+      }
+    }
     window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
   }, []);
   const generateShareableURL = () => {
@@ -138,6 +157,10 @@ export default function CustomChaos() {
 
     if (aspect !== "BaseStaffAspect") {
       params.set("aspect", LZString.compressToEncodedURIComponent(JSON.stringify(aspect)));
+    }
+
+    if (keep !== "ManaOverTimeRefundKeepsake") {
+      params.set("keep", LZString.compressToEncodedURIComponent(JSON.stringify(keep)));
     }
 
     if (metaCard.length > 0) {
@@ -177,6 +200,8 @@ export default function CustomChaos() {
 
     let blockContent = match[0];
     const originalBlock = match[0];
+
+    blockContent = blockContent.replace(/KeepsakeName\s*=\s*"[^"]*"/, `KeepsakeName = "${keep}"`);
 
     // Replace WeaponKitName
     blockContent = blockContent.replace(/WeaponKitName\s*=\s*"[^"]*"/, `WeaponKitName = "${findWeaponKit(aspect)}"`);
@@ -226,7 +251,6 @@ export default function CustomChaos() {
     URL.revokeObjectURL(url);
   };
   //
-  console.log(shrine);
   return (
     <div className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ubuntu] select-none">
       <Background />
@@ -253,8 +277,8 @@ export default function CustomChaos() {
           </div>
         </section>
         {/* Content */}
-        <div className="font-[Ale] ps-1 mt-6">Encounter / Aspect Selection</div>
-        <div className="flex gap-2">
+        <div className="font-[Ale] ps-1 mt-6">Encounter / Aspect / Keepsakes Selection</div>
+        <div className="flex flex-col md:flex-row gap-1">
           <select
             className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
             value={room}
@@ -272,6 +296,17 @@ export default function CustomChaos() {
             onChange={(e) => setAspect(e.target.value)}
           >
             {weaponMap.map((item, index) => (
+              <option value={item} key={index}>
+                {item} - {sdata[item]}
+              </option>
+            ))}
+          </select>
+          <select
+            className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
+            value={keep}
+            onChange={(e) => setKeep(e.target.value)}
+          >
+            {ksMap.map((item, index) => (
               <option value={item} key={index}>
                 {item} - {sdata[item]}
               </option>
@@ -487,7 +522,7 @@ export default function CustomChaos() {
           </button>
         </div>
         {/* Hammer Section */}
-        <div className="mb-6 flex gap-1">
+        <div className="mb-1 flex gap-1">
           <select
             className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
             onChange={(e) => setCurrentHammer(e.target.value)}
@@ -512,12 +547,38 @@ export default function CustomChaos() {
             Add
           </button>
         </div>
+        {/* Health + Mana */}
+        <div className="mb-6 flex gap-1">
+          <select
+            className="select select-sm bg-[#131111] rounded-none focus:outline-none focus:border-transparent"
+            onChange={(e) => setCurrentOther(e.target.value)}
+          >
+            {boonOtherMap.map((item) => (
+              <option value={item}>{sdata[item]}</option>
+            ))}
+          </select>
+          <button
+            className="btn btn-sm rounded-none bg-[#131111] border border-white/10"
+            onClick={() =>
+              setBoon((prev) => {
+                const value = `${currentOther}_Common`;
+
+                // remove any existing entry for the same boon
+                // const filtered = prev.filter((i) => !i.startsWith(`${currentOther}_`));
+
+                return [...prev, value];
+              })
+            }
+          >
+            Add
+          </button>
+        </div>
         {/* Divider */}
         <div>
           <div className="my-1">
             Selected Traits (Click on selected trait to remove):
             <div className="flex flex-wrap gap-0.5 text-[12px]">
-              {boon.map((item) => (
+              {boon.map((item, index) => (
                 <div
                   className={`text-black p-1 py-0.5 rounded-none cursor-pointer ${
                     item.split("_")[1] === `Heroic`
@@ -528,12 +589,7 @@ export default function CustomChaos() {
                       ? `bg-[#eb4aeb]`
                       : `bg-white`
                   }`}
-                  onClick={() =>
-                    setBoon((prev) => {
-                      const filtered = prev.filter((i) => i !== item);
-                      return filtered;
-                    })
-                  }
+                  onClick={() => setBoon((prev) => prev.filter((_, i) => i !== index))}
                 >
                   {sdata[item.split("_")[0]]} ({item.split("_")[1]})
                 </div>
@@ -547,7 +603,7 @@ export default function CustomChaos() {
             Selected Aspect: <span className="text-[#00ffaa]">{sdata[aspect]}</span>
           </div>
           <div>
-            Default Keepsake: <span className="text-[#00ffaa]">White Antler</span>
+            Selected Keepsake: <span className="text-[#00ffaa]">{sdata[keep]}</span>
           </div>
           <div className="my-1">
             Selected Meta:
