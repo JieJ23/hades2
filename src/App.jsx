@@ -200,16 +200,20 @@ export default function App() {
                 {paginatedData.slice(0, 100).map((obj, index) => (
                   <tr key={index}>
                     <td>
-                      <div>{orderData.length - (index + 50 * (pageIndex - 1))}</div>
+                      <div className={obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`}>
+                        {orderData.length - (index + 50 * (pageIndex - 1))}
+                      </div>
                     </td>
                     <td>
                       <div className="flex gap-1">
-                        <img
-                          src={obj.loc === `Underworld` ? `/Underworld.png` : `/Surface.png`}
-                          alt="Region"
-                          className="size-4"
-                        />
                         <div>{obj.nam}</div>
+                        <div className="shrink-0 size-4">
+                          <img
+                            src={obj.loc === `Underworld` ? `/Underworld.png` : `/Surface.png`}
+                            alt="Region"
+                            className="size-4"
+                          />
+                        </div>
                       </div>
                     </td>
                     <td>
@@ -221,8 +225,9 @@ export default function App() {
                         {obj.des && (
                           <div className="w-[25px]">
                             <div
-                              className={`tooltip ${index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
-                                }`}
+                              className={`tooltip ${
+                                index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
+                              }`}
                             >
                               <div className="tooltip-content p-0">
                                 <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded text-start">
@@ -265,21 +270,21 @@ export default function App() {
                         )}
                         {obj.ham
                           ? findValue(
-                            sToA(obj.ham).sort((a, b) => {
-                              const aIndex = orderMap.get(a) ?? Infinity;
-                              const bIndex = orderMap.get(b) ?? Infinity;
-                              return aIndex - bIndex;
-                            })
-                          ).map((ite, index) => (
-                            <div className="tooltip">
-                              <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                  {p9boons[ite]}
+                              sToA(obj.ham).sort((a, b) => {
+                                const aIndex = orderMap.get(a) ?? Infinity;
+                                const bIndex = orderMap.get(b) ?? Infinity;
+                                return aIndex - bIndex;
+                              })
+                            ).map((ite, index) => (
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
+                                  </div>
                                 </div>
+                                <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
                               </div>
-                              <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
-                            </div>
-                          ))
+                            ))
                           : ``}
                       </div>
                     </td>
@@ -287,21 +292,21 @@ export default function App() {
                       <div className="flex gap-0.5">
                         {obj.cor
                           ? sToA(obj.cor).map((ite, index) => (
-                            <div className="tooltip">
-                              <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                  {p9boons[ite]}
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
+                                  </div>
                                 </div>
+                                <img
+                                  draggable={false}
+                                  src={`/H2Boons/${ite}.png`}
+                                  alt="Core Boon"
+                                  className="size-6"
+                                  loading="lazy"
+                                />
                               </div>
-                              <img
-                                draggable={false}
-                                src={`/H2Boons/${ite}.png`}
-                                alt="Core Boon"
-                                className="size-6"
-                                loading="lazy"
-                              />
-                            </div>
-                          ))
+                            ))
                           : ``}
                       </div>
                     </td>
