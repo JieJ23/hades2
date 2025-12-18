@@ -65,6 +65,7 @@ export default function ProfileSum() {
 
   if (data) {
     const gameState = data.CurrentRun;
+    const history = Object.entries(data.GameState.RunHistory).filter((arr) => Object.entries(arr[1]).length > 2)
 
     info = {
       biomeTimes: Object.entries(gameState.BiomeGameplayTimes),
@@ -78,7 +79,15 @@ export default function ProfileSum() {
       bossRunTime: Object.entries(gameState.EncounterClearStats),
       lootHistory: Object.entries(gameState.LootChoiceHistory ?? {}),
       roomHistory: Object.entries(gameState.RoomHistory),
-      runHistory: Object.entries(data.GameState.RunHistory).filter((arr) => Object.entries(arr[1]).length > 2),
+      runHistory: history,
+      runHistoryWR: history.reduce((acc, obj) => {
+        acc[obj[1].RunResult] = (acc[obj[1].RunResult] || 0) + 1
+        return acc
+      }, {}),
+      run60Plus: history.filter(obj => obj[1].ShrinePointsCache >= 60).reduce((acc, obj) => {
+        acc[obj[1].RunResult] = (acc[obj[1].RunResult] || 0) + 1
+        return acc
+      }, {}),
       // Misc
       // shrineCache: Object.entries(gameState.ShrineUpgradesCache).sort(
       //   (a, b) => vowid[idShrine[a[0]]] - vowid[idShrine[b[0]]]
@@ -87,7 +96,6 @@ export default function ProfileSum() {
     };
   }
 
-  console.log(info?.runHistory);
   return (
     <div className="h-full min-h-lvh relative overflow-hidden">
       <Background />
@@ -332,7 +340,11 @@ export default function ProfileSum() {
               </table>
             </div>
             {/* Previous History */}
-            <div className="px-2 mt-8">Previous History</div>
+            <div className="my-6 px-4">
+              <div className="text-[#00ffaa]">Overall WR: {(((info.runHistoryWR["1"] + info.runHistoryWR["3"]) / info.runHistory.filter(obj => obj[1].RunResult !== 5 && obj[1].RunResult !== 6).length) * 100).toFixed(2)}%</div>
+              <div className="text-[orange]">Fear 60+ WR: {(((info.run60Plus["1"] + info.run60Plus["3"]) / info.runHistory.filter(obj => obj[1].ShrinePointsCache >= 60).filter(obj => obj[1].RunResult !== 5 && obj[1].RunResult !== 6).length) * 100).toFixed(2)}%</div>
+            </div>
+            <div className="px-2 mt-4">Previous History</div>
             <div className="overflow-x-auto mb-4">
               <table className="table whitespace-nowrap table-xs table-zebra font-[Ubuntu] backdrop-blur-sm border-separate border-spacing-0.5">
                 <thead className="font-[Ale]">
