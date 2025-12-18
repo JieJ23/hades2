@@ -239,13 +239,13 @@ export default function GameplaySubmission() {
                 required={true}
               />
               <input className="input w-full rounded" placeholder="Hammer" value={hammer.join(",")} name="ham" />
-              <input
+              {/* <input
                 className="input w-full rounded"
                 placeholder="God Pool"
                 value={godpool.join(",")}
                 name="pool"
                 required={true}
-              />
+              /> */}
               <input
                 className="input w-full rounded"
                 placeholder="Keepsakes"
@@ -337,7 +337,7 @@ export default function GameplaySubmission() {
         <div className="flex flex-wrap gap-1 px-2 my-2">
           {allCategoryTitle.map((item, index) => (
             <button
-              className="px-2 py-1 bg-[white] text-black rounded cursor-pointer"
+              className="px-2 py-1 bg-[white] text-black rounded-none cursor-pointer"
               onClick={() => setCategory(index)}
             >
               {item}
@@ -345,12 +345,13 @@ export default function GameplaySubmission() {
           ))}
         </div>
         <div className="text-[14px] px-2 mb-4">To de-select a boon, click on the boon name above.</div>
-        <div className="text-[14px] px-4">Select God Pool:</div>
+        {/* <div className="text-[14px] px-4">Select God Pool:</div>
         <div className="flex flex-wrap gap-1 px-2 my-2 mt-1 select-none">
           {selectPool.map((item) => (
             <div
-              className={` px-2 py-1 rounded-none cursor-pointer ${godpool.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
-                }`}
+              className={` px-2 py-1 rounded-none cursor-pointer ${
+                godpool.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
+              }`}
               onClick={() => {
                 if (!godpool.includes(item)) {
                   setGodpool((prev) => [...prev, item]);
@@ -360,64 +361,66 @@ export default function GameplaySubmission() {
               {item}
             </div>
           ))}
-        </div>
+        </div> */}
         <div className="text-[14px] px-4">Select Boons/Keeps:</div>
         <div className="flex flex-wrap px-2 mt-1 mb-10 select-none">
           {displayData.map((objs) => (
             <section className="flex flex-wrap gap-1 my-1">
               {category === 2
                 ? objs.map((item) => (
-                  <div
-                    className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${keep.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
+                    <div
+                      className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${
+                        keep.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
                       }`}
-                    onClick={(prev) => {
-                      if (keep.length >= 4) {
-                        return prev;
-                      } else {
-                        setKeep((prev) => [...prev, item]);
-                      }
-                    }}
-                  >
-                    <img src={`buildgui/${[item]}.png`} alt="Boons" className="size-8" draggable={false} />
-                    <div>{item}</div>
-                  </div>
-                ))
+                      onClick={(prev) => {
+                        if (keep.length >= 4) {
+                          return prev;
+                        } else {
+                          setKeep((prev) => [...prev, item]);
+                        }
+                      }}
+                    >
+                      <img src={`buildgui/${[item]}.png`} alt="Boons" className="size-8" draggable={false} />
+                      <div>{item}</div>
+                    </div>
+                  ))
                 : Object.keys(swapKV(objs)).map((item) => (
-                  <div
-                    className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${core.includes(item) || hammer.includes(item) || boons.includes(item)
-                        ? `bg-[#00ffaa] text-black`
-                        : `bg-[#28282b]`
+                    <div
+                      className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${
+                        core.includes(item) || hammer.includes(item) || boons.includes(item)
+                          ? `bg-[#00ffaa] text-black`
+                          : `bg-[#28282b]`
                       }`}
-                    onClick={() => {
-                      if (category === 0) {
-                        if (!core.includes(item) && core.length < 5) {
-                          setCore((prev) => [...prev, item]);
+                      onClick={() => {
+                        if (category === 0) {
+                          if (!core.includes(item) && core.length < 5) {
+                            setCore((prev) => [...prev, item]);
+                          }
+                        } else if (category === 1) {
+                          if (!hammer.includes(item)) {
+                            setHammer((prev) => [...prev, item]);
+                          }
+                        } else {
+                          if (!boons.includes(item)) {
+                            setBoons((prev) => [...prev, item]);
+                          }
                         }
-                      } else if (category === 1) {
-                        if (!hammer.includes(item)) {
-                          setHammer((prev) => [...prev, item]);
-                        }
-                      } else {
-                        if (!boons.includes(item)) {
-                          setBoons((prev) => [...prev, item]);
-                        }
-                      }
-                    }}
-                  >
-                    {category === 1 ? (
-                      <img
-                        src={`P9/Hammer${swapKV(objs)[item]}.png`}
-                        alt="Boons"
-                        className="size-8"
-                        draggable={false}
-                      />
-                    ) : (
-                      <img src={`P9/${swapKV(objs)[item]}.png`} alt="Boons" className="size-8" draggable={false} />
-                    )}
+                      }}
+                    >
+                      {category === 1 ? (
+                        <img
+                          src={`P9/Hammer${swapKV(objs)[item]}.png`}
+                          alt="Boons"
+                          className="size-8"
+                          draggable={false}
+                        />
+                      ) : (
+                        <img src={`P9/${swapKV(objs)[item]}.png`} alt="Boons" className="size-8" draggable={false} />
+                      )}
 
-                    <div>{item}</div>
-                  </div>
-                ))}
+                      <div>{item}</div>
+                    </div>
+                  ))}
             </section>
           ))}
         </div>

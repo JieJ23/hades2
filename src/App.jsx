@@ -193,7 +193,7 @@ export default function App() {
                   <th>Time</th>
                   <th>Date</th>
                   <th className="min-w-[100px]">Link</th>
-                  <th className="min-w-[250px]">Pool</th>
+                  {/* <th className="min-w-[250px]">Pool</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -335,7 +335,7 @@ export default function App() {
                         )}
                       </div>
                     </td>
-                    <td>
+                    {/* <td>
                       {obj.pool && (
                         <div className="flex flex-wrap gap-0.5">
                           {sToA(obj.pool)
@@ -352,7 +352,7 @@ export default function App() {
                             ))}
                         </div>
                       )}
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
               </tbody>

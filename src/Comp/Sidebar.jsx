@@ -30,7 +30,7 @@ export default function SideNav() {
         {sites.map((obj, idx) => (
           <Link to={`/${obj.link}`} className={`flex items-center group`} key={idx}>
             <div
-              className={`px-2 py-1 border-1 border-white/40 rounded hover:bg-[#00ffaa] ${
+              className={`px-2 py-1 border-1 border-white/40 rounded-none hover:bg-[#00ffaa] ${
                 currentLocation.pathname == `/${obj.link}` ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-white`
               }`}
             >
