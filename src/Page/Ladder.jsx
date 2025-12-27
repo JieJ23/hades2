@@ -31,7 +31,6 @@ export default function Ladder() {
   const [minfear, setMinFear] = useState(1);
   const [maxfear, setMaxFear] = useState(67);
   const [billy, setBilly] = useState("No");
-  const [img, setImg] = useState("No");
 
 
 
@@ -43,13 +42,6 @@ export default function Ladder() {
     .filter(obj => {
       if (billy === "No") {
         return !obj.src.includes("bilibi")
-      } else {
-        return obj
-      }
-    })
-    .filter(obj => {
-      if (img === "No") {
-        return obj.src.includes("bilibi") || obj.src.includes("youtu")
       } else {
         return obj
       }
@@ -106,16 +98,6 @@ export default function Ladder() {
                 <select className="select select-sm w-[100px] rounded-none focus:outline-none focus:border-transparent"
                   value={billy}
                   onChange={(e) => setBilly(e.target.value)}
-                >
-                  <option value="No">No</option>
-                  <option value="Yes">Yes</option>
-                </select>
-              </div>
-              <div>
-                <div>Include IMG</div>
-                <select className="select select-sm w-[100px] rounded-none focus:outline-none focus:border-transparent"
-                  value={img}
-                  onChange={(e) => setImg(e.target.value)}
                 >
                   <option value="No">No</option>
                   <option value="Yes">Yes</option>
