@@ -30,12 +30,31 @@ export default function Ladder() {
   const [boon, setBoon] = useState(`Core`);
   const [minfear, setMinFear] = useState(1);
   const [maxfear, setMaxFear] = useState(67);
+  const [billy, setBilly] = useState("No");
+  const [img, setImg] = useState("No");
+
+
 
   const { posts, loader } = useData();
 
   const regionData = [...v1bundle, ...(posts || [])]
     .filter((obj) => obj.loc === location)
-    .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear);
+    .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear)
+    .filter(obj => {
+      if (billy === "No") {
+        return !obj.src.includes("bilibi")
+      } else {
+        return obj
+      }
+    })
+    .filter(obj => {
+      if (img === "No") {
+        return obj.src.includes("bilibi") || obj.src.includes("youtu")
+      } else {
+        return obj
+      }
+    })
+
   const fulldata_ArrArrObject = [];
 
   for (let i = 0; i < h2AspectOrder.length; i++) {
@@ -63,7 +82,7 @@ export default function Ladder() {
                 <input
                   type="number"
                   placeholder="Min Fear"
-                  className="input input-sm w-[80px]"
+                  className="input input-sm w-[80px] rounded-none focus:outline-none focus:border-transparent"
                   onChange={(e) => setMinFear(e.target.value)}
                   value={minfear}
                   max={67}
@@ -75,59 +94,73 @@ export default function Ladder() {
                 <input
                   type="number"
                   placeholder="Max Fear"
-                  className="input input-sm w-[80px]"
+                  className="input input-sm w-[80px] rounded-none focus:outline-none focus:border-transparent"
                   onChange={(e) => setMaxFear(e.target.value)}
                   value={maxfear}
                   max={67}
                   min={1}
                 />
               </div>
+              <div>
+                <div>Include Bilibili</div>
+                <select className="select select-sm w-[100px] rounded-none focus:outline-none focus:border-transparent"
+                  value={billy}
+                  onChange={(e) => setBilly(e.target.value)}
+                >
+                  <option value="No">No</option>
+                  <option value="Yes">Yes</option>
+                </select>
+              </div>
+              <div>
+                <div>Include IMG</div>
+                <select className="select select-sm w-[100px] rounded-none focus:outline-none focus:border-transparent"
+                  value={img}
+                  onChange={(e) => setImg(e.target.value)}
+                >
+                  <option value="No">No</option>
+                  <option value="Yes">Yes</option>
+                </select>
+              </div>
             </div>
             <div className="p-1 flex flex-wrap justify-center gap-1 my-2">
               <button
-                className={`cursor-pointer rounded p-1 ${
-                  location === `Underworld` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
+                className={`cursor-pointer rounded p-1 ${location === `Underworld` ? `bg-white text-black` : `bg-transparent text-white`
+                  }`}
                 onClick={() => setLocation(`Underworld`)}
               >
                 Underworld
               </button>
               <button
-                className={`cursor-pointer text-black rounded p-1 ${
-                  location === `Surface` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
+                className={`cursor-pointer text-black rounded p-1 ${location === `Surface` ? `bg-white text-black` : `bg-transparent text-white`
+                  }`}
                 onClick={() => setLocation(`Surface`)}
               >
                 Surface
               </button>
               <button
-                className={`cursor-pointer rounded p-1 ${
-                  boon === `Core` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
+                className={`cursor-pointer rounded p-1 ${boon === `Core` ? `bg-white text-black` : `bg-transparent text-white`
+                  }`}
                 onClick={() => setBoon(`Core`)}
               >
                 Core
               </button>
               <button
-                className={`cursor-pointer text-black rounded p-1 ${
-                  boon === `Hammer` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
+                className={`cursor-pointer text-black rounded p-1 ${boon === `Hammer` ? `bg-white text-black` : `bg-transparent text-white`
+                  }`}
                 onClick={() => setBoon(`Hammer`)}
               >
                 Hammer
               </button>
               <button
-                className={`cursor-pointer text-black rounded p-1 ${
-                  boon === `Keep` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
+                className={`cursor-pointer text-black rounded p-1 ${boon === `Keep` ? `bg-white text-black` : `bg-transparent text-white`
+                  }`}
                 onClick={() => setBoon(`Keep`)}
               >
                 Keep
               </button>
               <button
-                className={`cursor-pointer text-black rounded p-1 ${
-                  boon === `Arcana` ? `bg-white text-black` : `bg-transparent text-white`
-                }`}
+                className={`cursor-pointer text-black rounded p-1 ${boon === `Arcana` ? `bg-white text-black` : `bg-transparent text-white`
+                  }`}
                 onClick={() => setBoon(`Arcana`)}
               >
                 Arcana
@@ -136,9 +169,8 @@ export default function Ladder() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 my-2">
               {fulldata_ArrArrObject.map((arr, oi) => (
                 <div
-                  className={`rounded-t-md px-2 py-1 relative border-1 border-[#000000] hover:border-[#00ffaa] duration-200 ease-in transition-colors h-[250px] ${
-                    arr[0] && arr[0].fea >= 62 ? `bg-[#141537a6]` : `bg-[#0e0e0ec4]`
-                  }`}
+                  className={`rounded-t-md px-2 py-1 relative border-1 border-[#000000] hover:border-[#00ffaa] duration-200 ease-in transition-colors h-[250px] ${arr[0] && arr[0].fea >= 62 ? `bg-[#141537a6]` : `bg-[#0e0e0ec4]`
+                    }`}
                 >
                   <img
                     src={`/GUI_Card/c${h2AspectOrder[oi]}.png`}

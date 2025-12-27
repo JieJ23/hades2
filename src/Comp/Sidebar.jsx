@@ -3,13 +3,13 @@ import { useLocation } from "react-router-dom";
 
 export const sites = [
   { link: ``, nam: `Home` },
-  { link: `Stats`, nam: `Stats` },
 
   // { link: `Archive`, nam: `Videos` },
   // { link: `Query`, nam: `Query` },
 
   // { link: `Weekly`, nam: `Weekly` },
   { link: `Ladder`, nam: `Ladder` },
+  { link: `Stats`, nam: `Stats` },
   { link: `FearPoints`, nam: `PBs` },
 
   { link: `ArcanaDeck`, nam: `Arcana` },
@@ -30,9 +30,8 @@ export default function SideNav() {
         {sites.map((obj, idx) => (
           <Link to={`/${obj.link}`} className={`flex items-center group`} key={idx}>
             <div
-              className={`px-2 py-1 border-1 border-white/40 rounded-none hover:bg-[#00ffaa] ${
-                currentLocation.pathname == `/${obj.link}` ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-white`
-              }`}
+              className={`px-2 py-1 border-1 border-white/40 rounded-none hover:bg-[#00ffaa] ${currentLocation.pathname == `/${obj.link}` ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-white`
+                }`}
             >
               {obj.nam}
             </div>
