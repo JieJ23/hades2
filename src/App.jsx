@@ -188,7 +188,7 @@ export default function App() {
                   <th>Fear</th>
                   <th>Aspect</th>
                   <th className="min-w-[120px]">Keep</th>
-                  <th className="min-w-[120px]">Fammer</th>
+                  <th className="min-w-[150px]">Fammer</th>
                   <th className="min-w-[150px]">Core</th>
                   <th>Time</th>
                   <th>Date</th>
