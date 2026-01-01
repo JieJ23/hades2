@@ -180,8 +180,8 @@ export default function App() {
           </div>
           {/* Table Content */}
           <div className="overflow-x-scroll my-4">
-            <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/50 border-separate border-spacing-0.5">
-              <thead className="font-[Ale]">
+            <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/50 border-separate border-spacing-0.5 rounded-none">
+              <thead className="font-[Ale] bg-black">
                 <tr>
                   <th>Idx</th>
                   <th>Name</th>
@@ -225,8 +225,9 @@ export default function App() {
                         {obj.des && (
                           <div className="w-[25px]">
                             <div
-                              className={`tooltip ${index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
-                                }`}
+                              className={`tooltip ${
+                                index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
+                              }`}
                             >
                               <div className="tooltip-content p-0">
                                 <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded text-start">
@@ -269,21 +270,21 @@ export default function App() {
                         )}
                         {obj.ham
                           ? findValue(
-                            sToA(obj.ham).sort((a, b) => {
-                              const aIndex = orderMap.get(a) ?? Infinity;
-                              const bIndex = orderMap.get(b) ?? Infinity;
-                              return aIndex - bIndex;
-                            })
-                          ).map((ite, index) => (
-                            <div className="tooltip">
-                              <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                  {p9boons[ite]}
+                              sToA(obj.ham).sort((a, b) => {
+                                const aIndex = orderMap.get(a) ?? Infinity;
+                                const bIndex = orderMap.get(b) ?? Infinity;
+                                return aIndex - bIndex;
+                              })
+                            ).map((ite, index) => (
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
+                                  </div>
                                 </div>
+                                <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
                               </div>
-                              <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
-                            </div>
-                          ))
+                            ))
                           : ``}
                       </div>
                     </td>
@@ -291,21 +292,21 @@ export default function App() {
                       <div className="flex gap-0.5">
                         {obj.cor
                           ? sToA(obj.cor).map((ite, index) => (
-                            <div className="tooltip">
-                              <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                  {p9boons[ite]}
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
+                                  </div>
                                 </div>
+                                <img
+                                  draggable={false}
+                                  src={`/H2Boons/${ite}.png`}
+                                  alt="Core Boon"
+                                  className="size-6"
+                                  loading="lazy"
+                                />
                               </div>
-                              <img
-                                draggable={false}
-                                src={`/H2Boons/${ite}.png`}
-                                alt="Core Boon"
-                                className="size-6"
-                                loading="lazy"
-                              />
-                            </div>
-                          ))
+                            ))
                           : ``}
                       </div>
                     </td>
@@ -366,7 +367,7 @@ export default function App() {
             >
               Prev
             </button>
-            <div className="text-[18px]">
+            <div className="text-[18px] text-white">
               {pageIndex}/{TOTAL_Page}
             </div>
             <button
