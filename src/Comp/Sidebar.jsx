@@ -9,6 +9,8 @@ export const sites = [
 
   // { link: `Weekly`, nam: `Weekly` },
   { link: `Ladder`, nam: `Ladder` },
+  { link: `Ladder2`, nam: `Ladder2` },
+
   { link: `Stats`, nam: `Stats` },
   { link: `FearPoints`, nam: `PBs` },
 
@@ -30,8 +32,9 @@ export default function SideNav() {
         {sites.map((obj, idx) => (
           <Link to={`/${obj.link}`} className={`flex items-center group`} key={idx}>
             <div
-              className={`px-2 py-1 border-1 border-white/40 rounded-none hover:bg-[#00ffaa] ${currentLocation.pathname == `/${obj.link}` ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-white`
-                }`}
+              className={`px-2 py-1 border-1 border-white/40 rounded-none hover:bg-[#00ffaa] ${
+                currentLocation.pathname == `/${obj.link}` ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-white`
+              }`}
             >
               {obj.nam}
             </div>

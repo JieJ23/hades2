@@ -24,19 +24,20 @@ export const findValue2 = (arr) => {
   const finalized = arr.map((ite) => boonCodexr[ite]);
   return finalized;
 };
+
+const familiar = [`Polecat`, `Cat`, `Frog`, `Hound`, `Raven`];
 //
-export default function Ladder() {
+export default function Ladder2() {
   const [location, setLocation] = useState(`Underworld`);
   const [boon, setBoon] = useState(`Core`);
-  const [minfear, setMinFear] = useState(1);
-  const [maxfear, setMaxFear] = useState(67);
+  const [fam, setFam] = useState(`Polecat`);
   const [billy, setBilly] = useState("No");
 
   const { posts, loader } = useData();
 
   const regionData = [...v1bundle, ...(posts || [])]
     .filter((obj) => obj.loc === location)
-    .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear)
+    .filter((obj) => obj.fam === fam)
     .filter((obj) => {
       if (billy === "No") {
         return !obj.src.includes("bilibi");
@@ -68,28 +69,16 @@ export default function Ladder() {
           <>
             <div className="flex justify-center gap-1 font-[Ale]">
               <div>
-                <div>Min Fear</div>
-                <input
-                  type="number"
-                  placeholder="Min Fear"
-                  className="input input-sm w-[80px] rounded-none focus:outline-none focus:border-transparent"
-                  onChange={(e) => setMinFear(e.target.value)}
-                  value={minfear}
-                  max={67}
-                  min={1}
-                />
-              </div>
-              <div>
-                <div>Max Fear</div>
-                <input
-                  type="number"
-                  placeholder="Max Fear"
-                  className="input input-sm w-[80px] rounded-none focus:outline-none focus:border-transparent"
-                  onChange={(e) => setMaxFear(e.target.value)}
-                  value={maxfear}
-                  max={67}
-                  min={1}
-                />
+                <div>Familiar</div>
+                <select
+                  className="select select-sm w-[100px] rounded-none focus:outline-none focus:border-transparent"
+                  value={fam}
+                  onChange={(e) => setFam(e.target.value)}
+                >
+                  {familiar.map((item) => (
+                    <option value={item}>{item}</option>
+                  ))}
+                </select>
               </div>
               <div>
                 <div>Include Bilibili</div>
@@ -180,7 +169,7 @@ export default function Ladder() {
                               />
                             </div>
                           ))}
-                        {boon === `Hammer` && obj.ham && (
+                        {boon === `Hammer` && (
                           <div className="flex gap-0.5 rounded">
                             <div className="tooltip">
                               <div className="tooltip-content bg-black text-white font-[Ale] rounded-none">

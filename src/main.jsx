@@ -13,6 +13,7 @@ import ProfileSum from "./Page/ProfileSum.jsx";
 import Enemy from "./Page/Enemy.jsx";
 
 import Query from "./Page/Query.jsx";
+import Ladder2 from "./Page/Ladder2.jsx";
 import Ladder from "./Page/Ladder.jsx";
 import FearPoints from "./Page/FearPoints.jsx";
 import StatsCodex from "./Page/StatsCodex.jsx";
@@ -60,6 +61,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/TheGameAward" element={<TheGameAward />} />
 
           <Route path="/Ladder" element={<Ladder />} />
+          <Route path="/Ladder2" element={<Ladder2 />} />
           <Route path="/FearPoints" element={<FearPoints />} />
           <Route path="/StatsCodex" element={<StatsCodex />} />
 
