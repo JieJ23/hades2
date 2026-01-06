@@ -5,7 +5,7 @@ import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 import { bOrder } from "../Data/Boon2";
 import { boonCodexr } from "../Data/Boon2";
-import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA, deCodeArcana } from "../Data/Misc";
+import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA } from "../Data/Misc";
 
 import { v1bundle } from "../Data/DataBundle";
 import { useState } from "react";
@@ -32,20 +32,18 @@ export default function Ladder() {
   const [maxfear, setMaxFear] = useState(67);
   const [billy, setBilly] = useState("No");
 
-
-
   const { posts, loader } = useData();
 
   const regionData = [...v1bundle, ...(posts || [])]
     .filter((obj) => obj.loc === location)
     .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear)
-    .filter(obj => {
+    .filter((obj) => {
       if (billy === "No") {
-        return !obj.src.includes("bilibi")
+        return !obj.src.includes("bilibi");
       } else {
-        return obj
+        return obj;
       }
-    })
+    });
 
   const fulldata_ArrArrObject = [];
 
@@ -95,7 +93,8 @@ export default function Ladder() {
               </div>
               <div>
                 <div>Include Bilibili</div>
-                <select className="select select-sm w-[100px] rounded-none focus:outline-none focus:border-transparent"
+                <select
+                  className="select select-sm w-[100px] rounded-none focus:outline-none focus:border-transparent"
                   value={billy}
                   onChange={(e) => setBilly(e.target.value)}
                 >
@@ -106,82 +105,71 @@ export default function Ladder() {
             </div>
             <div className="p-1 flex flex-wrap justify-center gap-1 my-2">
               <button
-                className={`cursor-pointer rounded p-1 ${location === `Underworld` ? `bg-white text-black` : `bg-transparent text-white`
-                  }`}
+                className={`cursor-pointer rounded-none p-1 ${
+                  location === `Underworld` ? `bg-white text-black` : `bg-transparent text-white`
+                }`}
                 onClick={() => setLocation(`Underworld`)}
               >
                 Underworld
               </button>
               <button
-                className={`cursor-pointer text-black rounded p-1 ${location === `Surface` ? `bg-white text-black` : `bg-transparent text-white`
-                  }`}
+                className={`cursor-pointer text-black rounded-none p-1 ${
+                  location === `Surface` ? `bg-white text-black` : `bg-transparent text-white`
+                }`}
                 onClick={() => setLocation(`Surface`)}
               >
                 Surface
               </button>
               <button
-                className={`cursor-pointer rounded p-1 ${boon === `Core` ? `bg-white text-black` : `bg-transparent text-white`
-                  }`}
+                className={`cursor-pointer rounded-none p-1 ${
+                  boon === `Core` ? `bg-white text-black` : `bg-transparent text-white`
+                }`}
                 onClick={() => setBoon(`Core`)}
               >
                 Core
               </button>
               <button
-                className={`cursor-pointer text-black rounded p-1 ${boon === `Hammer` ? `bg-white text-black` : `bg-transparent text-white`
-                  }`}
+                className={`cursor-pointer text-black rounded-none p-1 ${
+                  boon === `Hammer` ? `bg-white text-black` : `bg-transparent text-white`
+                }`}
                 onClick={() => setBoon(`Hammer`)}
               >
                 Hammer
               </button>
               <button
-                className={`cursor-pointer text-black rounded p-1 ${boon === `Keep` ? `bg-white text-black` : `bg-transparent text-white`
-                  }`}
+                className={`cursor-pointer text-black rounded p-1 ${
+                  boon === `Keep` ? `bg-white text-black` : `bg-transparent text-white`
+                }`}
                 onClick={() => setBoon(`Keep`)}
               >
                 Keep
               </button>
-              <button
-                className={`cursor-pointer text-black rounded p-1 ${boon === `Arcana` ? `bg-white text-black` : `bg-transparent text-white`
-                  }`}
-                onClick={() => setBoon(`Arcana`)}
-              >
-                Arcana
-              </button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 my-2">
               {fulldata_ArrArrObject.map((arr, oi) => (
-                <div
-                  className={`rounded-t-md px-2 py-1 relative border-1 border-[#000000] hover:border-[#00ffaa] duration-200 ease-in transition-colors h-[250px] ${arr[0] && arr[0].fea >= 62 ? `bg-[#141537a6]` : `bg-[#0e0e0ec4]`
-                    }`}
-                >
-                  <img
-                    src={`/GUI_Card/c${h2AspectOrder[oi]}.png`}
-                    alt="Aspect"
-                    className="absolute w-auto h-full top-1/2 left-1/2 -z-10 opacity-50 -translate-x-[50%] -translate-y-[50%]"
-                  />
-                  <div className="grid grid-cols-3 text-center text-white" key={oi}>
-                    <div className="text-start text-[#00ffaa]">{h2AspectOrder[oi]}</div>
-                    <div className="text-start text-[#00ffaa]">
+                <div className={`rounded-sm px-2 py-1 relative bg-black/50 border-1 border-white/20 h-[250px]`}>
+                  <div className="flex justify-between" key={oi}>
+                    <div>
+                      Avg{" "}
                       {(arr.slice(0, 10).reduce((a, b) => a + +b.fea, 0) / (arr.slice(0, 10).length || 10)).toFixed(1)}
                     </div>
-                    <div className="text-end text-[#00ffaa]">
+                    <div>{h2AspectOrder[oi]}</div>
+                    <div>
                       {parsemstoTime(
                         arr.slice(0, 10).reduce((a, b) => a + parseTimetoms(b.tim), 0) / (arr.slice(0, 10).length || 10)
                       )}
                     </div>
                   </div>
                   {arr.slice(0, 10).map((obj, index) => (
-                    <div
-                      className="grid grid-cols-4 text-center hover:bg-[#131111] hover:text-[#00ffaa] relative text-gray-300 items-center"
-                      key={index}
-                    >
-                      <div className="text-start line-clamp-1">{obj.nam}</div>
-                      <div>{obj.fea}</div>
+                    <div className="grid grid-cols-3 relative text-gray-300 items-center" key={index}>
+                      <div className={`text-start line-clamp-1 ${obj.fea >= 65 ? `text-[#00ffaa]` : `text-[pink]`}`}>
+                        <span>{obj.fea}</span> {obj.nam}
+                      </div>
                       <div className="w-full flex">
                         {boon === `Core` &&
                           sToA(obj.cor).map((ite, index) => (
-                            <div className="tooltip shrink-0" key={index}>
-                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                            <div className="tooltip" key={index}>
+                              <div className="tooltip-content bg-black text-white font-[Ale] rounded-none">
                                 <div className="text-[11px]">{ite}</div>
                               </div>
                               <img
@@ -194,8 +182,8 @@ export default function Ladder() {
                           ))}
                         {boon === `Hammer` && obj.ham && (
                           <div className="flex gap-0.5 rounded">
-                            <div className="tooltip shrink-0">
-                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                            <div className="tooltip">
+                              <div className="tooltip-content bg-black text-white font-[Ale] rounded-none">
                                 <div className="text-[11px]">{obj.fam}</div>
                               </div>
                               <img
@@ -212,8 +200,8 @@ export default function Ladder() {
                                 return aIndex - bIndex;
                               })
                             ).map((ite, index) => (
-                              <div className="tooltip shrink-0" key={index}>
-                                <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                              <div className="tooltip" key={index}>
+                                <div className="tooltip-content bg-black text-white font-[Ale] rounded-none">
                                   <div className="text-[11px]">{p9boons[ite]}</div>
                                 </div>
                                 <img
@@ -229,8 +217,8 @@ export default function Ladder() {
                         {boon === `Keep` &&
                           obj.ks &&
                           sToA(obj.ks).map((ite, index) => (
-                            <div className="tooltip shrink-0 flex" key={index}>
-                              <div className="tooltip-content bg-white text-black font-[Ubuntu] rounded-none">
+                            <div className="tooltip flex" key={index}>
+                              <div className="tooltip-content bg-black text-white font-[Ale] rounded-none">
                                 <div className="text-[11px]">{ite}</div>
                               </div>
                               <img
@@ -241,17 +229,6 @@ export default function Ladder() {
                               />
                             </div>
                           ))}
-                        {boon === `Arcana` && obj.arcana && (
-                          <div>
-                            {deCodeArcana(obj.arcana)?.includes(`c12`) ? (
-                              <div className="text-red-400">Death</div>
-                            ) : deCodeArcana(obj.arcana)?.includes(`c23`) ? (
-                              <div className="text-orange-200">Strength</div>
-                            ) : (
-                              ``
-                            )}
-                          </div>
-                        )}
                       </div>
                       <div className="text-end">{obj.tim}</div>
                     </div>

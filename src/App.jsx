@@ -230,7 +230,7 @@ export default function App() {
                               }`}
                             >
                               <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded text-start">
+                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
                                   {obj.des}
                                 </div>
                               </div>
