@@ -2638,7 +2638,6 @@ export const v2data = [
     fam: "Cat",
     cor: "HepAttack,HerSpecial,ZeuCast,ApoSprint,Magick",
     ham: "Wicked Thrasher,Rapid Thrasher",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Time Piece,Engraved Pin",
   },
   {
@@ -2690,7 +2689,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HesAttack,PosSpecial,ApoCast,HerSprint,Magick",
     ham: "Reaper Frame,Exhaust Riser",
-    pool: "",
     ks: "Jeweled Pom,Fig Leaf,Time Piece,Lion Fang",
   },
   {
@@ -2725,7 +2723,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HesAttack,DemSpecial,AphCast,Sprint,AphMagick",
     ham: "Fetching Array,Bolstered Array",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Ghost Onion,Engraved Pin",
   },
   {
@@ -2743,7 +2740,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,ZeuSpecial,HepCast,Sprint,HerMagick",
     ham: "Possessed Array,Fetching Array",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -2761,7 +2757,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,HepSpecial,HesCast,DemSprint,Magick",
     ham: "Dashing Heave,Colossus Slash,Seething Marauder",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Calling Card,White Antler",
   },
   {
@@ -2779,7 +2774,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ApoAttack,DemSpecial,HesCast,ApoSprint,AphMagick",
     ham: "Psychic Whirlwind,Rapid Slash,Siege Shredder",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,White Antler",
   },
   {
@@ -2797,7 +2791,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,DemSpecial,PosCast,HepSprint,DemMagick",
     ham: "Wicked Onslaught,Hidden Knives,Dancing Knives,Trick Knives",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,White Antler",
   },
   {
@@ -2815,7 +2808,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,DemSpecial,HepCast,ApoSprint,ZeuMagick",
     ham: "Melting Swipe,Shimmering Moonshot,Extending Wallop",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,White Antler",
   },
   {
@@ -2833,7 +2825,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,AphSpecial,HesCast,Sprint,HesMagick",
     ham: "Furious Blaze,Rising Helix,Dividing Blaze",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,Ghost Onion",
   },
   {
@@ -2851,7 +2842,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,AphSpecial,HesCast,Sprint,AphMagick",
     ham: "Whirling Helix,Sudden Burst",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Ghost Onion,Engraved Pin",
   },
   {
@@ -2869,7 +2859,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "Attack,ZeuSpecial,AphCast,ZeuSprint,Magick",
     ham: "Hidden Helix",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Ghost Onion,Luckier Tooth",
   },
   {
@@ -2887,7 +2876,6 @@ export const v2data = [
     fam: "Cat",
     cor: "ZeuAttack,DemSpecial,PosCast,ApoSprint,ApoMagick",
     ham: "Mirrored Thrasher,Wicked Thrasher",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Moon Beam,Knuckle Bones",
   },
   {
@@ -2905,7 +2893,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "Attack,ZeuSpecial,ApoCast,AphSprint,ApoMagick",
     ham: "Rapid Slash,Seething Marauder",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Metallic Droplet,Ghost Onion",
   },
   {
@@ -2923,7 +2910,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,Special,DemCast,ApoSprint,AphMagick",
     ham: "Psychic Whirlwind,Furious Whirlwind",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Lion Fang,Luckier Tooth",
   },
   {
@@ -2941,7 +2927,6 @@ export const v2data = [
     fam: "Frog",
     cor: "AphAttack,Special,AphCast,ApoSprint,ApoMagick",
     ham: "Psychic Whirlwind,Iron Core,Seething Marauder",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,Blackened Fleece",
   },
   {
@@ -2959,7 +2944,6 @@ export const v2data = [
     fam: "Frog",
     cor: "AreAttack,ZeuSpecial,HesCast,AphSprint,AphMagick",
     ham: "Colossus Slash,Dashing Heave",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Ghost Onion,Luckier Tooth",
   },
   {
@@ -2977,7 +2961,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ApoAttack,ZeuSpecial,HesCast,Sprint,HesMagick",
     ham: "Bolstered Array,Fetching Array,Possessed Array",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,Aromatic Phial",
   },
   {
@@ -2995,7 +2978,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "PosAttack,DemSpecial,Cast,ApoSprint,AphMagick",
     ham: "Bolstered Array,Looming Ignition",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Gorgon Amulet,White Antler",
   },
   {
@@ -3013,7 +2995,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,AreSpecial,DemCast,Sprint,HesMagick",
     ham: "Possessed Array,Looming Ignition",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Luckier Tooth,Engraved Pin",
   },
   {
@@ -3031,7 +3012,6 @@ export const v2data = [
     fam: "Raven",
     cor: "ApoAttack,ZeuSpecial,HerCast,ApoSprint,HesMagick",
     ham: "Furious Rockets,Siege Frame",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Ghost Onion,White Antler",
   },
   {
@@ -3049,7 +3029,6 @@ export const v2data = [
     fam: "Raven",
     cor: "PosAttack,Special,HesCast,Sprint,AphMagick",
     ham: "Venerated Relic",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Ghost Onion,Lion Fang",
   },
   {
@@ -3067,7 +3046,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,HerSpecial,ApoCast,Sprint,ApoMagick",
     ham: "Colossus Driver,Leering Glance",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -3082,7 +3060,6 @@ export const v2data = [
     fam: "Frog",
     cor: "HerAttack,ZeuSpecial,DemCast,ApoSprint,ApoMagick",
     ham: "Psychic Whirlwind,Colossus Slash",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Moon Beam,Engraved Pin",
   },
   {
@@ -3097,7 +3074,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,ZeuSpecial,HesCast,ApoSprint,Magick",
     ham: "Soulfilled Ankh,Dual Moonshot",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,Engraved Pin",
   },
   {
@@ -3114,7 +3090,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,HepSpecial,DemCast,Sprint,AphMagick",
     ham: "Shimmering Rockets,Furious Rockets",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Ghost Onion,Engraved Pin",
   },
   {
@@ -3132,7 +3107,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HesAttack,ZeuSpecial,PosCast,ApoSprint,HesMagick",
     ham: "Reaper Frame",
-    pool: "",
     ks: "Jeweled Pom,Fig Leaf,Time Piece,Lion Fang",
   },
   {
@@ -3150,7 +3124,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "Attack,HerSpecial,DemCast,Sprint,AphMagick",
     ham: "Trick Knives,Hidden Knives,Sudden Flurry",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,White Antler",
   },
   {
@@ -3168,7 +3141,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "PosAttack,AreSpecial,AphCast,ApoSprint,ApoMagick",
     ham: "Soulfilled Ankh,Vampiric Cataclysm,Shimmering Moonshot",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Ghost Onion,Lion Fang",
   },
   {
@@ -3186,7 +3158,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "AphAttack,HepSpecial,DemCast,Sprint,AphMagick",
     ham: "Dashing Heave,Seething Marauder",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Engraved Pin,Engraved Pin",
   },
   {
@@ -3204,7 +3175,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,DemSpecial,HesCast,ApoSprint,HesMagick",
     ham: "Possessed Array,Melting Break",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -3219,7 +3189,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HesAttack,ZeuSpecial,DemCast,HerSprint,Magick",
     ham: "Leaden Blaze,Dividing Blaze",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Moon Beam,Engraved Pin",
   },
   {
@@ -3237,7 +3206,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,DemSpecial,AphCast,HepSprint,ZeuMagick",
     ham: "Sudden Flurry,Trick Knives,Final Slice",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,White Antler",
   },
   {
@@ -3255,7 +3223,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,HerSpecial,ApoCast,ApoSprint,AreMagick",
     ham: "Garmr Gaze",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Engraved Pin,Engraved Pin",
   },
   {
@@ -3272,7 +3239,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,AphSpecial,HesCast,Sprint,AphMagick",
     ham: "Reaper Knives,Trick Knives",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Silken Sash,White Antler",
   },
   {
@@ -3290,7 +3256,6 @@ export const v2data = [
     fam: "Raven",
     cor: "AphAttack,AphSpecial,ZeuCast,HerSprint,Magick",
     ham: "Dual Moonshot,Melting Swipe",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Calling Card,Luckier Tooth",
   },
   {
@@ -3308,7 +3273,6 @@ export const v2data = [
     fam: "Frog",
     cor: "HesAttack,AphSpecial,AphCast,Sprint,HepMagick",
     ham: "Dual Moonshot",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Engraved Pin,Engraved Pin",
   },
   {
@@ -3326,7 +3290,6 @@ export const v2data = [
     fam: "Frog",
     cor: "HesAttack,AphSpecial,ZeuCast,Sprint,AphMagick",
     ham: "Inverted Blaze,Hidden Helix",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Luckier Tooth,Engraved Pin",
   },
   {
@@ -3341,7 +3304,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HesAttack,HerSpecial,HesCast,Sprint,HesMagick",
     ham: "Mirrored Thrasher,Rapid Thrasher",
-    pool: "",
     ks: "Jeweled Pom,Fig Leaf,Gorgon Amulet,Engraved Pin",
   },
   {
@@ -3359,7 +3321,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,HerSpecial,Cast,ApoSprint,AreMagick",
     ham: "Launcher Frame,Shimmering Rockets",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -3374,7 +3335,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,HepSpecial,PosCast,Sprint,HesMagick",
     ham: "Vampiric Cataclysm,Rapid Thrasher",
-    pool: "",
     ks: "Jeweled Pom,Fig Leaf,Transcendent Embryo,White Antler",
   },
   {
@@ -3389,7 +3349,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,AreSpecial,DemCast,ApoSprint,ApoMagick",
     ham: "Psychic Whirlwind,Colossus Slash",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -3407,7 +3366,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HesAttack,ZeuSpecial,ZeuCast,Sprint,AphMagick",
     ham: "Dashing Heave,Psychic Whirlwind",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Engraved Pin,White Antler",
   },
   {
@@ -3424,7 +3382,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,DemSpecial,ZeuCast,DemSprint,AphMagick",
     ham: "Wicked Thrasher,Mirrored Thrasher",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,Engraved Pin",
   },
   {
@@ -3439,7 +3396,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "PosAttack,ApoSpecial,AphCast,ApoSprint,HesMagick",
     ham: "Soulfilled Ankh,Aetheric Moonburst,Rapid Thrasher",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,White Antler",
   },
   {
@@ -3456,7 +3412,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HesAttack,ZeuSpecial,PosCast,ApoSprint,Magick",
     ham: "Trick Knives,Reaper Knives",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Engraved Pin,Engraved Pin",
   },
   {
@@ -3473,7 +3428,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,HesSpecial,HesCast,ApoSprint,Magick",
     ham: "Trick Knives,Reaper Knives",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,Engraved Pin",
   },
   {
@@ -3488,9 +3442,8 @@ export const v2data = [
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMywyLDIsMTJd",
     tim: "19:13.22",
     fam: "Polecat",
-    cor: "HerAttack,HesSpecial,HesCast,ApoSprint,Magick",
+    cor: "PosAttack,AphSpecial,HesCast,Sprint,AphMagick",
     ham: "Bolstered Array,Volatile Array",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Concave Stone,Engraved Pin",
   },
   {
@@ -3508,7 +3461,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,HesSpecial,AphCast,ZeuSprint,Magick",
     ham: "Shimmering Rockets,Rapid Frame,Furious Rockets",
-    pool: "",
     ks: "Jeweled Pom,Fig Leaf,Experimental Hammer,White Antler",
   },
   {
@@ -3523,7 +3475,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,DemSpecial,HerCast,AphSprint,Magick",
     ham: "Shimmering Moonshot,Rapid Moonshot",
-    pool: "",
     ks: "Jeweled Pom,Fig Leaf,Knuckle Bones,White Antler",
   },
   {
@@ -3538,7 +3489,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,HepSpecial,HesCast,ApoSprint,HesMagick",
     ham: "Rapid Thrasher,Shimmering Moonshot",
-    pool: "",
     ks: "Jeweled Pom,Fig Leaf,Knuckle Bones,White Antler",
   },
   {
@@ -3553,7 +3503,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,Special,AphCast,HepSprint,HerMagick",
     ham: "Possessed Array,Wide Grin",
-    pool: "",
     ks: "Jeweled Pom,Fig Leaf,Knuckle Bones,White Antler",
   },
   {
@@ -3568,7 +3517,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,DemSpecial,HesCast,HepSprint,Magick",
     ham: "Reaper Knives,Trick Knives,Final Slice",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,White Antler",
   },
   {
@@ -3583,7 +3531,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,ApoSpecial,ZeuCast,ApoSprint,Magick",
     ham: "World Collider,Elephant Rockets",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,White Antler,Lion Fang",
   },
   {
@@ -3601,7 +3548,6 @@ export const v2data = [
     fam: "Raven",
     cor: "PosAttack,HesSpecial,DemCast,ApoSprint,PosMagick",
     ham: "Shimmering Rockets,Reaper Frame",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,White Antler",
   },
   {
@@ -3619,7 +3565,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "PosAttack,Special,HesCast,AphSprint,HesMagick",
     ham: "Possessed Array",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Engraved Pin,Engraved Pin",
   },
   {
@@ -3634,7 +3579,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ApoAttack,Special,ZeuCast,ApoSprint,PosMagick",
     ham: "Melting Cross,Siege Frame",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Engraved Pin,Engraved Pin",
   },
   {
@@ -3651,7 +3595,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "AphAttack,HerSpecial,HesCast,ApoSprint,Magick",
     ham: "Final Slice,Wicked Onslaught",
-    pool: "",
     ks: "Jeweled Pom,Ghost Onion,Luckier Tooth,White Antler",
   },
   {
@@ -3666,7 +3609,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,AreSpecial,PosCast,PosSprint,AphMagick",
     ham: "Soulfilled Ankh,Scarab Etchings",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Knuckle Bones,Engraved Pin",
   },
   {
@@ -3681,7 +3623,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,DemSpecial,HesCast,HerSprint,Magick",
     ham: "Melting Swipe,Cross Cataclysm",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Knuckle Bones,White Antler",
   },
   {
@@ -3696,7 +3637,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,HerSpecial,AphCast,Sprint,HerMagick",
     ham: "Colossus Driver,Rapid Driver",
-    pool: "",
     ks: "Jeweled Pom,Fig Leaf,Knuckle Bones,White Antler",
   },
   {
@@ -3713,7 +3653,6 @@ export const v2data = [
     fam: "Raven",
     cor: "DemAttack,HerSpecial,HerCast,ApoSprint,HerMagick",
     ham: "Rapid Driver,Fetching Array",
-    pool: "",
     ks: "Iridescent Fan,Cloud Bangle,Knuckle Bones,White Antler",
   },
   {
@@ -3731,7 +3670,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HesAttack,HerSpecial,ZeuCast,ApoSprint,ApoMagick",
     ham: "Mirrored Ankh,Rapid Thrasher",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Knuckle Bones,Engraved Pin",
   },
   {
@@ -3746,7 +3684,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,PosSpecial,DemCast,HerSprint,Magick",
     ham: "Dual Moonshot,Rapid Thrasher",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,White Antler,Engraved Pin",
   },
   {
@@ -3761,7 +3698,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,AreSpecial,DemCast,Sprint,HerMagick",
     ham: "Possessed Array,Boosted Ignition",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,White Antler,Silver Wheel",
   },
   {
@@ -3776,7 +3712,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,HerSpecial,DemCast,ApoSprint,Magick",
     ham: "Colossus Driver,Leering Glance",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Knuckle Bones,White Antler",
   },
   {
@@ -3791,7 +3726,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,ZeuSpecial,HesCast,Sprint,Magick",
     ham: "Melting Sickle,Trick Knives",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,White Antler,Gorgon Amulet",
   },
   {
@@ -3806,7 +3740,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "Attack,ApoSpecial,PosCast,PosSprint,ApoSprint",
     ham: "Giga Cleaver,Sudden Cleaver",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Engraved Pin",
   },
   {
@@ -3821,7 +3754,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,ZeuSpecial,AphCast,AphSprint,HerMagick",
     ham: "Hidden Helix,Clean Coil",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Knuckle Bones,White Antler",
   },
   {
@@ -3836,7 +3768,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HesAttack,ZeuSpecial,DemCast,HerSprint,Magick",
     ham: "Siege Frame,Shimmering Rockets",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -3851,7 +3782,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "Attack,HerSpecial,PosCast,ApoSprint,ApoMagick",
     ham: "Giga Cleaver,Sudden Cleaver",
-    pool: "",
     ks: "Jeweled Pom,Fig Leaf,Knuckle Bones,White Antler",
   },
   {
@@ -3869,7 +3799,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,ApoSpecial,DemCast,ApoSprint,Magick",
     ham: "Elephant Rockets,Counter Supreme",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Transcendent Embryo,White Antler",
   },
   {
@@ -3887,7 +3816,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "Attack,ApoSpecial,DemCast,Sprint,ApoMagick",
     ham: "Sudden Cleaver,Siege Shredder,Giga Cleaver",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,White Antler",
   },
   {
@@ -3905,7 +3833,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,DemSpecial,ZeuCast,HerSprint,DemMagick",
     ham: "Psychic Whirlwind,Dashing Heave",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,White Antler",
   },
   {
@@ -3923,7 +3850,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "DemAttack,ZeuSpecial,AphCast,ApoSprint,DemMagick",
     ham: "Wide Grin,Mega Driver,Possessed Array",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,Silver Wheel",
   },
   {
@@ -3941,7 +3867,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "DemAttack,ApoSpecial,HerCast,ApoSprint,AphMagick",
     ham: "Melting Helix",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Ghost Onion,White Antler",
   },
   {
@@ -3959,7 +3884,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "AphAttack,ZeuSpecial,ApoCast,DemSprint,Magick",
     ham: "Sureshot Flurry,Reaper Knives",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Ghost Onion,White Antler",
   },
   {
@@ -3974,7 +3898,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "AphAttack,ZeuSpecial,PosCast,PosSprint,Magick",
     ham: "Dashing Heave,Seething Marauder",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,White Antler,Engraved Pin",
   },
   {
@@ -3989,7 +3912,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HesAttack,HesCast,HerSprint,DemMagick",
     ham: "Rapid Onslaught,Final Slice,Wicked Onslaught",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Time Piece,Lion Fang",
   },
   {
@@ -4004,7 +3926,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HesAttack,ZeuSpecial,PosCast,Sprint,Magick",
     ham: "Trick Knives,Melting Sickle",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,White Antler,Engraved Pin",
   },
   {
@@ -4019,7 +3940,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "AphAttack,ZeuSpecial,DemCast,PosSprint,AphMagick",
     ham: "Iron Core,Psychic Whirlwind",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Engraved Pin,Engraved Pin",
   },
   {
@@ -4037,7 +3957,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "Attack,HerSpecial,ApoCast,DemSprint,Magick",
     ham: "Sudden Flurry,Melting Sickle,Wicked Onslaught,Trick Knives",
-    pool: "",
     ks: "Jeweled Pom,Experimental Hammer,Calling Card,White Antler",
   },
   {
@@ -4055,7 +3974,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "Attack,AreSpecial,HepCast,DemSprint,ApoMagick",
     ham: "Ripper Rockets,Siege Frame,Shimmering Rockets",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,White Antler",
   },
   {
@@ -4073,7 +3991,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,AreSpecial,HesCast,Sprint,AphMagick",
     ham: "Dual Moonshot,Melting Swipe,Giga Moonburst",
-    pool: "",
     ks: "Cloud Bangle,Experimental Hammer,Transcendent Embryo,White Antler",
   },
   {
@@ -4091,7 +4008,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,DemSpecial,PosCast,ApoSprint,Magick",
     ham: "Melting Swipe,Wicked Thrasher",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Calling Card,White Antler",
   },
   {
@@ -4106,7 +4022,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,AphSpecial,DemCast,Sprint,ApoMagick",
     ham: "Aetheric Moonburst,Mirrored Thrasher",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -4121,7 +4036,6 @@ export const v2data = [
     fam: "Hound",
     cor: "Attack,HerSpecial,Cast,ApoSprint,ApoMagick",
     ham: "Dashing Heave,Sudden Cleaver",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,White Antler,Lion Fang",
   },
   {
@@ -4136,7 +4050,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,DemSpecial,ZeuCast,ApoSprint,HesMagick",
     ham: "Mirrored Thrasher,Cross Cataclysm",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -4151,7 +4064,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,HepSpecial,HesCast,Sprint,Magick",
     ham: "Rapid Thrasher,Scarab Etchings",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -4166,7 +4078,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "Attack,DemSpecial,ApoCast,AreSprint,HerMagick",
     ham: "Giga Cleaver,Siege Shredder",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -4181,7 +4092,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,DemSpecial,ZeuCast,ApoSprint,ApoMagick",
     ham: "Inverted Blaze,Mega Blaze",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -4196,7 +4106,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,HerSpecial,ApoCast,ApoSprint,DemMagick",
     ham: "Mirrored Thrasher,Cross Cataclysm,Shimmering Moonshot",
-    pool: "",
     ks: "Jeweled Pom,Silver Wheel,Experimental Hammer,Metallic Droplet",
   },
   {
@@ -4211,7 +4120,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,HerSpecial,DemCast,PosSprint,PosMagick",
     ham: "Rapid Frame,Shimmering Rockets",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -4226,7 +4134,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,HerSpecial,DemCast,ApoSprint,Magick",
     ham: "Trick Knives,Melting Sickle",
-    pool: "",
     ks: "Jeweled Pom,Ghost Onion,Engraved Pin,Engraved Pin",
   },
   {
@@ -4241,7 +4148,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,HerSpecial,HesCast,ApoSprint,Magick",
     ham: "Wicked Onslaught,Trick Knives",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Knuckle Bones,White Antler",
   },
   {
@@ -4256,7 +4162,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,Special,DemCast,ApoSprint,ApoMagick",
     ham: "Phantom Brand,Rapid Onslaught",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -4271,7 +4176,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,ZeuSpecial,HesCast,Sprint,ApoMagick",
     ham: "Sweeping Ambush,Banshee Brand",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,Engraved Pin",
   },
   {
@@ -4289,7 +4193,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ApoAttack,HesSpecial,DemCast,ApoSprint,ApoMagick",
     ham: "Shimmering Rockets,Exhaust Riser",
-    pool: "",
     ks: "Jeweled Pom,Ghost Onion,Time Piece,Engraved Pin",
   },
   {
@@ -4307,7 +4210,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HesAttack,HerSpecial,ApoCast,ApoSprint,AphMagick",
     ham: "",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Ghost Onion,Engraved Pin",
   },
   {
@@ -4324,7 +4226,6 @@ export const v2data = [
     fam: "Cat",
     cor: "ZeuAttack,Special,HepCast,ApoSprint,Magick",
     ham: "Wicked Thrasher,Melting Swipe",
-    pool: "",
     ks: "Jeweled Pom,Engraved Pin,Engraved Pin,Engraved Pin",
   },
   {
@@ -4339,7 +4240,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "ZeuAttack,HerSpecial,DemCast,Sprint,HerMagick",
     ham: "Hidden Helix,Rising Helix",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,White Antler,Metallic Droplet",
   },
   {
@@ -4354,7 +4254,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,HesSpecial,DemCast,Sprint,HesMagick",
     ham: "Psychic Whirlwind,Furious Whirlwind",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Knuckle Bones,White Antler",
   },
   {
@@ -4369,7 +4268,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,HepSpecial,DemCast,Sprint,AphMagick",
     ham: "Banshee Brand,Wicked Onslaught",
-    pool: "",
     ks: "Jeweled Pom,Fig Leaf,Knuckle Bones,White Antler",
   },
   {
@@ -4384,7 +4282,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "AphAttack,HerSpecial,DemCast,ApoSprint,HerMagick",
     ham: "Possessed Array,Wide Grin",
-    pool: "",
     ks: "Jeweled Pom,Time Piece,Engraved Pin,White Antler",
   },
   {
@@ -4399,7 +4296,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HepAttack,ZeuSpecial,ZeuCast,DemSprint,PosMagick",
     ham: "Sweeping Ambush,Final Slice",
-    pool: "",
     ks: "Jeweled Pom,Calling Card,Engraved Pin,White Antler",
   },
   {
@@ -4416,7 +4312,6 @@ export const v2data = [
     fam: "Polecat",
     cor: "HerAttack,ZeuSpecial,HesCast,Sprint,AphMagick",
     ham: "Furious Whirlwind,Psychic Whirlwind,Seething Marauder",
-    pool: "",
     ks: "Jeweled Pom,Ghost Onion,Engraved Pin,Engraved Pin",
   },
   {
