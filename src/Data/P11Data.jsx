@@ -5689,7 +5689,7 @@ export const p11data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/elEevKSimag?si=GGdk6O7sBOsQ29-c",
-    des: "No Trick Knives required! Also, this is my greatest 62 Fear run yet!",
+    des: "#usum No Trick Knives required! Also, this is my greatest 62 Fear run yet!",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMzIiwiYzYiLCJjNyIsImMxMSIsImMxMiIsImMxMyIsImMxNCIsImMxNSIsImMxNiIsImMxOCIsImMyMiIsImMyNCJd",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",

@@ -1869,7 +1869,7 @@ export const v1data = [
     loc: "Surface",
     fea: "62",
     src: "https://youtu.be/_-I3BRxy2S4?si=-fQ46TueHorhNLts",
-    des: "Black Night Banishment hit NOTHING this time, cause I did not take it. Instead I relied on Gorgon Amulet to give me exactly Renewed Faith. Thanks Athena, I guess. #usum",
+    des: "#usum Black Night Banishment hit NOTHING this time, cause I did not take it. Instead I relied on Gorgon Amulet to give me exactly Renewed Faith. Thanks Athena, I guess. #usum",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMzIiwiYzUiLCJjNiIsImM3IiwiYzkiLCJjMTAiLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTgiLCJjMjQiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -2671,7 +2671,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/mv6TvA4cPFQ?si=Y91Q245LfWlbyJva",
-    des: "mirrored thrasher + cinerary circle start. not really sure if cin circ did much though? big shoutout to another double-double hammer run. thank you oh blessed hammer. In reality, this build was probably better off sticking to dash-strike spam, but i really want momus omegas to be a core part of the gameplay.",
+    des: "#usum mirrored thrasher + cinerary circle start. not really sure if cin circ did much though? big shoutout to another double-double hammer run. thank you oh blessed hammer. In reality, this build was probably better off sticking to dash-strike spam, but i really want momus omegas to be a core part of the gameplay.",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMzIiwiYzUiLCJjNiIsImM3IiwiYzEwIiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE4IiwiYzE5IiwiYzI0Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -2900,7 +2900,7 @@ export const v1data = [
     loc: "Surface",
     fea: "60",
     src: "https://www.youtube.com/watch?v=AWCdDBq-85w",
-    des: "very lucky",
+    des: "very lucky #usum",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzMiLCJjNCIsImM1IiwiYzYiLCJjNyIsImM4IiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzI0Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSwyLDIsMiwzLDYsMCwyLDIsMTJd",
@@ -3538,7 +3538,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://www.youtube.com/watch?v=ebQX_Yyq0Ts&t=153s",
-    des: "This Thanatos Build is SHOCKING! #speed",
+    des: "#usum This Thanatos Build is SHOCKING! #speed",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzMiLCJjNiIsImM3IiwiYzgiLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTgiLCJjMTkiLCJjMjMiLCJjMjQiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -3591,7 +3591,7 @@ export const v1data = [
     loc: "Surface",
     fea: "62",
     src: "https://www.youtube.com/watch?v=VVRIsWci49U",
-    des: "effectively but not technically a 65f run; kids at home: remember to turn on void 3",
+    des: "#usum effectively but not technically a 65f run; kids at home: remember to turn on void 3",
     arcana: "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMyIsImMyMCIsImMyMyIsImMyNSJd",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
     tim: "18:42.29",
@@ -3788,7 +3788,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/MXnPVJ5Bzdc",
-    des: "Picked Death + Strength Arcanas but used only 1 DD lol.",
+    des: "#usum Picked Death + Strength Arcanas but used only 1 DD lol.",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM0IiwiYzUiLCJjNiIsImM3IiwiYzgiLCJjMTAiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTgiLCJjMjMiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -3860,7 +3860,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/_NvixHadXRY",
-    des: "No Jeweled Pom, White Antler start.",
+    des: "#usum No Jeweled Pom, White Antler start.",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMzIiwiYzUiLCJjNiIsImM3IiwiYzgiLCJjMTAiLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTgiLCJjMjIiLCJjMjQiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -3896,7 +3896,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://www.youtube.com/watch?v=o2Vz_ADlL1w",
-    des: " This Mel Blades Blitz Build is BONKERS.",
+    des: "#usum This Mel Blades Blitz Build is BONKERS.",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzMiLCJjNiIsImM3IiwiYzgiLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTgiLCJjMTkiLCJjMjQiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -3944,7 +3944,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/yw0oKlnSfTk?si=bkYDgSUH_hek0c8m",
-    des: "speeb",
+    des: "speeb #usum #speed",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzMiLCJjNiIsImM3IiwiYzgiLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTciLCJjMTgiLCJjMjMiLCJjMjQiLCJjMjUiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -4158,7 +4158,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/jYe6xzNL2wY?si=cUpXe_QJiwuzlmuY",
-    des: "Such a weird setup: Ares Special, Heph Cast, flood Gain, and 29 Grasp + Wayward Son. But a win’s a win I guess #usum",
+    des: "#usum Such a weird setup: Ares Special, Heph Cast, flood Gain, and 29 Grasp + Wayward Son. But a win’s a win I guess #usum",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzUiLCJjNiIsImM3IiwiYzgiLCJjMTAiLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTciLCJjMTgiLCJjMjQiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -4266,7 +4266,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/Pm0gmQar374?si=MdQ-bmjsUykPmd2k",
-    des: "Why not take Fates whim AND Gorgon Amulet? Also this Chronos fight was played badly, but a win is a win.",
+    des: "#usum Why not take Fates whim AND Gorgon Amulet? Also this Chronos fight was played badly, but a win is a win.",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMzIiwiYzUiLCJjNiIsImM3IiwiYzEwIiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzE4IiwiYzI0Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -4284,7 +4284,7 @@ export const v1data = [
     loc: "Surface",
     fea: "62",
     src: "https://youtu.be/HMZ1ul0fRcE?si=6_ZM_8BU0qBywhR7",
-    des: "My first Surface 62! BNB hit Hubris, which actually mattered for the clear.",
+    des: "#usum My first Surface 62! BNB hit Hubris, which actually mattered for the clear.",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMzIiwiYzUiLCJjNiIsImM3IiwiYzEwIiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzE4IiwiYzI0Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -4338,7 +4338,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/54at_5VlBes",
-    des: "Hel with Godsent Total Eclipse",
+    des: "#usum Hel with Godsent Total Eclipse",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzMiLCJjNSIsImM2IiwiYzciLCJjOCIsImM5IiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE4IiwiYzI0Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -4812,7 +4812,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/pdiSraEzQGA?si=RVuMv7-HfrK67k2v",
-    des: "The STRONGEST Dash Strike Build in Hades 2?",
+    des: "#usum The STRONGEST Dash Strike Build in Hades 2?",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzMiLCJjNiIsImM3IiwiYzgiLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTgiLCJjMTkiLCJjMjQiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -5073,7 +5073,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/8L2mehVXQ0g",
-    des: "missed out on the sub 14:30 sadge",
+    des: "missed out on the sub 14:30 sadge #usum",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzMiLCJjNiIsImM3IiwiYzgiLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTciLCJjMTgiLCJjMjMiLCJjMjQiLCJjMjUiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -5139,7 +5139,7 @@ export const v1data = [
     loc: "Surface",
     fea: "58",
     src: "https://youtu.be/NrLzAOllJgc?si=eY1JCTX_UeH3uX4O",
-    des: "OH MY GOD. 1 MINUTE OVERTIME AND I STILL WON. THANK YOU TRICK KNIVES BLITZ HAIL STORM.",
+    des: "#usum OH MY GOD. 1 MINUTE OVERTIME AND I STILL WON. THANK YOU TRICK KNIVES BLITZ HAIL STORM.",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMiIsImM2IiwiYzciLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTciLCJjMTgiLCJjMjAiLCJjMjMiLCJjMjQiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzMsMywyLDYsMywzLDIsNSwyLDIsMiwzLDYsMCwyLDIsMTJd",
@@ -5253,7 +5253,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://www.youtube.com/watch?v=f1TN9PLuXhM",
-    des: "don't mind me, just taking advantage of an OP weapon",
+    des: "#usum don't mind me, just taking advantage of an OP weapon",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjNiIsImM3IiwiYzgiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTciLCJjMTgiLCJjMTkiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -5271,7 +5271,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://www.youtube.com/watch?v=DxNhnzM5V08",
-    des: "This weapon is absolutely slept on! Sure, there are higher damage options out there but the smooth playstyle makes it a really solid option for fear pushing.",
+    des: "#usum This weapon is absolutely slept on! Sure, there are higher damage options out there but the smooth playstyle makes it a really solid option for fear pushing.",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM0IiwiYzYiLCJjNyIsImM4IiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzE4Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -5340,7 +5340,7 @@ export const v1data = [
     loc: "Surface",
     fea: "62",
     src: "https://youtu.be/sDyAaqha5ec",
-    des: "You can see me fighting the aspectless demons, good thing Ares doesn't take no for an answer I guess",
+    des: "#usum You can see me fighting the aspectless demons, good thing Ares doesn't take no for an answer I guess",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMyIsImM1IiwiYzYiLCJjNyIsImM4IiwiYzEwIiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE4IiwiYzE5IiwiYzI0Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -5439,7 +5439,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://www.youtube.com/watch?v=Nce5Ak--1e8",
-    des: "old grudge start let's go ",
+    des: "#usum old grudge start let's go",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImM0IiwiYzYiLCJjNyIsImM4IiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzE4Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -5775,7 +5775,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/JVoqqf6hGRY",
-    des: "Not included are the Hex (Phase Shift) and Chaos Boon (revival), both of which were instrumental to the run. 1.0 hype!",
+    des: "#usum Not included are the Hex (Phase Shift) and Chaos Boon (revival), both of which were instrumental to the run. 1.0 hype!",
     arcana: "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjNyIsImMyMCIsImMyMyIsImMyNSJd",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwwLDYsMywyLDIsMTJd",
     tim: "18:33.91",
@@ -5912,7 +5912,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/MtZK-X2gG14?si=JWCKbQigatLkRmL6",
-    des: "#speed Not often you see Onion taken in a run that goes Death Defiance instead of Strength, but it ended up being a good take here. Very interesting run with lots of clean part ones of boss fights followed by poor finishes. Got the W, though.",
+    des: "#usum #speed Not often you see Onion taken in a run that goes Death Defiance instead of Strength, but it ended up being a good take here. Very interesting run with lots of clean part ones of boss fights followed by poor finishes. Got the W, though.",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMyIsImM1IiwiYzYiLCJjNyIsImM4IiwiYzEwIiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzE4IiwiYzIwIiwiYzI0IiwiYzI1Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -6124,7 +6124,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/7_GGPxsxMIM?si=RiYdQf-JV_kzpST2",
-    des: "trick knives from experimental hammer in oceanus, cerb and chronos fights were awful, carried by survive survive survive and renewed faith ",
+    des: "#usum trick knives from experimental hammer in oceanus, cerb and chronos fights were awful, carried by survive survive survive and renewed faith ",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMzIiwiYzUiLCJjNiIsImM3IiwiYzEwIiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzE4IiwiYzI0Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",

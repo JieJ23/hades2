@@ -3966,7 +3966,7 @@ export const v2data = [
     loc: "Underworld",
     fea: 62,
     src: "https://youtu.be/mPpqawpxHSs",
-    des: "play selene like a worse mel coat",
+    des: "#usum play selene like a worse mel coat",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMzIiwiYzUiLCJjNiIsImM3IiwiYzEwIiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzE4IiwiYzI0Il0=",
     oath: "",
@@ -5444,7 +5444,7 @@ export const v2data = [
     loc: "Underworld",
     fea: "62",
     src: "https://www.youtube.com/watch?v=IYqKuXH8JQA&t=919s",
-    des: "This is truly one of my most disgusting build hits of all time, I think. Never would have thought mel coat was going sub 12 in a million years. #speed",
+    des: "#usum This is truly one of my most disgusting build hits of all time, I think. Never would have thought mel coat was going sub 12 in a million years. #speed",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
     tim: "11:56.89",
     fam: "Polecat",
@@ -5530,7 +5530,7 @@ export const v2data = [
     loc: "Underworld",
     fea: "62",
     src: "https://www.youtube.com/watch?v=ub3PAH3xtTQ&lc=UgyGwM9u5ptWwwUkp0Z4AaABAg",
-    des: "The start of a new series: 24/24 aspects at 62 fear. The goal? How few losses can we take on the way to 1 win with every aspect?  All commentary is live except for possibly a few intros. All losses will be showed somehow as part of a video, and we'll keep track of the winrate until the end. Aspects will be rotated out for a good variety based upon my vibes and viewers' preferences.  Enjoy!",
+    des: "#usum The start of a new series: 24/24 aspects at 62 fear. The goal? How few losses can we take on the way to 1 win with every aspect?  All commentary is live except for possibly a few intros. All losses will be showed somehow as part of a video, and we'll keep track of the winrate until the end. Aspects will be rotated out for a good variety based upon my vibes and viewers' preferences.  Enjoy!",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzMiLCJjNiIsImM3IiwiYzgiLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTgiLCJjMTkiLCJjMjQiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
