@@ -36,6 +36,7 @@ export default function Ladder2() {
   const { posts, loader } = useData();
 
   const regionData = [...v1bundle, ...(posts || [])]
+    .filter((obj) => obj.des.includes("#usum"))
     .filter((obj) => obj.loc === location)
     .filter((obj) => obj.fam === fam)
     .filter((obj) => {

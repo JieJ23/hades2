@@ -35,6 +35,7 @@ export default function Ladder() {
   const { posts, loader } = useData();
 
   const regionData = [...v1bundle, ...(posts || [])]
+    .filter((obj) => obj.des.includes("#usum"))
     .filter((obj) => obj.loc === location)
     .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear)
     .filter((obj) => {
