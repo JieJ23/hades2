@@ -8,8 +8,8 @@ export const sites = [
   // { link: `Query`, nam: `Query` },
 
   // { link: `Weekly`, nam: `Weekly` },
+  { link: `Speed62`, nam: `Speed62` },
   { link: `Ladder`, nam: `Ladder` },
-  { link: `Ladder2`, nam: `Ladder2` },
 
   { link: `Stats`, nam: `Stats` },
   { link: `FearPoints`, nam: `PBs` },

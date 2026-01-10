@@ -4,6 +4,7 @@ import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import App from "./App.jsx";
+import Speed62 from "./Page/Speed62.jsx";
 import Stats from "./Page/Stats.jsx";
 
 import Archive from "./Page/Archive.jsx";
@@ -13,7 +14,6 @@ import ProfileSum from "./Page/ProfileSum.jsx";
 import Enemy from "./Page/Enemy.jsx";
 
 import Query from "./Page/Query.jsx";
-import Ladder2 from "./Page/Ladder2.jsx";
 import Ladder from "./Page/Ladder.jsx";
 import FearPoints from "./Page/FearPoints.jsx";
 import StatsCodex from "./Page/StatsCodex.jsx";
@@ -44,6 +44,8 @@ createRoot(document.getElementById("root")).render(
       <Router>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/Speed62" element={<Speed62 />} />
+
           <Route path="/Stats" element={<Stats />} />
 
           <Route path="/CustomChaos" element={<CustomChaos />} />
@@ -61,7 +63,6 @@ createRoot(document.getElementById("root")).render(
           <Route path="/TheGameAward" element={<TheGameAward />} />
 
           <Route path="/Ladder" element={<Ladder />} />
-          <Route path="/Ladder2" element={<Ladder2 />} />
           <Route path="/FearPoints" element={<FearPoints />} />
           <Route path="/StatsCodex" element={<StatsCodex />} />
 

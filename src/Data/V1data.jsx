@@ -765,7 +765,7 @@ export const v1data = [
     loc: "Underworld",
     fea: 62,
     src: "https://www.youtube.com/watch?v=5SL1TkzMsjY",
-    des: "It is now occuring to me that this is the description where #usum should go lmao, didn't do that on my other submissions",
+    des: "It is now occuring to me that this is the description where #usum should go lmao, didn't do that on my other submissions #speed",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzMiLCJjNCIsImM1IiwiYzYiLCJjNyIsImM4IiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzI0Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -3130,7 +3130,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/ZQrJAa3slP4",
-    des: "sub 15! ty echo for the save #usum",
+    des: "sub 15! ty echo for the save #usum #speed",
     tim: "14:59.62",
     fam: "Cat",
     cor: "HerAttack,ZeuSpecial,HesCast,ApoSprint,Magick",
@@ -3538,7 +3538,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://www.youtube.com/watch?v=ebQX_Yyq0Ts&t=153s",
-    des: "This Thanatos Build is SHOCKING!",
+    des: "This Thanatos Build is SHOCKING! #speed",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzMiLCJjNiIsImM3IiwiYzgiLCJjMTEiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTgiLCJjMTkiLCJjMjMiLCJjMjQiXQ==",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
@@ -5912,7 +5912,7 @@ export const v1data = [
     loc: "Underworld",
     fea: "62",
     src: "https://youtu.be/MtZK-X2gG14?si=JWCKbQigatLkRmL6",
-    des: "Not often you see Onion taken in a run that goes Death Defiance instead of Strength, but it ended up being a good take here. Very interesting run with lots of clean part ones of boss fights followed by poor finishes. Got the W, though.",
+    des: "#speed Not often you see Onion taken in a run that goes Death Defiance instead of Strength, but it ended up being a good take here. Very interesting run with lots of clean part ones of boss fights followed by poor finishes. Got the W, though.",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMyIsImM1IiwiYzYiLCJjNyIsImM4IiwiYzEwIiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzE4IiwiYzIwIiwiYzI0IiwiYzI1Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
