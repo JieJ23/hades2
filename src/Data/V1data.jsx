@@ -2954,7 +2954,7 @@ export const v1data = [
     loc: "Surface",
     fea: "62",
     src: "https://www.youtube.com/watch?v=sYQrAUJHI0k",
-    des: "15:16 holy",
+    des: "#usum #speed 15:16 holy",
     arcana:
       "https://h2crossroads.pages.dev/ArcanaDeck/?deck=WyJjMSIsImMyIiwiYzMiLCJjNCIsImM1IiwiYzYiLCJjNyIsImM4IiwiYzExIiwiYzEyIiwiYzEzIiwiYzE0IiwiYzE1IiwiYzE3IiwiYzI0Il0=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
