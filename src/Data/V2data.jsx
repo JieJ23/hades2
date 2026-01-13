@@ -3777,7 +3777,7 @@ export const v2data = [
     loc: "Surface",
     fea: 62,
     src: "https://youtu.be/BvHD6jGm-ME?si=3nhgaf3UqNoNGYzc",
-    des: "#usum",
+    des: "#speed #usum",
     tim: "14:06.13",
     fam: "Polecat",
     cor: "Attack,HerSpecial,PosCast,ApoSprint,ApoMagick",
