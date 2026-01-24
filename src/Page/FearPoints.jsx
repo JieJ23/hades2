@@ -43,13 +43,19 @@ export default function FearPoints() {
   }
   const finalized_store = store_pb
     .sort((a, b) => b.reduce((a, b) => a + +b.fea, 0) - a.reduce((a, b) => a + +b.fea, 0))
-    .slice(0, 20);
+    .slice(0, 50);
+
+  finalized_store.forEach((arr) => {
+    arr.sort((a, b) => h2AspectOrder.indexOf(a.asp) - h2AspectOrder.indexOf(b.asp));
+  });
+
+  console.log(finalized_store);
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
       <SideNav />
-      <div className="max-w-[1400px] mx-auto px-2">
+      <div className="max-w-[1600px] mx-auto px-2">
         {loader ? (
           <Loading />
         ) : (
@@ -86,48 +92,49 @@ export default function FearPoints() {
                 Early Access
               </div>
             </div>
-            <div>
-              {finalized_store.map((arr, index) => {
-                const haveAspects = [...new Set(finalized_store[index].map((obj) => obj.asp))];
-                const totalPoints = finalized_store[index].reduce((a, b) => a + +b.fea, 0);
-                return (
-                  <div
-                    className="bg-black mb-1 p-2 rounded"
-                    style={{
-                      borderStyle: "solid", // Required
-                      borderWidth: "6px",
-                      borderImage: "url('/Misc/frame.webp') 40 stretch",
-                    }}
-                  >
-                    <div className="text-[16px] flex justify-between">
-                      <div>
-                        {index + 1}. {arr[0].nam}
-                      </div>
-                      <div className="flex gap-4">
-                        <div>{finalized_store[index].length} Aspects</div>
-                        <div>{totalPoints} Points</div>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-4 md:grid-cols-12 xl:grid-cols-24 gap-2 items-center py-1">
-                      {h2AspectOrder.map((item, index2) =>
-                        haveAspects.includes(item) ? (
-                          <div className="flex flex-col items-center">
-                            <img src={`/P9/${item}.png`} alt="Aspects" className="size-10 mx-auto" />
-                            <div className="text-[12px]">
-                              {finalized_store[index].find((obj) => obj.asp === item).fea}
-                            </div>
-                          </div>
-                        ) : (
-                          <div className="flex flex-col items-center">
-                            <div className={`size-10 rounded-sm bg-[#131111] mx-auto`} />
-                            <div className="text-[12px]">-</div>
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="overflow-x-scroll my-4">
+              <table className="table whitespace-nowrap table-xs font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
+                <thead className="font-[Ale] bg-black">
+                  <tr>
+                    <th>IDX</th>
+                    <th>Player</th>
+                    {h2AspectOrder.map((ite) => (
+                      <th>
+                        <div className="min-w-[32px] flex justify-center">
+                          <img src={`/P9/${ite}.png`} alt="Aspects" className="size-8" />
+                        </div>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {finalized_store.map((obj, ind) => {
+                    // build lookup for this row
+                    const byAspect = {};
+                    obj.forEach((item) => {
+                      byAspect[item.asp] = item;
+                    });
+
+                    return (
+                      <tr key={ind}>
+                        <td className="border border-white/10">{ind + 1}</td>
+                        <td className="border border-white/10">{obj[0].nam}</td>
+                        {h2AspectOrder.map((asp) => {
+                          const entry = byAspect[asp];
+                          return (
+                            <td
+                              key={asp}
+                              className={`border border-white/10 text-black ${entry?.fea == 67 ? `bg-[#00ffaa]` : entry?.fea >= 65 ? `bg-[red]` : entry?.fea >= 62 ? `bg-[orange]` : `text-white`}`}
+                            >
+                              {entry ? entry.fea : ""}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </div>
           </div>
         )}

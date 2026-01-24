@@ -56,13 +56,13 @@ export default function Stats() {
         <div className="w-full max-w-[1400px] mx-auto">
           <div className="flex justify-center gap-2">
             {otherStats.map((obj, index) => (
-              <Link to={`/${obj.link}`} className="bg-white text-black px-2 py-0.5 rounded">
+              <Link to={`/${obj.link}`} className="bg-white text-black px-2 py-0.5 rounded-t-sm">
                 <div>{obj.nam}</div>
               </Link>
             ))}
           </div>
           <div className="overflow-x-scroll my-4">
-            <table className="table whitespace-nowrap table-xs table-zebra font-[Ubuntu] bg-black/50 border-separate border-spacing-0.5">
+            <table className="table whitespace-nowrap table-xs table-zebra font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5">
               <thead className="font-[Ale]">
                 <tr>
                   <th>Aspect</th>
@@ -90,7 +90,7 @@ export default function Stats() {
                         value={Math.floor(
                           (aspectDetails[index].entries_uw /
                             (aspectDetails[index].entries_uw + aspectDetails[index].entries_s)) *
-                            100
+                            100,
                         )}
                         max="100"
                       />
@@ -98,7 +98,7 @@ export default function Stats() {
                         {Math.floor(
                           (aspectDetails[index].entries_uw /
                             (aspectDetails[index].entries_uw + aspectDetails[index].entries_s)) *
-                            100
+                            100,
                         )}
                         %
                       </div>
@@ -113,7 +113,7 @@ export default function Stats() {
                         value={Math.floor(
                           (aspectDetails[index].entries_s /
                             (aspectDetails[index].entries_uw + aspectDetails[index].entries_s)) *
-                            100
+                            100,
                         )}
                         max="100"
                       />
@@ -121,7 +121,7 @@ export default function Stats() {
                         {Math.floor(
                           (aspectDetails[index].entries_s /
                             (aspectDetails[index].entries_uw + aspectDetails[index].entries_s)) *
-                            100
+                            100,
                         )}
                         %
                       </div>

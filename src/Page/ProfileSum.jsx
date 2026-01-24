@@ -65,7 +65,7 @@ export default function ProfileSum() {
 
   if (data) {
     const gameState = data.CurrentRun;
-    const history = Object.entries(data.GameState.RunHistory).filter((arr) => Object.entries(arr[1]).length > 2)
+    const history = Object.entries(data.GameState.RunHistory).filter((arr) => Object.entries(arr[1]).length > 2);
 
     info = {
       biomeTimes: Object.entries(gameState.BiomeGameplayTimes),
@@ -81,13 +81,15 @@ export default function ProfileSum() {
       roomHistory: Object.entries(gameState.RoomHistory),
       runHistory: history,
       runHistoryWR: history.reduce((acc, obj) => {
-        acc[obj[1].RunResult] = (acc[obj[1].RunResult] || 0) + 1
-        return acc
+        acc[obj[1].RunResult] = (acc[obj[1].RunResult] || 0) + 1;
+        return acc;
       }, {}),
-      run60Plus: history.filter(obj => obj[1].ShrinePointsCache >= 60).reduce((acc, obj) => {
-        acc[obj[1].RunResult] = (acc[obj[1].RunResult] || 0) + 1
-        return acc
-      }, {}),
+      run60Plus: history
+        .filter((obj) => obj[1].ShrinePointsCache >= 60)
+        .reduce((acc, obj) => {
+          acc[obj[1].RunResult] = (acc[obj[1].RunResult] || 0) + 1;
+          return acc;
+        }, {}),
       // Misc
       // shrineCache: Object.entries(gameState.ShrineUpgradesCache).sort(
       //   (a, b) => vowid[idShrine[a[0]]] - vowid[idShrine[b[0]]]
@@ -341,8 +343,26 @@ export default function ProfileSum() {
             </div>
             {/* Previous History */}
             <div className="my-6 px-4">
-              <div className="text-[#00ffaa]">Overall WR: {(((info.runHistoryWR["1"] + info.runHistoryWR["3"]) / info.runHistory.filter(obj => obj[1].RunResult !== 5 && obj[1].RunResult !== 6).length) * 100).toFixed(2)}%</div>
-              <div className="text-[orange]">Fear 60+ WR: {(((info.run60Plus["1"] + info.run60Plus["3"]) / info.runHistory.filter(obj => obj[1].ShrinePointsCache >= 60).filter(obj => obj[1].RunResult !== 5 && obj[1].RunResult !== 6).length) * 100).toFixed(2)}%</div>
+              <div className="text-[#00ffaa]">
+                Overall WR:{" "}
+                {(
+                  ((info.runHistoryWR["1"] + info.runHistoryWR["3"]) /
+                    info.runHistory.filter((obj) => obj[1].RunResult !== 5 && obj[1].RunResult !== 6).length) *
+                  100
+                ).toFixed(2)}
+                %
+              </div>
+              <div className="text-[orange]">
+                Fear 60+ WR:{" "}
+                {(
+                  ((info.run60Plus["1"] + info.run60Plus["3"]) /
+                    info.runHistory
+                      .filter((obj) => obj[1].ShrinePointsCache >= 60)
+                      .filter((obj) => obj[1].RunResult !== 5 && obj[1].RunResult !== 6).length) *
+                  100
+                ).toFixed(2)}
+                %
+              </div>
             </div>
             <div className="px-2 mt-4">Previous History</div>
             <div className="overflow-x-auto mb-4">
@@ -369,7 +389,7 @@ export default function ProfileSum() {
                       <td>{arr[1].RunResult}</td>
                       <td>
                         {aspectsFinder(
-                          traitAspect.find((ite) => Object.keys(arr[1].TraitCache).some((a) => a === ite))
+                          traitAspect.find((ite) => Object.keys(arr[1].TraitCache).some((a) => a === ite)),
                         )}
                       </td>
                       <td>{parsesectoTime(arr[1].GameplayTime)}</td>
@@ -403,7 +423,7 @@ export default function ProfileSum() {
             </div>
           </div>
         ) : (
-          <div className="text-[#00ffaa] px-2 text-[16px]">*Parsing Error</div>
+          <div className="text-[#00ffaa] px-2 text-[16px]">*Parsing JSON Error</div>
         )}
       </div>
       <Footer />

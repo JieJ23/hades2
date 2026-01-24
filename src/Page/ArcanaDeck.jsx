@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { defineDeck, allCards } from "../Data/DeckTrait";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
+import { idarcana } from "../Data/Arcana1";
+
+const texts = Object.values(idarcana);
 
 export default function ArcanaDeck() {
   const [deck, setDeck] = useState([]);
@@ -91,7 +94,7 @@ export default function ArcanaDeck() {
             </div>
           </section>
           <div className="flex flex-col lg:flex-row">
-            <div className="grid grid-cols-5 place-content-start max-w-[450px] h-auto mx-auto shrink-0 py-1">
+            <div className="grid grid-cols-5 place-content-start max-w-[450px] h-auto mx-auto shrink-0">
               {allCards.map((ite, idx) => (
                 <div key={idx} className="relative" onClick={() => handleDeck(ite)}>
                   <img
@@ -112,6 +115,7 @@ export default function ArcanaDeck() {
                       {defineDeck(ite).g}
                     </div>
                   </div>
+                  <div className="text-center text-[12px]">{texts[idx]}</div>
                 </div>
               ))}
             </div>

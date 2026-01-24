@@ -3,7 +3,7 @@ import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
 import { v1bundle } from "../Data/DataBundle";
-import { parseTimetoms, sToA, findValue, orderMap } from "../Data/Misc";
+import { parseTimetoms, sToA, findValue, orderMap, h2AspectOrder, parsemstoTime } from "../Data/Misc";
 import { p9boons } from "../Data/P9BoonObj";
 import { Link } from "react-router-dom";
 
@@ -15,16 +15,36 @@ import { useMemo, useState } from "react";
 export default function Speed62() {
   const { posts, loader } = useData();
   const [pageIndex, setPageIndex] = useState(1); // current page
+  const [aspect, setAspect] = useState("All");
+  const [region, setRegion] = useState("Region");
+  const [uplayer, setUplayer] = useState("0");
 
   const orderData = useMemo(() => {
-    return [...v1bundle, ...posts]
+    let data = [...v1bundle, ...posts]
       .filter((obj) => obj.des.includes("#speed"))
       .sort((a, b) => {
         const feaDiff = +b.fea - +a.fea;
         if (feaDiff !== 0) return feaDiff;
         return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+      })
+      .filter((obj) => {
+        const currentAspect = aspect === "All" || obj.asp === aspect;
+        const currentBio = region === "Region" || obj.loc === region;
+        return currentAspect && currentBio;
       });
-  }, [posts]);
+
+    if (uplayer === "1") {
+      const seen = new Set();
+      data = data.filter((item) => {
+        const key = `${item.asp}|${item.nam}`;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+    }
+
+    return data;
+  }, [posts, aspect, region, uplayer]);
 
   const ITEMS_PER_PAGE = 50;
   const TOTAL_Page = Math.ceil(orderData.length / 50);
@@ -39,26 +59,68 @@ export default function Speed62() {
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
       <SideNav />
-      <div className="max-w-[1600px] font-[Ubuntu] text-[10px] md:text-[11px] mx-auto px-1">
+      <div className="max-w-[1600px] text-[13px] md:text-[14px] font-[Ale] mx-auto px-1">
         {loader ? (
           <Loading />
         ) : (
           <>
+            <div className="max-w-[1400px] mx-auto">
+              <div className="px-2">Total Entries: {orderData.length}</div>
+              <div className="flex gap-2 px-2">
+                <select
+                  className="select select-sm rounded-none focus:outline-none focus:border-transparent text-[13px]"
+                  value={aspect}
+                  onChange={(e) => {
+                    setPageIndex(1);
+                    setAspect(e.target.value);
+                  }}
+                >
+                  <option value={"All"}>{`All Aspects`}</option>
+                  {h2AspectOrder.map((item) => (
+                    <option value={item}>{item}</option>
+                  ))}
+                </select>
+                <select
+                  className="select select-sm rounded-none focus:outline-none focus:border-transparent text-[13px]"
+                  value={region}
+                  onChange={(e) => {
+                    setPageIndex(1);
+                    setRegion(e.target.value);
+                  }}
+                >
+                  <option value={"Region"}>All Region</option>
+                  <option value={"Underworld"}>Underworld</option>
+                  <option value={"Surface"}>Surface</option>
+                </select>
+                <select
+                  className="select select-sm rounded-none focus:outline-none focus:border-transparent text-[13px]"
+                  value={uplayer}
+                  onChange={(e) => {
+                    setPageIndex(1);
+                    setUplayer(e.target.value);
+                  }}
+                >
+                  <option value={"0"}>Non-Unique</option>
+                  <option value={"1"}>Unique</option>
+                </select>
+              </div>
+            </div>
+            {/* Table Content */}
             <div className="overflow-x-scroll my-4">
-              <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/50 border-separate border-spacing-0.5 rounded-none">
+              <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
                 <thead className="font-[Ale] bg-black">
                   <tr>
                     <th>Idx</th>
                     <th>Name</th>
+                    <th>Margin</th>
+                    <th>Time</th>
                     <th>Fear</th>
                     <th>Aspect</th>
                     <th className="min-w-[120px]">Keep</th>
                     <th className="min-w-[150px]">Fammer</th>
                     <th className="min-w-[150px]">Core</th>
-                    <th>Time</th>
                     <th>Date</th>
-                    <th className="min-w-[100px]">Link</th>
-                    {/* <th className="min-w-[250px]">Pool</th> */}
+                    <th>Link</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -78,6 +140,15 @@ export default function Speed62() {
                             />
                           </div>
                         </div>
+                      </td>
+                      <td>
+                        <div className="text-[#00ffaa]">
+                          {index + 1 !== paginatedData.length &&
+                            parsemstoTime(parseTimetoms(paginatedData[index + 1].tim) - parseTimetoms(obj.tim))}
+                        </div>
+                      </td>
+                      <td>
+                        <div>{obj.tim}</div>
                       </td>
                       <td>
                         <div>{obj.fea}</div>
@@ -137,7 +208,7 @@ export default function Speed62() {
                                   const aIndex = orderMap.get(a) ?? Infinity;
                                   const bIndex = orderMap.get(b) ?? Infinity;
                                   return aIndex - bIndex;
-                                })
+                                }),
                               ).map((ite, index) => (
                                 <div className="tooltip">
                                   <div className="tooltip-content p-0">
@@ -174,9 +245,6 @@ export default function Speed62() {
                         </div>
                       </td>
                       <td>
-                        <div>{obj.tim}</div>
-                      </td>
-                      <td>
                         <div>{obj.dat.slice(0, 10)}</div>
                       </td>
                       <td>
@@ -202,6 +270,26 @@ export default function Speed62() {
                   ))}
                 </tbody>
               </table>
+            </div>
+            {/* Pagination controls */}
+            <div className="flex justify-center gap-4 items-center text-[14px] font-[Ale]">
+              <button
+                disabled={pageIndex === 1}
+                onClick={() => setPageIndex((prev) => prev - 1)}
+                className="min-w-[60px] bg-[white] text-black rounded cursor-pointer hover:scale-[90%] transition-transform duration-100 ease-linear"
+              >
+                Prev
+              </button>
+              <div className="text-[18px] text-white">
+                {pageIndex}/{TOTAL_Page}
+              </div>
+              <button
+                disabled={pageIndex * ITEMS_PER_PAGE >= orderData.length}
+                onClick={() => setPageIndex((prev) => prev + 1)}
+                className="min-w-[60px] bg-[white] text-black rounded cursor-pointer hover:scale-[90%] transition-transform duration-100 ease-linear"
+              >
+                Next
+              </button>
             </div>
           </>
         )}

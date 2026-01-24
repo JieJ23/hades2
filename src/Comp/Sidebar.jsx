@@ -11,14 +11,14 @@ export const sites = [
   { link: `Speed62`, nam: `Speed62` },
   { link: `Ladder`, nam: `Ladder` },
 
-  { link: `Stats`, nam: `Stats` },
+  // { link: `Stats`, nam: `Stats` },
   { link: `FearPoints`, nam: `PBs` },
 
   { link: `ArcanaDeck`, nam: `Arcana` },
   { link: `FearCalculator`, nam: `Fear` },
-  { link: `Enemy`, nam: `Enemy` },
+  // { link: `Enemy`, nam: `Enemy` },
   { link: `GameplaySubmission`, nam: `Submission` },
-  { link: `EALadder`, nam: `Early Access` },
+  // { link: `EALadder`, nam: `Early Access` },
   // { link: `TheGameAward`, nam: `Game Award` },
   { link: `ProfileSum`, nam: `Profile` },
   { link: `CustomChaos`, nam: `Custom Chaos` },

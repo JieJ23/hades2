@@ -111,7 +111,7 @@ export default function App() {
   }, [pageIndex, region, category, fill, mounted, player]);
 
   const allPlayers = [...new Set([...bundleData, ...(posts || [])].map((obj) => obj.nam))].sort((a, b) =>
-    a.toLowerCase().localeCompare(b.toLowerCase())
+    a.toLowerCase().localeCompare(b.toLowerCase()),
   );
   return (
     <main className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ale] select-none">
@@ -180,7 +180,7 @@ export default function App() {
           </div>
           {/* Table Content */}
           <div className="overflow-x-scroll my-4">
-            <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/50 border-separate border-spacing-0.5 rounded-none">
+            <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
               <thead className="font-[Ale] bg-black">
                 <tr>
                   <th>Idx</th>
@@ -193,7 +193,6 @@ export default function App() {
                   <th>Time</th>
                   <th>Date</th>
                   <th className="min-w-[100px]">Link</th>
-                  {/* <th className="min-w-[250px]">Pool</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -274,7 +273,7 @@ export default function App() {
                                 const aIndex = orderMap.get(a) ?? Infinity;
                                 const bIndex = orderMap.get(b) ?? Infinity;
                                 return aIndex - bIndex;
-                              })
+                              }),
                             ).map((ite, index) => (
                               <div className="tooltip">
                                 <div className="tooltip-content p-0">
@@ -335,24 +334,6 @@ export default function App() {
                         )}
                       </div>
                     </td>
-                    {/* <td>
-                      {obj.pool && (
-                        <div className="flex flex-wrap gap-0.5">
-                          {sToA(obj.pool)
-                            .sort()
-                            .map((ite) => (
-                              <div
-                                className="text-black px-1 rounded-t-sm"
-                                style={{
-                                  backgroundColor: getPoolColor(ite),
-                                }}
-                              >
-                                {ite.slice(0, 4)}.
-                              </div>
-                            ))}
-                        </div>
-                      )}
-                    </td> */}
                   </tr>
                 ))}
               </tbody>

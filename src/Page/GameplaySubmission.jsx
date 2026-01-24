@@ -120,11 +120,11 @@ export default function GameplaySubmission() {
     // https://script.google.com/macros/s/AKfycbxRKnfO9SKimv8diiCucFfCvaZ3xfwlkWPRxhK6si1pW5Q9nZ_Z15mSNgztoexazcx-/exec
     try {
       const res = await fetch(
-        "https://script.google.com/macros/s/AKfycbxiQRnYrLAiWL0xV9eaauhwobborCkr5sJa4MJuDS3K_5uWxNliv3yrsnin-VxqdqyI/exec",
+        "https://script.google.com/macros/s/AKfycbzlScxmIItd3x037p86tsOWTAZzuocyLNUrESDuBfECRhGa0LCdtvP8BhiybBR1_rdS/exec",
         {
           method: "POST",
           body: formDatab,
-        }
+        },
       );
       // This will log the selected option
       formEle.reset();

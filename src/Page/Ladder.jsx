@@ -53,7 +53,7 @@ export default function Ladder() {
       .filter((obj) => obj.asp === h2AspectOrder[i])
       .sort((a, b) => b.fea - a.fea || parseTimetoms(a.tim) - parseTimetoms(b.tim));
     const removeDup = aspectArray.filter(
-      (player, index, self) => index === self.findIndex((p) => p.nam === player.nam)
+      (player, index, self) => index === self.findIndex((p) => p.nam === player.nam),
     );
     fulldata_ArrArrObject.push(removeDup);
   }
@@ -148,7 +148,7 @@ export default function Ladder() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 my-2">
               {fulldata_ArrArrObject.map((arr, oi) => (
-                <div className={`rounded-sm px-2 py-1 relative bg-black/50 border-1 border-white/20 h-[250px]`}>
+                <div className={`rounded-sm px-2 py-1 relative bg-black/80 border-1 border-white/20 h-[250px]`}>
                   <div className="flex justify-between" key={oi}>
                     <div>
                       Avg{" "}
@@ -157,13 +157,16 @@ export default function Ladder() {
                     <div>{h2AspectOrder[oi]}</div>
                     <div>
                       {parsemstoTime(
-                        arr.slice(0, 10).reduce((a, b) => a + parseTimetoms(b.tim), 0) / (arr.slice(0, 10).length || 10)
+                        arr.slice(0, 10).reduce((a, b) => a + parseTimetoms(b.tim), 0) /
+                          (arr.slice(0, 10).length || 10),
                       )}
                     </div>
                   </div>
                   {arr.slice(0, 10).map((obj, index) => (
                     <div className="grid grid-cols-3 relative text-gray-300 items-center" key={index}>
-                      <div className={`text-start truncate ${obj.fea >= 65 ? `text-[#00ffaa]` : `text-gray-300`}`}>
+                      <div
+                        className={`text-start truncate ${obj.fea == 67 ? `text-[yellow]` : obj.fea >= 65 ? `text-[#00ffaa]` : `text-gray-300`}`}
+                      >
                         <span>{obj.fea}</span> {obj.nam}
                       </div>
                       <div className="w-full flex">
@@ -199,7 +202,7 @@ export default function Ladder() {
                                 const aIndex = orderMap.get(a) ?? Infinity;
                                 const bIndex = orderMap.get(b) ?? Infinity;
                                 return aIndex - bIndex;
-                              })
+                              }),
                             ).map((ite, index) => (
                               <div className="tooltip" key={index}>
                                 <div className="tooltip-content bg-black text-white font-[Ale] rounded-none">
