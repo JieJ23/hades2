@@ -62,25 +62,22 @@ export default function FearPoints() {
           <div className="my-6 font-[Ale] text-[12px] md:text-[13px]">
             <div className="flex flex-wrap gap-1 justify-center mb-2">
               <div
-                className={`${
-                  category === null ? `bg-white text-black` : `text-white`
-                } px-2 py-1 rounded cursor-pointer`}
+                className={`${category === null ? `bg-white text-black` : `text-white`
+                  } px-2 py-1 rounded cursor-pointer`}
                 onClick={() => setCategory(null)}
               >
                 Both Region
               </div>
               <div
-                className={`${
-                  category === `Surface` ? `bg-white text-black` : `text-white`
-                } px-2 py-1 rounded cursor-pointer`}
+                className={`${category === `Surface` ? `bg-white text-black` : `text-white`
+                  } px-2 py-1 rounded cursor-pointer`}
                 onClick={() => setCategory(`Surface`)}
               >
                 Surface
               </div>
               <div
-                className={`${
-                  category === `Underworld` ? `bg-white text-black` : `text-white`
-                } px-2 py-1 rounded cursor-pointer`}
+                className={`${category === `Underworld` ? `bg-white text-black` : `text-white`
+                  } px-2 py-1 rounded cursor-pointer`}
                 onClick={() => setCategory(`Underworld`)}
               >
                 Underworld
@@ -124,9 +121,9 @@ export default function FearPoints() {
                           return (
                             <td
                               key={asp}
-                              className={`border border-white/10 text-black ${entry?.fea == 67 ? `bg-[#00ffaa]` : entry?.fea >= 65 ? `bg-[red]` : entry?.fea >= 62 ? `bg-[orange]` : `text-white`}`}
+                              className={`border border-white/10 text-black text-center ${entry?.fea == 67 ? `bg-[#00ffaa]` : entry?.fea >= 65 ? `bg-[red]` : entry?.fea >= 62 ? `bg-[orange]` : entry?.fea >= 0 ? `bg-[lightblue]` : `text-white`}`}
                             >
-                              {entry ? entry.fea : ""}
+                              {entry ? entry.fea : "-"}
                             </td>
                           );
                         })}
