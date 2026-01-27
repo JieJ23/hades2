@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
 
-import { parseTimetoms, h2AspectOrder, parsemstoTime } from "../Data/Misc";
+import { parseTimetoms, h2AspectOrder } from "../Data/Misc";
 
 //
 export default function SixTwoPoints() {
@@ -17,7 +17,7 @@ export default function SixTwoPoints() {
   const [addea, setAddEa] = useState(true);
 
   const availableData = [...(addea ? eabundle : []), ...v1bundle, ...(posts || [])]
-    .filter((obj) => obj.fea === 62)
+    .filter((obj) => obj.fea == 62)
     .filter((obj) => {
       if (category === null) {
         return obj.loc;
