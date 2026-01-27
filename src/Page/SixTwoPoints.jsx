@@ -124,7 +124,7 @@ export default function SixTwoPoints() {
                           return (
                             <td
                               key={asp}
-                              className={`border border-white/10 text-black text-center ${entry && (parseTimetoms(entry.tim) < 72000 ? `bg-[#00ffaa]` : parseTimetoms(entry.tim) < 84000 ? `bg-[red]` : parseTimetoms(entry.tim) < 90000 ? `bg-[orange]` : parseTimetoms(entry.tim) > 0 ? `bg-[lightblue]` : `text-white`)}`}
+                              className={`border border-white/10 text-black text-center ${entry && (parseTimetoms(entry.tim) < 72000 ? `bg-[#00ffaa]` : parseTimetoms(entry.tim) < 84000 ? `bg-[yellow]` : parseTimetoms(entry.tim) < 96000 ? `bg-orange-500` : parseTimetoms(entry.tim) < 108000 ? `bg-orange-100` : parseTimetoms(entry.tim) > 0 ? `bg-orange-300` : `text-white`)}`}
                             >
                               {entry ? entry.tim : "-"}
                             </td>
