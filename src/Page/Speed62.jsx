@@ -59,7 +59,7 @@ export default function Speed62() {
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
       <SideNav />
-      <div className="max-w-[1600px] text-[13px] md:text-[14px] font-[Ale] mx-auto px-1">
+      <div className="max-w-[1600px] text-[13px] md:text-[14px] font-[Ale] mx-auto">
         {loader ? (
           <Loading />
         ) : (

@@ -9,9 +9,9 @@ export const sites = [
 
   // { link: `Weekly`, nam: `Weekly` },
   { link: `Speed62`, nam: `Speed62` },
+  { link: `Stats`, nam: `Stats` },
   { link: `Ladder`, nam: `Ladder` },
 
-  // { link: `Stats`, nam: `Stats` },
   { link: `FearPoints`, nam: `PBs` },
 
   { link: `ArcanaDeck`, nam: `Arcana` },

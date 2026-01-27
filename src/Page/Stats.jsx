@@ -1,135 +1,212 @@
 import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
-import { h2AspectOrder, parseTimetoms } from "../Data/Misc";
+import { h2AspectOrder, parseTimetoms, sToA } from "../Data/Misc";
 import { bundleData } from "../Data/DataBundle";
-
-import { Link } from "react-router-dom";
+import { p9boons_reverse } from "../Data/P9BoonObj";
 
 import { useData } from "../Hook/DataFetch";
+import { useState } from "react";
 import Loading from "../Hook/Loading";
 
-import { useMemo } from "react";
-
-const otherStats = [
-  { link: `StatsCodex`, nam: `Boon Stats` },
-  { link: `KeepsakesStats`, nam: `KS Stats` },
-  { link: `ArcanaStats`, nam: `Arcana Stats` },
-  { link: `VowsStats`, nam: `Vow Stats` },
-];
+const types = [`Attack`, `Special`, `Cast`, `Sprint`, `Magick`];
 
 export default function Stats() {
   const { posts, loader } = useData();
-  const orderData = [...bundleData, ...posts].sort((a, b) => {
-    const feaDiff = +b.fea - +a.fea;
-    if (feaDiff !== 0) return feaDiff;
-    return parseTimetoms(a.tim) - parseTimetoms(b.tim);
-  });
+  const [aspect, setAspect] = useState("Melinoe Staff");
+  const [region, setRegion] = useState("All");
 
-  const aspectTotalCount = useMemo(() => {
-    return h2AspectOrder.map((orderAsp) => orderData.filter((asp) => asp.asp === orderAsp));
-  }, []);
+  const fullData = [...bundleData, ...posts]
+    .filter((obj) => {
+      const currentAspect = obj.asp == aspect;
+      const currentRegion = region === "All" || obj.loc === region;
 
-  const aspectDetails = [];
+      return currentAspect && currentRegion;
+    })
+    .sort((a, b) => {
+      const feaDiff = +b.fea - +a.fea;
+      if (feaDiff !== 0) return feaDiff;
+      return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+    });
 
-  for (let i = 0; i < h2AspectOrder.length; i++) {
-    let arrObj = {};
-    const arrUnderworld = aspectTotalCount[i].filter((obj) => obj.loc === `Underworld`);
-    const arrSurface = aspectTotalCount[i].filter((obj) => obj.loc === `Surface`);
-    arrObj.entries_uw = arrUnderworld.length;
-    arrObj.entries_s = arrSurface.length;
-    arrObj.numPlayers_uw = [...new Set(arrUnderworld.map((obj) => obj.nam))].length;
-    arrObj.numPlayers_s = [...new Set(arrSurface.map((obj) => obj.nam))].length;
-    arrObj.uw_leader = arrUnderworld[0].nam;
-    arrObj.s_leader = arrSurface[0].nam;
-    aspectDetails.push(arrObj);
-  }
+  const boonStore = Object.entries(
+    fullData.reduce((acc, arr) => {
+      if (arr.cor) {
+        const arrayItem = arr.cor.split(",");
+        arrayItem.forEach((item) => {
+          acc[item] = (acc[item] || 0) + 1;
+        });
+      }
+      return acc;
+    }, {}),
+  ).sort((a, b) => b[1] - a[1]);
+
+  const grouped = Object.entries(
+    boonStore.reduce((acc, [name, count]) => {
+      const type = types.find((t) => name.includes(t));
+      if (!type) return acc;
+
+      (acc[type] ??= []).push([name, count]);
+      return acc;
+    }, {}),
+  ).sort(([a], [b]) => types.indexOf(a) - types.indexOf(b));
+
+  const hammerStore = Object.entries(
+    fullData.reduce((acc, arr) => {
+      if (arr.ham) {
+        const arrayItem = arr.ham.split(",");
+        arrayItem.forEach((item) => {
+          acc[item] = (acc[item] || 0) + 1;
+        });
+      }
+      return acc;
+    }, {}),
+  ).sort((a, b) => b[1] - a[1]);
+
+  const famStore = Object.entries(
+    fullData.reduce((acc, arr) => {
+      const familiar = arr.fam;
+
+      acc[familiar] = (acc[familiar] || 0) + 1;
+      return acc;
+    }, {}),
+  ).sort((a, b) => b[1] - a[1]);
 
   return (
     <div className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ale] select-none">
       <Background />
+
       <SideNav />
       {/* Table */}
       {loader ? (
         <Loading />
       ) : (
-        <div className="w-full max-w-[1400px] mx-auto">
-          <div className="flex justify-center gap-2">
-            {otherStats.map((obj, index) => (
-              <Link to={`/${obj.link}`} className="bg-white text-black px-2 py-0.5 rounded-t-sm">
-                <div>{obj.nam}</div>
-              </Link>
+        <div className="w-full max-w-350 mx-auto">
+          <div className="px-2">Total Entries: {fullData.length}</div>
+          <div className="flex gap-2 px-2">
+            <select
+              className="select select-sm rounded-none focus:outline-none focus:border-transparent text-[13px]"
+              value={aspect}
+              onChange={(e) => {
+                setAspect(e.target.value);
+              }}
+            >
+              {h2AspectOrder.map((item) => (
+                <option value={item}>{item}</option>
+              ))}
+            </select>
+            <select
+              className="select select-sm rounded-none focus:outline-none focus:border-transparent text-[13px]"
+              value={region}
+              onChange={(e) => {
+                setRegion(e.target.value);
+              }}
+            >
+              <option value={"All"}>All Regions</option>
+              <option value={"Underworld"}>Underworld</option>
+              <option value={"Surface"}>Surface</option>
+            </select>
+          </div>
+          <div className="flex justify-center md:justify-start flex-wrap my-5">
+            {h2AspectOrder.map((item) => (
+              <img
+                src={`/GUI_Card/c${item}.png`}
+                alt="3D card"
+                className={`w-14 transition-all duration-900 opacity-60 ${aspect === item && `rotate-360 animate-bounce opacity-100`}`}
+                onClick={() => setAspect(item)}
+              />
             ))}
           </div>
-          <div className="overflow-x-scroll my-4">
-            <table className="table whitespace-nowrap table-xs table-zebra font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5">
-              <thead className="font-[Ale]">
-                <tr>
-                  <th>Aspect</th>
-                  <th>Total Entries</th>
-                  <th>UW Leader</th>
-                  <th>UW Player</th>
-                  <th>UW Entries</th>
-                  <th>Surface Leader</th>
-                  <th>Surface Player</th>
-                  <th>Surface Entries</th>
+          <div className="overflow-x-scroll my-2">
+            <table className="table table-xs table-zebra bg-black/80 border-separate border-spacing-0.5 rounded-none font-[Ubuntu]">
+              <thead>
+                <tr className="font-[Ale] text-center">
+                  <th></th>
+                  <th className="min-w-50">Attack</th>
+                  <th className="min-w-50">Special</th>
+                  <th className="min-w-50">Cast</th>
+                  <th className="min-w-50">Sprint</th>
+                  <th className="min-w-50">Magick</th>
                 </tr>
               </thead>
               <tbody>
-                {h2AspectOrder.map((ite, index) => (
-                  <tr>
-                    <td>{ite}</td>
-                    <td>{aspectTotalCount[index].length}</td>
-                    <td className="text-[#00ffaa]">{aspectDetails[index].uw_leader}</td>
-                    <td>{aspectDetails[index].numPlayers_uw}</td>
+                {Array.from({ length: 10 }).map((_, idx) => (
+                  <tr key={idx}>
+                    <td>{idx + 1}</td>
 
-                    <td className="flex justify-between gap-1 items-center">
-                      <div>{aspectDetails[index].entries_uw}</div>
-                      <progress
-                        className="progress w-40 progress-success"
-                        value={Math.floor(
-                          (aspectDetails[index].entries_uw /
-                            (aspectDetails[index].entries_uw + aspectDetails[index].entries_s)) *
-                            100,
-                        )}
-                        max="100"
-                      />
-                      <div>
-                        {Math.floor(
-                          (aspectDetails[index].entries_uw /
-                            (aspectDetails[index].entries_uw + aspectDetails[index].entries_s)) *
-                            100,
-                        )}
-                        %
-                      </div>
-                    </td>
-                    <td className="text-[yellow]">{aspectDetails[index].s_leader}</td>
-                    <td>{aspectDetails[index].numPlayers_s}</td>
+                    {grouped.map(([type, items], colIdx) => {
+                      const item = items[idx] ?? ["-", 0]; // fallback if undefined
 
-                    <td className="flex justify-between gap-1 items-center">
-                      <div>{aspectDetails[index].entries_s}</div>
-                      <progress
-                        className="progress w-40 progress-warning"
-                        value={Math.floor(
-                          (aspectDetails[index].entries_s /
-                            (aspectDetails[index].entries_uw + aspectDetails[index].entries_s)) *
-                            100,
-                        )}
-                        max="100"
-                      />
-                      <div>
-                        {Math.floor(
-                          (aspectDetails[index].entries_s /
-                            (aspectDetails[index].entries_uw + aspectDetails[index].entries_s)) *
-                            100,
-                        )}
-                        %
-                      </div>
-                    </td>
+                      return (
+                        <td key={colIdx}>
+                          <div className="flex justify-between items-center px-1">
+                            <div className="flex gap-2 items-center">
+                              {item[0] !== "-" && (
+                                <img src={`/P9/${item[0]}.png`} alt="Core Boons" className="size-6" />
+                              )}
+                              <div>{item[0]}</div>
+                            </div>
+                            <div>{((item[1] / fullData.length) * 100).toFixed(2)}%</div>
+                          </div>
+                        </td>
+                      );
+                    })}
                   </tr>
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="flex flex-col md:flex-row gap-2 my-2">
+            <div className="w-full overflow-x-scroll">
+              <table className="table table-xs table-zebra border-separate border-spacing-0.5 rounded-none font-[Ubuntu] bg-black/80">
+                <thead>
+                  <tr className="font-[Ale]">
+                    <th>Hammer</th>
+                    <th>Pick %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {hammerStore.map((arr, index) => (
+                    <tr>
+                      <td>
+                        <div className="flex gap-1 items-center">
+                          <img src={`/P9/${p9boons_reverse[arr[0]]}.png`} alt="Hammers" className="size-7" />
+                          <div>{arr[0]}</div>
+                        </div>
+                      </td>
+                      <td>{((arr[1] / fullData.length) * 100).toFixed(2)}%</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="w-full overflow-x-scroll">
+              <table className="table table-xs table-zebra border-separate border-spacing-0.5 rounded-none font-[Ubuntu] bg-black/80">
+                <thead>
+                  <tr className="font-[Ale]">
+                    <th>Familiar</th>
+                    <th>Pick %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {famStore.map((arr, index) => (
+                    <tr>
+                      <td className="h-9">
+                        <div className="flex gap-1 items-center">
+                          {arr[0] !== "undefined" && (
+                            <img src={`/P9/${arr[0]}.png`} alt="Familiars" className="size-7" />
+                          )}
+                          <div>{arr[0] == "undefined" ? `No Familiar` : arr[0]}</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>{((arr[1] / fullData.length) * 100).toFixed(2)}%</div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       )}
