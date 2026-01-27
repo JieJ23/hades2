@@ -16,6 +16,7 @@ import Enemy from "./Page/Enemy.jsx";
 import Query from "./Page/Query.jsx";
 import Ladder from "./Page/Ladder.jsx";
 import FearPoints from "./Page/FearPoints.jsx";
+import SixTwoPoints from "./Page/SixTwoPoints.jsx";
 import StatsCodex from "./Page/StatsCodex.jsx";
 import Weekly from "./Page/Weekly.jsx";
 
@@ -45,6 +46,7 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/Speed62" element={<Speed62 />} />
+          <Route path="/SixTwoPoints" element={<SixTwoPoints />} />
 
           <Route path="/Stats" element={<Stats />} />
 
@@ -78,5 +80,5 @@ createRoot(document.getElementById("root")).render(
         </Routes>
       </Router>
     </DataProvider>
-  </StrictMode>
+  </StrictMode>,
 );

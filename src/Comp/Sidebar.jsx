@@ -13,6 +13,7 @@ export const sites = [
   { link: `Ladder`, nam: `Ladder` },
 
   { link: `FearPoints`, nam: `PBs` },
+  { link: `SixTwoPoints`, nam: `62 PBs` },
 
   { link: `ArcanaDeck`, nam: `Arcana` },
   { link: `FearCalculator`, nam: `Fear` },

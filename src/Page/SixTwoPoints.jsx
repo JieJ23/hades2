@@ -8,21 +8,23 @@ import { useState } from "react";
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
 
-import { parseTimetoms, h2AspectOrder } from "../Data/Misc";
+import { parseTimetoms, h2AspectOrder, parsemstoTime } from "../Data/Misc";
 
 //
-export default function FearPoints() {
+export default function SixTwoPoints() {
   const { posts, loader } = useData();
   const [category, setCategory] = useState(null);
   const [addea, setAddEa] = useState(true);
 
-  const availableData = [...(addea ? eabundle : []), ...v1bundle, ...(posts || [])].filter((obj) => {
-    if (category === null) {
-      return obj.loc;
-    } else {
-      return obj.loc === category;
-    }
-  });
+  const availableData = [...(addea ? eabundle : []), ...v1bundle, ...(posts || [])]
+    .filter((obj) => obj.fea === 62)
+    .filter((obj) => {
+      if (category === null) {
+        return obj.loc;
+      } else {
+        return obj.loc === category;
+      }
+    });
   const availablePlayer = [...new Set(availableData.map((obj) => obj.nam))];
 
   const store_pb = [];
@@ -48,8 +50,6 @@ export default function FearPoints() {
   finalized_store.forEach((arr) => {
     arr.sort((a, b) => h2AspectOrder.indexOf(a.asp) - h2AspectOrder.indexOf(b.asp));
   });
-
-  console.log(finalized_store);
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
@@ -99,7 +99,7 @@ export default function FearPoints() {
                     <th>IDX</th>
                     <th>Player</th>
                     {h2AspectOrder.map((ite) => (
-                      <th>
+                      <th className="min-w-15">
                         <div className="min-w-[32px] flex justify-center">
                           <img src={`/P9/${ite}.png`} alt="Aspects" className="size-8" />
                         </div>
@@ -124,14 +124,9 @@ export default function FearPoints() {
                           return (
                             <td
                               key={asp}
-                              className={`border border-white/10 text-black text-center ${entry?.fea == 67 ? `bg-[#00ffaa]` : entry?.fea >= 65 ? `bg-[red]` : entry?.fea >= 62 ? `bg-[orange]` : entry?.fea >= 0 ? `bg-[lightblue]` : `text-white`}`}
+                              className={`border border-white/10 text-black text-center ${entry && (parseTimetoms(entry.tim) < 72000 ? `bg-[#00ffaa]` : parseTimetoms(entry.tim) < 84000 ? `bg-[red]` : parseTimetoms(entry.tim) < 90000 ? `bg-[orange]` : parseTimetoms(entry.tim) > 0 ? `bg-[lightblue]` : `text-white`)}`}
                             >
-                              {entry
-                                ? entry.fea == 67
-                                  ? `Max
-                                Fear`
-                                  : entry.fea
-                                : "-"}
+                              {entry ? entry.tim : "-"}
                             </td>
                           );
                         })}
