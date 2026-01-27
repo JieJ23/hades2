@@ -55,7 +55,7 @@ export default function SixTwoPoints() {
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
       <SideNav />
-      <div className="max-w-[1600px] mx-auto px-2">
+      <div className="max-w-450 mx-auto px-2">
         {loader ? (
           <Loading />
         ) : (
