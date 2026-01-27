@@ -20,7 +20,7 @@ export const sites = [
   { link: `GameplaySubmission`, nam: `Submission` },
   // { link: `EALadder`, nam: `Early Access` },
   // { link: `TheGameAward`, nam: `Game Award` },
-  { link: `ProfileSum`, nam: `Profile` },
+  // { link: `ProfileSum`, nam: `Profile` },
   { link: `CustomChaos`, nam: `Custom Chaos` },
 ];
 

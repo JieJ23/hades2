@@ -112,7 +112,7 @@ export default function Stats() {
               <img
                 src={`/GUI_Card/c${item}.png`}
                 alt="3D card"
-                className={`w-14 transition-all duration-900 opacity-60 ${aspect === item && `rotate-360 animate-bounce opacity-100`}`}
+                className={`w-14 transition-all duration-900 opacity-70 ${aspect === item && `rotate-360 animate-bounce opacity-100`}`}
                 onClick={() => setAspect(item)}
               />
             ))}
@@ -161,7 +161,7 @@ export default function Stats() {
               <table className="table table-xs table-zebra border-separate border-spacing-0.5 rounded-none font-[Ubuntu] bg-black/80">
                 <thead>
                   <tr className="font-[Ale]">
-                    <th>Hammer</th>
+                    <th className="w-80">Hammer</th>
                     <th>Pick %</th>
                   </tr>
                 </thead>
@@ -184,7 +184,7 @@ export default function Stats() {
               <table className="table table-xs table-zebra border-separate border-spacing-0.5 rounded-none font-[Ubuntu] bg-black/80">
                 <thead>
                   <tr className="font-[Ale]">
-                    <th>Familiar</th>
+                    <th className="w-80">Familiar</th>
                     <th>Pick %</th>
                   </tr>
                 </thead>
