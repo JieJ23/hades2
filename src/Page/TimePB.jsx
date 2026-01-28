@@ -19,7 +19,7 @@ export default function TimePB() {
 
   const availableData = [...(addea ? eabundle : []), ...v1bundle, ...(posts || [])]
     .filter((obj) => {
-      if (only62) return obj.fea == 62;
+      if (only62) return obj.fea >= 62;
       return obj;
     })
     .filter((obj) => {
@@ -66,25 +66,22 @@ export default function TimePB() {
           <div className="my-6 font-[Ale] text-[12px] md:text-[13px]">
             <div className="flex flex-wrap gap-1 justify-center mb-2">
               <div
-                className={`${
-                  category === null ? `bg-white text-black` : `text-white`
-                } px-2 py-1 rounded cursor-pointer`}
+                className={`${category === null ? `bg-white text-black` : `text-white`
+                  } px-2 py-1 rounded cursor-pointer`}
                 onClick={() => setCategory(null)}
               >
                 Both Region
               </div>
               <div
-                className={`${
-                  category === `Surface` ? `bg-white text-black` : `text-white`
-                } px-2 py-1 rounded cursor-pointer`}
+                className={`${category === `Surface` ? `bg-white text-black` : `text-white`
+                  } px-2 py-1 rounded cursor-pointer`}
                 onClick={() => setCategory(`Surface`)}
               >
                 Surface
               </div>
               <div
-                className={`${
-                  category === `Underworld` ? `bg-white text-black` : `text-white`
-                } px-2 py-1 rounded cursor-pointer`}
+                className={`${category === `Underworld` ? `bg-white text-black` : `text-white`
+                  } px-2 py-1 rounded cursor-pointer`}
                 onClick={() => setCategory(`Underworld`)}
               >
                 Underworld
@@ -99,7 +96,7 @@ export default function TimePB() {
                 className={`${only62 === true ? `bg-white text-black` : `text-white`} px-2 py-1 rounded cursor-pointer`}
                 onClick={() => setOnly62(!only62)}
               >
-                Only 62
+                {`Feaer 62+`}
               </div>
             </div>
             <div className="overflow-x-scroll my-4">
