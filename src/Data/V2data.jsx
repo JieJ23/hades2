@@ -2871,7 +2871,7 @@ export const v2data = [
   },
   {
     dat: "2026-01-14",
-    nam: "maybe Daisy",
+    nam: "waffle",
     asp: "Circe",
     loc: "Underworld",
     fea: 62,
@@ -3471,7 +3471,7 @@ export const v2data = [
   },
   {
     dat: "2026-01-21",
-    nam: "oopsie daisy",
+    nam: "waffle",
     asp: "Circe",
     loc: "Underworld",
     fea: 62,
