@@ -22,7 +22,7 @@ export const sites = [
   // { link: `EALadder`, nam: `Early Access` },
   // { link: `TheGameAward`, nam: `Game Award` },
   // { link: `ProfileSum`, nam: `Profile` },
-  { link: `CustomChaos`, nam: `Custom Chaos` },
+  // { link: `CustomChaos`, nam: `Custom Chaos` },
 ];
 
 export default function SideNav() {
@@ -33,9 +33,8 @@ export default function SideNav() {
         {sites.map((obj, idx) => (
           <Link to={`/${obj.link}`} className={`flex items-center group`} key={idx}>
             <div
-              className={`px-2 py-1 border-1 border-white/40 rounded-none hover:bg-[#00ffaa] ${
-                currentLocation.pathname == `/${obj.link}` ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-white`
-              }`}
+              className={`px-2 py-1 border-1 border-white/40 rounded-none hover:bg-[#00ffaa] ${currentLocation.pathname == `/${obj.link}` ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-white`
+                }`}
             >
               {obj.nam}
             </div>
