@@ -11,13 +11,17 @@ import Loading from "../Hook/Loading";
 import { parseTimetoms, h2AspectOrder } from "../Data/Misc";
 
 //
-export default function SixTwoPoints() {
+export default function TimePB() {
   const { posts, loader } = useData();
   const [category, setCategory] = useState(null);
   const [addea, setAddEa] = useState(true);
+  const [only62, setOnly62] = useState(true);
 
   const availableData = [...(addea ? eabundle : []), ...v1bundle, ...(posts || [])]
-    .filter((obj) => obj.fea == 62)
+    .filter((obj) => {
+      if (only62) return obj.fea == 62;
+      return obj;
+    })
     .filter((obj) => {
       if (category === null) {
         return obj.loc;
@@ -37,8 +41,8 @@ export default function SixTwoPoints() {
     for (let x = 0; x < availableAspects.length; x++) {
       const aspect_runs = player_runs
         .filter((obj) => obj.asp === availableAspects[x])
-        .sort((a, b) => parseTimetoms(a.tim) - parseTimetoms(b.tim))
-        .sort((a, b) => +b.fea - +a.fea);
+        .sort((a, b) => parseTimetoms(a.tim) - parseTimetoms(b.tim));
+      // .sort((a, b) => +b.fea - +a.fea);
       store.push(aspect_runs[0]);
     }
     store_pb.push(store);
@@ -90,6 +94,12 @@ export default function SixTwoPoints() {
                 onClick={() => setAddEa(!addea)}
               >
                 Early Access
+              </div>
+              <div
+                className={`${only62 === true ? `bg-white text-black` : `text-white`} px-2 py-1 rounded cursor-pointer`}
+                onClick={() => setOnly62(!only62)}
+              >
+                Only 62
               </div>
             </div>
             <div className="overflow-x-scroll my-4">

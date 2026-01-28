@@ -12,8 +12,8 @@ export const sites = [
   { link: `Stats`, nam: `Stats` },
   { link: `Ladder`, nam: `Ladder` },
 
-  { link: `FearPoints`, nam: `PBs` },
-  { link: `SixTwoPoints`, nam: `62 PBs` },
+  { link: `FearPoints`, nam: `Fear PBs` },
+  { link: `TimePb`, nam: `Time PBs` },
 
   { link: `ArcanaDeck`, nam: `Arcana` },
   { link: `FearCalculator`, nam: `Fear` },
