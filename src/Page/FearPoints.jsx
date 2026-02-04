@@ -49,8 +49,6 @@ export default function FearPoints() {
     arr.sort((a, b) => h2AspectOrder.indexOf(a.asp) - h2AspectOrder.indexOf(b.asp));
   });
 
-  console.log(finalized_store);
-
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
@@ -91,6 +89,16 @@ export default function FearPoints() {
               >
                 Early Access
               </div>
+            </div>
+            <div className="flex items-center gap-1 my-4 px-4">
+              <div className="w-3 h-3 bg-[#00ffaa]" />
+              <div>Max Fear</div>
+              <div className="w-3 h-3 bg-[red]" />
+              <div>65+</div>
+              <div className="w-3 h-3 bg-[orange]" />
+              <div>62+</div>
+              <div className="w-3 h-3 bg-[lightblue]" />
+              <div>Cleared</div>
             </div>
             <div className="overflow-x-scroll my-4">
               <table className="table whitespace-nowrap table-xs font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">

@@ -6,6 +6,7 @@ import Footer from "../Comp/Footer";
 import { bOrder } from "../Data/Boon2";
 import { boonCodexr } from "../Data/Boon2";
 import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA } from "../Data/Misc";
+import { Link } from "react-router-dom";
 
 import { v1bundle } from "../Data/DataBundle";
 import { useState } from "react";
@@ -146,7 +147,8 @@ export default function Ladder() {
                 Keep
               </button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 my-2">
+            <div className="px-2 mt-2">* Click the player’s name to be redirected to the gameplay video.</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2">
               {fulldata_ArrArrObject.map((arr, oi) => (
                 <div className={`rounded-sm px-2 py-1 relative bg-black/80 border-1 border-white/20 h-[250px]`}>
                   <div className="flex justify-between" key={oi}>
@@ -167,7 +169,9 @@ export default function Ladder() {
                       <div
                         className={`text-start truncate ${obj.fea == 67 ? `text-[yellow]` : obj.fea >= 65 ? `text-[#00ffaa]` : `text-gray-300`}`}
                       >
-                        <span>{obj.fea}</span> {obj.nam}
+                        <Link to={obj.src} target="_blank">
+                          {`${obj.fea} ${obj.nam}`}
+                        </Link>
                       </div>
                       <div className="w-full flex">
                         {boon === `Core` &&

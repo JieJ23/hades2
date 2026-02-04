@@ -102,6 +102,18 @@ export default function TimePB() {
                 {`Fear 62+`}
               </div>
             </div>
+            <div className="flex items-center gap-1 my-4 px-4">
+              <div className="w-3 h-3 bg-[#00ffaa]" />
+              <div>Sub 12</div>
+              <div className="w-3 h-3 bg-[yellow]" />
+              <div>Sub 14</div>
+              <div className="w-3 h-3 bg-orange-500" />
+              <div>Sub 16</div>
+              <div className="w-3 h-3 bg-orange-300" />
+              <div>Sub 18</div>
+              <div className="w-3 h-3 bg-orange-100" />
+              <div>Cleared</div>
+            </div>
             <div className="overflow-x-scroll my-4">
               <table className="table whitespace-nowrap table-xs font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
                 <thead className="font-[Ale] bg-black">
@@ -134,7 +146,7 @@ export default function TimePB() {
                           return (
                             <td
                               key={asp}
-                              className={`border border-white/10 text-black text-center ${entry && (parseTimetoms(entry.tim) < 72000 ? `bg-[#00ffaa]` : parseTimetoms(entry.tim) < 84000 ? `bg-[yellow]` : parseTimetoms(entry.tim) < 96000 ? `bg-orange-500` : parseTimetoms(entry.tim) < 108000 ? `bg-orange-100` : parseTimetoms(entry.tim) > 0 ? `bg-orange-300` : `text-white`)}`}
+                              className={`border border-white/10 text-black text-center ${entry && (parseTimetoms(entry.tim) < 72000 ? `bg-[#00ffaa]` : parseTimetoms(entry.tim) < 84000 ? `bg-[yellow]` : parseTimetoms(entry.tim) < 96000 ? `bg-orange-500` : parseTimetoms(entry.tim) < 108000 ? `bg-orange-300` : parseTimetoms(entry.tim) > 0 ? `bg-orange-100` : `text-white`)}`}
                             >
                               {entry ? entry.tim : "-"}
                             </td>
