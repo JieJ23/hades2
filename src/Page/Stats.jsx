@@ -72,6 +72,22 @@ export default function Stats() {
     }, {}),
   ).sort((a, b) => b[1] - a[1]);
 
+  function findBiomeKeepData(biomeNum) {
+    const keepStore = Object.entries(
+      fullData.reduce((acc, arr) => {
+        if (arr.ks) {
+          const arrayItem = arr.ks.split(",");
+          const biome = arrayItem[biomeNum];
+          acc[biome] = (acc[biome] || 0) + 1;
+        }
+        return acc;
+      }, {}),
+    ).sort((a, b) => b[1] - a[1]);
+    return keepStore;
+  }
+
+  const ksStore = [findBiomeKeepData(0), findBiomeKeepData(1), findBiomeKeepData(2), findBiomeKeepData(3)];
+
   return (
     <div className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ale] select-none">
       <Background />
@@ -156,6 +172,45 @@ export default function Stats() {
               </tbody>
             </table>
           </div>
+          <div className="overflow-x-scroll my-2">
+            <table className="table table-xs table-zebra bg-black/80 border-separate border-spacing-0.5 rounded-none font-[Ubuntu]">
+              <thead>
+                <tr className="font-[Ale] text-center">
+                  <th></th>
+                  <th className="min-w-60">Biome 1</th>
+                  <th className="min-w-60">Biome 2</th>
+                  <th className="min-w-60">Biome 3</th>
+                  <th className="min-w-60">Biome 4</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Array.from({ length: 10 }).map((_, idx) => (
+                  <tr key={idx}>
+                    <td>{idx + 1}</td>
+
+                    {ksStore.map((items, colIdx) => {
+                      const item = items[idx] ?? ["-", 0]; // fallback if undefined
+
+                      return (
+                        <td key={colIdx}>
+                          <div className="flex justify-between items-center px-1">
+                            <div className="flex gap-2 items-center">
+                              {item[0] !== "-" && (
+                                <img src={`/buildgui/${item[0]}.png`} alt="Core Boons" className="size-6" />
+                              )}
+                              <div>{item[0]}</div>
+                            </div>
+                            <div>{((item[1] / fullData.length) * 100).toFixed(2)}%</div>
+                          </div>
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
           <div className="flex flex-col md:flex-row gap-2 my-2">
             <div className="w-full overflow-x-scroll">
               <table className="table table-xs table-zebra border-separate border-spacing-0.5 rounded-none font-[Ubuntu] bg-black/80">
