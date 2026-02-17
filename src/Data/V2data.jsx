@@ -358,7 +358,7 @@ export const v2data = [
     fam: "Frog",
     cor: "HepAttack,Special,HesCast,ApoSprint,Magick",
     ham: "Colossus Driver,Rapid Driver",
-    ks: "Jeweled Pom,Time Piece,Engraved Pin",
+    ks: "Jeweled Pom,Time Piece,Engraved Pin,Engraved Pin",
   },
   {
     dat: "2025-12-30",
@@ -1368,7 +1368,7 @@ export const v2data = [
     fam: "Frog",
     cor: "Attack,HesSpecial,ZeuCast,ApoSprint,Magick",
     ham: "Clean Coil,Rising Helix",
-    ks: "Jeweled Pom,Time Piece,Engraved Pin",
+    ks: "Jeweled Pom,Time Piece,Engraved Pin,Engraved Pin",
   },
   {
     dat: "2026-01-03",
@@ -7275,7 +7275,7 @@ export const v2data = [
     fam: "Polecat",
     cor: "Attack,ApoSpecial,PosCast,PosSprint,ApoSprint",
     ham: "Giga Cleaver,Sudden Cleaver",
-    ks: "Jeweled Pom,Calling Card,Engraved Pin",
+    ks: "Jeweled Pom,Calling Card,Engraved Pin,Engraved Pin",
   },
   {
     dat: "2025-12-23",
