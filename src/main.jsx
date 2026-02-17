@@ -38,6 +38,7 @@ import GameplaySubmission from "./Page/GameplaySubmission.jsx";
 
 import { DataProvider } from "./Hook/DataFetch.jsx";
 import CustomChaos from "./Page/CustomChaos.jsx";
+import CustomStart from "./Page/CustomStart.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -51,6 +52,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/Stats" element={<Stats />} />
 
           <Route path="/CustomChaos" element={<CustomChaos />} />
+          <Route path="/CustomStart" element={<CustomStart />} />
 
           <Route path="/FearCalculator" element={<FearCalculator />} />
           <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
