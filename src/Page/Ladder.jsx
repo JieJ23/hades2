@@ -31,21 +31,13 @@ export default function Ladder() {
   const [boon, setBoon] = useState(`Core`);
   const [minfear, setMinFear] = useState(1);
   const [maxfear, setMaxFear] = useState(67);
-  const [billy, setBilly] = useState("No");
 
   const { posts, loader } = useData();
 
   const regionData = [...v1bundle, ...(posts || [])]
     .filter((obj) => obj.des.includes("#usum"))
     .filter((obj) => obj.loc === location)
-    .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear)
-    .filter((obj) => {
-      if (billy === "No") {
-        return !obj.src.includes("bilibi");
-      } else {
-        return obj;
-      }
-    });
+    .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear);
 
   const fulldata_ArrArrObject = [];
 
@@ -92,17 +84,6 @@ export default function Ladder() {
                   max={67}
                   min={1}
                 />
-              </div>
-              <div>
-                <div>Include Bilibili</div>
-                <select
-                  className="select select-sm w-[100px] rounded-none focus:outline-none focus:border-transparent"
-                  value={billy}
-                  onChange={(e) => setBilly(e.target.value)}
-                >
-                  <option value="No">No</option>
-                  <option value="Yes">Yes</option>
-                </select>
               </div>
             </div>
             <div className="p-1 flex flex-wrap justify-center gap-1 my-2">
