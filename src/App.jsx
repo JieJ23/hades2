@@ -6,7 +6,7 @@ import { useData } from "./Hook/DataFetch";
 import Loading from "./Hook/Loading";
 import { bundleData } from "./Data/DataBundle";
 // Utility
-import { sToA, findValue, orderMap, parseTimetoms, getPoolColor } from "./Data/Misc";
+import { sToA, findValue, orderMap, parseTimetoms, getPoolColor, getYTid } from "./Data/Misc";
 import { p9boons } from "./Data/P9BoonObj";
 import { Link } from "react-router-dom";
 import { h2AspectOrder } from "./Data/Misc";
@@ -42,8 +42,8 @@ export default function App() {
   }, [posts, category, region, fill, player]);
 
   // Pagnition
-  const ITEMS_PER_PAGE = 50;
-  const TOTAL_Page = Math.ceil(orderData.length / 50);
+  const ITEMS_PER_PAGE = 25;
+  const TOTAL_Page = Math.ceil(orderData.length / ITEMS_PER_PAGE);
 
   const paginatedData = useMemo(() => {
     const start = (pageIndex - 1) * ITEMS_PER_PAGE; // 50
@@ -113,6 +113,15 @@ export default function App() {
   const allPlayers = [...new Set([...bundleData, ...(posts || [])].map((obj) => obj.nam))].sort((a, b) =>
     a.toLowerCase().localeCompare(b.toLowerCase()),
   );
+
+  const youtubeItems = [];
+  for (const item of orderData) {
+    if (item.src?.includes("youtu")) {
+      youtubeItems.push(item);
+      if (youtubeItems.length === 1) break;
+    }
+  }
+
   return (
     <main className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ale] select-none">
       <Background />
@@ -178,8 +187,18 @@ export default function App() {
               </select>
             </div>
           </div>
+          {/* Video Display */}
+          <div className="my-4 grid grid-cols-1 mx-auto max-w-[1000px]">
+            <iframe
+              className="aspect-video rounded-lg"
+              src={`https://www.youtube.com/embed/${getYTid(youtubeItems[0].src)}`}
+              title="Gameplay Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
           {/* Table Content */}
-          <div className="overflow-x-scroll my-4">
+          <div className="overflow-x-scroll my-2">
             <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
               <thead className="font-[Ale] bg-black">
                 <tr>
@@ -224,8 +243,9 @@ export default function App() {
                         {obj.des && (
                           <div className="w-[25px]">
                             <div
-                              className={`tooltip ${index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
-                                }`}
+                              className={`tooltip ${
+                                index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
+                              }`}
                             >
                               <div className="tooltip-content p-0">
                                 <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
@@ -268,21 +288,21 @@ export default function App() {
                         )}
                         {obj.ham
                           ? findValue(
-                            sToA(obj.ham).sort((a, b) => {
-                              const aIndex = orderMap.get(a) ?? Infinity;
-                              const bIndex = orderMap.get(b) ?? Infinity;
-                              return aIndex - bIndex;
-                            }),
-                          ).map((ite, index) => (
-                            <div className="tooltip">
-                              <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                  {p9boons[ite]}
+                              sToA(obj.ham).sort((a, b) => {
+                                const aIndex = orderMap.get(a) ?? Infinity;
+                                const bIndex = orderMap.get(b) ?? Infinity;
+                                return aIndex - bIndex;
+                              }),
+                            ).map((ite, index) => (
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
+                                  </div>
                                 </div>
+                                <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
                               </div>
-                              <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
-                            </div>
-                          ))
+                            ))
                           : ``}
                       </div>
                     </td>
@@ -290,21 +310,21 @@ export default function App() {
                       <div className="flex gap-0.5">
                         {obj.cor
                           ? sToA(obj.cor).map((ite, index) => (
-                            <div className="tooltip">
-                              <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                  {p9boons[ite]}
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
+                                  </div>
                                 </div>
+                                <img
+                                  draggable={false}
+                                  src={`/H2Boons/${ite}.png`}
+                                  alt="Core Boon"
+                                  className="size-6"
+                                  loading="lazy"
+                                />
                               </div>
-                              <img
-                                draggable={false}
-                                src={`/H2Boons/${ite}.png`}
-                                alt="Core Boon"
-                                className="size-6"
-                                loading="lazy"
-                              />
-                            </div>
-                          ))
+                            ))
                           : ``}
                       </div>
                     </td>
