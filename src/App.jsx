@@ -188,15 +188,17 @@ export default function App() {
             </div>
           </div>
           {/* Video Display */}
-          <div className="my-4 grid grid-cols-1 mx-auto max-w-[1000px]">
-            <iframe
-              className="aspect-video rounded-lg"
-              src={`https://www.youtube.com/embed/${getYTid(youtubeItems[0].src)}`}
-              title="Gameplay Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
+          {youtubeItems.length > 0 && (
+            <div className="my-4 grid grid-cols-1 mx-auto max-w-[1000px]">
+              <iframe
+                className="aspect-video rounded-lg"
+                src={`https://www.youtube.com/embed/${getYTid(youtubeItems[0].src)}`}
+                title="Gameplay Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          )}
           {/* Table Content */}
           <div className="overflow-x-scroll my-2">
             <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
