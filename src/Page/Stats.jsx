@@ -130,6 +130,7 @@ export default function Stats() {
                 alt="3D card"
                 className={`w-14 transition-all duration-900 opacity-70 ${aspect === item && `rotate-360 animate-bounce opacity-100`}`}
                 onClick={() => setAspect(item)}
+                draggable="false"
               />
             ))}
           </div>

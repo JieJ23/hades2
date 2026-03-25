@@ -118,7 +118,7 @@ export default function App() {
   for (const item of orderData) {
     if (item.src?.includes("youtu")) {
       youtubeItems.push(item);
-      if (youtubeItems.length === 1) break;
+      if (youtubeItems.length === 4) break;
     }
   }
 
@@ -189,11 +189,11 @@ export default function App() {
           </div>
           {/* Video Display */}
           {youtubeItems.length > 0 && (
-            <div className="my-4 grid grid-cols-1 mx-auto max-w-[1000px]">
+            <div className="my-4 grid grid-cols-1 mx-auto max-w-[800px]">
               <iframe
-                className="aspect-video rounded-lg"
+                className="aspect-video rounded w-full h-full border border-gray-500"
                 src={`https://www.youtube.com/embed/${getYTid(youtubeItems[0].src)}`}
-                title="Gameplay Video"
+                title="Latest Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />

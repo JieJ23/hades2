@@ -2866,7 +2866,7 @@ export const v2data = [
     tim: "17:56.62",
     fam: "Cat",
     cor: "HepAttack,HesSpecial,PosCast,HesSprint,AphMagick",
-    ham: "Melting Helix, Inverted Blaze",
+    ham: "Melting Helix,Inverted Blaze",
     ks: "Jeweled Pom,Time Piece,White Antler,Luckier Tooth",
   },
   {
