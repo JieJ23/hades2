@@ -226,7 +226,7 @@ export default function App() {
                     </td>
                     <td>
                       <div className="flex gap-1">
-                        <div>{obj.nam}</div>
+                        <div>Schelemeus</div>
                         <div className="shrink-0 size-4">
                           <img
                             src={obj.loc === `Underworld` ? `/Underworld.png` : `/Surface.png`}
