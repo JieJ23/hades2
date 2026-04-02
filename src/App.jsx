@@ -221,7 +221,7 @@ export default function App() {
                   <tr key={index}>
                     <td>
                       <div className={obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`}>
-                        {orderData.length - (index + 50 * (pageIndex - 1))}
+                        {orderData.length - (index + 25 * (pageIndex - 1))}
                       </div>
                     </td>
                     <td>

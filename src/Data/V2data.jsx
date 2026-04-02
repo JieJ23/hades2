@@ -4937,7 +4937,7 @@ export const v2data = [
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
     tim: "18:13.99",
     fam: "Polecat",
-    cor: "DemAttack,HesAttack,ZeuSpecial,DemCast",
+    cor: "HerAttack,ZeuSpecial,DemCast,Sprint,Magick",
     ham: "Sudden Burst,Clean Coil,Enduring Coil",
     pool: "Zeus,Demeter,Chaos,Hermes,Selene,Echo,Hestia,Athena,Hades,Apollo",
     ks: "Jeweled Pom,Time Piece,Experimental Hammer,Gorgon Amulet",
