@@ -131,7 +131,7 @@ export default function Speed62() {
                       </td>
                       <td>
                         <div className="flex gap-1">
-                          <div>Schelemeus</div>
+                          <div>{obj.nam}</div>
                           <div className="shrink-0 size-4">
                             <img
                               src={obj.loc === `Underworld` ? `/Underworld.png` : `/Surface.png`}

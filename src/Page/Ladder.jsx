@@ -151,7 +151,7 @@ export default function Ladder() {
                         className={`text-start truncate ${obj.fea == 67 ? `text-[yellow]` : obj.fea >= 65 ? `text-[#00ffaa]` : `text-gray-300`}`}
                       >
                         <Link to={obj.src} target="_blank">
-                          {`${obj.fea} Skelly`}
+                          {`${obj.fea} ${obj.nam}`}
                         </Link>
                       </div>
                       <div className="w-full flex">
