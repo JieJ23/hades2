@@ -3,6 +3,7 @@ import { bundleData } from "../Data/DataBundle";
 import { parseTimetoms } from "../Data/Misc";
 import { h2AO } from "../Data/Misc";
 import { useData } from "../Hook/DataFetch";
+import Loading from "../Hook/Loading";
 const familiars = [`Frog`, `Cat`, `Hound`, `Raven`, `Polecat`];
 
 //   ["H", "He"],
@@ -53,7 +54,7 @@ export default function PeriodicTable() {
     seen.add(item.nam);
     return true;
   });
-  console.log(result);
+
   const unique67s = [...new Set(surface67.map((obj) => obj.asp))].length;
   const unique67uw = [...new Set(underworld67.map((obj) => obj.asp))].length;
   const fastUW = [];
@@ -94,109 +95,124 @@ export default function PeriodicTable() {
   return (
     <div className="h-full min-h-lvh flex items-center relative overflow-hidden text-[13px] md:text-[14px] font-[Ubuntu] select-none">
       <Background />
+
       <div className="overflow-auto max-w-[1600px] mx-auto my-4 px-2">
-        <table className="table border-separate border-spacing-0.5 text-center text-[12px] font-[Ubuntu]">
-          <tbody>
-            {elementArray.map((ite, index1) => {
-              const emptyArray = new Array(18).fill("");
-              for (let i = 0; i < ite.length; i++) {
-                emptyArray.splice(elementNumber[index1][i], 1, ite[i]);
-              }
-              return (
-                <tr>
-                  {emptyArray.map((ite, index2) => (
-                    <td
-                      className={`p-0 min-w-20 h-20 max-w-20 relative rounded-sm
-                        ${ite !== "" && index1 == 0 && index2 === 17 && `bg-[#00ffaa]/80 text-black`}
-                        ${ite !== "" && index1 < 3 && index2 < 2 && `bg-[#202aaf]/80`}
-                        ${ite !== "" && index2 >= 0 && index2 <= 5 && index1 > 2 && index1 < 7 && `bg-[#41277c]/80`}
-                        ${ite !== "" && index2 >= 6 && index2 <= 11 && index1 > 2 && index1 < 7 && `bg-[#2c277c]/80`}
-                        ${ite !== "" && index2 >= 12 && index1 > 3 && index1 < 7 && `bg-[#7c2760]/80`}
-                        ${ite !== "" && index2 >= 12 && index1 > 0 && index1 < 4 && `bg-[#701631]/80`}
-                        ${ite !== "" && index1 === 7 && `bg-[#0d5166]/80`}
-                        ${ite !== "" && index1 === 8 && `bg-[#0d5166]/80`}
+        {loader ? (
+          <Loading />
+        ) : (
+          <>
+            <table className="table border-separate border-spacing-0.5 text-center text-[12px] font-[Ubuntu]">
+              <tbody>
+                {elementArray.map((ite, index1) => {
+                  const emptyArray = new Array(18).fill("");
+                  for (let i = 0; i < ite.length; i++) {
+                    emptyArray.splice(elementNumber[index1][i], 1, ite[i]);
+                  }
+                  return (
+                    <tr>
+                      {emptyArray.map((ite, index2) => (
+                        <td
+                          className={`p-0 min-w-20 h-20 max-w-20 relative rounded-sm
+                        ${ite !== "" && index1 == 0 && index2 === 17 && `bg-[#00ffaa]/85 text-black`}
+                        ${ite !== "" && index1 < 3 && index2 < 2 && `bg-[#202aaf]/85`}
+                        ${ite !== "" && index2 >= 0 && index2 <= 5 && index1 > 2 && index1 < 7 && `bg-[#41277c]/85`}
+                        ${ite !== "" && index2 >= 6 && index2 <= 11 && index1 > 2 && index1 < 7 && `bg-[#2c277c]/85`}
+                        ${ite !== "" && index2 >= 12 && index1 > 3 && index1 < 7 && `bg-[#7c2760]/85`}
+                        ${ite !== "" && index2 >= 12 && index1 > 0 && index1 < 4 && `bg-[#701631]/85`}
+                        ${ite !== "" && index1 === 7 && `bg-[#0d5166]/85`}
+                        ${ite !== "" && index1 === 8 && `bg-[#0d5166]/85`}
                         ${ite !== "" ? `border-black/60 border-1` : `border-none`}
                         `}
-                    >
-                      <div className="w-ful h-full flex flex-col items-center justify-center break-words p-2">
-                        <div className="text-black text-[12px] whitespace-pre-wrap">
-                          {ite.num &&
-                            `${ite.num}/48 
+                        >
+                          <div className="w-ful h-full flex flex-col items-center justify-center break-words p-2">
+                            <div className="text-black text-[12px] whitespace-pre-wrap">
+                              {ite.num &&
+                                `${ite.num}/48 
 Max Fear`}
-                        </div>
-                        {ite !== "" && index1 >= 3 && index1 < 7 && index2 < 12 && (
-                          <>
-                            <div className="text-[11px] text-gray-400">{ite.asp}</div>
-                            <div className="text-gray-300 overflow-ellipsis text-[11px]">{ite.nam}</div>
-                            <div className="text-[11px] text-gray-400">{ite.tim}</div>
-                          </>
-                        )}
-                        {ite !== "" && index1 >= 1 && index1 < 7 && index2 >= 12 && (
-                          <div className="text-[11px] text-gray-400">
-                            <>
-                              {ite.fea}
-                              <div className="text-gray-300 overflow-ellipsis text-[11px]">{ite.nam}</div>
-                              {ite.tim}
-                            </>
+                            </div>
+                            {ite !== "" && index1 >= 3 && index1 < 7 && index2 < 12 && (
+                              <>
+                                <div className="text-[11px] text-gray-400">{ite.asp}</div>
+                                <div className="text-gray-300 overflow-ellipsis text-[11px]">
+                                  {ite.nam !== "" && ite.nam?.length > 13 ? `${ite.nam.slice(0, 12)}.` : ite.nam}
+                                </div>
+                                <div className="text-[11px] text-gray-400">{ite.tim}</div>
+                              </>
+                            )}
+                            {ite !== "" && index1 >= 1 && index1 < 7 && index2 >= 12 && (
+                              <div className="text-[11px] text-gray-400">
+                                <>
+                                  {ite.fea}
+                                  <div className="text-gray-300 overflow-ellipsis text-[11px]">
+                                    {ite.nam !== "" && ite.nam?.length > 13 ? `${ite.nam.slice(0, 12)}.` : ite.nam}
+                                  </div>
+                                  {ite.tim}
+                                </>
+                              </div>
+                            )}
+                            {ite !== "" && index1 < 3 && index2 < 2 && (
+                              <>
+                                <div className="text-[11px] text-gray-400">{ite.fea}</div>
+                                <div className="text-gray-300 overflow-ellipsis text-[11px]">
+                                  {ite.nam !== "" && ite.nam.length > 13 ? `${ite.nam.slice(0, 12)}.` : ite.nam}
+                                </div>
+                                <div className="text-[11px] text-gray-400">{ite.fam}</div>
+                                <div className="text-[11px] text-gray-400">{ite.tim}</div>
+                              </>
+                            )}
+                            {ite !== "" && index1 >= 7 && (
+                              <div className="text-[11px] text-gray-400">
+                                <>
+                                  {ite.asp}
+                                  <div className="text-gray-300 overflow-ellipsis text-[11px]">
+                                    {ite.nam !== "" && ite.nam.length > 13 ? `${ite.nam.slice(0, 12)}.` : ite.nam}
+                                  </div>
+                                  {ite.tim}
+                                </>
+                              </div>
+                            )}
                           </div>
-                        )}
-                        {ite !== "" && index1 < 3 && index2 < 2 && (
-                          <>
-                            <div className="text-[11px] text-gray-400">{ite.fea}</div>
-                            <div className="text-gray-300 overflow-ellipsis text-[11px]">{ite.nam}</div>
-                            <div className="text-[11px] text-gray-400">{ite.fam}</div>
-                            <div className="text-[11px] text-gray-400">{ite.tim}</div>
-                          </>
-                        )}
-                        {ite !== "" && index1 >= 7 && (
-                          <div className="text-[11px] text-gray-400">
-                            <>
-                              {ite.asp}
-                              <div className="text-gray-300 overflow-ellipsis text-[11px]">{ite.nam}</div>
-                              {ite.tim}
-                            </>
-                          </div>
-                        )}
-                      </div>
-                    </td>
-                  ))}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <div className="my-8">
-          <div className="flex gap-2 flex-wrap justify-center">
-            <div className="flex items-center gap-1">
-              <div className="h-3 w-3 rounded-xs bg-[#00ffaa]" />
-              <div>Aspects/Region Conquered</div>
+                        </td>
+                      ))}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            <div className="my-8">
+              <div className="flex gap-2 flex-wrap justify-center">
+                <div className="flex items-center gap-1">
+                  <div className="h-3 w-3 rounded-xs bg-[#00ffaa]" />
+                  <div>Aspects/Region Conquered</div>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="h-3 w-3 rounded-xs bg-[#202aaf]" />
+                  <div>Familiar's Peak</div>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="h-3 w-3 rounded-xs bg-[#41277c]" />
+                  <div>UW Aspect Peak</div>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="h-3 w-3 rounded-xs bg-[#2c277c]" />
+                  <div>Surface Aspect Peak</div>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="h-3 w-3 rounded-xs bg-[#7c2760]" />
+                  <div>UW Speedrun 50-67</div>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="h-3 w-3 rounded-xs bg-[#701631]" />
+                  <div>Surface Speedrun 50-67</div>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="h-3 w-3 rounded-xs bg-[#0d5166]" />
+                  <div>True Melinoë</div>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-1">
-              <div className="h-3 w-3 rounded-xs bg-[#202aaf]" />
-              <div>Familiar's Peak</div>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="h-3 w-3 rounded-xs bg-[#41277c]" />
-              <div>UW Aspect Peak</div>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="h-3 w-3 rounded-xs bg-[#2c277c]" />
-              <div>Surface Aspect Peak</div>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="h-3 w-3 rounded-xs bg-[#7c2760]" />
-              <div>UW Speedrun 50-67</div>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="h-3 w-3 rounded-xs bg-[#701631]" />
-              <div>Surface Speedrun 50-67</div>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="h-3 w-3 rounded-xs bg-[#0d5166]" />
-              <div>True Melinoë</div>
-            </div>
-          </div>
-        </div>
+          </>
+        )}
       </div>
     </div>
   );
