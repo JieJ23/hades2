@@ -88,7 +88,7 @@ export default function PeriodicTable() {
     [...highUW.slice(12, 18), ...highSurface.slice(12, 18), ...fastUW.slice(6, 12)],
     [...highUW.slice(18), ...highSurface.slice(18), ...fastUW.slice(12)],
     [...result.slice(0, 14)],
-    [...result.slice(14)],
+    [...result.slice(14, 28)],
   ];
 
   return (
