@@ -40,6 +40,8 @@ import { DataProvider } from "./Hook/DataFetch.jsx";
 import CustomChaos from "./Page/CustomChaos.jsx";
 import CustomStart from "./Page/CustomStart.jsx";
 
+import PeriodicTable from "./Page/PeriodicTable.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <DataProvider>
@@ -79,6 +81,8 @@ createRoot(document.getElementById("root")).render(
           <Route path="/EAStat" element={<EAStat />} />
           <Route path="/EARanking" element={<EARanking />} />
           <Route path="/EAQuery" element={<EAQuery />} />
+
+          <Route path="/PeriodicTable" element={<PeriodicTable />} />
         </Routes>
       </Router>
     </DataProvider>

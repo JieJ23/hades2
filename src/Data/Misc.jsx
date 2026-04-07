@@ -38,6 +38,35 @@ export const h2AspectOrder = [
   `Selene`,
   `Shiva`,
 ];
+export const h2AO = [
+  `Melinoe Staff`,
+  `Melinoe Blades`,
+  `Melinoe Axe`,
+  `Melinoe Flames`,
+  `Melinoe Skull`,
+  `Melinoe Coat`,
+
+  `Circe`,
+  `Artemis`,
+  `Charon`,
+  `Eos`,
+  `Medea`,
+  `Nyx`,
+
+  `Momus`,
+  `Pan`,
+  `Thanatos`,
+  `Moros`,
+  `Persephone`,
+  `Selene`,
+
+  `Anubis`,
+  `Morrigan`,
+  `Nergal`,
+  `Supay`,
+  `Hel`,
+  `Shiva`,
+];
 export const weaponCoat = [`Melinoe Coat`, `Nyx`, `Selene`, `Shiva`];
 export const weaponSkull = [`Melinoe Skull`, `Medea`, `Persephone`, `Hel`];
 export const weaponFlames = [`Melinoe Flames`, `Eos`, `Moros`, `Supay`];
