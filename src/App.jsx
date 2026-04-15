@@ -114,27 +114,19 @@ export default function App() {
     a.toLowerCase().localeCompare(b.toLowerCase()),
   );
 
-  const youtubeItems = [];
-  for (const item of orderData) {
-    if (item.src?.includes("youtu")) {
-      youtubeItems.push(item);
-      if (youtubeItems.length === 4) break;
-    }
-  }
-
   return (
-    <main className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ale] select-none">
+    <main className="h-full min-h-lvh relative overflow-hidden text-[14px] md:text-[15px] font-[Ale] select-none">
       <Background />
       <SideNav />
       {loader ? (
         <Loading />
       ) : (
         <>
-          <div className="max-w-[1400px] mx-auto">
+          <div className="max-w-350 mx-auto py-2 my-2">
             <div className="px-2">Total Entries: {orderData.length}</div>
-            <div className="flex gap-2 px-2">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-1 px-2">
               <select
-                className="select select-sm rounded-none focus:outline-none focus:border-transparent text-[13px]"
+                className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
                 value={category}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -147,7 +139,7 @@ export default function App() {
                 ))}
               </select>
               <select
-                className="select select-sm rounded-none focus:outline-none focus:border-transparent text-[13px]"
+                className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
                 value={region}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -159,7 +151,7 @@ export default function App() {
                 <option value={`Underworld`}>Underworld</option>
               </select>
               <select
-                className="select select-sm rounded-none focus:outline-none focus:border-transparent text-[13px]"
+                className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
                 value={fill}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -170,7 +162,7 @@ export default function App() {
                 <option value={`Fear`}>Fear</option>
               </select>
               <select
-                className="select select-sm rounded-none focus:outline-none focus:border-transparent text-[13px]"
+                className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
                 value={player}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -187,20 +179,8 @@ export default function App() {
               </select>
             </div>
           </div>
-          {/* Video Display */}
-          {youtubeItems.length > 0 && (
-            <div className="my-4 grid grid-cols-1 mx-auto max-w-[800px]">
-              <iframe
-                className="aspect-video rounded w-full h-full border border-gray-500"
-                src={`https://www.youtube.com/embed/${getYTid(youtubeItems[0].src)}`}
-                title="Latest Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          )}
           {/* Table Content */}
-          <div className="overflow-x-scroll my-2">
+          <div className="overflow-x-scroll py-2 my-2">
             <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
               <thead className="font-[Ale] bg-black">
                 <tr>
@@ -219,12 +199,12 @@ export default function App() {
               <tbody>
                 {paginatedData.slice(0, 100).map((obj, index) => (
                   <tr key={index}>
-                    <td>
+                    <td className="border-0">
                       <div className={obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`}>
                         {orderData.length - (index + 25 * (pageIndex - 1))}
                       </div>
                     </td>
-                    <td>
+                    <td className="border-0">
                       <div className="flex gap-1">
                         <div>{obj.nam}</div>
                         <div className="shrink-0 size-4">
@@ -236,10 +216,10 @@ export default function App() {
                         </div>
                       </div>
                     </td>
-                    <td>
+                    <td className="border-0">
                       <div>{obj.fea}</div>
                     </td>
-                    <td>
+                    <td className="border-0">
                       <div className="flex gap-2 justify-between items-center">
                         <div>{obj.asp}</div>
                         {obj.des && (
@@ -260,7 +240,7 @@ export default function App() {
                         )}
                       </div>
                     </td>
-                    <td>
+                    <td className="border-0">
                       {obj.ks && (
                         <div className="flex gap-1">
                           {sToA(obj.ks).map((ite, index) => (
@@ -276,7 +256,7 @@ export default function App() {
                         </div>
                       )}
                     </td>
-                    <td>
+                    <td className="border-0">
                       <div className="flex gap-0.5">
                         {obj.fam && (
                           <div className="tooltip">
@@ -308,7 +288,7 @@ export default function App() {
                           : ``}
                       </div>
                     </td>
-                    <td>
+                    <td className="border-0">
                       <div className="flex gap-0.5">
                         {obj.cor
                           ? sToA(obj.cor).map((ite, index) => (
@@ -330,13 +310,13 @@ export default function App() {
                           : ``}
                       </div>
                     </td>
-                    <td>
+                    <td className="border-0">
                       <div>{obj.tim}</div>
                     </td>
-                    <td>
+                    <td className="border-0">
                       <div>{obj.dat.slice(0, 10)}</div>
                     </td>
-                    <td>
+                    <td className="border-0">
                       <div className="flex gap-1">
                         {obj.src && (
                           <Link to={obj.src} target="_blank" className="underline">
@@ -361,7 +341,7 @@ export default function App() {
             </table>
           </div>
           {/* Pagination controls */}
-          <div className="flex justify-center gap-4 items-center text-[14px] font-[Ale]">
+          <div className="flex justify-center gap-4 items-center text-[14px] font-[Ale] py-2 my-2">
             <button
               disabled={pageIndex === 1}
               onClick={() => setPageIndex((prev) => prev - 1)}

@@ -101,7 +101,7 @@ export default function Stats() {
           <div className="px-2">Total Entries: {fullData.length}</div>
           <div className="flex gap-2 px-2">
             <select
-              className="select select-sm rounded-none focus:outline-none focus:border-transparent text-[13px]"
+              className="select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
               value={aspect}
               onChange={(e) => {
                 setAspect(e.target.value);
@@ -112,7 +112,7 @@ export default function Stats() {
               ))}
             </select>
             <select
-              className="select select-sm rounded-none focus:outline-none focus:border-transparent text-[13px]"
+              className="select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
               value={region}
               onChange={(e) => {
                 setRegion(e.target.value);
@@ -123,19 +123,8 @@ export default function Stats() {
               <option value={"Surface"}>Surface</option>
             </select>
           </div>
-          <div className="flex justify-center md:justify-start flex-wrap my-5">
-            {h2AspectOrder.map((item) => (
-              <img
-                src={`/GUI_Card/c${item}.png`}
-                alt="3D card"
-                className={`w-14 transition-all duration-900 opacity-70 ${aspect === item && `rotate-360 animate-bounce opacity-100`}`}
-                onClick={() => setAspect(item)}
-                draggable="false"
-              />
-            ))}
-          </div>
           <div className="overflow-x-scroll my-2">
-            <table className="table table-xs table-zebra bg-black/80 border-separate border-spacing-0.5 rounded-none font-[Ubuntu]">
+            <table className="table table-xs bg-black/80 border-separate border-spacing-0.5 rounded-none font-[Ubuntu]">
               <thead>
                 <tr className="font-[Ale] text-center">
                   <th></th>
@@ -149,13 +138,13 @@ export default function Stats() {
               <tbody>
                 {Array.from({ length: 10 }).map((_, idx) => (
                   <tr key={idx}>
-                    <td>{idx + 1}</td>
+                    <td className="border-0">{idx + 1}</td>
 
                     {grouped.map(([type, items], colIdx) => {
                       const item = items[idx] ?? ["-", 0]; // fallback if undefined
 
                       return (
-                        <td key={colIdx}>
+                        <td className="border-0" key={colIdx}>
                           <div className="flex justify-between items-center px-1">
                             <div className="flex gap-2 items-center">
                               {item[0] !== "-" && (
@@ -174,7 +163,7 @@ export default function Stats() {
             </table>
           </div>
           <div className="overflow-x-scroll my-2">
-            <table className="table table-xs table-zebra bg-black/80 border-separate border-spacing-0.5 rounded-none font-[Ubuntu]">
+            <table className="table table-xs bg-black/80 border-separate border-spacing-0.5 rounded-none font-[Ubuntu]">
               <thead>
                 <tr className="font-[Ale] text-center">
                   <th></th>
@@ -187,13 +176,13 @@ export default function Stats() {
               <tbody>
                 {Array.from({ length: 10 }).map((_, idx) => (
                   <tr key={idx}>
-                    <td>{idx + 1}</td>
+                    <td className="border-0">{idx + 1}</td>
 
                     {ksStore.map((items, colIdx) => {
                       const item = items[idx] ?? ["-", 0]; // fallback if undefined
 
                       return (
-                        <td key={colIdx}>
+                        <td className="border-0" key={colIdx}>
                           <div className="flex justify-between items-center px-1">
                             <div className="flex gap-2 items-center">
                               {item[0] !== "-" && (
@@ -214,40 +203,40 @@ export default function Stats() {
 
           <div className="flex flex-col md:flex-row gap-2 my-2">
             <div className="w-full overflow-x-scroll">
-              <table className="table table-xs table-zebra border-separate border-spacing-0.5 rounded-none font-[Ubuntu] bg-black/80">
+              <table className="table table-xs border-separate border-spacing-0.5 rounded-none font-[Ubuntu] bg-black/80">
                 <thead>
                   <tr className="font-[Ale]">
                     <th className="w-80">Hammer</th>
-                    <th>Pick %</th>
+                    <th className="text-end">Pick %</th>
                   </tr>
                 </thead>
                 <tbody>
                   {hammerStore.map((arr, index) => (
                     <tr>
-                      <td>
+                      <td className="border-0">
                         <div className="flex gap-1 items-center">
                           <img src={`/P9/${p9boons_reverse[arr[0]]}.png`} alt="Hammers" className="size-7" />
                           <div>{arr[0]}</div>
                         </div>
                       </td>
-                      <td>{((arr[1] / fullData.length) * 100).toFixed(2)}%</td>
+                      <td className="border-0 text-end">{((arr[1] / fullData.length) * 100).toFixed(2)}%</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
             <div className="w-full overflow-x-scroll">
-              <table className="table table-xs table-zebra border-separate border-spacing-0.5 rounded-none font-[Ubuntu] bg-black/80">
+              <table className="table table-xs border-separate border-spacing-0.5 rounded-none font-[Ubuntu] bg-black/80">
                 <thead>
                   <tr className="font-[Ale]">
                     <th className="w-80">Familiar</th>
-                    <th>Pick %</th>
+                    <th className="text-end">Pick %</th>
                   </tr>
                 </thead>
                 <tbody>
                   {famStore.map((arr, index) => (
                     <tr>
-                      <td className="h-9">
+                      <td className="border-0 h-9">
                         <div className="flex gap-1 items-center">
                           {arr[0] !== "undefined" && (
                             <img src={`/P9/${arr[0]}.png`} alt="Familiars" className="size-7" />
@@ -255,7 +244,7 @@ export default function Stats() {
                           <div>{arr[0] == "undefined" ? `No Familiar` : arr[0]}</div>
                         </div>
                       </td>
-                      <td>
+                      <td className="border-0 text-end">
                         <div>{((arr[1] / fullData.length) * 100).toFixed(2)}%</div>
                       </td>
                     </tr>

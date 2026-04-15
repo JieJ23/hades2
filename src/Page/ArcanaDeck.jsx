@@ -89,7 +89,7 @@ export default function ArcanaDeck() {
               </button>
             </div>
 
-            <div className="w-full max-w-[1000px] bg-[#28282b] text-white overflow-hidden p-2 truncate rounded my-2">
+            <div className="w-full max-w-[1000px] bg-[black] text-white overflow-hidden p-2 truncate rounded my-2">
               {shareableURL || "No URL Generated Yet"}
             </div>
           </section>
@@ -126,14 +126,7 @@ export default function ArcanaDeck() {
               {deck
                 .sort((a, b) => +(a.slice(1) < +b.slice(1) ? -1 : 1))
                 .map((ite) => (
-                  <div
-                    className="text-gray-300 rounded p-2 my-1 bg-[#000000] font-[Ubuntu] text-[12px]"
-                    style={{
-                      borderStyle: "solid", // Required
-                      borderWidth: "4px",
-                      borderImage: "url('/Misc/frame.webp') 40 stretch",
-                    }}
-                  >
+                  <div className="text-gray-300 rounded p-2 my-1 bg-[#000000]/80 font-[Ubuntu] text-[12px]">
                     <div className="text-[14px] font-[Ale]">{defineDeck(ite).card}</div>
                     <div>{defineDeck(ite).d}</div>
                   </div>

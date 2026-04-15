@@ -29,15 +29,12 @@ export const findValue2 = (arr) => {
 export default function Ladder() {
   const [location, setLocation] = useState(`Underworld`);
   const [boon, setBoon] = useState(`Core`);
-  const [minfear, setMinFear] = useState(1);
-  const [maxfear, setMaxFear] = useState(67);
 
   const { posts, loader } = useData();
 
   const regionData = [...v1bundle, ...(posts || [])]
     .filter((obj) => obj.des.includes("#usum"))
-    .filter((obj) => obj.loc === location)
-    .filter((obj) => obj.fea >= +minfear && obj.fea <= +maxfear);
+    .filter((obj) => obj.loc === location);
 
   const fulldata_ArrArrObject = [];
 
@@ -55,40 +52,14 @@ export default function Ladder() {
     <main className="h-full min-h-lvh relative overflow-hidden">
       <Background />
       <SideNav />
-      <div className="max-w-[1600px] font-[Ubuntu] text-[10px] md:text-[11px] mx-auto px-1">
+      <div className="max-w-[1600px] mx-auto px-1">
         {loader ? (
           <Loading />
         ) : (
           <>
-            <div className="flex justify-center gap-1 font-[Ale]">
-              <div>
-                <div>Min Fear</div>
-                <input
-                  type="number"
-                  placeholder="Min Fear"
-                  className="input input-sm w-[80px] rounded-none focus:outline-none focus:border-transparent"
-                  onChange={(e) => setMinFear(e.target.value)}
-                  value={minfear}
-                  max={67}
-                  min={1}
-                />
-              </div>
-              <div>
-                <div>Max Fear</div>
-                <input
-                  type="number"
-                  placeholder="Max Fear"
-                  className="input input-sm w-[80px] rounded-none focus:outline-none focus:border-transparent"
-                  onChange={(e) => setMaxFear(e.target.value)}
-                  value={maxfear}
-                  max={67}
-                  min={1}
-                />
-              </div>
-            </div>
-            <div className="p-1 flex flex-wrap justify-center gap-1 my-2">
+            <div className="p-1 flex flex-wrap justify-center gap-1 my-2 font-[Ale] text-[13px]">
               <button
-                className={`cursor-pointer rounded-none p-1 ${
+                className={`cursor-pointer rounded p-0.5 px-1 ${
                   location === `Underworld` ? `bg-white text-black` : `bg-transparent text-white`
                 }`}
                 onClick={() => setLocation(`Underworld`)}
@@ -96,7 +67,7 @@ export default function Ladder() {
                 Underworld
               </button>
               <button
-                className={`cursor-pointer text-black rounded-none p-1 ${
+                className={`cursor-pointer text-black rounded p-0.5 px-1 ${
                   location === `Surface` ? `bg-white text-black` : `bg-transparent text-white`
                 }`}
                 onClick={() => setLocation(`Surface`)}
@@ -104,7 +75,7 @@ export default function Ladder() {
                 Surface
               </button>
               <button
-                className={`cursor-pointer rounded-none p-1 ${
+                className={`cursor-pointer rounded p-0.5 px-1 ${
                   boon === `Core` ? `bg-white text-black` : `bg-transparent text-white`
                 }`}
                 onClick={() => setBoon(`Core`)}
@@ -112,7 +83,7 @@ export default function Ladder() {
                 Core
               </button>
               <button
-                className={`cursor-pointer text-black rounded-none p-1 ${
+                className={`cursor-pointer text-black rounded p-0.5 px-1 ${
                   boon === `Hammer` ? `bg-white text-black` : `bg-transparent text-white`
                 }`}
                 onClick={() => setBoon(`Hammer`)}
@@ -120,7 +91,7 @@ export default function Ladder() {
                 Hammer
               </button>
               <button
-                className={`cursor-pointer text-black rounded p-1 ${
+                className={`cursor-pointer text-black rounded p-0.5 px-1 ${
                   boon === `Keep` ? `bg-white text-black` : `bg-transparent text-white`
                 }`}
                 onClick={() => setBoon(`Keep`)}
@@ -128,10 +99,12 @@ export default function Ladder() {
                 Keep
               </button>
             </div>
-            <div className="px-2 mt-2">* Click the player’s name to be redirected to the gameplay video.</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2">
+            <div className="px-2 font-[Ale] text-[14px] text-white my-1">
+              <div>*Unseeded Unmodded With Video Gameplay</div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 text-[13px] font-[Aleg]">
               {fulldata_ArrArrObject.map((arr, oi) => (
-                <div className={`rounded-sm px-2 py-1 relative bg-black/80 border-1 border-white/20 h-[250px]`}>
+                <div className={`rounded-sm px-2 py-1 relative bg-black/80 border border-gray-900 h-[250px]`}>
                   <div className="flex justify-between" key={oi}>
                     <div>
                       Avg{" "}

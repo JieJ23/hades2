@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "daisyui" {
-    themes: dark  --default, dark --prefersdark;
+    themes: black  --default, black --prefersdark;
   }
 
       @font-face {
@@ -14,4 +14,16 @@
     font-family: Ubuntu;
     font-style: normal;
     src: url("/src/fonts/Ubuntu.ttf") format("truetype");
+  }
+
+          @font-face {
+    font-family: Aleg;
+    font-style: normal;
+    src: url("/src/fonts/Aleg.ttf") format("truetype");
+  }
+
+          @font-face {
+    font-family: Spec;
+    font-style: normal;
+    src: url("/src/fonts/Spec.ttf") format("truetype");
   }

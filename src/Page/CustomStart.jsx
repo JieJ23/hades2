@@ -166,14 +166,14 @@ export default function CustomStart() {
             </button>
           </div>
 
-          <div className="w-full bg-[#28282b] text-white overflow-hidden p-2 truncate text-[12px] rounded-none my-2">
+          <div className="w-full bg-[#131111] text-white overflow-hidden p-2 truncate text-[12px] rounded-none my-2">
             {shareableURL || "No URL Generated Yet"}
           </div>
         </section>
         {boon.length > 0 && (
           <div className="my-4">
             <div>Trait Cache ({boon.length})</div>
-            <div className="flex flex-wrap gap-1 bg-[#28282b] rounded p-1">
+            <div className="flex flex-wrap gap-1 bg-[#131111] rounded p-1">
               {boon.map((ite) => (
                 <div className="flex items-center gap-1">
                   <img src={`/P9/${mainID[ite]}.png`} alt="Boon" className="size-8" />
@@ -200,7 +200,7 @@ export default function CustomStart() {
         <div className="my-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
           {currentCategory.map((ite) => (
             <div
-              className={`flex items-center gap-1 p-1 rounded cursor-pointer ${boon.includes(ite) ? `bg-[#00ffaa] text-black` : `bg-[#28282b] text-gray-300`}`}
+              className={`flex items-center gap-1 p-1 rounded cursor-pointer ${boon.includes(ite) ? `bg-[#00ffaa] text-black` : `bg-[#131111] text-gray-300`}`}
               onClick={() =>
                 setBoon((prev) => {
                   if (prev.includes(ite)) {
