@@ -31,7 +31,7 @@ const dream_ErisRival = [
   { HP: 0.41, DMG: 0.6 },
   { HP: 0.75, DMG: 0.8 },
   { HP: 1.6, DMG: 1.35, SPEED: 1.0 },
-  { HP: 3, DMG: 2, SPEED: 1.2 },
+  { HP: 3, DMG: 2, SPEED: 1.0 },
 ];
 
 const dream_EyeBall = [{ HP: 0.15, DMG: 0.2 }, { HP: 0.275, DMG: 0.3 }, { HP: 0.55, DMG: 0.62 }, { DMG: 0.87 }];

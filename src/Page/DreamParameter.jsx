@@ -9,9 +9,9 @@ export default function DreamParameter() {
     <div>
       <Background />
       <SideNav />
-      <div className="text-center font-[Spec] text-[20px] mt-4 text-white">Dream Dive Data</div>
+      <div className="text-center font-[Spec] text-[18px] mt-4 text-white">Dream Dive Data</div>
       <div className="text-center mb-4 text-gray-300 text-[14px] font-[Ale]">*Mutiplier Modifiers </div>
-      <section className="max-w-300 mx-auto">
+      <section className="max-w-250 mx-auto">
         <div className="overflow-x-auto w-full my-8 mt-4 px-2">
           <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto bg-black/80 border-separate border-spacing-0.5 rounded-none table-pin-cols">
             <thead>
@@ -25,8 +25,8 @@ export default function DreamParameter() {
             </thead>
             <tbody>
               {dreamData.map((array, index1) => (
-                <tr key={index1} className="text-[13px] font-[Ubuntu]">
-                  <th className="border-0 text-[15px] font-[Ale]">{dreamData_Name[index1]}</th>
+                <tr key={index1} className="text-[13px] md:text-[14px] font-[Aleg]">
+                  <th className="border-0">{dreamData_Name[index1]}</th>
                   {array.map((array2, index2) => {
                     const value = Object.entries(array2);
                     return (
