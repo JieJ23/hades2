@@ -94,7 +94,7 @@ export default function App() {
       url.searchParams.delete("aspect");
     }
 
-    if (fill !== "Latest") {
+    if (fill !== "Fear") {
       // whatever your default sort is
       url.searchParams.set("sort", fill);
     } else {
@@ -166,7 +166,7 @@ export default function App() {
                 value={player}
                 onChange={(e) => {
                   setPageIndex(1);
-                  setFill("Latest");
+                  setFill("Fear");
                   setCategory("");
                   setRegion("");
                   setPlayer(e.target.value);
