@@ -19,7 +19,7 @@ export default function App() {
   const [mounted, setMounted] = useState(false);
   const [category, setCategory] = useState("");
   const [region, setRegion] = useState("");
-  const [fill, setFill] = useState("Latest");
+  const [fill, setFill] = useState("Fear");
   const [player, setPlayer] = useState("");
 
   const orderData = useMemo(() => {
@@ -201,7 +201,8 @@ export default function App() {
                   <tr key={index}>
                     <td className="border-0">
                       <div className={obj.loc === `Underworld` ? `text-[#00ffaa]` : `text-[yellow]`}>
-                        {orderData.length - (index + 25 * (pageIndex - 1))}
+                        {/* {orderData.length - (index + 25 * (pageIndex - 1))} */}
+                        {index + 1}
                       </div>
                     </td>
                     <td className="border-0">
