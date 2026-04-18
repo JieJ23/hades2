@@ -284,7 +284,7 @@ export default function GameplaySubmission() {
           </div>
         </form>
         {/* Form End */}
-        <div className="flex flex-wrap gap-0.5 my-2 mt-4 px-2">
+        <div className="flex flex-wrap gap-0.5 my-4 p-2 select-none bg-black/80 rounded">
           {biomes.map((item) => (
             <div
               onClick={() => {
@@ -377,23 +377,6 @@ export default function GameplaySubmission() {
           ))}
         </div>
         <div className="text-[14px] px-2 mb-4">To de-select a boon, click on the boon name above.</div>
-        {/* <div className="text-[14px] px-4">Select God Pool:</div>
-        <div className="flex flex-wrap gap-1 px-2 my-2 mt-1 select-none">
-          {selectPool.map((item) => (
-            <div
-              className={` px-2 py-1 rounded-none cursor-pointer ${
-                godpool.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
-              }`}
-              onClick={() => {
-                if (!godpool.includes(item)) {
-                  setGodpool((prev) => [...prev, item]);
-                }
-              }}
-            >
-              {item}
-            </div>
-          ))}
-        </div> */}
         <div className="text-[14px] px-4">Select Boons/Keeps:</div>
         <div className="flex flex-wrap px-2 mt-1 mb-10 select-none">
           {displayData.map((objs) => (
