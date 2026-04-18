@@ -66,7 +66,18 @@ const misc = [bDuo, bElemental];
 const other = [bChaos, bTalent];
 const keepsakes = [bKeep];
 
-const biomes = ["Underworld", "Surface", "Ephyra", "Erebus", "Fields", "Oceanus", "Summit", "Tartarus", "Thessaly"];
+const biomes = [
+  "Underworld",
+  "Surface",
+  "Ephyra",
+  "Erebus",
+  "Fields",
+  "Oceanus",
+  "Olympus",
+  "Summit",
+  "Tartarus",
+  "Thessaly",
+];
 
 const selectPool = [
   `Athena`,
