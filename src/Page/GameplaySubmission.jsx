@@ -175,7 +175,13 @@ export default function GameplaySubmission() {
               <div className="text-[13px]">
                 For Dream Dives, select the biomes below. Otherwise, select Underworld/Surface
               </div>
-              <input className="input w-full rounded" placeholder="Region" value={location.join(",")} name="loc" />
+              <input
+                className="input w-full rounded"
+                required
+                placeholder="Region"
+                value={location.join(",")}
+                name="loc"
+              />
               <input
                 type="number"
                 placeholder="Fear"
