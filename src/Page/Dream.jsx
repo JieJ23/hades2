@@ -1,19 +1,19 @@
-import SideNav from "./Comp/Sidebar";
-import Background from "./Comp/Background";
-import Footer from "./Comp/Footer";
+import SideNav from "../Comp/Sidebar";
+import Background from "../Comp/Background";
+import Footer from "../Comp/Footer";
 
-import { useData } from "./Hook/DataFetch";
-import Loading from "./Hook/Loading";
-import { bundleData } from "./Data/DataBundle";
+import { useData } from "../Hook/DataFetch";
+import Loading from "../Hook/Loading";
+import { bundleData } from "../Data/DataBundle";
 // Utility
-import { sToA, findValue, orderMap, parseTimetoms, getPoolColor, getYTid } from "./Data/Misc";
-import { p9boons } from "./Data/P9BoonObj";
+import { sToA, findValue, orderMap, parseTimetoms, getPoolColor, getYTid } from "../Data/Misc";
+import { p9boons } from "../Data/P9BoonObj";
 import { Link } from "react-router-dom";
-import { h2AspectOrder } from "./Data/Misc";
+import { h2AspectOrder } from "../Data/Misc";
 
 import { useMemo, useState, useEffect } from "react";
 
-export default function App() {
+export default function Dream() {
   const { posts, loader } = useData();
   const [pageIndex, setPageIndex] = useState(1); // current page
   const [mounted, setMounted] = useState(false);
@@ -24,13 +24,13 @@ export default function App() {
 
   const orderData = useMemo(() => {
     return [...bundleData, ...posts]
-      .filter((obj) => obj.loc === "Underworld" || obj.loc === "Surface")
+      .filter((obj) => obj.loc !== "Underworld" && obj.loc !== "Surface")
       .filter((obj) => {
-        const playerMatch = player === "" || obj.nam === player;
+        // const playerMatch = player === "" || obj.nam === player;
         const categoryMatch = category === "" || obj.asp === category;
-        const regionMatch = region === "" || obj.loc === region;
+        // const regionMatch = region === "" || obj.loc === region;
 
-        return categoryMatch && regionMatch && playerMatch;
+        return categoryMatch;
       })
       .sort((a, b) => {
         if (fill === "Latest") return new Date(b.dat) - new Date(a.dat);
@@ -57,16 +57,16 @@ export default function App() {
     const params = new URLSearchParams(window.location.search);
 
     const page = params.get("page");
-    const region = params.get("region");
+    // const region = params.get("region");
     const aspect = params.get("aspect");
     const sort = params.get("sort");
-    const player = params.get("player");
+    // const player = params.get("player");
 
     if (page && !isNaN(+page)) setPageIndex(+page);
-    if (region) setRegion(region);
+    // if (region) setRegion(region);
     if (aspect) setCategory(aspect);
     if (sort) setFill(sort);
-    if (player) setPlayer(player);
+    // if (player) setPlayer(player);
 
     setMounted(true);
   }, []);
@@ -83,11 +83,11 @@ export default function App() {
       url.searchParams.delete("page");
     }
 
-    if (region !== "") {
-      url.searchParams.set("region", region);
-    } else {
-      url.searchParams.delete("region");
-    }
+    // if (region !== "") {
+    //   url.searchParams.set("region", region);
+    // } else {
+    //   url.searchParams.delete("region");
+    // }
 
     if (category !== "") {
       url.searchParams.set("aspect", category);
@@ -102,11 +102,11 @@ export default function App() {
       url.searchParams.delete("sort");
     }
 
-    if (player !== "") {
-      url.searchParams.set("player", player);
-    } else {
-      url.searchParams.delete("player");
-    }
+    // if (player !== "") {
+    //   url.searchParams.set("player", player);
+    // } else {
+    //   url.searchParams.delete("player");
+    // }
 
     window.history.replaceState({}, document.title, url);
   }, [pageIndex, region, category, fill, mounted, player]);
@@ -139,7 +139,7 @@ export default function App() {
                   <option value={item}>{item}</option>
                 ))}
               </select>
-              <select
+              {/* <select
                 className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
                 value={region}
                 onChange={(e) => {
@@ -150,7 +150,7 @@ export default function App() {
                 <option value={""}>{`All Region`}</option>
                 <option value={`Surface`}>Surface</option>
                 <option value={`Underworld`}>Underworld</option>
-              </select>
+              </select> */}
               <select
                 className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
                 value={fill}
@@ -162,7 +162,7 @@ export default function App() {
                 <option value={`Latest`}>Latest</option>
                 <option value={`Fear`}>Fear</option>
               </select>
-              <select
+              {/* <select
                 className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
                 value={player}
                 onChange={(e) => {
@@ -177,7 +177,7 @@ export default function App() {
                 {allPlayers.map((ite) => (
                   <option value={ite}>{ite}</option>
                 ))}
-              </select>
+              </select> */}
             </div>
           </div>
           {/* Table Content */}
@@ -188,6 +188,7 @@ export default function App() {
                   <th>Idx</th>
                   <th>Name</th>
                   <th>Fear</th>
+                  <th className="min-w-30 w-30">Biome</th>
                   <th>Aspect</th>
                   <th className="min-w-30 w-30">Keep</th>
                   <th className="min-w-40 w-40">Fammer</th>
@@ -201,15 +202,7 @@ export default function App() {
                 {paginatedData.slice(0, 100).map((obj, index) => (
                   <tr key={index}>
                     <td className="border-0">
-                      <div
-                        className={
-                          obj.loc === `Underworld`
-                            ? `text-[#00ffaa]`
-                            : obj.loc === `Surface`
-                              ? `text-[yellow]`
-                              : `text-pink-500`
-                        }
-                      >
+                      <div className={`text-pink-500`}>
                         {/* {orderData.length - (index + 25 * (pageIndex - 1))} */}
                         {index + 1 + ITEMS_PER_PAGE * (pageIndex - 1)}
                       </div>
@@ -217,23 +210,24 @@ export default function App() {
                     <td className="border-0">
                       <div className="flex gap-1">
                         <div>{obj.nam}</div>
-                        <div className="shrink-0 size-4">
-                          <img
-                            src={
-                              obj.loc === `Underworld`
-                                ? `/Underworld.png`
-                                : obj.loc === `Surface`
-                                  ? `/Surface.png`
-                                  : `/DreamDive/Dream.png`
-                            }
-                            alt="Region"
-                            className="size-4"
-                          />
-                        </div>
                       </div>
                     </td>
                     <td className="border-0">
                       <div>{obj.fea}</div>
+                    </td>
+                    <td className="border-0">
+                      <div className="flex gap-1">
+                        {sToA(obj.loc).map((ite, index) => (
+                          <div className="tooltip shrink-0">
+                            <div className="tooltip-content p-0">
+                              <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                {ite}
+                              </div>
+                            </div>
+                            <img draggable={false} src={`/DreamDive/${ite}.png`} alt="Biome" className="size-6" />
+                          </div>
+                        ))}
+                      </div>
                     </td>
                     <td className="border-0">
                       <div className="flex gap-2 justify-between items-center">

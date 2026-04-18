@@ -4,6 +4,7 @@ import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import App from "./App.jsx";
+import Dream from "./Page/Dream.jsx";
 import Stats from "./Page/Stats.jsx";
 import Ladder from "./Page/Ladder.jsx";
 import FearCalculator from "./Page/FearCalculator.jsx";
@@ -34,6 +35,7 @@ createRoot(document.getElementById("root")).render(
       <Router>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/Dream" element={<Dream />} />
           <Route path="/Stats" element={<Stats />} />
           <Route path="/Ladder" element={<Ladder />} />
           <Route path="/FearCalculator" element={<FearCalculator />} />

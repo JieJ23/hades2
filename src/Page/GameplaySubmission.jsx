@@ -66,6 +66,8 @@ const misc = [bDuo, bElemental];
 const other = [bChaos, bTalent];
 const keepsakes = [bKeep];
 
+const biomes = ["Underworld", "Surface", "Ephyra", "Erebus", "Fields", "Oceanus", "Summit", "Tartarus", "Thessaly"];
+
 const selectPool = [
   `Athena`,
   `Artemis`,
@@ -93,6 +95,7 @@ const selectPool = [
 
 export default function GameplaySubmission() {
   const [category, setCategory] = useState(0);
+  const [location, setLocation] = useState([]);
   const [core, setCore] = useState([]);
   const [hammer, setHammer] = useState([]);
   const [godpool, setGodpool] = useState([]);
@@ -128,6 +131,7 @@ export default function GameplaySubmission() {
       );
       // This will log the selected option
       formEle.reset();
+      setLocation([]);
       setCore([]);
       setHammer([]);
       setGodpool([]);
@@ -149,7 +153,7 @@ export default function GameplaySubmission() {
   const allCategoryTitle = [`Core`, `Weapons`, `Keepsakes`];
 
   const displayData = allCategory[category];
-
+  console.log(location);
   return (
     <main className="relative">
       <Background />
@@ -168,10 +172,10 @@ export default function GameplaySubmission() {
                   <option key={index}>{ite}</option>
                 ))}
               </select>
-              <select defaultValue="Underworld" className="select select-neutral w-full rounded" name="loc">
-                <option>Underworld</option>
-                <option>Surface</option>
-              </select>
+              <div className="text-[13px]">
+                For Dream Dives, select the biomes below. Otherwise, select Underworld/Surface
+              </div>
+              <input className="input w-full rounded" placeholder="Region" value={location.join(",")} name="loc" />
               <input
                 type="number"
                 placeholder="Fear"
@@ -280,6 +284,34 @@ export default function GameplaySubmission() {
           </div>
         </form>
         {/* Form End */}
+        <div className="flex flex-wrap gap-0.5 my-2 mt-4 px-2">
+          {biomes.map((item) => (
+            <div
+              onClick={() => {
+                setLocation((prev) => {
+                  // If item already exists → remove it
+                  if (prev.includes(item)) {
+                    return prev.filter((i) => i !== item);
+                  }
+
+                  // If already 4 items → do nothing
+                  if (prev.length >= 4) {
+                    return prev;
+                  }
+
+                  // Otherwise → add item
+                  return [...prev, item];
+                });
+              }}
+              className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${
+                location.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
+              }`}
+            >
+              <img src={`DreamDive/${[item]}.png`} alt="Biomes" className="size-8" draggable={false} />
+              {item}
+            </div>
+          ))}
+        </div>
         <div className="flex flex-wrap gap-0.5 my-2 mt-4 px-2">
           <div
             onClick={() => {
