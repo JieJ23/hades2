@@ -18,17 +18,14 @@ export default function Dream() {
   const [pageIndex, setPageIndex] = useState(1); // current page
   const [mounted, setMounted] = useState(false);
   const [category, setCategory] = useState("");
-  const [region, setRegion] = useState("");
   const [fill, setFill] = useState("Fear");
-  const [player, setPlayer] = useState("");
 
   const orderData = useMemo(() => {
     return [...bundleData, ...posts]
       .filter((obj) => obj.loc !== "Underworld" && obj.loc !== "Surface")
+      .filter((obj) => obj.src.includes("youtu"))
       .filter((obj) => {
-        // const playerMatch = player === "" || obj.nam === player;
         const categoryMatch = category === "" || obj.asp === category;
-        // const regionMatch = region === "" || obj.loc === region;
 
         return categoryMatch;
       })
@@ -40,7 +37,7 @@ export default function Dream() {
           return parseTimetoms(a.tim) - parseTimetoms(b.tim);
         }
       });
-  }, [posts, category, region, fill, player]);
+  }, [posts, category, fill]);
 
   // Pagnition
   const ITEMS_PER_PAGE = 25;
@@ -57,16 +54,12 @@ export default function Dream() {
     const params = new URLSearchParams(window.location.search);
 
     const page = params.get("page");
-    // const region = params.get("region");
     const aspect = params.get("aspect");
     const sort = params.get("sort");
-    // const player = params.get("player");
 
     if (page && !isNaN(+page)) setPageIndex(+page);
-    // if (region) setRegion(region);
     if (aspect) setCategory(aspect);
     if (sort) setFill(sort);
-    // if (player) setPlayer(player);
 
     setMounted(true);
   }, []);
@@ -76,18 +69,11 @@ export default function Dream() {
 
     const url = new URL(window.location);
 
-    // Only add non-default values
     if (pageIndex !== 1) {
       url.searchParams.set("page", pageIndex);
     } else {
       url.searchParams.delete("page");
     }
-
-    // if (region !== "") {
-    //   url.searchParams.set("region", region);
-    // } else {
-    //   url.searchParams.delete("region");
-    // }
 
     if (category !== "") {
       url.searchParams.set("aspect", category);
@@ -96,27 +82,20 @@ export default function Dream() {
     }
 
     if (fill !== "Fear") {
-      // whatever your default sort is
       url.searchParams.set("sort", fill);
     } else {
       url.searchParams.delete("sort");
     }
 
-    // if (player !== "") {
-    //   url.searchParams.set("player", player);
-    // } else {
-    //   url.searchParams.delete("player");
-    // }
-
     window.history.replaceState({}, document.title, url);
-  }, [pageIndex, region, category, fill, mounted, player]);
+  }, [pageIndex, category, fill, mounted]);
 
   const allPlayers = [...new Set([...bundleData, ...(posts || [])].map((obj) => obj.nam))].sort((a, b) =>
     a.toLowerCase().localeCompare(b.toLowerCase()),
   );
 
   return (
-    <main className="h-full min-h-lvh relative overflow-hidden text-[14px] md:text-[15px] font-[Ale] select-none">
+    <main className="h-full min-h-lvh relative overflow-hidden text-[14px] font-[Ale] select-none">
       <Background />
       <SideNav />
       {loader ? (
@@ -139,18 +118,6 @@ export default function Dream() {
                   <option value={item}>{item}</option>
                 ))}
               </select>
-              {/* <select
-                className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
-                value={region}
-                onChange={(e) => {
-                  setPageIndex(1);
-                  setRegion(e.target.value);
-                }}
-              >
-                <option value={""}>{`All Region`}</option>
-                <option value={`Surface`}>Surface</option>
-                <option value={`Underworld`}>Underworld</option>
-              </select> */}
               <select
                 className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
                 value={fill}
@@ -162,193 +129,41 @@ export default function Dream() {
                 <option value={`Latest`}>Latest</option>
                 <option value={`Fear`}>Fear</option>
               </select>
-              {/* <select
-                className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
-                value={player}
-                onChange={(e) => {
-                  setPageIndex(1);
-                  setFill("Fear");
-                  setCategory("");
-                  setRegion("");
-                  setPlayer(e.target.value);
-                }}
-              >
-                <option value={""}>All Player</option>
-                {allPlayers.map((ite) => (
-                  <option value={ite}>{ite}</option>
-                ))}
-              </select> */}
             </div>
           </div>
           {/* Table Content */}
-          <div className="overflow-x-scroll py-2 my-2">
-            <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
-              <thead className="font-[Ale] bg-black">
-                <tr>
-                  <th>Idx</th>
-                  <th>Name</th>
-                  <th>Fear</th>
-                  <th className="min-w-30 w-30">Biome</th>
-                  <th>Aspect</th>
-                  <th className="min-w-30 w-30">Keep</th>
-                  <th className="min-w-40 w-40">Fammer</th>
-                  <th className="min-w-40 w-40">Core</th>
-                  <th>Time</th>
-                  <th>Date</th>
-                  <th className="min-w-[100px]">Link</th>
-                </tr>
-              </thead>
-              <tbody>
-                {paginatedData.slice(0, 100).map((obj, index) => (
-                  <tr key={index}>
-                    <td className="border-0">
-                      <div className={`text-pink-500`}>
-                        {/* {orderData.length - (index + 25 * (pageIndex - 1))} */}
-                        {index + 1 + ITEMS_PER_PAGE * (pageIndex - 1)}
-                      </div>
-                    </td>
-                    <td className="border-0">
-                      <div className="flex gap-1">
-                        <div>{obj.nam}</div>
-                      </div>
-                    </td>
-                    <td className="border-0">
-                      <div>{obj.fea}</div>
-                    </td>
-                    <td className="border-0">
-                      <div className="flex gap-1">
-                        {sToA(obj.loc).map((ite, index) => (
-                          <div className="tooltip shrink-0">
-                            <div className="tooltip-content p-0">
-                              <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                {ite}
-                              </div>
-                            </div>
-                            <img draggable={false} src={`/DreamDive/${ite}.png`} alt="Biome" className="size-6" />
-                          </div>
-                        ))}
-                      </div>
-                    </td>
-                    <td className="border-0">
-                      <div className="flex gap-2 justify-between items-center">
-                        <div>{obj.asp}</div>
-                        {obj.des && (
-                          <div className="w-[25px]">
-                            <div
-                              className={`tooltip ${
-                                index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
-                              }`}
-                            >
-                              <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                  {obj.des}
-                                </div>
-                              </div>
-                              <img src="/Misc/comment.png" alt="Comment" className="size-5" />
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </td>
-                    <td className="border-0">
-                      {obj.ks && (
-                        <div className="flex gap-1">
-                          {sToA(obj.ks).map((ite, index) => (
-                            <div className="tooltip shrink-0">
-                              <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                  {ite}
-                                </div>
-                              </div>
-                              <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-6" />
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </td>
-                    <td className="border-0">
-                      <div className="flex gap-0.5">
-                        {obj.fam && (
-                          <div className="tooltip">
-                            <div className="tooltip-content p-0">
-                              <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                {obj.fam}
-                              </div>
-                            </div>
-                            <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Familiar" className="size-6" />
-                          </div>
-                        )}
-                        {obj.ham
-                          ? findValue(
-                              sToA(obj.ham).sort((a, b) => {
-                                const aIndex = orderMap.get(a) ?? Infinity;
-                                const bIndex = orderMap.get(b) ?? Infinity;
-                                return aIndex - bIndex;
-                              }),
-                            ).map((ite, index) => (
-                              <div className="tooltip">
-                                <div className="tooltip-content p-0">
-                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                    {p9boons[ite]}
-                                  </div>
-                                </div>
-                                <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
-                              </div>
-                            ))
-                          : ``}
-                      </div>
-                    </td>
-                    <td className="border-0">
-                      <div className="flex gap-0.5">
-                        {obj.cor
-                          ? sToA(obj.cor).map((ite, index) => (
-                              <div className="tooltip">
-                                <div className="tooltip-content p-0">
-                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                    {p9boons[ite]}
-                                  </div>
-                                </div>
-                                <img
-                                  draggable={false}
-                                  src={`/H2Boons/${ite}.png`}
-                                  alt="Core Boon"
-                                  className="size-6"
-                                  loading="lazy"
-                                />
-                              </div>
-                            ))
-                          : ``}
-                      </div>
-                    </td>
-                    <td className="border-0">
-                      <div>{obj.tim}</div>
-                    </td>
-                    <td className="border-0">
-                      <div>{obj.dat.slice(0, 10)}</div>
-                    </td>
-                    <td className="border-0">
-                      <div className="flex gap-1">
-                        {obj.src && (
-                          <Link to={obj.src} target="_blank" className="underline">
-                            {obj.src.includes("drive.google") ? `Image` : `Video`}
-                          </Link>
-                        )}
-                        {obj.arcana && (
-                          <Link to={obj.arcana} target="_blank" className="underline">
-                            Arcana
-                          </Link>
-                        )}
-                        {obj.oath && (
-                          <Link to={obj.oath} target="_blank" className="underline">
-                            Vows
-                          </Link>
-                        )}
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="max-w-350 mx-auto p-2">
+            <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-8 gap-4">
+              {paginatedData.slice(0, 50).map((obj, index) => (
+                <div className="rounded">
+                  <Link to={obj.src} target="_blank" className="group">
+                    <img
+                      src={`https://img.youtube.com/vi/${getYTid(obj.src)}/maxresdefault.jpg`}
+                      alt="Video Thumbnail"
+                      className="aspect-video w-full group-hover:scale-95 duration-150 rounded-lg"
+                      loading="lazy"
+                    />
+                  </Link>
+                  <div className="px-2 pb-1">
+                    <div className="flex flex-wrap justify-center gap-1">
+                      <span>{obj.fea}</span>
+                      <span className="text-orange-400">{obj.nam}</span>
+                      <span>{obj.asp}</span>:<span>{obj.tim}</span>
+                    </div>
+                    <div className="flex justify-center my-1 gap-0.5">
+                      {sToA(obj.loc).map((item) => (
+                        <img src={`/DreamDive/${item}.png`} alt="Biomes" className="size-7" />
+                      ))}
+                    </div>
+                    <div className="flex justify-center gap-0.5">
+                      {sToA(obj.loc).map((item) => (
+                        <div className="bg-gray-900 px-1 rounded">{item}</div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </section>
           </div>
           {/* Pagination controls */}
           <div className="flex justify-center gap-4 items-center text-[14px] font-[Ale] py-2 my-2">

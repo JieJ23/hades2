@@ -67,9 +67,9 @@ export default function ArcanaDeck() {
     <main className="select-none relative">
       <Background />
       <SideNav />
-      <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto">
+      <div className="max-w-[1400px] mx-auto">
         <div className="w-full">
-          <section className="p-2">
+          <section className="p-2 font-[Exo] text-[12px]">
             <div className="flex flex-wrap gap-1">
               <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={generateShareableURL}>
                 Generate URL
@@ -93,7 +93,7 @@ export default function ArcanaDeck() {
               {shareableURL || "No URL Generated Yet"}
             </div>
           </section>
-          <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-col lg:flex-row font-[Ale] text-[14px]">
             <div className="grid grid-cols-5 place-content-start max-w-[450px] h-auto mx-auto shrink-0">
               {allCards.map((ite, idx) => (
                 <div key={idx} className="relative" onClick={() => handleDeck(ite)}>
@@ -111,23 +111,23 @@ export default function ArcanaDeck() {
                     }`}
                   >
                     <img draggable={false} src={`/Arcane/${ite}.png`} alt="Arcane Card" />
-                    <div className="absolute top-1 right-0 bg-black text-[yellow] rounded size-5 flex justify-center items-center text-[12px] font-[Ubuntu]">
+                    <div className="absolute top-1 right-0 bg-black text-[yellow] rounded size-5 flex justify-center items-center">
                       {defineDeck(ite).g}
                     </div>
                   </div>
-                  <div className="text-center text-[12px]">{texts[idx]}</div>
+                  <div className="text-center">{texts[idx]}</div>
                 </div>
               ))}
             </div>
             <div className="w-full p-3">
-              <div className={`text-[18px] text-[#0cf29e] ${currentGrasp <= 30 ? `text-[#0cf29e]` : `text-[#ee2828]`}`}>
+              <div className={` text-[#0cf29e] ${currentGrasp <= 30 ? `text-[#0cf29e]` : `text-[#ee2828]`}`}>
                 Total: {currentGrasp}/30
               </div>
               {deck
                 .sort((a, b) => +(a.slice(1) < +b.slice(1) ? -1 : 1))
                 .map((ite) => (
-                  <div className="text-gray-300 rounded p-2 my-1 bg-[#000000]/80 font-[Ubuntu] text-[12px]">
-                    <div className="text-[14px] font-[Ale]">{defineDeck(ite).card}</div>
+                  <div className="text-gray-300 rounded p-2 my-1 bg-[#000000]/80">
+                    <div className="">{defineDeck(ite).card}</div>
                     <div>{defineDeck(ite).d}</div>
                   </div>
                 ))}

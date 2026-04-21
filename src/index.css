@@ -27,3 +27,9 @@
     font-style: normal;
     src: url("/src/fonts/Spec.ttf") format("truetype");
   }
+
+            @font-face {
+    font-family: Exo;
+    font-style: normal;
+    src: url("/src/fonts/Exocet.otf") format("opentype");
+  }

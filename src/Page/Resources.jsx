@@ -76,10 +76,10 @@ export default function Resources() {
     <div>
       <Background />
       <SideNav />
-      <section className="max-w-250 mx-auto my-8 p-2 rounded font-[Aleg] text-[15px] text-gray-300">
+      <section className="max-w-250 mx-auto my-8 p-2 rounded font-[Spec] text-[12px] text-gray-300">
         {pagesObj.map((obj, index) => (
           <div key={index} className="rounded my-4">
-            <Link to={`/${obj.link}`} className="text-white hover:text-[#00ffaa] font-[Spec] text-[16px]">
+            <Link to={`/${obj.link}`} className="hover:text-[#00ffaa] font-[Exo] text-[16px] text-orange-200">
               {obj.nam}
             </Link>
             <div className="ps-2">{obj.des}</div>

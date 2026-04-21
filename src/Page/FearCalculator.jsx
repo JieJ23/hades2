@@ -88,9 +88,9 @@ export default function FearCalculator() {
     <main className="select-none relative">
       <Background />
       <SideNav />
-      <div className="max-w-[1400px] font-[Ale] text-[11px] md:text-[12px] mx-auto">
+      <div className="max-w-[1400px] mx-auto">
         <div className="w-full">
-          <section className="p-2">
+          <section className="p-2 font-[Exo] text-[12px]">
             <div className="flex flex-wrap gap-1">
               <button className="bg-white cursor-pointer text-black rounded px-2 py-1 " onClick={generateShareableURL}>
                 Generate URL
@@ -109,21 +109,21 @@ export default function FearCalculator() {
               </button>
             </div>
 
-            <div className="w-full max-w-[1000px] bg-black text-white overflow-hidden p-2 truncate text-[12px] rounded my-2">
+            <div className="w-full max-w-[1000px] bg-black text-white overflow-hidden p-2 truncate rounded my-2">
               {shareableURL || "No URL Generated Yet"}
             </div>
           </section>
-          <div className="flex flex-col lg:flex-row items-center lg:items-start py-1">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start py-1 font-[Ale] text-[14px]">
             <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start px-0.5">
               {allVows.map((ite, index) => (
                 <div
                   className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876] rounded ${
-                    vows[index] !== 0 ? `bg-gradient-to-br from-[#190c23] to-[#411876]` : `bg-[#000000]`
+                    vows[index] !== 0 ? `bg-gradient-to-t from-[#190c23]/80 to-[#411876d8]` : `bg-black/80`
                   } ${index === 16 && `col-start-2 col-span-2`}`}
                   key={index}
                 >
-                  <div className="absolute top-0 left-1">
-                    <div className="flex flex-col text-[12px]">
+                  <div className="absolute top-0 left-1 text-[12px]">
+                    <div className="flex flex-col">
                       {vowArray(ite).map((item, ind) => (
                         <div key={ind}>{item}</div>
                       ))}
@@ -135,9 +135,9 @@ export default function FearCalculator() {
                     className="size-7 md:size-8 lg:size-9 rounded"
                     draggable={false}
                   />
-                  <div className="text-[10px] md:text-[12px] text-white">{ite}</div>
+                  <div className=" text-white">{ite}</div>
                   <button
-                    className="btn btn-outline border-white/50 rounded bg-black btn-xs text-[12px]"
+                    className="btn btn-outline border-white/50 rounded bg-black btn-xs"
                     onClick={() => handleButtonClick(index)}
                   >
                     {vows[index]}
@@ -156,11 +156,11 @@ export default function FearCalculator() {
               ))}
             </div>
             <div className="w-full p-2 lg:py-0">
-              <div className={`text-[18px] text-[#0cf29e]`}>Total: {currentVows ? currentVows : 0}</div>
+              <div className={`text-[#0cf29e]`}>Total: {currentVows ? currentVows : 0}</div>
               <div className="grid grid-cols-2 gap-2">
                 {displayVow.map((item, index) => (
-                  <div className="w-full text-[12px] text-white rounded p-2 bg-[#000000]/80 font-[Ubuntu]" key={index}>
-                    <div className="text-[14px] font-[Ale]">{item}</div>
+                  <div className="w-full text-white rounded p-2 bg-[#000000]/80" key={index}>
+                    <div className="">{item}</div>
                     <div className="text-gray-300">{defineArray(item).d}</div>
                     <div className="flex flex-wrap justify-start gap-2 mt-1">
                       {defineArray(item).rank.map((ite, index) => (

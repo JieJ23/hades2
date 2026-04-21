@@ -116,7 +116,7 @@ export default function App() {
   );
 
   return (
-    <main className="h-full min-h-lvh relative overflow-hidden text-[14px] md:text-[15px] font-[Ale] select-none">
+    <main className="h-full min-h-lvh relative overflow-hidden text-[14px] font-[Ale] select-none">
       <Background />
       <SideNav />
       {loader ? (
@@ -182,39 +182,35 @@ export default function App() {
           </div>
           {/* Table Content */}
           <div className="overflow-x-scroll py-2 my-2">
-            <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
-              <thead className="font-[Ale] bg-black">
+            <table className="table whitespace-nowrap table-xs max-w-[1400px] mx-auto font-[Ubuntu] rounded-none table-pin-cols">
+              <thead className="font-[Ale]">
                 <tr>
-                  <th>Idx</th>
+                  <td>Idx</td>
                   <th>Name</th>
-                  <th>Fear</th>
-                  <th>Aspect</th>
-                  <th className="min-w-30 w-30">Keep</th>
-                  <th className="min-w-40 w-40">Fammer</th>
-                  <th className="min-w-40 w-40">Core</th>
-                  <th>Time</th>
-                  <th>Date</th>
-                  <th className="min-w-[100px]">Link</th>
+                  <td>Fear</td>
+                  <td>Aspect</td>
+                  <td className="min-w-40 w-40">Keep</td>
+                  <td className="min-w-40 w-40">Fammer</td>
+                  <td className="min-w-40 w-40">Core</td>
+                  <td>Time</td>
+                  <td>Date</td>
+                  <td className="min-w-[100px]">Link</td>
                 </tr>
               </thead>
               <tbody>
                 {paginatedData.slice(0, 100).map((obj, index) => (
                   <tr key={index}>
-                    <td className="border-0">
+                    <td className="border-0 border-y-1 border-y-white/5">
                       <div
                         className={
-                          obj.loc === `Underworld`
-                            ? `text-[#00ffaa]`
-                            : obj.loc === `Surface`
-                              ? `text-[yellow]`
-                              : `text-pink-500`
+                          obj.loc === `Underworld` ? `text-[#00ffaa]` : obj.loc === `Surface` ? `text-[yellow]` : ``
                         }
                       >
                         {/* {orderData.length - (index + 25 * (pageIndex - 1))} */}
                         {index + 1 + ITEMS_PER_PAGE * (pageIndex - 1)}
                       </div>
                     </td>
-                    <td className="border-0">
+                    <th className="border-0 border-y-1 border-y-white/5 z-40">
                       <div className="flex gap-1">
                         <div>{obj.nam}</div>
                         <div className="shrink-0 size-4">
@@ -231,11 +227,11 @@ export default function App() {
                           />
                         </div>
                       </div>
-                    </td>
-                    <td className="border-0">
+                    </th>
+                    <td className="border-0 border-y-1 border-y-white/5">
                       <div>{obj.fea}</div>
                     </td>
-                    <td className="border-0">
+                    <td className="border-0 border-y-1 border-y-white/5">
                       <div className="flex gap-2 justify-between items-center">
                         <div>{obj.asp}</div>
                         {obj.des && (
@@ -246,7 +242,7 @@ export default function App() {
                               }`}
                             >
                               <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
                                   {obj.des}
                                 </div>
                               </div>
@@ -256,13 +252,13 @@ export default function App() {
                         )}
                       </div>
                     </td>
-                    <td className="border-0">
+                    <td className="border-0 border-y-1 border-y-white/5">
                       {obj.ks && (
                         <div className="flex gap-1">
                           {sToA(obj.ks).map((ite, index) => (
                             <div className="tooltip shrink-0">
                               <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
                                   {ite}
                                 </div>
                               </div>
@@ -272,12 +268,12 @@ export default function App() {
                         </div>
                       )}
                     </td>
-                    <td className="border-0">
+                    <td className="border-0 border-y-1 border-y-white/5">
                       <div className="flex gap-0.5">
                         {obj.fam && (
                           <div className="tooltip">
                             <div className="tooltip-content p-0">
-                              <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                              <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
                                 {obj.fam}
                               </div>
                             </div>
@@ -294,7 +290,7 @@ export default function App() {
                             ).map((ite, index) => (
                               <div className="tooltip">
                                 <div className="tooltip-content p-0">
-                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                  <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
                                     {p9boons[ite]}
                                   </div>
                                 </div>
@@ -304,13 +300,13 @@ export default function App() {
                           : ``}
                       </div>
                     </td>
-                    <td className="border-0">
+                    <td className="border-0 border-y-1 border-y-white/5">
                       <div className="flex gap-0.5">
                         {obj.cor
                           ? sToA(obj.cor).map((ite, index) => (
                               <div className="tooltip">
                                 <div className="tooltip-content p-0">
-                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                  <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
                                     {p9boons[ite]}
                                   </div>
                                 </div>
@@ -326,13 +322,13 @@ export default function App() {
                           : ``}
                       </div>
                     </td>
-                    <td className="border-0">
+                    <td className="border-0 border-y-1 border-y-white/5">
                       <div>{obj.tim}</div>
                     </td>
-                    <td className="border-0">
+                    <td className="border-0 border-y-1 border-y-white/5">
                       <div>{obj.dat.slice(0, 10)}</div>
                     </td>
-                    <td className="border-0">
+                    <td className="border-0 border-y-1 border-y-white/5">
                       <div className="flex gap-1">
                         {obj.src && (
                           <Link to={obj.src} target="_blank" className="underline">

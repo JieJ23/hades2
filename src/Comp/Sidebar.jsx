@@ -7,14 +7,14 @@ export const sites = [
   { link: `Ladder`, nam: `Ladder` },
   { link: `ArcanaDeck`, nam: `Arcana` },
   { link: `FearCalculator`, nam: `Fear` },
-  { link: `GameplaySubmission`, nam: `Submission` },
-  { link: `Resources`, nam: `Resources` },
+  { link: `GameplaySubmission`, nam: `Submit` },
+  // { link: `Resources`, nam: `Resources` },
 ];
 
 export default function SideNav() {
   const currentLocation = useLocation();
   return (
-    <div className="w-full p-4 font-[Ale] text-[14px] rounded shrink-0">
+    <div className="w-full p-4 font-[Exo] text-[14px] rounded shrink-0">
       <div className="flex flex-wrap justify-center items-center gap-0.5">
         {sites.map((obj, idx) => (
           <Link to={`/${obj.link}`} className={`flex items-center group`} key={idx}>
