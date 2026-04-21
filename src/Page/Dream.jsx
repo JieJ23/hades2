@@ -2,8 +2,6 @@ import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
-import fallbackImg from "../../public/dream.webp";
-
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
 import { bundleData } from "../Data/DataBundle";

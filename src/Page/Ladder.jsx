@@ -102,8 +102,9 @@ export default function Ladder() {
                 </div>
                 {uwTop.map((obj, index) => (
                   <div className="font-[Ale] text-[14px] text-center flex justify-center gap-2">
-                    <img src={`/P9/${obj.asp}.png`} alt="Aspect" className="size-6" />
-                    <span className="min-w-30">{obj.nam}</span>
+                    <img src={`/P9/${obj.asp}.png`} alt="Aspect" className="size-7" />
+                    <span className="min-w-40">{obj.nam}</span>
+                    <span className="font-[Exo] text-orange-300">{obj.fea}</span>
                     <span>{obj.tim}</span>
                   </div>
                 ))}
@@ -122,8 +123,9 @@ export default function Ladder() {
                 </div>
                 {sTop.map((obj, index) => (
                   <div className="font-[Ale] text-[14px] text-center flex justify-center gap-2">
-                    <img src={`/P9/${obj.asp}.png`} alt="Aspect" className="size-6" />
-                    <span className="min-w-30">{obj.nam}</span>
+                    <img src={`/P9/${obj.asp}.png`} alt="Aspect" className="size-7" />
+                    <span className="min-w-40">{obj.nam}</span>
+                    <span className="font-[Exo] text-orange-300">{obj.fea}</span>
                     <span>{obj.tim}</span>
                   </div>
                 ))}
