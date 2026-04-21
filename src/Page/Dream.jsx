@@ -2,6 +2,8 @@ import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
+import fallbackImg from "../../public/dream.webp";
+
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
 import { bundleData } from "../Data/DataBundle";
@@ -134,7 +136,7 @@ export default function Dream() {
           {/* Table Content */}
           <div className="max-w-350 mx-auto p-2">
             <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-8 gap-4">
-              {paginatedData.slice(0, 50).map((obj, index) => (
+              {paginatedData.slice(0, 25).map((obj, index) => (
                 <div className="rounded">
                   <Link to={obj.src} target="_blank" className="group">
                     <img
@@ -142,6 +144,15 @@ export default function Dream() {
                       alt="Video Thumbnail"
                       className="aspect-video w-full group-hover:scale-95 duration-150 rounded-lg"
                       loading="lazy"
+                      onLoad={(e) => {
+                        if (e.currentTarget.naturalWidth === 120 && e.currentTarget.naturalHeight === 90) {
+                          e.currentTarget.src = "./dream.webp";
+                        }
+                      }}
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = "./dream.webp";
+                      }}
                     />
                   </Link>
                   <div className="px-2 pb-1">
