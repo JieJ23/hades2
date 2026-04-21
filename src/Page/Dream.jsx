@@ -23,7 +23,6 @@ export default function Dream() {
   const orderData = useMemo(() => {
     return [...bundleData, ...posts]
       .filter((obj) => obj.loc !== "Underworld" && obj.loc !== "Surface")
-      .filter((obj) => obj.src.includes("youtu"))
       .filter((obj) => {
         const categoryMatch = category === "" || obj.asp === category;
 
@@ -133,31 +132,104 @@ export default function Dream() {
           </div>
           {/* Table Content */}
           <div className="max-w-350 mx-auto p-2">
-            <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-8 gap-4">
+            <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {paginatedData.slice(0, 25).map((obj, index) => (
                 <div className="rounded">
-                  <Link to={obj.src} target="_blank" className="group">
-                    <img
-                      src={`https://img.youtube.com/vi/${getYTid(obj.src)}/maxresdefault.jpg`}
-                      alt="Video Thumbnail"
-                      className="aspect-video w-full group-hover:scale-95 duration-150 rounded-lg"
-                      loading="lazy"
-                      onLoad={(e) => {
-                        if (e.currentTarget.naturalWidth === 120 && e.currentTarget.naturalHeight === 90) {
+                  {obj.src.includes("youtu") ? (
+                    <Link to={obj.src} target="_blank" className="group">
+                      <img
+                        src={`https://img.youtube.com/vi/${getYTid(obj.src)}/maxresdefault.jpg`}
+                        alt="Video Thumbnail"
+                        className="aspect-video w-full group-hover:scale-95 duration-150 rounded-lg"
+                        loading="lazy"
+                        onLoad={(e) => {
+                          if (e.currentTarget.naturalWidth === 120 && e.currentTarget.naturalHeight === 90) {
+                            e.currentTarget.src = "./dream.webp";
+                          }
+                        }}
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
                           e.currentTarget.src = "./dream.webp";
-                        }
-                      }}
-                      onError={(e) => {
-                        e.currentTarget.onerror = null;
-                        e.currentTarget.src = "./dream.webp";
-                      }}
-                    />
-                  </Link>
+                        }}
+                      />
+                    </Link>
+                  ) : (
+                    <Link to={obj.src} target="_blank" className="group">
+                      <img
+                        src={`/melinoe.webp`}
+                        alt="Cover Img"
+                        className="aspect-video w-full group-hover:scale-95 duration-150 rounded-lg"
+                        loading="lazy"
+                      />
+                    </Link>
+                  )}
                   <div className="px-2 pb-1">
                     <div className="flex flex-wrap justify-center gap-1">
                       <span>{obj.fea}</span>
                       <span className="text-orange-400">{obj.nam}</span>
                       <span>{obj.asp}</span>:<span>{obj.tim}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <div className="flex gap-0.5">
+                        {obj.fam && (
+                          <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Familiar" className="size-6" />
+                        )}
+                        {obj.ham
+                          ? findValue(
+                              sToA(obj.ham).sort((a, b) => {
+                                const aIndex = orderMap.get(a) ?? Infinity;
+                                const bIndex = orderMap.get(b) ?? Infinity;
+                                return aIndex - bIndex;
+                              }),
+                            ).map((ite, index) => (
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
+                                  </div>
+                                </div>
+                                <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
+                              </div>
+                            ))
+                          : ``}
+                      </div>
+                      {obj.ks && (
+                        <div className="flex gap-0.5">
+                          {sToA(obj.ks).map((ite, index) => (
+                            <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-5" />
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex justify-start gap-0.5">
+                      {obj.cor
+                        ? sToA(obj.cor).map((ite, index) => (
+                            <img
+                              draggable={false}
+                              src={`/H2Boons/${ite}.png`}
+                              alt="Core Boon"
+                              className="size-6"
+                              loading="lazy"
+                            />
+                          ))
+                        : ``}
+                    </div>
+                    <div className="flex gap-1">
+                      {obj.src && (
+                        <Link to={obj.src} target="_blank" className="underline">
+                          {obj.src.includes("drive.google") ? `Image` : `Video`}
+                        </Link>
+                      )}
+                      {obj.arcana && (
+                        <Link to={obj.arcana} target="_blank" className="underline">
+                          Arcana
+                        </Link>
+                      )}
+                      {obj.oath && (
+                        <Link to={obj.oath} target="_blank" className="underline">
+                          Vows
+                        </Link>
+                      )}
                     </div>
                     <div className="flex justify-center my-1 gap-0.5">
                       {sToA(obj.loc).map((item) => (
@@ -168,6 +240,9 @@ export default function Dream() {
                       {sToA(obj.loc).map((item) => (
                         <div className="bg-gray-900 px-1 rounded">{item}</div>
                       ))}
+                    </div>
+                    <div className="line-clamp-2 text-[13px] leading-[1.2] min-h-[32px] pt-1 text-gray-300">
+                      {obj.des}
                     </div>
                   </div>
                 </div>

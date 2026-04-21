@@ -4898,7 +4898,7 @@ export const v3data = [
     loc: "Surface",
     fea: 67,
     src: "https://youtu.be/wzsWGLagMLI?si=5vKO5DQKjHSrk6G1",
-    des: "Flames first max fear clear, BNB hit Grit #usum",
+    des: "Flames first max fear clear, BNB hit Grit",
     arcana: "https://h2crossroads.pages.dev/ArcanaDeck/?deck=W10=",
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsNSwyLDIsMTJd",
     tim: "16:53.39",
