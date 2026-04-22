@@ -35,7 +35,16 @@ import { parsesectoTime, traitAspect, aspectsFinder } from "../Data/Misc";
 //   }
 // };
 
-// const exclude = [`MetaUpgrade`, `Essence`];
+const exclude = [
+  `MetaUpgrade`,
+  `Essence`,
+  `Familiar`,
+  `Keepsake`,
+  `Display`,
+  `MaxHealthTrait`,
+  `MaxManaTrait`,
+  `Aspect`,
+];
 
 export default function ProfileSum() {
   const [data, setData] = useState(null);
@@ -60,19 +69,60 @@ export default function ProfileSum() {
 
   //   Assignment
   let info = null;
+  let csv = [];
 
   if (data) {
     const gameState = data.CurrentRun;
     const history = Object.entries(data.GameState.RunHistory)
       .filter((arr) => Object.entries(arr[1]).length > 2)
-      .slice(-100)
-      .reverse();
+      .filter((arr) => arr[1].RunResult == 1 || arr[1].RunResult == 3);
 
+    for (let i = 0; i < history.length; i++) {
+      const object = {};
+      //
+      object.id = Number(Number(history[i][0]) + history[i][1].GameplayTime.toString().slice(-3));
+      object.asp = aspectsFinder(
+        traitAspect.find((ite) => Object.keys(history[i][1].TraitCache).some((a) => a === ite)),
+      );
+      object.time = parsesectoTime(history[i][1].GameplayTime);
+      object.region = history[i][1].RunResult === 1 ? `Underworld` : `Surface`;
+      object.fear = history[i][1].ShrinePointsCache;
+      object.keep = Object.values(history[i][1].KeepsakeCache)
+        .map((ite) => sdata[ite])
+        .join(",");
+      object.traits = Object.keys(history[i][1].TraitCache)
+        .filter((item) => !exclude.some((ex) => item.includes(ex)))
+        .join(",");
+      //
+      csv.push(object);
+    }
+    console.log(csv);
     info = {
-      roomHistory: Object.entries(gameState.RoomHistory),
       runHistory: history,
     };
   }
+
+  // Download to CSV
+
+  const convertToCSV = (data) => {
+    const headers = Object.keys(data[0]);
+
+    const rows = data.map((row) => headers.map((field) => JSON.stringify(row[field] ?? "")).join(","));
+
+    return [headers.join(","), ...rows].join("\n");
+  };
+
+  const downloadCSV = (data) => {
+    const csv = convertToCSV(data);
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = window.URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "table-data.csv";
+    a.click();
+  };
+
   return (
     <div className="h-full min-h-lvh relative overflow-hidden">
       <Background />
@@ -100,12 +150,10 @@ export default function ProfileSum() {
                     <th className="border-0">Aspect</th>
                     <th className="border-0">Gameplay Time</th>
                     <th className="border-0">Region</th>
-                    <th className="border-0">Ending Room</th>
-                    <th className="border-0">Killed?</th>
                     <th className="border-0">Fear</th>
-                    <th className="border-0">Meta Points</th>
                     <th className="border-0">Keepsakes</th>
-                    {/* <th className="border-0">Traits</th> */}
+                    {/* <th className="border-0">TraitsNum</th>
+                    <th className="border-0">Traits</th> */}
                   </tr>
                 </thead>
                 <tbody>
@@ -119,26 +167,28 @@ export default function ProfileSum() {
                         )}
                       </td>
                       <td className="border-0">{parsesectoTime(arr[1].GameplayTime)}</td>
-                      <td className="border-0">
-                        {arr[1].RunResult === 1 || arr[1].RunResult === 1 ? `Underworld` : `Surface`}
-                      </td>
-                      <td className="border-0">{arr[1].EndingRoomName}</td>
-                      <td className="border-0">{arr[1].KilledByName}</td>
+                      <td className="border-0">{arr[1].RunResult === 1 ? `Underworld` : `Surface`}</td>
                       <td className="border-0">{arr[1].ShrinePointsCache}</td>
-                      <td className="border-0">{arr[1].MetaUpgradeCostCache}</td>
                       <td className="border-0">
-                        <div className="flex gap-2">
-                          {Object.entries(arr[1].KeepsakeCache).map((arr) => (
-                            <div>{sdata[arr[1]]}</div>
-                          ))}
+                        <div>
+                          {Object.values(arr[1].KeepsakeCache)
+                            .map((ite) => sdata[ite])
+                            .join(",")}
                         </div>
                       </td>
                       {/* <td className="border-0">
+                        <div>{Object.keys(arr[1].TraitCache).length}</div>
+                      </td>
+                      <td className="border-0">
                         <div className="flex w-[1500px] flex-wrap  gap-2">
                           {Object.keys(arr[1].TraitCache)
                             .filter((item) => !exclude.some((ex) => item.includes(ex)))
-                            .map((arr) => (
-                              <div>{sdata[arr]}</div>
+                            .map((arr, index) => (
+                              <div>
+                                {index + 1}
+                                {arr}
+                                <span className="text-[orange]">{sdata[arr]}</span>
+                              </div>
                             ))}
                         </div>
                       </td> */}
@@ -151,6 +201,14 @@ export default function ProfileSum() {
         ) : (
           <div className="text-[#00ffaa] px-2 text-[16px]">*Parsing JSON Error</div>
         )}
+        <div className="flex justify-center">
+          <button
+            onClick={() => downloadCSV(csv)}
+            className="font-[Exo] text-[12px] bg-white text-black rounded px-1 py-0.5"
+          >
+            Export CSV
+          </button>
+        </div>
       </div>
       <Footer />
     </div>
