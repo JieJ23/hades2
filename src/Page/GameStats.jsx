@@ -45,10 +45,26 @@ import {
 export default function GameStats() {
   const [aspect, setAspect] = useState("");
   const [region, setRegion] = useState("");
+  const [time, setTime] = useState("");
+  const [minfear, setMinFear] = useState("");
+  const [maxfear, setMaxFear] = useState("");
 
-  const targetList = assets.filter(
-    (obj) => (!aspect || aspect === "" || obj.Aspect === aspect) && (!region || obj.Region === region),
-  );
+
+  const targetList = assets.filter((obj) => {
+    const matchesAspect = !aspect || obj.Aspect === aspect;
+    const matchesRegion = !region || obj.Region === region;
+    const matchesTime =
+      !time || parseTimetoms(obj.Time) < 6000 * Number(time);
+
+    const min = Number(minfear);
+    const max = Number(maxfear);
+
+    const matchesFear =
+      (!minfear || obj.Fear >= min) &&
+      (!maxfear || obj.Fear <= max);
+
+    return matchesAspect && matchesRegion && matchesTime && matchesFear;
+  });
 
   const boonStore = Object.entries(
     targetList.reduce((acc, ite) => {
@@ -181,15 +197,19 @@ export default function GameStats() {
   ];
   // Testing
 
+  const counts = Object.entries(h2AspectOrder.reduce((acc, aspect) => {
+    acc[aspect] = assets.filter(obj => obj.Aspect === aspect).length;
+    return acc;
+  }, {})).sort((a, b) => b[1] - a[1]);
   // const en = targetList[0].Time;
   // console.log(parseTimetoms(en));
-
+  console.log(counts)
   return (
     <div>
       <Background />
       <SideNav />
       {/* Start */}
-      <div className="min-h-screen my-4 max-w-[1600px] mx-auto p-2 font-[Ale] text-[14px]">
+      <div className="min-h-screen my-4 max-w-[1600px] mx-auto p-2 font-[Ale] text-[14px] select-none">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-1 px-2">
           <select
             className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
@@ -215,19 +235,70 @@ export default function GameStats() {
             <option value={`Underworld`}>Underworld</option>
           </select>
         </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-1 px-2 mt-1">
+          <select
+            className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
+            value={time}
+            onChange={(e) => {
+              setTime(e.target.value);
+            }}
+          >
+            <option value={""}>{`Clear Before Selected Min`}</option>
+            {Array.from({ length: 67 }).map((_, index) => (
+              <option value={index + 1}>{index + 1}</option>
+            ))}
+          </select>
+          <select
+            className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
+            value={minfear}
+            onChange={(e) => {
+              setMinFear(e.target.value);
+            }}
+          >
+            <option value={""}>{`Min Fear`}</option>
+            {Array.from({ length: 67 }).map((_, index) => (
+              <option value={index + 1}>{index + 1}</option>
+            ))}
+          </select>
+          <select
+            className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
+            value={maxfear}
+            onChange={(e) => {
+              setMaxFear(e.target.value);
+            }}
+          >
+            <option value={""}>{`Max Fear`}</option>
+            {Array.from({ length: 67 }).map((_, index) => (
+              <option value={index + 1}>{index + 1}</option>
+            ))}
+          </select>
+        </div>
         {/* Content */}
         <div className="flex justify-start gap-2 my-4 px-4 text-[16px] font-[Ale]">
-          <span>Data from: {targetList.length} Entries</span>
+          <span>Full Aspect Distribution</span>
         </div>
-        <div className="h-[500px] flex flex-wrap justify-center overflow-y-scroll gap-2 rounded p-1 bg-black/60 border-1 border-white/10">
+        <div className="flex gap-1 overflow-auto p-1 px-2 bg-black/20 border-1 border-white/10">
+          {counts.map((arr, index) => (
+            <div className="min-w-20 p-1 flex flex-col items-center rounded leading-tight">
+              <img src={`/GUI_Card/c${arr[0]}.png`} alt="Aspects" className="w-full" draggable="false" />
+              {/* <div>{arr[0]}</div> */}
+              <div>{arr[1]}</div>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-start gap-2 my-4 px-4 text-[16px] font-[Ale]">
+          <span>Selection Entries: {targetList.length} Entries</span>
+        </div>
+        <div className="flex overflow-auto gap-2 rounded p-1 px-2 bg-black/20 border-1 border-white/10">
           {metaUpgradeItems.map((arr, index) => (
-            <div className="flex flex-col items-center hover:bg-black hover:text-white leading-tight">
+            <div className="min-w-25 flex flex-col gap-1 items-center hover:bg-[#28282b] hover:text-white leading-tight rounded">
               {/* <div>{arr[0]}</div> */}
               <img
                 src={`/Arcane/${arcanaid[sdata[arr[0]]]}.png`}
                 alt="Arcana"
                 className="w-25 h-auto"
                 draggable="false"
+                loading="lazy"
               />
               <div className="text-orange-200">{sdata[arr[0]]}</div>
               <div>{arr[1]}</div>
@@ -240,9 +311,9 @@ export default function GameStats() {
           {display.map(
             (array, index) =>
               array.length > 0 && (
-                <div className="h-[500px] overflow-y-scroll rounded p-2 bg-black/60 border-1 border-white/10">
+                <div className="max-h-[500px] overflow-y-scroll rounded p-2 bg-black/20 border-1 border-white/10">
                   {array.map((arr, index) => (
-                    <div className="flex items-center gap-3 hover:bg-[#00ffaa] hover:text-black">
+                    <div className="flex items-center gap-3 hover:bg-[#28282b]">
                       {/* <div>{arr[0]}</div> */}
                       <img
                         src={`/P9/${mainID[arr[0]]}.png`}
@@ -252,6 +323,7 @@ export default function GameStats() {
                         alt="Boon"
                         className="size-8"
                         draggable="false"
+                        loading="lazy"
                       />
                       <div className="text-orange-200">{sdata[arr[0]]}</div>
                       <div>{arr[1]}</div>
