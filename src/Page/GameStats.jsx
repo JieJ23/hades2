@@ -198,7 +198,7 @@ export default function GameStats() {
   // Testing
 
   const counts = Object.entries(h2AspectOrder.reduce((acc, aspect) => {
-    acc[aspect] = assets.filter(obj => obj.Aspect === aspect).length;
+    acc[aspect] = targetList.filter(obj => obj.Aspect === aspect).length;
     return acc;
   }, {})).sort((a, b) => b[1] - a[1]);
   // const en = targetList[0].Time;
@@ -278,13 +278,16 @@ export default function GameStats() {
           <span>Full Aspect Distribution</span>
         </div>
         <div className="flex gap-1 overflow-auto p-1 px-2 bg-black/20 border-1 border-white/10">
-          {counts.map((arr, index) => (
-            <div className="min-w-20 p-1 flex flex-col items-center rounded leading-tight">
-              <img src={`/GUI_Card/c${arr[0]}.png`} alt="Aspects" className="w-full" draggable="false" />
-              {/* <div>{arr[0]}</div> */}
-              <div>{arr[1]}</div>
-            </div>
-          ))}
+          {counts.map((arr, index) => {
+            return arr[1] > 0 && (
+              <div className="min-w-20 p-1 flex flex-col items-center rounded leading-tight">
+                <img src={`/GUI_Card/c${arr[0]}.png`} alt="Aspects" className="w-15 h-auto" draggable="false" />
+                <div className="text-center text-orange-200 text-[10px]">{arr[0]}</div>
+                <div>{arr[1]}</div>
+              </div>
+            )
+          }
+          )}
         </div>
         <div className="flex justify-start gap-2 my-4 px-4 text-[16px] font-[Ale]">
           <span>Selection Entries: {targetList.length} Entries</span>
