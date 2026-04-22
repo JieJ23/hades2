@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 export const sites = [
   { link: ``, nam: `Night` },
   { link: `Dream`, nam: `Dream` },
+  { link: `GameStats`, nam: `Stats` },
   { link: `Ladder`, nam: `Ladder` },
   { link: `ArcanaDeck`, nam: `Arcana` },
   { link: `FearCalculator`, nam: `Fear` },

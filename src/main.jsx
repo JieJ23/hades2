@@ -5,11 +5,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import App from "./App.jsx";
 import Dream from "./Page/Dream.jsx";
-import Stats from "./Page/Stats.jsx";
+import GameStats from "./Page/GameStats.jsx";
 import Ladder from "./Page/Ladder.jsx";
 import FearCalculator from "./Page/FearCalculator.jsx";
 import ArcanaDeck from "./Page/ArcanaDeck.jsx";
 import GameplaySubmission from "./Page/GameplaySubmission.jsx";
+
+import Stats from "./Page/Stats.jsx";
 import Resources from "./Page/Resources.jsx";
 
 import DreamParameter from "./Page/DreamParameter.jsx";
@@ -36,11 +38,13 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/Dream" element={<Dream />} />
-          <Route path="/Stats" element={<Stats />} />
+          <Route path="/GameStats" element={<GameStats />} />
           <Route path="/Ladder" element={<Ladder />} />
           <Route path="/FearCalculator" element={<FearCalculator />} />
           <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
           <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
+
+          <Route path="/Stats" element={<Stats />} />
           <Route path="/Resources" element={<Resources />} />
 
           <Route path="/DreamParameter" element={<DreamParameter />} />

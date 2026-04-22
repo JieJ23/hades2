@@ -35,16 +35,7 @@ import { parsesectoTime, traitAspect, aspectsFinder } from "../Data/Misc";
 //   }
 // };
 
-const exclude = [
-  `MetaUpgrade`,
-  `Essence`,
-  `Familiar`,
-  `Keepsake`,
-  `Display`,
-  `MaxHealthTrait`,
-  `MaxManaTrait`,
-  `Aspect`,
-];
+const exclude = [`Essence`, `Familiar`, `Keepsake`, `Display`, `MaxHealthTrait`, `MaxManaTrait`, `Aspect`];
 
 export default function ProfileSum() {
   const [data, setData] = useState(null);
@@ -100,6 +91,7 @@ export default function ProfileSum() {
     info = {
       runHistory: history,
     };
+    console.log(info.runHistory);
   }
 
   // Download to CSV

@@ -1,177 +1,4 @@
-export const sdata = {
-  RoomRewardMaxHealthTrait: `Max Health`,
-  RoomRewardMaxManaTrait: `Max Mana`,
-  IncreaseMetaUpgradeCard: `Grasp of the Arcana`,
-  ChanneledCast: `The Sorceress`,
-  ChanneledCast_FlavorText01: `Left to her own devices, she learned to confront the world on her own terms.`,
-  LowManaDamageBonus: `The Huntress`,
-  LowManaDamageMetaupgrade_Tray: `The Huntress`,
-  LowManaDamageBonus_FlavorText01: `Through discipline and instinct comes surpassing skill both in shadow and the light of the Moon.`,
-  BonusHealth: `Persistence`,
-  BonusHealth_FlavorText01: `He stole from gods the gift of fire, for mortals; thus he suffered, but grew strong.`,
-  ManaOverTime: `The Unseen`,
-  ManaOverTimeMetaUpgrade_Tray: `The Unseen`,
-  ManaOverTime_FlavorText01: `Upon their ancient oath, in shadow, they serve; and to shadow, they return.`,
-  CastBuff: `The Furies`,
-  CastBuff_FlavorText01: `In the deepest reaches of the Underworld, three are as feared as the god of the dead himself.`,
-  StartingGold: `The Boatman`,
-  StartingGold_FlavorText01: `Vast riches lie hidden in the realm of the dead; but only a modest fee is needed to get in.`,
-  SprintShield: `The Swift Runner`,
-  DodgeSprint_FlavorText01: `Those who attempted to confront the greatest of the Greeks merely met his spear.`,
-  ChanneledBlock: `The Lovers`,
-  ChanneledBlock_FlavorText01: `Their music brought them together, and not even Death could keep them apart for long.`,
-  HealthRegen: `The Wayward Son`,
-  HealthRegen_Vow: `The Wayward Son`,
-  DoorHealMetaUpgrade_Tray: `The Wayward Son`,
-  HealthRegen_FlavorText01: `Even the Underworld itself struggled to contain him, such was his lust for life.`,
-  LastStand: `Death`,
-  LastStand_FlavorText01: `Some mortals would sense his soft approach, others taken by surprise.`,
-  CastCount: `Eternity`,
-  CastCount_FlavorText01: `The inevitable cannot be prevented, though perhaps can be forestalled.`,
-  BonusDodge: `The Messenger`,
-  BonusDodge_FlavorText01: `With incomparable swiftness can he travel from the highest peaks to the lowest depths.`,
-  MaxHealthPerRoom: `The Centaur`,
-  MaxHealthPerRoom_FlavorText01: `Many of the greatest heroes mortalkind has to offer have in common his patient instruction.`,
-  StatusVulnerability: `Origination`,
-  StatusVulnerability_FlavorText01: `From the infinite void emerged all that exists, and back to that void it all may yet return.`,
-  MagicCrit: `Night`,
-  MagicCrit_FlavorText01: `She sprang from Chaos, and formed much of the natural world, above the surface and below.`,
-  DoorReroll: `The Enchantress`,
-  DoorReroll_FlavorText01: `In mastering metamorphosis, she discovered that only the true nature of a thing cannot be changed.`,
-  TradeOff: `The Fates`,
-  TradeOff_FlavorText01: `Even the gods themselves are subject to the whims of the three weavers of destiny.`,
-  ScreenReroll: `The Champions`,
-  ScreenReroll_FlavorText01: `Once-mortal foes, they found each other once again in death, and were exalted in Elysium.`,
-  RarityBoost: `Excellence`,
-  RarityBoost_FlavorText01: `Not even gods can always live to their fullest purpose; yet mortals all must strive.`,
-  EpicRarityBoost: `Divinity`,
-  EpicRarityBoostMetaUpgrade_Tray: `Divinity`,
-  EpicRarityBoost_FlavorText01: `The privilege of godhood is bestowed at birth, save for the rarest cases, when it is earned.`,
-  BonusRarity: `The Queen`,
-  DuoRarityBoostMetaUpgrade_Tray: `The Queen`,
-  BonusRarity_FlavorText01: `From Olympus she descends to reign in the Underworld, as the surface-land grows cold.`,
-  CardDraw: `Judgment`,
-  BossProgressionMetaUpgrade_Tray: `Judgment`,
-  CardDraw_FlavorText01: `The Underworld King is to decide what shall become of each and every mortal life.`,
-  SorceryRegenUpgrade: `The Moon`,
-  SorceryRegenUpgrade_FlavorText01: `Even as she races her steeds across the fathomless sky, she bears witness to all.`,
-  LowHealthBonus: `Strength`,
-  LowHealthBuffMetaUpgrade_Tray: `Strength`,
-  LowHealthBonus_FlavorText01: `The power to surpass the might of the gods is one that must always be held in check.`,
-  MetaToRunUpgrade: `The Artificer`,
-  MetaToRunMetaUpgrade_Tray: `The Artificer`,
-  MetaToRunUpgrade_FlavorText01: `Few can turn raw materials into works of extraordinary genius; none as can he.`,
-  ManaOverTimeRefundKeepsake: `Silver Wheel`,
-  SignoffHecate: `From Hecate`,
-  BossPreDamageKeepsake: `Knuckle Bones`,
-  SignoffOdysseus: `From Odysseus`,
-  BossMetaUpgradeKeepsake: `Crystal Figurine`,
-  SignoffCirce: `From Circe`,
-  DoorHealReserveKeepsake: `Ghost Onion`,
-  DoorHealReserveKeepsake_Expired: `Ghost Onion`,
-  SignoffDora: `From Dora`,
-  ReincarnationKeepsake: `Luckier Tooth`,
-  ReincarnationKeepsake_Expired: `Luckier Tooth`,
-  SignoffSkelly: `From Schelemeus`,
-  BlockDeathKeepsake: `Engraved Pin`,
-  SignoffMoros: `From Moros`,
-  DeathVengeanceKeepsake: `Evil Eye`,
-  SignoffNemesis: `From Nemesis`,
-  VengeanceHit: `Evil Eye!`,
-  BonusMoneyKeepsake: `Gold Purse`,
-  SignoffCharon: `From Charon`,
-  LowHealthCritKeepsake: `White Antler`,
-  SignoffArtemis: `From Artemis`,
-  SpellTalentKeepsake: `Moon Beam`,
-  SpellTalentKeepsake_Expired: `Moon Beam`,
-  SignoffSelene: `From Selene`,
-  ArmorGainKeepsake: `Silken Sash`,
-  SignoffArachne: `From Arachne`,
-  TempHammerKeepsake: `Experimental Hammer`,
-  SignoffIcarus: `From Icarus`,
-  FountainRarityKeepsake: `Aromatic Phial`,
-  SignoffNarcissus: `From Narcissus`,
-  RandomBlessingKeepsake: `Transcendent Embryo`,
-  SignoffChaos: `From Primordial Chaos`,
-  UnpickedBoonKeepsake: `Concave Stone`,
-  SignoffEcho: `From Echo`,
-  SkipEncounterKeepsake: `Fig Leaf`,
-  SignoffDionysus: `From Dionysus`,
-  AthenaEncounterKeepsake: `Gorgon Amulet`,
-  SignoffAthena: `From Athena`,
-  ForceZeusBoonKeepsake: `Cloud Bangle`,
-  SignoffZeus: `From Zeus`,
-  ForceHeraBoonKeepsake: `Iridescent Fan`,
-  SignoffHera: `From Hera`,
-  ForceAresBoonKeepsake: `Sword Hilt`,
-  SignoffAres: `From Ares`,
-  ForcePoseidonBoonKeepsake: `Vivid Sea`,
-  SignoffPoseidon: `From Poseidon`,
-  ForceApolloBoonKeepsake: `Harmonic Photon`,
-  SignoffApollo: `From Apollo`,
-  ForceDemeterBoonKeepsake: `Barley Sheaf`,
-  SignoffDemeter: `From Demeter`,
-  ForceAphroditeBoonKeepsake: `Beautiful Mirror`,
-  SignoffAphrodite: `From Aphrodite`,
-  ForceHephaestusBoonKeepsake: `Adamant Shard`,
-  SignoffHephaestus: `From Hephaestus`,
-  ForceHestiaBoonKeepsake: `Everlasting Ember`,
-  SignoffHestia: `From Hestia`,
-  DamagedDamageBoostKeepsake: `Blackened Fleece`,
-  SignoffMedea: `From Medea`,
-  DecayingBoostKeepsake: `Lion Fang`,
-  SignoffHeracles: `From Heracles`,
-  EscalatingKeepsake: `Discordant Bell`,
-  SignoffEris: `From Eris`,
-  TimedBuffKeepsake: `Metallic Droplet`,
-  TimedBuffKeepsake_Expired: `Metallic Droplet`,
-  SignoffHermes: `From Hermes`,
-  RarifyKeepsake: `Calling Card`,
-  SignoffZagreus: `From Zagreus`,
-  HadesAndPersephoneKeepsake: `Jeweled Pom`,
-  SignoffHadesAndPersephone: `From Hades & Persephone`,
-  GoldifyKeepsake: `Time Piece`,
-  SignoffChronos: `From Chronos`,
-  UnusedWeaponBonusTrait: `Grave Thirst`,
-  UnusedWeaponBonusTrait2: `Gravest Thirst`,
-  FallbackGold: `Shared Wealth`,
-  InfernalContractBoon: `Champion of Elysium`,
-  InfernalContractBoon_FlavorText: `* Some restrictions apply. Offer not available in all realms. Title may be rescinded without notice.`,
-  SurfacePenalty: `Chthonic Fate`,
-  ErisCurseTrait: `“Blessing” of Strife`,
-  ErisCurse_FlavorText: `There are those who can inspire wrath and malice through no fault of their own.`,
-  ZeusWeaponBoon: `Heaven Strike`,
-  ZeusSpecialBoon: `Heaven Flourish`,
-  ZeusSprintBoon: `Thunder Rush`,
-  ZeusCastBoon: `Storm Ring`,
-  ZeusManaBoon: `Ionic Gain`,
-  CastAnywhereBoon: `Lightning Lance`,
-  ZeusManaBoltBoon: `Power Surge`,
-  BoltRetaliateBoon: `Divine Vengeance`,
-  DoubleBoltBoon: `Double Strike`,
-  LightningDebuffGeneratorBoon: `Electric Overload`,
-  ChainLightning_Name: `Chain-Lightning`,
-  FocusLightningBoon: `Static Shock`,
-  EchoExpirationBoon: `Arc Flash`,
-  ElementalDamageFloorBoon: `Air Quality`,
-  SpawnKillBoon: `Shocking Loss`,
-  SpawnKillBoon_FlavorText: `The lightning bolt forever remains a symbol of the impulsive power of the Lord of Olympus.`,
-  HeraWeaponBoon: `Sworn Strike`,
-  HeraSpecialBoon: `Sworn Flourish`,
-  HeraCastBoon: `Engagement Ring`,
-  SpawnCastDamageBoon: `Rousing Reception`,
-  HeraSprintBoon: `Nexus Rush`,
-  HeraManaBoon: `Born Gain`,
-  BoonDecayBoon: `Bridal Glow`,
-  LinkedDeathDamageBoon: `Dying Wish`,
-  DamageSharePotencyBoon: `Hereditary Bane`,
-  OmegaHeraProjectileBoon: `Fine Line`,
-  DamageShareRetaliateBoon: `Extended Family`,
-  CommonGlobalDamageBoon: `Uncommon Grace`,
-  ElementalRarityUpgradeBoon: `Proper Upbringing`,
-  AllElementalBoon: `All Together`,
-  AllElementalBoon_FlavorText: `The more disparate personalities a family contains, the stronger it can be; thus says the Queen.`,
-
+export const pos = {
   PoseidonWeaponBoon: `Wave Strike`,
   PoseidonSpecialBoon: `Wave Flourish`,
   PoseidonSplash_Name: `Poseidon Waves`,
@@ -188,7 +15,9 @@ export const sdata = {
   ElementalHealthBoon: `Water Fitness`,
   AmplifyConeBoon: `King Tide`,
   AmplifyConeBoon_FlavorText: `The sea covers most of the world's surface already; pray it does not cover the rest.`,
+};
 
+export const apo = {
   ApolloWeaponBoon: `Nova Strike`,
   ApolloSpecialBoon: `Nova Flourish`,
   ApolloCastBoon: `Solar Ring`,
@@ -205,7 +34,9 @@ export const sdata = {
   DoubleExManaBoon: `Exceptional Talent`,
   DoubleExManaBoon_Torch: `Exceptional Talent`,
   DoubleExManaBoon_FlavorText: `We cannot all be the best at what we do, for the god of light has much of it covered.`,
+};
 
+export const aph = {
   AphroditeWeaponBoon: `Flutter Strike`,
   AphroditeSpecialBoon: `Flutter Flourish`,
   AphroditeCastBoon: `Rapture Ring`,
@@ -221,7 +52,9 @@ export const sdata = {
   ElementalDodgeBoon: `Wispy Wiles`,
   RandomStatusBoon: `Nervous Wreck`,
   RandomStatusBoon_FlavorText: `Love and beauty can be so overwhelming as to strike each of the senses numb.`,
+};
 
+export const dem = {
   DemeterWeaponBoon: `Ice Strike`,
   DemeterSpecialBoon: `Ice Flourish`,
   DemeterCastBoon: `Arctic Ring`,
@@ -237,7 +70,9 @@ export const sdata = {
   ElementalDamageCapBoon: `Frosty Veneer`,
   InstantRootKill: `Winter Harvest`,
   InstantRootKill_FlavorText: `Life is resilient, and can take root even in cold, harsh environments... but only to a point.`,
+};
 
+export const hes = {
   HestiaWeaponBoon: `Flame Strike`,
   HestiaSpecialBoon: `Flame Flourish`,
   HestiaSprintBoon: `Heat Rush`,
@@ -253,7 +88,9 @@ export const sdata = {
   ElementalBaseDamageBoon: `Slow Cooker`,
   BurnSprintBoon: `Fire Away`,
   BurnSprintBoon_FlavorText: `Flames can be a source of warmth and comfort, provided one is careful not to draw too close.`,
+};
 
+export const hep = {
   HephaestusWeaponBoon: `Volcanic Strike`,
   HephaestusSpecialBoon: `Volcanic Flourish`,
   MassiveSlam_Name: `Hephaestus Blasts`,
@@ -270,7 +107,9 @@ export const sdata = {
   ElementalDamageBoon: `Martial Art`,
   WeaponUpgradeBoon: `Premium Service`,
   WeaponUpgradeBoon_FlavorText: `The roughest hands can often be the ones to produce the most immaculate results.`,
+};
 
+export const are = {
   AresWeaponBoon: `Vicious Strike`,
   AresSpecialBoon: `Vicious Flourish`,
   AresCastBoon: `Sword Ring`,
@@ -286,7 +125,9 @@ export const sdata = {
   DoubleBloodDropBoon: `Sanguinary Savor`,
   DoubleBloodDropBoon_FlavorText: `If the sight of blood was truly so revolting, why then should it have such a striking hue?`,
   ElementalOlympianDamageBoon: `Rallying Cry`,
+};
 
+export const hermes = {
   HermesWeaponBoon: `Nimble Limbs`,
   HermesSpecialBoon: `Racing Thoughts`,
   HermesCastDiscountBoon: `Winner's Circle`,
@@ -301,7 +142,9 @@ export const sdata = {
   ElementalUnifiedBoon: `Tall Order`,
   TimeStopLastStandBoon: `Paid Dues`,
   TimeStopLastStandBoon_FlavorText: `Wealth may not be a panacea, but it is at least a salve for many different kinds of pains.`,
+};
 
+export const athena = {
   InvulnerabilityDashBoon: `Divine Dash`,
   RetaliateInvulnerabilityBoon: `Defensive Posture`,
   AthenaProjectileBoon: `Phalanx Shot`,
@@ -311,7 +154,9 @@ export const sdata = {
   DeathDefianceRefillBoon: `Renewed Faith`,
   OlympianSpellCountBoon: `Task Force`,
   OlympianSpellCountBoon_FlavorText: `There are great warriors, and there are great leaders; some can even be both, but not at once.`,
+};
 
+export const dio = {
   CastLobBoon: `Tipsy Shot`,
   HiddenMaxHealthBoon: `Worry Free`,
   FirstHangoverBoon: `Drunken Stupor`,
@@ -321,7 +166,9 @@ export const sdata = {
   BankBoon: `Personal Loan`,
   RandomBaseDamageBoon: `Reckless Abandon`,
   RandomBaseDamageBoon_FlavorText: `Why struggle to always be in control, when instinct is always prepared to take the reins?`,
+};
 
+export const art = {
   CritBonusBoon: `Pressure Points`,
   TimedCritVulnerabilityBoon: `Death Warrant`,
   DashOmegaBuffBoon: `Shadow Pounce`,
@@ -332,7 +179,9 @@ export const sdata = {
   FocusCritBoon: `Killing Stroke`,
   SorceryCritBoon: `Whispered Prayer`,
   SorceryCritBoon_FlavorText: `The Moon tends to provide just the amount of light that the huntress requires.`,
+};
 
+export const hades = {
   HadesLifestealBoon: `Life Tax`,
   HadesDeathDefianceDamageBoon: `Last Gasp`,
   HadesCastProjectileBoon: `Howling Soul`,
@@ -342,7 +191,9 @@ export const sdata = {
   HadesManaUrnBoon: `Cinerary Circle`,
   HadesInvisibilityRetaliateBoon: `Unseen Ire`,
   HadesInvisibilityRetaliateBoon_FlavorText: `Darkness is the natural state of things, and a source of fear; for the world is a terrifying place.`,
+};
 
+export const duo = {
   SacrificeBoon: `Sacrifice Boon`,
   SuperSacrificeBoonZeus: `King's Ransom`,
   SuperSacrificeBoonZeus_Tray: `King's Ransom`,
@@ -384,7 +235,9 @@ export const sdata = {
   DoubleMassiveAttackBoon: `Chain Reaction`,
   RapidSwordBoon: `Coffin Nail`,
   FireballRendBoon: `Fourth Degree`,
+};
 
+export const spell = {
   SpellLaserTrait: `Lunar Ray`,
   SpellSummonTrait: `Night Bloom`,
   SpellTimeSlowTrait: `Phase Shift`,
@@ -394,7 +247,9 @@ export const sdata = {
   SpellPolymorphTrait: `Twilight Curse`,
   SpellTransformTrait: `Dark Side`,
   SpellMoonBeamTrait: `Sky Fall`,
+};
 
+export const selene = {
   SummonSpecialTalent: `Summon`,
   OlympianSpellCountTalent: `Lineage`,
   ManaDiscountTalent: `Readiness`,
@@ -493,7 +348,9 @@ export const sdata = {
   MoonBeamPrimaryTalent: `Ambition`,
   MoonBeamExBeamBonusTalent: `Cascade`,
   MoonBeamAresTalent: `Lance of Ares`,
+};
 
+export const chaos = {
   ChaosBlessingFormat: `Chaos Blessing/Curse`,
   ChaosNoMoneyCurse: `Pauper's`,
   ChaosHealthCurse: `Atrophic`,
@@ -529,7 +386,9 @@ export const sdata = {
   ChaosHarvestBlessing: `Discovery`,
   ChaosOmegaDamageBlessing: `Chant`,
   ChaosLastStandBlessing: `Defiance`,
+};
 
+export const arc = {
   VitalityCostume: `Emerald Dress`,
   ManaCostume: `Azure Dress`,
   AgilityCostume: `Lavender Dress`,
@@ -539,7 +398,9 @@ export const sdata = {
   SpellCostume: `Moonlight Dress`,
   EscalatingCostume: `Crimson Dress`,
   EscalatingCostume_FlavorText: `Only the River Styx flows with a deeper, more lustrous red than this silk.`,
+};
 
+export const nar = {
   NarcissusA: `Verdure Sampler`,
   NarcissusB: `Heartfelt Condolences`,
   NarcissusC: `Precious Metals`,
@@ -550,9 +411,9 @@ export const sdata = {
   NarcissusI: `Mixed Blessings`,
   NarcissusG: `Heavenly Splendor`,
   NarcissusG_FlavorText: `Even the glimmer of the heavens themselves left him entirely unmoved.`,
+};
 
-  EchoRepeatKeepsakeBoon_FlavorText: `Words and actions can reverberate with greater potency than is apparent at the time.`,
-
+export const medea = {
   HealingOnDeathCurse: `Life from the Dead`,
   MoneyOnDeathCurse: `Wealth from the Dead`,
   ManaOverTimeCurse: `Traces of Spirit`,
@@ -562,7 +423,9 @@ export const sdata = {
   DeathDefianceRetaliateCurse: `Malice in Kind`,
   NewStatusDamage: `Harm for the Afflicted`,
   NewStatusDamage_FlavorText: `How to rid oneself of malicious thoughts but to make them manifest, and send them away?`,
+};
 
+export const circe = {
   RandomArcanaTrait: `Red Citrine Divination`,
   ArcanaRarityTrait: `Lapis Lazuli Insight`,
   RemoveShrineTrait: `Black Night Banishment`,
@@ -574,7 +437,9 @@ export const sdata = {
   CirceSorceryDamageBoon: `Hymn to the Eye of Night`,
   ExPolymorphBoon: `Turning to a Simple Form`,
   ExPolymorphBoon_FlavorText: `All life is connected in some way, and it can be said that we are simple creatures at heart.`,
+};
 
+export const icarus = {
   FocusAttackDamageTrait: `Ingenious Strike`,
   FocusSpecialDamageTrait: `Ingenious Flourish`,
   OmegaExplodeBoon: `Explosive Intent`,
@@ -584,35 +449,9 @@ export const sdata = {
   SupplyDropBoon: `Supply Chain`,
   UpgradeHammerBoon: `Latest Model`,
   UpgradeHammerBoon_FlavorText: `The greatest inventions never happen in a flash, but are sculpted and refined into being.`,
+};
 
-  HealthFamiliar: `Frinos`,
-  FrogFamiliar_FlavorText: `Amphibious creatures, by their nature, are of two worlds; she always felt a connection there.`,
-  CritFamiliar: `Raki`,
-  RavenFamiliar_FlavorText: `Mortals oft see such creatures as ill portents, when they are just trying to get by.`,
-  LastStandFamiliar: `Toula`,
-  CatFamiliar_FlavorText: `Felines such as this are fiercely independent, their loyalty hard-won.`,
-  DigFamiliar: `Hecuba`,
-  HoundFamiliar_FlavorText: `A longtime Familiar of the Witch of the Crossroads with an unusually regal bearing for a hound.`,
-  DodgeFamiliar: `Gale`,
-  PolecatFamiliar_FlavorText: `A trusted Familiar of the Witch of the Crossroads prone to hiding, though never in shame.`,
-
-  FrogHealthBonus: `Life Bond`,
-  FrogUses: `Soul Bond`,
-  FrogDamage: `Drive Bond`,
-  CatLastStandHeal: `Heart Bond`,
-  CatUses: `Sense Bond`,
-  CatAttack: `Claw Bond`,
-  RavenCritChanceBonus: `Vision Bond`,
-  RavenUses: `Stone Bond`,
-  RavenAttack: `Wing Bond`,
-  HoundManaBonus: `Spirit Bond`,
-  HoundUses: `Earth Bond`,
-  HoundAttack: `Guard Bond`,
-  PolecatDodgeBonus: `Veil Bond`,
-  PolecatUses: `Nature Bond`,
-  PolecatUses_Upgrade: `Nature Bond`,
-  PolecatDamage: `Wild Bond`,
-
+export const staffHammer = {
   StaffDashAttackTrait: `Melting Swipe`,
   StaffAttackRecoveryTrait: `Rapid Thrasher`,
   StaffDoubleAttackTrait: `Wicked Thrasher`,
@@ -630,7 +469,9 @@ export const sdata = {
   StaffRaiseDeadDoubleTrait: `Mirrored Ankh`,
   StaffLoneShadeRespawnTrait: `Scarab Etchings`,
   StaffLoneShadeRallyTrait: `Pharaoh Etchings`,
+};
 
+export const daggerHammer = {
   DaggerRapidAttackTrait: `Rapid Onslaught`,
   DaggerFinalHitTrait: `Wicked Onslaught`,
   DaggerFinalHit: `Powered Up!!`,
@@ -647,7 +488,9 @@ export const sdata = {
   DaggerTripleBuffTrait: `Phantom Brand`,
   DaggerTripleRepeatWomboTrait: `Banshee Brand`,
   DaggerTripleHomingSpecialTrait: `Sinister Pinion`,
+};
 
+export const axeHammer = {
   AxeSpinSpeedTrait: `Furious Whirlwind`,
   AxeAttackRecoveryTrait: `Rapid Hack`,
   AxeMassiveThirdStrikeTrait: `Executioner's Chop`,
@@ -662,7 +505,9 @@ export const sdata = {
   AxeThirdStrikeTrait: `Hell Splitter`,
   AxeRallyFirstStrikeTrait: `Heaven Splitter`,
   AxeRallyFrenzyTrait: `Iron Core`,
+};
 
+export const torchHammer = {
   TorchAttackSpeedTrait: `Furious Blaze`,
   TorchMoveSpeedTrait: `Mega Blaze`,
   TorchSpinAttackTrait: `Leaden Blaze`,
@@ -676,7 +521,9 @@ export const sdata = {
   TorchSpecialSpeedTrait: `Clean Coil`,
   TorchSpecialImpactTrait: `Enduring Coil`,
   TorchAutofireSprintTrait: `Demonic Cell`,
+};
 
+export const lobHammer = {
   LobAmmoTrait: `Bolstered Array`,
   LobAmmoMagnetismTrait: `Fetching Array`,
   LobPulseAmmoTrait: `Volatile Array`,
@@ -694,7 +541,9 @@ export const sdata = {
   LobGunAttackDoublerTrait: `Helheim Charge`,
   LobGunAttackRangeTrait: `Garmr Gaze`,
   LobGunSpecialBounceTrait: `Runic Driver`,
+};
 
+export const suitHammer = {
   SuitArmorTrait: `Melting Cross`,
   SuitAttackSpeedTrait: `Rapid Frame`,
   SuitAttackSizeTrait: `Reaper Frame`,
@@ -713,120 +562,9 @@ export const sdata = {
   SuitComboDoubleSpecialTrait: `Awakened Rockets`,
   SuitComboDashAttackTrait: `Mooncrest Riser`,
   SuitPowershotTrait: `Chakra Collider`,
+};
 
-  WeaponStaffSwing: `Witch's Staff`,
-  WeaponStaffSwing_Aspects: `Descura`,
-  WeaponStaffSwing_FlavorText: `Descura, also called the Staff of Dusk, grows stronger in obscurity.`,
-  WeaponStaff_Unlock: `Descura, Staff of Dusk`,
-  WeaponDagger: `Sister Blades`,
-  WeaponDagger_Aspects: `Lim and Oros`,
-  WeaponDagger_FlavorText: `The Sister Blades Lim and Oros serve the Unseen, and are never separated.`,
-  WeaponDagger_Unlock: `Lim and Oros, Sister Blades`,
-  WeaponAxe: `Moonstone Axe`,
-  WeaponAxe_Aspects: `Zorephet`,
-  WeaponAxe_FlavorText: `Zorephet was to be a labrys so broad as could conceal the Moon herself.`,
-  WeaponAxe_Unlock: `Zorephet, the Moonstone Axe`,
-  WeaponTorch: `Umbral Flames`,
-  WeaponTorch_Aspects: `Ygnium`,
-  WeaponTorch_FlavorText: `The Flames of Ygnium burn with an extraordinary light that does not pierce the dark.`,
-  WeaponTorch_Unlock: `Ygnium, the Umbral Flames`,
-  WeaponLob: `Argent Skull`,
-  WeaponLob_Aspects: `Revaal`,
-  WeaponLob_FlavorText: `Revaal's final honor as Adjudicator was to become immortalized in adamant and death.`,
-  WeaponLob_Unlock: `Revaal, the Argent Skull`,
-  WeaponSuit: `Black Coat`,
-  WeaponSuit_Aspects: `Xinth`,
-  WeaponSuit_FlavorText: `Those wreathed in the darkness of Xinth are extensions of the Underworld's force of will.`,
-  WeaponSuit_Unlock: `Xinth, the Black Coat`,
-  ToolPickaxe: `Crescent Pick`,
-  ToolPickaxe_FlavorText: `Its engravings suggest the humility and restraint expected of its bearer.`,
-  ToolPickaxe2: `Crescent Pick`,
-  ToolPickaxe2_Shop: `Crescent Pick Rank II`,
-  ToolExorcismBook: `Tablet of Peace`,
-  ToolExorcismBook_FlavorText: `Some Shades are incapable of deceit; fewer still are fit to join the cause.`,
-  ToolExorcismBook2: `Tablet of Peace`,
-  ToolExorcismBook2_Shop: `Tablet of Peace Rank II`,
-  ToolShovel: `Silver Spade`,
-  ToolShovel_FlavorText: `It is said to uncover only that which Gaia willingly bestows.`,
-  ToolShovel2: `Silver Spade`,
-  ToolShovel2_Shop: `Silver Spade Rank II`,
-  ToolFishingRod: `Rod of Fishing`,
-  ToolFishingRod_FlavorText: `Poseidon himself anointed this device, and authorized its use.`,
-  ToolFishingRod2: `Rod of Fishing`,
-  ToolFishingRod2_Shop: `Rod of Fishing Rank II`,
-  BaseStaffAspect: `Aspect of Melinoë`,
-  BaseStaffAspect_Shop: `Witch's Staff, Aspect of Melinoë`,
-  BaseStaffAspect_FlavorText: `A waxing crescent moon; the promise of power, the responsibility to ready oneself.`,
-  StaffClearCastAspect: `Aspect of Circe`,
-  StaffClearCastAspect_Shop: `Witch's Staff, Aspect of Circe`,
-  StaffClearCastAspect_FlavorText: `A high priestess of the Unseen once used the staff to bring about necessary change.`,
-  StaffSelfHitAspect: `Aspect of Momus`,
-  StaffSelfHitAspect_Shop: `Witch's Staff, Aspect of Momus`,
-  StaffSelfHitAspect_FlavorText: `Not even ever-patient Night herself spared much time for his insolence.`,
-  StaffRaiseDeadAspect: `Aspect of Anubis`,
-  StaffRaiseDeadAspect_Shop: `Witch's Staff, Aspect of Anubis`,
-  StaffRaiseDeadAspect_FlavorText: `Behind the leering maw of a black jackal, a staunch protector of the dead.`,
-  DaggerBackstabAspect: `Aspect of Melinoë`,
-  DaggerBackstabAspect_Shop: `Sister Blades, Aspect of Melinoë`,
-  DaggerBackstabAspect_FlavorText: `As there are many gardens to be cultivated, such a task requires precision instruments.`,
-  DaggerBlockAspect: `Aspect of Artemis`,
-  DaggerBlockAspect_Shop: `Sister Blades, Aspect of Artemis`,
-  DaggerBlockAspect_FlavorText: `A flash of silver; whether the Huntress or the Moon, none can attest.`,
-  DaggerHomingThrowAspect: `Aspect of Pan`,
-  DaggerHomingThrowAspect_Shop: `Sister Blades, Aspect of Pan`,
-  DaggerHomingThrowAspect_FlavorText: `The natural-grown horn can pierce as readily as a well-crafted blade.`,
-  DaggerTripleAspect: `Aspect of the Morrigan`,
-  DaggerTripleAspect_Shop: `Sister Blades, Aspect of the Morrigan`,
-  DaggerTripleAspect_FlavorText: `They are three or she is one, this distant phantom queen foretold by the call of the crow.`,
-  TorchSpecialDurationAspect: `Aspect of Melinoë`,
-  TorchSpecialDurationAspect_Shop: `Umbral Flames, Aspect of Melinoë`,
-  TorchSpecialDurationAspect_FlavorText: `No single light can illuminate the many crossroads ahead; thus there are two.`,
-  TorchDetonateAspect: `Aspect of Moros`,
-  TorchDetonateAspect_Shop: `Umbral Flames, Aspect of Moros`,
-  TorchDetonateAspect_FlavorText: `Feared and hated Doom lingers like a sword about to fall; even his time shall come.`,
-  TorchSprintRecallAspect: `Aspect of Eos`,
-  TorchSprintRecallAspect_Shop: `Umbral Flames, Aspect of Eos`,
-  TorchSprintRecallAspect_FlavorText: `Rosy-fingered Dawn is mistress of a certain light more captivating than any other.`,
-  TorchAutofireAspect: `Aspect of Supay`,
-  TorchAutofireAspect_Shop: `Umbral Flames, Aspect of Supay`,
-  TorchAutofireAspect_FlavorText: `Plunge deep enough into the Earth and the daemons therein only grow stronger.`,
-  AxeRecoveryAspect: `Aspect of Melinoë`,
-  AxeRecoveryAspect_Shop: `Moonstone Axe, Aspect of Melinoë`,
-  AxeRecoveryAspect_FlavorText: `Its twin blade can split even the light of the Moon, yet itself can never be separated.`,
-  AxeArmCastAspect: `Aspect of Charon`,
-  AxeArmCastAspect_Shop: `Moonstone Axe, Aspect of Charon`,
-  AxeArmCastAspect_FlavorText: `To navigate the rivers of the Underworld is to possess extraordinary poise and strength.`,
-  AxePerfectCriticalAspect: `Aspect of Thanatos`,
-  AxePerfectCriticalAspect_Shop: `Moonstone Axe, Aspect of Thanatos`,
-  AxePerfectCriticalAspect_FlavorText: `Death comes peacefully for many mortals; yet for foes of the realm, exceptions must be made.`,
-  AxeRallyAspect: `Aspect of Nergal`,
-  AxeRallyAspect_Shop: `Moonstone Axe, Aspect of Nergal`,
-  AxeRallyAspect_FlavorText: `Most mortal lives are naturally short; he seeks to cut them shorter still in a variety of ways.`,
-  LobAmmoBoostAspect: `Aspect of Melinoë`,
-  LobAmmoBoostAspect_Shop: `Argent Skull, Aspect of Melinoë`,
-  LobAmmoBoostAspect_FlavorText: `The will of Night is never to be chronicled, but witnessed by the dead and the shadow.`,
-  LobCloseAttackAspect: `Aspect of Medea`,
-  LobCloseAttackAspect_Shop: `Argent Skull, Aspect of Medea`,
-  LobCloseAttackAspect_FlavorText: `She shall find comfort in the skulls of her foes remaining ever close at hand; one especially.`,
-  LobImpulseAspect: `Aspect of Persephone`,
-  LobImpulseAspect_Shop: `Argent Skull, Aspect of Persephone`,
-  LobImpulseAspect_FlavorText: `Life and death, forever embodied in a Queen both splendorous and dark at once.`,
-  LobGunAspect: `Aspect of Hel`,
-  LobGunAspect_Shop: `Argent Skull, Aspect of Hel`,
-  LobGunAspect_FlavorText: `There, in her realm, the dead are entombed in the frost beneath the world's roots.`,
-  BaseSuitAspect: `Aspect of Melinoë`,
-  BaseSuitAspect_Shop: `Black Coat, Aspect of Melinoë`,
-  BaseSuitAspect_FlavorText: `Darkness spreads, both of its own volition and by the impetus of those sufficiently devoted.`,
-  SuitHexAspect: `Aspect of Selene`,
-  SuitHexAspect_Shop: `Black Coat, Aspect of Selene`,
-  SuitHexAspect_FlavorText: `Which other strengths and mysteries does she in her bright chariot withhold?`,
-  SuitComboAspect: `Aspect of Shiva`,
-  SuitComboAspect_Shop: `Black Coat, Aspect of Shiva`,
-  SuitComboAspect_FlavorText: `The supreme destroyer requires but four capable hands, yet perhaps has a hundred.`,
-  SuitMarkCritAspect: `Aspect of Nyx`,
-  SuitMarkCritAspect_Shop: `Black Coat, Aspect of Nyx`,
-  SuitMarkCritAspect_FlavorText: `Night is the cold and steady state of the world; a source of calm as well as fright.`,
-
+export const misc = {
   LastStandDrop: `Kiss of Styx`,
   HealDropRange: `Life Essence`,
   EmptyMaxHealthDrop: `Centaur Soul`,
@@ -883,7 +621,18 @@ export const sdata = {
   RoomRewardBigHealDrop_Store: `Fresh Sustenance MAX`,
   ArmorBoost_Store: `Shield Charm`,
   ArmorBigBoost_Store: `Aegis Charm`,
+};
 
+export const echo = {
+  EchoLastReward: `Reward Reward Reward`,
+  DiminishingDodgeBoon: `Evade Evade Evade`,
+  EchoDoubleLevelBoon: `Pom Pom Pom`,
+  EchoLastRunBoon: `Boon Boon Boon`,
+  EchoDeathDefianceRefill: `Survive Survive Survive`,
+  DiminishingHealthAndManaBoon: `Fight Fight Fight`,
+};
+
+export const metaUpgrade = {
   EffectVulnerabilityMetaUpgrade: `Origination`,
   ChamberHealthMetaUpgrade: `Centaur`,
   EpicRarityBoostMetaUpgrade: `Divinity`,
@@ -909,14 +658,4 @@ export const sdata = {
   RarityBoostMetaUpgrade: `Excellence`,
   ManaOverTimeMetaUpgrade: `Unseen`,
   BossProgressionMetaUpgrade: `Judgment`,
-
-  EchoLastReward: `Reward Reward Reward`,
-  DiminishingDodgeBoon: `Evade Evade Evade`,
-  EchoDoubleLevelBoon: `Pom Pom Pom`,
-  EchoLastRunBoon: `Boon Boon Boon`,
-  EchoDeathDefianceRefill: `Survive Survive Survive`,
-  DiminishingHealthAndManaBoon: `Fight Fight Fight`,
-
-  MinorArmorBoon: `Minor Armor`,
-  HexCooldownBuffBoon: `Hex Cooldown Buff`,
 };
