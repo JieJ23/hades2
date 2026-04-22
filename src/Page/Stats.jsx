@@ -1,7 +1,9 @@
 import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
-import { h2AspectOrder, parseTimetoms, sToA } from "../Data/Misc";
+import { h2AspectOrder, parseTimetoms, sToA, deCodeArcana } from "../Data/Misc";
+import { idarcana } from "../Data/Arcana1";
+
 import { bundleData } from "../Data/DataBundle";
 import { p9boons_reverse } from "../Data/P9BoonObj";
 
@@ -87,6 +89,16 @@ export default function Stats() {
   }
 
   const ksStore = [findBiomeKeepData(0), findBiomeKeepData(1), findBiomeKeepData(2), findBiomeKeepData(3)];
+  // Store Arcana
+  const runsAV = fullData.filter((obj) => obj.arcana);
+
+  const store_arcana = [...new Set(runsAV.map((obj) => deCodeArcana(obj.arcana)))].reduce((acc, entry) => {
+    entry?.forEach((cor) => {
+      acc[cor] = (acc[cor] || 0) + 1;
+    });
+
+    return acc;
+  }, {});
 
   return (
     <div className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ale] select-none">
@@ -200,7 +212,6 @@ export default function Stats() {
               </tbody>
             </table>
           </div>
-
           <div className="flex flex-col md:flex-row gap-2 my-2">
             <div className="w-full overflow-x-scroll">
               <table className="table table-xs border-separate border-spacing-0.5 rounded-none font-[Ubuntu] bg-black/80">
@@ -252,6 +263,29 @@ export default function Stats() {
                 </tbody>
               </table>
             </div>
+          </div>
+          {/* Testing Section */}
+          <div className="text-center">From {runsAV.length} Available Arcana</div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 px-2 my-4">
+            {Object.entries(store_arcana)
+              .sort((a, b) => +a[0].slice(1) - +b[0].slice(1))
+              .map(([key, val], index) => (
+                <div
+                  className="flex items-center gap-2 bg-gradient-to-r from-black to-black/75 rounded"
+                  key={index}
+                  style={{
+                    borderStyle: "solid", // Required
+                    borderWidth: "6px",
+                    borderImage: "url('/Misc/frame.webp') 40 stretch",
+                  }}
+                >
+                  <img src={`/Arcane/${key}.png`} alt="Arcana Cards" className="w-[60px] md:w-[80px] h-auto" />
+                  <div>
+                    <div className="text-[15px]">{idarcana[key]}</div>
+                    <div>{((+val / +runsAV.length) * 100).toFixed(2)}%</div>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       )}
