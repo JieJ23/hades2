@@ -570,7 +570,6 @@ export const misc = {
   EmptyMaxHealthDrop: `Centaur Soul`,
   DamageSelfDrop: `Price of Midas`,
   TemporaryBoonRarityTrait: `Yarn of Ariadne`,
-  TemporaryDoorHealTrait: `HydraLite`,
   TemporaryImprovedSecondaryTrait: `Chimaera Jerky`,
   TemporaryImprovedCastTrait: `Braid of Atlas`,
   TemporaryMoveSpeedTrait: `Ignited Ichor`,
