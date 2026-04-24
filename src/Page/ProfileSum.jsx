@@ -3,6 +3,7 @@ import SideNav from "../Comp/Sidebar";
 import Footer from "../Comp/Footer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { idShrine } from "../Data/Vow1";
 
 import { sdata } from "../Data/SData";
 
@@ -81,17 +82,19 @@ export default function ProfileSum() {
       object.keep = Object.values(history[i][1].KeepsakeCache)
         .map((ite) => sdata[ite])
         .join(",");
+      object.shrine = Object.entries(history[i][1].ShrineUpgradesCache)
+        .filter((arr) => arr[1] != 0)
+        .map(([key, value]) => `${idShrine[key]}${value}`);
       object.traits = Object.keys(history[i][1].TraitCache)
         .filter((item) => !exclude.some((ex) => item.includes(ex)))
         .join(",");
       //
       csv.push(object);
     }
-    console.log(csv);
+    // console.log(csv);
     info = {
       runHistory: history,
     };
-    console.log(info.runHistory);
   }
 
   // Download to CSV
@@ -131,6 +134,14 @@ export default function ProfileSum() {
         </Link>
         {data ? (
           <div className="bg-black/70 rounded p-2 py-4">
+            <div className="flex justify-center">
+              <button
+                onClick={() => downloadCSV(csv)}
+                className="font-[Exo] text-[12px] bg-white text-black rounded px-1 py-0.5"
+              >
+                Export CSV
+              </button>
+            </div>
             {/* Previous History */}
             <div className="px-2">Previous History</div>
             <div className="overflow-x-auto">
@@ -193,14 +204,6 @@ export default function ProfileSum() {
         ) : (
           <div className="text-[#00ffaa] px-2 text-[16px]">*Parsing JSON Error</div>
         )}
-        <div className="flex justify-center">
-          <button
-            onClick={() => downloadCSV(csv)}
-            className="font-[Exo] text-[12px] bg-white text-black rounded px-1 py-0.5"
-          >
-            Export CSV
-          </button>
-        </div>
       </div>
       <Footer />
     </div>
