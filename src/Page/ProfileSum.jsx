@@ -84,7 +84,8 @@ export default function ProfileSum() {
         .join(",");
       object.shrine = Object.entries(history[i][1].ShrineUpgradesCache)
         .filter((arr) => arr[1] != 0)
-        .map(([key, value]) => `${idShrine[key]}${value}`);
+        .map(([key, value]) => `${idShrine[key]}${value}`)
+        .join(",");
       object.traits = Object.keys(history[i][1].TraitCache)
         .filter((item) => !exclude.some((ex) => item.includes(ex)))
         .join(",");
