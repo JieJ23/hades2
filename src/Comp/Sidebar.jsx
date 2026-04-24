@@ -9,7 +9,7 @@ export const sites = [
   { link: `ArcanaDeck`, nam: `Arcana` },
   { link: `FearCalculator`, nam: `Fear` },
   { link: `GameplaySubmission`, nam: `Submit` },
-  // { link: `Resources`, nam: `Resources` },
+  { link: `Resources`, nam: `Other` },
 ];
 
 export default function SideNav() {
