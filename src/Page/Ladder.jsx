@@ -21,10 +21,6 @@ export const findValue = (arr) => {
   const finalized = arr.map((ite) => p9boons_reverse[ite]);
   return finalized;
 };
-export const findValue2 = (arr) => {
-  const finalized = arr.map((ite) => boonCodexr[ite]);
-  return finalized;
-};
 //
 export default function Ladder() {
   const [location, setLocation] = useState(`Underworld`);

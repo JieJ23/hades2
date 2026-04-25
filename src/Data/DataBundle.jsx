@@ -6,7 +6,7 @@ import { v2data } from "./V2data";
 import { v3data } from "./V3data";
 
 const today = new Date();
-const target = new Date("5/4/2026");
+const target = new Date("5/20/2026");
 const result = today > target;
 
 export const bundleData = result ? [] : [...p9data, ...p11data, ...v1data, ...v2data, ...v3data, ...p17data];
