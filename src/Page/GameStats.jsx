@@ -9,6 +9,7 @@ import assets from "../Data/store.json";
 import { h2AspectOrder, parseTimetoms, parsemstoTime } from "../Data/Misc";
 import { arcanaid } from "../Data/Arcana1";
 import BarFear from "../Comp/BarFear";
+import BarTime from "../Comp/BarTime";
 //
 import {
   pos,
@@ -314,8 +315,11 @@ export default function GameStats() {
           </select>
         </div>
         {/* Content */}
-        <div className="hidden sm:block">
-          <BarFear data={targetList} title={`Fear Distribution`} />
+        <div className="hidden sm:block class">
+          <div className="flex gap-2">
+            <BarFear data={targetList} title={`Fear Distribution`} />
+            <BarTime data={targetList} title={`Time Distribution`} />
+          </div>
         </div>
         <div className="flex justify-start gap-2 my-4 px-4 text-[16px] font-[Ale]">
           <span>Full Aspect Distribution</span>

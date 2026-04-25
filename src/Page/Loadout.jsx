@@ -11,6 +11,7 @@ import { arcanaid, idMetaUpgrade, idarcana } from "../Data/Arcana1";
 import { vowid, idvow } from "../Data/Vow1";
 import { vowArray, allVows } from "../Data/FearTrait";
 import BarFear from "../Comp/BarFear";
+import BarTime from "../Comp/BarTime";
 //
 function sortAndFillArray(arr, targetSize = 25) {
   // Step 1: Sort by numeric value
@@ -209,8 +210,11 @@ export default function Loadout() {
           </select>
         </div>
         {/* Content */}
-        <div className="hidden sm:block">
-          <BarFear data={targetList} title={`Fear Distribution`} />
+        <div className="hidden sm:block class">
+          <div className="flex gap-2">
+            <BarFear data={targetList} title={`Fear Distribution`} />
+            <BarTime data={targetList} title={`Time Distribution`} />
+          </div>
         </div>
         <div className="flex justify-start gap-2 my-4 px-4 text-[16px] font-[Ale]">
           <span>Full Aspect Distribution</span>
