@@ -72,21 +72,21 @@ export default function ProfileSum() {
     for (let i = 0; i < history.length; i++) {
       const object = {};
       //
-      object.id = Number(Number(history[i][0]) + history[i][1].GameplayTime.toString().slice(-3));
-      object.asp = aspectsFinder(
+      object.Id = Number(Number(history[i][0]) + history[i][1].GameplayTime.toString().slice(-3));
+      object.Aspect = aspectsFinder(
         traitAspect.find((ite) => Object.keys(history[i][1].TraitCache).some((a) => a === ite)),
       );
-      object.time = parsesectoTime(history[i][1].GameplayTime);
-      object.region = history[i][1].RunResult === 1 ? `Underworld` : `Surface`;
-      object.fear = history[i][1].ShrinePointsCache;
-      object.keep = Object.values(history[i][1].KeepsakeCache)
+      object.Time = parsesectoTime(history[i][1].GameplayTime);
+      object.Region = history[i][1].RunResult === 1 ? `Underworld` : `Surface`;
+      object.Fear = history[i][1].ShrinePointsCache;
+      object.Keep = Object.values(history[i][1].KeepsakeCache)
         .map((ite) => sdata[ite])
         .join(",");
-      object.shrine = Object.entries(history[i][1].ShrineUpgradesCache)
+      object.Shrine = Object.entries(history[i][1].ShrineUpgradesCache)
         .filter((arr) => arr[1] != 0)
         .map(([key, value]) => `${idShrine[key]}${value}`)
         .join(",");
-      object.traits = Object.keys(history[i][1].TraitCache)
+      object.Traits = Object.keys(history[i][1].TraitCache)
         .filter((item) => !exclude.some((ex) => item.includes(ex)))
         .join(",");
       //

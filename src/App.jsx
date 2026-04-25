@@ -19,7 +19,7 @@ export default function App() {
   const [mounted, setMounted] = useState(false);
   const [category, setCategory] = useState("");
   const [region, setRegion] = useState("");
-  const [fill, setFill] = useState("Fear");
+  const [fill, setFill] = useState("Latest");
   const [player, setPlayer] = useState("");
   const [format, setFormat] = useState("Grid");
 

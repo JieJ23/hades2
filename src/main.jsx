@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
 import Dream from "./Page/Dream.jsx";
 import GameStats from "./Page/GameStats.jsx";
+import Loadout from "./Page/Loadout.jsx";
 import Ladder from "./Page/Ladder.jsx";
 import FearCalculator from "./Page/FearCalculator.jsx";
 import ArcanaDeck from "./Page/ArcanaDeck.jsx";
@@ -39,6 +40,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/" element={<App />} />
           <Route path="/Dream" element={<Dream />} />
           <Route path="/GameStats" element={<GameStats />} />
+          <Route path="/Loadout" element={<Loadout />} />
           <Route path="/Ladder" element={<Ladder />} />
           <Route path="/FearCalculator" element={<FearCalculator />} />
           <Route path="/ArcanaDeck" element={<ArcanaDeck />} />

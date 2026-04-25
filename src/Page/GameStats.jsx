@@ -8,6 +8,7 @@ import { useState } from "react";
 import assets from "../Data/store.json";
 import { h2AspectOrder, parseTimetoms, parsemstoTime } from "../Data/Misc";
 import { arcanaid } from "../Data/Arcana1";
+import BarFear from "../Comp/BarFear";
 //
 import {
   pos,
@@ -161,6 +162,12 @@ export default function GameStats() {
   } = result;
 
   const display = [
+    staffHammerItems,
+    axeHammerItems,
+    lobHammerItems,
+    suitHammerItems,
+    torchHammerItems,
+    daggerHammerItems,
     posItems,
     apoItems,
     aphItems,
@@ -174,24 +181,62 @@ export default function GameStats() {
     artItems,
     hadesItems,
     duoItems,
-    spellItems,
-    seleneItems,
-    chaosItems,
     arcItems,
     narItems,
     medeaItems,
     circeItems,
     icarusItems,
-    staffHammerItems,
-    axeHammerItems,
-    lobHammerItems,
-    suitHammerItems,
-    torchHammerItems,
-    daggerHammerItems,
     echoItems,
+    spellItems,
+    seleneItems,
+    chaosItems,
     miscItems,
   ];
   // Testing
+
+  const bio1 = Object.entries(
+    targetList.reduce((acc, item) => {
+      const items = sToA(item.Keep)[0];
+
+      acc[items] = (acc[items] || 0) + 1;
+      return acc;
+    }, {}),
+  )
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+  const bio2 = Object.entries(
+    targetList.reduce((acc, item) => {
+      const items = sToA(item.Keep)[1];
+
+      acc[items] = (acc[items] || 0) + 1;
+      return acc;
+    }, {}),
+  )
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+  const bio3 = Object.entries(
+    targetList.reduce((acc, item) => {
+      const items = sToA(item.Keep)[2];
+
+      acc[items] = (acc[items] || 0) + 1;
+      return acc;
+    }, {}),
+  )
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+  const bio4 = Object.entries(
+    targetList.reduce((acc, item) => {
+      const items = sToA(item.Keep)[3];
+
+      acc[items] = (acc[items] || 0) + 1;
+      return acc;
+    }, {}),
+  )
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+
+  const keeper = [bio1, bio2, bio3, bio4];
+  //
 
   const counts = Object.entries(
     h2AspectOrder.reduce((acc, aspect) => {
@@ -199,9 +244,6 @@ export default function GameStats() {
       return acc;
     }, {}),
   ).sort((a, b) => b[1] - a[1]);
-  // const en = targetList[0].Time;
-  // console.log(parseTimetoms(en));
-  // console.log(counts)
   return (
     <div>
       <Background />
@@ -272,6 +314,9 @@ export default function GameStats() {
           </select>
         </div>
         {/* Content */}
+        <div className="hidden sm:block">
+          <BarFear data={targetList} title={`Fear Distribution`} />
+        </div>
         <div className="flex justify-start gap-2 my-4 px-4 text-[16px] font-[Ale]">
           <span>Full Aspect Distribution</span>
         </div>
@@ -291,21 +336,30 @@ export default function GameStats() {
         <div className="flex justify-start gap-2 my-4 px-4 text-[16px] font-[Ale]">
           <span>Selection Entries: {targetList.length} Entries</span>
         </div>
-        <div className="flex overflow-auto gap-2 rounded p-1 px-2 bg-black/20 border-1 border-white/10">
-          {metaUpgradeItems.map((arr, index) => (
-            <div className="min-w-25 flex flex-col gap-1 items-center hover:bg-[#28282b] hover:text-white leading-tight rounded">
-              {/* <div>{arr[0]}</div> */}
-              <img
-                src={`/Arcane/${arcanaid[sdata[arr[0]]]}.png`}
-                alt="Arcana"
-                className="w-25 h-auto"
-                draggable="false"
-                loading="lazy"
-              />
-              <div className="text-orange-200">{sdata[arr[0]]}</div>
-              <div>{arr[1]}</div>
-              <div>{((arr[1] / targetList.length) * 100).toFixed(2)}%</div>
-              <div>{arcanaid[arr[1]]}</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 my-2 font-[Ale] text-[13px]">
+          {keeper.map((arr, index) => (
+            <div className="max-h-[450px] overflow-y-scroll rounded p-2 bg-black/20 border-1 border-white/10 relative">
+              <div className="text-center font-[Exo] text-[14px]">{`Biome ${index + 1}`}</div>
+              {arr.map((arr1, index1) => (
+                <div className="grid grid-cols-5 items-center gap-3 hover:bg-[#28282b] p-1">
+                  <div className="flex gap-2 items-center col-span-3">
+                    {arr1[0] == "undefined" ? (
+                      ``
+                    ) : (
+                      <img
+                        src={`/buildgui/${arr1[0]}.png`}
+                        alt="Keepsakes"
+                        className="size-7"
+                        draggable="false"
+                        loading="lazy"
+                      />
+                    )}
+                    <div className="text-orange-200">{arr1[0]}</div>
+                  </div>
+                  <div>{arr1[1] === "undefinded" ? `None` : arr1[1]}</div>
+                  <div>{((arr1[1] / targetList.length) * 100).toFixed(2)}%</div>
+                </div>
+              ))}
             </div>
           ))}
         </div>
@@ -315,19 +369,20 @@ export default function GameStats() {
               array.length > 0 && (
                 <div className="max-h-[500px] overflow-y-scroll rounded p-2 bg-black/20 border-1 border-white/10">
                   {array.map((arr, index) => (
-                    <div className="flex items-center gap-3 hover:bg-[#28282b]">
-                      {/* <div>{arr[0]}</div> */}
-                      <img
-                        src={`/P9/${mainID[arr[0]]}.png`}
-                        onError={(e) => {
-                          e.target.src = `/buildgui/${sdata[arr[0]]}.png`;
-                        }}
-                        alt="Boon"
-                        className="size-8"
-                        draggable="false"
-                        loading="lazy"
-                      />
-                      <div className="text-orange-200">{sdata[arr[0]]}</div>
+                    <div className="grid grid-cols-5 items-center gap-3 hover:bg-[#28282b]">
+                      <div className="flex gap-2 items-center col-span-3">
+                        <img
+                          src={`/P9/${mainID[arr[0]]}.png`}
+                          onError={(e) => {
+                            e.target.src = `/buildgui/${sdata[arr[0]]}.png`;
+                          }}
+                          alt="Boon"
+                          className="size-8"
+                          draggable="false"
+                          loading="lazy"
+                        />
+                        <div className="text-orange-200">{sdata[arr[0]]}</div>
+                      </div>
                       <div>{arr[1]}</div>
                       <div>{((arr[1] / targetList.length) * 100).toFixed(2)}%</div>
                     </div>
