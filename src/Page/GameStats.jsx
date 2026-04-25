@@ -231,6 +231,8 @@ export default function GameStats() {
       return acc;
     }, {}),
   )
+    .filter((a) => a[0] !== "undefined")
+
     .sort((a, b) => b[1] - a[1])
     .slice(0, 10);
   const bio2 = Object.entries(
@@ -241,6 +243,7 @@ export default function GameStats() {
       return acc;
     }, {}),
   )
+    .filter((a) => a[0] !== "undefined")
     .sort((a, b) => b[1] - a[1])
     .slice(0, 10);
   const bio3 = Object.entries(
@@ -251,6 +254,8 @@ export default function GameStats() {
       return acc;
     }, {}),
   )
+    .filter((a) => a[0] !== "undefined")
+
     .sort((a, b) => b[1] - a[1])
     .slice(0, 10);
   const bio4 = Object.entries(
@@ -261,6 +266,8 @@ export default function GameStats() {
       return acc;
     }, {}),
   )
+    .filter((a) => a[0] !== "undefined")
+
     .sort((a, b) => b[1] - a[1])
     .slice(0, 10);
 
@@ -375,17 +382,13 @@ export default function GameStats() {
               {arr.map((arr1, index1) => (
                 <div className="grid grid-cols-5 items-center gap-3 hover:bg-[#28282b] p-1">
                   <div className="flex gap-2 items-center col-span-3">
-                    {arr1[0] == "undefined" ? (
-                      ``
-                    ) : (
-                      <img
-                        src={`/buildgui/${arr1[0]}.png`}
-                        alt="Keepsakes"
-                        className="size-7"
-                        draggable="false"
-                        loading="lazy"
-                      />
-                    )}
+                    <img
+                      src={`/buildgui/${arr1[0]}.png`}
+                      alt="Keepsakes"
+                      className="size-7"
+                      draggable="false"
+                      loading="lazy"
+                    />
                     <div className="text-orange-200">{arr1[0]}</div>
                   </div>
                   <div>{arr1[1] === "undefinded" ? `None` : arr1[1]}</div>
