@@ -19,6 +19,8 @@ import {
   hes,
   hep,
   are,
+  zeu,
+  her,
   hermes,
   athena,
   dio,
@@ -42,6 +44,11 @@ import {
   echo,
   misc,
   metaUpgrade,
+  attack,
+  special,
+  cast,
+  sprint,
+  magick,
 } from "../Data/Group";
 //
 export default function GameStats() {
@@ -78,6 +85,11 @@ export default function GameStats() {
 
   // Grouping Data
   const categories = [
+    { key: "attackItems", obj: attack },
+    { key: "specialItems", obj: special },
+    { key: "castItems", obj: cast },
+    { key: "sprintItems", obj: sprint },
+    { key: "magickItems", obj: magick },
     { key: "posItems", obj: pos },
     { key: "apoItems", obj: apo },
     { key: "aphItems", obj: aph },
@@ -85,6 +97,8 @@ export default function GameStats() {
     { key: "hesItems", obj: hes },
     { key: "hepItems", obj: hep },
     { key: "areItems", obj: are },
+    { key: "zeuItems", obj: zeu },
+    { key: "herItems", obj: her },
     { key: "hermesItems", obj: hermes },
     { key: "athenaItems", obj: athena },
     { key: "dioItems", obj: dio },
@@ -130,6 +144,11 @@ export default function GameStats() {
   );
 
   const {
+    attackItems,
+    specialItems,
+    castItems,
+    sprintItems,
+    magickItems,
     posItems,
     apoItems,
     aphItems,
@@ -137,6 +156,8 @@ export default function GameStats() {
     hesItems,
     hepItems,
     areItems,
+    zeuItems,
+    herItems,
     hermesItems,
     athenaItems,
     dioItems,
@@ -169,6 +190,11 @@ export default function GameStats() {
     suitHammerItems,
     torchHammerItems,
     daggerHammerItems,
+    attackItems,
+    specialItems,
+    castItems,
+    sprintItems,
+    magickItems,
     posItems,
     apoItems,
     aphItems,
@@ -176,6 +202,8 @@ export default function GameStats() {
     hesItems,
     hepItems,
     areItems,
+    zeuItems,
+    herItems,
     hermesItems,
     athenaItems,
     dioItems,

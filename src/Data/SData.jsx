@@ -140,6 +140,7 @@ export const sdata = {
   SurfacePenalty: `Chthonic Fate`,
   ErisCurseTrait: `“Blessing” of Strife`,
   ErisCurse_FlavorText: `There are those who can inspire wrath and malice through no fault of their own.`,
+
   ZeusWeaponBoon: `Heaven Strike`,
   ZeusSpecialBoon: `Heaven Flourish`,
   ZeusSprintBoon: `Thunder Rush`,
@@ -156,6 +157,7 @@ export const sdata = {
   ElementalDamageFloorBoon: `Air Quality`,
   SpawnKillBoon: `Shocking Loss`,
   SpawnKillBoon_FlavorText: `The lightning bolt forever remains a symbol of the impulsive power of the Lord of Olympus.`,
+
   HeraWeaponBoon: `Sworn Strike`,
   HeraSpecialBoon: `Sworn Flourish`,
   HeraCastBoon: `Engagement Ring`,

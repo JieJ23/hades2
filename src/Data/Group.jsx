@@ -1,12 +1,91 @@
-export const pos = {
+export const attack = {
   PoseidonWeaponBoon: `Wave Strike`,
+  ApolloWeaponBoon: `Nova Strike`,
+  AphroditeWeaponBoon: `Flutter Strike`,
+  DemeterWeaponBoon: `Ice Strike`,
+  HestiaWeaponBoon: `Flame Strike`,
+  HephaestusWeaponBoon: `Volcanic Strike`,
+  AresWeaponBoon: `Vicious Strike`,
+  ZeusWeaponBoon: `Heaven Strike`,
+  HeraWeaponBoon: `Sworn Strike`,
+};
+export const special = {
+  ZeusSpecialBoon: `Heaven Flourish`,
+  HeraSpecialBoon: `Sworn Flourish`,
   PoseidonSpecialBoon: `Wave Flourish`,
-  PoseidonSplash_Name: `Poseidon Waves`,
+  ApolloSpecialBoon: `Nova Flourish`,
+  AphroditeSpecialBoon: `Flutter Flourish`,
+  DemeterSpecialBoon: `Ice Flourish`,
+  HestiaSpecialBoon: `Flame Flourish`,
+  HephaestusSpecialBoon: `Volcanic Flourish`,
+  AresSpecialBoon: `Vicious Flourish`,
+};
+export const cast = {
+  ZeusCastBoon: `Storm Ring`,
+  HeraCastBoon: `Engagement Ring`,
   PoseidonCastBoon: `Tidal Ring`,
+  ApolloCastBoon: `Solar Ring`,
+  AphroditeCastBoon: `Rapture Ring`,
+  DemeterCastBoon: `Arctic Ring`,
+  HestiaCastBoon: `Smolder Ring`,
+  HephaestusCastBoon: `Anvil Ring`,
+  AresCastBoon: `Sword Ring`,
+};
+
+export const sprint = {
+  ZeusSprintBoon: `Thunder Rush`,
+  HeraSprintBoon: `Nexus Rush`,
+  PoseidonSprintBoon: `Breaker Rush`,
+  ApolloSprintBoon: `Blinding Rush`,
+  AphroditeSprintBoon: `Passion Rush`,
+  DemeterSprintBoon: `Frigid Rush`,
+  HestiaSprintBoon: `Heat Rush`,
+  HephaestusSprintBoon: `Smithy Rush`,
+  AresSprintBoon: `Stabbing Rush`,
+};
+export const magick = {
+  ZeusManaBoon: `Ionic Gain`,
+  HeraManaBoon: `Born Gain`,
+  PoseidonManaBoon: `Flood Gain`,
+  ApolloManaBoon: `Lucid Gain`,
+  AphroditeManaBoon: `Glamour Gain`,
+  DemeterManaBoon: `Tranquil Gain`,
+  HestiaManaBoon: `Cardio Gain`,
+  HephaestusManaBoon: `Tough Gain`,
+  AresManaBoon: `Grisly Gain`,
+};
+
+export const zeu = {
+  CastAnywhereBoon: `Lightning Lance`,
+  ZeusManaBoltBoon: `Power Surge`,
+  BoltRetaliateBoon: `Divine Vengeance`,
+  DoubleBoltBoon: `Double Strike`,
+  LightningDebuffGeneratorBoon: `Electric Overload`,
+  ChainLightning_Name: `Chain-Lightning`,
+  FocusLightningBoon: `Static Shock`,
+  EchoExpirationBoon: `Arc Flash`,
+  ElementalDamageFloorBoon: `Air Quality`,
+  SpawnKillBoon: `Shocking Loss`,
+  SpawnKillBoon_FlavorText: `The lightning bolt forever remains a symbol of the impulsive power of the Lord of Olympus.`,
+};
+
+export const her = {
+  SpawnCastDamageBoon: `Rousing Reception`,
+  BoonDecayBoon: `Bridal Glow`,
+  LinkedDeathDamageBoon: `Dying Wish`,
+  DamageSharePotencyBoon: `Hereditary Bane`,
+  OmegaHeraProjectileBoon: `Fine Line`,
+  DamageShareRetaliateBoon: `Extended Family`,
+  CommonGlobalDamageBoon: `Uncommon Grace`,
+  ElementalRarityUpgradeBoon: `Proper Upbringing`,
+  AllElementalBoon: `All Together`,
+  AllElementalBoon_FlavorText: `The more disparate personalities a family contains, the stronger it can be; thus says the Queen.`,
+};
+
+export const pos = {
+  PoseidonSplash_Name: `Poseidon Waves`,
   PoseidonExCastBoon: `Geyser Spout`,
   OmegaPoseidonProjectileBoon: `Ocean Swell`,
-  PoseidonSprintBoon: `Breaker Rush`,
-  PoseidonManaBoon: `Flood Gain`,
   PoseidonStatusBoon: `Slippery Slope`,
   RoomRewardBonusBoon: `Buried Treasure`,
   EncounterStartOffenseBuffBoon: `Hydraulic Might`,
@@ -18,12 +97,7 @@ export const pos = {
 };
 
 export const apo = {
-  ApolloWeaponBoon: `Nova Strike`,
-  ApolloSpecialBoon: `Nova Flourish`,
-  ApolloCastBoon: `Solar Ring`,
   ApolloExCastBoon: `Prominence Flare`,
-  ApolloSprintBoon: `Blinding Rush`,
-  ApolloManaBoon: `Lucid Gain`,
   ApolloCastAreaBoon: `Super Nova`,
   BlindChanceBoon: `Dazzling Display`,
   ApolloBlindBoon: `Back Burner`,
@@ -37,11 +111,6 @@ export const apo = {
 };
 
 export const aph = {
-  AphroditeWeaponBoon: `Flutter Strike`,
-  AphroditeSpecialBoon: `Flutter Flourish`,
-  AphroditeCastBoon: `Rapture Ring`,
-  AphroditeSprintBoon: `Passion Rush`,
-  AphroditeManaBoon: `Glamour Gain`,
   FocusRawDamageBoon: `Secret Crush`,
   ManaBurstBoon: `Heart Breaker`,
   WeakPotencyBoon: `Broken Resolve`,
@@ -55,11 +124,6 @@ export const aph = {
 };
 
 export const dem = {
-  DemeterWeaponBoon: `Ice Strike`,
-  DemeterSpecialBoon: `Ice Flourish`,
-  DemeterCastBoon: `Arctic Ring`,
-  DemeterSprintBoon: `Frigid Rush`,
-  DemeterManaBoon: `Tranquil Gain`,
   RootDurationBoon: `Cold Storage`,
   CastAttachBoon: `Local Climate`,
   PlantHealthBoon: `Plentiful Forage`,
@@ -73,11 +137,6 @@ export const dem = {
 };
 
 export const hes = {
-  HestiaWeaponBoon: `Flame Strike`,
-  HestiaSpecialBoon: `Flame Flourish`,
-  HestiaSprintBoon: `Heat Rush`,
-  HestiaCastBoon: `Smolder Ring`,
-  HestiaManaBoon: `Cardio Gain`,
   AloneDamageBoon: `Snuffed Candle`,
   BurnArmorBoon: `Hot Pot`,
   BurnExplodeBoon: `Flash Fry`,
@@ -91,12 +150,7 @@ export const hes = {
 };
 
 export const hep = {
-  HephaestusWeaponBoon: `Volcanic Strike`,
-  HephaestusSpecialBoon: `Volcanic Flourish`,
   MassiveSlam_Name: `Hephaestus Blasts`,
-  HephaestusCastBoon: `Anvil Ring`,
-  HephaestusSprintBoon: `Smithy Rush`,
-  HephaestusManaBoon: `Tough Gain`,
   ArmorBoon: `Trusty Shield`,
   EncounterStartDefenseBuffBoon: `Security System`,
   AntiArmorBoon: `Molten Touch`,
@@ -110,12 +164,7 @@ export const hep = {
 };
 
 export const are = {
-  AresWeaponBoon: `Vicious Strike`,
-  AresSpecialBoon: `Vicious Flourish`,
-  AresCastBoon: `Sword Ring`,
-  AresSprintBoon: `Stabbing Rush`,
   OmegaDelayedDamageBoon: `Cut Above`,
-  AresManaBoon: `Grisly Gain`,
   RendBloodDropBoon: `Profuse Bleeding`,
   AresStatusDoubleDamageBoon: `Grievous Blow`,
   BloodDropRevengeBoon: `Visceral Impact`,
