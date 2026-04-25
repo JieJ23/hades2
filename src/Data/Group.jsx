@@ -194,7 +194,6 @@ export const hades = {
 };
 
 export const duo = {
-  SacrificeBoon: `Sacrifice Boon`,
   SuperSacrificeBoonZeus: `King's Ransom`,
   SuperSacrificeBoonZeus_Tray: `King's Ransom`,
   SuperSacrificeBoonHera: `Queen's Ransom`,
@@ -250,7 +249,7 @@ export const spell = {
 };
 
 export const selene = {
-  SummonSpecialTalent: `Summon`,
+  // SummonSpecialTalent: `Summon`,
   OlympianSpellCountTalent: `Lineage`,
   ManaDiscountTalent: `Readiness`,
   MinorManaDiscountTalent: `Alertness`,
@@ -266,7 +265,7 @@ export const selene = {
   LaserPenetrationTalent: `Exodus`,
   LaserDurationTalent: `Obstinance`,
   LaserTripleTalent: `Trinity`,
-  LaserPrimaryTalent: `Disintegration`,
+  // LaserPrimaryTalent: `Disintegration`,
   LaserApolloTalent: `Shine of Apollo`,
   PolymorphDamageTalent: `Exposure`,
   PolymorphDurationTalent: `Humility`,
@@ -317,7 +316,7 @@ export const selene = {
   TransformSpecialTalent: `Splendor`,
   TransformExCastTalent: `Sanctity`,
   TransformAphroditeTalent: `Allure of Aphrodite`,
-  TransformBossDamageTalent: `Transform`,
+  // TransformBossDamageTalent: `Transform`,
   LeapDamageTalent: `Instinct`,
   LeapArmorDamageTalent: `Hunger`,
   LeapCooldownSpeedTalent: `Urgency`,
@@ -556,7 +555,6 @@ export const suitHammer = {
   SuitSpecialJumpTrait: `Shimmering Rockets`,
   SuitSpecialDiscountTrait: `Sudden Salvo`,
   SuitDashAttackTrait: `Exhaust Riser`,
-  SuitComboThresholdTrait: `Nirvana Engine`,
   SuitComboForwardRocketTrait: `Elephant Rockets`,
   SuitComboBlockBuffTrait: `Counter Supreme`,
   SuitComboDoubleSpecialTrait: `Awakened Rockets`,
