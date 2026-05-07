@@ -13,21 +13,25 @@ import { h2AspectOrder } from "../Data/Misc";
 
 import { useMemo, useState, useEffect } from "react";
 
-export default function Dream() {
+export default function Night() {
   const { posts, loader } = useData();
   const [pageIndex, setPageIndex] = useState(1); // current page
   const [mounted, setMounted] = useState(false);
   const [category, setCategory] = useState("");
+  const [region, setRegion] = useState("");
   const [fill, setFill] = useState("Latest");
+  const [player, setPlayer] = useState("");
   const [format, setFormat] = useState("Grid");
 
   const orderData = useMemo(() => {
     return [...bundleData, ...posts]
-      .filter((obj) => obj.loc !== "Underworld" && obj.loc !== "Surface")
+      .filter((obj) => obj.loc === "Underworld" || obj.loc === "Surface")
       .filter((obj) => {
+        const playerMatch = player === "" || obj.nam === player;
         const categoryMatch = category === "" || obj.asp === category;
+        const regionMatch = region === "" || obj.loc === region;
 
-        return categoryMatch;
+        return categoryMatch && regionMatch && playerMatch;
       })
       .sort((a, b) => {
         if (fill === "Latest") return new Date(b.dat) - new Date(a.dat);
@@ -37,7 +41,7 @@ export default function Dream() {
           return parseTimetoms(a.tim) - parseTimetoms(b.tim);
         }
       });
-  }, [posts, category, fill]);
+  }, [posts, category, region, fill, player]);
 
   // Pagnition
   const ITEMS_PER_PAGE = 25;
@@ -54,12 +58,16 @@ export default function Dream() {
     const params = new URLSearchParams(window.location.search);
 
     const page = params.get("page");
+    const region = params.get("region");
     const aspect = params.get("aspect");
     const sort = params.get("sort");
+    const player = params.get("player");
 
     if (page && !isNaN(+page)) setPageIndex(+page);
+    if (region) setRegion(region);
     if (aspect) setCategory(aspect);
     if (sort) setFill(sort);
+    if (player) setPlayer(player);
 
     setMounted(true);
   }, []);
@@ -69,10 +77,17 @@ export default function Dream() {
 
     const url = new URL(window.location);
 
+    // Only add non-default values
     if (pageIndex !== 1) {
       url.searchParams.set("page", pageIndex);
     } else {
       url.searchParams.delete("page");
+    }
+
+    if (region !== "") {
+      url.searchParams.set("region", region);
+    } else {
+      url.searchParams.delete("region");
     }
 
     if (category !== "") {
@@ -82,13 +97,20 @@ export default function Dream() {
     }
 
     if (fill !== "Latest") {
+      // whatever your default sort is
       url.searchParams.set("sort", fill);
     } else {
       url.searchParams.delete("sort");
     }
 
+    if (player !== "") {
+      url.searchParams.set("player", player);
+    } else {
+      url.searchParams.delete("player");
+    }
+
     window.history.replaceState({}, document.title, url);
-  }, [pageIndex, category, fill, mounted]);
+  }, [pageIndex, region, category, fill, mounted, player]);
 
   const allPlayers = [...new Set([...bundleData, ...(posts || [])].map((obj) => obj.nam))].sort((a, b) =>
     a.toLowerCase().localeCompare(b.toLowerCase()),
@@ -120,6 +142,18 @@ export default function Dream() {
               </select>
               <select
                 className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
+                value={region}
+                onChange={(e) => {
+                  setPageIndex(1);
+                  setRegion(e.target.value);
+                }}
+              >
+                <option value={""}>{`All Region`}</option>
+                <option value={`Surface`}>Surface</option>
+                <option value={`Underworld`}>Underworld</option>
+              </select>
+              <select
+                className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
                 value={fill}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -128,6 +162,22 @@ export default function Dream() {
               >
                 <option value={`Latest`}>Latest</option>
                 <option value={`Fear`}>Fear</option>
+              </select>
+              <select
+                className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
+                value={player}
+                onChange={(e) => {
+                  setPageIndex(1);
+                  setFill("Fear");
+                  setCategory("");
+                  setRegion("");
+                  setPlayer(e.target.value);
+                }}
+              >
+                <option value={""}>All Player</option>
+                {allPlayers.map((ite) => (
+                  <option value={ite}>{ite}</option>
+                ))}
               </select>
             </div>
           </div>
@@ -149,7 +199,7 @@ export default function Dream() {
           {format === "Grid" ? (
             <div className="max-w-350 mx-auto p-2">
               <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {paginatedData.slice(0, 25).map((obj, index) => (
+                {paginatedData.slice(0, 24).map((obj, index) => (
                   <div className="rounded">
                     {obj.src.includes("youtu") ? (
                       <Link to={obj.src} target="_blank" className="group">
@@ -160,30 +210,41 @@ export default function Dream() {
                           loading="lazy"
                           onLoad={(e) => {
                             if (e.currentTarget.naturalWidth === 120 && e.currentTarget.naturalHeight === 90) {
-                              e.currentTarget.src = "./dream.webp";
+                              e.currentTarget.src = "/mel.webp";
                             }
                           }}
                           onError={(e) => {
                             e.currentTarget.onerror = null;
-                            e.currentTarget.src = "./dream.webp";
+                            e.currentTarget.src = "/mel.webp";
                           }}
                         />
                       </Link>
-                    ) : (
+                    ) : obj.src.includes("bilibi") ? (
                       <Link to={obj.src} target="_blank" className="group">
                         <img
-                          src={`/melinoe.webp`}
-                          alt="Cover Img"
+                          src="gameplay2.webp"
+                          alt="BiliBili Video"
                           className="aspect-video w-full group-hover:scale-95 duration-150 rounded-lg"
                           loading="lazy"
                         />
                       </Link>
+                    ) : (
+                      <img
+                        src={`/melinoe.webp`}
+                        alt="Victory Screen"
+                        className="aspect-video w-full rounded-lg"
+                        loading="lazy"
+                      />
                     )}
                     <div className="px-2 pb-1">
                       <div className="flex flex-wrap justify-center gap-1">
+                        <span className={`${obj.loc === "Underworld" ? `text-[#00ffaa]` : `text-[yellow]`}`}>
+                          {obj.loc === "Underworld" ? "UW" : "S"}
+                        </span>
                         <span>{obj.fea}</span>
                         <span className="text-orange-400">{obj.nam}</span>
-                        <span>{obj.asp}</span>:<span>{obj.tim}</span>
+                        <span>{obj.asp}</span>
+                        <span>{obj.tim}</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <div className="flex gap-0.5">
@@ -247,16 +308,6 @@ export default function Dream() {
                           </Link>
                         )}
                       </div>
-                      <div className="flex justify-center my-1 gap-0.5">
-                        {sToA(obj.loc).map((item) => (
-                          <img src={`/DreamDive/${item}.png`} alt="Biomes" className="size-7" />
-                        ))}
-                      </div>
-                      <div className="flex justify-center gap-0.5">
-                        {sToA(obj.loc).map((item) => (
-                          <div className="bg-gray-900 px-1 rounded">{item}</div>
-                        ))}
-                      </div>
                       <div className="line-clamp-2 text-[13px] leading-[1.2] min-h-[32px] pt-1 text-gray-300">
                         {obj.des}
                       </div>
@@ -267,54 +318,56 @@ export default function Dream() {
             </div>
           ) : (
             <div className="overflow-x-scroll py-2 my-2">
-              <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
-                <thead className="font-[Ale] bg-black">
+              <table className="table whitespace-nowrap table-xs max-w-[1400px] mx-auto font-[Ubuntu] rounded-none table-pin-cols">
+                <thead className="font-[Ale]">
                   <tr>
-                    <th>Idx</th>
+                    <td>Idx</td>
                     <th>Name</th>
-                    <th>Fear</th>
-                    <th className="min-w-30 w-30">Biome</th>
-                    <th>Aspect</th>
-                    <th className="min-w-30 w-30">Keep</th>
-                    <th className="min-w-40 w-40">Fammer</th>
-                    <th className="min-w-40 w-40">Core</th>
-                    <th>Time</th>
-                    <th>Date</th>
-                    <th className="min-w-[100px]">Link</th>
+                    <td>Fear</td>
+                    <td>Aspect</td>
+                    <td className="min-w-40 w-40">Keep</td>
+                    <td className="min-w-40 w-40">Fammer</td>
+                    <td className="min-w-40 w-40">Core</td>
+                    <td>Time</td>
+                    <td>Date</td>
+                    <td className="min-w-[100px]">Link</td>
                   </tr>
                 </thead>
                 <tbody>
                   {paginatedData.slice(0, 100).map((obj, index) => (
                     <tr key={index}>
-                      <td className="border-0">
-                        <div className={`text-pink-500`}>
+                      <td className="border-0 border-y-1 border-y-white/5">
+                        <div
+                          className={
+                            obj.loc === `Underworld` ? `text-[#00ffaa]` : obj.loc === `Surface` ? `text-[yellow]` : ``
+                          }
+                        >
                           {/* {orderData.length - (index + 25 * (pageIndex - 1))} */}
                           {index + 1 + ITEMS_PER_PAGE * (pageIndex - 1)}
                         </div>
                       </td>
-                      <td className="border-0">
+                      <th className="border-0 border-y-1 border-y-white/5 z-40">
                         <div className="flex gap-1">
                           <div>{obj.nam}</div>
+                          <div className="shrink-0 size-4">
+                            <img
+                              src={
+                                obj.loc === `Underworld`
+                                  ? `/Underworld.png`
+                                  : obj.loc === `Surface`
+                                    ? `/Surface.png`
+                                    : `/DreamDive/Dream.png`
+                              }
+                              alt="Region"
+                              className="size-4"
+                            />
+                          </div>
                         </div>
-                      </td>
-                      <td className="border-0">
+                      </th>
+                      <td className="border-0 border-y-1 border-y-white/5">
                         <div>{obj.fea}</div>
                       </td>
-                      <td className="border-0">
-                        <div className="flex gap-1">
-                          {sToA(obj.loc).map((ite, index) => (
-                            <div className="tooltip shrink-0">
-                              <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                  {ite}
-                                </div>
-                              </div>
-                              <img draggable={false} src={`/DreamDive/${ite}.png`} alt="Biome" className="size-6" />
-                            </div>
-                          ))}
-                        </div>
-                      </td>
-                      <td className="border-0">
+                      <td className="border-0 border-y-1 border-y-white/5">
                         <div className="flex gap-2 justify-between items-center">
                           <div>{obj.asp}</div>
                           {obj.des && (
@@ -325,7 +378,7 @@ export default function Dream() {
                                 }`}
                               >
                                 <div className="tooltip-content p-0">
-                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                  <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
                                     {obj.des}
                                   </div>
                                 </div>
@@ -335,13 +388,13 @@ export default function Dream() {
                           )}
                         </div>
                       </td>
-                      <td className="border-0">
+                      <td className="border-0 border-y-1 border-y-white/5">
                         {obj.ks && (
                           <div className="flex gap-1">
                             {sToA(obj.ks).map((ite, index) => (
                               <div className="tooltip shrink-0">
                                 <div className="tooltip-content p-0">
-                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                  <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
                                     {ite}
                                   </div>
                                 </div>
@@ -351,12 +404,12 @@ export default function Dream() {
                           </div>
                         )}
                       </td>
-                      <td className="border-0">
+                      <td className="border-0 border-y-1 border-y-white/5">
                         <div className="flex gap-0.5">
                           {obj.fam && (
                             <div className="tooltip">
                               <div className="tooltip-content p-0">
-                                <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
                                   {obj.fam}
                                 </div>
                               </div>
@@ -373,7 +426,7 @@ export default function Dream() {
                               ).map((ite, index) => (
                                 <div className="tooltip">
                                   <div className="tooltip-content p-0">
-                                    <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
                                       {p9boons[ite]}
                                     </div>
                                   </div>
@@ -383,13 +436,13 @@ export default function Dream() {
                             : ``}
                         </div>
                       </td>
-                      <td className="border-0">
+                      <td className="border-0 border-y-1 border-y-white/5">
                         <div className="flex gap-0.5">
                           {obj.cor
                             ? sToA(obj.cor).map((ite, index) => (
                                 <div className="tooltip">
                                   <div className="tooltip-content p-0">
-                                    <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
                                       {p9boons[ite]}
                                     </div>
                                   </div>
@@ -405,13 +458,13 @@ export default function Dream() {
                             : ``}
                         </div>
                       </td>
-                      <td className="border-0">
+                      <td className="border-0 border-y-1 border-y-white/5">
                         <div>{obj.tim}</div>
                       </td>
-                      <td className="border-0">
+                      <td className="border-0 border-y-1 border-y-white/5">
                         <div>{obj.dat.slice(0, 10)}</div>
                       </td>
-                      <td className="border-0">
+                      <td className="border-0 border-y-1 border-y-white/5">
                         <div className="flex gap-1">
                           {obj.src && (
                             <Link to={obj.src} target="_blank" className="underline">

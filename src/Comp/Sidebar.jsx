@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 export const sites = [
-  { link: ``, nam: `Night` },
+  { link: ``, nam: `Home` },
+  { link: `Night`, nam: `Night` },
   { link: `Dream`, nam: `Dream` },
   { link: `GameStats`, nam: `Stats` },
   { link: `Loadout`, nam: `Loadout` },
@@ -16,7 +17,7 @@ export const sites = [
 export default function SideNav() {
   const currentLocation = useLocation();
   return (
-    <div className="w-full p-4 font-[Exo] text-[14px] rounded shrink-0">
+    <div className="w-full p-4 font-[Exo] text-[12px] md:text-[14px] rounded shrink-0">
       <div className="flex flex-wrap justify-center items-center gap-0.5">
         {sites.map((obj, idx) => (
           <Link to={`/${obj.link}`} className={`flex items-center group`} key={idx}>

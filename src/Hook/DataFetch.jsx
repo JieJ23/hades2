@@ -12,19 +12,26 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     async function load() {
       try {
-        // const cached = localStorage.getItem("category");
-        // if (cached) {
-        //   setPosts(JSON.parse(cached));
-        //   setLoader(false);
-        //   return; // Skip fetching if cached exists
-        // }
+        const cached = localStorage.getItem("category");
+        const cacheTimestamp = localStorage.getItem("category_timestamp");
+        const oneDayInMs = 5 * 60 * 1000; // 5 minutes in milliseconds
+
+        if (cached && cacheTimestamp) {
+          const age = Date.now() - parseInt(cacheTimestamp);
+          if (age < oneDayInMs) {
+            setPosts(JSON.parse(cached));
+            setLoader(false);
+            return; // Use cached data
+          }
+        }
         const response = await fetch(
           `https://script.google.com/macros/s/AKfycbw1iX5AdD32YcXYohQLAgEx3SDPTsH3V41RGCGts2bNk3-yYfSlEpZgufNt-G60gc7t/exec`,
         );
         const posts = await response.json();
-        // const posts = await data.filter((obj) => obj.v === "y");
         setPosts(posts);
-        // localStorage.setItem("category", JSON.stringify(posts)); // save for next time
+        // Save with timestamp
+        localStorage.setItem("category", JSON.stringify(posts));
+        localStorage.setItem("category_timestamp", Date.now().toString());
 
         setLoader(false);
       } catch (error) {

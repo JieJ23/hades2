@@ -97,7 +97,7 @@ export default function Ladder() {
                   Underworld
                 </div>
                 {uwTop.map((obj, index) => (
-                  <div className="font-[Ale] text-[14px] text-center flex justify-center gap-2">
+                  <div className="font-[Ale] text-[14px] text-center flex items-center justify-center gap-2">
                     <img src={`/P9/${obj.asp}.png`} alt="Aspect" className="size-7" />
                     <span className="min-w-40">{obj.nam}</span>
                     <span className="font-[Exo] text-orange-300">{obj.fea}</span>
@@ -118,7 +118,7 @@ export default function Ladder() {
                   Surface
                 </div>
                 {sTop.map((obj, index) => (
-                  <div className="font-[Ale] text-[14px] text-center flex justify-center gap-2">
+                  <div className="font-[Ale] text-[14px] text-center flex items-center justify-center gap-2">
                     <img src={`/P9/${obj.asp}.png`} alt="Aspect" className="size-7" />
                     <span className="min-w-40">{obj.nam}</span>
                     <span className="font-[Exo] text-orange-300">{obj.fea}</span>
