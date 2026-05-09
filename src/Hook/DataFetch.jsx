@@ -14,7 +14,7 @@ export const DataProvider = ({ children }) => {
       try {
         const cached = localStorage.getItem("category");
         const cacheTimestamp = localStorage.getItem("category_timestamp");
-        const oneDayInMs = 5 * 60 * 1000; // 5 minutes in milliseconds
+        const oneDayInMs = 30 * 60 * 1000; // 30 minutes in milliseconds
 
         if (cached && cacheTimestamp) {
           const age = Date.now() - parseInt(cacheTimestamp);

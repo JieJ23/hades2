@@ -24,29 +24,48 @@ export default function App() {
     });
   }, [posts]);
 
-  const [runs62, runs65, runs67] = orderData.reduce(
+  const [runs62uw, runs65uw, runs67uw, runs62s, runs65s, runs67s] = orderData.reduce(
     (acc, item) => {
-      if (item.fea == 62) {
+      if (item.fea == 62 && item.loc === "Underworld") {
         acc[0].push(item);
-      } else if (item.fea == 65 && item.des.includes("#usum")) {
+      } else if (item.fea == 65 && item.loc === "Underworld" && item.des.includes("#usum")) {
         acc[1].push(item);
-      } else if (item.fea == 67 && item.des.includes("#usum")) {
+      } else if (item.fea == 67 && item.loc === "Underworld" && item.des.includes("#usum")) {
         acc[2].push(item);
       }
+
+      if (item.fea == 62 && item.loc === "Surface") {
+        acc[3].push(item);
+      } else if (item.fea == 65 && item.loc === "Surface" && item.des.includes("#usum")) {
+        acc[4].push(item);
+      } else if (item.fea == 67 && item.loc === "Surface" && item.des.includes("#usum")) {
+        acc[5].push(item);
+      }
+
       return acc;
     },
-    [[], [], []],
+    [[], [], [], [], [], []],
   );
   const allAvailablePlayers = [...new Set(orderData.map((obj) => obj.nam))];
-  const [aspects50, aspects62, aspects65] = allAvailablePlayers.reduce(
+
+  // All Aspects Completion
+  const [aspects50uw, aspects62uw, aspects65uw, aspects50s, aspects62s, aspects65s] = allAvailablePlayers.reduce(
     (acc, playerName) => {
       const playerArray = orderData.filter((obj) => obj.nam === playerName);
-      const above50 = playerArray.filter((obj) => obj.fea >= 50);
+
+      const above50 = playerArray.filter((obj) => obj.fea >= 50 && obj.loc === "Underworld");
       const above62 = above50.filter((obj) => obj.fea >= 62);
       const above65 = above62.filter((obj) => obj.fea >= 65);
       const uniqueAspects50 = [...new Set(above50.map((obj) => obj.asp))];
       const uniqueAspects62 = [...new Set(above62.map((obj) => obj.asp))];
       const uniqueAspects65 = [...new Set(above65.map((obj) => obj.asp))];
+
+      const above50s = playerArray.filter((obj) => obj.fea >= 50 && obj.loc === "Surface");
+      const above62s = above50s.filter((obj) => obj.fea >= 62);
+      const above65s = above62s.filter((obj) => obj.fea >= 65);
+      const uniqueAspects50s = [...new Set(above50s.map((obj) => obj.asp))];
+      const uniqueAspects62s = [...new Set(above62s.map((obj) => obj.asp))];
+      const uniqueAspects65s = [...new Set(above65s.map((obj) => obj.asp))];
 
       if (uniqueAspects50.length === 24) {
         acc[0].push(playerName);
@@ -60,36 +79,66 @@ export default function App() {
         }
       }
 
+      if (uniqueAspects50s.length === 24) {
+        acc[3].push(playerName);
+
+        if (uniqueAspects62s.length === 24) {
+          acc[4].push(playerName);
+        }
+
+        if (uniqueAspects65s.length === 24) {
+          acc[5].push(playerName);
+        }
+      }
+
       return acc;
     },
-    [[], [], []],
+    [[], [], [], [], [], []],
   );
-  const allaspect65 = aspects65.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allaspect62 = aspects62
-    .filter((item) => !allaspect65.includes(item))
+  const allaspect65uw = aspects65uw.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  const allaspect62uw = aspects62uw
+    .filter((item) => !allaspect65uw.includes(item))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allaspect50 = aspects50
-    .filter((item) => ![...allaspect62, ...allaspect65].includes(item))
+  const allaspect50uw = aspects50uw
+    .filter((item) => ![...allaspect62uw, ...allaspect65uw].includes(item))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allplayers67 = [...new Set(runs67.map((obj) => obj.nam))].sort((a, b) =>
-    a.toLowerCase().localeCompare(b.toLowerCase()),
-  );
-  const allplayers65 = [...new Set(runs65.map((obj) => obj.nam))]
-    .filter((item) => !allplayers67.includes(item))
+  const allaspect65s = aspects65s.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  const allaspect62s = aspects62s
+    .filter((item) => !allaspect65s.includes(item))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allplayers62 = [...new Set(runs62.map((obj) => obj.nam))]
-    .filter((item) => ![...allplayers65, ...allplayers67].includes(item))
+  const allaspect50s = aspects50s
+    .filter((item) => ![...allaspect62s, ...allaspect65s].includes(item))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
   //
 
-  const under67 = runs67.filter((obj) => obj.loc === "Underworld").filter((obj) => obj.des.includes("#usum"));
-  const surface67 = runs67.filter((obj) => obj.loc === "Surface").filter((obj) => obj.des.includes("#usum"));
-  const dream67 = runs67
-    .filter((obj) => obj.loc != "Underworld" && obj.loc != "Surface")
-    .filter((obj) => obj.des.includes("#usum"));
+  // Clears Breakpoint 62,65,67
+  const allplayers67uw = [...new Set(runs67uw.map((obj) => obj.nam))].sort((a, b) =>
+    a.toLowerCase().localeCompare(b.toLowerCase()),
+  );
+  const allplayers65uw = [...new Set(runs65uw.map((obj) => obj.nam))]
+    .filter((item) => !allplayers67uw.includes(item))
+    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  const allplayers62uw = [...new Set(runs62uw.map((obj) => obj.nam))]
+    .filter((item) => ![...allplayers65uw, ...allplayers67uw].includes(item))
+    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+
+  const allplayers67s = [...new Set(runs67s.map((obj) => obj.nam))].sort((a, b) =>
+    a.toLowerCase().localeCompare(b.toLowerCase()),
+  );
+  const allplayers65s = [...new Set(runs65s.map((obj) => obj.nam))]
+    .filter((item) => !allplayers67s.includes(item))
+    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  const allplayers62s = [...new Set(runs62s.map((obj) => obj.nam))]
+    .filter((item) => ![...allplayers65s, ...allplayers67s].includes(item))
+    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  //
+
+  // Max Fear Aspect Clears
+  const maxFearClears = orderData.filter((obj) => obj.fea === 67);
+  const under67 = maxFearClears.filter((obj) => obj.loc === "Underworld").filter((obj) => obj.des.includes("#usum"));
+  const surface67 = maxFearClears.filter((obj) => obj.loc === "Surface").filter((obj) => obj.des.includes("#usum"));
   const uwAspects = [];
   const surfaceAspect = [];
-
   for (let i = 0; i < h2AspectOrder.length; i++) {
     if (under67.some((obj) => obj.asp === h2AspectOrder[i])) {
       uwAspects.push(h2AspectOrder[i]);
@@ -103,15 +152,48 @@ export default function App() {
     }
   }
 
+  // Dream Dive Max Clear Player
+  const [runs62d, runs65d, runs67d] = orderData
+    .filter((obj) => obj.loc != "Underworld" && obj.loc != "Surface")
+    .reduce(
+      (acc, item) => {
+        if (item.fea == 62) {
+          acc[0].push(item);
+        } else if (item.fea == 65 && item.des.includes("#usum")) {
+          acc[1].push(item);
+        } else if (item.fea == 67 && item.des.includes("#usum")) {
+          acc[2].push(item);
+        }
+
+        return acc;
+      },
+      [[], [], []],
+    );
+
+  const allplayers67d = [...new Set(runs67d.map((obj) => obj.nam))].sort((a, b) =>
+    a.toLowerCase().localeCompare(b.toLowerCase()),
+  );
+  const allplayers65d = [...new Set(runs65d.map((obj) => obj.nam))]
+    .filter((item) => !allplayers67d.includes(item))
+    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  const allplayers62d = [...new Set(runs62d.map((obj) => obj.nam))]
+    .filter((item) => ![...allplayers65d, ...allplayers67d].includes(item))
+    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+
+  // Speed 62
   const sub1060 = [
     ...new Set(
-      runs62
+      orderData
+        .filter((obj) => obj.fea === 62)
         .filter((obj) => obj.des && obj.des.includes("#usum") && parseTimetoms(obj.tim) <= 60000)
         .map((obj) => obj.nam),
     ),
   ].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
-  const maxFearDreamPlayers = [...new Set(dream67.map((obj) => obj.nam))];
+  // Max Fear Timeline
+  const orderMaxFear = maxFearClears
+    .filter((obj) => obj.loc === "Underworld" || obj.loc === "Surface")
+    .sort((a, b) => new Date(b.dat) - new Date(a.dat));
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden text-[12px] md:text-[14px] font-[Ale] select-none">
@@ -161,113 +243,239 @@ export default function App() {
             </div>
           </div>
           <div className="max-w-[1400px] mx-auto p-4">
-            <div className="max-w-[1000px] mx-auto">
-              <div className="text-center my-8">
-                <div className="font-[Exo] text-[16px] text-green-300">Completed Max Fear Dream Dive</div>
-                <div className="flex justify-center gap-0.5 flex-wrap">
-                  {maxFearDreamPlayers.map((ite) => (
-                    <div className="bg-black text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon-2 flex items-center justify-center relative">
-                      <img
-                        src={`/Avatar/${ite.toLowerCase()}.webp`}
-                        alt="Avatar"
-                        className="absolute h-full w-full -z-10 top-0 left-0 object-cover opacity-70"
-                        onError={(e) => {
-                          e.target.src = "/Avatar/default.jpg";
-                        }}
-                      />
-                      <div className="bg-black/50 rounded px-1">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Exo] text-[16px] text-green-300">Completed Max Fear</div>
-                <div className="flex justify-center gap-0.5 flex-wrap">
-                  {allplayers67.map((ite) => (
-                    <div className="bg-black text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative">
-                      <img
-                        src={`/Avatar/${ite.toLowerCase()}.webp`}
-                        alt="Avatar"
-                        className="absolute h-full w-full -z-10 top-0 left-0 object-cover opacity-70"
-                        onError={(e) => {
-                          e.target.src = "/Avatar/default.jpg";
-                        }}
-                      />
-                      <div className="bg-black/50 rounded px-1">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Exo] text-[16px] text-green-300">Completed 65 Fear, All Aspects</div>
-                <div className="flex justify-center gap-0.5 flex-wrap">
-                  {allaspect65.map((ite) => (
-                    <div className="bg-black text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon-2 flex items-center justify-center relative">
-                      <img
-                        src={`/Avatar/${ite.toLowerCase()}.webp`}
-                        alt="Avatar"
-                        className="absolute h-full w-full -z-10 top-0 left-0 object-cover opacity-70"
-                        onError={(e) => {
-                          e.target.src = "/Avatar/default.jpg";
-                        }}
-                      />
-                      <div className="bg-black/50 rounded px-1">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Exo] text-[16px] text-pink-400">Completed 62+ Fear, Sub 10 Mins</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {sub1060.map((ite) => (
-                    <div className="bg-black text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon-2 flex items-center justify-center relative">
-                      <img
-                        src={`/Avatar/${ite.toLowerCase()}.webp`}
-                        alt="Avatar"
-                        className="absolute h-full w-full -z-10 top-0 left-0 object-cover opacity-70"
-                        onError={(e) => {
-                          e.target.src = "/Avatar/default.jpg";
-                        }}
-                      />
-                      <div className="bg-black/50 rounded px-1">{ite}</div>
-                    </div>
-                  ))}
-                </div>
+            {/* Surface  */}
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-yellow-300">Completed Max Fear, Surface</div>
+              <div className="flex justify-center gap-0.5 flex-wrap">
+                {allplayers67s.map((ite) => (
+                  <div className="bg-gradient-to-br from-[#d2db38] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
+                    <img
+                      src={`/Avatar/${ite.toLowerCase()}.webp`}
+                      alt="Avatar"
+                      className="size-10 mask mask-hexagon"
+                      onError={(e) => {
+                        e.target.src = "/Avatar/default.jpg";
+                      }}
+                    />
+                    <div className="rounded px-1 truncate w-20">{ite}</div>
+                  </div>
+                ))}
               </div>
             </div>
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-yellow-300">Completed 65 Fear, Surface</div>
+              <div className="flex justify-center gap-1 flex-wrap">
+                {allplayers65s.map((ite) => (
+                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
+                ))}
+              </div>
+            </div>
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-yellow-300">Completed 62 Fear, Surface</div>
+              <div className="flex justify-center gap-1 flex-wrap">
+                {allplayers62s.map((ite) => (
+                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
+                ))}
+              </div>
+            </div>
+            {/* Underworld */}
+            <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-green-300">Completed Max Fear, UW</div>
+              <div className="flex justify-center gap-0.5 flex-wrap">
+                {allplayers67uw.map((ite) => (
+                  <div className="bg-gradient-to-br from-[#18946b] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
+                    <img
+                      src={`/Avatar/${ite.toLowerCase()}.webp`}
+                      alt="Avatar"
+                      className="size-10 mask mask-hexagon"
+                      onError={(e) => {
+                        e.target.src = "/Avatar/default.jpg";
+                      }}
+                    />
+                    <div className="rounded px-1 truncate w-20">{ite}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-green-300">Completed 65 Fear, UW</div>
+              <div className="flex justify-center gap-1 flex-wrap">
+                {allplayers65uw.map((ite) => (
+                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
+                ))}
+              </div>
+            </div>
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-green-300">Completed 62 Fear, UW</div>
+              <div className="flex justify-center gap-1 flex-wrap">
+                {allplayers62uw.map((ite) => (
+                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
+                ))}
+              </div>
+            </div>
+            {/* AA  */}
+            <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-yellow-300">Completed 65 Fear, All Aspects, Surface</div>
+              <div className="flex justify-center gap-0.5 flex-wrap">
+                {allaspect65s.map((ite) => (
+                  <div className="bg-gradient-to-br from-[#d2db38] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
+                    <img
+                      src={`/Avatar/${ite.toLowerCase()}.webp`}
+                      alt="Avatar"
+                      className="size-10 mask mask-hexagon"
+                      onError={(e) => {
+                        e.target.src = "/Avatar/default.jpg";
+                      }}
+                    />
+                    <div className="rounded px-1 truncate w-20">{ite}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-yellow-300">Completed 62 Fear, All Aspects, Surface</div>
+              <div className="flex justify-center gap-1 flex-wrap">
+                {allaspect62s.map((ite) => (
+                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
+                ))}
+              </div>
+            </div>
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-yellow-300">Completed 50 Fear, All Aspects, Surface</div>
+              <div className="flex justify-center gap-1 flex-wrap">
+                {allaspect50s.map((ite) => (
+                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
+                ))}
+              </div>
+            </div>
+            <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-green-300">Completed 65 Fear, All Aspects, UW</div>
+              <div className="flex justify-center gap-0.5 flex-wrap">
+                {allaspect65uw.map((ite) => (
+                  <div className="bg-gradient-to-br from-[#18946b] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
+                    <img
+                      src={`/Avatar/${ite.toLowerCase()}.webp`}
+                      alt="Avatar"
+                      className="size-10 mask mask-hexagon"
+                      onError={(e) => {
+                        e.target.src = "/Avatar/default.jpg";
+                      }}
+                    />
+                    <div className="rounded px-1 truncate w-20">{ite}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-green-300">Completed 62 Fear, All Aspects, UW</div>
+              <div className="flex justify-center gap-1 flex-wrap">
+                {allaspect62uw.map((ite) => (
+                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
+                ))}
+              </div>
+            </div>
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-green-300">Completed 50 Fear, All Aspects, UW</div>
+              <div className="flex justify-center gap-1 flex-wrap">
+                {allaspect50uw.map((ite) => (
+                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
+                ))}
+              </div>
+            </div>
+            <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
+            {/* Dream */}
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-purple-400">Completed Max Fear, Dream Dive</div>
+              <div className="flex justify-center gap-0.5 flex-wrap">
+                {allplayers67d.map((ite) => (
+                  <div className="bg-gradient-to-br from-[#8c40b5] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
+                    <img
+                      src={`/Avatar/${ite.toLowerCase()}.webp`}
+                      alt="Avatar"
+                      className="size-10 mask mask-hexagon"
+                      onError={(e) => {
+                        e.target.src = "/Avatar/default.jpg";
+                      }}
+                    />
+                    <div className="rounded px-1 truncate w-20">{ite}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-purple-400">Completed 65 Fear, Dream Dive</div>
+              <div className="flex justify-center gap-1 flex-wrap">
+                {allplayers65d.map((ite) => (
+                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
+                ))}
+              </div>
+            </div>
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-purple-400">Completed 62 Fear, Dream Dive</div>
+              <div className="flex justify-center gap-1 flex-wrap">
+                {allplayers62d.map((ite) => (
+                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
+                ))}
+              </div>
+            </div>
+            <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
+            {/* Speed */}
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[16px] text-red-400">Completed 62+ Fear, Sub 10 Mins</div>
+              <div className="flex justify-center gap-1 flex-wrap">
+                {sub1060.map((ite) => (
+                  <div className="bg-gradient-to-br from-[#e14628] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
+                    <img
+                      src={`/Avatar/${ite.toLowerCase()}.webp`}
+                      alt="Avatar"
+                      className="size-10 mask mask-hexagon"
+                      onError={(e) => {
+                        e.target.src = "/Avatar/default.jpg";
+                      }}
+                    />
+                    <div className="rounded px-1 truncate w-20">{ite}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
+            <div className="font-[Exo] text-[20px] text-green-400 text-center mb-2">Max Fear Timeline</div>
+            <div className="lg:max-h-[250px] h-[500px] overflow-auto border-white/20 border-1 py-8 lg:py-4 p-2 bg-black/80 rounded">
+              <ul className="timeline timeline-vertical lg:timeline-horizontal">
+                {orderMaxFear.map((obj, index) => (
+                  <li>
+                    <hr />
+                    <div className="timeline-start">{obj.dat.slice(0, 10)}</div>
+                    <div className="timeline-middle">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="h-5 w-5"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <div className="timeline-end timeline-box rounded max-w-[200px] text-[13px] flex flex-wrap justify-center gap-1 leading-tight text-gray-300">
+                      <span className="text-orange-400">{obj.nam}</span>
+                      <span>Cleared Max Fear</span>
+                      <span>{obj.asp},</span>
+                      <span className={obj.loc === "Underworld" ? `text-green-400` : `text-[yellow]`}>{obj.loc}</span>
+                    </div>
 
-            <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-orange-400">Completed 65 Fear</div>
-              <div className="flex justify-center gap-1 flex-wrap">
-                {allplayers65.map((ite) => (
-                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
+                    <hr />
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
-            <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-orange-300">Completed 62 Fear, All Aspects</div>
-              <div className="flex justify-center gap-1 flex-wrap">
-                {allaspect62.map((ite) => (
-                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
-                ))}
-              </div>
-            </div>
-            <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-yellow-200">Completed 62 Fear</div>
-              <div className="flex justify-center gap-1 flex-wrap">
-                {allplayers62.map((ite) => (
-                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
-                ))}
-              </div>
-            </div>
-            <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-yellow-200">Completed 50 Fear, All Aspects</div>
-              <div className="flex justify-center gap-1 flex-wrap">
-                {allaspect50.map((ite) => (
-                  <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
-                ))}
-              </div>
-            </div>
+            <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
             <div className="flex justify-center my-4">
               <div className="hover-3d">
                 <figure className="max-w-100 rounded-2xl">
