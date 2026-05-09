@@ -134,7 +134,7 @@ export default function App() {
   //
 
   // Max Fear Aspect Clears
-  const maxFearClears = orderData.filter((obj) => obj.fea === 67);
+  const maxFearClears = orderData.filter((obj) => obj.fea == 67);
   const under67 = maxFearClears.filter((obj) => obj.loc === "Underworld").filter((obj) => obj.des.includes("#usum"));
   const surface67 = maxFearClears.filter((obj) => obj.loc === "Surface").filter((obj) => obj.des.includes("#usum"));
   const uwAspects = [];
@@ -151,6 +151,7 @@ export default function App() {
       surfaceAspect.push("Slot1");
     }
   }
+  console.log(under67);
 
   // Dream Dive Max Clear Player
   const [runs62d, runs65d, runs67d] = orderData
@@ -184,7 +185,7 @@ export default function App() {
   const sub1060 = [
     ...new Set(
       orderData
-        .filter((obj) => obj.fea === 62)
+        .filter((obj) => obj.fea == 62)
         .filter((obj) => obj.des && obj.des.includes("#usum") && parseTimetoms(obj.tim) <= 60000)
         .map((obj) => obj.nam),
     ),
@@ -214,7 +215,7 @@ export default function App() {
           >
             Community Max Fear Conquest
           </div>
-          <div className="flex flex-col md:flex-row justify-center max-w-[1200px] mx-auto bg-gradient-to-br from-green-300/30 via-transparent to-yellow-200/30 rounded-b-xl relative">
+          <div className="flex flex-col md:flex-row justify-center max-w-[1200px] mx-auto bg-gradient-to-br from-green-300/40 via-black/50 to-yellow-300/40 rounded-b-xl relative">
             <div
               className="absolute top-0 left-0 w-full h-full -z-10"
               style={{
@@ -448,7 +449,7 @@ export default function App() {
                 {orderMaxFear.map((obj, index) => (
                   <li>
                     <hr />
-                    <div className="timeline-start">{obj.dat.slice(0, 10)}</div>
+                    <div className="timeline-start bg-white text-black px-1 rounded">{obj.dat.slice(0, 10)}</div>
                     <div className="timeline-middle">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
