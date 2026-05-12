@@ -7,7 +7,7 @@ import { h2AspectOrder } from "../Data/Misc";
 import BarFear from "../Comp/BarFear";
 import BarTime from "../Comp/BarTime";
 
-const notNonDeath = data.filter((obj) => obj.KilledBy !== "");
+import { useState } from "react";
 
 const findBiomeName = (bio) => {
   switch (bio) {
@@ -37,7 +37,8 @@ const findBiomeName = (bio) => {
 };
 
 const biomes = [`F`, `G`, `H`, `I`, `N`, `O`, `P`, `Q`];
-const bosses = [`Hecate`, `Scylla`, `Cerberus`, `Chronos`, `Polyphemus`, `Eris`, `Prometheus`, `Typhonhead`];
+
+const notNonDeath = data.filter((obj) => obj.KilledBy !== "");
 
 const storeDeath = Object.entries(
   notNonDeath.reduce((acc, item) => {
@@ -72,15 +73,21 @@ for (let i = 0; i < biomeData.length; i++) {
   }, 0);
   biomeSum.push([findBiomeName(biomes[i]), biomeTotal]);
 }
-
-const counts = Object.entries(
-  h2AspectOrder.reduce((acc, aspect) => {
-    acc[aspect] = notNonDeath.filter((obj) => obj.Aspect === aspect).length;
-    return acc;
-  }, {}),
-).sort((a, b) => b[1] - a[1]);
+//
 
 export default function Death() {
+  const [room, setRoom] = useState("");
+
+  const target = notNonDeath.filter((obj) => obj.EndRoom === room);
+  const roomKiller = Object.entries(
+    target.reduce((acc, item) => {
+      const target = item.KilledBy;
+      acc[target] = (acc[target] || 0) + 1;
+      return acc;
+    }, {}),
+  ).sort((a, b) => b[1] - a[1]);
+
+  console.log(roomKiller);
   return (
     <main className="h-full min-h-lvh relative overflow-hidden text-[12px] md:text-[14px] font-[Ale] select-none">
       <Background />
@@ -98,7 +105,7 @@ export default function Death() {
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-black/50 -z-10" />
                 <img src={`/DreamDive/${arr[0]}.png`} alt="Icon" className="size-10 mx-auto" />
-                <div className="text-[16px]">{arr[0]}</div>
+                <div className="text-[14px] md:text-[16px]">{arr[0]}</div>
                 <div className="flex justify-center items-center gap-1">
                   {arr[1]}
                   <img src="Vows/Pain.png" alt="Death" className="size-4" />
@@ -106,6 +113,25 @@ export default function Death() {
               </div>
             ))}
           </div>
+          <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
+          {!room ? (
+            <div className="text-center my-2 text-[16px]">Select Encounter from Biome to display deaths.</div>
+          ) : (
+            <div>
+              <div className="text-center font-[Exo] text-[18px]">Selected Room: {room}</div>
+              <div className="flex justify-center flex-wrap gap-2">
+                {roomKiller.map((arr, index) => (
+                  <div
+                    className={`min-w-[150px] md:min-w-[200px] text-black flex justify-between px-2 py-1 rounded border border-white/10
+                    bg-white`}
+                  >
+                    <div>{arr[0]}</div>
+                    <div>{arr[1]}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
           <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
           {biomeData.map((item, index) => (
             <div className="mb-5">
@@ -115,9 +141,10 @@ export default function Death() {
                   .sort((a, b) => b[1] - a[1])
                   .map((arr, index) => (
                     <div
-                      className={`min-w-[140px] text-black flex justify-between px-2 py-1 rounded border border-white/10
-                    ${arr[0].toLowerCase().includes("boss") ? `bg-orange-300` : `bg-[#131111] text-gray-400`}
+                      className={`min-w-[130px] md:min-w-[140px] cursor-pointer text-black flex justify-between px-2 py-1 rounded border border-white/10
+                    ${arr[0] === room ? `bg-[#00ffaa]` : arr[0].toLowerCase().includes("boss") ? `bg-orange-300` : `bg-[#131111] text-gray-400`}
                     `}
+                      onClick={() => setRoom(arr[0])}
                     >
                       <div>{arr[0]}</div>
                       <div>{arr[1]}</div>
