@@ -71,6 +71,16 @@ export default function ProfileSum() {
 
     for (let i = 0; i < history.length; i++) {
       const object = {};
+      // Killed By Extraction
+      //       object.Id = Number(Number(history[i][0]) + history[i][1].GameplayTime.toString().slice(-3));
+      // object.Aspect = aspectsFinder(
+      //   traitAspect.find((ite) => Object.keys(history[i][1].TraitCache).some((a) => a === ite)),
+      // );
+      // object.Time = parsesectoTime(history[i][1].GameplayTime);
+      // object.KilledBy = history[i][1].KilledByName;
+      // object.EndRoom = history[i][1].EndingRoomName;
+      // object.Region = history[i][1].RunResult === 2 ? `Underworld` : `Surface`;
+      // object.Fear = history[i][1].ShrinePointsCache;
       //
       object.Id = Number(Number(history[i][0]) + history[i][1].GameplayTime.toString().slice(-3));
       object.Aspect = aspectsFinder(

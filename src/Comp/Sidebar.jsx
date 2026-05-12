@@ -5,6 +5,7 @@ export const sites = [
   { link: ``, nam: `Home` },
   { link: `Night`, nam: `Night` },
   { link: `Dream`, nam: `Dream` },
+  { link: `Death`, nam: `Death` },
   { link: `GameStats`, nam: `Stats` },
   { link: `Loadout`, nam: `Loadout` },
   { link: `Ladder`, nam: `Ladder` },
