@@ -258,9 +258,6 @@ export default function App() {
               ))}
             </div>
           </div>
-          {/* Space */}
-          {/* Space */}
-          <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
           <div className="max-w-[1400px] mx-auto p-4">
             {/* Surface  */}
             <div className="text-center my-8">
@@ -271,7 +268,7 @@ export default function App() {
                     <img
                       src={`/Avatar/${ite.toLowerCase()}.webp`}
                       alt="Avatar"
-                      className="size-10 mask mask-hexagon"
+                      className="size-10 mask mask-decagon"
                       onError={(e) => {
                         e.target.src = "/Avatar/default.jpg";
                       }}
@@ -307,7 +304,7 @@ export default function App() {
                     <img
                       src={`/Avatar/${ite.toLowerCase()}.webp`}
                       alt="Avatar"
-                      className="size-10 mask mask-hexagon"
+                      className="size-10 mask mask-decagon"
                       onError={(e) => {
                         e.target.src = "/Avatar/default.jpg";
                       }}
@@ -343,7 +340,7 @@ export default function App() {
                     <img
                       src={`/Avatar/${ite.toLowerCase()}.webp`}
                       alt="Avatar"
-                      className="size-10 mask mask-hexagon"
+                      className="size-10 mask mask-decagon"
                       onError={(e) => {
                         e.target.src = "/Avatar/default.jpg";
                       }}
@@ -378,7 +375,7 @@ export default function App() {
                     <img
                       src={`/Avatar/${ite.toLowerCase()}.webp`}
                       alt="Avatar"
-                      className="size-10 mask mask-hexagon"
+                      className="size-10 mask mask-decagon"
                       onError={(e) => {
                         e.target.src = "/Avatar/default.jpg";
                       }}
@@ -414,7 +411,7 @@ export default function App() {
                     <img
                       src={`/Avatar/${ite.toLowerCase()}.webp`}
                       alt="Avatar"
-                      className="size-10 mask mask-hexagon"
+                      className="size-10 mask mask-decagon"
                       onError={(e) => {
                         e.target.src = "/Avatar/default.jpg";
                       }}
@@ -450,7 +447,7 @@ export default function App() {
                     <img
                       src={`/Avatar/${ite.toLowerCase()}.webp`}
                       alt="Avatar"
-                      className="size-10 mask mask-hexagon"
+                      className="size-10 mask mask-decagon"
                       onError={(e) => {
                         e.target.src = "/Avatar/default.jpg";
                       }}
