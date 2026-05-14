@@ -258,6 +258,9 @@ export default function App() {
               ))}
             </div>
           </div>
+          {/* Space */}
+          {/* Space */}
+          <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
           <div className="max-w-[1400px] mx-auto p-4">
             {/* Surface  */}
             <div className="text-center my-8">
