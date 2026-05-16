@@ -5754,7 +5754,7 @@ export const v3data = [
     dat: "2026-01-29",
     nam: "Crystal",
     asp: "Melinoe Skull",
-    loc: "Underworld",
+    loc: "Surface",
     fea: 55,
     src: "https://drive.google.com/file/d/1qEgmWeK-m-qWO6dRuqqAzq70Z3DcRLxo/view?usp=drive_link",
     des: "",

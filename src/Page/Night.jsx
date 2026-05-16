@@ -44,7 +44,7 @@ export default function Night() {
   }, [posts, category, region, fill, player]);
 
   // Pagnition
-  const ITEMS_PER_PAGE = 25;
+  const ITEMS_PER_PAGE = 20;
   const TOTAL_Page = Math.ceil(orderData.length / ITEMS_PER_PAGE);
 
   const paginatedData = useMemo(() => {
@@ -199,7 +199,7 @@ export default function Night() {
           {format === "Grid" ? (
             <div className="max-w-350 mx-auto p-2">
               <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {paginatedData.slice(0, 24).map((obj, index) => (
+                {paginatedData.map((obj, index) => (
                   <div className="rounded">
                     {obj.src.includes("youtu") ? (
                       <Link to={obj.src} target="_blank" className="group">
@@ -334,7 +334,7 @@ export default function Night() {
                   </tr>
                 </thead>
                 <tbody>
-                  {paginatedData.slice(0, 100).map((obj, index) => (
+                  {paginatedData.map((obj, index) => (
                     <tr key={index}>
                       <td className="border-0 border-y-1 border-y-white/5">
                         <div
