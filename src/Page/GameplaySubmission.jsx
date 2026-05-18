@@ -170,7 +170,21 @@ export default function GameplaySubmission() {
       <Background />
       <SideNav />
       <div className="max-w-[1200px] font-[Ale] text-[12px] mx-auto">
-        <div className="text-white text-center text-[20px] my-2">Submission</div>
+        <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-4" />
+        <div className="text-center flex items-center justify-center gap-2">
+          <img src="/Misc/diamond.png" alt="Rules" className="size-10 animate-bounce" />
+          <Link
+            to="https://docs.google.com/document/d/1hhMu0jR8lSzZ2mtyteqW7NDy9wpIbra3d2RJkmYFhAI/edit?tab=t.0"
+            target="_blank"
+            className="text-[24px] text-green-300 underline"
+          >
+            Full Rules Here
+          </Link>
+          <img src="/Misc/diamond.png" alt="Rules" className="size-10 animate-bounce" />
+        </div>
+        <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-4" />
+
+        <div className="text-white text-center text-[20px] my-2">Form Submission</div>
         {/* Form Start */}
         <form onSubmit={Submit}>
           <div className="w-full mx-auto my-2 grid grid-cols-1 sm:grid-cols-2 gap-4 p-2 font-[Ale] max-w-[1000px]">
@@ -276,7 +290,8 @@ export default function GameplaySubmission() {
               />
             </div>
           </div>
-          <div className="divider"></div>
+          <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-4" />
+
           <div className="text-center text-[20px] my-4">Optional Information</div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[1000px] mx-auto">
             <div className="flex flex-col gap-2">
@@ -300,8 +315,10 @@ export default function GameplaySubmission() {
             </button>
           </div>
         </form>
+        <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-4" />
+
         {/* Form End */}
-        <div className="flex flex-wrap gap-0.5 my-4 p-2 select-none bg-black/80 rounded">
+        <div className="flex flex-wrap gap-0.5 my-4 p-2 select-none rounded">
           {biomes.map((item) => (
             <div
               onClick={() => {
