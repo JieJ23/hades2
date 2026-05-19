@@ -1091,7 +1091,7 @@ export const v2data = [
     fam: "Polecat",
     cor: "ApoAttack,HesSpecial,AphCast,ApoSprint,AphMagick",
     ham: "Whirling Helix,Sudden Burst",
-    ks: "Time Piece,Fig Leaf,Moon Beam,White Antler",
+    ks: "Jeweled Pom,Fig Leaf,Moon Beam,White Antler",
   },
   {
     dat: "2026-01-01",
