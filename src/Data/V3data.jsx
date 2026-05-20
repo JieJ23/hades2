@@ -4713,7 +4713,7 @@ export const v3data = [
     ks: "Jeweled Pom,Time Piece,Metallic Droplet,White Antler",
   },
   {
-    dat: "2027-05-06",
+    dat: "2026-05-06",
     nam: "Aki",
     asp: "Persephone",
     loc: "Thessaly,Erebus,Fields,Ephyra",

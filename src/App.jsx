@@ -26,20 +26,20 @@ export default function App() {
 
   const [runs62uw, runs65uw, runs67uw, runs62s, runs65s, runs67s] = orderData.reduce(
     (acc, item) => {
-      if (item.fea == 62 && item.loc === "Underworld") {
-        acc[0].push(item);
-      } else if (item.fea == 65 && item.loc === "Underworld" && item.des.includes("#usum")) {
-        acc[1].push(item);
-      } else if (item.fea == 67 && item.loc === "Underworld" && item.des.includes("#usum")) {
+      if (item.fea >= 67 && item.loc === "Underworld" && item.des.includes("#usum")) {
         acc[2].push(item);
+      } else if (item.fea >= 65 && item.loc === "Underworld" && item.des.includes("#usum")) {
+        acc[1].push(item);
+      } else if (item.fea >= 62 && item.loc === "Underworld") {
+        acc[0].push(item);
       }
 
-      if (item.fea == 62 && item.loc === "Surface") {
-        acc[3].push(item);
-      } else if (item.fea == 65 && item.loc === "Surface" && item.des.includes("#usum")) {
-        acc[4].push(item);
-      } else if (item.fea == 67 && item.loc === "Surface" && item.des.includes("#usum")) {
+      if (item.fea >= 67 && item.loc === "Surface" && item.des.includes("#usum")) {
         acc[5].push(item);
+      } else if (item.fea >= 65 && item.loc === "Surface" && item.des.includes("#usum")) {
+        acc[4].push(item);
+      } else if (item.fea >= 62 && item.loc === "Surface") {
+        acc[3].push(item);
       }
 
       return acc;
@@ -116,10 +116,10 @@ export default function App() {
     a.toLowerCase().localeCompare(b.toLowerCase()),
   );
   const allplayers65uw = [...new Set(runs65uw.map((obj) => obj.nam))]
-    .filter((item) => !allplayers67uw.includes(item))
+    .filter((item) => allplayers67uw.includes(item))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
   const allplayers62uw = [...new Set(runs62uw.map((obj) => obj.nam))]
-    .filter((item) => ![...allplayers65uw, ...allplayers67uw].includes(item))
+    .filter((item) => [...allplayers65uw, ...allplayers67uw].includes(item))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
   const allplayers67s = [...new Set(runs67s.map((obj) => obj.nam))].sort((a, b) =>
@@ -151,7 +151,6 @@ export default function App() {
       surfaceAspect.push("Slot1");
     }
   }
-  console.log(under67);
 
   // Dream Dive Max Clear Player
   const [runs62d, runs65d, runs67d] = orderData
