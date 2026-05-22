@@ -28,7 +28,7 @@ export default function App() {
     (acc, item) => {
       if (item.fea >= 67 && item.loc === "Underworld" && item.des.includes("#usum")) {
         acc[2].push(item);
-      } else if (item.fea >= 65 && item.loc === "Underworld" && item.des.includes("#usum")) {
+      } else if (item.fea >= 65 && item.loc === "Underworld") {
         acc[1].push(item);
       } else if (item.fea >= 62 && item.loc === "Underworld") {
         acc[0].push(item);
@@ -36,7 +36,7 @@ export default function App() {
 
       if (item.fea >= 67 && item.loc === "Surface" && item.des.includes("#usum")) {
         acc[5].push(item);
-      } else if (item.fea >= 65 && item.loc === "Surface" && item.des.includes("#usum")) {
+      } else if (item.fea >= 65 && item.loc === "Surface") {
         acc[4].push(item);
       } else if (item.fea >= 62 && item.loc === "Surface") {
         acc[3].push(item);
@@ -116,10 +116,10 @@ export default function App() {
     a.toLowerCase().localeCompare(b.toLowerCase()),
   );
   const allplayers65uw = [...new Set(runs65uw.map((obj) => obj.nam))]
-    .filter((item) => allplayers67uw.includes(item))
+    .filter((item) => !allplayers67uw.includes(item))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
   const allplayers62uw = [...new Set(runs62uw.map((obj) => obj.nam))]
-    .filter((item) => [...allplayers65uw, ...allplayers67uw].includes(item))
+    .filter((item) => ![...allplayers65uw, ...allplayers67uw].includes(item))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
   const allplayers67s = [...new Set(runs67s.map((obj) => obj.nam))].sort((a, b) =>
@@ -260,7 +260,7 @@ export default function App() {
           <div className="max-w-[1400px] mx-auto p-4">
             {/* Surface  */}
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-yellow-300">Completed Max Fear, Surface</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-yellow-300">Completed Max Fear, Surface</div>
               <div className="flex justify-center flex-wrap">
                 {allplayers67s.map((ite) => (
                   <div className="bg-gradient-to-br from-[#d2db38] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
@@ -278,7 +278,7 @@ export default function App() {
               </div>
             </div>
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-yellow-300">Completed 65 Fear, Surface</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-yellow-300">Completed 65 Fear, Surface</div>
               <div className="flex justify-center gap-1 flex-wrap">
                 {allplayers65s.map((ite) => (
                   <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
@@ -286,7 +286,7 @@ export default function App() {
               </div>
             </div>
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-yellow-300">Completed 62 Fear, Surface</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-yellow-300">Completed 62 Fear, Surface</div>
               <div className="flex justify-center gap-1 flex-wrap">
                 {allplayers62s.map((ite) => (
                   <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
@@ -296,7 +296,7 @@ export default function App() {
             {/* Underworld */}
             <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-green-300">Completed Max Fear, UW</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-green-300">Completed Max Fear, UW</div>
               <div className="flex justify-center flex-wrap">
                 {allplayers67uw.map((ite) => (
                   <div className="bg-gradient-to-br from-[#18946b] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
@@ -314,7 +314,7 @@ export default function App() {
               </div>
             </div>
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-green-300">Completed 65 Fear, UW</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-green-300">Completed 65 Fear, UW</div>
               <div className="flex justify-center gap-1 flex-wrap">
                 {allplayers65uw.map((ite) => (
                   <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
@@ -322,7 +322,7 @@ export default function App() {
               </div>
             </div>
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-green-300">Completed 62 Fear, UW</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-green-300">Completed 62 Fear, UW</div>
               <div className="flex justify-center gap-1 flex-wrap">
                 {allplayers62uw.map((ite) => (
                   <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
@@ -332,7 +332,7 @@ export default function App() {
             {/* AA  */}
             <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-yellow-300">Completed 65 Fear, All Aspects, Surface</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-yellow-300">Completed 65 Fear, All Aspects, Surface</div>
               <div className="flex justify-center flex-wrap">
                 {allaspect65s.map((ite) => (
                   <div className="bg-gradient-to-br from-[#d2db38] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
@@ -350,7 +350,7 @@ export default function App() {
               </div>
             </div>
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-yellow-300">Completed 62 Fear, All Aspects, Surface</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-yellow-300">Completed 62 Fear, All Aspects, Surface</div>
               <div className="flex justify-center gap-1 flex-wrap">
                 {allaspect62s.map((ite) => (
                   <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
@@ -358,7 +358,7 @@ export default function App() {
               </div>
             </div>
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-yellow-300">Completed 50 Fear, All Aspects, Surface</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-yellow-300">Completed 50 Fear, All Aspects, Surface</div>
               <div className="flex justify-center gap-1 flex-wrap">
                 {allaspect50s.map((ite) => (
                   <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
@@ -367,7 +367,7 @@ export default function App() {
             </div>
             <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-green-300">Completed 65 Fear, All Aspects, UW</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-green-300">Completed 65 Fear, All Aspects, UW</div>
               <div className="flex justify-center flex-wrap">
                 {allaspect65uw.map((ite) => (
                   <div className="bg-gradient-to-br from-[#18946b] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
@@ -385,7 +385,7 @@ export default function App() {
               </div>
             </div>
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-green-300">Completed 62 Fear, All Aspects, UW</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-green-300">Completed 62 Fear, All Aspects, UW</div>
               <div className="flex justify-center gap-1 flex-wrap">
                 {allaspect62uw.map((ite) => (
                   <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
@@ -393,7 +393,7 @@ export default function App() {
               </div>
             </div>
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-green-300">Completed 50 Fear, All Aspects, UW</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-green-300">Completed 50 Fear, All Aspects, UW</div>
               <div className="flex justify-center gap-1 flex-wrap">
                 {allaspect50uw.map((ite) => (
                   <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
@@ -403,7 +403,7 @@ export default function App() {
             <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
             {/* Dream */}
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-purple-400">Completed Max Fear, Dream Dive</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-purple-400">Completed Max Fear, Dream Dive</div>
               <div className="flex justify-center flex-wrap">
                 {allplayers67d.map((ite) => (
                   <div className="bg-gradient-to-br from-[#8c40b5] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
@@ -421,7 +421,7 @@ export default function App() {
               </div>
             </div>
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-purple-400">Completed 65 Fear, Dream Dive</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-purple-400">Completed 65 Fear, Dream Dive</div>
               <div className="flex justify-center gap-1 flex-wrap">
                 {allplayers65d.map((ite) => (
                   <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
@@ -429,7 +429,7 @@ export default function App() {
               </div>
             </div>
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-purple-400">Completed 62 Fear, Dream Dive</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-purple-400">Completed 62 Fear, Dream Dive</div>
               <div className="flex justify-center gap-1 flex-wrap">
                 {allplayers62d.map((ite) => (
                   <div className="bg-white/10 text-white rounded px-2 py-1">{ite}</div>
@@ -439,7 +439,7 @@ export default function App() {
             <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
             {/* Speed */}
             <div className="text-center my-8">
-              <div className="font-[Exo] text-[16px] text-red-400">Completed 62+ Fear, Sub 10 Mins</div>
+              <div className="font-[Exo] text-[16px] mb-2 text-red-400">Completed 62+ Fear, Sub 10 Mins</div>
               <div className="flex justify-center flex-wrap">
                 {sub1060.map((ite) => (
                   <div className="bg-gradient-to-br from-[#e14628] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
@@ -456,7 +456,7 @@ export default function App() {
                 ))}
               </div>
               <div className="text-center my-8">
-                <div className="font-[Exo] text-[16px] text-red-400">Completed 62+ Fear, Sub 11 Mins</div>
+                <div className="font-[Exo] text-[16px] mb-2 text-red-400">Completed 62+ Fear, Sub 11 Mins</div>
                 <div className="flex justify-center flex-wrap">
                   {sub1160.map((ite) => (
                     <div className="bg-gradient-to-br from-[#e14628] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
@@ -474,7 +474,7 @@ export default function App() {
                 </div>
               </div>
               <div className="text-center my-8">
-                <div className="font-[Exo] text-[16px] text-red-400">Completed 62+ Fear, Sub 12 Mins</div>
+                <div className="font-[Exo] text-[16px] mb-2 text-red-400">Completed 62+ Fear, Sub 12 Mins</div>
                 <div className="flex justify-center flex-wrap">
                   {sub1260.map((ite) => (
                     <div className="bg-gradient-to-br from-[#e14628] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
