@@ -263,7 +263,7 @@ export default function App() {
               <div className="font-[Exo] text-[16px] mb-2 text-yellow-300">Completed Max Fear, Surface</div>
               <div className="flex justify-center flex-wrap">
                 {allplayers67s.map((ite) => (
-                  <div className="bg-gradient-to-br from-[#d2db38] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
+                  <div className="bg-gradient-to-br from-[#d2db38] to-[#620f0f] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
                     <img
                       src={`/Avatar/${ite.toLowerCase()}.webp`}
                       alt="Avatar"
@@ -299,7 +299,7 @@ export default function App() {
               <div className="font-[Exo] text-[16px] mb-2 text-green-300">Completed Max Fear, UW</div>
               <div className="flex justify-center flex-wrap">
                 {allplayers67uw.map((ite) => (
-                  <div className="bg-gradient-to-br from-[#18946b] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
+                  <div className="bg-gradient-to-br from-[#18946b] to-[#240458] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
                     <img
                       src={`/Avatar/${ite.toLowerCase()}.webp`}
                       alt="Avatar"
@@ -335,7 +335,7 @@ export default function App() {
               <div className="font-[Exo] text-[16px] mb-2 text-yellow-300">Completed 65 Fear, All Aspects, Surface</div>
               <div className="flex justify-center flex-wrap">
                 {allaspect65s.map((ite) => (
-                  <div className="bg-gradient-to-br from-[#d2db38] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
+                  <div className="bg-gradient-to-br from-[#d2db38] to-[#620f0f] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
                     <img
                       src={`/Avatar/${ite.toLowerCase()}.webp`}
                       alt="Avatar"
@@ -370,7 +370,7 @@ export default function App() {
               <div className="font-[Exo] text-[16px] mb-2 text-green-300">Completed 65 Fear, All Aspects, UW</div>
               <div className="flex justify-center flex-wrap">
                 {allaspect65uw.map((ite) => (
-                  <div className="bg-gradient-to-br from-[#18946b] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
+                  <div className="bg-gradient-to-br from-[#18946b] to-[#270957] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
                     <img
                       src={`/Avatar/${ite.toLowerCase()}.webp`}
                       alt="Avatar"
@@ -406,7 +406,7 @@ export default function App() {
               <div className="font-[Exo] text-[16px] mb-2 text-purple-400">Completed Max Fear, Dream Dive</div>
               <div className="flex justify-center flex-wrap">
                 {allplayers67d.map((ite) => (
-                  <div className="bg-gradient-to-br from-[#8c40b5] to-[#131111] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
+                  <div className="bg-gradient-to-br from-[#8c40b5] to-[#440512] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
                     <img
                       src={`/Avatar/${ite.toLowerCase()}.webp`}
                       alt="Avatar"
@@ -438,7 +438,7 @@ export default function App() {
             </div>
             <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
             {/* Speed */}
-            <div className="text-center my-8">
+            {/* <div className="text-center my-8">
               <div className="font-[Exo] text-[16px] mb-2 text-red-400">Completed 62+ Fear, Sub 10 Mins</div>
               <div className="flex justify-center flex-wrap">
                 {sub1060.map((ite) => (
@@ -491,8 +491,8 @@ export default function App() {
                   ))}
                 </div>
               </div>
-            </div>
-            <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
+            </div> */}
+            {/* <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" /> */}
             <div className="font-[Exo] text-[20px] text-green-400 text-center mb-2">Max Fear Timeline</div>
             <div className="lg:max-h-[250px] h-[500px] overflow-auto border-white/20 border-1 py-8 lg:py-4 p-2 bg-black/80 rounded">
               <ul className="timeline timeline-vertical lg:timeline-horizontal">
@@ -525,22 +525,6 @@ export default function App() {
                   </li>
                 ))}
               </ul>
-            </div>
-            <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
-            <div className="flex justify-center my-4">
-              <div className="hover-3d">
-                <figure className="max-w-100 rounded-2xl">
-                  <img src="/CC/Melinoe.png" alt="3D card" draggable="false" />
-                </figure>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
             </div>
           </div>
         </>
