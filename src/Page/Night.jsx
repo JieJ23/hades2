@@ -168,7 +168,7 @@ export default function Night() {
                 value={player}
                 onChange={(e) => {
                   setPageIndex(1);
-                  setFill("Fear");
+                  setFill("Latest");
                   setCategory("");
                   setRegion("");
                   setPlayer(e.target.value);
@@ -265,7 +265,12 @@ export default function Night() {
                                       {p9boons[ite]}
                                     </div>
                                   </div>
-                                  <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
+                                  <img
+                                    draggable={false}
+                                    src={`/P9/${ite}.png`}
+                                    alt="Hammers"
+                                    className="size-8 md:size-6"
+                                  />
                                 </div>
                               ))
                             : ``}
@@ -273,7 +278,12 @@ export default function Night() {
                         {obj.ks && (
                           <div className="flex gap-0.5">
                             {sToA(obj.ks).map((ite, index) => (
-                              <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-5" />
+                              <img
+                                draggable={false}
+                                src={`/buildgui/${ite}.png`}
+                                alt="Keepsake"
+                                className="size-8 md:size-6"
+                              />
                             ))}
                           </div>
                         )}
@@ -285,7 +295,7 @@ export default function Night() {
                                 draggable={false}
                                 src={`/H2Boons/${ite}.png`}
                                 alt="Core Boon"
-                                className="size-6"
+                                className="size-8 md:size-6"
                                 loading="lazy"
                               />
                             ))

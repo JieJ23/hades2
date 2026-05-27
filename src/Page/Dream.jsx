@@ -204,7 +204,12 @@ export default function Dream() {
                                       {p9boons[ite]}
                                     </div>
                                   </div>
-                                  <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
+                                  <img
+                                    draggable={false}
+                                    src={`/P9/${ite}.png`}
+                                    alt="Hammers"
+                                    className="size-8 md:size-6"
+                                  />
                                 </div>
                               ))
                             : ``}
@@ -212,7 +217,12 @@ export default function Dream() {
                         {obj.ks && (
                           <div className="flex gap-0.5">
                             {sToA(obj.ks).map((ite, index) => (
-                              <img draggable={false} src={`/buildgui/${ite}.png`} alt="Keepsake" className="size-5" />
+                              <img
+                                draggable={false}
+                                src={`/buildgui/${ite}.png`}
+                                alt="Keepsake"
+                                className="size-8 md:size-6"
+                              />
                             ))}
                           </div>
                         )}
@@ -224,7 +234,7 @@ export default function Dream() {
                                 draggable={false}
                                 src={`/H2Boons/${ite}.png`}
                                 alt="Core Boon"
-                                className="size-6"
+                                className="size-8 md:size-6"
                                 loading="lazy"
                               />
                             ))
@@ -249,7 +259,7 @@ export default function Dream() {
                       </div>
                       <div className="flex justify-center my-1 gap-0.5">
                         {sToA(obj.loc).map((item) => (
-                          <img src={`/DreamDive/${item}.png`} alt="Biomes" className="size-7" />
+                          <img src={`/DreamDive/${item}.png`} alt="Biomes" className="size-10 md:size-7" />
                         ))}
                       </div>
                       <div className="flex justify-center gap-0.5">

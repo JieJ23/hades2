@@ -48,6 +48,18 @@ export default function App() {
   );
   const allAvailablePlayers = [...new Set(orderData.map((obj) => obj.nam))];
 
+  // 67 Max
+  const maxFearRuns = [...runs67s, ...runs67uw];
+  const maxFearData = Object.entries(
+    maxFearRuns.reduce((acc, item) => {
+      let target = item.nam;
+      acc[target] = (acc[target] || 0) + 1;
+      return acc;
+    }, {}),
+  )
+    .sort((a, b) => b[1] - a[1])
+    .filter((arr) => arr[1] > 1);
+
   // All Aspects Completion
   const [aspects50uw, aspects62uw, aspects65uw, aspects50s, aspects62s, aspects65s] = allAvailablePlayers.reduce(
     (acc, playerName) => {
@@ -258,10 +270,31 @@ export default function App() {
             </div>
           </div>
           <div className="max-w-[1400px] mx-auto p-4">
+            {/* Maxxing */}
+            <div className="text-center my-8">
+              <div className="font-[Exo] text-[18px] mb-2 text-pink-400">Fear Maxing</div>
+              <div className="flex justify-center gap-y-2 flex-wrap">
+                {maxFearData.map((arr) => (
+                  <div className="bg-gradient-to-br from-[#de0ca3b0] to-[#0a12b0] text-white rounded px-2 py-1 w-25 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
+                    <img
+                      src={`/Avatar/${arr[0].toLowerCase()}.webp`}
+                      alt="Avatar"
+                      className="size-10 mask mask-decagon"
+                      onError={(e) => {
+                        e.target.src = "/Avatar/default.jpg";
+                      }}
+                    />
+                    <div className="rounded px-1 truncate w-20">{arr[0]}</div>
+                    <div className="text-[18px] font-[Aleg] italic">{arr[1]}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
             {/* Surface  */}
+            <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
             <div className="text-center my-8">
               <div className="font-[Exo] text-[16px] mb-2 text-yellow-300">Completed Max Fear, Surface</div>
-              <div className="flex justify-center flex-wrap">
+              <div className="flex justify-center gap-y-2 flex-wrap">
                 {allplayers67s.map((ite) => (
                   <div className="bg-gradient-to-br from-[#d2db38] to-[#620f0f] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
                     <img
@@ -297,7 +330,7 @@ export default function App() {
             <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
             <div className="text-center my-8">
               <div className="font-[Exo] text-[16px] mb-2 text-green-300">Completed Max Fear, UW</div>
-              <div className="flex justify-center flex-wrap">
+              <div className="flex justify-center gap-y-2 flex-wrap">
                 {allplayers67uw.map((ite) => (
                   <div className="bg-gradient-to-br from-[#18946b] to-[#240458] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
                     <img
@@ -333,7 +366,7 @@ export default function App() {
             <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
             <div className="text-center my-8">
               <div className="font-[Exo] text-[16px] mb-2 text-yellow-300">Completed 65 Fear, All Aspects, Surface</div>
-              <div className="flex justify-center flex-wrap">
+              <div className="flex justify-center gap-y-2 flex-wrap">
                 {allaspect65s.map((ite) => (
                   <div className="bg-gradient-to-br from-[#d2db38] to-[#620f0f] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
                     <img
@@ -368,7 +401,7 @@ export default function App() {
             <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-8" />
             <div className="text-center my-8">
               <div className="font-[Exo] text-[16px] mb-2 text-green-300">Completed 65 Fear, All Aspects, UW</div>
-              <div className="flex justify-center flex-wrap">
+              <div className="flex justify-center gap-y-2 flex-wrap">
                 {allaspect65uw.map((ite) => (
                   <div className="bg-gradient-to-br from-[#18946b] to-[#270957] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
                     <img
@@ -404,7 +437,7 @@ export default function App() {
             {/* Dream */}
             <div className="text-center my-8">
               <div className="font-[Exo] text-[16px] mb-2 text-purple-400">Completed Max Fear, Dream Dive</div>
-              <div className="flex justify-center flex-wrap">
+              <div className="flex justify-center gap-y-2 flex-wrap">
                 {allplayers67d.map((ite) => (
                   <div className="bg-gradient-to-br from-[#8c40b5] to-[#440512] text-white rounded px-2 py-1 w-23 text-[12px] aspect-square mask mask-hexagon flex items-center justify-center relative flex-col">
                     <img

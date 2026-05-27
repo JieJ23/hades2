@@ -2,8 +2,6 @@ import SideNav from "../Comp/Sidebar";
 import Background from "../Comp/Background";
 import Footer from "../Comp/Footer";
 
-import LZString from "lz-string";
-
 import { sdata } from "../Data/SData";
 
 import { bossMap } from "../Mod/BossMap";
@@ -217,7 +215,7 @@ export default function CustomChaos() {
     // Replace MetaUpgradeStateEquipped
     blockContent = blockContent.replace(
       /MetaUpgradeStateEquipped\s*=\s*\{[^}]*\}/,
-      `MetaUpgradeStateEquipped = {${metaString}}`
+      `MetaUpgradeStateEquipped = {${metaString}}`,
     );
 
     const metaInsertPoint = blockContent.indexOf("MetaUpgradeStateEquipped = {");
@@ -619,10 +617,10 @@ export default function CustomChaos() {
                     item.split("_")[1] === `Heroic`
                       ? `bg-[orange]`
                       : item.split("_")[1] === `Rare`
-                      ? `bg-[cyan]`
-                      : item.split("_")[1] === `Epic`
-                      ? `bg-[#eb4aeb]`
-                      : `bg-white`
+                        ? `bg-[cyan]`
+                        : item.split("_")[1] === `Epic`
+                          ? `bg-[#eb4aeb]`
+                          : `bg-white`
                   }`}
                   onClick={() => setBoon((prev) => prev.filter((_, i) => i !== index))}
                 >
