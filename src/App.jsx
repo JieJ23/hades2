@@ -31,9 +31,9 @@ export default function App() {
       const tl = gsap.timeline();
       tl.to(".starter", { opacity: 1, duration: 1 })
         .from(".img", { opacity: 0, duration: 2 })
-        .fromTo(".imgText", { opacity: 0, duration: 2 }, { opacity: 1, y: -50, duration: 2 })
-        .to("img", { opacity: 0, duration: 2 }, "<=3")
-        .to(".starter", { opacity: 0, duration: 1, autoAlpha: 0 })
+        .fromTo(".imgText", { opacity: 0, duration: 2, scale: 0.8 }, { opacity: 1, y: -50, duration: 2, scale: 1 })
+        .to(".img", { autoAlpha: 0, duration: 2 }, "<=3")
+        .to(".starter", { autoAlpha: 0, duration: 1 })
         .to(".memo", {
           height: 0,
           ease: "power3.inOut",
@@ -369,7 +369,7 @@ export default function App() {
                   <img
                     src={item === "Slot1" ? `/Slot1.png` : `/GUI_Card/c${item}.png`}
                     alt="Aspects"
-                    className={`w-13 md:w-15 h-auto ${item === "Slot1" ? `opacity-50` : ``}`}
+                    className={`w-13 md:w-15 z-40 h-auto ${item === "Slot1" ? `opacity-50` : ``}`}
                   />
                 ))}
               </div>
@@ -378,7 +378,7 @@ export default function App() {
                   <img
                     src={item == "Slot1" ? `/Slot1.png` : `/GUI_Card/c${item}.png`}
                     alt="Aspects"
-                    className={`w-13 md:w-15 h-auto ${item === "Slot1" ? `opacity-50` : ``}`}
+                    className={`w-13 md:w-15 z-40 h-auto ${item === "Slot1" ? `opacity-50` : ``}`}
                   />
                 ))}
               </div>
