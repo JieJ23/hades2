@@ -24,7 +24,7 @@ export default function App() {
   const container = useRef(null);
   const [random, setRandom] = useState(null);
 
-  const randomImgGen = getRandomString(randomImg);
+  const randomImgGen = useRef(getRandomString(randomImg));
 
   useGSAP(
     () => {
@@ -267,12 +267,12 @@ export default function App() {
       >
         <div className="relative h-full w-full">
           <img
-            src={`/imgRandom/${randomImgGen}.webp`}
+            src={`/imgRandom/${randomImgGen.current}.webp`}
             alt="Images"
             className="absolute bottom-0 inset-x-0 h-[70%] w-auto object-cover object-center mx-auto img opacity-50"
           />
           <span className="absolute inset-0 font-[Exo] flex justify-center items-center text-center mx-auto imgText z-40 px-4 w-[80%]">
-            {getRandomString(imgTextStore(randomImgGen))}
+            {getRandomString(imgTextStore(randomImgGen.current))}
           </span>
         </div>
       </div>
