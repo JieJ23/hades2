@@ -22,6 +22,7 @@ export default function Night() {
   const [fill, setFill] = useState("Latest");
   const [player, setPlayer] = useState("");
   const [format, setFormat] = useState("Grid");
+  const [vidOnly, setVidOnly] = useState(true);
 
   const orderData = useMemo(() => {
     return [...bundleData, ...posts]
@@ -30,8 +31,9 @@ export default function Night() {
         const playerMatch = player === "" || obj.nam === player;
         const categoryMatch = category === "" || obj.asp === category;
         const regionMatch = region === "" || obj.loc === region;
+        const videoOnly = vidOnly ? obj.src.includes("youtu") : obj;
 
-        return categoryMatch && regionMatch && playerMatch;
+        return categoryMatch && regionMatch && playerMatch && videoOnly;
       })
       .sort((a, b) => {
         if (fill === "Latest") return new Date(b.dat) - new Date(a.dat);
@@ -41,7 +43,7 @@ export default function Night() {
           return parseTimetoms(a.tim) - parseTimetoms(b.tim);
         }
       });
-  }, [posts, category, region, fill, player]);
+  }, [posts, category, region, fill, player, vidOnly]);
 
   // Pagnition
   const ITEMS_PER_PAGE = 20;
@@ -193,6 +195,12 @@ export default function Night() {
               onClick={() => setFormat("Grid")}
             >
               Grid
+            </button>
+            <button
+              className={`min-w-15 cursor-pointer  px-1 py-0.5 rounded text-center ${vidOnly === true ? `bg-white text-black` : ``}`}
+              onClick={() => setVidOnly(!vidOnly)}
+            >
+              Video
             </button>
           </div>
           {/* Table Content */}

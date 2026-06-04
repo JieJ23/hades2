@@ -20,14 +20,16 @@ export default function Dream() {
   const [category, setCategory] = useState("");
   const [fill, setFill] = useState("Latest");
   const [format, setFormat] = useState("Grid");
+  const [vidOnly, setVidOnly] = useState(true);
 
   const orderData = useMemo(() => {
     return [...bundleData, ...posts]
       .filter((obj) => obj.loc !== "Underworld" && obj.loc !== "Surface")
       .filter((obj) => {
         const categoryMatch = category === "" || obj.asp === category;
+        const videoOnly = vidOnly ? obj.src.includes("youtu") : obj;
 
-        return categoryMatch;
+        return categoryMatch && videoOnly;
       })
       .sort((a, b) => {
         if (fill === "Latest") return new Date(b.dat) - new Date(a.dat);
@@ -37,7 +39,7 @@ export default function Dream() {
           return parseTimetoms(a.tim) - parseTimetoms(b.tim);
         }
       });
-  }, [posts, category, fill]);
+  }, [posts, category, fill, vidOnly]);
 
   // Pagnition
   const ITEMS_PER_PAGE = 25;
@@ -143,6 +145,12 @@ export default function Dream() {
               onClick={() => setFormat("Grid")}
             >
               Grid
+            </button>
+            <button
+              className={`min-w-15 cursor-pointer  px-1 py-0.5 rounded text-center ${vidOnly === true ? `bg-white text-black` : ``}`}
+              onClick={() => setVidOnly(!vidOnly)}
+            >
+              Video
             </button>
           </div>
           {/* Table Content */}
