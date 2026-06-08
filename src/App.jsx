@@ -28,7 +28,8 @@ export default function App() {
   const { posts, loader } = useData();
   const container = useRef(null);
   const containerRef = useRef(null);
-  const lastSpawn = useRef(0); // add this ref at the top
+  const lastSpawn = useRef(0);
+  const lastSpawn2 = useRef(0);
 
   useGSAP(
     () => {
@@ -158,7 +159,56 @@ export default function App() {
     });
   };
   //
+  const handleMouseMove2 = (e) => {
+    const now = Date.now();
+    if (now - lastSpawn2.current < 500) return; // ← ms between spawns, higher = slower
+    lastSpawn2.current = now;
+    if (!container.current) return;
 
+    const icons = [...textHoverObject];
+    const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+    const img = document.createElement("img");
+    img.src = `./hover/${randomIcon}.png`;
+    img.classList.add("absolute", "w-8", "h-8", "pointer-events-none");
+
+    const rect = container.current.getBoundingClientRect();
+    img.style.left = `${e.clientX - rect.left}px`;
+    img.style.top = `${e.clientY - rect.top}px`;
+
+    container.current.appendChild(img);
+    const tl = gsap.timeline({ onComplete: () => img.remove() });
+
+    // Use gsap directly (not useGSAP) inside event handlers
+    tl.fromTo(
+      img,
+      {
+        opacity: 1,
+        scale: gsap.utils.random(0.8, 1.6),
+        y: 0,
+        x: 0,
+        rotation: gsap.utils.random(-30, 30),
+      },
+      {
+        // Stage 1: shoot up
+        duration: gsap.utils.random(0.8, 1.4),
+        y: gsap.utils.random(-50, -100), // ← negative = upward
+        x: gsap.utils.random(-50, 50),
+        rotation: gsap.utils.random(-180, 180),
+        opacity: 1,
+        ease: "power2.out", // decelerates as it rises
+      },
+    ).to(img, {
+      // Stage 2: fall down and fade
+      duration: gsap.utils.random(0.8, 1.4),
+      y: gsap.utils.random(80, 140), // ← positive = downward (relative to stage 1 end)
+      x: gsap.utils.random(-30, 30),
+      scale: gsap.utils.random(0.4, 0.8),
+      rotation: gsap.utils.random(-180, 180),
+      opacity: 0,
+      ease: "power4.in", // accelerates as it falls (gravity feel)
+    });
+  };
+  //
   const orderData = useMemo(() => {
     return [...bundleData, ...posts].sort((a, b) => {
       const feaDiff = +b.fea - +a.fea;
@@ -315,6 +365,7 @@ export default function App() {
     <main
       className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
       ref={container}
+      onMouseMove={handleMouseMove2}
     >
       <div className="parentBox">
         <PageBlock>
@@ -331,6 +382,7 @@ export default function App() {
               <div className="text-center text-[12px]">( Mouse Hover Effect)</div>
             </div>
           </div>
+          {/*  */}
           {loader ? (
             <Loading />
           ) : (
