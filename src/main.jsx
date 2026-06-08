@@ -34,11 +34,17 @@ import EAStat from "./Page/EAStat.jsx";
 import PeriodicTable from "./Page/PeriodicTable.jsx";
 import { DataProvider } from "./Hook/DataFetch.jsx";
 
+import NewPage1 from "./Page/NewPage1.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <DataProvider>
       <Router>
         <Routes>
+          {/* New */}
+          <Route path="/NewPage1" element={<NewPage1 />} />
+
+          {/* Old */}
           <Route path="/" element={<App />} />
           <Route path="/Night" element={<Night />} />
           <Route path="/Dream" element={<Dream />} />

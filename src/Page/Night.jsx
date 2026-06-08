@@ -11,6 +11,8 @@ import { p9boons } from "../Data/P9BoonObj";
 import { Link } from "react-router-dom";
 import { h2AspectOrder } from "../Data/Misc";
 
+import PageBlock from "../Block/PageBlock";
+
 import { useMemo, useState, useEffect } from "react";
 
 export default function Night() {
@@ -119,9 +121,7 @@ export default function Night() {
   );
 
   return (
-    <main className="h-full min-h-lvh relative overflow-hidden text-[14px] font-[Ale] select-none">
-      <Background />
-      <SideNav />
+    <PageBlock>
       {loader ? (
         <Loading />
       ) : (
@@ -529,8 +529,6 @@ export default function Night() {
           </div>
         </>
       )}
-
-      <Footer />
-    </main>
+    </PageBlock>
   );
 }

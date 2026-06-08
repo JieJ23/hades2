@@ -1,23 +1,35 @@
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
+import gsap from "gsap";
+
+gsap.registerPlugin(SplitText, useGSAP);
+
+const mod = ["Aki", "Frei", "Vangetsu", "Andrw"];
+
 export default function Footer() {
+  useGSAP(() => {
+    const split = SplitText.create(".target", { type: "chars" });
+
+    gsap.from(split.chars, {
+      y: -5,
+      stagger: { each: 0.08, from: "start", repeat: -1, yoyo: true },
+      duration: 0.4,
+      ease: "sine.inOut",
+    });
+  });
+
   return (
-    <div className="my-10 select-none text-gray-300 font-[Spec] text-center text-[13px] md:text-[14px] px-2">
-      <div className="text-[12px]">Managing Members:</div>
-      <div className="text-green-300">Aki | Frei | Vangetsu | Andrw</div>
-      <div className="avatar-group -space-x-4 flex justify-center my-1">
-        <div className="avatar border-[1px] border-transparent">
-          <img src="/Avatar/aki.webp" alt="Member" className="size-10 md:size-12 mask mask-decagon" />
-        </div>
-        <div className="avatar border-[1px] border-transparent">
-          <img src="/Avatar/frei.webp" alt="Member" className="size-10 md:size-12 mask mask-decagon" />
-        </div>
-        <div className="avatar border-[1px] border-transparent">
-          <img src="/Avatar/vangetsu.webp" alt="Member" className="size-10 md:size-12 mask mask-decagon" />
-        </div>
-        <div className="avatar border-[1px] border-transparent">
-          <img src="/Avatar/andrw.webp" alt="Member" className="size-10 md:size-12 mask mask-decagon" />
-        </div>
+    <div className="my-8 select-none text-gray-300 text-center text-[13px] md:text-[14px] p-2">
+      <div className="font-[Ale]">Managing Members:</div>
+      <div className="flex justify-center gap-2 my-2">
+        {mod.map((item) => (
+          <div className="flex justify-center items-center gap-1 bg-[#131111] rounded px-2 py-1 min-w-20">
+            <img src={`/Avatar/${item.toLowerCase()}.webp`} alt="Member" className="w-8 h-auto rounded-full" />
+            <div className="font-[Ale] target">{item}</div>
+          </div>
+        ))}
       </div>
-      <div className="text-[12px]">Website has no affiliation with Supergiant Games</div>
+      <div className="font-[Ale]">Website has no affiliation with Supergiant Games</div>
     </div>
   );
 }

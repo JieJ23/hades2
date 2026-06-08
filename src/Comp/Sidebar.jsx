@@ -5,7 +5,7 @@ export const sites = [
   { link: ``, nam: `Home` },
   { link: `Night`, nam: `Night` },
   { link: `Dream`, nam: `Dream` },
-  { link: `Death`, nam: `Death` },
+  // { link: `Death`, nam: `Death` },
   { link: `GameStats`, nam: `Stats` },
   { link: `Loadout`, nam: `Loadout` },
   { link: `Ladder`, nam: `Ladder` },
@@ -18,12 +18,12 @@ export const sites = [
 export default function SideNav() {
   const currentLocation = useLocation();
   return (
-    <div className="w-full p-4 font-[Exo] text-[12px] md:text-[14px] rounded shrink-0">
-      <div className="flex flex-wrap justify-center items-center gap-0.5">
+    <div className="w-full p-4 font-[Ale] text-[14px] rounded mb-4">
+      <div className="flex flex-wrap justify-center items-center gap-1">
         {sites.map((obj, idx) => (
           <Link to={`/${obj.link}`} className={`flex items-center group`} key={idx}>
             <div
-              className={`px-2 py-1 rounded  hover:bg-white hover:text-black ${
+              className={`px-2 py-1 rounded border border-white/10 hover:bg-white hover:text-black ${
                 currentLocation.pathname == `/${obj.link}` ? `bg-white text-black` : `text-white`
               }`}
             >

@@ -33,3 +33,20 @@
     font-style: normal;
     src: url("/src/fonts/Exocet.otf") format("opentype");
   }
+
+  /* New Fonts */
+                @font-face {
+    font-family: Os;
+    font-style: normal;
+    src: url("/src/fonts/Os.ttf") format("truetype");
+  }
+                    @font-face {
+    font-family: Sb;
+    font-style: normal;
+    src: url("/src/fonts/Sb.ttf") format("truetype");
+  }
+                    @font-face {
+    font-family: Sr;
+    font-style: normal;
+    src: url("/src/fonts/Sr.ttf") format("truetype");
+  }
