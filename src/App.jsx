@@ -161,7 +161,7 @@ export default function App() {
   //
   const handleMouseMove2 = (e) => {
     const now = Date.now();
-    if (now - lastSpawn2.current < 500) return; // ← ms between spawns, higher = slower
+    if (now - lastSpawn2.current < 250) return; // ← ms between spawns, higher = slower
     lastSpawn2.current = now;
     if (!container.current) return;
 
@@ -182,7 +182,7 @@ export default function App() {
     tl.fromTo(
       img,
       {
-        opacity: 1,
+        opacity: 0,
         scale: gsap.utils.random(0.8, 1.6),
         y: 0,
         x: 0,
@@ -191,9 +191,9 @@ export default function App() {
       {
         // Stage 1: shoot up
         duration: gsap.utils.random(0.8, 1.4),
-        y: gsap.utils.random(-50, -100), // ← negative = upward
+        y: gsap.utils.random(-25, -100), // ← negative = upward
         x: gsap.utils.random(-50, 50),
-        rotation: gsap.utils.random(-180, 180),
+        rotation: gsap.utils.random(-360, 360),
         opacity: 1,
         ease: "power2.out", // decelerates as it rises
       },
@@ -203,7 +203,7 @@ export default function App() {
       y: gsap.utils.random(80, 140), // ← positive = downward (relative to stage 1 end)
       x: gsap.utils.random(-30, 30),
       scale: gsap.utils.random(0.4, 0.8),
-      rotation: gsap.utils.random(-180, 180),
+      rotation: gsap.utils.random(-360, 360),
       opacity: 0,
       ease: "power4.in", // accelerates as it falls (gravity feel)
     });
