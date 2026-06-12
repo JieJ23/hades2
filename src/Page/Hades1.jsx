@@ -130,7 +130,7 @@ export default function Hades1() {
             </div>
           ))}
         </section>
-        {display > 25 && display < vidOnly.length && (
+        {display < filteredData.length && (
           <div className="flex justify-center w-full my-8">
             <button
               onClick={handleShowMore}
