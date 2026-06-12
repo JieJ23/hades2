@@ -254,10 +254,22 @@ export default function Night() {
                         <span>{obj.asp}</span>
                         <span>{obj.tim}</span>
                       </div>
-                      <div className="flex justify-between items-center">
-                        <div className="flex gap-0.5">
+                      <div className="flex flex-wrap justify-between items-center">
+                        <div className="flex">
                           {obj.fam && (
-                            <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Familiar" className="size-6" />
+                            <div className="relative size-10 sm:size-8 shrink-0">
+                              <img
+                                src="/BoonBorder/Legendary.png"
+                                alt="Border"
+                                className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                              />
+                              <img
+                                draggable={false}
+                                src={`/P9/${obj.fam}.png`}
+                                alt="Familiar"
+                                className="absolute inset-0 w-full h-full p-1 object-contain"
+                              />
+                            </div>
                           )}
                           {obj.ham
                             ? findValue(
@@ -273,39 +285,57 @@ export default function Night() {
                                       {p9boons[ite]}
                                     </div>
                                   </div>
-                                  <img
-                                    draggable={false}
-                                    src={`/P9/${ite}.png`}
-                                    alt="Hammers"
-                                    className="size-8 md:size-6"
-                                  />
+                                  <div className="relative size-10 sm:size-8 shrink-0">
+                                    <img
+                                      src="/BoonBorder/Hammer.png"
+                                      alt="Border"
+                                      className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                                    />
+                                    <img
+                                      src={`/P9/${ite}.png`}
+                                      alt="Hammers"
+                                      className="absolute inset-0 w-full h-full p-1 object-contain"
+                                    />
+                                  </div>
                                 </div>
                               ))
                             : ``}
                         </div>
                         {obj.ks && (
-                          <div className="flex gap-0.5">
+                          <div className="flex">
                             {sToA(obj.ks).map((ite, index) => (
-                              <img
-                                draggable={false}
-                                src={`/buildgui/${ite}.png`}
-                                alt="Keepsake"
-                                className="size-8 md:size-6"
-                              />
+                              <div className="relative size-10 sm:size-8 shrink-0">
+                                <img
+                                  src="/BoonBorder/Common.png"
+                                  alt="Border"
+                                  className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                                />
+                                <img
+                                  draggable={false}
+                                  src={`/buildgui/${ite}.png`}
+                                  alt="Keepsake"
+                                  className="absolute inset-0 w-full h-full p-1.5 object-contain"
+                                />
+                              </div>
                             ))}
                           </div>
                         )}
                       </div>
-                      <div className="flex justify-start gap-0.5">
+                      <div className="flex justify-start">
                         {obj.cor
                           ? sToA(obj.cor).map((ite, index) => (
-                              <img
-                                draggable={false}
-                                src={`/H2Boons/${ite}.png`}
-                                alt="Core Boon"
-                                className="size-8 md:size-6"
-                                loading="lazy"
-                              />
+                              <div className="relative size-10 sm:size-8 shrink-0">
+                                <img
+                                  src="/BoonBorder/Common.png"
+                                  alt="Border"
+                                  className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                                />
+                                <img
+                                  src={`/H2Boons/${ite}.png`}
+                                  alt="Core Boon"
+                                  className="absolute inset-0 w-full h-full p-1 object-contain"
+                                />
+                              </div>
                             ))
                           : ``}
                       </div>

@@ -14,11 +14,11 @@ const pagesObj = [
     nam: `High Fear Stats`,
     des: `Stats collected since inception: Core Boons, Hammers, Arcana, and Familiars.`,
   },
-  {
-    link: `Speed62`,
-    nam: `Fear 62 Speedrun`,
-    des: `Unseeded Unmodded 62 Fear entries with video gameplay, sorted by the fastest completion.`,
-  },
+  // {
+  //   link: `Speed62`,
+  //   nam: `Fear 62 Speedrun`,
+  //   des: `Unseeded Unmodded 62 Fear entries with video gameplay, sorted by the fastest completion.`,
+  // },
   {
     link: `FearPoints`,
     nam: `Fear PBs`,
@@ -49,26 +49,26 @@ const pagesObj = [
     nam: `Enemy Data`,
     des: `Information of all Hades 2 enemies.`,
   },
-  {
-    link: `EALadder`,
-    nam: `EA Ladder`,
-    des: `Early Access, the best completion in term of fear and speed for each aspect.`,
-  },
-  {
-    link: `EAQuery`,
-    nam: `EA Query`,
-    des: `All compiled entries from Early Access.`,
-  },
-  {
-    link: `EARanking`,
-    nam: `EA Ranking`,
-    des: `Organized Early Access entries by weapon type, sorted by highest fear and fastest completion.`,
-  },
-  {
-    link: `EAStat`,
-    nam: `EA Stats`,
-    des: `Stats of Early Access entries: comparison between Underworld and Surface entries, Vows & Arcana, and many more.`,
-  },
+  // {
+  //   link: `EALadder`,
+  //   nam: `EA Ladder`,
+  //   des: `Early Access, the best completion in term of fear and speed for each aspect.`,
+  // },
+  // {
+  //   link: `EAQuery`,
+  //   nam: `EA Query`,
+  //   des: `All compiled entries from Early Access.`,
+  // },
+  // {
+  //   link: `EARanking`,
+  //   nam: `EA Ranking`,
+  //   des: `Organized Early Access entries by weapon type, sorted by highest fear and fastest completion.`,
+  // },
+  // {
+  //   link: `EAStat`,
+  //   nam: `EA Stats`,
+  //   des: `Stats of Early Access entries: comparison between Underworld and Surface entries, Vows & Arcana, and many more.`,
+  // },
 ];
 
 export default function Resources() {

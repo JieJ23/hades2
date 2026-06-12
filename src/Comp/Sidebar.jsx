@@ -3,15 +3,15 @@ import { useLocation } from "react-router-dom";
 
 export const sites = [
   { link: ``, nam: `Home` },
-  { link: `Night`, nam: `Night` },
-  { link: `Dream`, nam: `Dream` },
-  // { link: `Death`, nam: `Death` },
-  { link: `GameStats`, nam: `Stats` },
-  { link: `Loadout`, nam: `Loadout` },
+  { link: `Night`, nam: `H2 Runs` },
+  { link: `Dream`, nam: `Dream Dive` },
   { link: `Ladder`, nam: `Ladder` },
+  { link: `GameStats`, nam: `Boon Stats` },
+  { link: `Loadout`, nam: `Cards & Vows` },
   { link: `ArcanaDeck`, nam: `Arcana` },
   { link: `FearCalculator`, nam: `Fear` },
   { link: `GameplaySubmission`, nam: `Submit` },
+  { link: `Hades1`, nam: `H1 Runs`, game: "H1" },
   { link: `Resources`, nam: `Other` },
 ];
 
