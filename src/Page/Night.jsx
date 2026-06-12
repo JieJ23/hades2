@@ -249,7 +249,7 @@ export default function Night() {
                         <span className={`${obj.loc === "Underworld" ? `text-[#00ffaa]` : `text-[yellow]`}`}>
                           {obj.loc === "Underworld" ? "UW" : "S"}
                         </span>
-                        <span>{obj.fea}</span>
+                        <span>{+obj.fea + 2}</span>
                         <span className="text-orange-400">{obj.nam}</span>
                         <span>{obj.asp}</span>
                         <span>{obj.tim}</span>
@@ -261,26 +261,26 @@ export default function Night() {
                           )}
                           {obj.ham
                             ? findValue(
-                                sToA(obj.ham).sort((a, b) => {
-                                  const aIndex = orderMap.get(a) ?? Infinity;
-                                  const bIndex = orderMap.get(b) ?? Infinity;
-                                  return aIndex - bIndex;
-                                }),
-                              ).map((ite, index) => (
-                                <div className="tooltip">
-                                  <div className="tooltip-content p-0">
-                                    <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                      {p9boons[ite]}
-                                    </div>
+                              sToA(obj.ham).sort((a, b) => {
+                                const aIndex = orderMap.get(a) ?? Infinity;
+                                const bIndex = orderMap.get(b) ?? Infinity;
+                                return aIndex - bIndex;
+                              }),
+                            ).map((ite, index) => (
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
                                   </div>
-                                  <img
-                                    draggable={false}
-                                    src={`/P9/${ite}.png`}
-                                    alt="Hammers"
-                                    className="size-8 md:size-6"
-                                  />
                                 </div>
-                              ))
+                                <img
+                                  draggable={false}
+                                  src={`/P9/${ite}.png`}
+                                  alt="Hammers"
+                                  className="size-8 md:size-6"
+                                />
+                              </div>
+                            ))
                             : ``}
                         </div>
                         {obj.ks && (
@@ -299,14 +299,14 @@ export default function Night() {
                       <div className="flex justify-start gap-0.5">
                         {obj.cor
                           ? sToA(obj.cor).map((ite, index) => (
-                              <img
-                                draggable={false}
-                                src={`/H2Boons/${ite}.png`}
-                                alt="Core Boon"
-                                className="size-8 md:size-6"
-                                loading="lazy"
-                              />
-                            ))
+                            <img
+                              draggable={false}
+                              src={`/H2Boons/${ite}.png`}
+                              alt="Core Boon"
+                              className="size-8 md:size-6"
+                              loading="lazy"
+                            />
+                          ))
                           : ``}
                       </div>
                       <div className="flex gap-1">
@@ -383,7 +383,7 @@ export default function Night() {
                         </div>
                       </th>
                       <td className="border-0 border-y-1 border-y-white/5">
-                        <div>{obj.fea}</div>
+                        <div>{+obj.fea + 2}</div>
                       </td>
                       <td className="border-0 border-y-1 border-y-white/5">
                         <div className="flex gap-2 justify-between items-center">
@@ -391,9 +391,8 @@ export default function Night() {
                           {obj.des && (
                             <div className="w-[25px]">
                               <div
-                                className={`tooltip ${
-                                  index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
-                                }`}
+                                className={`tooltip ${index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
+                                  }`}
                               >
                                 <div className="tooltip-content p-0">
                                   <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
@@ -436,21 +435,21 @@ export default function Night() {
                           )}
                           {obj.ham
                             ? findValue(
-                                sToA(obj.ham).sort((a, b) => {
-                                  const aIndex = orderMap.get(a) ?? Infinity;
-                                  const bIndex = orderMap.get(b) ?? Infinity;
-                                  return aIndex - bIndex;
-                                }),
-                              ).map((ite, index) => (
-                                <div className="tooltip">
-                                  <div className="tooltip-content p-0">
-                                    <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                      {p9boons[ite]}
-                                    </div>
+                              sToA(obj.ham).sort((a, b) => {
+                                const aIndex = orderMap.get(a) ?? Infinity;
+                                const bIndex = orderMap.get(b) ?? Infinity;
+                                return aIndex - bIndex;
+                              }),
+                            ).map((ite, index) => (
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
                                   </div>
-                                  <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
                                 </div>
-                              ))
+                                <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
+                              </div>
+                            ))
                             : ``}
                         </div>
                       </td>
@@ -458,21 +457,21 @@ export default function Night() {
                         <div className="flex gap-0.5">
                           {obj.cor
                             ? sToA(obj.cor).map((ite, index) => (
-                                <div className="tooltip">
-                                  <div className="tooltip-content p-0">
-                                    <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
-                                      {p9boons[ite]}
-                                    </div>
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
                                   </div>
-                                  <img
-                                    draggable={false}
-                                    src={`/H2Boons/${ite}.png`}
-                                    alt="Core Boon"
-                                    className="size-6"
-                                    loading="lazy"
-                                  />
                                 </div>
-                              ))
+                                <img
+                                  draggable={false}
+                                  src={`/H2Boons/${ite}.png`}
+                                  alt="Core Boon"
+                                  className="size-6"
+                                  loading="lazy"
+                                />
+                              </div>
+                            ))
                             : ``}
                         </div>
                       </td>
