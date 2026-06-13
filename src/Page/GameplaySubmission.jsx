@@ -54,14 +54,13 @@ function swapKV(obj) {
       swapped[valueAsKey] = key;
     }
   }
-
   return swapped;
 }
 
 const coreboons = [bAttack, bSpecial, bCast, bSprint, bMagick];
 const gods = [bAphrodite, bApollo, bAres, bDemeter, bHephaestus, bHera, bHestia, bPoseidon, bZeus];
 const Unseen = [bArtemis, bAthena, bCirce, bDionysus, bEcho, bHades, bHermes, bIcarus, bMedea, bNarcissus];
-const weapons = [bAxe, bDagger, bLob, bStaff, bSuit, bTorch];
+const weapons = [bStaff, bAxe, bDagger, bLob, bSuit, bTorch];
 const misc = [bDuo, bElemental];
 const other = [bChaos, bTalent];
 const keepsakes = [bKeep];
@@ -104,6 +103,41 @@ const selectPool = [
   `Zeus`,
 ].sort();
 
+function showAvailableHammer(e) {
+  switch (e) {
+    case `Melinoe Staff`:
+    case `Circe`:
+    case `Momus`:
+    case `Anubis`:
+      return 0;
+    case `Melinoe Blades`:
+    case `Artemis`:
+    case `Pan`:
+    case `Morrigan`:
+      return 2;
+    case `Melinoe Axe`:
+    case `Charon`:
+    case `Thanatos`:
+    case `Nergal`:
+      return 1;
+    case `Melinoe Skull`:
+    case `Medea`:
+    case `Persephone`:
+    case `Hel`:
+      return 3;
+    case `Melinoe Coat`:
+    case `Nyx`:
+    case `Selene`:
+    case `Shiva`:
+      return 4;
+    case `Melinoe Flames`:
+    case `Eos`:
+    case `Moros`:
+    case `Supay`:
+      return 5;
+  }
+}
+
 export default function GameplaySubmission() {
   const [category, setCategory] = useState(0);
   const [location, setLocation] = useState([]);
@@ -113,6 +147,7 @@ export default function GameplaySubmission() {
   const [boons, setBoons] = useState([]);
   const [keep, setKeep] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [weaponHammer, setWeaponHammer] = useState(0);
 
   async function Submit(e) {
     e.preventDefault();
@@ -157,14 +192,17 @@ export default function GameplaySubmission() {
     }
   }
 
+  const showHammer = [weapons[weaponHammer]];
   // const allCategory = [coreboons, weapons, gods, Unseen, misc, other, keepsakes];
-  const allCategory = [coreboons, weapons, keepsakes];
+  const allCategory = [coreboons, showHammer, keepsakes];
 
   // const allCategoryTitle = [`Core`, `Weapons`, `Olympians`, `Unseen`, `Duo & Elemental`, `Chaos & Hex`, `Keepsakes`];
   const allCategoryTitle = [`Core`, `Weapons`, `Keepsakes`];
 
   const displayData = allCategory[category];
-  console.log(location);
+
+  console.log(weaponHammer);
+
   return (
     <main className="relative">
       <Background />
@@ -192,7 +230,12 @@ export default function GameplaySubmission() {
               <div className="text-[14px]">Name are case-sensitive, "Hades" and "HADES" are separated.</div>
               <input type="text" placeholder="Name" className="input w-full rounded" name="nam" required />
               <input type="date" placeholder="Date" className="input w-full rounded" name="dat" required />
-              <select defaultValue="Melinoe Staff" className="select select-neutral w-full rounded" name="asp">
+              <select
+                defaultValue="Melinoe Staff"
+                className="select select-neutral w-full rounded"
+                name="asp"
+                onChange={(e) => setWeaponHammer(showAvailableHammer(e.target.value))}
+              >
                 {h2AspectOrder.map((ite, index) => (
                   <option key={index}>{ite}</option>
                 ))}
