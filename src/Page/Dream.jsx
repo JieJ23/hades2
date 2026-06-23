@@ -103,12 +103,12 @@ export default function Dream() {
         {loader ? (
           <Loading />
         ) : (
-          <>
-            <div className="max-w-350 mx-auto py-2 my-2">
+          <div className="py-16">
+            <div className="py-2 my-2">
               <div className="px-2">Total Entries: {orderData.length}</div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-1 px-2">
                 <select
-                  className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
+                  className="w-full select select-sm bg-[#0e0c12] rounded border-0 focus:outline-none focus:border-transparent"
                   value={category}
                   onChange={(e) => {
                     setPageIndex(1);
@@ -121,7 +121,7 @@ export default function Dream() {
                   ))}
                 </select>
                 <select
-                  className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
+                  className="w-full select select-sm bg-[#0e0c12] rounded border-0 focus:outline-none focus:border-transparent"
                   value={fill}
                   onChange={(e) => {
                     setPageIndex(1);
@@ -133,7 +133,7 @@ export default function Dream() {
                 </select>
               </div>
             </div>
-            <div className="my-1 flex justify-center gap-1 font-[Exo]">
+            <div className="my-1 flex justify-center gap-1 font-[Sr]">
               <button
                 className={`min-w-15 cursor-pointer  px-1 py-0.5 rounded text-center ${format === "List" ? `bg-white text-black` : ``}`}
                 onClick={() => setFormat("List")}
@@ -155,7 +155,7 @@ export default function Dream() {
             </div>
             {/* Table Content */}
             {format === "Grid" ? (
-              <div className="max-w-350 mx-auto p-2">
+              <div className="p-2">
                 <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {paginatedData.slice(0, 25).map((obj, index) => (
                     <div className="rounded">
@@ -188,8 +188,8 @@ export default function Dream() {
                         </Link>
                       )}
                       <div className="px-2 pb-1">
-                        <div className="flex flex-wrap justify-center gap-1">
-                          <span>{obj.fea}</span>
+                        <div className="flex flex-wrap justify-center gap-1 my-1">
+                          <span className="font-[Sr]">{obj.fea}</span>
                           <span className="text-orange-400">{obj.nam}</span>
                           <span>{obj.asp}</span>:<span>{obj.tim}</span>
                         </div>
@@ -220,7 +220,7 @@ export default function Dream() {
                                 ).map((ite, index) => (
                                   <div className="tooltip">
                                     <div className="tooltip-content p-0">
-                                      <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                      <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                         {p9boons[ite]}
                                       </div>
                                     </div>
@@ -295,19 +295,14 @@ export default function Dream() {
                             </Link>
                           )}
                         </div>
-                        <div className="flex justify-center my-1 gap-0.5">
+                        <div className="flex justify-start gap-0.5 py-1">
                           {sToA(obj.loc).map((item) => (
-                            <img src={`/DreamDive/${item}.png`} alt="Biomes" className="size-10 md:size-7" />
+                            <div className="border border-white/10 bg-[#0e0c12] font-[UbuntuMono] px-1 rounded uppercase">
+                              {item}
+                            </div>
                           ))}
                         </div>
-                        <div className="flex justify-center gap-0.5">
-                          {sToA(obj.loc).map((item) => (
-                            <div className="bg-gray-900 px-1 rounded">{item}</div>
-                          ))}
-                        </div>
-                        <div className="line-clamp-2 text-[13px] leading-[1.2] min-h-[32px] pt-1 text-gray-300">
-                          {obj.des}
-                        </div>
+                        <div className="line-clamp-2 leading-[1.2] min-h-[32px] text-gray-400">{obj.des}</div>
                       </div>
                     </div>
                   ))}
@@ -315,8 +310,8 @@ export default function Dream() {
               </div>
             ) : (
               <div className="overflow-x-scroll py-2 my-2">
-                <table className="table whitespace-nowrap table-xs table-zebra max-w-[1400px] mx-auto font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
-                  <thead className="font-[Ale] bg-black">
+                <table className="table whitespace-nowrap table-xs font-[Ale] rounded-none">
+                  <thead className="font-[Ale]">
                     <tr>
                       <th>Idx</th>
                       <th>Name</th>
@@ -333,27 +328,27 @@ export default function Dream() {
                   </thead>
                   <tbody>
                     {paginatedData.slice(0, 100).map((obj, index) => (
-                      <tr key={index}>
-                        <td className="border-0">
+                      <tr key={index} className="text-[14px]">
+                        <td className="border-0 border-y-1 border-y-white/5">
                           <div className={`text-pink-500`}>
                             {/* {orderData.length - (index + 25 * (pageIndex - 1))} */}
                             {index + 1 + ITEMS_PER_PAGE * (pageIndex - 1)}
                           </div>
                         </td>
-                        <td className="border-0">
+                        <td className="border-0 border-y-1 border-y-white/5">
                           <div className="flex gap-1">
                             <div>{obj.nam}</div>
                           </div>
                         </td>
-                        <td className="border-0">
+                        <td className="border-0 border-y-1 border-y-white/5">
                           <div>{obj.fea}</div>
                         </td>
-                        <td className="border-0">
+                        <td className="border-0 border-y-1 border-y-white/5">
                           <div className="flex gap-1">
                             {sToA(obj.loc).map((ite, index) => (
                               <div className="tooltip shrink-0">
                                 <div className="tooltip-content p-0">
-                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                  <div className="bg-black border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                     {ite}
                                   </div>
                                 </div>
@@ -362,7 +357,7 @@ export default function Dream() {
                             ))}
                           </div>
                         </td>
-                        <td className="border-0">
+                        <td className="border-0 border-y-1 border-y-white/5">
                           <div className="flex gap-2 justify-between items-center">
                             <div>{obj.asp}</div>
                             {obj.des && (
@@ -373,7 +368,7 @@ export default function Dream() {
                                   }`}
                                 >
                                   <div className="tooltip-content p-0">
-                                    <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    <div className="bg-black border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                       {obj.des}
                                     </div>
                                   </div>
@@ -383,13 +378,13 @@ export default function Dream() {
                             )}
                           </div>
                         </td>
-                        <td className="border-0">
+                        <td className="border-0 border-y-1 border-y-white/5">
                           {obj.ks && (
                             <div className="flex gap-1">
                               {sToA(obj.ks).map((ite, index) => (
                                 <div className="tooltip shrink-0">
                                   <div className="tooltip-content p-0">
-                                    <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    <div className="bg-black border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                       {ite}
                                     </div>
                                   </div>
@@ -404,12 +399,12 @@ export default function Dream() {
                             </div>
                           )}
                         </td>
-                        <td className="border-0">
+                        <td className="border-0 border-y-1 border-y-white/5">
                           <div className="flex gap-0.5">
                             {obj.fam && (
                               <div className="tooltip">
                                 <div className="tooltip-content p-0">
-                                  <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                  <div className="bg-black border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                     {obj.fam}
                                   </div>
                                 </div>
@@ -426,7 +421,7 @@ export default function Dream() {
                                 ).map((ite, index) => (
                                   <div className="tooltip">
                                     <div className="tooltip-content p-0">
-                                      <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                      <div className="bg-black border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                         {p9boons[ite]}
                                       </div>
                                     </div>
@@ -436,13 +431,13 @@ export default function Dream() {
                               : ``}
                           </div>
                         </td>
-                        <td className="border-0">
+                        <td className="border-0 border-y-1 border-y-white/5">
                           <div className="flex gap-0.5">
                             {obj.cor
                               ? sToA(obj.cor).map((ite, index) => (
                                   <div className="tooltip">
                                     <div className="tooltip-content p-0">
-                                      <div className="bg-black border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                      <div className="bg-black border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                         {p9boons[ite]}
                                       </div>
                                     </div>
@@ -458,13 +453,13 @@ export default function Dream() {
                               : ``}
                           </div>
                         </td>
-                        <td className="border-0">
+                        <td className="border-0 border-y-1 border-y-white/5">
                           <div>{obj.tim}</div>
                         </td>
-                        <td className="border-0">
+                        <td className="border-0 border-y-1 border-y-white/5">
                           <div>{obj.dat.slice(0, 10)}</div>
                         </td>
-                        <td className="border-0">
+                        <td className="border-0 border-y-1 border-y-white/5">
                           <div className="flex gap-1">
                             {obj.src && (
                               <Link to={obj.src} target="_blank" className="underline">
@@ -509,7 +504,7 @@ export default function Dream() {
                 Next
               </button>
             </div>
-          </>
+          </div>
         )}
       </PageBlock>
     </main>

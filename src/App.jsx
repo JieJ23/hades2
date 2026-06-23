@@ -159,55 +159,55 @@ export default function App() {
     });
   };
   //
-  const handleMouseMove2 = (e) => {
-    const now = Date.now();
-    if (now - lastSpawn2.current < 250) return; // ← ms between spawns, higher = slower
-    lastSpawn2.current = now;
-    if (!container.current) return;
+  // const handleMouseMove2 = (e) => {
+  //   const now = Date.now();
+  //   if (now - lastSpawn2.current < 250) return; // ← ms between spawns, higher = slower
+  //   lastSpawn2.current = now;
+  //   if (!container.current) return;
 
-    const icons = [...textHoverObject];
-    const randomIcon = icons[Math.floor(Math.random() * icons.length)];
-    const img = document.createElement("img");
-    img.src = `./hover/${randomIcon}.png`;
-    img.classList.add("absolute", "w-8", "h-8", "pointer-events-none");
+  //   const icons = [...textHoverObject];
+  //   const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+  //   const img = document.createElement("img");
+  //   img.src = `./hover/${randomIcon}.png`;
+  //   img.classList.add("absolute", "w-8", "h-8", "pointer-events-none");
 
-    const rect = container.current.getBoundingClientRect();
-    img.style.left = `${e.clientX - rect.left}px`;
-    img.style.top = `${e.clientY - rect.top}px`;
+  //   const rect = container.current.getBoundingClientRect();
+  //   img.style.left = `${e.clientX - rect.left}px`;
+  //   img.style.top = `${e.clientY - rect.top}px`;
 
-    container.current.appendChild(img);
-    const tl = gsap.timeline({ onComplete: () => img.remove() });
+  //   container.current.appendChild(img);
+  //   const tl = gsap.timeline({ onComplete: () => img.remove() });
 
-    // Use gsap directly (not useGSAP) inside event handlers
-    tl.fromTo(
-      img,
-      {
-        opacity: 0,
-        scale: gsap.utils.random(0.8, 1.6),
-        y: 0,
-        x: 0,
-        rotation: gsap.utils.random(-30, 30),
-      },
-      {
-        // Stage 1: shoot up
-        duration: gsap.utils.random(0.8, 1.4),
-        y: gsap.utils.random(-25, -100), // ← negative = upward
-        x: gsap.utils.random(-50, 50),
-        rotation: gsap.utils.random(-360, 360),
-        opacity: 1,
-        ease: "power2.out", // decelerates as it rises
-      },
-    ).to(img, {
-      // Stage 2: fall down and fade
-      duration: gsap.utils.random(0.8, 1.4),
-      y: gsap.utils.random(80, 140), // ← positive = downward (relative to stage 1 end)
-      x: gsap.utils.random(-30, 30),
-      scale: gsap.utils.random(0.4, 0.8),
-      rotation: gsap.utils.random(-360, 360),
-      opacity: 0,
-      ease: "power4.in", // accelerates as it falls (gravity feel)
-    });
-  };
+  //   // Use gsap directly (not useGSAP) inside event handlers
+  //   tl.fromTo(
+  //     img,
+  //     {
+  //       opacity: 0,
+  //       scale: gsap.utils.random(0.8, 1.6),
+  //       y: 0,
+  //       x: 0,
+  //       rotation: gsap.utils.random(-30, 30),
+  //     },
+  //     {
+  //       // Stage 1: shoot up
+  //       duration: gsap.utils.random(0.8, 1.4),
+  //       y: gsap.utils.random(-25, -100), // ← negative = upward
+  //       x: gsap.utils.random(-50, 50),
+  //       rotation: gsap.utils.random(-360, 360),
+  //       opacity: 1,
+  //       ease: "power2.out", // decelerates as it rises
+  //     },
+  //   ).to(img, {
+  //     // Stage 2: fall down and fade
+  //     duration: gsap.utils.random(0.8, 1.4),
+  //     y: gsap.utils.random(80, 140), // ← positive = downward (relative to stage 1 end)
+  //     x: gsap.utils.random(-30, 30),
+  //     scale: gsap.utils.random(0.4, 0.8),
+  //     rotation: gsap.utils.random(-360, 360),
+  //     opacity: 0,
+  //     ease: "power4.in", // accelerates as it falls (gravity feel)
+  //   });
+  // };
   //
   const orderData = useMemo(() => {
     return [...bundleData, ...posts].sort((a, b) => {
@@ -365,7 +365,7 @@ export default function App() {
     <main
       className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
       ref={container}
-      onMouseMove={handleMouseMove2}
+      // onMouseMove={handleMouseMove2}
     >
       <div className="parentBox">
         <PageBlock>
@@ -373,7 +373,7 @@ export default function App() {
             <div className="relative overflow-visible inline-block">
               <div
                 onMouseMove={handleMouseMove}
-                className="hover-target text-white font-bold text-[48px] sm:text-[62px] md:text-[68px] uppercase cursor-default select-none text-center font-[Exo] gap-2 gap-x-8 flex flex-col md:flex-row"
+                className="hover-target text-white font-bold text-[48px] sm:text-[58px] md:text-[64px] uppercase cursor-default select-none text-center font-[Sr] gap-2 gap-x-8 flex flex-col md:flex-row"
               >
                 <div>Death</div>
                 <div>To</div>
@@ -408,7 +408,7 @@ export default function App() {
                           {ite.slice(0, 2).toUpperCase()}
                         </div>
                       </div>
-                      <div>{ite}</div>
+                      <div className="font-[Ale]">{ite}</div>
                     </div>
                   ))}
                 </div>

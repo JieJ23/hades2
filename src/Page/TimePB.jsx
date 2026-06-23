@@ -1,6 +1,4 @@
-import SideNav from "../Comp/Sidebar";
-import Background from "../Comp/Background";
-import Footer from "../Comp/Footer";
+import PageBlock from "../Block/PageBlock";
 
 import { v1bundle, eabundle } from "../Data/DataBundle";
 import { useState } from "react";
@@ -57,111 +55,110 @@ export default function TimePB() {
 
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
-      <Background />
-      <SideNav />
-      <div className="max-w-450 mx-auto px-2">
-        {loader ? (
-          <Loading />
-        ) : (
-          <div className="my-6 font-[Ale] text-[12px] md:text-[13px]">
-            <div className="flex flex-wrap gap-1 justify-center mb-2">
-              <div
-                className={`${
-                  category === null ? `bg-white text-black` : `text-white`
-                } px-2 py-1 rounded cursor-pointer`}
-                onClick={() => setCategory(null)}
-              >
-                Both Region
+      <PageBlock>
+        <div className="px-2 py-16">
+          {loader ? (
+            <Loading />
+          ) : (
+            <div className="my-6 font-[Ale] text-[12px] md:text-[13px]">
+              <div className="flex flex-wrap gap-1 justify-center mb-2">
+                <div
+                  className={`${
+                    category === null ? `bg-white text-black` : `text-white`
+                  } px-2 py-1 rounded cursor-pointer`}
+                  onClick={() => setCategory(null)}
+                >
+                  Both Region
+                </div>
+                <div
+                  className={`${
+                    category === `Surface` ? `bg-white text-black` : `text-white`
+                  } px-2 py-1 rounded cursor-pointer`}
+                  onClick={() => setCategory(`Surface`)}
+                >
+                  Surface
+                </div>
+                <div
+                  className={`${
+                    category === `Underworld` ? `bg-white text-black` : `text-white`
+                  } px-2 py-1 rounded cursor-pointer`}
+                  onClick={() => setCategory(`Underworld`)}
+                >
+                  Underworld
+                </div>
+                <div
+                  className={`${addea === true ? `bg-white text-black` : `text-white`} px-2 py-1 rounded cursor-pointer`}
+                  onClick={() => setAddEa(!addea)}
+                >
+                  Early Access
+                </div>
+                <div
+                  className={`${only62 === true ? `bg-white text-black` : `text-white`} px-2 py-1 rounded cursor-pointer`}
+                  onClick={() => setOnly62(!only62)}
+                >
+                  {`Fear 62+`}
+                </div>
               </div>
-              <div
-                className={`${
-                  category === `Surface` ? `bg-white text-black` : `text-white`
-                } px-2 py-1 rounded cursor-pointer`}
-                onClick={() => setCategory(`Surface`)}
-              >
-                Surface
+              <div className="flex items-center gap-1 my-4 px-4">
+                <div className="w-3 h-3 bg-[#00ffaa]" />
+                <div>Sub 12</div>
+                <div className="w-3 h-3 bg-[yellow]" />
+                <div>Sub 14</div>
+                <div className="w-3 h-3 bg-orange-500" />
+                <div>Sub 16</div>
+                <div className="w-3 h-3 bg-orange-300" />
+                <div>Sub 18</div>
+                <div className="w-3 h-3 bg-orange-100" />
+                <div>Cleared</div>
               </div>
-              <div
-                className={`${
-                  category === `Underworld` ? `bg-white text-black` : `text-white`
-                } px-2 py-1 rounded cursor-pointer`}
-                onClick={() => setCategory(`Underworld`)}
-              >
-                Underworld
-              </div>
-              <div
-                className={`${addea === true ? `bg-white text-black` : `text-white`} px-2 py-1 rounded cursor-pointer`}
-                onClick={() => setAddEa(!addea)}
-              >
-                Early Access
-              </div>
-              <div
-                className={`${only62 === true ? `bg-white text-black` : `text-white`} px-2 py-1 rounded cursor-pointer`}
-                onClick={() => setOnly62(!only62)}
-              >
-                {`Fear 62+`}
-              </div>
-            </div>
-            <div className="flex items-center gap-1 my-4 px-4">
-              <div className="w-3 h-3 bg-[#00ffaa]" />
-              <div>Sub 12</div>
-              <div className="w-3 h-3 bg-[yellow]" />
-              <div>Sub 14</div>
-              <div className="w-3 h-3 bg-orange-500" />
-              <div>Sub 16</div>
-              <div className="w-3 h-3 bg-orange-300" />
-              <div>Sub 18</div>
-              <div className="w-3 h-3 bg-orange-100" />
-              <div>Cleared</div>
-            </div>
-            <div className="overflow-x-scroll my-4">
-              <table className="table whitespace-nowrap table-xs font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
-                <thead className="font-[Ale] bg-black">
-                  <tr>
-                    <th>IDX</th>
-                    <th>Player</th>
-                    {h2AspectOrder.map((ite) => (
-                      <th className="min-w-15">
-                        <div className="min-w-[32px] flex justify-center">
-                          <img src={`/P9/${ite}.png`} alt="Aspects" className="size-8" />
-                        </div>
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {finalized_store.map((obj, ind) => {
-                    // build lookup for this row
-                    const byAspect = {};
-                    obj.forEach((item) => {
-                      byAspect[item.asp] = item;
-                    });
+              <div className="overflow-x-scroll my-4">
+                <table className="table whitespace-nowrap table-xs font-[Ubuntu] bg-black/80 border-separate border-spacing-0.5 rounded-none">
+                  <thead className="font-[Ale] bg-black">
+                    <tr>
+                      <th>IDX</th>
+                      <th>Player</th>
+                      {h2AspectOrder.map((ite) => (
+                        <th className="min-w-15">
+                          <div className="min-w-[32px] flex justify-center">
+                            <img src={`/P9/${ite}.png`} alt="Aspects" className="size-8" />
+                          </div>
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {finalized_store.map((obj, ind) => {
+                      // build lookup for this row
+                      const byAspect = {};
+                      obj.forEach((item) => {
+                        byAspect[item.asp] = item;
+                      });
 
-                    return (
-                      <tr key={ind}>
-                        <td className="border border-white/10">{ind + 1}</td>
-                        <td className="border border-white/10">{obj[0].nam}</td>
-                        {h2AspectOrder.map((asp) => {
-                          const entry = byAspect[asp];
-                          return (
-                            <td
-                              key={asp}
-                              className={`border border-white/10 text-black text-center ${entry && (parseTimetoms(entry.tim) < 72000 ? `bg-[#00ffaa]` : parseTimetoms(entry.tim) < 84000 ? `bg-[yellow]` : parseTimetoms(entry.tim) < 96000 ? `bg-orange-500` : parseTimetoms(entry.tim) < 108000 ? `bg-orange-300` : parseTimetoms(entry.tim) > 0 ? `bg-orange-100` : `text-white`)}`}
-                            >
-                              {entry ? entry.tim : "-"}
-                            </td>
-                          );
-                        })}
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+                      return (
+                        <tr key={ind}>
+                          <td className="border border-white/10">{ind + 1}</td>
+                          <td className="border border-white/10">{obj[0].nam}</td>
+                          {h2AspectOrder.map((asp) => {
+                            const entry = byAspect[asp];
+                            return (
+                              <td
+                                key={asp}
+                                className={`border border-white/10 text-black text-center ${entry && (parseTimetoms(entry.tim) < 72000 ? `bg-[#00ffaa]` : parseTimetoms(entry.tim) < 84000 ? `bg-[yellow]` : parseTimetoms(entry.tim) < 96000 ? `bg-orange-500` : parseTimetoms(entry.tim) < 108000 ? `bg-orange-300` : parseTimetoms(entry.tim) > 0 ? `bg-orange-100` : `text-white`)}`}
+                              >
+                                {entry ? entry.tim : "-"}
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
-      <Footer />
+          )}
+        </div>
+      </PageBlock>
     </main>
   );
 }

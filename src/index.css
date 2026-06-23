@@ -17,33 +17,9 @@
   }
 
           @font-face {
-    font-family: Aleg;
+    font-family: UbuntuMono;
     font-style: normal;
-    src: url("/src/fonts/Aleg.ttf") format("truetype");
-  }
-
-          @font-face {
-    font-family: Spec;
-    font-style: normal;
-    src: url("/src/fonts/Spec.ttf") format("truetype");
-  }
-
-            @font-face {
-    font-family: Exo;
-    font-style: normal;
-    src: url("/src/fonts/Exocet.otf") format("opentype");
-  }
-
-  /* New Fonts */
-                @font-face {
-    font-family: Os;
-    font-style: normal;
-    src: url("/src/fonts/Os.ttf") format("truetype");
-  }
-                    @font-face {
-    font-family: Sb;
-    font-style: normal;
-    src: url("/src/fonts/Sb.ttf") format("truetype");
+    src: url("/src/fonts/UbuntuMono.ttf") format("truetype");
   }
                     @font-face {
     font-family: Sr;

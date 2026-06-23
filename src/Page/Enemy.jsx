@@ -26,18 +26,11 @@ export default function Enemy() {
     <main className="relative">
       <Background />
       <SideNav />
-      <div className="max-w-[1200px] font-[Ale] text-[12px] md:text-[13px] lg:text-[14px] mx-auto px-1">
+      <div className="max-w-[1200px] font-[Ubuntu] text-[13px] mx-auto px-1">
         <div className="flex flex-wrap gap-4 py-2">
           {surface.map((obj, outeridx) => (
-            <div
-              className="bg-black/80 w-full p-2"
-              style={{
-                borderStyle: "solid",
-                borderWidth: "6px",
-                borderImage: "url('/Misc/frame.webp') 40 stretch",
-              }}
-            >
-              <div className="text-[24px] my-1 text-center font-[Exo]">{surface_name[outeridx]}</div>
+            <div className="w-full p-2">
+              <div className="text-[24px] my-1 text-center font-[Sr]">{surface_name[outeridx]}</div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {obj.map((item) => (
                   <div className="my-1 border border-white/10 rounded px-2 py-1">
@@ -78,10 +71,10 @@ export default function Enemy() {
                         {enemy_data[item].Tentacle2 && <div>Tentacle 2: {enemy_data[item].Tentacle2}</div>}
                       </div>
                     </div>
-                    <div>
+                    <div className="max-h-40 overflow-y-scroll">
                       {groupProject[item]?.map((ite) => (
                         <div className="grid grid-cols-3 hover:bg-[#131111]">
-                          <div>{ite}</div>
+                          <div className="truncate">{ite}</div>
                           <div className="text-end">
                             {(() => {
                               let current = fullEnemyProj.find((obj) => obj.Name === ite);
@@ -117,18 +110,11 @@ export default function Enemy() {
             </div>
           ))}
         </div>
-        <div className="divider font-[Exo] text-[24px] my-10">The Crossroad</div>
+        <div className="divider font-[Sr] text-[24px] my-10">The Crossroad</div>
         <div className="flex flex-wrap gap-4 my-6">
           {underworld.map((obj, outeridx) => (
-            <div
-              className="bg-black/80 w-full p-2"
-              style={{
-                borderStyle: "solid",
-                borderWidth: "6px",
-                borderImage: "url('/Misc/frame.webp') 40 stretch",
-              }}
-            >
-              <div className="text-[24px] my-1 text-center font-[Exo]">{underworld_name[outeridx]}</div>
+            <div className="w-full p-2">
+              <div className="text-[24px] my-1 text-center font-[Sr]">{underworld_name[outeridx]}</div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {obj.map((item) => (
                   <div className="my-1 border border-white/10 rounded px-2 py-1">
@@ -172,10 +158,10 @@ export default function Enemy() {
                         )}
                       </div>
                     </div>
-                    <div>
+                    <div className="max-h-40 overflow-y-scroll">
                       {groupProject[item]?.map((ite) => (
                         <div className="grid grid-cols-3 hover:bg-[#131111]">
-                          <div>{ite}</div>
+                          <div className="truncate">{ite}</div>
                           <div className="text-end">
                             {(() => {
                               let current = fullEnemyProj.find((obj) => obj.Name === ite);

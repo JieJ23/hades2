@@ -207,8 +207,7 @@ export default function GameplaySubmission() {
     <main className="relative">
       <Background />
       <SideNav />
-      <div className="max-w-[1200px] font-[Ale] text-[12px] mx-auto">
-        <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-4" />
+      <div className="max-w-[1200px] font-[Ale] text-[13px] py-16 mx-auto">
         <div className="text-center flex items-center justify-center gap-2">
           <img src="/Misc/diamond.png" alt="Rules" className="size-10 animate-bounce" />
           <Link
@@ -228,11 +227,11 @@ export default function GameplaySubmission() {
           <div className="w-full mx-auto my-2 grid grid-cols-1 sm:grid-cols-2 gap-4 p-2 font-[Ale] max-w-[1000px]">
             <div className="flex flex-col gap-2">
               <div className="text-[14px]">Name are case-sensitive, "Hades" and "HADES" are separated.</div>
-              <input type="text" placeholder="Name" className="input w-full rounded" name="nam" required />
-              <input type="date" placeholder="Date" className="input w-full rounded" name="dat" required />
+              <input type="text" placeholder="Name" className="input w-full rounded bg-[#0e0c12]" name="nam" required />
+              <input type="date" placeholder="Date" className="input w-full rounded bg-[#0e0c12]" name="dat" required />
               <select
                 defaultValue="Melinoe Staff"
-                className="select select-neutral w-full rounded"
+                className="select select-neutral w-full rounded bg-[#0e0c12]"
                 name="asp"
                 onChange={(e) => setWeaponHammer(showAvailableHammer(e.target.value))}
               >
@@ -244,7 +243,7 @@ export default function GameplaySubmission() {
                 For Dream Dives, select the biomes below. Otherwise, select Underworld/Surface
               </div>
               <input
-                className="input w-full rounded"
+                className="input w-full rounded bg-[#0e0c12]"
                 required
                 placeholder="Region"
                 value={location.join(",")}
@@ -253,7 +252,7 @@ export default function GameplaySubmission() {
               <input
                 type="number"
                 placeholder="Fear"
-                className="input w-full rounded"
+                className="input w-full rounded bg-[#0e0c12]"
                 name="fea"
                 max={67}
                 min={1}
@@ -262,7 +261,7 @@ export default function GameplaySubmission() {
               <input
                 type="text"
                 placeholder="Gameplay / Image Link"
-                className="input w-full rounded"
+                className="input w-full rounded bg-[#0e0c12]"
                 name="src"
                 required
               />
@@ -275,7 +274,7 @@ export default function GameplaySubmission() {
                   min="0"
                   max="99"
                   placeholder="Minutes"
-                  className="input w-full rounded"
+                  className="input w-full rounded bg-[#0e0c12]"
                   name="min"
                   onInput={(e) => (e.target.value = e.target.value.slice(0, 2))}
                   required
@@ -285,7 +284,7 @@ export default function GameplaySubmission() {
                   min="0"
                   max="59"
                   placeholder="Seconds"
-                  className="input w-full rounded"
+                  className="input w-full rounded bg-[#0e0c12]"
                   name="sec"
                   onInput={(e) => (e.target.value = e.target.value.slice(0, 2))}
                   required
@@ -295,13 +294,18 @@ export default function GameplaySubmission() {
                   min="0"
                   max="99"
                   placeholder="Centiseconds"
-                  className="input w-full rounded"
+                  className="input w-full rounded bg-[#0e0c12]"
                   name="mls"
                   onInput={(e) => (e.target.value = e.target.value.slice(0, 2))}
                   required
                 />
               </div>
-              <select defaultValue="Frog" className="select select-neutral w-full rounded" required name="fam">
+              <select
+                defaultValue="Frog"
+                className="select select-neutral w-full rounded bg-[#0e0c12]"
+                required
+                name="fam"
+              >
                 <option>Frog</option>
                 <option>Cat</option>
                 <option>Polecat</option>
@@ -310,22 +314,27 @@ export default function GameplaySubmission() {
               </select>
               {/* <div>Optional Full Entry Details</div> */}
               <input
-                className="input w-full rounded"
+                className="input w-full rounded bg-[#0e0c12]"
                 placeholder="Core Boons"
                 name="cor"
                 value={sortCore(core.join(","))}
                 required={true}
               />
-              <input className="input w-full rounded" placeholder="Hammer" value={hammer.join(",")} name="ham" />
+              <input
+                className="input w-full rounded bg-[#0e0c12]"
+                placeholder="Hammer"
+                value={hammer.join(",")}
+                name="ham"
+              />
               {/* <input
-                className="input w-full rounded"
+                className="input w-full rounded bg-[#0e0c12]"
                 placeholder="God Pool"
                 value={godpool.join(",")}
                 name="pool"
                 required={true}
               /> */}
               <input
-                className="input w-full rounded"
+                className="input w-full rounded bg-[#0e0c12]"
                 placeholder="Keepsakes"
                 value={keep.join(",")}
                 name="ks"
@@ -333,18 +342,32 @@ export default function GameplaySubmission() {
               />
             </div>
           </div>
-          <img src="/divider.png" alt="Divider" className="w-full max-w-[600px] mx-auto my-4" />
 
           <div className="text-center text-[20px] my-4">Optional Information</div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[1000px] mx-auto">
             <div className="flex flex-col gap-2">
               <div className="text-[14px]">Short description regarding the run, a brief sentence is ideal.</div>
-              <input type="text" placeholder="Short Description" className="input w-full rounded" name="des" />
+              <input
+                type="text"
+                placeholder="Short Description"
+                className="input w-full rounded bg-[#0e0c12]"
+                name="des"
+              />
             </div>
             <div className="flex flex-col gap-2">
               <div className="text-[14px]">Arcana and Fear Shareable links.</div>
-              <input type="text" placeholder="Arcana Shareable URL" className="input w-full rounded" name="arcana" />
-              <input type="text" placeholder="Fear Shareable URL" className="input w-full rounded" name="oath" />
+              <input
+                type="text"
+                placeholder="Arcana Shareable URL"
+                className="input w-full rounded bg-[#0e0c12]"
+                name="arcana"
+              />
+              <input
+                type="text"
+                placeholder="Fear Shareable URL"
+                className="input w-full rounded bg-[#0e0c12]"
+                name="oath"
+              />
               {/* <input className="input w-full rounded" placeholder="Other Boons" value={boons.join(",")} name="boon" /> */}
             </div>
           </div>
@@ -381,7 +404,7 @@ export default function GameplaySubmission() {
                 });
               }}
               className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${
-                location.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
+                location.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#0e0c12]`
               }`}
             >
               <img src={`DreamDive/${[item]}.png`} alt="Biomes" className="size-8" draggable={false} />
@@ -446,7 +469,7 @@ export default function GameplaySubmission() {
         <div className="flex flex-wrap gap-1 px-2 my-2">
           {allCategoryTitle.map((item, index) => (
             <button
-              className="px-2 py-1 bg-[white] text-black rounded-none cursor-pointer"
+              className="px-2 py-1 bg-[white] text-black rounded cursor-pointer"
               onClick={() => setCategory(index)}
             >
               {item}
@@ -462,7 +485,7 @@ export default function GameplaySubmission() {
                 ? objs.map((item) => (
                     <div
                       className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${
-                        keep.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#28282b]`
+                        keep.includes(item) ? `bg-[#00ffaa] text-black` : `bg-[#0e0c12]`
                       }`}
                       onClick={(prev) => {
                         if (keep.length >= 4) {
@@ -481,7 +504,7 @@ export default function GameplaySubmission() {
                       className={`cursor-pointer flex items-center gap-2 rounded-none px-2 py-1 ${
                         core.includes(item) || hammer.includes(item) || boons.includes(item)
                           ? `bg-[#00ffaa] text-black`
-                          : `bg-[#28282b]`
+                          : `bg-[#0e0c12]`
                       }`}
                       onClick={() => {
                         if (category === 0) {

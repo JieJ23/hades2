@@ -125,12 +125,12 @@ export default function Night() {
       {loader ? (
         <Loading />
       ) : (
-        <>
-          <div className="max-w-350 mx-auto py-2 my-2">
+        <div className="py-16 ">
+          <div className="py-2 my-2">
             <div className="px-2">Total Entries: {orderData.length}</div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-1 px-2">
               <select
-                className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
+                className="w-full select select-sm bg-[#0e0c12] rounded border-0 focus:outline-none focus:border-transparent"
                 value={category}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -143,7 +143,7 @@ export default function Night() {
                 ))}
               </select>
               <select
-                className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
+                className="w-full select select-sm bg-[#0e0c12] rounded border-0 focus:outline-none focus:border-transparent"
                 value={region}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -155,7 +155,7 @@ export default function Night() {
                 <option value={`Underworld`}>Underworld</option>
               </select>
               <select
-                className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
+                className="w-full select select-sm bg-[#0e0c12] rounded border-0 focus:outline-none focus:border-transparent"
                 value={fill}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -166,7 +166,7 @@ export default function Night() {
                 <option value={`Fear`}>Fear</option>
               </select>
               <select
-                className="w-full select select-sm rounded-none border-0 focus:outline-none focus:border-transparent text-[13px]"
+                className="w-full select select-sm bg-[#0e0c12] rounded border-0 focus:outline-none focus:border-transparent"
                 value={player}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -183,7 +183,7 @@ export default function Night() {
               </select>
             </div>
           </div>
-          <div className="my-1 flex justify-center gap-1 font-[Exo]">
+          <div className="my-1 flex justify-center gap-1 font-[Sr]">
             <button
               className={`min-w-15 cursor-pointer  px-1 py-0.5 rounded text-center ${format === "List" ? `bg-white text-black` : ``}`}
               onClick={() => setFormat("List")}
@@ -205,7 +205,7 @@ export default function Night() {
           </div>
           {/* Table Content */}
           {format === "Grid" ? (
-            <div className="max-w-350 mx-auto p-2">
+            <div className="p-2">
               <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {paginatedData.map((obj, index) => (
                   <div className="rounded">
@@ -245,11 +245,11 @@ export default function Night() {
                       />
                     )}
                     <div className="px-2 pb-1">
-                      <div className="flex flex-wrap justify-center gap-1">
-                        <span className={`${obj.loc === "Underworld" ? `text-[#00ffaa]` : `text-[yellow]`}`}>
-                          {obj.loc === "Underworld" ? "UW" : "S"}
+                      <div className="flex flex-wrap items-center justify-center gap-1 my-1">
+                        <span>
+                          <img src={`/${obj.loc}.png`} alt="Region" className="w-6 h-auto" />
                         </span>
-                        <span>{+obj.fea}</span>
+                        <span className="font-[Sr]">{+obj.fea}</span>
                         <span className="text-orange-400">{obj.nam}</span>
                         <span>{obj.asp}</span>
                         <span>{obj.tim}</span>
@@ -281,7 +281,7 @@ export default function Night() {
                               ).map((ite, index) => (
                                 <div className="tooltip">
                                   <div className="tooltip-content p-0">
-                                    <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                       {p9boons[ite]}
                                     </div>
                                   </div>
@@ -356,7 +356,7 @@ export default function Night() {
                           </Link>
                         )}
                       </div>
-                      <div className="line-clamp-2 text-[13px] leading-[1.2] min-h-[32px] pt-1 text-gray-300">
+                      <div className="line-clamp-2 leading-[1.2] min-h-[32px] pt-1 text-gray-400 text-[12px]">
                         {obj.des}
                       </div>
                     </div>
@@ -366,7 +366,7 @@ export default function Night() {
             </div>
           ) : (
             <div className="overflow-x-scroll py-2 my-2">
-              <table className="table whitespace-nowrap table-xs max-w-[1400px] mx-auto font-[Ubuntu] rounded-none table-pin-cols">
+              <table className="table whitespace-nowrap table-xs font-[Ale] rounded-none">
                 <thead className="font-[Ale]">
                   <tr>
                     <td>Idx</td>
@@ -383,7 +383,7 @@ export default function Night() {
                 </thead>
                 <tbody>
                   {paginatedData.map((obj, index) => (
-                    <tr key={index}>
+                    <tr key={index} className="text-[14px]">
                       <td className="border-0 border-y-1 border-y-white/5">
                         <div
                           className={
@@ -394,7 +394,7 @@ export default function Night() {
                           {index + 1 + ITEMS_PER_PAGE * (pageIndex - 1)}
                         </div>
                       </td>
-                      <th className="border-0 border-y-1 border-y-white/5 z-40">
+                      <td className="border-0 border-y-1 border-y-white/5 z-40">
                         <div className="flex gap-1">
                           <div>{obj.nam}</div>
                           <div className="shrink-0 size-4">
@@ -411,7 +411,7 @@ export default function Night() {
                             />
                           </div>
                         </div>
-                      </th>
+                      </td>
                       <td className="border-0 border-y-1 border-y-white/5">
                         <div>{+obj.fea}</div>
                       </td>
@@ -426,7 +426,7 @@ export default function Night() {
                                 }`}
                               >
                                 <div className="tooltip-content p-0">
-                                  <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                  <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                     {obj.des}
                                   </div>
                                 </div>
@@ -442,7 +442,7 @@ export default function Night() {
                             {sToA(obj.ks).map((ite, index) => (
                               <div className="tooltip shrink-0">
                                 <div className="tooltip-content p-0">
-                                  <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                  <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                     {ite}
                                   </div>
                                 </div>
@@ -457,7 +457,7 @@ export default function Night() {
                           {obj.fam && (
                             <div className="tooltip">
                               <div className="tooltip-content p-0">
-                                <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                   {obj.fam}
                                 </div>
                               </div>
@@ -474,7 +474,7 @@ export default function Night() {
                               ).map((ite, index) => (
                                 <div className="tooltip">
                                   <div className="tooltip-content p-0">
-                                    <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                       {p9boons[ite]}
                                     </div>
                                   </div>
@@ -490,7 +490,7 @@ export default function Night() {
                             ? sToA(obj.cor).map((ite, index) => (
                                 <div className="tooltip">
                                   <div className="tooltip-content p-0">
-                                    <div className=" border border-white/10 text-white text-[13px] font-[Ale] px-2 py-1 rounded">
+                                    <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                       {p9boons[ite]}
                                     </div>
                                   </div>
@@ -557,7 +557,7 @@ export default function Night() {
               Next
             </button>
           </div>
-        </>
+        </div>
       )}
     </PageBlock>
   );

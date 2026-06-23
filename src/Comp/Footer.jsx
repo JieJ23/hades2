@@ -19,11 +19,11 @@ export default function Footer() {
   });
 
   return (
-    <div className="my-8 select-none text-gray-300 text-center text-[13px] md:text-[14px] p-2">
+    <div className="my-10 select-none text-gray-400 text-center text-[13px] md:text-[14px] p-2">
       <div className="font-[Ale]">Managing Members:</div>
       <div className="flex justify-center gap-2 my-2">
         {mod.map((item) => (
-          <div className="flex justify-center items-center gap-1 bg-[#131111] rounded px-2 py-1 min-w-20">
+          <div className="flex justify-center items-center gap-1 bg-[#0e0c12] text-green-300 rounded px-2 py-1 min-w-20">
             <img src={`/Avatar/${item.toLowerCase()}.webp`} alt="Member" className="w-8 h-auto rounded-full" />
             <div className="font-[Ale] target">{item}</div>
           </div>

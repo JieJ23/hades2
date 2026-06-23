@@ -1,8 +1,6 @@
-import SideNav from "../Comp/Sidebar";
 import { allVows, vowArray, defineArray } from "../Data/FearTrait";
 import { useState, useEffect, useRef } from "react";
-import Background from "../Comp/Background";
-import Footer from "../Comp/Footer";
+import PageBlock from "../Block/PageBlock";
 
 const initialVows = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -86,114 +84,116 @@ export default function FearCalculator() {
 
   return (
     <main className="select-none relative">
-      <Background />
-      <SideNav />
-      <div className="max-w-[1400px] mx-auto">
-        <div className="w-full">
-          <section className="p-2 font-[Exo] text-[12px]">
-            <div className="flex flex-wrap gap-1">
-              <button className="bg-white cursor-pointer text-black rounded px-2 py-1 " onClick={generateShareableURL}>
-                Generate URL
-              </button>
-              <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={copyURLToClipboard}>
-                {isCopied ? "Copied!" : "Copy URL"}
-              </button>
-              <button
-                className="bg-white cursor-pointer text-black rounded px-2 py-1"
-                onClick={() => {
-                  setVows(initialVows);
-                  localStorage.setItem("myVows", JSON.stringify(initialVows));
-                }}
-              >
-                Reset Selection
-              </button>
-            </div>
-
-            <div className="w-full max-w-[1000px] bg-black text-white overflow-hidden p-2 truncate rounded my-2">
-              {shareableURL || "No URL Generated Yet"}
-            </div>
-          </section>
-          <div className="flex flex-col lg:flex-row items-center lg:items-start py-1 font-[Ale] text-[14px]">
-            <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start px-0.5">
-              {allVows.map((ite, index) => (
-                <div
-                  className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876] rounded ${
-                    vows[index] !== 0 ? `bg-gradient-to-t from-[#190c23]/80 to-[#411876d8]` : `bg-black/80`
-                  } ${index === 16 && `col-start-2 col-span-2`}`}
-                  key={index}
+      <PageBlock>
+        <div className="max-w-[1400px] mx-auto py-16">
+          <div className="w-full">
+            <section className="p-2 font-[Sr] text-[12px]">
+              <div className="flex flex-wrap gap-1">
+                <button
+                  className="bg-white cursor-pointer text-black rounded px-2 py-1 "
+                  onClick={generateShareableURL}
                 >
-                  <div className="absolute top-0 left-1 text-[12px]">
-                    <div className="flex flex-col">
-                      {vowArray(ite).map((item, ind) => (
-                        <div key={ind}>{item}</div>
-                      ))}
-                    </div>
-                  </div>
-                  <img
-                    src={`/Vows/${ite}.png`}
-                    alt="Fear Vows"
-                    className="size-7 md:size-8 lg:size-9 rounded"
-                    draggable={false}
-                  />
-                  <div className=" text-white">{ite}</div>
-                  <button
-                    className="btn btn-outline border-white/50 rounded bg-black btn-xs"
-                    onClick={() => handleButtonClick(index)}
+                  Generate URL
+                </button>
+                <button className="bg-white cursor-pointer text-black rounded px-2 py-1" onClick={copyURLToClipboard}>
+                  {isCopied ? "Copied!" : "Copy URL"}
+                </button>
+                <button
+                  className="bg-white cursor-pointer text-black rounded px-2 py-1"
+                  onClick={() => {
+                    setVows(initialVows);
+                    localStorage.setItem("myVows", JSON.stringify(initialVows));
+                  }}
+                >
+                  Reset Selection
+                </button>
+              </div>
+
+              <div className="w-full max-w-[1000px] bg-black text-white overflow-hidden p-2 truncate rounded my-2">
+                {shareableURL || "No URL Generated Yet"}
+              </div>
+            </section>
+            <div className="flex flex-col lg:flex-row items-center lg:items-start py-1 font-[Ale] text-[14px]">
+              <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start px-0.5">
+                {allVows.map((ite, index) => (
+                  <div
+                    className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876] rounded ${
+                      vows[index] !== 0 ? `bg-gradient-to-t from-[#190c23]/80 to-[#411876d8]` : `bg-black/80`
+                    } ${index === 16 && `col-start-2 col-span-2`}`}
+                    key={index}
                   >
-                    {vows[index]}
-                  </button>
-                  <div className="flex justify-center w-full gap-1 px-4 py-2">
-                    {Array.from({ length: vowArray(ite).length - 1 }).map((_, idx) => (
-                      <div
-                        key={idx}
-                        className={`h-1 w-full max-w-[25px] ${
-                          vowArray(ite).indexOf(vows[index]) >= idx + 1 ? `bg-[#00ffaa]` : `bg-gray-600`
-                        }`}
-                      ></div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="w-full p-2 lg:py-0">
-              <div className={`text-[#0cf29e]`}>Total: {currentVows ? currentVows : 0}</div>
-              <div className="grid grid-cols-2 gap-2">
-                {displayVow.map((item, index) => (
-                  <div className="w-full text-white rounded p-2 bg-[#000000]/80" key={index}>
-                    <div className="">{item}</div>
-                    <div className="text-gray-300">{defineArray(item).d}</div>
-                    <div className="flex flex-wrap justify-start gap-2 mt-1">
-                      {defineArray(item).rank.map((ite, index) => (
-                        <div className="flex items-center gap-1" key={index}>
-                          <div className="avatar">
-                            <div className="w-4 rounded-none">
-                              <img
-                                src={
-                                  index == 0
-                                    ? `/Level/Common.png`
-                                    : index == 1
-                                      ? `/Level/Rare.png`
-                                      : index == 2
-                                        ? `/Level/Epic.png`
-                                        : `/Level/Heroic.png`
-                                }
-                                alt="Vow Rank"
-                                draggable={false}
-                              />
-                            </div>
-                          </div>
-                          <div>{ite}</div>
-                        </div>
+                    <div className="absolute top-0 left-1 text-[12px]">
+                      <div className="flex flex-col">
+                        {vowArray(ite).map((item, ind) => (
+                          <div key={ind}>{item}</div>
+                        ))}
+                      </div>
+                    </div>
+                    <img
+                      src={`/Vows/${ite}.png`}
+                      alt="Fear Vows"
+                      className="size-7 md:size-8 lg:size-9 rounded"
+                      draggable={false}
+                    />
+                    <div className=" text-white">{ite}</div>
+                    <button
+                      className="btn btn-outline border-white/50 rounded bg-black btn-xs"
+                      onClick={() => handleButtonClick(index)}
+                    >
+                      {vows[index]}
+                    </button>
+                    <div className="flex justify-center w-full gap-1 px-4 py-2">
+                      {Array.from({ length: vowArray(ite).length - 1 }).map((_, idx) => (
+                        <div
+                          key={idx}
+                          className={`h-1 w-full max-w-[25px] ${
+                            vowArray(ite).indexOf(vows[index]) >= idx + 1 ? `bg-[#00ffaa]` : `bg-gray-600`
+                          }`}
+                        ></div>
                       ))}
                     </div>
                   </div>
                 ))}
               </div>
+              <div className="w-full p-2 lg:py-0">
+                <div className={`text-[#0cf29e]`}>Total: {currentVows ? currentVows : 0}</div>
+                <div className="grid grid-cols-2 gap-2">
+                  {displayVow.map((item, index) => (
+                    <div className="w-full text-white rounded p-2 bg-[#000000]/80" key={index}>
+                      <div className="">{item}</div>
+                      <div className="text-gray-300">{defineArray(item).d}</div>
+                      <div className="flex flex-wrap justify-start gap-2 mt-1">
+                        {defineArray(item).rank.map((ite, index) => (
+                          <div className="flex items-center gap-1" key={index}>
+                            <div className="avatar">
+                              <div className="w-4 rounded-none">
+                                <img
+                                  src={
+                                    index == 0
+                                      ? `/Level/Common.png`
+                                      : index == 1
+                                        ? `/Level/Rare.png`
+                                        : index == 2
+                                          ? `/Level/Epic.png`
+                                          : `/Level/Heroic.png`
+                                  }
+                                  alt="Vow Rank"
+                                  draggable={false}
+                                />
+                              </div>
+                            </div>
+                            <div>{ite}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <Footer />
+      </PageBlock>
     </main>
   );
 }
