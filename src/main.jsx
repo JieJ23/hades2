@@ -24,6 +24,7 @@ import { DataProvider } from "./Hook/DataFetch.jsx";
 // New Pages
 import Mod from "./Page/Mod.jsx";
 import Bingo1 from "./Page/Bingo1.jsx";
+import Bingo2 from "./Page/Bingo2.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -48,6 +49,7 @@ createRoot(document.getElementById("root")).render(
 
           <Route path="/Mod" element={<Mod />} />
           <Route path="/Bingo1" element={<Bingo1 />} />
+          <Route path="/Bingo2" element={<Bingo2 />} />
         </Routes>
       </Router>
     </DataProvider>

@@ -62,13 +62,35 @@ export default function Bingo1() {
   const lastSpawn = useRef(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const x = Math.random() * containerRef.current.offsetWidth;
-      const y = Math.random() * containerRef.current.offsetHeight;
-      spawnIcon(x, y);
-    }, 500); // every 500ms
+    let interval;
 
-    return () => clearInterval(interval);
+    const start = () => {
+      interval = setInterval(() => {
+        const x = Math.random() * containerRef.current.offsetWidth;
+        const y = Math.random() * containerRef.current.offsetHeight;
+        spawnIcon(x, y);
+      }, 500);
+    };
+
+    const stop = () => {
+      clearInterval(interval);
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stop();
+      } else {
+        start();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    start(); // kick off on mount
+
+    return () => {
+      stop();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, []);
 
   const spawnIcon = (x, y) => {
