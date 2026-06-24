@@ -125,7 +125,7 @@ export default function Bingo1() {
 
   return (
     <PageBlock>
-      <div className="py-16 text-[13px]">
+      <div className="py-16 text-[13px] overflow-x-hidden">
         {/* GSAP */}
         <div className="min-h-75 flex justify-center items-center relative" ref={containerRef}>
           <div className="relative overflow-visible inline-block">
