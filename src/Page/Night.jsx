@@ -44,7 +44,8 @@ export default function Night() {
           if (feaDiff !== 0) return feaDiff;
           return parseTimetoms(a.tim) - parseTimetoms(b.tim);
         }
-      });
+      })
+      .slice(0, 2899);
   }, [posts, category, region, fill, player, vidOnly]);
 
   // Pagnition

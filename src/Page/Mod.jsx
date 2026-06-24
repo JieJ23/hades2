@@ -67,7 +67,7 @@ export default function Mod() {
                     alt="Mod Cover"
                     className="absolute top-0 right-0 w-full h-full -z-10 object-center object-cover"
                   />
-                  <div className="absolute top-0 left-0 w-full h-full -z-10 bg-linear-to-t from-black to-black/80" />
+                  <div className="absolute top-0 left-0 w-full h-full -z-10 bg-linear-to-t from-black via-black/80 to-black/40" />
                   <div className="text-[13px] my-1">{obj.des}</div>
                   <div className="flex gap-1 flex-wrap my-1">
                     <div className="px-1 py-0.5 min-w-[50px] text-center bg-[#0e0c12] text-[#00ffaa] rounded border border-white/10 font-[UbuntuMono] uppercase">
