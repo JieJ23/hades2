@@ -17,6 +17,7 @@ export const minor = [
   { link: `Mod`, nam: `Hades 2 Mods`, icon: `Exorcism` },
   { link: `Resources`, nam: `Miscellaneous`, icon: `Exorcism` },
 ];
+export const events = [{ link: `Bingo1`, nam: `Bingo #1`, icon: `Life` }];
 
 export default function SideNav() {
   const currentLocation = useLocation();
@@ -38,13 +39,22 @@ export default function SideNav() {
           <label htmlFor="my-drawer-5" aria-label="close sidebar" className="drawer-overlay" />
           <div className="menu bg-[#0e0c12] min-h-full w-80 p-4 relative rounded">
             <div
-              className="absolute top-0 left-0 w-full h-full opacity-15 bg-center -z-10"
+              className="absolute top-0 left-0 w-full h-full opacity-10 bg-center -z-10"
               style={{
                 backgroundImage: "url(hadestwo.webp)",
               }}
             />
             {/* Sidebar content here */}
             {sites.map((obj, idx) => (
+              <div className="my-0.5 p-1 rounded hover:bg-white hover:text-black text-[14px]">
+                <Link to={obj.link === "" ? "/" : `/${obj.link}`} className={`flex items-center gap-2 z-40`} key={idx}>
+                  <img src={`/hover/${obj.icon}.png`} alt="Menu Icon" className="size-8 " />
+                  <div className="">{obj.nam}</div>
+                </Link>
+              </div>
+            ))}
+            <div className="mt-4 font-[Sr]">Community Events</div>
+            {events.map((obj, idx) => (
               <div className="my-0.5 p-1 rounded hover:bg-white hover:text-black text-[14px]">
                 <Link to={obj.link === "" ? "/" : `/${obj.link}`} className={`flex items-center gap-2 z-40`} key={idx}>
                   <img src={`/hover/${obj.icon}.png`} alt="Menu Icon" className="size-8 " />

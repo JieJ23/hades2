@@ -131,20 +131,20 @@ export default function Ladder() {
                   <div className={`rounded-sm px-2 py-1 relative bg-linear-to-b from-black to-[#0e0c12]/80`}>
                     <div className="text-center font-[Sr] text-white">{h2AspectOrder[oi]}</div>
                     <div className="w-full h-30 border border-white/10 p-1 rounded relative" key={oi}>
-                      <div className="absolute bottom-1 right-1 font-[UbuntuMono] uppercase">Time L/R</div>
+                      <div className="absolute bottom-1 left-1 font-[UbuntuMono] uppercase">Fear Top 24</div>
                       <ResponsiveContainer width="100%" height="100%">
                         <LineChart
                           style={{ width: "100%", aspectRatio: 1.618 }}
                           responsive
-                          data={fulldata_ArrArrObject[oi].slice(0, 10)}
+                          data={fulldata_ArrArrObject[oi].slice(0, 24)}
                         >
                           <YAxis
                             hide={true}
-                            domain={[80000, 130000]} // Minimum = 0, Maximum = auto
+                            domain={[50, 70]} // Minimum = 0, Maximum = auto
                           />
                           <Line
-                            type="natural"
-                            dataKey="tim"
+                            type="monotone"
+                            dataKey="fea"
                             stroke="#8884d8"
                             strokeWidth={2}
                             dot={{

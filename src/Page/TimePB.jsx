@@ -7,7 +7,6 @@ import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
 
 import { parseTimetoms, h2AspectOrder } from "../Data/Misc";
-
 //
 export default function TimePB() {
   const { posts, loader } = useData();
