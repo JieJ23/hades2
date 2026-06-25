@@ -61,7 +61,7 @@ export default function Mod() {
                 >
                   {obj.code}
                 </div>
-                <div className="min-h-75 flex flex-col justify-end border border-white/10 rounded-b-xl relative p-2">
+                <div className="min-h-75 flex flex-col justify-end border border-white/10 rounded-b-xl relative p-2 overflow-hidden">
                   <img
                     src={`/Mod/${obj.cover}.webp`}
                     alt="Mod Cover"
@@ -81,9 +81,9 @@ export default function Mod() {
                   </div>
                   <div className="flex gap-1 my-1">
                     <Link to={obj.link} target="_blank">
-                      <div className="px-2 py-1 min-w-[50px] text-center bg-white text-black rounded border font-[Ubuntu] border-white/10 uppercase flex items-center gap-1">
+                      <div className="px-2 py-0.5 min-w-[50px] text-center bg-white text-black rounded border font-[UbuntuMono] border-white/10 uppercase flex items-center gap-1">
                         Official page
-                        <img src="right.png" alt="Arrow" className="size-6" />
+                        <img src="right.png" alt="Arrow" className="size-4" />
                       </div>
                     </Link>
                   </div>

@@ -7,7 +7,7 @@ export default function Discord() {
         <div className="flex flex-col md:flex-row items-start md:gap-4">
           <img src="/discord-icon.svg" alt="Discord Icon" className="w-15 h-auto" />
           <div className="w-full flex flex-col">
-            <div className="text-[22px] uppercase font-[Sr]">
+            <div className="text-[23px] uppercase font-[Sr]">
               Join <span className="text-green-300">the discord</span>
             </div>
             <div>
@@ -16,8 +16,8 @@ export default function Discord() {
             </div>
             <div className="flex justify-end ">
               <Link to={"https://discord.gg/K84YmPCsgP"} target="_blank">
-                <button className="p-1 px-2 bg-white rounded text-black my-2 font-[Ale] cursor-pointer text-[14px] hover:scale-110 duration-150 ease-in">
-                  JOIN NOW
+                <button className="p-1 px-2 bg-white rounded text-black my-2 font-[UbuntuMono] cursor-pointer text-[14px] hover:scale-110 duration-150 ease-in">
+                  Join Now
                 </button>
               </Link>
             </div>

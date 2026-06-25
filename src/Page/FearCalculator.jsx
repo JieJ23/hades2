@@ -87,7 +87,7 @@ export default function FearCalculator() {
       <PageBlock>
         <div className="max-w-[1400px] mx-auto py-16">
           <div className="w-full">
-            <section className="p-2 font-[Sr] text-[12px]">
+            <section className="p-2 font-[UbuntuMono] text-[13px]">
               <div className="flex flex-wrap gap-1">
                 <button
                   className="bg-white cursor-pointer text-black rounded px-2 py-1 "

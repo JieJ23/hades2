@@ -5,7 +5,7 @@ import { boonCodexr } from "../Data/Boon2";
 import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA } from "../Data/Misc";
 import { Link } from "react-router-dom";
 import PageBlock from "../Block/PageBlock";
-import { Line, LineChart, YAxis, ResponsiveContainer } from "recharts";
+import { Bar, BarChart, YAxis, ResponsiveContainer } from "recharts";
 
 import { v1bundle } from "../Data/DataBundle";
 import { useState } from "react";
@@ -75,7 +75,6 @@ export default function Ladder() {
     }
   }
   //
-  console.log(fulldata_ArrArrObject);
   return (
     <main className="h-full min-h-lvh relative overflow-hidden">
       <PageBlock>
@@ -131,27 +130,20 @@ export default function Ladder() {
                   <div className={`rounded-sm px-2 py-1 relative bg-linear-to-b from-black to-[#0e0c12]/80`}>
                     <div className="text-center font-[Sr] text-white">{h2AspectOrder[oi]}</div>
                     <div className="w-full h-30 border border-white/10 p-1 rounded relative" key={oi}>
-                      <div className="absolute bottom-1 left-1 font-[UbuntuMono] uppercase">Fear Top 24</div>
+                      <div className="absolute top-0 right-1 font-[UbuntuMono] uppercase">Fear Top 24</div>
+                      <div className="absolute bottom-0 right-1 font-[UbuntuMono] uppercase">Range 60-67</div>
+                      <div className="absolute bottom-0 left-1 font-[UbuntuMono] uppercase">
+                        {fulldata_ArrArrObject[oi].slice(0, 24).length}/24
+                      </div>
                       <ResponsiveContainer width="100%" height="100%">
-                        <LineChart
-                          style={{ width: "100%", aspectRatio: 1.618 }}
+                        <BarChart
+                          style={{ width: "100%", maxHeight: "100px", aspectRatio: 1.618 }}
                           responsive
                           data={fulldata_ArrArrObject[oi].slice(0, 24)}
                         >
-                          <YAxis
-                            hide={true}
-                            domain={[50, 70]} // Minimum = 0, Maximum = auto
-                          />
-                          <Line
-                            type="monotone"
-                            dataKey="fea"
-                            stroke="#8884d8"
-                            strokeWidth={2}
-                            dot={{
-                              fill: "#fff",
-                            }}
-                          />
-                        </LineChart>
+                          <YAxis domain={[60, 67]} hide={true} />
+                          <Bar dataKey="fea" fill="#8884d8" />
+                        </BarChart>
                       </ResponsiveContainer>
                     </div>
                     {arr.slice(0, 10).map((obj, index) => (

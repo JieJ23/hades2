@@ -131,7 +131,7 @@ export default function Night() {
             <div className="px-2">Total Entries: {orderData.length}</div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-1 px-2">
               <select
-                className="w-full select select-sm bg-[#0e0c12] rounded border-0 focus:outline-none focus:border-transparent"
+                className="w-full select select-sm bg-[#0e0c12] rounded border-1 focus:outline-none focus:border-transparent"
                 value={category}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -144,7 +144,7 @@ export default function Night() {
                 ))}
               </select>
               <select
-                className="w-full select select-sm bg-[#0e0c12] rounded border-0 focus:outline-none focus:border-transparent"
+                className="w-full select select-sm bg-[#0e0c12] rounded border-1 focus:outline-none focus:border-transparent"
                 value={region}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -156,7 +156,7 @@ export default function Night() {
                 <option value={`Underworld`}>Underworld</option>
               </select>
               <select
-                className="w-full select select-sm bg-[#0e0c12] rounded border-0 focus:outline-none focus:border-transparent"
+                className="w-full select select-sm bg-[#0e0c12] rounded border-1 focus:outline-none focus:border-transparent"
                 value={fill}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -167,7 +167,7 @@ export default function Night() {
                 <option value={`Fear`}>Fear</option>
               </select>
               <select
-                className="w-full select select-sm bg-[#0e0c12] rounded border-0 focus:outline-none focus:border-transparent"
+                className="w-full select select-sm bg-[#0e0c12] rounded border-1 focus:outline-none focus:border-transparent"
                 value={player}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -184,7 +184,7 @@ export default function Night() {
               </select>
             </div>
           </div>
-          <div className="my-1 flex justify-center gap-1 font-[Sr]">
+          <div className="my-1 flex justify-center gap-1 font-[UbuntuMono]">
             <button
               className={`min-w-15 cursor-pointer  px-1 py-0.5 rounded text-center ${format === "List" ? `bg-white text-black` : ``}`}
               onClick={() => setFormat("List")}
@@ -199,7 +199,10 @@ export default function Night() {
             </button>
             <button
               className={`min-w-15 cursor-pointer  px-1 py-0.5 rounded text-center ${vidOnly === true ? `bg-white text-black` : ``}`}
-              onClick={() => setVidOnly(!vidOnly)}
+              onClick={() => {
+                setVidOnly(!vidOnly);
+                setPageIndex(1);
+              }}
             >
               Video
             </button>
@@ -539,7 +542,7 @@ export default function Night() {
             </div>
           )}
           {/* Pagination controls */}
-          <div className="flex justify-center gap-4 items-center text-[14px] font-[Ale] py-2 my-2">
+          <div className="flex justify-center gap-4 items-center text-[14px] font-[UbuntuMono] py-2 my-2">
             <button
               disabled={pageIndex === 1}
               onClick={() => setPageIndex((prev) => prev - 1)}
@@ -547,7 +550,7 @@ export default function Night() {
             >
               Prev
             </button>
-            <div className="text-[18px] text-white">
+            <div className="text-[18px] text-white font-[Ale]">
               {pageIndex}/{TOTAL_Page}
             </div>
             <button
