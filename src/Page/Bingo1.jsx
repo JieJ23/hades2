@@ -30,7 +30,6 @@ const team1 = [
   `Dr.Omega`,
   `andrw`,
   `cragbeers`,
-  `rip van weikle`,
 ].sort();
 const team2 = [
   `TheDarkOmen`,
