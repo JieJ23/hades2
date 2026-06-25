@@ -17,7 +17,10 @@ export const minor = [
   { link: `Mod`, nam: `Hades 2 Mods`, icon: `Exorcism` },
   { link: `Resources`, nam: `Miscellaneous`, icon: `Exorcism` },
 ];
-export const events = [{ link: `Bingo1`, nam: `Bingo #1`, icon: `Life` }];
+export const events = [
+  { link: `Bingo1`, nam: `Bingo #1`, icon: `Life` },
+  { link: `Bingo2`, nam: `Bingo #2`, icon: `Life` },
+];
 
 export default function SideNav() {
   const currentLocation = useLocation();
@@ -53,7 +56,7 @@ export default function SideNav() {
                 </Link>
               </div>
             ))}
-            {/* <div className="mt-4 font-[Sr]">Community Events</div>
+            <div className="mt-4 font-[Sr]">Community Events</div>
             {events.map((obj, idx) => (
               <div className="my-0.5 p-1 rounded hover:bg-white hover:text-black text-[14px]">
                 <Link to={obj.link === "" ? "/" : `/${obj.link}`} className={`flex items-center gap-2 z-40`} key={idx}>
@@ -61,7 +64,7 @@ export default function SideNav() {
                   <div className="">{obj.nam}</div>
                 </Link>
               </div>
-            ))} */}
+            ))}
             <div className="mt-4 font-[Sr]">Shareable Tools</div>
             {tools.map((obj, idx) => (
               <div className="my-0.5 p-1 rounded hover:bg-white hover:text-black text-[14px]">
