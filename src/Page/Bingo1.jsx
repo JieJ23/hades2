@@ -67,30 +67,36 @@ const bingoSummary = [
   },
   {
     team1: `PizzaPepperoni`,
-    team1score: `0 Damage | 8:12.17`,
+    team1score: `0 Damage
+    8:12.17`,
     team1icon: [`pizzapepperoni`],
     team2: `Checkmate`,
-    team2score: `0 Damage | 10:14.00`,
+    team2score: `0 Damage
+    10:14.00`,
     team2icon: [`checkmate`],
     tags: [`50 Fear`, `< 25 Damage`, `Damageless`],
     win: `t1`,
   },
   {
     team1: `andrw`,
-    team1score: `Lvl 96 - Storm Ring`,
+    team1score: `Lvl 96
+    Storm Ring`,
     team1icon: [`andrw`],
     team2: `Vangetsu`,
-    team2score: `Lvl 59 - Storm Ring`,
+    team2score: `Lvl 59
+    Storm Ring`,
     team2icon: [`vangetsu`],
     tags: [`Lvl 40+`, `Boon`],
     win: `t1`,
   },
   {
     team1: `PizzaPepperoni`,
-    team1score: `2344 Damage - Typhon`,
+    team1score: `2344 Damage 
+    by Typhon`,
     team1icon: [`pizzapepperoni`],
     team2: `Aki`,
-    team2score: `10416 Damage - Typhon`,
+    team2score: `10416 Damage
+    by Typhon`,
     team2icon: [`aki`],
     tags: [`+1000 Damage`, `25 Mins`],
     win: `t2`,
@@ -115,10 +121,10 @@ const bingoSummary = [
   },
   {
     team1: `Croissant (ft Kol)`,
-    team1score: `58`,
+    team1score: `58 boons`,
     team1icon: [`thereptier`, `kol`],
     team2: `ne0conker`,
-    team2score: `56`,
+    team2score: `56 boons`,
     tags: [`45+ Boon`],
     win: `t1`,
   },
@@ -228,19 +234,23 @@ const bingoSummary = [
   },
   {
     team1: `Nateal`,
-    team1score: `Lunar Ray - 1,713,803`,
+    team1score: `Lunar Ray
+    1,713,803 Damage`,
     team1icon: [`nateal`],
     team2: `Aki`,
-    team2score: `Lunar Ray - 1,387,013`,
+    team2score: `Lunar Ray
+     1,387,013 Damage`,
     team2icon: [`aki`],
     tags: [`+300,000`, `Hex Damage`, `Under 30 Mins`],
     win: `t1`,
   },
   {
     team1: team1name,
-    team1score: `Skulls - 46:23.22`,
+    team1score: `Skulls
+    46:23.22`,
     team2: team2name,
-    team2score: `Blades - 46:22.05`,
+    team2score: `Blades
+    46:22.05`,
     tags: [`OWO`, `62 Fear`, ` 2 Runs = Surface`],
     win: `t2`,
   },
@@ -278,7 +288,8 @@ const bingoSummary = [
     team1: ``,
     team1score: ``,
     team2: `TheDarkOmen`,
-    team2score: `1206 Max Magick`,
+    team2score: `0 Boons
+    18:46.70`,
     team2icon: [`thedarkomen`],
     tags: [`62 Fear`, `< 8 Boons`],
     win: `t2`,
