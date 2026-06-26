@@ -22,7 +22,6 @@ import TimePB from "./Page/TimePB.jsx";
 import { DataProvider } from "./Hook/DataFetch.jsx";
 
 // New Pages
-import Mod from "./Page/Mod.jsx";
 import Bingo1 from "./Page/Bingo1.jsx";
 import Bingo2 from "./Page/Bingo2.jsx";
 import TheGameAward from "./Page/TheGameAward.jsx";
@@ -48,7 +47,6 @@ createRoot(document.getElementById("root")).render(
           <Route path="/FearPoints" element={<FearPoints />} />
           <Route path="/Enemy" element={<Enemy />} />
 
-          <Route path="/Mod" element={<Mod />} />
           <Route path="/Bingo1" element={<Bingo1 />} />
           <Route path="/Bingo2" element={<Bingo2 />} />
           <Route path="/TheGameAward" element={<TheGameAward />} />

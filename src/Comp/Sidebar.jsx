@@ -13,10 +13,7 @@ export const tools = [
   { link: `ArcanaDeck`, nam: `Arcana Deck`, icon: `ReRoll` },
   { link: `FearCalculator`, nam: `Fear Calculator`, icon: `Void` },
 ];
-export const minor = [
-  { link: `Mod`, nam: `Hades 2 Mods`, icon: `Exorcism` },
-  { link: `Resources`, nam: `Miscellaneous`, icon: `Exorcism` },
-];
+export const minor = [{ link: `Resources`, nam: `Miscellaneous`, icon: `Exorcism` }];
 export const events = [
   { link: `TheGameAward`, nam: `The Game Award 2025`, icon: `TGA` },
   { link: `Bingo1`, nam: `Bingo #1`, icon: `Life` },
