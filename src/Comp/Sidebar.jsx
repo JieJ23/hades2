@@ -18,6 +18,7 @@ export const minor = [
   { link: `Resources`, nam: `Miscellaneous`, icon: `Exorcism` },
 ];
 export const events = [
+  { link: `TheGameAward`, nam: `The Game Award 2025`, icon: `TGA` },
   { link: `Bingo1`, nam: `Bingo #1`, icon: `Life` },
   { link: `Bingo2`, nam: `Bingo #2`, icon: `Life` },
 ];

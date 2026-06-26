@@ -5,7 +5,7 @@ import { boonCodexr } from "../Data/Boon2";
 import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA } from "../Data/Misc";
 import { Link } from "react-router-dom";
 import PageBlock from "../Block/PageBlock";
-import { Bar, BarChart, YAxis, ResponsiveContainer } from "recharts";
+import { ComposedChart, Line, Bar, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
 
 import { v1bundle } from "../Data/DataBundle";
 import { useState } from "react";
@@ -15,7 +15,6 @@ import Loading from "../Hook/Loading";
 
 //
 export const orderMap = new Map(allP9.map((item, index) => [item, index]));
-export const orderMap2 = new Map(bOrder.map((item, index) => [item, index]));
 export const findValue = (arr) => {
   const finalized = arr.map((ite) => p9boons_reverse[ite]);
   return finalized;
@@ -25,11 +24,13 @@ export const findValue = (arr) => {
 export default function Ladder() {
   const [location, setLocation] = useState(`Underworld`);
   const [boon, setBoon] = useState(`Core`);
+  const [maxFear, setMaxFear] = useState(67);
 
   const { posts, loader } = useData();
 
   const regionData = [...v1bundle, ...(posts || [])]
     .filter((obj) => obj.des.includes("#usum"))
+    .filter((obj) => obj.fea <= maxFear)
     .filter((obj) => obj.loc === location);
 
   const fulldata_ArrArrObject = [];
@@ -41,38 +42,8 @@ export default function Ladder() {
     const removeDup = aspectArray.filter(
       (player, index, self) => index === self.findIndex((p) => p.nam === player.nam),
     );
-    const formatTime = removeDup.map((entry) => ({ ...entry, tim: parseTimetoms(entry.tim) }));
+    const formatTime = removeDup.map((entry) => ({ ...entry, lineGraph: +entry.tim.slice(0, 2) }));
     fulldata_ArrArrObject.push(formatTime);
-  }
-
-  //
-  const topData = [...v1bundle, ...(posts || [])]
-    .filter((obj) => obj.des.includes("#usum"))
-    .sort((a, b) => b.fea - a.fea || parseTimetoms(a.tim) - parseTimetoms(b.tim));
-
-  const uwTop = [];
-  const sTop = [];
-
-  const uwNames = new Set();
-  const sNames = new Set();
-
-  for (const item of topData) {
-    // stop early if both are filled
-    if (uwTop.length >= 20 && sTop.length >= 20) break;
-
-    if (item.loc === "Underworld") {
-      if (uwTop.length < 20 && !uwNames.has(item.nam)) {
-        uwTop.push(item);
-        uwNames.add(item.nam);
-      }
-    }
-
-    if (item.loc === "Surface") {
-      if (sTop.length < 20 && !sNames.has(item.nam)) {
-        sTop.push(item);
-        sNames.add(item.nam);
-      }
-    }
   }
   //
   return (
@@ -83,7 +54,7 @@ export default function Ladder() {
             <Loading />
           ) : (
             <>
-              <div className="p-1 flex flex-wrap justify-center gap-1 my-2 font-[Sr] text-[13px]">
+              <div className="p-1 flex flex-wrap justify-center gap-1 my-2 font-[UbuntuMono] text-[13px]">
                 <button
                   className={`cursor-pointer rounded p-0.5 px-1 ${
                     location === `Underworld` ? `bg-white text-black` : `bg-transparent text-white`
@@ -124,26 +95,33 @@ export default function Ladder() {
                 >
                   Keep
                 </button>
+                <select
+                  className="bg-[white] text-black rounded px-2"
+                  value={maxFear}
+                  onChange={(e) => setMaxFear(e.target.value)}
+                >
+                  {Array.from({ length: 6 }).map((_, index) => (
+                    <option value={index + 62}>{index + 62}</option>
+                  ))}
+                </select>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 text-[13px] font-[Ale]">
                 {fulldata_ArrArrObject.map((arr, oi) => (
                   <div className={`rounded-sm px-2 py-1 relative bg-linear-to-b from-black to-[#0e0c12]/80`}>
                     <div className="text-center font-[Sr] text-white">{h2AspectOrder[oi]}</div>
                     <div className="w-full h-30 border border-white/10 p-1 rounded relative" key={oi}>
-                      <div className="absolute top-0 right-1 font-[UbuntuMono] uppercase">Fear Top 24</div>
-                      <div className="absolute bottom-0 right-1 font-[UbuntuMono] uppercase">Range 60-67</div>
-                      <div className="absolute bottom-0 left-1 font-[UbuntuMono] uppercase">
-                        {fulldata_ArrArrObject[oi].slice(0, 24).length}/24
-                      </div>
+                      <div className="absolute bottom-0 right-1 font-[UbuntuMono] uppercase">Bar Fear/Line Time</div>
                       <ResponsiveContainer width="100%" height="100%">
-                        <BarChart
+                        <ComposedChart
                           style={{ width: "100%", maxHeight: "100px", aspectRatio: 1.618 }}
                           responsive
-                          data={fulldata_ArrArrObject[oi].slice(0, 24)}
+                          data={fulldata_ArrArrObject[oi].slice(0, 10)}
                         >
-                          <YAxis domain={[60, 67]} hide={true} />
-                          <Bar dataKey="fea" fill="#8884d8" />
-                        </BarChart>
+                          <YAxis yAxisId="left" domain={[50, 70]} hide />
+                          <YAxis yAxisId="right" orientation="right" domain={[7, 22]} hide />
+                          <Bar dataKey="fea" yAxisId="left" fill="#28282b" />
+                          <Line type="monotone" yAxisId="right" dataKey="lineGraph" stroke="#fff" />
+                        </ComposedChart>
                       </ResponsiveContainer>
                     </div>
                     {arr.slice(0, 10).map((obj, index) => (
@@ -206,7 +184,7 @@ export default function Ladder() {
                               </div>
                             ))}
                         </div>
-                        <div className="text-end">{parsemstoTime(obj.tim)}</div>
+                        <div className="text-end">{obj.tim}</div>
                       </div>
                     ))}
                   </div>
