@@ -27,6 +27,9 @@ import Bingo2 from "./Page/Bingo2.jsx";
 import TheGameAward from "./Page/TheGameAward.jsx";
 
 import MapErebus from "./Page/MapErebus.jsx";
+import MapOceanus from "./Page/MapOceanus.jsx";
+import MapField from "./Page/MapField.jsx";
+import MapTartarus from "./Page/MapTartarus.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -53,6 +56,9 @@ createRoot(document.getElementById("root")).render(
           <Route path="/Bingo2" element={<Bingo2 />} />
           <Route path="/TheGameAward" element={<TheGameAward />} />
           <Route path="/MapErebus" element={<MapErebus />} />
+          <Route path="/MapOceanus" element={<MapOceanus />} />
+          <Route path="/MapField" element={<MapField />} />
+          <Route path="/MapTartarus" element={<MapTartarus />} />
 
         </Routes>
       </Router>

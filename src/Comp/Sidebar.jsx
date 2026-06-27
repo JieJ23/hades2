@@ -13,7 +13,7 @@ export const tools = [
   { link: `ArcanaDeck`, nam: `Arcana Deck`, icon: `ReRoll` },
   { link: `FearCalculator`, nam: `Fear Calculator`, icon: `Void` },
 ];
-export const map = [{ link: `MapErebus`, nam: `Erebus`, icon: `Hecate` }];
+export const map = [{ link: `MapErebus`, nam: `Erebus`, icon: `Hecate` }, { link: `MapOceanus`, nam: `Oceanus`, icon: `Narcissus` }, { link: `MapField`, nam: `Field`, icon: `Echo` }, { link: `MapTartarus`, nam: `Tartarus`, icon: `Chronos` }];
 
 export const minor = [{ link: `Resources`, nam: `Miscellaneous`, icon: `Exorcism` }];
 export const events = [
