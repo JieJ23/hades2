@@ -13,6 +13,8 @@ export const tools = [
   { link: `ArcanaDeck`, nam: `Arcana Deck`, icon: `ReRoll` },
   { link: `FearCalculator`, nam: `Fear Calculator`, icon: `Void` },
 ];
+export const map = [{ link: `MapErebus`, nam: `Erebus`, icon: `Hecate` }];
+
 export const minor = [{ link: `Resources`, nam: `Miscellaneous`, icon: `Exorcism` }];
 export const events = [
   { link: `TheGameAward`, nam: `The Game Award 2025`, icon: `TGA` },
@@ -56,6 +58,15 @@ export default function SideNav() {
             ))}
             <div className="mt-4 font-[Sr]">Community Events</div>
             {events.map((obj, idx) => (
+              <div className="my-0.5 p-1 rounded hover:bg-white hover:text-black text-[14px]">
+                <Link to={obj.link === "" ? "/" : `/${obj.link}`} className={`flex items-center gap-2 z-40`} key={idx}>
+                  <img src={`/hover/${obj.icon}.png`} alt="Menu Icon" className="size-8 " />
+                  <div className="">{obj.nam}</div>
+                </Link>
+              </div>
+            ))}
+            <div className="mt-4 font-[Sr]">Map Layout</div>
+            {map.map((obj, idx) => (
               <div className="my-0.5 p-1 rounded hover:bg-white hover:text-black text-[14px]">
                 <Link to={obj.link === "" ? "/" : `/${obj.link}`} className={`flex items-center gap-2 z-40`} key={idx}>
                   <img src={`/hover/${obj.icon}.png`} alt="Menu Icon" className="size-8 " />

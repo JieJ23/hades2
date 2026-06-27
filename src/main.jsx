@@ -26,6 +26,8 @@ import Bingo1 from "./Page/Bingo1.jsx";
 import Bingo2 from "./Page/Bingo2.jsx";
 import TheGameAward from "./Page/TheGameAward.jsx";
 
+import MapErebus from "./Page/MapErebus.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <DataProvider>
@@ -50,6 +52,8 @@ createRoot(document.getElementById("root")).render(
           <Route path="/Bingo1" element={<Bingo1 />} />
           <Route path="/Bingo2" element={<Bingo2 />} />
           <Route path="/TheGameAward" element={<TheGameAward />} />
+          <Route path="/MapErebus" element={<MapErebus />} />
+
         </Routes>
       </Router>
     </DataProvider>
