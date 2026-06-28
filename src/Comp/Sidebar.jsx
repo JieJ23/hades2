@@ -13,7 +13,12 @@ export const tools = [
   { link: `ArcanaDeck`, nam: `Arcana Deck`, icon: `ReRoll` },
   { link: `FearCalculator`, nam: `Fear Calculator`, icon: `Void` },
 ];
-export const map = [{ link: `MapErebus`, nam: `Erebus`, icon: `Hecate` }, { link: `MapOceanus`, nam: `Oceanus`, icon: `Narcissus` }, { link: `MapField`, nam: `Field`, icon: `Echo` }, { link: `MapTartarus`, nam: `Tartarus`, icon: `Chronos` }];
+export const map = [
+  { link: `MapErebus`, nam: `Erebus`, icon: `Hecate` },
+  { link: `MapOceanus`, nam: `Oceanus`, icon: `Narcissus` },
+  { link: `MapField`, nam: `Field`, icon: `Echo` },
+  { link: `MapTartarus`, nam: `Tartarus`, icon: `Chronos` },
+];
 
 export const minor = [{ link: `Resources`, nam: `Miscellaneous`, icon: `Exorcism` }];
 export const events = [
@@ -27,7 +32,7 @@ export default function SideNav() {
 
   return (
     <div className="font-[Ale] rounded">
-      <div className="drawer drawer-end p-3 relative">
+      <div className="drawer drawer-end p-3 relative z-40">
         <input id="my-drawer-5" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex justify-end fixed top-3 right-3">
           {/* Page content here */}
