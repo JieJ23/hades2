@@ -26,10 +26,10 @@ export default function SideNav() {
   const currentLocation = useLocation();
 
   return (
-    <div className="fixed top-0 w-full font-[Ale] rounded z-40">
-      <div className="drawer drawer-end p-3">
+    <div className="font-[Ale] rounded">
+      <div className="drawer drawer-end p-3 relative">
         <input id="my-drawer-5" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex justify-end">
+        <div className="drawer-content flex justify-end fixed top-3 right-3">
           {/* Page content here */}
           <label
             htmlFor="my-drawer-5"
@@ -38,7 +38,7 @@ export default function SideNav() {
             <img src="/menu.png" alt="Menu Icon" className="size-8" />
           </label>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side z-40">
           <label htmlFor="my-drawer-5" aria-label="close sidebar" className="drawer-overlay" />
           <div className="menu bg-[#0e0c12] min-h-full w-80 p-4 relative rounded">
             <div
@@ -95,21 +95,6 @@ export default function SideNav() {
           </div>
         </div>
       </div>
-      {/* <div className="hidden xl:block p-2">
-        <div className="flex flex-wrap justify-center items-center gap-1">
-          {sites.map((obj, idx) => (
-            <Link to={obj.link === "" ? "/" : `/${obj.link}`} className={`flex items-center group`} key={idx}>
-              <div
-                className={`px-2 py-1 rounded border border-white/10 hover:bg-[#00ffaa] hover:text-black ${
-                  currentLocation.pathname == `/${obj.link}` ? `bg-[#00ffaa] text-black` : `text-white`
-                }`}
-              >
-                {obj.nam}
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div> */}
     </div>
   );
 }

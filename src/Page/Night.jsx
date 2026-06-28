@@ -44,8 +44,7 @@ export default function Night() {
           if (feaDiff !== 0) return feaDiff;
           return parseTimetoms(a.tim) - parseTimetoms(b.tim);
         }
-      })
-      .slice(0, 2899);
+      });
   }, [posts, category, region, fill, player, vidOnly]);
 
   // Pagnition
@@ -277,32 +276,32 @@ export default function Night() {
                           )}
                           {obj.ham
                             ? findValue(
-                                sToA(obj.ham).sort((a, b) => {
-                                  const aIndex = orderMap.get(a) ?? Infinity;
-                                  const bIndex = orderMap.get(b) ?? Infinity;
-                                  return aIndex - bIndex;
-                                }),
-                              ).map((ite, index) => (
-                                <div className="tooltip">
-                                  <div className="tooltip-content p-0">
-                                    <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
-                                      {p9boons[ite]}
-                                    </div>
-                                  </div>
-                                  <div className="relative size-10 sm:size-8 shrink-0">
-                                    <img
-                                      src="/BoonBorder/Hammer.png"
-                                      alt="Border"
-                                      className="absolute inset-0 w-full h-full z-10 pointer-events-none"
-                                    />
-                                    <img
-                                      src={`/P9/${ite}.png`}
-                                      alt="Hammers"
-                                      className="absolute inset-0 w-full h-full p-1 object-contain"
-                                    />
+                              sToA(obj.ham).sort((a, b) => {
+                                const aIndex = orderMap.get(a) ?? Infinity;
+                                const bIndex = orderMap.get(b) ?? Infinity;
+                                return aIndex - bIndex;
+                              }),
+                            ).map((ite, index) => (
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
                                   </div>
                                 </div>
-                              ))
+                                <div className="relative size-10 sm:size-8 shrink-0">
+                                  <img
+                                    src="/BoonBorder/Hammer.png"
+                                    alt="Border"
+                                    className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                                  />
+                                  <img
+                                    src={`/P9/${ite}.png`}
+                                    alt="Hammers"
+                                    className="absolute inset-0 w-full h-full p-1 object-contain"
+                                  />
+                                </div>
+                              </div>
+                            ))
                             : ``}
                         </div>
                         {obj.ks && (
@@ -328,19 +327,19 @@ export default function Night() {
                       <div className="flex justify-start">
                         {obj.cor
                           ? sToA(obj.cor).map((ite, index) => (
-                              <div className="relative size-10 sm:size-8 shrink-0">
-                                <img
-                                  src="/BoonBorder/Common.png"
-                                  alt="Border"
-                                  className="absolute inset-0 w-full h-full z-10 pointer-events-none"
-                                />
-                                <img
-                                  src={`/H2Boons/${ite}.png`}
-                                  alt="Core Boon"
-                                  className="absolute inset-0 w-full h-full p-1 object-contain"
-                                />
-                              </div>
-                            ))
+                            <div className="relative size-10 sm:size-8 shrink-0">
+                              <img
+                                src="/BoonBorder/Common.png"
+                                alt="Border"
+                                className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                              />
+                              <img
+                                src={`/H2Boons/${ite}.png`}
+                                alt="Core Boon"
+                                className="absolute inset-0 w-full h-full p-1 object-contain"
+                              />
+                            </div>
+                          ))
                           : ``}
                       </div>
                       <div className="flex gap-1">
@@ -398,7 +397,7 @@ export default function Night() {
                           {index + 1 + ITEMS_PER_PAGE * (pageIndex - 1)}
                         </div>
                       </td>
-                      <td className="border-0 border-y-1 border-y-white/5 z-40">
+                      <td className="border-0 border-y-1 border-y-white/5">
                         <div className="flex gap-1">
                           <div>{obj.nam}</div>
                           <div className="shrink-0 size-4">
@@ -425,9 +424,8 @@ export default function Night() {
                           {obj.des && (
                             <div className="w-[25px]">
                               <div
-                                className={`tooltip ${
-                                  index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
-                                }`}
+                                className={`tooltip ${index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
+                                  }`}
                               >
                                 <div className="tooltip-content p-0">
                                   <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
@@ -470,21 +468,21 @@ export default function Night() {
                           )}
                           {obj.ham
                             ? findValue(
-                                sToA(obj.ham).sort((a, b) => {
-                                  const aIndex = orderMap.get(a) ?? Infinity;
-                                  const bIndex = orderMap.get(b) ?? Infinity;
-                                  return aIndex - bIndex;
-                                }),
-                              ).map((ite, index) => (
-                                <div className="tooltip">
-                                  <div className="tooltip-content p-0">
-                                    <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
-                                      {p9boons[ite]}
-                                    </div>
+                              sToA(obj.ham).sort((a, b) => {
+                                const aIndex = orderMap.get(a) ?? Infinity;
+                                const bIndex = orderMap.get(b) ?? Infinity;
+                                return aIndex - bIndex;
+                              }),
+                            ).map((ite, index) => (
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
                                   </div>
-                                  <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
                                 </div>
-                              ))
+                                <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
+                              </div>
+                            ))
                             : ``}
                         </div>
                       </td>
@@ -492,21 +490,21 @@ export default function Night() {
                         <div className="flex gap-0.5">
                           {obj.cor
                             ? sToA(obj.cor).map((ite, index) => (
-                                <div className="tooltip">
-                                  <div className="tooltip-content p-0">
-                                    <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
-                                      {p9boons[ite]}
-                                    </div>
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
                                   </div>
-                                  <img
-                                    draggable={false}
-                                    src={`/H2Boons/${ite}.png`}
-                                    alt="Core Boon"
-                                    className="size-6"
-                                    loading="lazy"
-                                  />
                                 </div>
-                              ))
+                                <img
+                                  draggable={false}
+                                  src={`/H2Boons/${ite}.png`}
+                                  alt="Core Boon"
+                                  className="size-6"
+                                  loading="lazy"
+                                />
+                              </div>
+                            ))
                             : ``}
                         </div>
                       </td>
