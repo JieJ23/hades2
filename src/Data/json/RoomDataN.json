@@ -1,0 +1,4585 @@
+{
+  "N": {
+    "BaseN": {
+      "Ambience": "/Ambience/EphyraCityAmbienceOutdoor",
+      "BreakableValueOptions": {
+        "MaxHighValueBreakables": 3
+      },
+      "CloseDoorsOnUse": true,
+      "DebugOnly": true,
+      "DevotionEncounters": [
+        "DevotionTestN"
+      ],
+      "DreamResultText": "RunHistoryScreenResult_Ephyra_Dream",
+      "DreamSaveProfileLocationText": "BiomeN_Short_DreamRun",
+      "EliteChallengeEncounterOptions": [
+        "EliteChallengeN"
+      ],
+      "ExorcismPointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 2
+        },
+        "2": {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 2
+        },
+        "3": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeSurfacePenaltyCure"
+          ]
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 16,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "6": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "7": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "OrRequirements": [
+          {
+            "OrRequirements": [
+              [
+                {
+                  "Comparison": "<=",
+                  "Path": [
+                    "GameState",
+                    "LifetimeResourcesGained",
+                    "MemPointsCommon"
+                  ],
+                  "Value": 1500
+                }
+              ],
+              [
+                {
+                  "Comparison": "<",
+                  "Path": [
+                    "GameState",
+                    "ExorcisedNames",
+                    "ShadeEphyraIdle"
+                  ],
+                  "Value": 2
+                }
+              ]
+            ]
+          },
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumFishingPoints"
+              ],
+              "SumPrevRooms": 5,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "FishingPointRequirements": {
+        "1": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeToolsShop"
+          ]
+        },
+        "2": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeSurfacePenaltyCure"
+          ]
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 14,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "6": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "NotHasAll": [
+                "FishNCommon",
+                "FishNRare",
+                "FishNLegendary"
+              ],
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained"
+              ]
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumExorcismPoints"
+              ],
+              "SumPrevRooms": 5,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "FlipHorizontalChance": 0.0,
+      "FootstepAnimationL": "MudFootstepL-Spawner",
+      "FootstepAnimationR": "MudFootstepR-Spawner",
+      "ForcedRewardStore": "RunProgress",
+      "GlobalEcho": 0.0,
+      "HarvestPointBase": "DrownedChambersHarvestPointBase01",
+      "HarvestPointRequirements": {
+        "1": {
+          "Comparison": "<=",
+          "Path": [
+            "NumHarvestPoints"
+          ],
+          "SumPrevRooms": 12,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantNMoss"
+              ],
+              "Value": 8
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "HasExorcismPoint": true,
+      "HasFishingPoint": false,
+      "HasHarvestPoint": true,
+      "HasPickaxePoint": true,
+      "HasShovelPoint": true,
+      "Icon": "GUI\\Screens\\BountyBoard\\Biome_Ephyra",
+      "IgnoreForRewardStoreCount": true,
+      "LegalEncounters": "@ref:EncounterSets.NEncountersDefault",
+      "LocationAnimName": "InfoBannerEphyraIn",
+      "LocationAnimOutName": "InfoBannerEphyraOut",
+      "NarrativeContextArt": "DialogueBackground_Ephyra",
+      "NarrativeContextArtFlippable": false,
+      "PerfectClearEncounterOptions": [
+        "PerfectClearChallengeN"
+      ],
+      "PickaxePointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "2": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeSurfacePenaltyCure"
+          ]
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 12,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "6": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "OreNBronze"
+              ],
+              "Value": 30
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumShovelPoints"
+              ],
+              "SumPrevRooms": 5,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "PostCombatReloadThreadedEvents": [
+        {
+          "Args": "@ref:RoomEventData.BountyInfoBannerArgs",
+          "FunctionName": "DisplayInfoBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        {
+          "Args": {
+            "Delay": 0.45,
+            "DreamText": "Location_BiomeN_Dream",
+            "Duration": 2.0
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowDreamInfoBanner"
+            ]
+          }
+        }
+      ],
+      "ResultText": "RunHistoryScreenResult_Ephyra",
+      "ReverbValue": 1.5,
+      "RichPresence": "#RichPresence_N",
+      "SaveProfileLocationText": "BiomeN_Short",
+      "SecretDoorRequirements": {
+        "1": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeSurfacePenaltyCure"
+          ]
+        },
+        "2": {
+          "PathTrue": [
+            "GameState",
+            "UseRecord",
+            "HeraUpgrade"
+          ]
+        },
+        "3": {
+          "PathTrue": [
+            "GameState",
+            "RoomsEntered",
+            "O_Intro"
+          ]
+        },
+        "4": {
+          "IsAny": [
+            "N_Opening01"
+          ],
+          "Path": [
+            "CurrentRun",
+            "CurrentRoom",
+            "Name"
+          ]
+        },
+        "NamedRequirements": [
+          "ChaosUnlocked",
+          "NoRecentChaosEncounter"
+        ]
+      },
+      "SecretSpawnChance": 0.0,
+      "ShopSecretMusic": "/Music/CharonShopTheme",
+      "ShovelPointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "2": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeToolsShop"
+          ]
+        },
+        "3": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeSurfacePenaltyCure"
+          ]
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 12,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "6": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "7": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantNGarlicSeed"
+              ],
+              "Value": 12
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumPickaxePoints"
+              ],
+              "SumPrevRooms": 5,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "StartThreadedEvents": [
+        {
+          "FunctionName": "CheckBiomeStateStart"
+        },
+        {
+          "Args": {
+            "MaxActive": 5,
+            "ObjectNames": [
+              "ShadeMerc"
+            ],
+            "RequireForExit": false,
+            "StartingCountMax": 5,
+            "StartingCountMin": 0
+          },
+          "FunctionName": "ShadeMercManager",
+          "GameStateRequirements": {
+            "ChanceToPlay": 0.1
+          }
+        }
+      ],
+      "StartUnthreadedEvents": [
+        {
+          "Args": {
+            "SpawnName": "SoulPylon"
+          },
+          "FunctionName": "SpawnSoulPylon",
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          }
+        }
+      ],
+      "StopSecretMusic": true,
+      "StrictLeftRight": true,
+      "SwapAnimations": {
+        "OlympusSnowExplosionDecal": "ExplosionScorchDecal"
+      },
+      "ThreadedEvents": [
+        {
+          "Args": "@ref:RoomEventData.BountyInfoBannerArgs",
+          "FunctionName": "DisplayInfoBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        {
+          "Args": {
+            "Delay": 0.45,
+            "DreamText": "Location_BiomeN_Dream",
+            "Duration": 2.0
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowDreamInfoBanner"
+            ]
+          }
+        }
+      ],
+      "TimeChallengeEncounterOptions": [
+        "TimeChallengeN"
+      ],
+      "TimeChallengeSwitchRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeChallengeSwitchesSurface1"
+          ]
+        }
+      ],
+      "ValidateSecretData": true,
+      "ZoomFraction": 0.5,
+      "ZoomFractionAlt": 0.4
+    },
+    "N_BaseMiniBoss": {
+      "BoonRaritiesOverride": {
+        "Epic": 0.1,
+        "Legendary": 0.05,
+        "Rare": 0.9
+      },
+      "CombatResolvedVoiceLines": [
+        {
+          "GlobalVoiceLines": "MiniBossEncounterEndVoiceLines"
+        }
+      ],
+      "DebugOnly": true,
+      "EligibleRewards": [
+        "Boon"
+      ],
+      "EndMusicOnCombatOver": 20,
+      "FlipHorizontalChance": 0.0,
+      "ForcedRewardStore": "RunProgress",
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "MaxAppearancesThisBiome": 1,
+      "MaxCreationsThisRun": 1,
+      "MusicActiveStems": [
+        "Guitar",
+        "Bass",
+        "Drums"
+      ],
+      "MusicSection": 2,
+      "RewardPreviewIcon": "RoomRewardSubIcon_Miniboss"
+    },
+    "N_Boss01": {
+      "Ambience": "/Ambience/EphyraOutsideAmbience",
+      "BackupCauseOfDeath": "Polyphemus",
+      "BlockCameraReattach": true,
+      "CanSpawnDreamReward": true,
+      "CloseDoorsOnUse": false,
+      "EnterVoiceLines": [
+        {
+          "GlobalVoiceLines": "PolyphemusGreetingLines"
+        }
+      ],
+      "EntranceFunctionArgs": {
+        "AngleTowardsIdOnEnd": 558039
+      },
+      "EntranceFunctionName": "RoomEntranceBoss",
+      "ExitPreviewAnim": "ExitAheadPreview",
+      "FlipHorizontal": false,
+      "FlipHorizontalChance": 0,
+      "ForcedReward": "MixerNBossDrop",
+      "GameStateRequirements": {
+        "NamedRequirementsFalse": [
+          "BossDifficultyActive"
+        ]
+      },
+      "GlobalEcho": 0.5,
+      "HarvestPointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "N_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "PlantNMoss"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "PlantNMoss"
+          ]
+        }
+      ],
+      "InheritFrom": [
+        "BaseN"
+      ],
+      "InspectPoints": {
+        "737758": {
+          "InteractTextLineSets": {
+            "Inspect_N_Boss01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0270",
+                "Text": "{#Emph}There is an old adage which goes, one would be wise never to strike a sleeping Cyclops, and instead carefully walk by; but at times, exceptions must be made."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1955",
+                    "Text": "I might make one of those exceptions now..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "737760": {
+          "InteractTextLineSets": {
+            "Inspect_N_Boss01_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0271",
+                "Text": "{#Emph}If once this was a pasture in which livestock grazed and roamed, now little evidence of this remains; only the mud, and half-burnt vestiges of a more-peaceful time."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1956",
+                    "Text": "Polyphemus should be tending to this place..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 2.7,
+      "LegalEncounters": [
+        "BossPolyphemus01"
+      ],
+      "LinkedRoom": "N_PostBoss01",
+      "NoReroll": true,
+      "PickaxePointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WeaponsUnlocked",
+            "ToolPickaxe"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "N_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "OreNBronze"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "OreNBronze"
+          ]
+        }
+      ],
+      "RequiresLinked": true,
+      "ResetBinksOnEnter": true,
+      "ResetBinksOnExit": true,
+      "ReverbValue": 0.75,
+      "RewardPreviewIcon": "RoomRewardSubIcon_Boss",
+      "SheepExitId": 658446,
+      "ShovelPointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WeaponsUnlocked",
+            "ToolShovel"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "N_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "PlantNGarlicSeed"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "PlantNGarlicSeed"
+          ]
+        }
+      ],
+      "SkipTimedDropResourceInDream": true,
+      "SpeakerName": "Polyphemus",
+      "StartUnthreadedEvents": [],
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "DelayedStart": true,
+            "DreamRunIntroFunctionName": "PolyphemusBossDreamRunIntro",
+            "ProcessTextLinesIds": [
+              558039
+            ],
+            "SetupBossIds": [
+              558039
+            ]
+          },
+          "FunctionName": "BossIntro"
+        }
+      ]
+    },
+    "N_Boss02": {
+      "Ambience": "/Ambience/EphyraOutsideAmbience",
+      "BackupCauseOfDeath": "Polyphemus",
+      "BlockCameraReattach": true,
+      "CanSpawnDreamReward": true,
+      "CloseDoorsOnUse": false,
+      "EnterVoiceLines": [
+        {
+          "GlobalVoiceLines": "PolyphemusGreetingLines"
+        }
+      ],
+      "EntranceFunctionArgs": {
+        "AngleTowardsIdOnEnd": 675068
+      },
+      "EntranceFunctionName": "RoomEntranceBoss",
+      "ExitPreviewAnim": "ExitAheadPreview",
+      "FlipHorizontal": false,
+      "FlipHorizontalChance": 0,
+      "ForcedReward": "MixerNBossDrop",
+      "GameStateRequirements": {
+        "NamedRequirements": [
+          "BossDifficultyActive"
+        ]
+      },
+      "GlobalEcho": 0.5,
+      "HarvestPointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "N_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "PlantNMoss"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "PlantNMoss"
+          ]
+        }
+      ],
+      "InheritFrom": [
+        "BaseN"
+      ],
+      "InspectPoints": {
+        "793949": {
+          "InteractTextLineSets": {
+            "Inspect_N_Boss02_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0423",
+                "Text": "{#Emph}The noxious, death-strewn field beyond the city of Ephyra now lies still once more, although a sense of rising Fear yet lingers with the many restless souls that there reside."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_3616",
+                  "Text": "Lady Medea certainly transformed this place."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "794211": {
+          "InteractTextLineSets": {
+            "Inspect_N_Boss02_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0458",
+                "Text": "{#Emph}On such particularly fearsome nights, the Witch of Shadows is believed to haunt this awfully putrescent field, whilst conducting her profane experiments upon the dead."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_3656",
+                  "Text": "Still feel a little nauseous after that..."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 2.7,
+      "LegalEncounters": [
+        "BossPolyphemus02"
+      ],
+      "LinkedRoom": "N_PostBoss01",
+      "NoReroll": true,
+      "PickaxePointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WeaponsUnlocked",
+            "ToolPickaxe"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "N_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "OreNBronze"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "OreNBronze"
+          ]
+        }
+      ],
+      "RequiresLinked": true,
+      "ResetBinksOnEnter": true,
+      "ResetBinksOnExit": true,
+      "ReverbValue": 0.75,
+      "RewardPreviewIcon": "RoomRewardSubIcon_Boss",
+      "SheepExitId": 737999,
+      "ShovelPointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WeaponsUnlocked",
+            "ToolShovel"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "N_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "PlantNGarlicSeed"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "PlantNGarlicSeed"
+          ]
+        }
+      ],
+      "SkipTimedDropResourceInDream": true,
+      "SpeakerName": [
+        "Polyphemus",
+        "Selene"
+      ],
+      "StartThreadedEvents": [
+        {
+          "Args": {
+            "AlreadyPresentRequirements": [
+              {
+                "FunctionArgs": {
+                  "IsAny": [
+                    "PolyphemusAboutAltFight02",
+                    "PolyphemusAboutAltFight06",
+                    "PolyphemusAboutAltFight08",
+                    "PolyphemusAboutAltFight09",
+                    "PolyphemusAboutAltFight10",
+                    "MedeaMiscStart22"
+                  ]
+                },
+                "FunctionName": "RequiredQueuedTextLine"
+              }
+            ],
+            "Angle": 242,
+            "Delay": 1.0,
+            "MedeaId": 737907
+          },
+          "FunctionName": "ChooseMedeaIntroPresentation"
+        }
+      ],
+      "StartUnthreadedEvents": [],
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "DelayedStart": true,
+            "DreamRunIntroFunctionName": "PolyphemusBossDreamRunIntro",
+            "ProcessTextLinesIds": [
+              675068
+            ],
+            "SetupBossIds": [
+              675068
+            ],
+            "SetupUnitIdAIs": [
+              737907
+            ]
+          },
+          "FunctionName": "BossIntro"
+        }
+      ]
+    },
+    "N_Combat01": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersBigger",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturnNE": {
+          "NextHeroEndPoint": 617112,
+          "NextHeroStartPoint": 617114
+        }
+      }
+    },
+    "N_Combat02": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturnNE": {
+          "NextHeroEndPoint": 561164,
+          "NextHeroStartPoint": 561161
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "558352": "N_Sub03",
+        "558353": "N_Sub01"
+      },
+      "ReverbValue": 1.0
+    },
+    "N_Combat03": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 561144,
+          "NextHeroStartPoint": 561415
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "558353": "N_Sub04"
+      }
+    },
+    "N_Combat04": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 660483,
+          "NextHeroStartPoint": 561153
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "558410": "N_Sub06",
+        "558834": "N_Sub02"
+      },
+      "ReverbValue": 1.0
+    },
+    "N_Combat05": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturnNE": {
+          "NextHeroEndPoint": 561338,
+          "NextHeroStartPoint": 561341
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "558354": "N_Sub02",
+        "558378": "N_Sub07",
+        "558379": "N_Sub03"
+      }
+    },
+    "N_Combat06": {
+      "FlipHorizontalChance": 1.0,
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturnNE": {
+          "NextHeroEndPoint": 561175,
+          "NextHeroStartPoint": 561178
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "558378": "N_Sub10",
+        "560794": "N_Sub05"
+      }
+    },
+    "N_Combat07": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 617136,
+          "NextHeroStartPoint": 617140
+        }
+      }
+    },
+    "N_Combat08": {
+      "HasExorcismPoint": false,
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturnNE": {
+          "NextHeroEndPoint": 561185,
+          "NextHeroStartPoint": 561189
+        }
+      }
+    },
+    "N_Combat09": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersBigger",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 617007,
+          "NextHeroStartPoint": 561141
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "566392": "N_Sub11",
+        "566394": "N_Sub14",
+        "566536": "N_Sub08"
+      }
+    },
+    "N_Combat10": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersBigger",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturnNE": {
+          "NextHeroEndPoint": 617153,
+          "NextHeroStartPoint": 617155
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "558352": "N_Sub05",
+        "567015": "N_Sub09"
+      }
+    },
+    "N_Combat11": {
+      "FlipHorizontalChance": 1.0,
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersBigger",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturnNE": {
+          "NextHeroEndPoint": 561450,
+          "NextHeroStartPoint": 561448
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "558352": "N_Sub01"
+      }
+    },
+    "N_Combat12": {
+      "FlipHorizontalChance": 1.0,
+      "IneligibleRewards": "@ref:RewardSets.HubCombatRoomEasyBans",
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersSmaller",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 561393,
+          "NextHeroStartPoint": 561392
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "558352": "N_Sub09",
+        "566544": "N_Sub10",
+        "566545": "N_Sub07"
+      },
+      "ReverbValue": 1.0
+    },
+    "N_Combat13": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersBigger",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 616993,
+          "NextHeroStartPoint": 616997
+        }
+      }
+    },
+    "N_Combat14": {
+      "Ambience": "/Ambience/EphyraCityAmbience",
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturnNE": {
+          "NextHeroEndPoint": 561399,
+          "NextHeroStartPoint": 561406
+        }
+      },
+      "ReverbValue": 0.8
+    },
+    "N_Combat15": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersBigger",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 561171,
+          "NextHeroStartPoint": 561174
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "657623": "N_Sub03"
+      }
+    },
+    "N_Combat16": {
+      "FishingPointChance": 0.8,
+      "HasFishingPoint": true,
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersBigger",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 561349,
+          "NextHeroStartPoint": 561352
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "558352": "N_Sub04"
+      }
+    },
+    "N_Combat17": {
+      "IneligibleRewards": "@ref:RewardSets.HubCombatRoomEasyBans",
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersSmaller",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 561422,
+          "NextHeroStartPoint": 561421
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "558352": "N_Sub11"
+      },
+      "ReverbValue": 1.7
+    },
+    "N_Combat18": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersBigger",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 561366,
+          "NextHeroStartPoint": 561377
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "658853": "N_Sub12"
+      }
+    },
+    "N_Combat19": {
+      "Ambience": "/Ambience/EphyraCityAmbience",
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersBigger",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 561154,
+          "NextHeroStartPoint": 561149
+        }
+      }
+    },
+    "N_Combat20": {
+      "HasHarvestPoint": false,
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersBigger",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 660485,
+          "NextHeroStartPoint": 617011
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "659508": "N_Sub06"
+      },
+      "ReverbValue": 1.7
+    },
+    "N_Combat21": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersBigger",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 561138,
+          "NextHeroStartPoint": 561135
+        }
+      }
+    },
+    "N_Combat22": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 561159,
+          "NextHeroStartPoint": 561158
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "558352": "N_Sub14",
+        "661338": "N_Sub02"
+      },
+      "ReverbValue": 1.0
+    },
+    "N_Combat23": {
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 561378,
+          "NextHeroStartPoint": 561383
+        }
+      },
+      "PredeterminedDoorRooms": {
+        "755184": "N_Sub13",
+        "755185": "N_Sub15",
+        "755971": "N_Sub12"
+      },
+      "ReverbValue": 1.0
+    },
+    "N_CombatData": {
+      "ArtemisUseHeroStart": true,
+      "CheckObjectStatesOnStartRoom": true,
+      "DebugOnly": true,
+      "EnterVoiceLines": [
+        {
+          "BreakIfPlayed": true,
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            },
+            {
+              "IsNone": [
+                "N_Hub",
+                "N_PreHub01"
+              ],
+              "Path": [
+                "CurrentRun",
+                "CurrentRoom",
+                "Name"
+              ]
+            },
+            {
+              "IsNone": [
+                "HeraclesCombatN"
+              ],
+              "Path": [
+                "CurrentRun",
+                "CurrentRoom",
+                "Encounter",
+                "Name"
+              ]
+            }
+          ],
+          "PlayOnceFromTableThisRun": true,
+          "PreLineWait": 1.85,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.15
+        }
+      ],
+      "ForcedRewardStore": "HubRewards",
+      "GameStateRequirements": [
+        {
+          "HasAny": [
+            "N_PreHub01",
+            "Chaos_01",
+            "Chaos_02",
+            "Chaos_03",
+            "Chaos_04",
+            "Chaos_05",
+            "Chaos_06"
+          ],
+          "Path": [
+            "CurrentRun",
+            "BiomeRoomCountCache"
+          ]
+        }
+      ],
+      "LeaveEvents": [],
+      "PersistentExitDoorRewards": true,
+      "PersistentRoomForDoors": true,
+      "PickaxePointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "2": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 12,
+          "Value": 0
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "OreNBronze"
+              ],
+              "Value": 30
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumShovelPoints"
+              ],
+              "SumPrevRooms": 5,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "PostCombatReloadThreadedEvents": [
+        {
+          "Args": [],
+          "FunctionName": "HandlePylonObjective"
+        }
+      ],
+      "SaveWhitelist": {
+        "ObjectStates": true
+      },
+      "StartThreadedEvents": [
+        {
+          "FunctionName": "HandlePylonObjective"
+        },
+        {
+          "Args": {
+            "MaxActive": 5,
+            "ObjectNames": [
+              "ShadeMerc"
+            ],
+            "RequireForExit": false,
+            "StartingCountMax": 5,
+            "StartingCountMin": 1
+          },
+          "FunctionName": "ShadeMercManager",
+          "GameStateRequirements": {
+            "ChanceToPlay": 0.1
+          }
+        },
+        {
+          "Args": {
+            "Fuse": 5.0,
+            "IntervalMax": 10.0,
+            "IntervalMin": 2.5,
+            "ProjectileName": "PolyphemusBoulderSky",
+            "ReticleAnimation": "PolyphemusBoulderWarningDecal",
+            "StartingCountMax": 2,
+            "StartingCountMin": 0,
+            "TotalCountMax": 3,
+            "TotalCountMin": 1
+          },
+          "FunctionName": "PolyphemusBoulderManager",
+          "GameStateRequirements": {
+            "ChanceToPlay": 0.25
+          }
+        },
+        {
+          "Args": {
+            "Types": [
+              "BattleStandard"
+            ]
+          },
+          "FunctionName": "ActivatePrePlaced",
+          "GameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "EncountersOccurredCache",
+                "BossPolyphemus01"
+              ]
+            },
+            "ChanceToPlay": 0.5
+          }
+        }
+      ]
+    },
+    "N_Hub": {
+      "BlockCameraReattach": true,
+      "CameraZoomWeights": {
+        "660489": 1.75,
+        "660490": 1.2,
+        "660491": 1.55,
+        "660492": 1.8,
+        "660493": 1.0,
+        "660494": 1.5,
+        "660495": 1.7,
+        "660496": 1.0,
+        "662592": 1.4,
+        "662609": 1.65
+      },
+      "CloseDoorsOnUse": true,
+      "EncounterCompleteWait": 0.02,
+      "EnterVoiceLines": {
+        "1": {
+          "1": {
+            "Cue": "/VO/MelinoeField_1366",
+            "Text": "How... can... I...?"
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_1367",
+            "Text": "This... isn't... working..."
+          },
+          "BreakIfPlayed": true,
+          "GameStateRequirements": [
+            {
+              "HasAny": [
+                "SurfacePenalty"
+              ],
+              "Path": [
+                "CurrentRun",
+                "Hero",
+                "TraitDictionary"
+              ]
+            },
+            {
+              "Comparison": "<=",
+              "Path": [
+                "CurrentRun",
+                "SpawnRecord",
+                "SoulPylon"
+              ],
+              "Value": 0
+            }
+          ],
+          "PlayOnceFromTableThisRun": true,
+          "PreLineWait": 2.65,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlayAll": 0.2
+        },
+        "2": {
+          "1": {
+            "Cue": "/VO/Heracles_0043",
+            "Text": "You."
+          },
+          "BreakIfPlayed": true,
+          "ObjectType": "NPC_Heracles_01",
+          "PreLineWait": 1.35
+        },
+        "3": {
+          "1": {
+            "Cue": "/VO/MelinoeField_4578",
+            "Text": "Through Ephyra as before..."
+          },
+          "BreakIfPlayed": true,
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            }
+          ],
+          "PlayOnce": true,
+          "PlayOnceContext": "LeavingErebusHecateMissingVO",
+          "PreLineWait": 1.15,
+          "RandomRemaining": true,
+          "SkipCooldownCheckIfNonePlayed": true
+        },
+        "4": {
+          "1": {
+            "Cue": "/VO/MelinoeField_0368",
+            "Text": "Best have a look around..."
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_0369",
+            "Text": "The main square..."
+          },
+          "3": {
+            "Cue": "/VO/Melinoe_1370",
+            "PlayFirst": true,
+            "Text": "Ephyra's main square..."
+          },
+          "4": {
+            "Cue": "/VO/MelinoeField_4578",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "GameState",
+                  "ReachedTrueEnding"
+                ]
+              },
+              {
+                "Comparison": "<=",
+                "CountPathTrue": true,
+                "Path": [
+                  "SpeechRecord",
+                  "/VO/MelinoeField_4578"
+                ],
+                "SumPrevRuns": 8,
+                "Value": 0
+              }
+            ],
+            "Text": "Through Ephyra as before..."
+          },
+          "5": {
+            "Cue": "/VO/MelinoeField_0367",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "GameState",
+                  "SpeechRecord",
+                  "/VO/Melinoe_1370"
+                ]
+              }
+            ],
+            "PlayFirst": true,
+            "PlayOnce": true,
+            "Text": "Something's different this time..."
+          },
+          "6": {
+            "Cue": "/VO/Melinoe_1371",
+            "Text": "Back to the main square."
+          },
+          "7": {
+            "Cue": "/VO/Melinoe_1372",
+            "Text": "The city square."
+          },
+          "8": {
+            "Cue": "/VO/Melinoe_1373",
+            "GameStateRequirements": [
+              {
+                "Comparison": ">=",
+                "Path": [
+                  "GameState",
+                  "RoomCountCache",
+                  "N_Boss01"
+                ],
+                "Value": 1
+              }
+            ],
+            "Text": "That barricade's back up..."
+          },
+          "9": {
+            "Cue": "/VO/Melinoe_1374",
+            "GameStateRequirements": [
+              {
+                "Comparison": ">=",
+                "Path": [
+                  "GameState",
+                  "RoomCountCache",
+                  "N_Boss01"
+                ],
+                "Value": 1
+              }
+            ],
+            "Text": "Time to break through again."
+          },
+          "BreakIfPlayed": true,
+          "Cooldowns": [
+            {
+              "Name": "MelinoeAnyQuipSpeech",
+              "Time": 6
+            }
+          ],
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            },
+            {
+              "Comparison": "<=",
+              "Path": [
+                "CurrentRun",
+                "SpawnRecord",
+                "SoulPylon"
+              ],
+              "Value": 0
+            },
+            {
+              "FunctionArgs": {
+                "Alive": false,
+                "Ids": [
+                  566363
+                ]
+              },
+              "FunctionName": "RequiredAlive"
+            }
+          ],
+          "PlayOnceFromTableThisRun": true,
+          "PreLineWait": 1.35,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.5,
+          "SuccessiveChanceToPlayAll": 0.1
+        },
+        "5": {
+          "1": {
+            "Cue": "/VO/MelinoeField_0618",
+            "PlayFirst": true,
+            "Text": "Something's changed..."
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_0374",
+            "Text": "They're trying to slow me down..."
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_0375",
+            "Text": "So many different streets..."
+          },
+          "4": {
+            "Cue": "/VO/MelinoeField_0511",
+            "Text": "What next..."
+          },
+          "5": {
+            "Cue": "/VO/MelinoeField_0512",
+            "Text": "Now what..."
+          },
+          "6": {
+            "Cue": "/VO/MelinoeField_0513",
+            "Text": "Where next..."
+          },
+          "7": {
+            "Cue": "/VO/MelinoeField_0514",
+            "Text": "Where else."
+          },
+          "8": {
+            "Cue": "/VO/MelinoeField_0515",
+            "Text": "Where to from here..."
+          },
+          "9": {
+            "Cue": "/VO/MelinoeField_0516",
+            "Text": "Next up..."
+          },
+          "10": {
+            "Cue": "/VO/MelinoeField_0517",
+            "Text": "Getting somewhere."
+          },
+          "11": {
+            "Cue": "/VO/MelinoeField_0518",
+            "Text": "The air feels different now..."
+          },
+          "12": {
+            "Cue": "/VO/MelinoeField_0519",
+            "Text": "More Pylons are nearby..."
+          },
+          "13": {
+            "Cue": "/VO/MelinoeField_0520",
+            "Text": "Next Pylon, then."
+          },
+          "14": {
+            "Cue": "/VO/MelinoeField_0376",
+            "Text": "Where to this time..."
+          },
+          "15": {
+            "Cue": "/VO/MelinoeField_0417",
+            "GameStateRequirements": [
+              {
+                "Comparison": ">=",
+                "Path": [
+                  "CurrentRun",
+                  "SpawnRecord",
+                  "SoulPylon"
+                ],
+                "Value": 3
+              },
+              {
+                "Comparison": "<",
+                "Path": [
+                  "CurrentRun",
+                  "SpawnRecord",
+                  "SoulPylon"
+                ],
+                "Value": 5
+              }
+            ],
+            "Text": "Few more Pylons left."
+          },
+          "16": {
+            "Cue": "/VO/MelinoeField_0418",
+            "GameStateRequirements": [
+              {
+                "Comparison": ">=",
+                "Path": [
+                  "CurrentRun",
+                  "SpawnRecord",
+                  "SoulPylon"
+                ],
+                "Value": 3
+              },
+              {
+                "Comparison": "<",
+                "Path": [
+                  "CurrentRun",
+                  "SpawnRecord",
+                  "SoulPylon"
+                ],
+                "Value": 5
+              }
+            ],
+            "Text": "Just a few Pylons to go."
+          },
+          "BreakIfPlayed": true,
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            },
+            {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "HeraclesFirstMeeting"
+              ]
+            },
+            {
+              "Comparison": ">=",
+              "Path": [
+                "CurrentRun",
+                "SpawnRecord",
+                "SoulPylon"
+              ],
+              "Value": 1
+            },
+            {
+              "Comparison": "<",
+              "Path": [
+                "CurrentRun",
+                "SpawnRecord",
+                "SoulPylon"
+              ],
+              "Value": 6
+            },
+            {
+              "PathTrue": [
+                "GameState",
+                "SpeechRecord",
+                "/VO/MelinoeField_0619"
+              ]
+            },
+            {
+              "Comparison": "<=",
+              "Path": [
+                "GameState",
+                "RoomsEntered",
+                "N_PostBoss01"
+              ],
+              "Value": 50
+            }
+          ],
+          "PreLineWait": 1.35,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.15
+        },
+        "6": {
+          "1": {
+            "Cue": "/VO/MelinoeField_0620",
+            "Text": "Now to get out of here."
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_0621",
+            "Text": "I'll show myself out..."
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_0622",
+            "PlayFirst": true,
+            "Text": "Nowhere to go but out."
+          },
+          "4": {
+            "Cue": "/VO/MelinoeField_0623",
+            "Text": "Time to go."
+          },
+          "5": {
+            "Cue": "/VO/MelinoeField_0624",
+            "Text": "Finished here."
+          },
+          "6": {
+            "Cue": "/VO/MelinoeField_0625",
+            "Text": "Should be able to get out."
+          },
+          "BreakIfPlayed": true,
+          "Cooldowns": [
+            {
+              "Name": "MelinoeAnyQuipSpeech",
+              "Time": 6
+            },
+            {
+              "Name": "BarrierDownVoiceLines",
+              "Time": 12
+            }
+          ],
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            },
+            {
+              "Comparison": ">=",
+              "Path": [
+                "CurrentRun",
+                "SpawnRecord",
+                "SoulPylon"
+              ],
+              "Value": 6
+            }
+          ],
+          "PlayOnceFromTableThisRun": true,
+          "PreLineWait": 1.35,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.75,
+          "SuccessiveChanceToPlayAll": 0.25
+        },
+        "Cooldowns": [
+          {
+            "Name": "MelinoeBriefQuipSpeech",
+            "Time": 1
+          }
+        ]
+      },
+      "FamiliarsPreferSpawnPointMovement": true,
+      "FlipHorizontalChance": 0.0,
+      "FrogFamiliarMaxLeapDistance": 800,
+      "GameStateRequirements": [],
+      "GlobalEcho": 0.35,
+      "HasExorcismPoint": false,
+      "HasFishingPoint": false,
+      "HasHarvestPoint": false,
+      "HasPickaxePoint": false,
+      "HasShovelPoint": false,
+      "HeroEndPoint": 50059,
+      "HeroEndPointCameraLinkIds": {
+        "50059": 50063
+      },
+      "HeroStartPoint": 50065,
+      "HeroStartPointCameraLinkIds": {
+        "50065": 50064
+      },
+      "HeroStartPointEndPointLinkIds": {
+        "50065": 50059
+      },
+      "HideRewardPreview": true,
+      "HoundFamiliarIgnoreUnitsForPathfinding": true,
+      "InheritFrom": [
+        "BaseN"
+      ],
+      "InspectPoints": {
+        "566468": {
+          "InteractTextLineSets": {
+            "Inspect_N_Hub_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0117",
+                "Text": "{#Emph}The pathway to the docks is sealed shut by a phantasmal force that neither mortal nor immortal strength can budge."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_0481",
+                  "Text": "It's drawing strength from Shades..."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": [
+            {
+              "Comparison": "<=",
+              "Path": [
+                "CurrentRun",
+                "SpawnRecord",
+                "SoulPylon"
+              ],
+              "Value": 5
+            },
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            }
+          ],
+          "UseText": "UseExamineMisc"
+        },
+        "566469": {
+          "InteractTextLineSets": {
+            "Inspect_N_Hub_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0118",
+                "Text": "{#Emph}A barricade bars passage to the docks beyond the city square, leaving the denizens of the city of Ephyra confined to their ruinous environs."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/Melinoe_1434",
+                  "Text": "We'll get through. Even if it takes every Shade in this city."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "CurrentRun",
+                "SpawnRecord",
+                "SoulPylon"
+              ],
+              "Value": 5
+            },
+            "2": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_N_Hub_01"
+              ]
+            },
+            "3": {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            },
+            "4": {
+              "FunctionArgs": {
+                "Min": 1,
+                "TextLines": [
+                  "Inspect_N_Hub_01"
+                ]
+              },
+              "FunctionName": "RequireRunsSinceTextLines"
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "662611": {
+          "InteractTextLineSets": {
+            "Inspect_N_Hub_03": {
+              "1": {
+                "Cue": "/VO/Storyteller_0152",
+                "Text": "{#Emph}The barely-held-together city is a labyrinth of streets, some barricaded still, yet others not, each horror-filled, night after endless night."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_0482",
+                  "Text": "So many mortals lived and died in such a place..."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_N_Hub_04"
+              ]
+            },
+            "2": {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            },
+            "3": {
+              "FunctionArgs": {
+                "Min": 1,
+                "TextLines": [
+                  "Inspect_N_Hub_04"
+                ]
+              },
+              "FunctionName": "RequireRunsSinceTextLines"
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "664917": {
+          "InteractTextLineSets": {
+            "Inspect_N_Hub_04": {
+              "1": {
+                "Cue": "/VO/Storyteller_0167",
+                "Text": "{#Emph}A mortal-made stone likeness of the grim lord of the dead stands in the center of the city, looking on at the devastation sown as if in stunned silence."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_0639",
+                    "PlayFirst": true,
+                    "Text": "This is my... Father..."
+                  },
+                  "BreakIfPlayed": true,
+                  "GameStateRequirements": [
+                    {
+                      "PathFalse": [
+                        "GameState",
+                        "SpeechRecord",
+                        "/VO/MelinoeField_0639"
+                      ]
+                    }
+                  ],
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                },
+                {
+                  "1": {
+                    "Cue": "/VO/Melinoe_0347",
+                    "Text": "Vengeance for my father."
+                  },
+                  "BreakIfPlayed": true,
+                  "GameStateRequirements": [
+                    {
+                      "PathTrue": [
+                        "GameState",
+                        "SpeechRecord",
+                        "/VO/MelinoeField_0639"
+                      ]
+                    },
+                    {
+                      "HasNone": [
+                        "HadesAboutUltimateProgress01",
+                        "ZagreusPastMeeting05"
+                      ],
+                      "Path": [
+                        "GameState",
+                        "TextLinesRecord"
+                      ]
+                    }
+                  ],
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_N_Hub_02"
+              ]
+            },
+            "2": {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            },
+            "3": {
+              "FunctionArgs": {
+                "Min": 1,
+                "TextLines": [
+                  "Inspect_N_Hub_02",
+                  "Inspect_N_Hub_05"
+                ]
+              },
+              "FunctionName": "RequireRunsSinceTextLines"
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "691487": {
+          "InteractTextLineSets": {
+            "Inspect_N_Hub_05": {
+              "1": {
+                "Cue": "/VO/Storyteller_0168",
+                "Text": "{#Emph}Amid the stench of death lies a rejuvenating spring, etched from a block of stone into the likeness of the verdure-goddess and the Underworld's rightful queen."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_0814",
+                    "Text": "This fountain... Mother..."
+                  },
+                  "BreakIfPlayed": true,
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_N_Hub_02"
+              ]
+            },
+            "2": {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            },
+            "3": {
+              "FunctionArgs": {
+                "Min": 1,
+                "TextLines": [
+                  "Inspect_N_Hub_02",
+                  "Inspect_N_Hub_04"
+                ]
+              },
+              "FunctionName": "RequireRunsSinceTextLines"
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroPanDuration": 2.0,
+      "LeaveEvents": [
+        {
+          "FunctionName": "UpdateHubRewardLookup"
+        }
+      ],
+      "LegalEncounters": [
+        "Empty"
+      ],
+      "MaxAppearancesThisBiome": 1,
+      "NarrativeContextArt": "DialogueBackground_Ephyra",
+      "NarrativeContextArtFlippable": false,
+      "NoReroll": true,
+      "NoReward": true,
+      "ObstacleData": {
+        "645846": {
+          "SetupEvents": [
+            {
+              "Args": {
+                "Animation": "EphyraHubExitPylonEmpty",
+                "StopAmbientSound": true
+              },
+              "FunctionName": "OverwriteSelf",
+              "GameStateRequirements": [
+                {
+                  "Comparison": ">=",
+                  "Path": [
+                    "CurrentRun",
+                    "SpawnRecord",
+                    "SoulPylon"
+                  ],
+                  "Value": 4
+                }
+              ]
+            }
+          ]
+        },
+        "645847": {
+          "SetupEvents": [
+            {
+              "Args": {
+                "Animation": "EphyraHubExitPylonEmpty",
+                "StopAmbientSound": true
+              },
+              "FunctionName": "OverwriteSelf",
+              "GameStateRequirements": [
+                {
+                  "Comparison": ">=",
+                  "Path": [
+                    "CurrentRun",
+                    "SpawnRecord",
+                    "SoulPylon"
+                  ],
+                  "Value": 1
+                }
+              ]
+            }
+          ]
+        },
+        "645848": {
+          "SetupEvents": [
+            {
+              "Args": {
+                "Animation": "EphyraHubExitPylonEmpty",
+                "StopAmbientSound": true
+              },
+              "FunctionName": "OverwriteSelf",
+              "GameStateRequirements": [
+                {
+                  "Comparison": ">=",
+                  "Path": [
+                    "CurrentRun",
+                    "SpawnRecord",
+                    "SoulPylon"
+                  ],
+                  "Value": 2
+                }
+              ]
+            }
+          ]
+        },
+        "645849": {
+          "SetupEvents": [
+            {
+              "Args": {
+                "Animation": "EphyraHubExitPylonEmpty",
+                "StopAmbientSound": true
+              },
+              "FunctionName": "OverwriteSelf",
+              "GameStateRequirements": [
+                {
+                  "Comparison": ">=",
+                  "Path": [
+                    "CurrentRun",
+                    "SpawnRecord",
+                    "SoulPylon"
+                  ],
+                  "Value": 3
+                }
+              ]
+            }
+          ]
+        },
+        "645850": {
+          "SetupEvents": [
+            {
+              "Args": {
+                "Animation": "EphyraHubExitPylonEmpty",
+                "StopAmbientSound": true
+              },
+              "FunctionName": "OverwriteSelf",
+              "GameStateRequirements": [
+                {
+                  "Comparison": ">=",
+                  "Path": [
+                    "CurrentRun",
+                    "SpawnRecord",
+                    "SoulPylon"
+                  ],
+                  "Value": 5
+                }
+              ]
+            }
+          ]
+        },
+        "645851": {
+          "SetupEvents": [
+            {
+              "Args": {
+                "Animation": "EphyraHubExitPylonEmpty",
+                "StopAmbientSound": true
+              },
+              "FunctionName": "OverwriteSelf",
+              "GameStateRequirements": [
+                {
+                  "Comparison": ">=",
+                  "Path": [
+                    "CurrentRun",
+                    "SpawnRecord",
+                    "SoulPylon"
+                  ],
+                  "Value": 6
+                }
+              ]
+            }
+          ]
+        },
+        "664734": {
+          "RecordObjectState": true,
+          "Template": "HealthFountainN"
+        },
+        "664746": {
+          "Name": "PylonGate",
+          "SetupEvents": [
+            {
+              "Args": {
+                "Animation": "EphyraTerrainPylonGate02"
+              },
+              "FunctionName": "OverwriteSelf",
+              "GameStateRequirements": [
+                {
+                  "Comparison": ">=",
+                  "Path": [
+                    "CurrentRun",
+                    "SpawnRecord",
+                    "SoulPylon"
+                  ],
+                  "Value": 6
+                }
+              ]
+            }
+          ],
+          "SetupGameStateRequirements": []
+        }
+      },
+      "OnFamiliarSpawnEvents": [
+        {
+          "Args": {
+            "NodeDistance": 16,
+            "NodeSuccessDistance": 8,
+            "Points": [
+              {
+                "X": 0,
+                "Y": 17
+              },
+              {
+                "X": -34,
+                "Y": 0
+              },
+              {
+                "X": 0,
+                "Y": -17
+              },
+              {
+                "X": 34,
+                "Y": 0
+              }
+            ]
+          },
+          "FunctionName": "AdjustFamiliarPathfinding",
+          "GameStateRequirements": [
+            {
+              "IsAny": [
+                "HoundFamiliar",
+                "PolecatFamiliar"
+              ],
+              "Path": [
+                "GameState",
+                "EquippedFamiliar"
+              ]
+            }
+          ]
+        }
+      ],
+      "PersistentExitDoorRewards": true,
+      "PostCombatReloadEvents": [
+        {
+          "Args": {
+            "LegalEncounters": [
+              "HubReturnZombieFountain01",
+              "Empty",
+              "Empty",
+              "HubReturnZombieStatue01",
+              "Empty",
+              "Empty",
+              "HubReturnZombieBarrier01",
+              "Empty",
+              "Empty",
+              "HubReturnZombieIsolated01",
+              "Empty",
+              "Empty",
+              "HubReturnZombieIsolated02",
+              "Empty",
+              "Empty",
+              "HubReturnZombieIsolated03",
+              "Empty",
+              "Empty",
+              "HubReturnZombieCorpses01",
+              "Empty",
+              "Empty",
+              "HubReturnCarrionEating01",
+              "Empty",
+              "Empty",
+              "HubReturnSpawners01",
+              "Empty",
+              "Empty",
+              "HubReturnSpawners02",
+              "Empty",
+              "Empty"
+            ]
+          },
+          "FunctionName": "CheckReloadEncounters"
+        },
+        {
+          "Args": {
+            "Dimmer_01": [
+              561418,
+              561424,
+              616992
+            ],
+            "Dimmer_02": [
+              617012,
+              617043,
+              617024
+            ],
+            "Dimmer_03": [
+              617144,
+              561403,
+              617162,
+              561449,
+              560776,
+              560707
+            ],
+            "Dimmer_04": [
+              560708,
+              561337,
+              561395,
+              560699,
+              617138
+            ],
+            "Dimmer_05": [
+              560848,
+              561389,
+              560889,
+              561368,
+              617113
+            ],
+            "Dimmer_06": [
+              561354,
+              561374,
+              560705,
+              561380
+            ]
+          },
+          "FunctionName": "HandleNHubWingDimmers"
+        },
+        {
+          "Args": [],
+          "FunctionName": "FirstPylonHubReturnPresentation",
+          "GameStateRequirements": [
+            {
+              "Comparison": ">=",
+              "Path": [
+                "GameState",
+                "EnemyKills",
+                "SoulPylon"
+              ],
+              "Value": 1
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "SpeechRecord",
+                "/VO/MelinoeField_0619"
+              ]
+            }
+          ]
+        }
+      ],
+      "PostCombatReloadThreadedEvents": [
+        {
+          "Args": {
+            "LockAtSoulPylonCount": 6,
+            "Types": [
+              "EphyraExitDoor"
+            ]
+          },
+          "FunctionName": "LockEphyraExits",
+          "GameStateRequirements": [
+            {
+              "Comparison": ">=",
+              "Path": [
+                "CurrentRun",
+                "SpawnRecord",
+                "SoulPylon"
+              ],
+              "Value": 6
+            }
+          ]
+        },
+        {
+          "Args": {
+            "Groups": [
+              "HubBarrier_VFX"
+            ]
+          },
+          "FunctionName": "DestroyEphyraBarrier",
+          "GameStateRequirements": [
+            {
+              "Comparison": ">=",
+              "Path": [
+                "CurrentRun",
+                "SpawnRecord",
+                "SoulPylon"
+              ],
+              "Value": 6
+            }
+          ]
+        },
+        {
+          "Args": [],
+          "FunctionName": "HandlePylonObjective"
+        }
+      ],
+      "PreObstacleSetupEvents": [
+        {
+          "Args": {
+            "CountMax": 21,
+            "CountMin": 20,
+            "Types": [
+              "EphyraExitDoor"
+            ]
+          },
+          "FunctionName": "ChooseAvailableN_HubDoors"
+        }
+      ],
+      "PredeterminedDoorRooms": {
+        "560620": "N_Combat19",
+        "560699": "N_Combat08",
+        "560702": "N_Combat03",
+        "560705": "N_Combat15",
+        "560707": "N_Combat04",
+        "560708": "N_Combat06",
+        "560713": "N_Combat21",
+        "560725": "N_Combat02",
+        "560776": "N_Combat22",
+        "560848": "N_Story01",
+        "560889": "N_MiniBoss02",
+        "561337": "N_Combat05",
+        "561354": "N_Combat16",
+        "561368": "N_Combat23",
+        "561374": "N_Combat18",
+        "561389": "N_Combat12",
+        "561403": "N_Combat14",
+        "561418": "N_Combat20",
+        "561424": "N_Combat17",
+        "561449": "N_Combat11",
+        "616992": "N_Combat13",
+        "617012": "N_Combat09",
+        "617043": "N_MiniBoss01",
+        "617113": "N_Combat01",
+        "617138": "N_Combat07",
+        "617151": "N_Combat10"
+      },
+      "RandomStemMixerTimesVisitedLimit": 99,
+      "RandomStemMixerValues": [
+        {
+          "SetSoundCueValues": [
+            {
+              "Duration": 1.0,
+              "Name": "Drums",
+              "Value": 0.0
+            },
+            {
+              "Duration": 2.5,
+              "Name": "Guitar",
+              "Value": 1.0
+            },
+            {
+              "Duration": 2.5,
+              "Name": "Bass",
+              "Value": 1.0
+            }
+          ]
+        },
+        {
+          "SetSoundCueValues": [
+            {
+              "Duration": 1.0,
+              "Name": "Drums",
+              "Value": 0.0
+            },
+            {
+              "Duration": 2.5,
+              "Name": "Guitar",
+              "Value": 1.0
+            },
+            {
+              "Duration": 2.5,
+              "Name": "Bass",
+              "Value": 0.0
+            }
+          ]
+        },
+        {
+          "SetSoundCueValues": [
+            {
+              "Duration": 1.0,
+              "Name": "Drums",
+              "Value": 0.0
+            },
+            {
+              "Duration": 2.5,
+              "Name": "Guitar",
+              "Value": 0.0
+            },
+            {
+              "Duration": 2.5,
+              "Name": "Bass",
+              "Value": 1.0
+            }
+          ]
+        }
+      ],
+      "ReverbValue": 2.0,
+      "RushMaxRangeOverride": 475,
+      "SaveWhitelist": {
+        "DoorsChosen": true,
+        "ObjectStates": true
+      },
+      "SkipLastKillPresentation": true,
+      "StartRoomPresentationOnReload": true,
+      "StartThreadedEvents": [],
+      "StartUnthreadedEvents": [
+        {
+          "Args": {
+            "Dimmer_01": [
+              561418,
+              561424,
+              616992
+            ],
+            "Dimmer_02": [
+              617012,
+              617043,
+              617024
+            ],
+            "Dimmer_03": [
+              617144,
+              561403,
+              617162,
+              561449,
+              560776,
+              560707
+            ],
+            "Dimmer_04": [
+              560708,
+              561337,
+              561395,
+              560699,
+              617138
+            ],
+            "Dimmer_05": [
+              560848,
+              561389,
+              560889,
+              561368,
+              617113
+            ],
+            "Dimmer_06": [
+              561354,
+              561374,
+              560705,
+              561380
+            ]
+          },
+          "FunctionName": "HandleNHubWingDimmers"
+        },
+        {
+          "Args": {
+            "Conversations": [
+              "HeraclesFirstMeeting"
+            ]
+          },
+          "FunctionName": "CheckPriorityConversations",
+          "GameStateRequirements": []
+        }
+      ],
+      "ThreadedEvents": [
+        {
+          "Args": {
+            "AnimationName": "InfoBannerEphyraIn",
+            "AnimationOutName": "InfoBannerEphyraOut",
+            "Delay": 2.0,
+            "DreamText": "Location_BiomeN_Dream",
+            "Text": "Location_BiomeN"
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "GameStateRequirements": [
+            {
+              "Comparison": "<=",
+              "Path": [
+                "CurrentRun",
+                "RoomCountCache",
+                "N_Hub"
+              ],
+              "Value": 1
+            },
+            {
+              "FunctionArgs": {
+                "Alive": false,
+                "Ids": [
+                  566363
+                ]
+              },
+              "FunctionName": "RequiredAlive"
+            }
+          ]
+        },
+        {
+          "Args": {
+            "Delay": 6.0
+          },
+          "FunctionName": "HandlePylonObjective"
+        }
+      ],
+      "UnlockExitsWait": 0.02,
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "DurationIn": 3.5,
+            "DurationOut": 3.5,
+            "PanTargetIds": [
+              566363,
+              50059
+            ],
+            "PreTextLinesWaitTime": 3.0,
+            "ProcessTextLinesIds": [
+              566363
+            ],
+            "SkipAngleTowardTarget": true,
+            "SkipBossMusic": true,
+            "UsePanSound": true
+          },
+          "FunctionName": "BossIntro",
+          "GameStateRequirements": []
+        }
+      ]
+    },
+    "N_MiniBoss01": {
+      "Ambience": "/Ambience/EphyraCityAmbience",
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "N_BaseMiniBoss"
+      ],
+      "LegalEncounters": [
+        "MiniBossSatyrCrossbow"
+      ],
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 617038,
+          "NextHeroStartPoint": 617042
+        }
+      }
+    },
+    "N_MiniBoss02": {
+      "Ambience": "/Ambience/EphyraCityAmbienceOutdoorNoFire",
+      "EnterVoiceLines": {
+        "1": {
+          "Cue": "/VO/MelinoeField_5680",
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ],
+          "PlayFirst": true,
+          "Text": "If it isn't the boar of my dreams...!"
+        },
+        "2": {
+          "Cue": "/VO/MelinoeField_3707",
+          "PlayFirst": true,
+          "Text": "The Boar of Erymanthus..."
+        },
+        "3": {
+          "Cue": "/VO/MelinoeField_3708",
+          "Text": "That rotting boar again."
+        },
+        "4": {
+          "Cue": "/VO/MelinoeField_3710",
+          "Text": "You don't remember me, do you?"
+        },
+        "5": {
+          "Cue": "/VO/MelinoeField_3711",
+          "Text": "Pure instinct and rage..."
+        },
+        "6": {
+          "Cue": "/VO/MelinoeField_3709",
+          "GameStateRequirements": [
+            {
+              "Comparison": ">=",
+              "Path": [
+                "GameState",
+                "EnemyKills",
+                "Boar"
+              ],
+              "Value": 2
+            }
+          ],
+          "Text": "You don't like staying down for long."
+        },
+        "BreakIfPlayed": true,
+        "GameStateRequirements": [
+          {
+            "IsAny": [
+              "MiniBossBoar"
+            ],
+            "Path": [
+              "CurrentRun",
+              "CurrentRoom",
+              "Encounter",
+              "Name"
+            ]
+          },
+          {
+            "PathFalse": [
+              "CurrentRun",
+              "CurrentRoom",
+              "Encounter",
+              "SpawnsSkipped"
+            ]
+          }
+        ],
+        "PreLineWait": 1.65,
+        "RandomRemaining": true,
+        "SuccessiveChanceToPlayAll": 0.33
+      },
+      "EntranceDirection": "Right",
+      "EntranceFunctionArgs": {
+        "AngleTowardsIdOnEnd": 50059,
+        "BossIntroAnimation": "Enemy_Boar_Roar",
+        "BossIntroShake": true,
+        "BossIntroShakeDuration": 1.8,
+        "BossIntroSound": "/SFX/Enemy Sounds/ZombieBoarMiniboss/BoarSqueal",
+        "BossType": "Boar",
+        "DelayedStart": true,
+        "EnterWait": 0.75
+      },
+      "EntranceFunctionName": "RoomEntranceBoss",
+      "InheritFrom": [
+        "N_BaseMiniBoss"
+      ],
+      "InspectPoints": {
+        "800454": {
+          "InteractTextLineSets": {
+            "Inspect_N_MiniBoss02_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0462",
+                "Text": "{#Emph}Too many hunters failed to tame the massive raging Boar of Erymanthus whilst it lived and breathed; and not even Death has been able to still its mighty hooves and tusks."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3660",
+                    "Text": "I did, though! For now."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 1.0,
+      "LegalEncounters": [
+        "MiniBossBoar"
+      ],
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturnNE": {
+          "NextHeroEndPoint": 561166,
+          "NextHeroStartPoint": 560889
+        }
+      },
+      "ThreadEnterVoiceLines": true,
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "SetupBossTypes": [
+              "Boar",
+              "Boar_Shadow"
+            ],
+            "UnlockDelay": 2.0
+          },
+          "FunctionName": "BossIntro"
+        }
+      ]
+    },
+    "N_Opening01": {
+      "AltHeroSpawnAngle": 90,
+      "Ambience": "/Ambience/EphyraOutsideAmbience",
+      "DisableRewardMagnetisim": true,
+      "DistanceTriggers": [
+        {
+          "FunctionName": "BiomeBackToRoom",
+          "GameStateRequirements": [
+            {
+              "PathEmpty": [
+                "RequiredKillEnemies"
+              ]
+            }
+          ],
+          "Repeat": true,
+          "TriggerGroup": "OverlookIn",
+          "WithinDistance": 150
+        }
+      ],
+      "DistanceTriggersPostCombatReload": true,
+      "DreamSaveProfileLocationText": "BiomeN_Short_DreamRun",
+      "EnterVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/Melinoe_0568",
+            "Text": "My curse... I feel... all right..."
+          },
+          "BreakIfPlayed": true,
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgradesAdded",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            }
+          ],
+          "PlayOnce": true,
+          "PreLineWait": 2.35
+        }
+      ],
+      "EntranceFunctionArgs": {
+        "HeroGoalAngle": 35
+      },
+      "EntranceFunctionName": "RoomEntranceMaterialize",
+      "FishingPointChance": 0.27,
+      "ForcedRewards": [
+        {
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "HeraUnlocked"
+            ]
+          },
+          "LootName": "HeraUpgrade",
+          "Name": "Boon"
+        },
+        {
+          "GameStateRequirements": [
+            {
+              "PathFalse": [
+                "GameState",
+                "TextLinesRecord",
+                "ZeusAboutSurfaceNoCure01"
+              ]
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "WorldUpgradesAdded",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            }
+          ],
+          "LootName": "ZeusUpgrade",
+          "Name": "Boon"
+        },
+        {
+          "GameStateRequirements": [
+            {
+              "PathFalse": [
+                "GameState",
+                "TextLinesRecord",
+                "SeleneAboutSurfaceCurse01"
+              ]
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "WorldUpgradesAdded",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            }
+          ],
+          "Name": "SpellDrop"
+        },
+        {
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "AresUnlocked"
+            ]
+          },
+          "LootName": "AresUpgrade",
+          "Name": "Boon"
+        },
+        {
+          "GameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "GameState",
+                "TextLinesRecord",
+                "PoseidonDevotionIntro01"
+              ]
+            },
+            "NamedRequirements": [
+              "DevotionTestUnlocked"
+            ]
+          },
+          "LootName": "PoseidonUpgrade",
+          "Name": "Boon"
+        },
+        {
+          "GameStateRequirements": [
+            {
+              "HasAny": [
+                "Q_Intro"
+              ],
+              "Path": [
+                "PrevRun",
+                "RoomsEntered"
+              ]
+            },
+            {
+              "HasNone": [
+                "Q_MiniBoss03"
+              ],
+              "Path": [
+                "PrevRun",
+                "RoomsEntered"
+              ]
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "RoomsEntered",
+                "Q_Boss01"
+              ]
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "TextLinesRecord",
+                "PoseidonAboutSurfaceThreat01"
+              ]
+            }
+          ],
+          "LootName": "PoseidonUpgrade",
+          "Name": "Boon"
+        },
+        {
+          "GameStateRequirements": [
+            {
+              "HasAny": [
+                "Q_MiniBoss03"
+              ],
+              "Path": [
+                "PrevRun",
+                "RoomsEntered"
+              ]
+            },
+            {
+              "HasNone": [
+                "Q_Boss01"
+              ],
+              "Path": [
+                "GameState",
+                "RoomsEntered"
+              ]
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "TextLinesRecord",
+                "HermesAboutTyphonReveal01"
+              ]
+            }
+          ],
+          "LootName": "HermesUpgrade",
+          "Name": "Boon"
+        },
+        {
+          "GameStateRequirements": [
+            {
+              "HasNone": [
+                "ZeusPostTrueEnding01",
+                "ZeusPalacePostTrueEnding01"
+              ],
+              "Path": [
+                "GameState",
+                "TextLinesRecord"
+              ]
+            },
+            {
+              "PathTrue": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            }
+          ],
+          "LootName": "ZeusUpgrade",
+          "Name": "Boon"
+        },
+        {
+          "GameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "GameState",
+                "TextLinesRecord",
+                "HermesPostEpilogue01"
+              ]
+            },
+            "NamedRequirements": [
+              "ReachedEpilogue"
+            ]
+          },
+          "LootName": "HermesUpgrade",
+          "Name": "Boon"
+        },
+        {
+          "GameStateRequirements": [
+            {
+              "PathFalse": [
+                "CurrentRun",
+                "ActiveBounty"
+              ]
+            },
+            {
+              "PathTrue": [
+                "CurrentRun",
+                "Hero",
+                "TraitDictionary",
+                "ForceApolloBoonKeepsake"
+              ]
+            },
+            {
+              "Comparison": ">=",
+              "Path": [
+                "GameState",
+                "TraitUses",
+                "ForceApolloBoonKeepsake"
+              ],
+              "Value": 4
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "TextLinesRecord",
+                "HermesAboutApolloKeepsake01"
+              ]
+            },
+            {
+              "PathTrue": [
+                "GameState",
+                "UseRecord",
+                "HermesUpgrade"
+              ]
+            }
+          ],
+          "LootName": "HermesUpgrade",
+          "Name": "Boon"
+        }
+      ],
+      "HarvestPointChances": [
+        0.02
+      ],
+      "HarvestPointForceRequirements": [
+        {
+          "Comparison": "<=",
+          "Path": [
+            "GameState",
+            "LifetimeResourcesGained",
+            "PlantNMoss"
+          ],
+          "Value": 3
+        }
+      ],
+      "HasFishingPoint": true,
+      "HideRewardPreview": true,
+      "IneligibleRewards": "@ref:RewardSets.OpeningRoomBans",
+      "InheritFrom": [
+        "BaseN",
+        "BiomeStartRoom"
+      ],
+      "InspectPoints": {
+        "557914": {
+          "InteractTextLineSets": {
+            "Inspect_N_Opening01_03": {
+              "1": {
+                "Cue": "/VO/Storyteller_0010",
+                "Text": "{#Emph}The light of the Moon is all that now illuminates the surface, where the dead have risen, and Olympus teeters on the brink of doom."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/Melinoe_0035_B",
+                  "Text": "Damn you, Chronos..."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "CurrentRun",
+                "ActiveBounty"
+              ]
+            },
+            "2": {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "560953": {
+          "InteractTextLineSets": {
+            "Inspect_N_Opening01_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0023",
+                "Text": "{#Emph}Few entrances into the Underworld exist, and one of them is through the Acheron, whose accursed waters bear the weight of all the woes of mortalkind."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/Melinoe_0858",
+                  "Text": "If our foes can use this as an exit, so can I."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "CurrentRun",
+                "ActiveBounty"
+              ]
+            },
+            "2": {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgradesAdded",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "645941": {
+          "InteractTextLineSets": {
+            "Inspect_N_Opening01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0150",
+                "Text": "{#Emph}As the ill-fated princess feels her life-force fade with every breath of surface air, her sole recourse is to return whence she came."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_0479",
+                  "Text": "...What, I... {#Emph}ungh..."
+                },
+                "PreLineWait": 0.4,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "CurrentRun",
+                "ActiveBounty"
+              ]
+            },
+            "2": {
+              "PathFalse": [
+                "GameState",
+                "WorldUpgradesAdded",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "LegalEncounters": [
+        "OpeningEmpty",
+        "OpeningGeneratedN"
+      ],
+      "LinkedRoom": "N_PreHub01",
+      "MaxAppearancesThisBiome": 1,
+      "MusicStartDelay": 5,
+      "NextRoomSet": [
+        "N"
+      ],
+      "ObstacleData": [],
+      "OverlookData": {
+        "CameraClamps": [
+          561020,
+          561021
+        ],
+        "CameraStartId": 561021,
+        "CameraStartPanDuration": 3.0,
+        "CameraStartPanId": 561085,
+        "FlourishAnimation": "MelinoeCauldronIncantationComplete",
+        "FlourishId": 561066,
+        "ObstacleChanges": [
+          {
+            "CameraPanDuration": 20.0,
+            "CameraPanId": 561019
+          },
+          {
+            "ChangeAlpha": 0.0,
+            "Duration": 3,
+            "ObstacleIds": [
+              561061,
+              561078,
+              561059
+            ]
+          },
+          {
+            "Delay": 13.0,
+            "UnzeroMouseTether": true
+          }
+        ],
+        "ReturnPositionId": 561018,
+        "StartDelay": 1.0
+      },
+      "PickaxePointChance": 0.02,
+      "RemoveTimerBlock": "InterBiome",
+      "RewardSpawnVoiceLines": [
+        {
+          "GlobalVoiceLines": "StartPackagedBountyRunVoiceLines"
+        },
+        {
+          "GlobalVoiceLines": "TaskBegunVoiceLines"
+        },
+        {
+          "GlobalVoiceLines": "BiomeStateChangeStartVoiceLines"
+        }
+      ],
+      "SaveProfileLocationText": "Location_SurfaceMisc_Short",
+      "SecretSpawnChance": 0.09,
+      "ShovelPointChance": 0.02,
+      "SpawnRewardOnId": 40055,
+      "StartUnthreadedEvents": [
+        {
+          "FunctionName": "EndBiomeRecords",
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ]
+        }
+      ],
+      "Starting": true,
+      "TeleportCatFamiliarOnEncounterStart": true,
+      "ThreadedEvents": {
+        "1": {
+          "Args": "@ref:RoomEventData.BountyInfoBannerArgs",
+          "FunctionName": "DisplayInfoBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        "2": {
+          "Args": {
+            "ObjectiveSetName": "BountyAdvancedTooltip"
+          },
+          "FunctionName": "CheckObjectiveSetSource"
+        },
+        "Threaded": true
+      },
+      "ZoomStartFraction": 0.8
+    },
+    "N_PostBoss01": {
+      "Ambience": "/Ambience/EphyraSmallInteriorAmbience",
+      "BlockRunProgressUI": true,
+      "ChallengeSpawnChance": 0.0,
+      "EnterVoiceLines": {
+        "1": {
+          "1": {
+            "Cue": "/VO/MelinoeField_1729",
+            "PlayFirst": true,
+            "PlayOnce": true,
+            "Text": "Must be where Polyphemus lives... {#Emph}eugh..."
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_1730",
+            "Text": "Will not be staying long..."
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_2056",
+            "Text": "Filthy here as ever..."
+          },
+          "4": {
+            "Cue": "/VO/MelinoeField_2057",
+            "Text": "How does he live like this?"
+          },
+          "5": {
+            "Cue": "/VO/MelinoeField_2058",
+            "Text": "That {#Emph}smell..."
+          },
+          "6": {
+            "Cue": "/VO/Melinoe_1721",
+            "Text": "Such a mess."
+          },
+          "BreakIfPlayed": true,
+          "PreLineWait": 3.2,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.33,
+          "SuccessiveChanceToPlayAll": 0.1
+        },
+        "Cooldowns": [
+          {
+            "Name": "MelinoeAnyQuipSpeech"
+          }
+        ]
+      },
+      "EntranceDirection": "Right",
+      "ExitPath": [
+        558947
+      ],
+      "ExitPreviewAnim": "ExitAheadPreview",
+      "FlipHorizontalChance": 0.0,
+      "ForceSurfaceShop": true,
+      "ForceWellShop": false,
+      "GameStateRequirements": [],
+      "GlobalEcho": 0.0,
+      "IgnoreMusic": true,
+      "InheritFrom": [
+        "BaseN"
+      ],
+      "InspectPoints": {
+        "560869": {
+          "InteractTextLineSets": {
+            "Inspect_N_PostBoss01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0272",
+                "Text": "{#Emph}Across a foul-smelling hovel crudely furnished with assorted fixtures of exaggerated proportion, and strewn with remains both fresh and long-decayed, comes a waft of sea-borne air..."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1957",
+                    "Text": "I smell mostly the decay..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": [],
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "723001": {
+          "InteractTextLineSets": {
+            "Inspect_N_PostBoss01_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0273",
+                "Text": "{#Emph}Unfortunate livestock residing with the ravenous Cyclops seem to be unaware of the conditions under which they graze about and wander, not exactly lost; at least, not yet."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1958",
+                    "Text": "The one they have to guide them is asleep..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_N_PostBoss01_01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 0.7,
+      "LeavePostPresentationEvents": [
+        {
+          "Args": {
+            "AdditionalFirstTimeWait": 1.15,
+            "BiomeEnd": "BiomeO",
+            "BiomeStart": "BiomeN",
+            "FamiliarMoveDuration": 1.4,
+            "FamiliarMoveOffsetX": -580,
+            "FamiliarMoveOffsetY": -300,
+            "FamiliarStartOffsetX": 710,
+            "FamiliarStartOffsetY": -535,
+            "HeroMoveDuration": 1.4,
+            "HeroMoveOffsetX": -580,
+            "HeroMoveOffsetY": -300,
+            "HeroStartOffsetX": 620,
+            "HeroStartOffsetY": -585,
+            "MoveEaseIn": 0.5,
+            "MoveEaseOut": 1.0,
+            "PreviousBiomes": []
+          },
+          "FunctionName": "BiomeMapPresentation",
+          "GameStateRequirements": []
+        }
+      ],
+      "LegalEncounters": [
+        "Empty"
+      ],
+      "NextRoomSet": [
+        "O"
+      ],
+      "NoReroll": true,
+      "NoReward": true,
+      "ObstacleData": {
+        "560870": {
+          "Activate": true,
+          "BlockExitUntilUsed": true,
+          "SetupGameStateRequirements": [],
+          "Template": "HealthFountainN"
+        },
+        "616857": {
+          "Activate": true,
+          "ActivateIds": [
+            616859,
+            616858,
+            616860,
+            616861
+          ],
+          "SetupGameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgradesAdded",
+                "WorldUpgradePostBossGiftRack"
+              ]
+            }
+          ],
+          "Template": "GiftRack"
+        },
+        "616862": {
+          "Activate": true,
+          "SetupGameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradePostBossSurfaceShops"
+              ]
+            }
+          ],
+          "Template": "ChallengeSwitchBase"
+        }
+      },
+      "RequiresLinked": true,
+      "ReverbValue": 1.0,
+      "RichPresence": "#RichPresence_PostBossSurface",
+      "SecretSpawnChance": 0.0,
+      "SellTraitShrineUpgrade": true,
+      "SkipLastKillPresentation": true,
+      "StartUnthreadedEvents": [],
+      "SurfaceShopRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradePostBossSurfaceShops"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeSurfaceShops"
+          ]
+        },
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        },
+        {
+          "Comparison": "<=",
+          "CountPathTrue": true,
+          "Path": [
+            "SurfaceShop"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        }
+      ],
+      "SurfaceShopSpawnChance": 1.0,
+      "UnthreadedEvents": "@ref:EncounterSets.EncounterEventsNonCombat",
+      "WellShopSpawnChance": 0.0
+    },
+    "N_PreBoss01": {
+      "Ambience": "/Ambience/EphyraOutsideAmbience",
+      "AutocompleteSurfaceShopDelivery": true,
+      "ChallengeSpawnChance": 0.0,
+      "DisableRewardMagnetisim": true,
+      "FamiliarsPreferSpawnPointMovement": true,
+      "FishingPointChance": 0.4,
+      "FlipHorizontalChance": 0.0,
+      "ForcedFirstReward": "Shop",
+      "FrogFamiliarMaxLeapDistance": 800,
+      "GameStateRequirements": [
+        {
+          "PathTrue": [
+            "CurrentRun",
+            "RoomCountCache",
+            "N_Hub"
+          ]
+        }
+      ],
+      "HasFishingPoint": true,
+      "IgnoreStemMixer": true,
+      "IneligibleRewards": [
+        "Devotion",
+        "RoomMoneyDrop"
+      ],
+      "InheritFrom": [
+        "BaseN"
+      ],
+      "InspectPoints": {
+        "646285": {
+          "InteractTextLineSets": {
+            "Inspect_N_PreBoss01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0155",
+                "Text": "{#Emph}Doomed city at her back, the Princess of the Dead heads toward a dismal pasture, where she senses she is not exactly being watched."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1363",
+                    "Text": "Polyphemus must already know I'm here..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "RoomCountCache",
+                "N_Boss01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "691528": {
+          "InteractTextLineSets": {
+            "Inspect_N_PreBoss01_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0269",
+                "Text": "{#Emph}A lonesome, dusty path from the necropolis exhibits much of the decay within, yet provides comfort of a sort to all the many simple Shades nearby with nowhere left to go."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1954",
+                    "Text": "We'll find you a new home."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": [],
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "756311": {
+          "InteractTextLineSets": {
+            "Inspect_N_PreBoss01_03": {
+              "1": {
+                "Cue": "/VO/Storyteller_0154",
+                "Text": "{#Emph}Across the River Acheron, the Underworld Boatman travels between realms, through hidden borders, unseen as a shadow in the dark."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_0484",
+                    "Text": "Is there anywhere Lord Charon cannot row?"
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                },
+                {
+                  "1": {
+                    "Cue": "/VO/Charon_0051",
+                    "Text": "{#Emph}Nrrgghhh..."
+                  },
+                  "ObjectType": "NPC_Charon_01",
+                  "PreLineWait": 0.5
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "FunctionArgs": {
+                "Alive": true,
+                "Units": [
+                  "NPC_Charon_01"
+                ]
+              },
+              "FunctionName": "RequiredAlive"
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "LegalEncounters": [
+        "Shop"
+      ],
+      "LinkedRooms": [
+        "N_Boss01",
+        "N_Boss02"
+      ],
+      "MusicMutedStems": [
+        "Drums",
+        "Bass",
+        "Guitar"
+      ],
+      "MusicMutedStemsRequirements": [
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "IsDreamRun"
+          ]
+        }
+      ],
+      "ObstacleData": [],
+      "ResetBinksOnExit": true,
+      "RewardPreviewIcon": "RoomRewardSubIcon_PreBoss",
+      "SecretSpawnChance": 0.0,
+      "SkipLastKillPresentation": true,
+      "SpawnRewardOnId": 561335,
+      "StartUnthreadedEvents": "@ref:EncounterSets.ShopRoomEvents",
+      "SurfaceShopSpawnChance": 0.0,
+      "ZagContractRewardDestinationId": 776338
+    },
+    "N_PreHub01": {
+      "Ambience": "/Ambience/EphyraOutsideAmbience",
+      "DreamSaveProfileLocationText": "BiomeN_Short_DreamRun",
+      "EnterVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_4579",
+            "Text": "The dead don't seem to want to leave..."
+          },
+          "BreakIfPlayed": true,
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            }
+          ],
+          "PlayOnce": true,
+          "PreLineWait": 1.85
+        }
+      ],
+      "ExitVoiceLines": {
+        "1": {
+          "Cue": "/VO/MelinoeField_0362",
+          "PlayFirst": true,
+          "Text": "Gap in the wall..."
+        },
+        "2": {
+          "Cue": "/VO/MelinoeField_0363",
+          "Text": "Just, squeeze on through..."
+        },
+        "3": {
+          "Cue": "/VO/MelinoeField_0364",
+          "Text": "Heading in."
+        },
+        "4": {
+          "Cue": "/VO/MelinoeField_0365",
+          "Text": "Into Ephyra."
+        },
+        "Cooldowns": [
+          {
+            "Name": "MelinoeAnyQuipSpeech"
+          }
+        ],
+        "GameStateRequirements": [
+          {
+            "HasNone": [
+              "SurfacePenalty"
+            ],
+            "Path": [
+              "CurrentRun",
+              "Hero",
+              "TraitDictionary"
+            ]
+          }
+        ],
+        "PreLineWait": 0.35,
+        "RandomRemaining": true,
+        "SuccessiveChanceToPlay": 0.5,
+        "SuccessiveChanceToPlayAll": 0.2,
+        "ThreadName": "RoomThread",
+        "UsePlayerSource": true
+      },
+      "ForcedRewardStore": "RunProgress",
+      "HideRewardPreview": false,
+      "IneligibleRewards": "@ref:RewardSets.OpeningRoomBans",
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "InspectPoints": {
+        "658900": {
+          "InteractTextLineSets": {
+            "Inspect_N_PreHub01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0151",
+                "Text": "{#Emph}The city of Ephyra, which once stood in solemn tribute to the fear-inducing Underworld King and Queen, now barely stands at all."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_0480",
+                  "Text": "...Yet it stands in my way."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 2,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgradesAdded",
+                "WorldUpgradeSurfacePenaltyCure"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "LegalEncounters": [
+        "PreHubGeneratedN"
+      ],
+      "LinkedRoom": "N_Hub",
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturn": {
+          "NextHeroEndPoint": 50059,
+          "NextHeroStartPoint": 50065
+        }
+      },
+      "PickaxePointForceRequirements": [
+        {
+          "Comparison": "<",
+          "Path": [
+            "GameState",
+            "LifetimeResourcesGained",
+            "OreNBronze"
+          ],
+          "Value": 1
+        }
+      ],
+      "SaveProfileLocationText": "Location_SurfaceMisc_Short",
+      "SecretSpawnChance": 0.09,
+      "StartThreadedEvents": [
+        {
+          "Args": {
+            "MaxActive": 5,
+            "ObjectNames": [
+              "ShadeMerc"
+            ],
+            "RequireForExit": false,
+            "StartingCountMax": 5,
+            "StartingCountMin": 0
+          },
+          "FunctionName": "ShadeMercManager",
+          "GameStateRequirements": {
+            "ChanceToPlay": 0.5
+          }
+        }
+      ],
+      "StartUnthreadedEvents": []
+    },
+    "N_Shop01": {
+      "Ambience": "/Ambience/EphyraCityAmbience",
+      "EntranceDirection": "Left",
+      "FishingPointChance": 0.8,
+      "FlipHorizontalChance": 0.0,
+      "ForcedReward": "Shop",
+      "GameStateRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeSurfacePenaltyCure"
+          ]
+        },
+        {
+          "HasAny": [
+            "N_PreHub01",
+            "Chaos_01",
+            "Chaos_02",
+            "Chaos_03",
+            "Chaos_04",
+            "Chaos_05",
+            "Chaos_06"
+          ],
+          "Path": [
+            "CurrentRun",
+            "BiomeRoomCountCache"
+          ]
+        }
+      ],
+      "HasFishingPoint": true,
+      "InheritFrom": [
+        "N_CombatData",
+        "BaseN"
+      ],
+      "LegalEncounters": [
+        "Shop"
+      ],
+      "NoReroll": true,
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturnNE": {
+          "NextHeroEndPoint": 561401,
+          "NextHeroStartPoint": 561398
+        }
+      },
+      "SpawnRewardGlobalVoiceLines": "FoundShopVoiceLines",
+      "StartUnthreadedEvents": "@ref:EncounterSets.ShopRoomEvents_N",
+      "StoreDataName": "WorldShop",
+      "SurfaceShopSpawnChance": 0.25
+    },
+    "N_Story01": {
+      "FamiliarsPreferSpawnPointMovement": true,
+      "FishingPointChance": 0.4,
+      "FlipHorizontalChance": 0.0,
+      "ForceIfUnseenForRuns": 3,
+      "ForcedReward": "Story",
+      "FrogFamiliarMaxLeapDistance": 800,
+      "GameStateRequirements": {
+        "1": {
+          "PathTrue": [
+            "GameState",
+            "TextLinesRecord",
+            "HeraclesFirstMeeting"
+          ]
+        },
+        "2": {
+          "HasAny": [
+            "N_PreHub01",
+            "Chaos_01",
+            "Chaos_02",
+            "Chaos_03",
+            "Chaos_04",
+            "Chaos_05",
+            "Chaos_06"
+          ],
+          "Path": [
+            "CurrentRun",
+            "BiomeRoomCountCache"
+          ]
+        },
+        "NamedRequirementsFalse": [
+          "StandardPackageBountyActive"
+        ]
+      },
+      "HarvestPointRequirements": {
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantNMoss"
+              ],
+              "Value": 8
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "HasFishingPoint": true,
+      "IgnoreHarvestBiomeSpawnLimit": true,
+      "InheritFrom": [
+        "BaseN"
+      ],
+      "InspectPoints": {
+        "557999": {
+          "InteractTextLineSets": {
+            "Inspect_N_Story_01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0153",
+                "Text": "{#Emph}In one forgotten recess of the fallen city, a solitary seeker of profane mysteries conducts her undertakings beneath a pale, distant Moon."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_0483",
+                    "Text": "I've learned a curse or two from this one..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                },
+                {
+                  "1": {
+                    "Cue": "/VO/Medea_0116",
+                    "Text": "A pox upon our enemies."
+                  },
+                  "ObjectType": "NPC_Medea_01",
+                  "PreLineWait": 0.4
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "UseRecord",
+                "NPC_Medea_01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "LegalEncounters": [
+        "Story_Medea_01"
+      ],
+      "LinkedRoom": "N_Hub",
+      "MaxCreationsThisRun": 1,
+      "NoReroll": true,
+      "OnUseSetRunData": {
+        "EphyraExitDoorReturnNE": {
+          "NextHeroEndPoint": 561180,
+          "NextHeroStartPoint": 561184
+        }
+      },
+      "PersistentExitDoorRewards": true,
+      "PersistentRoomForDoors": true,
+      "PickaxePointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "OreNBronze"
+              ],
+              "Value": 18
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "ReverbValue": 0.5,
+      "SaveWhitelist": {
+        "ObjectStates": true
+      },
+      "SecretMusic": "/Music/IrisMusicMedeaTheme_MC",
+      "ShovelPointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "2": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeToolsShop"
+          ]
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantNGarlicSeed"
+              ],
+              "Value": 6
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "ThreadedEvents": [
+        {
+          "FunctionName": "MedeaMusicManager"
+        },
+        {
+          "Args": {
+            "ObjectiveSetName": "GiftMedeaPoints"
+          },
+          "FunctionName": "CheckObjectiveSetSource"
+        }
+      ],
+      "TimerBlock": "StoryRoom"
+    }
+  },
+  "N_SubRooms": {
+    "BaseN_SubRooms": {
+      "AllowReroll": false,
+      "Ambience": "/Ambience/EphyraSmallInteriorAmbience",
+      "BlockAthenaEncounterKeepsake": true,
+      "BreakableHighValueChanceMultiplier": 2.0,
+      "BreakableValueOptions": {
+        "MaxHighValueBreakables": 1
+      },
+      "ChallengeSpawnChance": 0.0,
+      "CheckObjectStatesOnStartRoom": true,
+      "DebugOnly": true,
+      "DreamResultText": "RunHistoryScreenResult_Ephyra_Dream",
+      "DreamSaveProfileLocationText": "BiomeN_Short_DreamRun",
+      "EliteSwitchSpawnChance": 0.0,
+      "ExorcismPointRequirements": "@ref:RoomData.BaseN.ExorcismPointRequirements",
+      "FishingPointRequirements": "@ref:RoomData.BaseN.FishingPointRequirements",
+      "HarvestPointRequirements": "@ref:RoomData.BaseN.HarvestPointRequirements",
+      "HasExorcismPoint": true,
+      "HasFishingPoint": false,
+      "HasHarvestPoint": true,
+      "HasPickaxePoint": true,
+      "HasShovelPoint": true,
+      "IgnoreEncounterUses": true,
+      "IgnoreForRewardStoreCount": true,
+      "IndividualRewardStore": "SubRoomRewards",
+      "LegalEncounters": "@ref:EncounterSets.NEncountersSubRoom",
+      "MaintainSpellCharge": true,
+      "MaxAppearancesThisBiome": 999,
+      "NoReroll": true,
+      "PerfectClearSwitchSpawnChance": 0.0,
+      "PickaxePointRequirements": "@ref:RoomData.BaseN.PickaxePointRequirements",
+      "PostCombatReloadThreadedEvents": [
+        {
+          "Args": [],
+          "FunctionName": "HandlePylonObjective"
+        }
+      ],
+      "ResultText": "RunHistoryScreenResult_Ephyra",
+      "ReverbValue": 0.1,
+      "SaveProfileLocationText": "BiomeN_Short",
+      "SecretSpawnChance": 0,
+      "ShovelPointRequirements": "@ref:RoomData.BaseN.ShovelPointRequirements",
+      "SkipGamePhaseTick": true,
+      "SkipRoomsPerUpgrade": true,
+      "StartThreadedEvents": [
+        {
+          "FunctionName": "HandlePylonObjective"
+        },
+        {
+          "Args": {
+            "MaxActive": 3,
+            "ObjectNames": [
+              "ShadeMerc"
+            ],
+            "RequireForExit": false,
+            "StartingCountMax": 3,
+            "StartingCountMin": 0
+          },
+          "FunctionName": "ShadeMercManager",
+          "GameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgradesAdded",
+                "WorldUpgradeShadeMercs"
+              ]
+            },
+            "ChanceToPlay": 0.5
+          }
+        },
+        {
+          "Args": {
+            "Fuse": 5.0,
+            "IntervalMax": 10.0,
+            "IntervalMin": 2.5,
+            "ProjectileName": "PolyphemusBoulderSky",
+            "ReticleAnimation": "PolyphemusBoulderWarningDecal",
+            "StartingCountMax": 2,
+            "StartingCountMin": 0,
+            "TotalCountMax": 3,
+            "TotalCountMin": 1
+          },
+          "FunctionName": "PolyphemusBoulderManager",
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          }
+        }
+      ],
+      "StopSecretMusic": true,
+      "SurfaceShopSpawnChance": 0.08,
+      "TimeChallengeEncounterOptions": [
+        "TimeChallengeN"
+      ],
+      "ZoomFraction": 0.6,
+      "ZoomFractionAlt": 0.5
+    },
+    "N_Sub01": {
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ]
+    },
+    "N_Sub02": {
+      "EntranceDirection": "Right",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersSubRoomLight"
+    },
+    "N_Sub03": {
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ]
+    },
+    "N_Sub04": {
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ]
+    },
+    "N_Sub05": {
+      "Ambience": "/Ambience/EphyraCityAmbienceOutdoor",
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ],
+      "ReverbValue": 1.0
+    },
+    "N_Sub06": {
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ]
+    },
+    "N_Sub07": {
+      "Ambience": "/Ambience/EphyraCityAmbienceOutdoor",
+      "EntranceDirection": "Right",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ],
+      "RushMaxRangeOverride": 475
+    },
+    "N_Sub08": {
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ]
+    },
+    "N_Sub09": {
+      "EntranceDirection": "Right",
+      "IndividualRewardStore": "SubRoomRewardsHard",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersSubRoomHeavy"
+    },
+    "N_Sub10": {
+      "EntranceDirection": "Left",
+      "IndividualRewardStore": "SubRoomRewardsHard",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersSubRoomHeavy"
+    },
+    "N_Sub11": {
+      "Ambience": "/Ambience/EphyraCityAmbience",
+      "EntranceDirection": "Right",
+      "IndividualRewardStore": "SubRoomRewardsHard",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersSubRoomHeavy"
+    },
+    "N_Sub12": {
+      "EntranceDirection": "Right",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ]
+    },
+    "N_Sub13": {
+      "EntranceDirection": "Right",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ]
+    },
+    "N_Sub14": {
+      "Ambience": "/Ambience/EphyraCityAmbienceOutdoorNoFire",
+      "EntranceDirection": "Left",
+      "IndividualRewardStore": "SubRoomRewardsHard",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.NEncountersSubRoomHeavy",
+      "ReverbValue": 1.0
+    },
+    "N_Sub15": {
+      "Ambience": "/Ambience/EphyraCityAmbienceOutdoorNoFire",
+      "EntranceDirection": "Right",
+      "InheritFrom": [
+        "BaseN_SubRooms"
+      ]
+    }
+  }
+}

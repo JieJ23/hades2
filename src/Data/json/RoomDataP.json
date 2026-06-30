@@ -1,0 +1,3298 @@
+{
+    "BaseP": {
+      "Ambience": "/Ambience/OlympusOutdoorAmbience",
+      "BlockHeroLight": true,
+      "BreakableValueOptions": {
+        "MaxHighValueBreakables": 6
+      },
+      "DebugOnly": true,
+      "DreamLocationText": "Location_BiomeP_Dream",
+      "DreamResultText": "RunHistoryScreenResult_Olympus_Dream",
+      "DreamSaveProfileLocationText": "BiomeP_Short_DreamRun",
+      "EliteChallengeEncounterOptions": [
+        "EliteChallengeP"
+      ],
+      "ExitsUnlockedThreadedEvents": [
+        {
+          "Args": {
+            "DelayMax": 5.0,
+            "DelayMin": 3.5
+          },
+          "FunctionName": "OlympusTremorPresentation",
+          "GameStateRequirements": {
+            "1": {
+              "Comparison": "==",
+              "CountPathTrue": true,
+              "Path": [
+                "OlympusTremorPresentation"
+              ],
+              "SumPrevRooms": 7,
+              "Value": 0
+            },
+            "2": {
+              "Comparison": "~=",
+              "Path": [
+                "CurrentRun",
+                "CurrentRoom",
+                "Name"
+              ],
+              "Value": "P_Intro"
+            },
+            "ChanceToPlay": 0.2,
+            "NamedRequirementsFalse": [
+              "OlympusBiomeAfterTrueEnding"
+            ]
+          }
+        }
+      ],
+      "ExorcismPointChance": 0.16,
+      "ExorcismPointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 2
+        },
+        "2": {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 2
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 6,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "6": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "OrRequirements": [
+          {
+            "OrRequirements": [
+              [
+                {
+                  "Comparison": "<=",
+                  "Path": [
+                    "GameState",
+                    "LifetimeResourcesGained",
+                    "MemPointsCommon"
+                  ],
+                  "Value": 1500
+                }
+              ],
+              [
+                {
+                  "Comparison": "<",
+                  "Path": [
+                    "GameState",
+                    "ExorcisedNames",
+                    "ShadeTyphonIdle"
+                  ],
+                  "Value": 2
+                }
+              ]
+            ]
+          },
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumFishingPoints"
+              ],
+              "SumPrevRooms": 2,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "FishingPointChance": 0.12,
+      "FishingPointRequirements": {
+        "1": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeToolsShop"
+          ]
+        },
+        "2": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 5,
+          "Value": 0
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "NotHasAll": [
+                "FishPCommon",
+                "FishPRare",
+                "FishPLegendary"
+              ],
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained"
+              ]
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumExorcismPoints"
+              ],
+              "SumPrevRooms": 2,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "FlipHorizontalChance": 0.0,
+      "HarvestPointBase": "DrownedChambersHarvestPointBase01",
+      "HarvestPointRequirements": {
+        "1": {
+          "Comparison": "<=",
+          "Path": [
+            "NumHarvestPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantPIris"
+              ],
+              "Value": 12
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "HasExorcismPoint": true,
+      "HasFishingPoint": true,
+      "HasHarvestPoint": true,
+      "HasPickaxePoint": true,
+      "HasShovelPoint": true,
+      "HeroCreateAnimation": "OlympusColdBreathEmitter",
+      "Icon": "GUI\\Screens\\BountyBoard\\Biome_Olympus",
+      "IneligibleRewards": [
+        "Devotion"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.PEncountersDefault",
+      "LocationAnimName": "InfoBannerOlympusIn",
+      "LocationAnimOutName": "InfoBannerOlympusOut",
+      "LocationText": "Location_BiomeP",
+      "MaxAppearancesThisBiome": 1,
+      "NarrativeContextArt": "DialogueBackground_MountOlympus",
+      "NarrativeContextArtFlippable": false,
+      "PerfectClearEncounterOptions": [
+        "PerfectClearChallengeP"
+      ],
+      "PickaxePointChance": 0.24,
+      "PickaxePointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "2": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 4,
+          "Value": 0
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "OrePAdamant"
+              ],
+              "Value": 18
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumShovelPoints"
+              ],
+              "SumPrevRooms": 2,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "PostCombatReloadThreadedEvents": [
+        {
+          "Args": "@ref:RoomEventData.BountyInfoBannerArgs",
+          "FunctionName": "DisplayInfoBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        {
+          "Args": {
+            "Delay": 0.45,
+            "DreamText": "Location_BiomeP_Dream",
+            "Duration": 2.0
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowDreamInfoBanner"
+            ]
+          }
+        }
+      ],
+      "ResultText": "RunHistoryScreenResult_Olympus",
+      "RichPresence": "#RichPresence_P",
+      "SaveProfileLocationText": "BiomeP_Short",
+      "SecretDoorRequirements": {
+        "1": {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 5
+        },
+        "2": {
+          "IsNone": [
+            "P_PreBoss01",
+            "P_Boss01"
+          ],
+          "Path": [
+            "CurrentRun",
+            "CurrentRoom",
+            "Name"
+          ]
+        },
+        "3": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeSurfacePenaltyCure"
+          ]
+        },
+        "4": {
+          "PathTrue": [
+            "GameState",
+            "UseRecord",
+            "HeraUpgrade"
+          ]
+        },
+        "5": {
+          "PathTrue": [
+            "GameState",
+            "RoomsEntered",
+            "P_Boss01"
+          ]
+        },
+        "NamedRequirements": [
+          "ChaosUnlocked",
+          "NoRecentChaosEncounter"
+        ]
+      },
+      "SecretSpawnChance": 0.05,
+      "ShopSecretMusic": "/Music/BlankMusicCue",
+      "ShovelPointChance": 0.16,
+      "ShovelPointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "2": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeToolsShop"
+          ]
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 4,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "6": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantPOliveSeed"
+              ],
+              "Value": 12
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumPickaxePoints"
+              ],
+              "SumPrevRooms": 2,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "StopSecretMusic": true,
+      "SurfaceShopSpawnChance": 0.13,
+      "SwapAnimations": {
+        "EphyraUndeadGib": "EphyraUndeadGibOlympus",
+        "ExplosionScorchDecal": "OlympusSnowExplosionDecal",
+        "SuitExhaustSprintDust": "SuitExhaustSprintDust_Olympus"
+      },
+      "Tags": [
+        "Indoor",
+        "Outdoor"
+      ],
+      "TargetMetaRewardsRatio": 0.2,
+      "ThreadedEvents": [
+        {
+          "Args": "@ref:RoomEventData.BountyInfoBannerArgs",
+          "FunctionName": "DisplayInfoBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        {
+          "Args": {
+            "Delay": 0.45,
+            "DreamText": "Location_BiomeP_Dream",
+            "Duration": 2.0
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowDreamInfoBanner"
+            ]
+          }
+        }
+      ],
+      "TimeChallengeEncounterOptions": [
+        "TimeChallengeP"
+      ],
+      "TimeChallengeSwitchRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeChallengeSwitchesSurface1"
+          ]
+        }
+      ],
+      "ValidateSecretData": true,
+      "WellShopSpawnChance": 0.0,
+      "ZoomFraction": 0.85
+    },
+    "P_BaseIndoor": {
+      "Ambience": "/Ambience/OlympusIndoorAmbience",
+      "DebugOnly": true,
+      "ExitsUnlockedThreadedEvents": [],
+      "GlobalEcho": 0.0,
+      "ReverbValue": 0.25,
+      "SwapSounds": {
+        "/Leftovers/SFX/FootstepsWheat": "/SFX/Player Sounds/FootstepsHardSurfaceRun",
+        "/Leftovers/SFX/FootstepsWheat2Small": "/SFX/Player Sounds/FootstepsHardSurface"
+      },
+      "Tags": [
+        "Indoor"
+      ],
+      "ZoomFraction": 0.8
+    },
+    "P_BaseOutdoor": {
+      "Ambience": "/Ambience/OlympusOutdoorAmbience",
+      "DebugOnly": true,
+      "FootstepAnimationL": "SnowFootstepL-Spawner",
+      "FootstepAnimationR": "SnowFootstepR-Spawner",
+      "GlobalEcho": 0.5,
+      "ReverbValue": 1,
+      "SwapSounds": {
+        "/Leftovers/SFX/FootstepsWheat": "/SFX/Player Sounds/FootstepsSnow",
+        "/Leftovers/SFX/FootstepsWheat2Small": "/SFX/Player Sounds/FootstepsSnow"
+      },
+      "Tags": [
+        "Outdoor"
+      ],
+      "ZoomFraction": 0.7
+    },
+    "P_Boss01": {
+      "Ambience": "/Leftovers/Ambience/LavaEruptRumbleLoop_2D",
+      "BackupCauseOfDeath": "Prometheus",
+      "BlockCameraReattach": true,
+      "CanSpawnDreamReward": true,
+      "EnterVoiceLines": [
+        {
+          "GlobalVoiceLines": "DreamRunFinalBossGreetingVoiceLines"
+        },
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_5589",
+            "PlayFirst": true,
+            "Text": "Did you predict I'd see you in my dreams?"
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_5590",
+            "Text": "You're sometimes more persuasive than I dare admit!"
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_5591",
+            "Text": "You'll never see into my dreams, Titan!"
+          },
+          "BreakIfPlayed": true,
+          "Cooldowns": [
+            {
+              "Name": "PrometheusFightStartQuip"
+            }
+          ],
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ],
+          "PlayOnce": true,
+          "PlayOnceContext": "DreamRunPrometheusIntroVO",
+          "PreLineWait": 0.75,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.5,
+          "UsePlayerSource": true
+        },
+        {
+          "1": {
+            "Cue": "/VO/Heracles_0370",
+            "ObjectType": "Heracles",
+            "Text": "It's her..."
+          },
+          "2": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0487",
+            "PreLineWait": 0.15,
+            "Text": "...What did I tell you?"
+          },
+          "GameStateRequirements": {
+            "1": {
+              "HasNone": [
+                "PrometheusAboutAltFight01",
+                "PrometheusAboutAltFight01_B"
+              ],
+              "Path": [
+                "GameState",
+                "TextLinesRecord"
+              ]
+            },
+            "NamedRequirements": [
+              "BossDifficultyActive"
+            ]
+          },
+          "ObjectType": "Prometheus",
+          "PostLineWait": 0.0,
+          "PreLineWait": 0.5
+        },
+        {
+          "1": {
+            "Cue": "/VO/Heracles_0366",
+            "Text": "She's here."
+          },
+          "2": {
+            "Cue": "/VO/Heracles_0371",
+            "PlayFirst": true,
+            "Text": "The witch."
+          },
+          "3": {
+            "Cue": "/VO/Heracles_0364",
+            "PreLineAnim": "Heracles_Hub_Greet",
+            "Text": "He knew it."
+          },
+          "4": {
+            "Cue": "/VO/Heracles_0365",
+            "Text": "Just like he said..."
+          },
+          "5": {
+            "Cue": "/VO/Heracles_0158",
+            "Text": "Well?"
+          },
+          "6": {
+            "Cue": "/VO/Heracles_0370",
+            "GameStateRequirements": [
+              {
+                "FunctionArgs": {
+                  "Min": 9,
+                  "TextLines": [
+                    "PrometheusAboutAltFight01",
+                    "PrometheusAboutAltFight01_B"
+                  ]
+                },
+                "FunctionName": "RequireRunsSinceTextLines"
+              }
+            ],
+            "PreLineAnim": "Heracles_Hub_Granting",
+            "Text": "It's her..."
+          },
+          "7": {
+            "Cue": "/VO/Heracles_0372",
+            "GameStateRequirements": [
+              {
+                "HasAny": [
+                  "HeraclesCombatO",
+                  "HeraclesCombatO2",
+                  "HeraclesCombatP",
+                  "HeraclesCombatP2"
+                ],
+                "Path": [
+                  "CurrentRun",
+                  "EncountersOccurredCache"
+                ]
+              }
+            ],
+            "PlayFirst": true,
+            "PreLineAnim": "Heracles_Hub_Granting",
+            "Text": "Didn't I just see you?"
+          },
+          "8": {
+            "Cue": "/VO/Heracles_0373",
+            "GameStateRequirements": [
+              {
+                "HasAny": [
+                  "HeraclesCombatN",
+                  "HeraclesCombatN2",
+                  "HeraclesCombatO",
+                  "HeraclesCombatO2",
+                  "HeraclesCombatP",
+                  "HeraclesCombatP2"
+                ],
+                "Path": [
+                  "CurrentRun",
+                  "EncountersOccurredCache"
+                ]
+              }
+            ],
+            "PreLineAnim": "Heracles_Hub_Greet",
+            "Text": "Again we meet."
+          },
+          "9": {
+            "Cue": "/VO/Heracles_0374",
+            "GameStateRequirements": [
+              {
+                "FunctionArgs": {
+                  "Comparison": "<=",
+                  "Value": 0.45
+                },
+                "FunctionName": "RequiredHealthFraction"
+              }
+            ],
+            "PlayFirst": true,
+            "Text": "Injured is she..."
+          },
+          "BreakIfPlayed": true,
+          "IgnorePreLineAnimInDreamRuns": true,
+          "ObjectType": "Heracles",
+          "PostLineWait": 0.0,
+          "PreLineWait": 0.9,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.8,
+          "SuccessiveChanceToPlayAll": 0.1
+        },
+        {
+          "1": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0053",
+            "PlayFirst": true,
+            "Text": "Stop right there."
+          },
+          "2": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0054",
+            "Text": "Don't move."
+          },
+          "3": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0055",
+            "Text": "It's you."
+          },
+          "4": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0056",
+            "Text": "I knew it."
+          },
+          "5": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0057",
+            "Text": "I knew it!"
+          },
+          "6": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0058",
+            "Text": "Here's our prey."
+          },
+          "7": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0059",
+            "Text": "A brief word?"
+          },
+          "8": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0060",
+            "Text": "Gods..."
+          },
+          "9": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0063",
+            "Text": "My premonition."
+          },
+          "10": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0496",
+            "Text": "Again we meet."
+          },
+          "11": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0492",
+            "Text": "I thought you might show up."
+          },
+          "12": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0493",
+            "Text": "{#Emph}Ah {#Prev}yes..."
+          },
+          "13": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0494",
+            "GameStateRequirements": [
+              {
+                "Comparison": ">",
+                "Path": [
+                  "GameState",
+                  "LastBossHealthBarRecord",
+                  "Prometheus"
+                ],
+                "Value": 0
+              },
+              {
+                "PathFalse": [
+                  "CurrentRun",
+                  "IsDreamRun"
+                ]
+              }
+            ],
+            "Text": "Predictably enough..."
+          },
+          "14": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0495",
+            "GameStateRequirements": [
+              {
+                "Comparison": ">=",
+                "Path": [
+                  "GameState",
+                  "RoomsEntered",
+                  "P_Boss01"
+                ],
+                "Value": 4
+              }
+            ],
+            "Text": "How was the climb?"
+          },
+          "15": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0497",
+            "GameStateRequirements": [
+              {
+                "Comparison": ">=",
+                "Path": [
+                  "GameState",
+                  "RoomsEntered",
+                  "P_Boss01"
+                ],
+                "Value": 6
+              }
+            ],
+            "Text": "Not had your fill?"
+          },
+          "16": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0061",
+            "GameStateRequirements": [
+              {
+                "HasAny": [
+                  "PrometheusLostAgainstHim01",
+                  "PrometheusBossOutro01"
+                ],
+                "Path": [
+                  "GameState",
+                  "TextLinesRecord"
+                ]
+              }
+            ],
+            "Text": "Agent of Change..."
+          },
+          "17": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0064",
+            "GameStateRequirements": [
+              {
+                "Comparison": ">=",
+                "Path": [
+                  "GameState",
+                  "RoomsEntered",
+                  "P_Boss01"
+                ],
+                "Value": 4
+              }
+            ],
+            "Text": "What do you know."
+          },
+          "18": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0062",
+            "GameStateRequirements": [
+              {
+                "Comparison": ">=",
+                "Path": [
+                  "GameState",
+                  "RoomsEntered",
+                  "P_Boss01"
+                ],
+                "Value": 6
+              },
+              {
+                "PathTrue": [
+                  "PrevRun",
+                  "RoomsEntered",
+                  "P_Boss01"
+                ]
+              },
+              {
+                "PathFalse": [
+                  "CurrentRun",
+                  "IsDreamRun"
+                ]
+              }
+            ],
+            "Text": "Our nightly routine."
+          },
+          "19": {
+            "BreakIfPlayed": true,
+            "Cue": "/VO/Prometheus_0490",
+            "GameStateRequirements": {
+              "NamedRequirements": [
+                "BossDifficultyActive"
+              ]
+            },
+            "Text": "All present and accounted for."
+          },
+          "20": {
+            "Cue": "/VO/Prometheus_0486",
+            "GameStateRequirements": {
+              "NamedRequirements": [
+                "BossDifficultyActive"
+              ]
+            },
+            "PreLineWait": 0.5,
+            "Text": "I told you so, big man."
+          },
+          "21": {
+            "Cue": "/VO/Prometheus_0487",
+            "GameStateRequirements": {
+              "1": {
+                "PathTrue": [
+                  "GameState",
+                  "TextLinesRecord",
+                  "PrometheusAboutAltFight05"
+                ]
+              },
+              "NamedRequirements": [
+                "BossDifficultyActive"
+              ]
+            },
+            "PreLineWait": 0.5,
+            "Text": "...What did I tell you?"
+          },
+          "22": {
+            "Cue": "/VO/Prometheus_0488",
+            "GameStateRequirements": {
+              "NamedRequirements": [
+                "BossDifficultyActive"
+              ]
+            },
+            "PreLineWait": 0.5,
+            "Text": "You see, big man?"
+          },
+          "23": {
+            "Cue": "/VO/Prometheus_0489",
+            "GameStateRequirements": {
+              "NamedRequirements": [
+                "BossDifficultyActive"
+              ]
+            },
+            "PreLineWait": 0.5,
+            "Text": "Look there, man."
+          },
+          "24": {
+            "Cue": "/VO/Prometheus_0491",
+            "GameStateRequirements": {
+              "NamedRequirements": [
+                "BossDifficultyActive"
+              ]
+            },
+            "PreLineWait": 0.5,
+            "Text": "Say hello, Heracles."
+          },
+          "ObjectType": "Prometheus",
+          "PostLineWait": 0.0,
+          "PreLineWait": 0.8,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.8,
+          "SuccessiveChanceToPlayAll": 0.33
+        },
+        {
+          "1": {
+            "Cue": "/VO/Heracles_0367",
+            "GameStateRequirements": [
+              {
+                "IsAny": [
+                  "/VO/Prometheus_0486"
+                ],
+                "Path": [
+                  "LastLinePlayed"
+                ]
+              }
+            ],
+            "PlayFirst": true,
+            "Text": "Fine."
+          },
+          "2": {
+            "Cue": "/VO/Heracles_0368",
+            "GameStateRequirements": [
+              {
+                "IsAny": [
+                  "/VO/Prometheus_0487"
+                ],
+                "Path": [
+                  "LastLinePlayed"
+                ]
+              }
+            ],
+            "PlayFirst": true,
+            "Text": "Show-off."
+          },
+          "3": {
+            "Cue": "/VO/Heracles_0369",
+            "GameStateRequirements": [
+              {
+                "IsAny": [
+                  "/VO/Prometheus_0488"
+                ],
+                "Path": [
+                  "LastLinePlayed"
+                ]
+              }
+            ],
+            "PlayFirst": true,
+            "Text": "I do."
+          },
+          "4": {
+            "Cue": "/VO/Heracles_0103_B",
+            "GameStateRequirements": [
+              {
+                "IsAny": [
+                  "/VO/Prometheus_0491"
+                ],
+                "Path": [
+                  "LastLinePlayed"
+                ]
+              }
+            ],
+            "PlayFirst": true,
+            "Text": "No."
+          },
+          "BreakIfPlayed": true,
+          "ObjectType": "Heracles",
+          "PreLineWait": 0.34,
+          "RandomRemaining": true
+        },
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_2514",
+            "PlayFirst": true,
+            "Text": "Prometheus."
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_2515",
+            "Text": "Titan."
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_2516",
+            "Text": "Surprised?"
+          },
+          "4": {
+            "Cue": "/VO/MelinoeField_2517",
+            "Text": "Guess who."
+          },
+          "GameStateRequirements": {
+            "NamedRequirementsFalse": [
+              "BossDifficultyActive"
+            ]
+          },
+          "PreLineWait": 1.0,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.5,
+          "UsePlayerSource": true
+        }
+      ],
+      "EntranceFunctionArgs": {
+        "DreamEnterWait": 0.1,
+        "DreamIntroSequenceDuration": 1.0
+      },
+      "EntranceFunctionName": "RoomEntranceBossPrometheus",
+      "ExitPreviewAnim": "ExitAheadPreview",
+      "ExitsUnlockedThreadedEvents": [],
+      "FlipHorizontal": false,
+      "FlipHorizontalChance": 0,
+      "ForcedReward": "MixerPBossDrop",
+      "GlobalEcho": 0.5,
+      "HarvestPointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "P_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "PlantPIris"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "PlantPIris"
+          ]
+        }
+      ],
+      "HasFishingPoint": false,
+      "HeroCreateAnimation": "nil",
+      "InheritFrom": [
+        "BaseP"
+      ],
+      "InspectPoints": {
+        "751931": {
+          "InteractTextLineSets": {
+            "Inspect_P_Boss01_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0303",
+                "Text": "{#Emph}Not even the intense heat rising from the mountain's central hearth can entirely dispel the chill here in the air; a gathering storm, not wrought by gods, but something else."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_2825",
+                    "Text": "...Something {#Emph}friendly?"
+                  },
+                  "PreLineWait": 0.42,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_P_Boss01_01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "751932": {
+          "InteractTextLineSets": {
+            "Inspect_P_Boss01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0304",
+                "Text": "{#Emph}No trace remains now of the Titan of Foresight or his Eagle companion, save for a single feather left behind; as if to goad the Princess on toward greater heights."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_2826",
+                    "Text": "Just no more Eagles, please..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ],
+            "NamedRequirementsFalse": [
+              "StandardPackageBountyActive"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "793951": {
+          "InteractTextLineSets": {
+            "Inspect_P_Boss01_03": {
+              "1": {
+                "Cue": "/VO/Storyteller_0425",
+                "Text": "{#Emph}It seems that the perceptive Titan who defied the King of the Olympians and one of that King's strongest and most-fearsome sons are battling as one, on the same side..."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3618",
+                    "Text": "It seems that way for sure."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed",
+              "BossDifficultyActive"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "794213": {
+          "InteractTextLineSets": {
+            "Inspect_P_Boss01_04": {
+              "1": {
+                "Cue": "/VO/Storyteller_0460",
+                "Text": "{#Emph}These hallowed heights ought be for gods alone, perhaps their worshipers at best; not for their former allies and their bitterest of foes, who plot against their divine rule."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3658",
+                    "Text": "What are they scheming...?"
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_P_Boss01_03"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed",
+              "BossDifficultyActive"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 2.7,
+      "LegalEncounters": [
+        "BossPrometheus01",
+        "BossPrometheus02"
+      ],
+      "LinkedRoom": "P_PostBoss01",
+      "NarrativeContextArt": "DialogueBackground_BossRoom_Prometheus",
+      "NoReroll": true,
+      "PickaxePointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WeaponsUnlocked",
+            "ToolPickaxe"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "P_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "OrePAdamant"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "OrePAdamant"
+          ]
+        }
+      ],
+      "RequiresLinked": true,
+      "ResetBinksOnEnter": true,
+      "ResetBinksOnExit": true,
+      "ReverbValue": 1,
+      "RewardPreviewIcon": "RoomRewardSubIcon_Boss",
+      "ShovelPointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WeaponsUnlocked",
+            "ToolShovel"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "P_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "PlantPOliveSeed"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "PlantPOliveSeed"
+          ]
+        }
+      ],
+      "SkipTimedDropResourceInDream": true,
+      "SpeakerName": [
+        "Selene"
+      ],
+      "SwapSounds": {
+        "/Leftovers/SFX/FootstepsWheat": "/SFX/Player Sounds/FootstepsHardSurfaceRun",
+        "/Leftovers/SFX/FootstepsWheat2Small": "/SFX/Player Sounds/FootstepsHardSurface"
+      },
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "DelayedStart": true,
+            "DreamRunIntroFunctionName": "PrometheusBossDreamRunIntro",
+            "ProcessTextLinesIds": [
+              560670
+            ],
+            "SetupBossIds": [
+              560670,
+              560671,
+              768168
+            ]
+          },
+          "FunctionName": "BossIntro"
+        }
+      ],
+      "ValidateSecretData": false,
+      "ZoomFraction": 0.785,
+      "ZoomFractionAlt": 0.8
+    },
+    "P_Combat01": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Right",
+      "FlipHorizontalChance": 0.0,
+      "GameStateRequirements": [
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeEncounterDepth"
+          ],
+          "Value": 3
+        }
+      ],
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "ZoomFractionAlt": 0.75
+    },
+    "P_Combat02": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "LeftRight",
+      "HasFishingPoint": false,
+      "InheritFrom": [
+        "P_BaseIndoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "RushMaxRangeOverride": 525,
+      "SwapAnimations": {
+        "EphyraUndeadGib": "EphyraUndeadGibOlympus",
+        "ExplosionCrater": "OlympusCraterIndoor",
+        "ExplosionScorchDecal": "OlympusSnowExplosionDecal",
+        "OlympusSnowExplosionDecal": "OlympusCraterIndoor",
+        "SuitExhaustSprintDust": "SuitExhaustSprintDust_Olympus"
+      },
+      "ZoomFraction": 0.75,
+      "ZoomFractionAlt": 0.8
+    },
+    "P_Combat03": {
+      "CombatResolvedVoiceLines": {
+        "1": {
+          "Cue": "/VO/MelinoeField_2683",
+          "Text": "Automatons apparently are not my friends..."
+        },
+        "GameStateRequirements": [
+          {
+            "IsAny": [
+              "OlympusIntro"
+            ],
+            "Path": [
+              "CurrentRun",
+              "CurrentRoom",
+              "Encounter",
+              "Name"
+            ]
+          }
+        ],
+        "PlayOnce": true,
+        "PlayOnceContext": "AutomatonIntroResolvedVO",
+        "PreLineWait": 1.0,
+        "TriggerCooldowns": [
+          "MelinoeAnyQuipSpeech"
+        ]
+      },
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Right",
+      "ForceIfEncounterNotCompleted": "OlympusIntro",
+      "GameStateRequirements": [
+        {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeEncounterDepth"
+          ],
+          "Value": 4
+        }
+      ],
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "P_CombatData"
+      ],
+      "InspectPoints": {
+        "775708": {
+          "InteractTextLineSets": {
+            "Inspect_P_Combat03_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0302",
+                "Text": "{#Emph}The battle of Olympus hangs in the balance, as the mountain's mechanical protectors and the Titan's forces continue to collide, shaking the heavens themselves."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_2824",
+                    "Text": "All the world shivers..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            },
+            "2": {
+              "PathTrue": [
+                "GameState",
+                "EncountersCompletedCache",
+                "OlympusIntro"
+              ]
+            },
+            "3": {
+              "HasAny": [
+                "SentryBot",
+                "AutomatonBeamer",
+                "AutomatonEnforcer"
+              ],
+              "Path": [
+                "CurrentRun",
+                "CurrentRoom",
+                "Kills"
+              ]
+            },
+            "4": {
+              "HasAny": [
+                "ZombieOlympus",
+                "SatyrSapper",
+                "HarpyDropper"
+              ],
+              "Path": [
+                "CurrentRun",
+                "CurrentRoom",
+                "Kills"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "EncountersCompletedCache",
+                "OlympusIntro"
+              ]
+            }
+          ],
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "ZoomFractionAlt": 0.81
+    },
+    "P_Combat04": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "LeftRight",
+      "HasFishingPoint": false,
+      "InheritFrom": [
+        "P_BaseIndoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "SwapAnimations": {
+        "EphyraUndeadGib": "EphyraUndeadGibOlympus",
+        "ExplosionCrater": "OlympusCraterIndoor",
+        "ExplosionScorchDecal": "OlympusSnowExplosionDecal",
+        "OlympusSnowExplosionDecal": "OlympusCraterIndoor",
+        "SuitExhaustSprintDust": "SuitExhaustSprintDust_Olympus"
+      },
+      "ZoomFractionAlt": 0.85
+    },
+    "P_Combat05": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "RushMaxRangeOverride": 525,
+      "ZoomFractionAlt": 0.77
+    },
+    "P_Combat06": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "ZoomFractionAlt": 0.78
+    },
+    "P_Combat07": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Right",
+      "InheritFrom": [
+        "P_BaseIndoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "SwapAnimations": {
+        "EphyraUndeadGib": "EphyraUndeadGibOlympus",
+        "ExplosionCrater": "OlympusCraterIndoor",
+        "ExplosionScorchDecal": "OlympusSnowExplosionDecal",
+        "OlympusSnowExplosionDecal": "OlympusCraterIndoor",
+        "SuitExhaustSprintDust": "SuitExhaustSprintDust_Olympus"
+      },
+      "ZoomFractionAlt": 0.85
+    },
+    "P_Combat08": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Right",
+      "HasFishingPoint": false,
+      "InheritFrom": [
+        "P_BaseIndoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "SwapAnimations": {
+        "EphyraUndeadGib": "EphyraUndeadGibOlympus",
+        "ExplosionCrater": "OlympusCraterIndoor",
+        "ExplosionScorchDecal": "OlympusSnowExplosionDecal",
+        "OlympusSnowExplosionDecal": "OlympusCraterIndoor",
+        "SuitExhaustSprintDust": "SuitExhaustSprintDust_Olympus"
+      },
+      "ZoomFraction": 0.75,
+      "ZoomFractionAlt": 0.8
+    },
+    "P_Combat09": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Right",
+      "HasExorcismPoint": false,
+      "HasFishingPoint": false,
+      "InheritFrom": [
+        "P_BaseIndoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "SwapAnimations": {
+        "EphyraUndeadGib": "EphyraUndeadGibOlympus",
+        "ExplosionCrater": "OlympusCraterIndoor",
+        "ExplosionScorchDecal": "OlympusSnowExplosionDecal",
+        "OlympusSnowExplosionDecal": "OlympusCraterIndoor",
+        "SuitExhaustSprintDust": "SuitExhaustSprintDust_Olympus"
+      },
+      "ZoomFractionAlt": 0.85
+    },
+    "P_Combat10": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "P_BaseIndoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "SwapAnimations": {
+        "EphyraUndeadGib": "EphyraUndeadGibOlympus",
+        "ExplosionCrater": "OlympusCraterIndoor",
+        "ExplosionScorchDecal": "OlympusSnowExplosionDecal",
+        "OlympusSnowExplosionDecal": "OlympusCraterIndoor",
+        "SuitExhaustSprintDust": "SuitExhaustSprintDust_Olympus"
+      },
+      "ZoomFractionAlt": 0.85
+    },
+    "P_Combat11": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Right",
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "ZoomFractionAlt": 0.78
+    },
+    "P_Combat12": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "LeftRight",
+      "HasFishingPoint": false,
+      "InheritFrom": [
+        "P_BaseIndoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "ZoomFraction": 0.75,
+      "ZoomFractionAlt": 0.8
+    },
+    "P_Combat13": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "ZoomFractionAlt": 0.76
+    },
+    "P_Combat14": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Right",
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "ZoomFractionAlt": 0.78
+    },
+    "P_Combat15": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Right",
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "ZoomFractionAlt": 0.78
+    },
+    "P_Combat16": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "LeftRight",
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "ZoomFractionAlt": 0.78
+    },
+    "P_Combat17": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Right",
+      "GameStateRequirements": [
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeEncounterDepth"
+          ],
+          "Value": 3
+        }
+      ],
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "ZoomFractionAlt": 0.78
+    },
+    "P_Combat18": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "LeftRight",
+      "GameStateRequirements": [
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeEncounterDepth"
+          ],
+          "Value": 3
+        }
+      ],
+      "HasFishingPoint": false,
+      "InheritFrom": [
+        "P_BaseIndoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "ZoomFractionAlt": 0.85
+    },
+    "P_Combat19": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Left",
+      "HasFishingPoint": false,
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "P_CombatData"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:CombineTables()"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ],
+      "ZoomFraction": 0.7,
+      "ZoomFractionAlt": 0.78
+    },
+    "P_CombatData": {
+      "DebugOnly": true,
+      "FlipHorizontalChance": 0.0,
+      "InheritFrom": [
+        "BaseP"
+      ],
+      "MultipleEncountersData": [
+        {
+          "ContinueIfInelligible": true,
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          },
+          "LegalEncounters": "@ref:EncounterSets.PEncountersIntros"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.PEncountersDefault"
+        }
+      ]
+    },
+    "P_Intro": {
+      "AlwaysForce": true,
+      "BlockRandomStems": true,
+      "CameraZoomWeights": {
+        "560720": 1.16,
+        "744497": 0.62
+      },
+      "CameraZoomWeightsAlt": {
+        "560720": 1.22,
+        "744497": 0.95
+      },
+      "DisableRewardMagnetisim": true,
+      "DistanceTriggers": [
+        {
+          "Args": {
+            "BlackDuration": 1.2,
+            "BlackoutDuration": 1.4,
+            "CameraSpeed": 1260,
+            "InitialDuration": 0.9,
+            "OverlookTargetStartId": 560721,
+            "ZoomDuration": 3,
+            "ZoomFraction": 0.9
+          },
+          "FunctionName": "BiomeOverlookOlympus",
+          "Repeat": true,
+          "TriggerGroup": "OverlookOut",
+          "WithinDistance": 150
+        },
+        {
+          "Args": {
+            "AnimationName": "InfoBannerOlympusIn",
+            "AnimationOutName": "InfoBannerOlympusOut",
+            "Delay": 2.0,
+            "DreamText": "Location_BiomeP_Dream",
+            "Text": "Location_BiomeP"
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "TriggerGroup": "BannerTarget",
+          "WithinDistance": 600
+        }
+      ],
+      "DistanceTriggersPostCombatReload": true,
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EnterVoiceLines": [
+        {
+          "GlobalVoiceLines": "StartPackagedBountyRunVoiceLines"
+        },
+        {
+          "GlobalVoiceLines": "BiomeStateChangeStartVoiceLines"
+        },
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_2455",
+            "Text": "Mount Olympus..."
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_2456",
+            "Text": "I'm here..."
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_2457",
+            "Text": "Made it this far..."
+          },
+          "4": {
+            "Cue": "/VO/Melinoe_1463",
+            "Text": "Cold up here..."
+          },
+          "5": {
+            "Cue": "/VO/Melinoe_1464",
+            "PlayFirst": true,
+            "Text": "At last..."
+          },
+          "6": {
+            "Cue": "/VO/MelinoeField_2714",
+            "GameStateRequirements": [
+              {
+                "FunctionArgs": {
+                  "Comparison": ">=",
+                  "Value": 0.75
+                },
+                "FunctionName": "RequiredHealthFraction"
+              }
+            ],
+            "Text": "Deep breath, Mel..."
+          },
+          "7": {
+            "Cue": "/VO/MelinoeField_2458",
+            "GameStateRequirements": [
+              {
+                "HasNone": [
+                  "/VO/MelinoeField_2524",
+                  "/VO/MelinoeField_2544"
+                ],
+                "Path": [
+                  "CurrentRun",
+                  "SpeechRecord"
+                ]
+              }
+            ],
+            "Text": "Now for the climb..."
+          },
+          "Cooldowns": [
+            {
+              "Name": "MelinoeAnyQuipSpeech"
+            }
+          ],
+          "PreLineWait": 2.65,
+          "RandomRemaining": true,
+          "SkipCooldownCheckIfNonePlayed": true,
+          "SuccessiveChanceToPlay": 0.5,
+          "SuccessiveChanceToPlayAll": 0.2
+        }
+      ],
+      "EntranceDirection": "Right",
+      "EntranceFunctionName": "RoomEntranceStandard",
+      "FishingPointChance": 0.02,
+      "FlipHorizontal": false,
+      "FlipHorizontalChance": 0.0,
+      "ForcedRewardStore": "RunProgress",
+      "HarvestPointChances": [
+        0.02
+      ],
+      "HideRewardPreview": true,
+      "IneligibleRewards": "@ref:RewardSets.OpeningRoomBans",
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "BaseP",
+        "BiomeStartRoom"
+      ],
+      "InspectPoints": {
+        "744379": {
+          "InteractTextLineSets": {
+            "Inspect_P_Intro_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0054",
+                "Text": "{#Emph}The majesty of Mount Olympus lies half-buried underneath a heavy coat of snow, which masks the scars and blemishes of a protracted siege."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/Melinoe_1113",
+                  "Text": "Beautiful..."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "CurrentRun",
+                "ActiveBounty"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "772025": {
+          "InteractTextLineSets": {
+            "Inspect_P_Intro_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0055",
+                "Text": "{#Emph}The very mountain groans and rumbles underneath the feet of the Princess, its stonework shifting not unlike her father's realm."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/Melinoe_1114",
+                  "Text": "Reminds me of home now that you mention it."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "CurrentRun",
+                "ActiveBounty"
+              ]
+            },
+            "2": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_P_Intro_01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 0.96,
+      "LegalEncounters": [
+        "PIntroCombat01",
+        "PIntroCombat02",
+        "PIntroCombat03",
+        "PIntroCombat04",
+        "PIntroCombat05",
+        "PIntroCombat06",
+        "PIntroCombat07",
+        "PIntroCombat08",
+        "PIntroCombat09",
+        "PIntroCombat_DragonQuad",
+        "PIntroCombat_ZombieFishing",
+        "PIntroCombat_ZombieQuad",
+        "PIntroCombat_SapperGate",
+        "PIntroCombat_CrossbowStatues",
+        "Empty",
+        "PIntroCombat_SapperOverlook",
+        "Empty",
+        "PIntroDreamRunEmpty"
+      ],
+      "MaxAppearancesThisBiome": 1,
+      "NoReroll": true,
+      "PickaxePointChance": 0.02,
+      "RemoveTimerBlock": "InterBiome",
+      "RewardGameStateRequirements": [
+        {
+          "PathTrue": [
+            "CurrentRun",
+            "IsDreamRun"
+          ]
+        },
+        {
+          "Comparison": "==",
+          "Path": [
+            "CurrentRun",
+            "EnteredBiomes"
+          ],
+          "Value": 0
+        }
+      ],
+      "RushMaxRangeOverride": 525,
+      "ShovelPointChance": 0.02,
+      "SpawnRewardOnId": 40055,
+      "StartUnthreadedEvents": [
+        {
+          "FunctionName": "EndBiomeRecords"
+        }
+      ],
+      "Starting": true,
+      "ThreadedEvents": {
+        "1": {
+          "Args": "@ref:RoomEventData.BountyInfoBannerArgs",
+          "FunctionName": "DisplayInfoBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        "2": {
+          "Args": {
+            "ObjectiveSetName": "BountyAdvancedTooltip"
+          },
+          "FunctionName": "CheckObjectiveSetSource"
+        },
+        "Threaded": true
+      },
+      "TimerBlock": "IntroRoom",
+      "UnthreadedEvents": "@ref:EncounterSets.EncounterEventsNonCombat",
+      "ZoomFraction": 0.75
+    },
+    "P_MiniBoss01": {
+      "BlockCameraReattach": true,
+      "BoonRaritiesOverride": {
+        "Duo": 0.2,
+        "Epic": 0.1,
+        "Legendary": 0.2,
+        "Rare": 0.9
+      },
+      "CombatResolvedVoiceLines": [
+        {
+          "GlobalVoiceLines": "MiniBossEncounterEndVoiceLines"
+        }
+      ],
+      "EligibleRewards": [
+        "Boon"
+      ],
+      "EndMusicOnCombatOver": 20,
+      "EnterGlobalVoiceLines": "TalosEncounterStartVoiceLines",
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "LeftRight",
+      "EntranceFunctionArgs": {
+        "AngleTowardsIdOnEnd": 774525
+      },
+      "EntranceFunctionName": "RoomEntranceBoss",
+      "FirstTimeBonusWait": 4.0,
+      "FlipHorizontalChance": 0.0,
+      "ForceAtBiomeDepthMax": 7,
+      "ForceAtBiomeDepthMin": 4,
+      "ForcedRewardStore": "RunProgress",
+      "GameStateRequirements": [
+        {
+          "HasNone": [
+            "P_MiniBoss02"
+          ],
+          "Path": [
+            "CurrentRun",
+            "RoomsEntered"
+          ]
+        },
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 4
+        },
+        {
+          "Comparison": ">",
+          "Path": [
+            "MapState",
+            "OfferedExitDoors"
+          ],
+          "UseLength": true,
+          "Value": 1
+        }
+      ],
+      "HasFishingPoint": false,
+      "InheritFrom": [
+        "P_BaseIndoor",
+        "BaseP"
+      ],
+      "InspectPoints": {
+        "744643": {
+          "InteractTextLineSets": {
+            "Inspect_P_MiniBoss_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0298",
+                "Text": "{#Emph}The numerous defensive capabilities of terrifying Talos, the most powerful of the Olympian Automatons wrought by the hands of great Hephaestus himself, includes the power to quite slowly self-repair..."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_2528",
+                  "Text": "Surely Talos will recall this misunderstanding next time..."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 3.0,
+      "LegalEncounters": [
+        "MiniBossTalos"
+      ],
+      "MaxAppearancesThisBiome": 1,
+      "MaxCreationsThisRun": 1,
+      "MusicActiveStems": [
+        "Guitar",
+        "Bass",
+        "Drums"
+      ],
+      "MusicSection": 2,
+      "ReverbValue": 1.0,
+      "RewardPreviewIcon": "RoomRewardSubIcon_Miniboss",
+      "SecretSpawnChance": 0.0,
+      "SuppressRewardSpawnSounds": false,
+      "ThreadEnterVoiceLines": true,
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "BossIntroSound": "/SFX/Enemy Sounds/Talos/EmoteAlerted",
+            "DelayedStart": true,
+            "ProcessTextLinesIds": [
+              774525
+            ],
+            "SetupBossIds": [
+              774525
+            ],
+            "SetupUnitIdAIs": [
+              776130,
+              776131
+            ],
+            "SkipAngleTowardTarget": true
+          },
+          "FunctionName": "BossIntro"
+        }
+      ],
+      "ZoomFraction": 0.775,
+      "ZoomFractionAlt": 0.835
+    },
+    "P_MiniBoss02": {
+      "BlockCameraReattach": true,
+      "BoonRaritiesOverride": {
+        "Duo": 0.2,
+        "Epic": 0.1,
+        "Legendary": 0.2,
+        "Rare": 0.9
+      },
+      "CombatResolvedVoiceLines": [
+        {
+          "GlobalVoiceLines": "MiniBossEncounterEndVoiceLines"
+        }
+      ],
+      "EligibleRewards": [
+        "Boon"
+      ],
+      "EndMusicOnCombatOver": 20,
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "Right",
+      "EntranceFunctionArgs": {
+        "AngleTowardsIdOnEnd": 775781,
+        "BossId": 775781,
+        "BossIntroAngleTowardPlayer": true,
+        "BossIntroAnimation": "Enemy_Dragon_IntroRoar",
+        "BossIntroDelay": 1.1,
+        "BossIntroShake": true,
+        "BossIntroShakeDuration": 1.0,
+        "EnterWait": 0.1
+      },
+      "EntranceFunctionName": "RoomEntranceBoss",
+      "FlipHorizontalChance": 0.0,
+      "ForceAtBiomeDepthMax": 7,
+      "ForceAtBiomeDepthMin": 4,
+      "ForcedRewardStore": "RunProgress",
+      "GameStateRequirements": [
+        {
+          "HasNone": [
+            "P_MiniBoss01"
+          ],
+          "Path": [
+            "CurrentRun",
+            "RoomsEntered"
+          ]
+        },
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 4
+        },
+        {
+          "Comparison": ">",
+          "Path": [
+            "MapState",
+            "OfferedExitDoors"
+          ],
+          "UseLength": true,
+          "Value": 1
+        }
+      ],
+      "HasFishingPoint": false,
+      "InheritFrom": [
+        "P_BaseIndoor",
+        "BaseP"
+      ],
+      "InspectPoints": {
+        "775707": {
+          "InteractTextLineSets": {
+            "Inspect_P_MiniBoss02_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0305",
+                "Text": "{#Emph}A lofty mountain is not easily besieged; so the crafty Titan of Time sought winged beasts susceptible to his persuasions, and capable of wreaking havoc from the skies."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_2827",
+                    "Text": "Looks like they've made themselves at home..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "LegalEncounters": [
+        "MiniBossDragon"
+      ],
+      "MaxAppearancesThisBiome": 1,
+      "MaxCreationsThisRun": 1,
+      "MusicActiveStems": [
+        "Guitar",
+        "Bass",
+        "Drums"
+      ],
+      "MusicSection": 2,
+      "ReverbValue": 1.0,
+      "RewardPreviewIcon": "RoomRewardSubIcon_Miniboss",
+      "RushMaxRangeOverride": 545,
+      "SecretSpawnChance": 0.0,
+      "SuppressRewardSpawnSounds": false,
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "DelayedStart": true,
+            "ProcessTextLinesIds": [
+              775781
+            ],
+            "SetupBossIds": [
+              775781
+            ],
+            "SkipBossMusic": true
+          },
+          "FunctionName": "BossIntro"
+        }
+      ],
+      "ZoomFraction": 0.705,
+      "ZoomFractionAlt": 0.76
+    },
+    "P_PostBoss01": {
+      "Ambience": "/Leftovers/SFX/WindAmbienceLocal",
+      "BlockRunProgressUI": true,
+      "ChallengeSpawnChance": 0.0,
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EnterVoiceLines": {
+        "1": {
+          "1": {
+            "Cue": "/VO/MelinoeField_2512",
+            "Text": "The summit's just ahead..."
+          },
+          "PlayOnce": true,
+          "PlayOnceContext": "P_PostBossExitVO",
+          "PreLineWait": 2.5
+        },
+        "Cooldowns": [
+          {
+            "Name": "MelinoeAnyQuipSpeech"
+          }
+        ]
+      },
+      "EntranceDirection": "Right",
+      "EntranceFunctionName": "RoomEntranceStandard",
+      "ExitPreviewAnim": "ExitAheadPreview",
+      "ExitsUnlockedThreadedEvents": [],
+      "FlipHorizontalChance": 0.0,
+      "ForceSurfaceShop": true,
+      "ForceWellShop": false,
+      "GameStateRequirements": [],
+      "GlobalEcho": 0.0,
+      "IgnoreMusic": true,
+      "InheritFrom": [
+        "BaseP"
+      ],
+      "InspectPoints": {
+        "557493": {
+          "InteractTextLineSets": {
+            "Inspect_P_PostBoss01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0329",
+                "Text": "{#Emph}Beyond the fires on the heights of Mount Olympus lies the solitary pathway to the summit, on which stands a fortress stronger than the mightiest of gods and Titans both."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3250",
+                    "Text": "And past that, the Palace of Zeus..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "RoomsEntered",
+                "Q_Intro"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 0.7,
+      "LegalEncounters": [
+        "Empty"
+      ],
+      "NextRoomSet": [
+        "Q"
+      ],
+      "NoReroll": true,
+      "NoReward": true,
+      "ObstacleData": {
+        "487438": {
+          "Activate": true,
+          "ActivateIds": [
+            487438
+          ],
+          "SetupGameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradePostBossSurfaceShops"
+              ]
+            }
+          ],
+          "Template": "ChallengeSwitchBase"
+        },
+        "751868": {
+          "Activate": true,
+          "ActivateIds": [
+            751869,
+            751870,
+            751871,
+            751872
+          ],
+          "SetupGameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgradesAdded",
+                "WorldUpgradePostBossGiftRack"
+              ]
+            }
+          ],
+          "Template": "GiftRack"
+        },
+        "765183": {
+          "Activate": true,
+          "ActivateIds": [
+            751873
+          ],
+          "SetupGameStateRequirements": [],
+          "Template": "HealthFountainP"
+        }
+      },
+      "RequiresLinked": true,
+      "ReverbValue": 1.0,
+      "RichPresence": "#RichPresence_PostBossSurface",
+      "SecretSpawnChance": 0.0,
+      "SellTraitShrineUpgrade": true,
+      "SkipLastKillPresentation": true,
+      "StartUnthreadedEvents": [
+        {
+          "Args": {
+            "LoadPackages": [
+              "Chronos"
+            ],
+            "LoadVoiceBanks": [
+              "Chronos"
+            ]
+          },
+          "FunctionName": "GenericPresentation"
+        },
+        {
+          "Args": {
+            "Conversations": [
+              "NeoChronosAboutOlympus01",
+              "NeoChronosAboutOlympus01_B",
+              "NeoChronosAboutOlympus02"
+            ]
+          },
+          "FunctionName": "CheckPriorityConversations"
+        }
+      ],
+      "SurfaceShopRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradePostBossSurfaceShops"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeSurfaceShops"
+          ]
+        },
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        },
+        {
+          "Comparison": "<=",
+          "CountPathTrue": true,
+          "Path": [
+            "SurfaceShop"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        }
+      ],
+      "SurfaceShopSpawnChance": 1.0,
+      "UnthreadedEvents": "@ref:EncounterSets.EncounterEventsNonCombat",
+      "ValidateSecretData": false,
+      "WellShopSpawnChance": 0.0,
+      "ZoomFraction": 0.75,
+      "ZoomFractionAlt": 0.89
+    },
+    "P_PreBoss01": {
+      "AutocompleteSurfaceShopDelivery": true,
+      "DisableRewardMagnetisim": true,
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EnterVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_2513",
+            "PlayFirst": true,
+            "Text": "Quiet here at least..."
+          },
+          "BreakIfPlayed": true,
+          "PreLineWait": 1.6,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.25,
+          "SuccessiveChanceToPlayAll": 0.1
+        }
+      ],
+      "EntranceDirection": "LeftRight",
+      "FlipHorizontalChance": 0.0,
+      "ForceAtBiomeDepthMax": 9,
+      "ForceAtBiomeDepthMin": 9,
+      "ForcedFirstReward": "Shop",
+      "ForcedRewardStore": "RunProgress",
+      "GameStateRequirements": [],
+      "IgnoreStemMixer": true,
+      "IneligibleRewards": [
+        "Devotion",
+        "RoomMoneyDrop"
+      ],
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "BaseP"
+      ],
+      "InspectPoints": {
+        "744379": {
+          "InteractTextLineSets": {
+            "Inspect_P_PreBoss01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0296",
+                "Text": "{#Emph}The majestic summit of Mount Olympus would be very much in sight from here, were it not for the very dark and ominous storm wall that now envelops it."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_2526",
+                  "Text": "A storm is brewing..."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 0.96,
+      "LegalEncounters": [
+        "Shop"
+      ],
+      "LinkedRoom": "P_Boss01",
+      "MusicMutedStems": [
+        "Drums",
+        "Bass",
+        "Guitar"
+      ],
+      "MusicMutedStemsRequirements": [
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "IsDreamRun"
+          ]
+        }
+      ],
+      "ObstacleData": {
+        "744832": {
+          "SetupGameStateRequirements": [
+            {
+              "IsAny": [
+                "WorldShop"
+              ],
+              "Path": [
+                "CurrentRun",
+                "CurrentRoom",
+                "StoreDataName"
+              ]
+            }
+          ],
+          "Template": "OlympusCharoncrow01"
+        }
+      },
+      "PickaxePointForceRequirements": {
+        "NamedRequirements": [
+          "NoFamiliarPickaxePointFoundThisBiome"
+        ]
+      },
+      "ResetBinksOnExit": true,
+      "RewardPreviewIcon": "RoomRewardSubIcon_PreBoss",
+      "SecretSpawnChance": 0.0,
+      "ShovelPointForceRequirements": {
+        "NamedRequirements": [
+          "NoFamiliarShovelPointFoundThisBiome"
+        ]
+      },
+      "SkipLastKillPresentation": true,
+      "SpawnRewardOnId": 744901,
+      "StartThreadedEvents": [
+        {
+          "Args": {
+            "Id": 778664,
+            "Name": "PolecatFamiliar",
+            "OverwriteSelf": {
+              "DistanceTriggers": [
+                {
+                  "Args": {
+                    "AngleTowardHero": true,
+                    "PreWait": 0.0,
+                    "SetAnimation": "Familiar_Polecat_Greet",
+                    "VoiceLines": {
+                      "GlobalVoiceLines": "PolecatReactionVoiceLines"
+                    }
+                  },
+                  "FunctionName": "GenericPresentation",
+                  "WithinDistance": 550
+                }
+              ],
+              "OnUsedFunctionName": "nil",
+              "PreRecruit": true,
+              "SpecialInteractFunctionName": "PolecatFamiliarSpecialInteractLockedInRun"
+            },
+            "SkipAISetup": true
+          },
+          "FunctionName": "ActivateFamiliar",
+          "GameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "GameState",
+                "FamiliarsUnlocked",
+                "PolecatFamiliar"
+              ]
+            },
+            "2": [],
+            "3": {
+              "Comparison": ">=",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesSpent",
+                "FamiliarPoints"
+              ],
+              "Value": 3
+            },
+            "4": {
+              "HasNone": [
+                "ActiveBounty",
+                "IsDreamRun"
+              ],
+              "Path": [
+                "CurrentRun"
+              ]
+            },
+            "NamedRequirementsFalse": [
+              "HecateFamiliarsInHub"
+            ]
+          }
+        }
+      ],
+      "StartUnthreadedEvents": "@ref:EncounterSets.ShopRoomEvents",
+      "Tags": [
+        "Indoor",
+        "Outdoor"
+      ],
+      "ZagContractRewardDestinationId": 778667,
+      "ZoomFractionAlt": 0.91
+    },
+    "P_Reprieve01": {
+      "ChallengeSpawnChance": 0.0,
+      "DisableRewardMagnetisim": true,
+      "EnterGlobalVoiceLines": "EnteredReprieveRoomVoiceLines",
+      "ExorcismPointChance": 0.2,
+      "FishingPointChance": 0.15,
+      "FlipHorizontalChance": 0.0,
+      "GameStateRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeOlympusReprieve"
+          ]
+        },
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 4
+        },
+        {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 7
+        }
+      ],
+      "HarvestPointChances": [
+        0.5,
+        0.3
+      ],
+      "IneligibleRewards": [
+        "Devotion"
+      ],
+      "InheritFrom": [
+        "P_BaseIndoor",
+        "BaseP"
+      ],
+      "InspectPoints": {
+        "744379": {
+          "InteractTextLineSets": {
+            "Inspect_P_Reprieve01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0300",
+                "Text": "{#Emph}An alcove unafflicted by the toil on the otherwise-besieged Olympus heights invites the Princess of the Underworld to catch what little breath remains to her for now."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_2529",
+                  "Text": "Can't rest here, not for long..."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 0.02,
+      "LegalEncounters": [
+        "HealthRestore"
+      ],
+      "MaxCreationsThisRun": 1,
+      "PickaxePointChance": 0.3,
+      "SecretMusic": "/Music/BlankMusicCue",
+      "ShovelPointChance": 0.2,
+      "SpawnRewardOnId": 744587,
+      "StartThreadedEvents": [
+        {
+          "Args": {
+            "MaxActive": 36,
+            "ObjectNames": [
+              "ShadeMerc"
+            ],
+            "StartingCountMax": 36,
+            "StartingCountMin": 24
+          },
+          "FunctionName": "ShadeMercManager",
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          }
+        }
+      ],
+      "SurfaceShopSpawnChance": 1.0,
+      "SwapSounds": [],
+      "ZoomFractionAlt": 0.86
+    },
+    "P_Shop01": {
+      "EnterSound": "/SFX/StyxWingDoorCloseSFX",
+      "EntranceDirection": "LeftRight",
+      "FishingPointChance": 0.8,
+      "FlipHorizontalChance": 0.0,
+      "FlipZagContract": true,
+      "ForcedReward": "Shop",
+      "GameStateRequirements": [
+        {
+          "Comparison": ">",
+          "Path": [
+            "CurrentRun",
+            "BiomeEncounterDepth"
+          ],
+          "Value": 4
+        },
+        {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 7
+        }
+      ],
+      "InheritFrom": [
+        "P_BaseOutdoor",
+        "BaseP"
+      ],
+      "InspectPoints": {
+        "744379": {
+          "InteractTextLineSets": {
+            "Inspect_P_Shop01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0306",
+                "Text": "{#Emph}Heights such as these are no place for the Boatman of the Underworld; and yet his wares are curiously to be found, borne here perhaps by allies that remain unseen."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_2828",
+                    "Text": "...Allies whom I certainly appreciate."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "LegalEncounters": [
+        "Shop"
+      ],
+      "MaxCreationsThisRun": 1,
+      "NoReroll": true,
+      "ObstacleData": [],
+      "SpawnRewardGlobalVoiceLines": "FoundShopVoiceLines",
+      "StartUnthreadedEvents": "@ref:EncounterSets.ShopRoomEvents",
+      "StoreDataName": "WorldShop",
+      "ZagContractDestinationId": 778665,
+      "ZoomFraction": 0.855,
+      "ZoomFractionAlt": 0.9
+    },
+    "P_Story01": {
+      "Ambience": "/Leftovers/Object Ambiences/ScummyTownAmbience",
+      "EndAmbienceOnExit": true,
+      "EnterVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_5654",
+            "Text": "I can only imagine what Dionysus dreams about..."
+          },
+          "AllowTalkOverTextLines": true,
+          "BreakIfPlayed": true,
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ],
+          "PlayOnce": true,
+          "PlayOnceContext": "DreamRunDionysusIntroVO",
+          "PreLineWait": 3.0,
+          "UsePlayerSource": true
+        },
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_2510",
+            "PlayFirst": true,
+            "PlayOnce": true,
+            "PlayOnceContext": "PStoryFirstIntroVO",
+            "Text": "What is going on in here...?"
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_2511",
+            "Text": "Still feasting..."
+          },
+          "BreakIfPlayed": true,
+          "PreLineWait": 3.5,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.25,
+          "SuccessiveChanceToPlayAll": 0.05
+        }
+      ],
+      "FlipHorizontalChance": 0.0,
+      "ForcedReward": "Story",
+      "GameStateRequirements": {
+        "1": {
+          "PathTrue": [
+            "GameState",
+            "RoomsEntered",
+            "P_Boss01"
+          ]
+        },
+        "2": {
+          "PathFalse": [
+            "CurrentRun",
+            "TextLinesRecord",
+            "AthenaFirstMeeting"
+          ]
+        },
+        "3": {
+          "Comparison": ">",
+          "Path": [
+            "CurrentRun",
+            "BiomeEncounterDepth"
+          ],
+          "Value": 2
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 7
+        },
+        "NamedRequirementsFalse": [
+          "StandardPackageBountyActive"
+        ]
+      },
+      "HarvestPointRequirements": {
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantPIris"
+              ],
+              "Value": 8
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "InheritFrom": [
+        "P_BaseIndoor",
+        "BaseP"
+      ],
+      "InspectPoints": {
+        "750617": {
+          "InteractTextLineSets": {
+            "Inspect_P_Story01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0295",
+                "Text": "{#Emph}What mirth remains upon the war-torn mountain of the gods apparently is concentrated here, where Dionysus, god of wine, plays host to his most-favored retinue of revelers."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_2525",
+                    "Text": "At least those Satyrs aren't trying to slaughter me..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "UseRecord",
+                "NPC_Dionysus_01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "LegalEncounters": [
+        "Story_Dionysus_01"
+      ],
+      "MaxCreationsThisRun": 1,
+      "NarrativeContextArt": "nil",
+      "NoReroll": true,
+      "ObstacleData": [],
+      "PickaxePointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "OrePAdamant"
+              ],
+              "Value": 18
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "SecretMusic": "/Music/DionysusMusic",
+      "SecretSpawnChance": 0.0,
+      "ShovelPointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "2": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeToolsShop"
+          ]
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantPOliveSeed"
+              ],
+              "Value": 6
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "StartUnthreadedEvents": [
+        {
+          "Args": {
+            "LeopardAnimations": [
+              "LeopardGuest_Idle",
+              "LeopardGuest_Sleep_Loop_Alt2"
+            ]
+          },
+          "FunctionName": "DionysusRandomizeLeopards"
+        }
+      ],
+      "SwapSounds": [],
+      "ThreadedEvents": [
+        {
+          "FunctionName": "DionysusMusicManager"
+        }
+      ],
+      "TimerBlock": "StoryRoom",
+      "Using": {
+        "Animations": [
+          "Portrait_Heracles_Bath_Sweat1a",
+          "Portrait_Heracles_Bath_Sweat2a",
+          "BathhouseForegroundSteam"
+        ]
+      },
+      "ZoomFraction": 0.8,
+      "ZoomFractionAlt": 0.86
+    }
+  }

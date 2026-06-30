@@ -1,0 +1,6465 @@
+{
+    "BaseO": {
+      "Ambience": "/Ambience/ShipAmbienceLoop",
+      "BreakableValueOptions": {
+        "MaxHighValueBreakables": 0
+      },
+      "ChallengeSpawnRequirements": [
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ActiveBounty"
+          ]
+        },
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 1
+        },
+        {
+          "FunctionArgs": {
+            "Count": 3,
+            "Event": "ChallengeSwitch"
+          },
+          "FunctionName": "RequiredMinRoomsSinceEvent"
+        }
+      ],
+      "DebugOnly": true,
+      "DevotionEncounters": [
+        "DevotionTestO"
+      ],
+      "DreamLocationText": "Location_BiomeO_Dream",
+      "DreamResultText": "RunHistoryScreenResult_Thessaly_Dream",
+      "DreamSaveProfileLocationText": "BiomeO_Short_DreamRun",
+      "EliteChallengeEncounterOptions": [
+        "EliteChallengeO"
+      ],
+      "EnterVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_1815",
+            "Text": "This must have been the closest ship..."
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_1816",
+            "PreLineWait": 1.0,
+            "Text": "...I'll take it."
+          },
+          "GameStateRequirements": [
+            {
+              "IsNone": [
+                "O_MiniBoss01",
+                "O_Story01",
+                "O_Shop01",
+                "O_PreBoss01",
+                "O_PostBoss01"
+              ],
+              "Path": [
+                "CurrentRun",
+                "CurrentRoom",
+                "Name"
+              ]
+            }
+          ],
+          "PlayOnce": true,
+          "PlayOnceContext": "ShipsFirstCombatVO",
+          "PreLineWait": 1.6,
+          "UsePlayerSource": true
+        }
+      ],
+      "EntranceDirection": "Right",
+      "EntranceFunctionName": "ShipsRoomEntrancePresentation",
+      "EntrancePresentationDelay": 3,
+      "ExitsUnlockedThreadedEvents": [
+        {
+          "FunctionName": "ShipsEndOilFires"
+        }
+      ],
+      "ExorcismPointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 2
+        },
+        "2": {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 2
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 6,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "6": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "OrRequirements": [
+          {
+            "OrRequirements": [
+              [
+                {
+                  "Comparison": "<=",
+                  "Path": [
+                    "GameState",
+                    "LifetimeResourcesGained",
+                    "MemPointsCommon"
+                  ],
+                  "Value": 1500
+                }
+              ],
+              [
+                {
+                  "Comparison": "<",
+                  "Path": [
+                    "GameState",
+                    "ExorcisedNames",
+                    "ShadeShipsOneIdle"
+                  ],
+                  "Value": 2
+                }
+              ]
+            ]
+          },
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumFishingPoints"
+              ],
+              "SumPrevRooms": 2,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "FishingPointRequirements": {
+        "1": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeToolsShop"
+          ]
+        },
+        "2": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 5,
+          "Value": 0
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "NotHasAll": [
+                "FishOCommon",
+                "FishORare",
+                "FishOLegendary"
+              ],
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained"
+              ]
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumExorcismPoints"
+              ],
+              "SumPrevRooms": 2,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "FlipHorizontalChance": 0,
+      "HarvestPointChances": [
+        0.3
+      ],
+      "HarvestPointRequirements": {
+        "1": {
+          "Comparison": "<=",
+          "Path": [
+            "NumHarvestPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantODriftwood"
+              ],
+              "Value": 16
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "HasExorcismPoint": true,
+      "HasFishingPoint": false,
+      "HasHarvestPoint": true,
+      "HasPickaxePoint": true,
+      "HasShovelPoint": true,
+      "Icon": "GUI\\Screens\\BountyBoard\\Biome_Ships",
+      "LegalEncounters": "@ref:EncounterSets.OEncountersDefault",
+      "LocationAnimName": "InfoBannerThessalyIn",
+      "LocationAnimOutName": "InfoBannerThessalyOut",
+      "LocationText": "Location_BiomeO",
+      "MaxAppearancesThisBiome": 1,
+      "NarrativeContextArt": "DialogueBackground_Thessaly",
+      "NarrativeContextArtFlippable": false,
+      "PerfectClearEncounterOptions": [
+        "PerfectClearChallengeO"
+      ],
+      "PickaxePointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "2": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 4,
+          "Value": 0
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "OreOIron"
+              ],
+              "Value": 24
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumShovelPoints"
+              ],
+              "SumPrevRooms": 2,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "PostCombatReloadThreadedEvents": [
+        {
+          "FunctionName": "HandleWrapping"
+        },
+        {
+          "Args": "@ref:RoomEventData.BountyInfoBannerArgs",
+          "FunctionName": "DisplayInfoBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        {
+          "Args": {
+            "Delay": 0.45,
+            "DreamText": "Location_BiomeO_Dream",
+            "Duration": 2.0
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowDreamInfoBanner"
+            ]
+          }
+        }
+      ],
+      "ResultText": "RunHistoryScreenResult_Thessaly",
+      "ReverbValue": 0.4,
+      "RichPresence": "#RichPresence_O",
+      "SaveProfileLocationText": "BiomeO_Short",
+      "SecretSpawnChance": 0.0,
+      "ShopSecretMusic": "/Music/CharonShopTheme",
+      "ShovelPointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "2": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeToolsShop"
+          ]
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 4,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "6": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantOMandrakeSeed"
+              ],
+              "Value": 12
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumPickaxePoints"
+              ],
+              "SumPrevRooms": 2,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "StartThreadedEvents": [
+        {
+          "Args": {
+            "MaxActive": 12,
+            "ObjectNames": [
+              "ShadeMerc"
+            ],
+            "StartingCountMax": 12,
+            "StartingCountMin": 0
+          },
+          "FunctionName": "ShadeMercManager",
+          "GameStateRequirements": {
+            "ChanceToPlay": 0.1
+          }
+        },
+        {
+          "FunctionName": "HandleWrapping"
+        }
+      ],
+      "StopSecretMusic": true,
+      "SurfaceShopSpawnChance": 0.125,
+      "SwapAnimations": {
+        "OlympusSnowExplosionDecal": "ExplosionScorchDecal",
+        "SpellMeteorCrater": "Blank"
+      },
+      "SwapSounds": {
+        "/Leftovers/SFX/FootstepsWheat": "/Leftovers/SFX/FootstepsWoodRun",
+        "/Leftovers/SFX/FootstepsWheat2Small": "/Leftovers/SFX/FootstepsWoodSmall"
+      },
+      "TargetMetaRewardsRatio": 0.3,
+      "ThreadedEvents": [
+        {
+          "Args": "@ref:RoomEventData.BountyInfoBannerArgs",
+          "FunctionName": "DisplayInfoBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        {
+          "Args": {
+            "Delay": 0.45,
+            "DreamText": "Location_BiomeO_Dream",
+            "Duration": 2.0
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowDreamInfoBanner"
+            ]
+          }
+        }
+      ],
+      "TimeChallengeEncounterOptions": [
+        "TimeChallengeO"
+      ],
+      "TimeChallengeSwitchRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeChallengeSwitchesSurface1"
+          ]
+        }
+      ],
+      "ValidateSecretData": true,
+      "WellShopSpawnChance": 0.0,
+      "WrappingData": [],
+      "ZoomFraction": 0.8
+    },
+    "O_Boss01": {
+      "Ambience": "/Leftovers/Ambience/GentleWavesBeachAmbience2D",
+      "BackupCauseOfDeath": "Eris",
+      "BlockCameraReattach": true,
+      "CanSpawnDreamReward": true,
+      "EnterVoiceLines": [
+        {
+          "GlobalVoiceLines": "ErisBossGreetingLines"
+        }
+      ],
+      "EntranceFunctionArgs": {
+        "BossId": 558020,
+        "BossIntroAnimation": "Enemy_Eris_Intro",
+        "DreamBossIntroAnimation": "Enemy_Eris_Intro_NoChain",
+        "DreamIntroPanDuration": 0.9,
+        "DreamIntroSequenceDuration": 0.5
+      },
+      "EntranceFunctionName": "RoomEntranceBossShips",
+      "ExitPreviewAnim": "ExitAheadPreview",
+      "ForcedReward": "MixerOBossDrop",
+      "GameStateRequirements": {
+        "NamedRequirementsFalse": [
+          "BossDifficultyActive"
+        ]
+      },
+      "HarvestPointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "O_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "PlantODriftwood"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "PlantODriftwood"
+          ]
+        }
+      ],
+      "HasFishingPoint": true,
+      "InheritFrom": [
+        "BaseO"
+      ],
+      "InspectPoints": {
+        "744273": {
+          "InteractTextLineSets": {
+            "Inspect_O_Boss01_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0266",
+                "Text": "{#Emph}The embodiment of Strife has vanished, yet her influence remains, as Earth and Sea alike remain embroiled in a cataclysmic conflict she is keen to endlessly perpetuate."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1845",
+                    "Text": "Eris must be having the time of her life..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "UseRecord",
+                "NPC_Circe_01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "744274": {
+          "InteractTextLineSets": {
+            "Inspect_O_Boss01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0265",
+                "Text": "{#Emph}To feel again the stable Earth beneath her feet replenishes within the Princess of the Underworld her nearly-limitless resolve, as her objective finally draws near."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1844",
+                    "Text": "Mount Olympus... there it is ahead..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "UseRecord",
+                "NPC_Circe_01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 2.3,
+      "LeavePostPresentationEvents": [
+        {
+          "Args": {
+            "BiomeEnd": "BiomeP",
+            "BiomeStart": "BiomeO",
+            "CameraEndOffsetY": 205,
+            "CrossroadsStart": false,
+            "FamiliarMoveDuration": 1.4,
+            "FamiliarMoveOffsetX": -15,
+            "FamiliarMoveOffsetY": -630,
+            "FamiliarStartOffsetX": 130,
+            "FamiliarStartOffsetY": -835,
+            "HeroMoveDuration": 1.4,
+            "HeroMoveOffsetX": -15,
+            "HeroMoveOffsetY": -630,
+            "HeroStartOffsetX": 40,
+            "HeroStartOffsetY": -885,
+            "MoveEaseIn": 0.5,
+            "MoveEaseOut": 1.0,
+            "PreviousBiomes": [
+              "BiomeN"
+            ],
+            "ShrineBounty": "BossPrometheus01"
+          },
+          "FunctionName": "BiomeMapPresentation",
+          "GameStateRequirements": [
+            {
+              "PathFalse": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ]
+        }
+      ],
+      "LegalEncounters": [
+        "BossEris01"
+      ],
+      "LinkedRoom": "O_PostBoss01",
+      "NarrativeContextArt": "DialogueBackground_BossRoom_Eris",
+      "NoReroll": true,
+      "PickaxePointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WeaponsUnlocked",
+            "ToolPickaxe"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "O_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "OreOIron"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "OreOIron"
+          ]
+        }
+      ],
+      "RequiresLinked": true,
+      "ResetBinksOnEnter": true,
+      "ResetBinksOnExit": true,
+      "RewardPreviewIcon": "RoomRewardSubIcon_Boss",
+      "ShovelPointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WeaponsUnlocked",
+            "ToolShovel"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "O_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "PlantOMandrakeSeed"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "PlantOMandrakeSeed"
+          ]
+        }
+      ],
+      "SkipTimedDropResourceInDream": true,
+      "SpeakerName": [
+        "Selene"
+      ],
+      "StartThreadedEvents": [],
+      "SwapSounds": [],
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "DelayedStart": true,
+            "DreamRunIntroFunctionName": "ErisBossDreamRunIntro",
+            "ProcessTextLinesIds": [
+              558020
+            ],
+            "SetupBossIds": [
+              558020
+            ],
+            "SkipAngleTowardTarget": true
+          },
+          "FunctionName": "BossIntro"
+        }
+      ],
+      "ZoomFraction": 0.8,
+      "ZoomFractionAlt": 0.87
+    },
+    "O_Boss02": {
+      "Ambience": "/Leftovers/Ambience/GentleWavesBeachAmbience2D",
+      "BackupCauseOfDeath": "Eris",
+      "BlockCameraReattach": true,
+      "CanSpawnDreamReward": true,
+      "EnterVoiceLines": [
+        {
+          "GlobalVoiceLines": "ErisBossGreetingLines"
+        }
+      ],
+      "EntranceFunctionArgs": {
+        "BossId": 744503,
+        "BossIntroAnimation": "Enemy_Eris_Intro",
+        "DreamBossIntroAnimation": "Enemy_Eris_Intro_NoChain",
+        "DreamIntroPanDuration": 0.9,
+        "DreamIntroSequenceDuration": 0.5
+      },
+      "EntranceFunctionName": "RoomEntranceBossShips",
+      "ExitPreviewAnim": "ExitAheadPreview",
+      "ForcedReward": "MixerOBossDrop",
+      "GameStateRequirements": {
+        "NamedRequirements": [
+          "BossDifficultyActive"
+        ]
+      },
+      "HarvestPointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "O_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "PlantODriftwood"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "PlantODriftwood"
+          ]
+        }
+      ],
+      "HasFishingPoint": true,
+      "InheritFrom": [
+        "BaseO"
+      ],
+      "InspectPoints": {
+        "793950": {
+          "InteractTextLineSets": {
+            "Inspect_O_Boss02_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0424",
+                "Text": "{#Emph}A hidden secret of the ancient weapon wielded by the erratic embodiment of Strife proved not quite unpredictable enough to take the Underworld Princess off her guard."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_3617",
+                  "Text": "May the Rail's next bearer be more responsible."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "794212": {
+          "InteractTextLineSets": {
+            "Inspect_O_Boss02_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0459",
+                "Text": "{#Emph}A foul shoreline that should never have existed mars the border of the Rift, beyond which stately Mount Olympus looms, stricken this night by Strife and Fear in turn."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_3657",
+                  "Text": "The other beach was quite a bit nicer..."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_O_Boss02_01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 2.3,
+      "LeavePostPresentationEvents": [
+        {
+          "Args": {
+            "BiomeEnd": "BiomeP",
+            "BiomeStart": "BiomeO",
+            "CameraEndOffsetY": 205,
+            "CrossroadsStart": false,
+            "FamiliarMoveDuration": 1.4,
+            "FamiliarMoveOffsetX": -15,
+            "FamiliarMoveOffsetY": -630,
+            "FamiliarStartOffsetX": 130,
+            "FamiliarStartOffsetY": -835,
+            "HeroMoveDuration": 1.4,
+            "HeroMoveOffsetX": -15,
+            "HeroMoveOffsetY": -630,
+            "HeroStartOffsetX": 40,
+            "HeroStartOffsetY": -885,
+            "MoveEaseIn": 0.5,
+            "MoveEaseOut": 1.0,
+            "PreviousBiomes": [
+              "BiomeN"
+            ],
+            "ShrineBounty": "BossPrometheus01"
+          },
+          "FunctionName": "BiomeMapPresentation",
+          "GameStateRequirements": [
+            {
+              "PathFalse": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ]
+        }
+      ],
+      "LegalEncounters": [
+        "BossEris02"
+      ],
+      "LinkedRoom": "O_PostBoss01",
+      "NarrativeContextArt": "DialogueBackground_BossRoom_Eris",
+      "NoReroll": true,
+      "PickaxePointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WeaponsUnlocked",
+            "ToolPickaxe"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "O_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "OreOIron"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "OreOIron"
+          ]
+        }
+      ],
+      "RequiresLinked": true,
+      "ResetBinksOnEnter": true,
+      "ResetBinksOnExit": true,
+      "RewardPreviewIcon": "RoomRewardSubIcon_Boss",
+      "ShovelPointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WeaponsUnlocked",
+            "ToolShovel"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "O_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "PlantOMandrakeSeed"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "PlantOMandrakeSeed"
+          ]
+        }
+      ],
+      "SkipTimedDropResourceInDream": true,
+      "SpeakerName": [
+        "Selene"
+      ],
+      "StartThreadedEvents": [],
+      "SwapSounds": {
+        "/SFX/Player Sounds/ZagreusGunGrenadeBounce": "/SFX/Player Sounds/ZagreusLuciferBombLand",
+        "/SFX/Player Sounds/ZagreusGunGrenadeGasReleaseFly": "/SFX/Player Sounds/ZagreusLuciferSpecialSmokeTrail",
+        "/SFX/Player Sounds/ZagreusGunGrenadeLaunchFire": "/SFX/Player Sounds/ZagreusLuciferSpecialFire",
+        "/SFX/Player Sounds/ZagreusGunReloading": "/SFX/Player Sounds/ZagreusGunReloadingLucifer"
+      },
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "DelayedStart": true,
+            "DreamRunIntroFunctionName": "ErisBossDreamRunIntro",
+            "ProcessTextLinesIds": [
+              744503
+            ],
+            "SetupBossIds": [
+              744503
+            ],
+            "SkipAngleTowardTarget": true
+          },
+          "FunctionName": "BossIntro"
+        }
+      ],
+      "ZeusManaSpawnPoints": [
+        744610,
+        744615,
+        744609,
+        744616,
+        744608,
+        744617,
+        744607,
+        744618
+      ],
+      "ZoomFraction": 0.7,
+      "ZoomFractionAlt": 0.78
+    },
+    "O_Combat01": {
+      "InheritFrom": [
+        "O_CombatDataLarge",
+        "BaseO"
+      ],
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723321,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723321,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723321,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723319,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723319,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723320,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.91
+    },
+    "O_Combat02": {
+      "InheritFrom": [
+        "O_CombatDataLarge",
+        "BaseO"
+      ],
+      "RushMaxRangeOverride": 475,
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723039,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723039,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723039,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723040,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723040,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723041,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.91
+    },
+    "O_Combat03": {
+      "InheritFrom": [
+        "O_CombatDataMedium",
+        "BaseO"
+      ],
+      "SpawnRewardOnLootPoint": true,
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723323,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723323,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723323,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723322,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723322,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723324,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.92
+    },
+    "O_Combat04": {
+      "GameStateRequirements": [
+        {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        }
+      ],
+      "InheritFrom": [
+        "O_CombatDataSmall",
+        "BaseO"
+      ],
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723363,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723363,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723363,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723362,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723362,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723364,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.92
+    },
+    "O_Combat05": {
+      "InheritFrom": [
+        "O_CombatDataLarge",
+        "BaseO"
+      ],
+      "SpawnRewardOnLootPoint": true,
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723363,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723363,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723363,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723362,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723362,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723364,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.91
+    },
+    "O_Combat06": {
+      "InheritFrom": [
+        "O_CombatDataLarge",
+        "BaseO"
+      ],
+      "RushMaxRangeOverride": 475,
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723373,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723373,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723373,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723374,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723374,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723372,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.91
+    },
+    "O_Combat07": {
+      "GameStateRequirements": [
+        {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        }
+      ],
+      "InheritFrom": [
+        "O_CombatDataSmall",
+        "BaseO"
+      ],
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723388,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723388,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723388,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723389,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723389,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723387,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFraction": 0.86,
+      "ZoomFractionAlt": 0.92
+    },
+    "O_Combat08": {
+      "InheritFrom": [
+        "O_CombatDataMedium",
+        "BaseO"
+      ],
+      "SpawnRewardOnLootPoint": true,
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723343,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723343,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723343,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723342,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723342,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723344,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.93
+    },
+    "O_Combat09": {
+      "InheritFrom": [
+        "O_CombatDataMedium",
+        "BaseO"
+      ],
+      "SpawnRewardOnLootPoint": true,
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723346,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723346,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723346,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723347,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723347,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723345,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.92
+    },
+    "O_Combat10": {
+      "InheritFrom": [
+        "O_CombatDataSmall",
+        "BaseO"
+      ],
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723372,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723372,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723372,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723373,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723373,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723371,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.92
+    },
+    "O_Combat11": {
+      "GameStateRequirements": [
+        {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        }
+      ],
+      "InheritFrom": [
+        "O_CombatDataSmall",
+        "BaseO"
+      ],
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723369,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723369,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723369,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723368,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723368,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723370,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.91
+    },
+    "O_Combat12": {
+      "InheritFrom": [
+        "O_CombatDataMedium",
+        "BaseO"
+      ],
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723326,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723326,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723326,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723325,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723325,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723327,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.91
+    },
+    "O_Combat13": {
+      "GameStateRequirements": [
+        {
+          "Comparison": ">=",
+          "Path": [
+            "EncountersOccurredCache"
+          ],
+          "SumPrevRooms": 3,
+          "TableValuesToCount": [
+            "GeneratedO_Intro01",
+            "GeneratedO_Intro01_First",
+            "HeraclesCombatO"
+          ],
+          "Value": 3
+        },
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 6
+        }
+      ],
+      "InheritFrom": [
+        "O_CombatDataMedium",
+        "BaseO"
+      ],
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723343,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723343,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723343,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723342,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723342,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723344,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.91
+    },
+    "O_Combat14": {
+      "InheritFrom": [
+        "O_CombatDataLarge",
+        "BaseO"
+      ],
+      "RushMaxRangeOverride": 475,
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723375,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723375,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723375,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723376,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723376,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723377,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.91
+    },
+    "O_Combat15": {
+      "GameStateRequirements": [
+        {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        }
+      ],
+      "InheritFrom": [
+        "O_CombatDataMedium",
+        "BaseO"
+      ],
+      "RushMaxRangeOverride": 475,
+      "SpawnRewardOnLootPoint": true,
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723375,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723375,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723375,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723376,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723376,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723377,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.91
+    },
+    "O_CombatData": {
+      "DebugOnly": true,
+      "ExitsUnlockedThreadedEvents": [
+        {
+          "FunctionName": "ShipsExitsUnlockedPresentation",
+          "GameStateRequirements": [
+            []
+          ]
+        },
+        {
+          "FunctionName": "ShipsEndOilFires"
+        }
+      ],
+      "GameStateRequirements": [
+        {
+          "Comparison": "<",
+          "Path": [
+            "EncountersOccurredCache"
+          ],
+          "SumPrevRooms": 3,
+          "TableValuesToCount": [
+            "GeneratedO_Intro01",
+            "GeneratedO_Intro01_First",
+            "HeraclesCombatO"
+          ],
+          "Value": 3
+        }
+      ],
+      "IntroPanDuration": 2.0,
+      "IntroSequenceDuration": 2.1,
+      "MultipleEncountersData": [
+        {
+          "LegalEncounters": "@ref:EncounterSets.OEncountersIntros"
+        },
+        {
+          "LegalEncounters": "@ref:EncounterSets.OEncountersDefault"
+        },
+        {
+          "GameStateRequirements": {
+            "1": {
+              "Comparison": "<",
+              "Path": [
+                "CurrentRun",
+                "BiomeEncounterDepth"
+              ],
+              "Value": 6
+            },
+            "2": {
+              "Comparison": ">",
+              "Path": [
+                "CurrentRun",
+                "BiomeEncounterDepth"
+              ],
+              "Value": 1
+            },
+            "ChanceToPlay": 0.6
+          },
+          "LegalEncounters": "@ref:EncounterSets.OEncountersDefault"
+        }
+      ],
+      "NoReward": true,
+      "ZoomFraction": 0.835
+    },
+    "O_CombatDataLarge": {
+      "DebugOnly": true,
+      "InheritFrom": [
+        "O_CombatData"
+      ]
+    },
+    "O_CombatDataMedium": {
+      "DebugOnly": true,
+      "InheritFrom": [
+        "O_CombatData"
+      ]
+    },
+    "O_CombatDataSmall": {
+      "DebugOnly": true,
+      "InheritFrom": [
+        "O_CombatData"
+      ]
+    },
+    "O_Devotion01": {
+      "Ambience": "/Leftovers/Object Ambiences/GentleWavesBeachAmbienceQuiet",
+      "EntranceFunctionArgs": {
+        "SkipGusts": true
+      },
+      "FishingPointChance": 0.8,
+      "ForcedReward": "Devotion",
+      "ForcedRewardStore": "RunProgress",
+      "GameStateRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "TextLinesRecord",
+            "PoseidonDevotionIntro01"
+          ]
+        },
+        {
+          "HasAny": [
+            "DevotionTestF",
+            "DevotionTestG",
+            "DevotionTestH",
+            "DevotionTestI",
+            "DevotionTestN",
+            "DevotionTestP"
+          ],
+          "Path": [
+            "GameState",
+            "EncountersOccurredCache"
+          ]
+        },
+        {
+          "Comparison": ">=",
+          "CountOf": [
+            "AphroditeUpgrade",
+            "ApolloUpgrade",
+            "DemeterUpgrade",
+            "HephaestusUpgrade",
+            "HestiaUpgrade",
+            "HeraUpgrade",
+            "PoseidonUpgrade",
+            "ZeusUpgrade"
+          ],
+          "Path": [
+            "CurrentRun",
+            "LootTypeHistory"
+          ],
+          "Value": 2
+        },
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeEncounterDepth"
+          ],
+          "Value": 2
+        }
+      ],
+      "HasFishingPoint": true,
+      "InheritFrom": [
+        "BaseO"
+      ],
+      "InspectPoints": {
+        "761006": {
+          "InteractTextLineSets": {
+            "Inspect_O_Devotion_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0308",
+                "Text": "{#Emph}Before the land was split, mortals would gather in great competitions for the glory of the gods; but now, the gods themselves appear to fight over the few remaining scraps."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3249",
+                    "Text": "There's still enough for all of us, I think."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "CurrentRun",
+                "ActiveBounty"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroPanDuration": 2.0,
+      "IntroSequenceDuration": 2.0,
+      "IntroZoomFactor": 0.6,
+      "MaxCreationsThisRun": 1,
+      "ZoomFractionAlt": 0.95
+    },
+    "O_Intro": {
+      "Ambience": "/Leftovers/Ambience/CalmBoatWaterAmbience",
+      "DisableRewardMagnetisim": true,
+      "DistanceTriggers": [
+        {
+          "Args": {
+            "BlackDuration": 0.4,
+            "BlackoutDuration": 1.26,
+            "Duration": 6,
+            "PanTargetId": 690794,
+            "ZoomFraction": 0.75
+          },
+          "FunctionName": "BiomeOverlookShips",
+          "Repeat": true,
+          "TriggerGroup": "OverlookOut",
+          "WithinDistance": 150
+        },
+        {
+          "Args": {
+            "AnimationName": "InfoBannerThessalyIn",
+            "AnimationOutName": "InfoBannerThessalyOut",
+            "Delay": 2.0,
+            "DreamText": "Location_BiomeO_Dream",
+            "Text": "Location_BiomeO"
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "TriggerGroup": "BannerTarget",
+          "WithinDistance": 1000
+        }
+      ],
+      "EnterVoiceLines": [
+        {
+          "GlobalVoiceLines": "StartPackagedBountyRunVoiceLines"
+        },
+        {
+          "GlobalVoiceLines": "BiomeStateChangeStartVoiceLines"
+        },
+        {
+          "1": {
+            "Cue": "/VO/Melinoe_0804",
+            "PlayFirst": true,
+            "PlayOnce": true,
+            "PlayOnceContext": "ShipsFirstEntranceVO",
+            "Text": "A harbor..."
+          },
+          "2": {
+            "Cue": "/VO/Melinoe_0805",
+            "Text": "The docks..."
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_4580",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "GameState",
+                  "RoomsEntered",
+                  "P_Intro"
+                ]
+              }
+            ],
+            "PlayOnce": true,
+            "PlayOnceContext": "ShipsFirstEntranceVO",
+            "Text": "Now onward to the Rift..."
+          },
+          "PreLineWait": 2.65,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlayAll": 0.1
+        }
+      ],
+      "EntranceFunctionName": "RoomEntranceStandard",
+      "FishingPointChance": 0.35,
+      "FlipHorizontalChance": 0.0,
+      "ForceAtBiomeDepthMax": 1,
+      "ForceAtBiomeDepthMin": 0,
+      "ForcedRewardStore": "RunProgress",
+      "HarvestPointChances": [
+        0.02
+      ],
+      "HasFishingPoint": true,
+      "HideRewardPreview": true,
+      "IneligibleRewards": "@ref:RewardSets.OpeningRoomBans",
+      "InheritFrom": [
+        "BaseO",
+        "BiomeStartRoom"
+      ],
+      "InspectPoints": {
+        "561084": {
+          "InteractTextLineSets": {
+            "Inspect_O_Intro_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0053",
+                "Text": "{#Emph}When the armies of Chronos marched on Olympus, mighty Poseidon split the very land asunder. And so the gods contend with naval forces now..."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_1837",
+                  "Text": "Not a mistake; an opportunity."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "CurrentRun",
+                "ActiveBounty"
+              ]
+            },
+            "2": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_O_Intro_01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "691446": {
+          "InteractTextLineSets": {
+            "Inspect_O_Intro_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0052",
+                "Text": "{#Emph}On the outskirts of the city lies a makeshift dock, from which a vessel may cut through the channel 'cross the land, toward the mountain of the gods."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1836",
+                    "Text": "Looks like I'll need a ride."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "CurrentRun",
+                "ActiveBounty"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 0.7,
+      "LegalEncounters": [
+        "Empty"
+      ],
+      "MaxAppearancesThisBiome": 1,
+      "MusicActiveStems": [
+        "Guitar",
+        "Bass",
+        "Drums"
+      ],
+      "MusicMutedStems": [
+        "Drums"
+      ],
+      "MusicSection": 0,
+      "MusicStartDelay": 1.75,
+      "NoReroll": true,
+      "ObstacleData": {
+        "691287": {
+          "DistanceTriggers": [
+            {
+              "VoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_1735",
+                  "PlayFirst": true,
+                  "Text": "A scuttled ship... "
+                },
+                "2": {
+                  "Cue": "/VO/MelinoeField_1736",
+                  "Text": "This ship's no closer to repair..."
+                },
+                "3": {
+                  "Cue": "/VO/MelinoeField_1737",
+                  "Text": "It's still connected to the main fleet..."
+                },
+                "4": {
+                  "Cue": "/VO/MelinoeField_1738",
+                  "Text": "The Spectral Gate is still intact."
+                },
+                "BreakIfPlayed": true,
+                "PlayOnce": true,
+                "PlayOnceFromTableThisRun": true,
+                "RandomRemaining": true,
+                "SuccessiveChanceToPlayAll": 0.25,
+                "TriggerCooldowns": [
+                  "MelinoeAnyQuipSpeech"
+                ],
+                "UsePlayerSource": true
+              },
+              "WithinDistance": 800
+            }
+          ],
+          "Name": "Shipwreck"
+        },
+        "691310": {
+          "DistanceTriggers": [
+            {
+              "VoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_1808",
+                  "GameStateRequirements": [
+                    {
+                      "PathFalse": [
+                        "GameState",
+                        "SpeechRecord",
+                        "/VO/MelinoeField_1738"
+                      ]
+                    }
+                  ],
+                  "Text": "It's got a Spectral Gate..."
+                },
+                "PlayOnce": true,
+                "PlayOnceContext": "ShipsFirstExitSpottedVO",
+                "TriggerCooldowns": [
+                  "MelinoeAnyQuipSpeech"
+                ],
+                "UsePlayerSource": true
+              },
+              "WithinDistance": 420
+            }
+          ],
+          "Name": "ShipFirstExit",
+          "Template": "ShipsExitDoor"
+        }
+      },
+      "PickaxePointChance": 0.02,
+      "PlayBiomeMusic": true,
+      "RemoveTimerBlock": "InterBiome",
+      "RewardGameStateRequirements": [
+        {
+          "PathTrue": [
+            "CurrentRun",
+            "IsDreamRun"
+          ]
+        },
+        {
+          "Comparison": "==",
+          "Path": [
+            "CurrentRun",
+            "EnteredBiomes"
+          ],
+          "Value": 0
+        }
+      ],
+      "ShovelPointChance": 0.02,
+      "SkipLastKillPresentation": true,
+      "SpawnRewardOnId": 40055,
+      "StartThreadedEvents": [
+        {
+          "Args": {
+            "Id": 739846,
+            "Name": "CatFamiliar",
+            "OverwriteSelf": {
+              "DistanceTriggers": [
+                {
+                  "Args": {
+                    "AngleTowardHero": true,
+                    "PreWait": 0.0,
+                    "SetAnimation": "Familiar_Cat_Sleep_Awaken",
+                    "Sound": "/SFX/Familiars/CatMeow1",
+                    "VoiceLines": {
+                      "GlobalVoiceLines": "CatReactionVoiceLines"
+                    }
+                  },
+                  "FunctionName": "GenericPresentation",
+                  "WithinDistance": 550
+                }
+              ],
+              "InteractDistance": 250,
+              "OnUsedFunctionName": "nil",
+              "PreRecruit": true,
+              "SpecialInteractFunctionName": "CatFamiliarSpecialInteractLockedInRun"
+            },
+            "SkipAISetup": true
+          },
+          "FunctionName": "ActivateFamiliar",
+          "GameStateRequirements": [
+            {
+              "PathFalse": [
+                "GameState",
+                "FamiliarsUnlocked",
+                "CatFamiliar"
+              ]
+            },
+            {
+              "Comparison": ">",
+              "Path": [
+                "GameState",
+                "RoomsEntered",
+                "H_Bridge01"
+              ],
+              "Value": 1
+            },
+            {
+              "Comparison": ">=",
+              "Path": [
+                "GameState",
+                "FishingSuccesses"
+              ],
+              "Value": 1
+            },
+            {
+              "HasNone": [
+                "ActiveBounty",
+                "IsDreamRun"
+              ],
+              "Path": [
+                "CurrentRun"
+              ]
+            }
+          ]
+        }
+      ],
+      "StartUnthreadedEvents": [
+        {
+          "FunctionName": "EndBiomeRecords"
+        },
+        {
+          "FunctionName": "EndAllBiomeStates"
+        }
+      ],
+      "Starting": true,
+      "SwapSounds": [],
+      "ThreadedEvents": {
+        "1": {
+          "Args": "@ref:RoomEventData.BountyInfoBannerArgs",
+          "FunctionName": "DisplayInfoBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        "2": {
+          "Args": {
+            "ObjectiveSetName": "BountyAdvancedTooltip"
+          },
+          "FunctionName": "CheckObjectiveSetSource"
+        },
+        "Threaded": true
+      },
+      "TimerBlock": "IntroRoom",
+      "UnthreadedEvents": "@ref:EncounterSets.EncounterEventsNonCombat",
+      "ZoomFraction": 0.75,
+      "ZoomFractionAlt": 0.83
+    },
+    "O_MiniBoss01": {
+      "AlwaysForceRequirements": [
+        {
+          "Comparison": "==",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        },
+        {
+          "Comparison": "<",
+          "Path": [
+            "GameState",
+            "EncountersOccurredCache",
+            "MiniBossCharybdis"
+          ],
+          "Value": 1
+        }
+      ],
+      "Ambience": "/Leftovers/Ambience/StormSwathAmbience",
+      "BoonRaritiesOverride": {
+        "Epic": 0.1,
+        "Legendary": 0.05,
+        "Rare": 0.9
+      },
+      "CombatResolvedVoiceLines": [
+        {
+          "GlobalVoiceLines": "MiniBossEncounterEndVoiceLines"
+        }
+      ],
+      "DisableRewardMagnetisim": true,
+      "EligibleRewards": [
+        "Boon"
+      ],
+      "EndMusicOnCombatOver": 20,
+      "EntranceFunctionName": "RoomEntranceCharybdis",
+      "FlipHorizontalChance": 0.0,
+      "ForceDoorAllowReroll": true,
+      "ForcedRewardStore": "RunProgress",
+      "GameStateRequirements": [
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        },
+        {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 5
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "RoomsEntered",
+            "O_MiniBoss02"
+          ]
+        }
+      ],
+      "InheritFrom": [
+        "BaseO"
+      ],
+      "InspectPoints": {
+        "743810": {
+          "InteractTextLineSets": {
+            "Inspect_O_MiniBoss01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0260",
+                "Text": "{#Emph}The monster called Charybdis marked the doom of many unsuspecting ships, and in its ancient terror, now despoils the sea-filled rift that has been slashed across the land."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/Melinoe_3066",
+                    "Text": "Oh great."
+                  },
+                  "BreakIfPlayed": true,
+                  "GameStateRequirements": [
+                    {
+                      "PathTrue": [
+                        "GameState",
+                        "SpeechRecord",
+                        "/VO/MelinoeField_1870"
+                      ]
+                    }
+                  ],
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                },
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1839",
+                    "Text": "How many ships have fallen to that thing?"
+                  },
+                  "BreakIfPlayed": true,
+                  "GameStateRequirements": [
+                    {
+                      "PathFalse": [
+                        "GameState",
+                        "SpeechRecord",
+                        "/VO/MelinoeField_1870"
+                      ]
+                    }
+                  ],
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "743811": {
+          "InteractTextLineSets": {
+            "Inspect_O_MiniBoss01_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0261",
+                "Text": "{#Emph}The abomination called Charybdis forms within the waters of the sea a vortex from which not even the sleekest ship can possibly escape."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1840",
+                    "Text": "...I should probably go."
+                  },
+                  "PreLineWait": 0.42,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroPanDuration": 1.0,
+      "IntroSequenceDuration": 3.0,
+      "LegalEncounters": [
+        "MiniBossCharybdis"
+      ],
+      "MaxAppearancesThisBiome": 1,
+      "MaxCreationsThisRun": 1,
+      "MusicActiveStems": [
+        "Guitar",
+        "Bass",
+        "Drums"
+      ],
+      "MusicSection": 2,
+      "RewardPreviewIcon": "RoomRewardSubIcon_Miniboss",
+      "StartUnthreadedEvents": [],
+      "TentacleBurrowPoints": [
+        [
+          737316,
+          737312,
+          737313,
+          737315,
+          737314
+        ],
+        [
+          737321,
+          737320,
+          737319,
+          737318,
+          737317
+        ],
+        [
+          737326,
+          737325,
+          737324,
+          737322,
+          737323
+        ],
+        [
+          737331,
+          737329,
+          737328,
+          737327,
+          737330
+        ]
+      ],
+      "ZoomFraction": 0.6,
+      "ZoomFractionAlt": 0.72
+    },
+    "O_MiniBoss02": {
+      "BoonRaritiesOverride": {
+        "Epic": 0.1,
+        "Legendary": 0.05,
+        "Rare": 0.9
+      },
+      "CombatResolvedVoiceLines": [
+        {
+          "GlobalVoiceLines": "MiniBossEncounterEndVoiceLines"
+        }
+      ],
+      "EligibleRewards": [
+        "Boon"
+      ],
+      "EndMusicOnCombatOver": 20,
+      "FlipHorizontalChance": 0.0,
+      "ForceDoorAllowReroll": true,
+      "ForcedRewardStore": "RunProgress",
+      "GameStateRequirements": [
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        },
+        {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 5
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "RoomsEntered",
+            "O_MiniBoss01"
+          ]
+        },
+        {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "EncountersCompletedCache",
+            "MiniBossCharybdis"
+          ],
+          "Value": 1
+        }
+      ],
+      "InheritFrom": [
+        "BaseO"
+      ],
+      "InspectPoints": {
+        "793020": {
+          "InteractTextLineSets": {
+            "Inspect_O_MiniBoss02_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0359",
+                "Text": "{#Emph}One of the sleeker, broader ghostly ships in the armada of the Titan Lord is now bereft of all the plunderers that were its crew; but in their restlessness, they may yet rise again."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3261",
+                    "Text": "Then I'll sink them again."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "CurrentRun",
+                "ActiveBounty"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroPanDuration": 2.0,
+      "IntroSequenceDuration": 2.1,
+      "LegalEncounters": [
+        "MiniBossCaptain"
+      ],
+      "MaxAppearancesThisBiome": 1,
+      "MaxCreationsThisRun": 1,
+      "MusicActiveStems": [
+        "Guitar",
+        "Bass",
+        "Drums"
+      ],
+      "MusicSection": 2,
+      "RewardPreviewIcon": "RoomRewardSubIcon_Miniboss",
+      "StartUnthreadedEvents": [],
+      "WrappingData": {
+        "SpawnData": {
+          "MoveSpeed": 600,
+          "MoveTime": 18,
+          "ObstacleNames": [
+            "ShipsShipwreck01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup01",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02",
+            "ShipsWreckGroup02"
+          ],
+          "PreSpawnObstacles": true,
+          "SpawnIntervalMax": 5,
+          "SpawnIntervalMin": 3,
+          "SpawnPoints": [
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723375,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723375,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723375,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723376,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "WaterAbove_01",
+              "Id": 723376,
+              "ObstacleColorOverrides": {
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "GroupName": "Foreground_01",
+              "Id": 723377,
+              "ObstacleColorOverrides": {
+                "ShipsShipwreck01": [
+                  35,
+                  51,
+                  62,
+                  255
+                ],
+                "ShipsWreckGroup01": [
+                  141,
+                  141,
+                  141,
+                  255
+                ],
+                "ShipsWreckGroup02": [
+                  141,
+                  141,
+                  141,
+                  255
+                ]
+              },
+              "ObstacleGroupOverrides": {
+                "ShipsWreckGroup01": "Standing_Debris",
+                "ShipsWreckGroup02": "Standing_Debris"
+              },
+              "ObstacleHSVOverrides": {
+                "ShipsWreckGroup01": [
+                  -0.088,
+                  0,
+                  0
+                ],
+                "ShipsWreckGroup02": [
+                  -0.088,
+                  0,
+                  0
+                ]
+              },
+              "SkipPreSpawn": true
+            }
+          ]
+        }
+      },
+      "ZoomFractionAlt": 0.86
+    },
+    "O_PostBoss01": {
+      "Ambience": "/Leftovers/SFX/WindAmbienceLocal",
+      "BlockRandomStems": true,
+      "BlockRunProgressUI": true,
+      "ChallengeSpawnChance": 0.0,
+      "DefaultMusicParams": [
+        "Keys",
+        "Drums"
+      ],
+      "EnterVoiceLines": {
+        "1": {
+          "1": {
+            "Cue": "/VO/MelinoeField_2451",
+            "PlayFirst": true,
+            "Text": "The path to Olympus..."
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_2452",
+            "Text": "The base of the mountain..."
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_2453",
+            "Text": "Growing colder..."
+          },
+          "4": {
+            "Cue": "/VO/MelinoeField_2454",
+            "Text": "This is it..."
+          },
+          "BreakIfPlayed": true,
+          "PreLineWait": 3.2,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.85,
+          "SuccessiveChanceToPlayAll": 0.15
+        },
+        "Cooldowns": [
+          {
+            "Name": "MelinoeAnyQuipSpeech"
+          },
+          {
+            "Name": "LeftBiomeSpeech",
+            "Time": 10
+          }
+        ]
+      },
+      "EntranceDirection": "Right",
+      "EntranceFunctionName": "RoomEntranceStandard",
+      "ExitPath": [
+        558947
+      ],
+      "ExitPreviewAnim": "ExitAheadPreview",
+      "ExorcismPointChance": 0,
+      "FishingPointChance": 0,
+      "FlipHorizontalChance": 0.0,
+      "ForceSurfaceShop": true,
+      "ForceWellShop": false,
+      "GameStateRequirements": [],
+      "GlobalEcho": 0.0,
+      "HarvestPointChances": [
+        0.0
+      ],
+      "HasExorcismPoint": false,
+      "HasFishingPoint": false,
+      "HasHarvestPoint": false,
+      "HasPickaxePoint": false,
+      "HasShovelPoint": false,
+      "InheritFrom": [
+        "BaseO"
+      ],
+      "InspectPoints": {
+        "557494": {
+          "InteractTextLineSets": {
+            "Inspect_O_PostBoss01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0294",
+                "Text": "{#Emph}A passageway through the snow-covered rock leads to the foot of the most-sacred mountain of the gods: Olympus, which now looms impossibly into the sky above."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_2524",
+                    "Text": "Bit of a climb..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 0.7,
+      "LegalEncounters": [
+        "Empty"
+      ],
+      "Music": "/Music/IrisMusicBiomeStartOlympus_MC",
+      "NextRoomSet": [
+        "P"
+      ],
+      "NoReroll": true,
+      "NoReward": true,
+      "ObstacleData": {
+        "723007": {
+          "Activate": true,
+          "ActivateIds": [
+            723007,
+            723011,
+            723009,
+            723008,
+            723014
+          ],
+          "SetupGameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgradesAdded",
+                "WorldUpgradePostBossGiftRack"
+              ]
+            }
+          ],
+          "Template": "GiftRack"
+        },
+        "723015": {
+          "Activate": true,
+          "ActivateIds": [
+            723015
+          ],
+          "SetupGameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgrades",
+                "WorldUpgradePostBossSurfaceShops"
+              ]
+            }
+          ],
+          "Template": "ChallengeSwitchBase"
+        },
+        "723017": {
+          "Activate": true,
+          "ActivateIds": [
+            723017
+          ],
+          "SetupGameStateRequirements": [],
+          "Template": "HealthFountainO"
+        }
+      },
+      "PickaxePointChance": 0.0,
+      "RequiresLinked": true,
+      "ReverbValue": 1.0,
+      "RichPresence": "#RichPresence_PostBossSurface",
+      "SecretSpawnChance": 0.0,
+      "SellTraitShrineUpgrade": true,
+      "ShovelPointChance": 0.0,
+      "SkipLastKillPresentation": true,
+      "StartUnthreadedEvents": [],
+      "SurfaceShopRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradePostBossSurfaceShops"
+          ]
+        },
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeSurfaceShops"
+          ]
+        },
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        },
+        {
+          "Comparison": "<=",
+          "CountPathTrue": true,
+          "Path": [
+            "SurfaceShop"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        }
+      ],
+      "SurfaceShopSpawnChance": 1.0,
+      "SwapSounds": {
+        "/Leftovers/SFX/FootstepsWheat": "/SFX/Player Sounds/FootstepsSnow",
+        "/Leftovers/SFX/FootstepsWheat2Small": "/SFX/Player Sounds/FootstepsSnow"
+      },
+      "UnthreadedEvents": "@ref:EncounterSets.EncounterEventsNonCombat",
+      "WellShopSpawnChance": 0.0,
+      "ZoomFraction": 0.75,
+      "ZoomFractionAlt": 0.93
+    },
+    "O_PreBoss01": {
+      "AutocompleteSurfaceShopDelivery": true,
+      "ChallengeSpawnChance": 0.0,
+      "DisableRewardMagnetisim": true,
+      "EnterGlobalVoiceLines": "BoardedFlagshipVoiceLines",
+      "EntranceDirection": "LeftRight",
+      "FlipHorizontalChance": 0.0,
+      "ForceAtBiomeDepthMax": 7,
+      "ForceAtBiomeDepthMin": 7,
+      "ForcedFirstReward": "Shop",
+      "GameStateRequirements": [],
+      "HarvestPointChances": [
+        0.35
+      ],
+      "IneligibleRewards": [
+        "Devotion",
+        "RoomMoneyDrop"
+      ],
+      "InheritFrom": [
+        "BaseO"
+      ],
+      "InspectPoints": {
+        "743812": {
+          "InteractTextLineSets": {
+            "Inspect_O_PreBoss01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0263",
+                "Text": "{#Emph}Now, distant shores upon which proudly rests the mountain of the gods have suddenly grown near. And the Black Flagship is prepared to send the Princess there."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1842",
+                    "Text": "The coast is dead ahead..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "743813": {
+          "InteractTextLineSets": {
+            "Inspect_O_PreBoss01_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0264",
+                "Text": "{#Emph}As the Black Flagship sails closer to the shore, the Princess of the Dead knows well that whatsoever Strife she has experienced thus far this night... is about to get worse."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1843",
+                    "Text": "Oh I await it {#Emph}eagerly."
+                  },
+                  "PreLineWait": 0.38,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "Comparison": ">=",
+              "Path": [
+                "GameState",
+                "RoomsEntered"
+              ],
+              "SumOf": [
+                "O_Boss01",
+                "O_Boss02"
+              ],
+              "Value": 3
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroPanDuration": 2,
+      "IntroSequenceDuration": 2.0,
+      "LegalEncounters": [
+        "Shop"
+      ],
+      "LinkedRooms": [
+        "O_Boss01",
+        "O_Boss02"
+      ],
+      "MusicMutedStems": [
+        "Drums"
+      ],
+      "ObstacleData": {
+        "690973": {
+          "SetupEvents": [
+            {
+              "Args": {
+                "UseableOff": true
+              },
+              "FunctionName": "GenericPresentation"
+            }
+          ]
+        },
+        "721140": {
+          "DestroyIfNotSetup": true,
+          "Name": "FlagshipCopilot",
+          "SetupGameStateRequirements": [
+            {
+              "IsAny": [
+                "Empty"
+              ],
+              "Path": [
+                "CurrentRun",
+                "CurrentRoom",
+                "Encounter",
+                "Name"
+              ]
+            }
+          ]
+        }
+      },
+      "ResetBinksOnExit": true,
+      "RewardPreviewIcon": "RoomRewardSubIcon_PreBoss",
+      "RushMaxRangeOverride": 565,
+      "SecretSpawnChance": 0.0,
+      "SkipLastKillPresentation": true,
+      "SpawnRewardOnId": 720909,
+      "StartUnthreadedEvents": "@ref:EncounterSets.ShopRoomEvents",
+      "SurfaceShopSpawnChance": 0.0,
+      "ZagContractRewardDestinationId": 776340,
+      "ZoomFractionAlt": 0.91
+    },
+    "O_Reprieve01": {
+      "Ambience": "/Leftovers/Ambience/GentleWavesBeachAmbience2D",
+      "ChallengeSpawnChance": 0.0,
+      "DisableRewardMagnetisim": true,
+      "EnterGlobalVoiceLines": "EnteredReprieveRoomVoiceLines",
+      "EntranceFunctionArgs": {
+        "SkipGusts": true
+      },
+      "ExorcismPointChance": 0.24,
+      "FishingPointChance": 0.8,
+      "FlipHorizontalChance": 0.0,
+      "ForceDoorAllowReroll": true,
+      "GameStateRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeThessalyReprieve"
+          ]
+        },
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        },
+        {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 5
+        }
+      ],
+      "HarvestPointChances": [
+        0.6,
+        0.4
+      ],
+      "HasFishingPoint": true,
+      "IgnoreHarvestBiomeSpawnLimit": true,
+      "IneligibleRewards": [
+        "Devotion"
+      ],
+      "InheritFrom": [
+        "BaseO"
+      ],
+      "InspectPoints": {
+        "695597": {
+          "InteractTextLineSets": {
+            "Inspect_O_Reprieve01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0259",
+                "Text": "{#Emph}A shrouded glade shorn from the heart of the land somehow remains suggestive of a time of peace and beauty that has long since fallen deep into the distant past."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_1838",
+                  "Text": "Times change."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": [],
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroPanDuration": 2.0,
+      "IntroSequenceDuration": 2.1,
+      "LegalEncounters": [
+        "HealthRestore"
+      ],
+      "MaxCreationsThisRun": 1,
+      "PickaxePointChance": 0.36,
+      "SecretMusic": "/Music/BlankMusicCue",
+      "ShovelPointChance": 0.24,
+      "SpawnRewardOnId": 695602,
+      "StartThreadedEvents": [
+        {
+          "Args": {
+            "MaxActive": 36,
+            "ObjectNames": [
+              "ShadeMerc"
+            ],
+            "StartingCountMax": 36,
+            "StartingCountMin": 24
+          },
+          "FunctionName": "ShadeMercManager",
+          "GameStateRequirements": {
+            "ChanceToPlay": 1.0
+          }
+        }
+      ],
+      "SurfaceShopSpawnChance": 1.0,
+      "SwapSounds": [],
+      "ZoomFractionAlt": 0.9
+    },
+    "O_Shop01": {
+      "AlwaysForceRequirements": [
+        {
+          "Comparison": "==",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 5
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "RoomsEntered",
+            "O_Shop01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "RoomsEntered",
+            "O_Story01"
+          ]
+        }
+      ],
+      "EnterGlobalVoiceLines": "BoardedFlagshipVoiceLines",
+      "EntranceDirection": "LeftRight",
+      "FishingPointChance": 0.35,
+      "FlipHorizontalChance": 0.0,
+      "ForcedReward": "Shop",
+      "GameStateRequirements": [
+        {
+          "Comparison": ">",
+          "Path": [
+            "CurrentRun",
+            "BiomeEncounterDepth"
+          ],
+          "Value": 3
+        },
+        {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 5
+        }
+      ],
+      "InheritFrom": [
+        "BaseO"
+      ],
+      "InspectPoints": {
+        "743811": {
+          "InteractTextLineSets": {
+            "Inspect_O_Shop01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0262",
+                "Text": "{#Emph}A black ship, darkest of them all, disrupts the endless fleet that hounds Olympus; yet none dare engage with it for long, or with the fearsome captain of its spectral crew."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1841",
+                    "Text": "Lord Charon's kept our enemies at bay..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "RoomsEntered",
+                "O_Boss01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroPanDuration": 2,
+      "IntroSequenceDuration": 2,
+      "LegalEncounters": [
+        "Shop"
+      ],
+      "MaxCreationsThisRun": 1,
+      "NoReroll": true,
+      "ObstacleData": {
+        "690973": {
+          "SetupEvents": [
+            {
+              "Args": {
+                "UseableOff": true
+              },
+              "FunctionName": "GenericPresentation"
+            }
+          ]
+        }
+      },
+      "StartUnthreadedEvents": "@ref:EncounterSets.ShopRoomEvents",
+      "StoreDataName": "WorldShop",
+      "ZagContractDestinationId": 776332,
+      "ZoomFraction": 0.855,
+      "ZoomFractionAlt": 0.91
+    },
+    "O_Story01": {
+      "AlwaysForceRequirements": [
+        {
+          "Comparison": "==",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 5
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "RoomsEntered",
+            "O_Shop01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "RoomsEntered",
+            "O_Story01"
+          ]
+        }
+      ],
+      "Ambience": "/Leftovers/Object Ambiences/GentleWavesBeachAmbienceQuiet",
+      "CameraZoomWeights": {
+        "772430": 1.0,
+        "772431": 1.85,
+        "772432": 0.93,
+        "772433": 0.93
+      },
+      "EnterVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_1878",
+            "PlayFirst": true,
+            "PlayOnce": true,
+            "Text": "An island... who...?"
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_1879",
+            "Text": "Circe's island..."
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_1881",
+            "Text": "I know this place..."
+          },
+          "4": {
+            "Cue": "/VO/MelinoeField_1882",
+            "Text": "A bit of solid ground..."
+          },
+          "5": {
+            "Cue": "/VO/MelinoeField_1880",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "GameState",
+                  "TextLinesRecord",
+                  "CirceAboutHut01"
+                ]
+              }
+            ],
+            "Text": "The Isle of Aiaia..."
+          },
+          "BreakIfPlayed": true,
+          "PreLineWait": 1.6,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.25
+        }
+      ],
+      "EntranceFunctionArgs": {
+        "SkipGusts": true
+      },
+      "FishingPointChance": 0.4,
+      "FlipHorizontalChance": 0.0,
+      "ForcedReward": "Story",
+      "GameStateRequirements": {
+        "1": {
+          "PathTrue": [
+            "GameState",
+            "RoomsEntered",
+            "O_Boss01"
+          ]
+        },
+        "2": {
+          "Comparison": ">",
+          "Path": [
+            "GameState",
+            "BiomeVisits",
+            "O"
+          ],
+          "Value": 1
+        },
+        "3": {
+          "PathFalse": [
+            "CurrentRun",
+            "TextLinesRecord",
+            "IcarusFirstMeeting"
+          ]
+        },
+        "4": {
+          "Comparison": ">",
+          "Path": [
+            "CurrentRun",
+            "BiomeEncounterDepth"
+          ],
+          "Value": 3
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 5
+        },
+        "NamedRequirementsFalse": [
+          "StandardPackageBountyActive"
+        ]
+      },
+      "HarvestPointRequirements": {
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantODriftwood"
+              ],
+              "Value": 8
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "HasFishingPoint": true,
+      "IgnoreHarvestBiomeSpawnLimit": true,
+      "InheritFrom": [
+        "BaseO"
+      ],
+      "InspectPoints": {
+        "744051": {
+          "InteractTextLineSets": {
+            "Inspect_O_Story01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0267",
+                "Text": "{#Emph}Behold that ancient isle on which a great enchantress plies her trade, amid such flora and fauna as have come to welcome her as one of their own."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1846",
+                    "Text": "It feels so safe and peaceful here..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "TriggerCooldowns": [
+                    "MelinoeAnyQuipSpeech"
+                  ],
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "UseRecord",
+                "NPC_Circe_01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "744052": {
+          "InteractTextLineSets": {
+            "Inspect_O_Story01_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0268",
+                "Text": "{#Emph}The sweet and pungent aromas emanating from the cauldron of the witch-enchantress Circe suggest the depth of her ability, whether as a practitioner of ancient arts, or as a cook."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_1847",
+                    "Text": "I can breathe freely here..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_O_Story01_01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroPanDuration": 2.0,
+      "IntroSequenceDuration": 2.0,
+      "LegalEncounters": [
+        "Story_Circe_01"
+      ],
+      "MaxCreationsThisRun": 1,
+      "NarrativeContextArt": "nil",
+      "NoReroll": true,
+      "ObstacleData": {
+        "744056": {
+          "DistanceTriggers": [
+            {
+              "VoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_1884",
+                  "PlayFirst": true,
+                  "Text": "Evening, little pigs."
+                },
+                "2": {
+                  "Cue": "/VO/MelinoeField_1886",
+                  "GameStateRequirements": [
+                    {
+                      "PathFalse": [
+                        "CurrentRun",
+                        "CurrentRoom",
+                        "SpeechRecord",
+                        "/VO/Circe_0169"
+                      ]
+                    }
+                  ],
+                  "Text": "Behave yourselves."
+                },
+                "3": {
+                  "Cue": "/VO/MelinoeField_1883",
+                  "GameStateRequirements": {
+                    "OrRequirements": [
+                      [
+                        {
+                          "PathTrue": [
+                            "GameState",
+                            "TextLinesRecord",
+                            "CirceAboutThessaly01"
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "PathTrue": [
+                            "GameState",
+                            "SpeechRecord",
+                            "/VO/Circe_0085"
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "Text": "Hail, piggies."
+                },
+                "4": {
+                  "Cue": "/VO/MelinoeField_1885",
+                  "GameStateRequirements": {
+                    "OrRequirements": [
+                      [
+                        {
+                          "PathTrue": [
+                            "GameState",
+                            "TextLinesRecord",
+                            "CirceAboutThessaly01"
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "PathTrue": [
+                            "GameState",
+                            "SpeechRecord",
+                            "/VO/Circe_0085"
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "Text": "At ease, piggies."
+                },
+                "Cooldowns": [
+                  {
+                    "Name": "MelinoeAnyQuipSpeech",
+                    "Time": 3
+                  }
+                ],
+                "GameStateRequirements": [
+                  {
+                    "PathTrue": [
+                      "GameState",
+                      "UseRecord",
+                      "NPC_Circe_01"
+                    ]
+                  }
+                ],
+                "RandomRemaining": true,
+                "UsePlayerSource": true
+              },
+              "WithinDistance": 350
+            }
+          ],
+          "Name": "PigPen"
+        },
+        "744068": {
+          "Activate": true,
+          "DestroyIfNotSetup": true,
+          "InteractDistance": 250,
+          "Name": "CirceHutInteract",
+          "OnUsedFunctionArgs": {
+            "BlockAngleTowardTarget": true,
+            "SkipAnim": true,
+            "SoundName": "/Leftovers/SFX/DoorClose",
+            "VoiceLines": "TriedCirceHutVoiceLines"
+          },
+          "OnUsedFunctionName": "UseLockedSystemObjectPresentation",
+          "SetupEvents": [
+            {
+              "Args": {
+                "Animation": "Blank"
+              },
+              "FunctionName": "OverwriteSelf"
+            }
+          ],
+          "SetupGameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "UseRecord",
+                "NPC_Circe_01"
+              ]
+            }
+          ],
+          "UseText": "CannotUseObject"
+        }
+      },
+      "PickaxePointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "OreOIron"
+              ],
+              "Value": 18
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "SecretMusic": "/Music/IrisMusicCirceTheme_MC",
+      "ShovelPointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "2": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeToolsShop"
+          ]
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantOMandrakeSeed"
+              ],
+              "Value": 12
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "StartUnthreadedEvents": [],
+      "SwapSounds": [],
+      "ThreadedEvents": [
+        {
+          "FunctionName": "MedeaMusicManager"
+        }
+      ],
+      "TimerBlock": "StoryRoom",
+      "ZoomFraction": 0.68,
+      "ZoomFractionAlt": 0.74
+    }
+  }

@@ -1,0 +1,3692 @@
+ {
+    "BaseQ": {
+      "Ambience": "/Ambience/TyphonIndoorAmbience",
+      "BreakableValueOptions": {
+        "MaxHighValueBreakables": 8
+      },
+      "DebugOnly": true,
+      "DreamResultText": "RunHistoryScreenResult_Q_Dream",
+      "DreamSaveProfileLocationText": "Location_BiomeQ_Dream",
+      "EliteChallengeEncounterOptions": [
+        "EliteChallengeQ"
+      ],
+      "EnterWipeAnimation": "RoomTransitionOut_Up",
+      "ExitFunctionName": "BiomeQLeaveRoomPresentation",
+      "ExorcismPointChance": 0.05,
+      "ExorcismPointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 2
+        },
+        "2": {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 2
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 6,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "6": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "OrRequirements": [
+          {
+            "OrRequirements": [
+              [
+                {
+                  "Comparison": "<=",
+                  "Path": [
+                    "GameState",
+                    "LifetimeResourcesGained",
+                    "MemPointsCommon"
+                  ],
+                  "Value": 1500
+                }
+              ],
+              [
+                {
+                  "Comparison": "<",
+                  "Path": [
+                    "GameState",
+                    "ExorcisedNames",
+                    "ShadeTyphonIdle"
+                  ],
+                  "Value": 2
+                }
+              ]
+            ]
+          },
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumFishingPoints"
+              ],
+              "SumPrevRooms": 2,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "FishingPointChance": 0.15,
+      "FishingPointRequirements": {
+        "1": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeToolsShop"
+          ]
+        },
+        "2": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 5,
+          "Value": 0
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "NotHasAll": [
+                "FishQCommon",
+                "FishQRare",
+                "FishQLegendary"
+              ],
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained"
+              ]
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumExorcismPoints"
+              ],
+              "SumPrevRooms": 2,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "HarvestPointChances": [
+        0.1
+      ],
+      "HarvestPointRequirements": {
+        "1": {
+          "Comparison": "<=",
+          "Path": [
+            "NumHarvestPoints"
+          ],
+          "SumPrevRooms": 3,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantQFang"
+              ],
+              "Value": 8
+            }
+          ],
+          {
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "HasExorcismPoint": true,
+      "HasFishingPoint": true,
+      "HasHarvestPoint": true,
+      "HasPickaxePoint": true,
+      "HasShovelPoint": true,
+      "IgnorePostCombatGuitar": true,
+      "IneligibleRewards": [
+        "Devotion"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.QEncountersDefault",
+      "LocationAnimName": "InfoBannerTyphonIn",
+      "LocationAnimOutName": "InfoBannerTyphonOut",
+      "MaxAppearancesThisBiome": 1,
+      "NarrativeContextArt": "DialogueBackground_Typhon",
+      "NarrativeContextArtFlippable": false,
+      "PerfectClearEncounterOptions": [
+        "PerfectClearChallengeQ"
+      ],
+      "PickaxePointChance": 0.1,
+      "PickaxePointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "2": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 4,
+          "Value": 0
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "OreQScales"
+              ],
+              "Value": 12
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumShovelPoints"
+              ],
+              "SumPrevRooms": 2,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "PostCombatReloadThreadedEvents": [
+        {
+          "Args": "@ref:RoomEventData.BountyInfoBannerArgs",
+          "FunctionName": "DisplayInfoBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        {
+          "Args": {
+            "Delay": 0.45,
+            "DreamText": "Location_BiomeQ_Dream",
+            "Duration": 2.0
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowDreamInfoBanner"
+            ]
+          }
+        }
+      ],
+      "RandomStemMixerValues": [
+        {
+          "SetSoundCueValues": [
+            {
+              "Duration": 0.25,
+              "Name": "Drums",
+              "Value": 1.0
+            },
+            {
+              "Duration": 0.25,
+              "Name": "Bass",
+              "Value": 0.0
+            }
+          ]
+        }
+      ],
+      "ResultText": "RunHistoryScreenResult_Q",
+      "RichPresence": "#RichPresence_Q",
+      "SaveProfileLocationText": "BiomeQ_Short",
+      "SecretSpawnChance": 0.0,
+      "ShovelPointChance": 0.1,
+      "ShovelPointRequirements": {
+        "1": {
+          "Comparison": ">=",
+          "Path": [
+            "GameState",
+            "CompletedRunsCache"
+          ],
+          "Value": 1
+        },
+        "2": {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgradesAdded",
+            "WorldUpgradeToolsShop"
+          ]
+        },
+        "3": {
+          "Comparison": "<=",
+          "Path": [
+            "NumShovelPoints"
+          ],
+          "SumPrevRooms": 4,
+          "Value": 0
+        },
+        "4": {
+          "Comparison": "<=",
+          "Path": [
+            "NumPickaxePoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "5": {
+          "Comparison": "<=",
+          "Path": [
+            "NumExorcismPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "6": {
+          "Comparison": "<=",
+          "Path": [
+            "NumFishingPoints"
+          ],
+          "SumPrevRooms": 1,
+          "Value": 0
+        },
+        "OrRequirements": [
+          [
+            {
+              "Comparison": "<",
+              "Path": [
+                "GameState",
+                "LifetimeResourcesGained",
+                "PlantQSnakereedSeed"
+              ],
+              "Value": 18
+            }
+          ],
+          {
+            "1": {
+              "Comparison": "<=",
+              "Path": [
+                "NumPickaxePoints"
+              ],
+              "SumPrevRooms": 2,
+              "Value": 0
+            },
+            "ChanceToPlay": 0.5
+          }
+        ]
+      },
+      "StopSecretMusic": true,
+      "SurfaceShopSpawnChance": 0.1,
+      "TargetMetaRewardsRatio": 0.15,
+      "ThreadedEvents": [
+        {
+          "Args": "@ref:RoomEventData.BountyInfoBannerArgs",
+          "FunctionName": "DisplayInfoBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        {
+          "Args": {
+            "Delay": 0.45,
+            "DreamText": "Location_BiomeQ_Dream",
+            "Duration": 2.0
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowDreamInfoBanner"
+            ]
+          }
+        }
+      ],
+      "TimeChallengeEncounterOptions": [
+        "TimeChallengeQ"
+      ],
+      "TimeChallengeSwitchRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "WorldUpgrades",
+            "WorldUpgradeChallengeSwitchesSurface1"
+          ]
+        }
+      ],
+      "ValidateSecretData": false,
+      "WellShopSpawnChance": 0.0,
+      "ZoomFraction": 0.8
+    },
+    "Q_BaseFoyer": {
+      "DebugOnly": true,
+      "DeferReward": false,
+      "EntranceDirection": "LeftRight",
+      "FlipHorizontalChance": 0,
+      "GameStateRequirements": [
+        {
+          "Comparison": "==",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 1
+        }
+      ],
+      "InheritFrom": [
+        "BaseQ"
+      ],
+      "IntroPanEaseIn": 0.01,
+      "IntroPanEaseOut": 0.001,
+      "IntroSequenceDuration": 0.4,
+      "LegalEncounters": "@ref:EncounterSets.QEncountersPreBoss",
+      "NoReward": true,
+      "UseDefaultRewardPreview": true,
+      "ZoomFraction": 0.825
+    },
+    "Q_BaseMiniBoss": {
+      "BlockCameraReattach": true,
+      "BoonRaritiesOverride": {
+        "Duo": 0.2,
+        "Epic": 0.7,
+        "Legendary": 0.2,
+        "Rare": 1.0
+      },
+      "DebugOnly": true,
+      "EntranceDirection": "LeftRight",
+      "EntranceFunctionName": "RoomEntranceBoss",
+      "FlipHorizontalChance": 0.0,
+      "ForceDoorAllowReroll": true,
+      "ForcedRewardStore": "TyphonBossRewards",
+      "InheritFrom": [
+        "BaseQ"
+      ],
+      "IntroSequenceDuration": 2.7,
+      "PostCombatAudioEvents": [
+        {
+          "Args": {
+            "SetSoundCueValues": [
+              {
+                "AudioStateId": "MusicId",
+                "Duration": 0.75,
+                "Name": "Bass",
+                "Value": 0.0
+              }
+            ]
+          },
+          "FunctionName": "GenericPresentation"
+        }
+      ],
+      "RandomStemMixerValues": [
+        {
+          "SetSoundCueValues": [
+            {
+              "Duration": 0.25,
+              "Name": "Drums",
+              "Value": 1.0
+            },
+            {
+              "Duration": 0.25,
+              "Name": "Bass",
+              "Value": 1.0
+            }
+          ]
+        }
+      ],
+      "ResetBinksOnEnter": true,
+      "ResetBinksOnExit": true,
+      "RewardPreviewIcon": "RoomRewardSubIcon_Miniboss"
+    },
+    "Q_Boss01": {
+      "Ambience": "/Ambience/TyphonOutdoorAmbience",
+      "BackupCauseOfDeath": "TyphonHead",
+      "BlockCameraReattach": true,
+      "CanSpawnDreamReward": true,
+      "CatFamiliarOnlyRestOnFamiliarPoints": true,
+      "EntranceDirection": "LeftRight",
+      "EntranceFunctionArgs": {
+        "TyphonId": 768121,
+        "TyphonIntroAnimation": "Enemy_TyphonHead_Intro_Entrance_Start",
+        "TyphonIntroDelay": 0.1,
+        "TyphonIntroSound": "/SFX/Enemy Sounds/Typhon/EmoteAlerted",
+        "TyphonStartAnimation": "Enemy_TyphonHead_Invisible"
+      },
+      "EntranceFunctionName": "RoomEntranceTyphonHead",
+      "ExitFunctionName": "BiomeQBossExitPresentation",
+      "ExitPanId": 793953,
+      "ExitVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_5010",
+            "Text": "Thank you, Zagreus... Gigaros..."
+          },
+          "BreakIfPlayed": true,
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "TyphonDefeatedWithStormStop"
+              ]
+            },
+            {
+              "PathTrue": [
+                "CurrentRun",
+                "EnemyKills",
+                "TyphonHead"
+              ]
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            }
+          ],
+          "PlayOnce": true,
+          "PlayOnceContext": "TyphonBossFirstExitVO",
+          "PreLineWait": 0.35,
+          "UsePlayerSource": true
+        },
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_3453",
+            "Text": "Enough of this place..."
+          },
+          "BreakIfPlayed": true,
+          "PlayOnce": true,
+          "PlayOnceContext": "TyphonBossFirstExitVO",
+          "PreLineWait": 0.35,
+          "UsePlayerSource": true
+        }
+      ],
+      "ExorcismPointChance": 0.0,
+      "FishingPointChance": 0.0,
+      "FlipHorizontalChance": 0.0,
+      "FootstepAnimationL": "WaterSplashFootstepL-Spawner",
+      "FootstepAnimationR": "WaterSplashFootstepR-Spawner",
+      "ForcedReward": "MixerQBossDrop",
+      "GameStateRequirements": {
+        "NamedRequirementsFalse": [
+          "BossDifficultyActive"
+        ]
+      },
+      "GlobalEcho": 0.25,
+      "HasExorcismPoint": false,
+      "HasFishingPoint": false,
+      "HasHarvestPoint": false,
+      "HasPickaxePoint": false,
+      "HasShovelPoint": false,
+      "IgnoreMusic": true,
+      "InheritFrom": [
+        "BaseQ"
+      ],
+      "InspectPoints": {
+        "793021": {
+          "InteractTextLineSets": {
+            "Inspect_Q_Boss01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0338",
+                "Text": "{#Emph}Finally, the terrifying storm tearing apart the Fortress of the Gods starts to relent, perhaps because its monstrous source is nowhere to be found."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3258",
+                    "Text": "At least for now..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "CurrentRun",
+                "ActiveBounty"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "793022": {
+          "InteractTextLineSets": {
+            "Inspect_Q_Boss01_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0339",
+                "Text": "{#Emph}The hopeless threat of Typhon, whom the Princess of the Underworld sent howling toward the Earth from which he sprang in all his rage, subsides; but only for the night."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3259",
+                    "Text": "The family can enjoy a moment's rest."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "GameState",
+                "TyphonDefeatedWithStormStop"
+              ]
+            },
+            "2": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_Q_Boss01_01"
+              ]
+            },
+            "3": {
+              "PathFalse": [
+                "CurrentRun",
+                "ActiveBounty"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "797655": {
+          "InteractTextLineSets": {
+            "Inspect_Q_Boss01_03": {
+              "1": {
+                "Cue": "/VO/Storyteller_0522",
+                "Text": "{#Emph}Once more, no trace remains of our world's worst monstrosity. And the mere possibility that he could have wreaked further havoc on this mountaintop grows faint."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_5025",
+                    "Text": "We'll leave nothing to chance."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            },
+            "2": {
+              "PathFalse": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_Q_Boss02_03"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroCameraPanDuration": 4,
+      "IntroSequenceDuration": 1.0,
+      "LeavePostPresentationEvents": [
+        {
+          "FunctionName": "SetupHeroForEnding",
+          "GameStateRequirements": [
+            {
+              "PathFalse": [
+                "GameState",
+                "TextLinesRecord",
+                "ZeusPalacePostTrueEnding01"
+              ]
+            },
+            {
+              "PathFalse": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ]
+        }
+      ],
+      "LegalEncounters": [
+        "BossTyphonHead01"
+      ],
+      "LinkedRoom": "Q_PostBoss01",
+      "NoReroll": true,
+      "ObstacleData": {
+        "779914": {
+          "DistanceTriggers": [
+            {
+              "GameStateRequirements": {
+                "1": {
+                  "PathEmpty": [
+                    "RequiredKillEnemies"
+                  ]
+                },
+                "2": {
+                  "PathTrue": [
+                    "GameState",
+                    "ReachedTrueEnding"
+                  ]
+                },
+                "3": {
+                  "PathTrue": [
+                    "GameState",
+                    "TextLinesRecord",
+                    "ZeusPalacePostTrueEnding01"
+                  ]
+                },
+                "4": {
+                  "PathFalse": [
+                    "CurrentRun",
+                    "IsDreamRun"
+                  ]
+                },
+                "NamedRequirements": [
+                  "ReachedEpilogue"
+                ]
+              },
+              "Repeat": true,
+              "VoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_5381",
+                  "Text": "The Palace is shut. Let's go home."
+                },
+                "2": {
+                  "Cue": "/VO/MelinoeField_5382",
+                  "Text": "We're done here... let's go home."
+                },
+                "Cooldowns": [
+                  {
+                    "Name": "MelinoeAnyQuipSpeech",
+                    "Time": 3
+                  }
+                ],
+                "PlayOnce": true,
+                "PlayOnceContext": "PostTrueEndingExitApproachVO",
+                "PlayOnceFromTableThisRun": true,
+                "SkipCooldownCheckIfNonePlayed": true,
+                "UsePlayerSource": true
+              },
+              "WithinDistance": 800
+            }
+          ],
+          "Name": "TyphonExit01"
+        }
+      },
+      "OnRoomRewardSpawnedFunctionArgs": {
+        "LootOptions": [
+          {
+            "Name": "MixerMythicDrop",
+            "Overrides": {
+              "CanDuplicate": false
+            }
+          }
+        ]
+      },
+      "OnRoomRewardSpawnedFunctionName": "CheckTyphonReward",
+      "PickaxePointChance": 0.0,
+      "PostCombatReloadEvents": [
+        {
+          "Args": {
+            "ExitFunctionName": "EndEarlyAccessPresentation",
+            "SkipLoadNextMap": true
+          },
+          "FunctionName": "OverwriteSelf",
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "ZeusPalacePostTrueEnding01"
+              ]
+            },
+            {
+              "PathFalse": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ]
+        },
+        {
+          "FunctionName": "TyphonHeadPostCombatReload"
+        }
+      ],
+      "RequiresLinked": true,
+      "ReverbValue": 1.0,
+      "RewardPreviewIcon": "RoomRewardSubIcon_Boss",
+      "RichPresence": "#RichPresence_Boss",
+      "ShovelPointChance": 0.0,
+      "SkipTimedDropResourceInDream": true,
+      "SwapSounds": {
+        "/Leftovers/SFX/FootstepsWheat": "/Leftovers/SFX/FootstepsWetMedium",
+        "/Leftovers/SFX/FootstepsWheat2Small": "/Leftovers/SFX/FootstepsWetSmall"
+      },
+      "ThreadEnterVoiceLines": true,
+      "ThreadedEvents": [
+        {
+          "Args": {
+            "Delay": 16.0
+          },
+          "FunctionName": "AttackTyphonHint"
+        }
+      ],
+      "TyphonSpecialKillTeleportId": 793961,
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "ExitFunctionName": "EndEarlyAccessPresentation",
+            "SkipLoadNextMap": true
+          },
+          "FunctionName": "OverwriteSelf",
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "ZeusPalacePostTrueEnding01"
+              ]
+            },
+            {
+              "PathFalse": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ]
+        },
+        {
+          "Args": {
+            "DelayedStart": true,
+            "LockCameraWithBoss": true,
+            "ProcessTextLinesIds": [
+              768121
+            ],
+            "SetupBossIds": [
+              768121
+            ],
+            "SetupUnitIdAIs": [
+              793226
+            ]
+          },
+          "FunctionName": "BossIntro"
+        }
+      ],
+      "Using": {
+        "Animation": "ZeusLightningIris",
+        "SpawnUnit": "NPC_Zeus_01"
+      },
+      "ZoomFraction": 0.6
+    },
+    "Q_Boss02": {
+      "BackupCauseOfDeath": "TyphonHead",
+      "EntranceFunctionArgs": {
+        "ChronosId": 793226,
+        "TyphonId": 768121,
+        "TyphonIntroAnimation": "Enemy_TyphonHead_Intro_Entrance_Start",
+        "TyphonIntroDelay": 0.1,
+        "TyphonIntroPanId": 800463,
+        "TyphonIntroSound": "/SFX/Enemy Sounds/Typhon/EmoteAlerted",
+        "TyphonStartAnimation": "Enemy_TyphonHead_Invisible"
+      },
+      "EntranceFunctionName": "RoomEntranceTyphonHeadEM",
+      "ExitPanId": 800243,
+      "ExitVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_5010",
+            "Text": "Thank you, Zagreus... Gigaros..."
+          },
+          "BreakIfPlayed": true,
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "TyphonDefeatedWithStormStop"
+              ]
+            },
+            {
+              "PathTrue": [
+                "CurrentRun",
+                "EnemyKills",
+                "TyphonHead"
+              ]
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            }
+          ],
+          "PlayOnce": true,
+          "PlayOnceContext": "TyphonBossFirstExitVO",
+          "PreLineWait": 0.35,
+          "UsePlayerSource": true
+        }
+      ],
+      "GameStateRequirements": {
+        "NamedRequirements": [
+          "BossDifficultyActive"
+        ]
+      },
+      "InheritFrom": [
+        "Q_Boss01"
+      ],
+      "InspectPoints": {
+        "793022": {
+          "InteractTextLineSets": {
+            "Inspect_Q_Boss02_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0461",
+                "Text": "{#Emph}United in bitter fury, the father of the gods and the Father of All Monsters nonetheless could neither lay claim to this sacred mountain nor raze it to the Earth."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3659",
+                    "Text": "And we'll keep it that way."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "793952": {
+          "InteractTextLineSets": {
+            "Inspect_Q_Boss02_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0426",
+                "Text": "{#Emph}Not even Time itself could stop the fierce Princess from vanquishing that ancient monster which so doggedly attacks the mountain of the gods night after endless night."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3619",
+                    "Text": "I've learned their tricks."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "800628": {
+          "InteractTextLineSets": {
+            "Inspect_Q_Boss02_03": {
+              "1": {
+                "Cue": "/VO/Storyteller_0522",
+                "Text": "{#Emph}Once more, no trace remains of our world's worst monstrosity. And the mere possibility that he could have wreaked further havoc on this mountaintop grows faint."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_5025",
+                    "Text": "We'll leave nothing to chance."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            },
+            "2": {
+              "PathFalse": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_Q_Boss01_03"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "LegalEncounters": [
+        "BossTyphonHead02"
+      ],
+      "RichPresence": "#RichPresence_Boss",
+      "SpeakerName": [
+        "Selene"
+      ],
+      "TyphonSpecialKillTeleportId": 800622,
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "ExitFunctionName": "EndEarlyAccessPresentation",
+            "SkipLoadNextMap": true
+          },
+          "FunctionName": "OverwriteSelf",
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "ZeusPalacePostTrueEnding01"
+              ]
+            },
+            {
+              "PathFalse": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ]
+        },
+        {
+          "Args": {
+            "DelayedStart": true,
+            "LockCameraWithBoss": true,
+            "SetupBossIds": [
+              768121
+            ],
+            "SetupUnitIdAIs": [
+              793226
+            ]
+          },
+          "FunctionName": "BossIntro"
+        },
+        {
+          "Args": "@ref:RoomEventData.PauseMenuTakeOverAutoUnpause",
+          "FunctionName": "SetupPauseMenuTakeover",
+          "GameStateRequirements": [
+            {
+              "Comparison": ">",
+              "Path": [
+                "CurrentRun",
+                "BossHealthBarRecord",
+                "TyphonHead"
+              ],
+              "Value": 0
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "WorldUpgradesAdded",
+                "WorldUpgradePauseChronosFight"
+              ]
+            },
+            {
+              "PathFalse": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ]
+        },
+        {
+          "Args": "@ref:RoomEventData.PauseMenuTakeOverAllowPause",
+          "FunctionName": "SetupPauseMenuTakeover",
+          "GameStateRequirements": [
+            {
+              "Comparison": ">",
+              "Path": [
+                "CurrentRun",
+                "BossHealthBarRecord",
+                "TyphonHead"
+              ],
+              "Value": 0
+            },
+            {
+              "PathTrue": [
+                "GameState",
+                "WorldUpgradesAdded",
+                "WorldUpgradePauseChronosFight"
+              ]
+            },
+            {
+              "PathFalse": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "Q_Combat01": {
+      "Ambience": "/Ambience/TyphonOutdoorAmbience",
+      "EntranceDirection": "LeftRight",
+      "FlipHorizontalChance": 0,
+      "GameStateRequirements": {
+        "1": {
+          "Comparison": "<",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 7
+        },
+        "Append": true
+      },
+      "InheritFrom": [
+        "Q_CombatData"
+      ]
+    },
+    "Q_Combat02": {
+      "EntranceDirection": "Right",
+      "GameStateRequirements": {
+        "1": {
+          "Comparison": "<",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 7
+        },
+        "Append": true
+      },
+      "InheritFrom": [
+        "Q_CombatData"
+      ]
+    },
+    "Q_Combat03": {
+      "CatFamiliarOnFailGoToNearestToGoal": true,
+      "EntranceDirection": "Right",
+      "ForceAtBiomeDepth": 2,
+      "HasFishingPoint": false,
+      "HoundFamiliarMovementRequiresLineOfSight": true,
+      "InheritFrom": [
+        "Q_CombatData"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.QEncountersIslands",
+      "RequireCompletedIntro": true,
+      "RushMaxRangeOverride": 550
+    },
+    "Q_Combat04": {
+      "EntranceDirection": "Right",
+      "GameStateRequirements": {
+        "1": {
+          "Comparison": "<",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 7
+        },
+        "Append": true
+      },
+      "InheritFrom": [
+        "Q_CombatData"
+      ]
+    },
+    "Q_Combat05": {
+      "CatFamiliarOnFailGoToNearestToGoal": true,
+      "EntranceDirection": "Right",
+      "ForceAtBiomeDepth": 2,
+      "HoundFamiliarMovementRequiresLineOfSight": true,
+      "InheritFrom": [
+        "Q_CombatData"
+      ],
+      "LegalEncounters": "@ref:EncounterSets.QEncountersIslands",
+      "RequireCompletedIntro": true,
+      "RushMaxRangeOverride": 550
+    },
+    "Q_Combat06": {
+      "EntranceDirection": "Right",
+      "GameStateRequirements": [
+        {
+          "Comparison": ">",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        }
+      ],
+      "InheritFrom": [
+        "Q_CombatData"
+      ]
+    },
+    "Q_Combat07": {
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "Q_CombatData"
+      ]
+    },
+    "Q_Combat08": {
+      "Ambience": "/Ambience/TyphonOutdoorAmbience",
+      "EntranceDirection": "Right",
+      "GameStateRequirements": {
+        "1": {
+          "Comparison": "<",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 7
+        },
+        "Append": true
+      },
+      "HasFishingPoint": false,
+      "InheritFrom": [
+        "Q_CombatData"
+      ]
+    },
+    "Q_Combat09": {
+      "EntranceDirection": "Left",
+      "GameStateRequirements": [
+        {
+          "Comparison": ">",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 3
+        }
+      ],
+      "InheritFrom": [
+        "Q_CombatData"
+      ]
+    },
+    "Q_Combat10": {
+      "InheritFrom": [
+        "Q_BaseFoyer"
+      ],
+      "RushMaxRangeOverride": 475
+    },
+    "Q_Combat11": {
+      "GameStateRequirements": {
+        "1": {
+          "PathTrue": [
+            "GameState",
+            "EncountersCompletedCache",
+            "TyphonIntro"
+          ]
+        },
+        "Append": true
+      },
+      "InheritFrom": [
+        "Q_BaseFoyer"
+      ],
+      "RushMaxRangeOverride": 475,
+      "ZoomFraction": 0.8
+    },
+    "Q_Combat12": {
+      "CatFamiliarOnFailGoToNearestToGoal": true,
+      "EntranceDirection": "Right",
+      "ForceAtBiomeDepth": 5,
+      "HoundFamiliarMovementRequiresLineOfSight": true,
+      "InheritFrom": [
+        "Q_CombatData"
+      ],
+      "RushMaxRangeOverride": 525,
+      "ZoomFraction": 0.85
+    },
+    "Q_Combat13": {
+      "EntranceDirection": "Right",
+      "ForceAtBiomeDepth": 5,
+      "InheritFrom": [
+        "Q_CombatData"
+      ]
+    },
+    "Q_Combat14": {
+      "Ambience": "/Ambience/TyphonOutdoorAmbience",
+      "EntranceDirection": "Left",
+      "ForceAtBiomeDepth": 5,
+      "InheritFrom": [
+        "Q_CombatData"
+      ],
+      "RushMaxRangeOverride": 550,
+      "ZoomFraction": 0.85
+    },
+    "Q_Combat15": {
+      "Ambience": "/Ambience/TyphonOutdoorAmbience",
+      "EntranceDirection": "Left",
+      "ForceAtBiomeDepth": 2,
+      "InheritFrom": [
+        "Q_CombatData"
+      ],
+      "RushMaxRangeOverride": 550
+    },
+    "Q_Combat16": {
+      "EntranceDirection": "Left",
+      "InheritFrom": [
+        "Q_CombatData"
+      ]
+    },
+    "Q_CombatData": {
+      "DebugOnly": true,
+      "GameStateRequirements": [
+        {
+          "Comparison": ">=",
+          "Path": [
+            "CurrentRun",
+            "BiomeDepthCache"
+          ],
+          "Value": 2
+        }
+      ],
+      "InheritFrom": [
+        "BaseQ"
+      ],
+      "IntroPanEaseIn": 0.01,
+      "IntroPanEaseOut": 0.001,
+      "IntroSequenceDuration": 0.4,
+      "NoReward": true,
+      "PostCombatEvents": [
+        {
+          "Args": {
+            "DelayMax": 1.5,
+            "DelayMin": 0.0
+          },
+          "FunctionName": "TyphonTremorPresentation",
+          "GameStateRequirements": {
+            "1": {
+              "PathFalse": [
+                "GameState",
+                "TyphonTremorPresentation"
+              ]
+            },
+            "ChanceToPlay": 1.0
+          }
+        }
+      ],
+      "ZoomFraction": 0.9
+    },
+    "Q_Intro": {
+      "Ambience": "/Ambience/TyphonOutdoorAmbience",
+      "BreakableHighValueChanceMultiplier": 0.33,
+      "DisableRewardMagnetisim": true,
+      "DistanceTriggers": [
+        {
+          "Args": {
+            "AppearanceChancePerSecond": 0.12,
+            "FirstAppearanceTime": 7,
+            "MinAppearanceTime": 6,
+            "OverlookFadeIds": [
+              769413,
+              769135
+            ],
+            "PanTargetId": 768079,
+            "TyphonCreatureId": 769563,
+            "ZoomFraction": 0.3
+          },
+          "FunctionName": "BiomeOverlookTyphon",
+          "Repeat": true,
+          "TriggerGroup": "OverlookOut",
+          "WithinDistance": 150
+        },
+        {
+          "Args": {
+            "OverlookFadeIds": [
+              769413,
+              769135
+            ]
+          },
+          "FunctionName": "BiomeBackToRoomTyphon",
+          "Repeat": true,
+          "TriggerGroup": "OverlookIn",
+          "WithinDistance": 150
+        }
+      ],
+      "EnterVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_2927",
+            "Text": "This... storm...!"
+          },
+          "PlayOnce": true,
+          "PlayOnceContext": "SummitIntroVO",
+          "PreLineWait": 1.5
+        },
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_4198",
+            "Text": "{#Emph}Whew... {#Prev}I'm back."
+          },
+          "2": {
+            "Cue": "/VO/Melinoe_5724",
+            "Text": "All right, Grandfather... let's put your theories to the test..."
+          },
+          "BreakIfPlayed": true,
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            }
+          ],
+          "PlayOnce": true,
+          "PlayOnceContext": "SummitPostTrueEndingIntroVO",
+          "PreLineWait": 3.15,
+          "TriggerCooldowns": [
+            "MelinoeAnyQuipSpeech"
+          ]
+        },
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_2928",
+            "PlayFirst": true,
+            "PlayOnce": true,
+            "PlayOnceContext": "QIntroFirstVisitSpeech",
+            "Text": "What happened here..."
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_2929",
+            "Text": "The mountain's tallest peak..."
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_4198",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "GameState",
+                  "ReachedTrueEnding"
+                ]
+              },
+              {
+                "Comparison": "==",
+                "CountPathTrue": true,
+                "Path": [
+                  "SpeechRecord",
+                  "/VO/MelinoeField_4198"
+                ],
+                "SumPrevRuns": 8,
+                "Value": 0
+              }
+            ],
+            "Text": "{#Emph}Whew... {#Prev}I'm back."
+          },
+          "4": {
+            "Cue": "/VO/MelinoeField_4199",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "GameState",
+                  "ReachedTrueEnding"
+                ]
+              },
+              {
+                "PathTrue": [
+                  "GameState",
+                  "SpeechRecord",
+                  "/VO/MelinoeField_4198"
+                ]
+              }
+            ],
+            "PlayFirst": true,
+            "Text": "{#Emph}Whew... {#Prev}Typhon's storm..."
+          },
+          "5": {
+            "Cue": "/VO/MelinoeField_4200",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "GameState",
+                  "ReachedTrueEnding"
+                ]
+              },
+              {
+                "PathTrue": [
+                  "GameState",
+                  "SpeechRecord",
+                  "/VO/MelinoeField_4198"
+                ]
+              }
+            ],
+            "Text": "{#Emph}Whew... {#Prev}Another possibility..."
+          },
+          "6": {
+            "Cue": "/VO/MelinoeField_2930",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "GameState",
+                  "EnemyKills",
+                  "TyphonHead"
+                ]
+              }
+            ],
+            "Text": "All right, Typhon..."
+          },
+          "7": {
+            "Cue": "/VO/MelinoeField_2931",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "GameState",
+                  "RoomsEntered",
+                  "Q_Boss01"
+                ]
+              }
+            ],
+            "Text": "Typhon awaits..."
+          },
+          "BreakIfPlayed": true,
+          "Cooldowns": [
+            {
+              "Name": "MelinoeAnyQuipSpeech"
+            }
+          ],
+          "PreLineWait": 3.15,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.25,
+          "SuccessiveChanceToPlayAll": 0.25
+        }
+      ],
+      "EntranceDirection": "Right",
+      "EntranceFunctionName": "QIntroEntrancePresentation",
+      "ExitFunctionName": "FortressMainDoorOpenPresentation",
+      "ExorcismPointChance": 0.02,
+      "FishingPointChance": 0.02,
+      "FlipHorizontal": false,
+      "FlipHorizontalChance": 0.0,
+      "FootstepAnimationL": "WaterSplashFootstepL-Spawner",
+      "FootstepAnimationR": "WaterSplashFootstepR-Spawner",
+      "ForceAtBiomeDepth": 1,
+      "ForcedRewardStore": "RunProgress",
+      "GateMusic": "/Music/IrisMusicTyphon1_MC",
+      "GlobalEcho": 0.5,
+      "HarvestPointChances": [
+        0.02
+      ],
+      "HideRewardPreview": true,
+      "IneligibleRewards": "@ref:RewardSets.OpeningRoomBans",
+      "InheritFrom": [
+        "BaseQ",
+        "BiomeStartRoom"
+      ],
+      "InspectPoints": {
+        "792127": {
+          "InteractTextLineSets": {
+            "Inspect_Q_Intro_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0330",
+                "Text": "{#Emph}At first, the storm which now engulfs the summit of Olympus may appear to have been wrought by gods in their defense; but its monstrosity belies a far more sinister nature."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3251",
+                    "Text": "Let's locate the source."
+                  },
+                  "BreakIfPlayed": true,
+                  "GameStateRequirements": [
+                    {
+                      "PathFalse": [
+                        "GameState",
+                        "RoomsEntered",
+                        "Q_Boss01"
+                      ]
+                    }
+                  ],
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                },
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3252",
+                    "Text": "...Typhon."
+                  },
+                  "GameStateRequirements": [
+                    {
+                      "PathTrue": [
+                        "GameState",
+                        "RoomsEntered",
+                        "Q_Boss01"
+                      ]
+                    }
+                  ],
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "RoomCountCache",
+                "Q_Intro"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "792128": {
+          "InteractTextLineSets": {
+            "Inspect_Q_Intro_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0331",
+                "Text": "{#Emph}The Fortress of the Gods reels against the incomparable rage of Typhon, Father of Monsters, Giant of Storms, who somehow lurks somewhere very nearby..."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3253",
+                    "Text": "We'll find {#Emph}him {#Prev}or the other way around..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_Q_Intro_01"
+              ]
+            },
+            "2": {
+              "PathTrue": [
+                "GameState",
+                "RoomsEntered",
+                "Q_Boss01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "792129": {
+          "InteractTextLineSets": {
+            "Inspect_Q_Intro_03": {
+              "1": {
+                "Cue": "/VO/Storyteller_0332",
+                "Text": "{#Emph}Apocalyptic Typhon, lord and father of monstrosity, has fallen to the gods before; and for that ancient bitter loss, he now exacts a most terrible price."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3254",
+                    "Text": "He'll soon be falling to the gods again."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_Q_Intro_01"
+              ]
+            },
+            "2": {
+              "PathTrue": [
+                "GameState",
+                "EnemyKills",
+                "TyphonHead"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "797654": {
+          "InteractTextLineSets": {
+            "Inspect_Q_Intro_04": {
+              "1": {
+                "Cue": "/VO/Storyteller_0521",
+                "Text": "{#Emph}The storm of Typhon, which no longer plagues Olympus, once again engulfs the Princess of the Dead... for there are possibilities in which the Father of All Monsters lives."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_5024",
+                    "Text": "Well not for long."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 0.96,
+      "LegalEncounters": [
+        "Empty"
+      ],
+      "MaxAppearancesThisBiome": 1,
+      "NoReroll": true,
+      "PickaxePointChance": 0.02,
+      "RemoveTimerBlock": "InterBiome",
+      "RewardGameStateRequirements": [
+        {
+          "PathTrue": [
+            "CurrentRun",
+            "IsDreamRun"
+          ]
+        },
+        {
+          "Comparison": "==",
+          "Path": [
+            "CurrentRun",
+            "EnteredBiomes"
+          ],
+          "Value": 0
+        }
+      ],
+      "RushMaxRangeOverride": 475,
+      "ShovelPointChance": 0.02,
+      "SpawnRewardOnId": 40055,
+      "StartThreadedEvents": [
+        {
+          "FunctionName": "TyphonCameraRaindropsPresentation"
+        },
+        {
+          "FunctionName": "HandleWrapping"
+        }
+      ],
+      "StartUnthreadedEvents": [
+        {
+          "FunctionName": "EndBiomeRecords"
+        }
+      ],
+      "Starting": true,
+      "SwapAnimations": {
+        "HeroSkyTouchdownOlympus": "HeroSkyTouchdownTyphon"
+      },
+      "SwapSounds": {
+        "/Leftovers/SFX/FootstepsWheat": "/Leftovers/SFX/FootstepsWetMedium",
+        "/Leftovers/SFX/FootstepsWheat2Small": "/Leftovers/SFX/FootstepsWetSmall"
+      },
+      "Tags": [
+        "Outdoor"
+      ],
+      "ThreadedEvents": {
+        "1": {
+          "Args": {
+            "AnimationName": "InfoBannerTyphonIn",
+            "AnimationOutName": "InfoBannerTyphonOut",
+            "Delay": 2.0,
+            "DreamText": "Location_BiomeQ_Dream",
+            "Text": "Location_BiomeQ"
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "GameStateRequirements": {
+            "NamedRequirementsFalse": [
+              "ShouldShowBountyInfoBanner"
+            ],
+            "OrRequirements": [
+              [
+                {
+                  "PathFalse": [
+                    "GameState",
+                    "ReachedTrueEnding"
+                  ]
+                }
+              ],
+              [
+                {
+                  "PathTrue": [
+                    "CurrentRun",
+                    "IsDreamRun"
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "2": {
+          "Args": {
+            "AnimationName": "InfoBannerTyphonIn",
+            "AnimationOutName": "InfoBannerTyphonOut",
+            "Delay": 2.0,
+            "Text": "Location_BiomeQ_Alt"
+          },
+          "FunctionName": "DisplayBiomeLocationBanner",
+          "GameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            },
+            "2": {
+              "PathFalse": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            },
+            "NamedRequirementsFalse": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        "3": {
+          "Args": "@ref:RoomEventData.BountyInfoBannerArgs",
+          "FunctionName": "DisplayInfoBanner",
+          "GameStateRequirements": {
+            "NamedRequirements": [
+              "ShouldShowBountyInfoBanner"
+            ]
+          }
+        },
+        "4": {
+          "Args": {
+            "ObjectiveSetName": "BountyAdvancedTooltip"
+          },
+          "FunctionName": "CheckObjectiveSetSource"
+        },
+        "Threaded": true
+      },
+      "TimerBlock": "IntroRoom",
+      "UnthreadedEvents": "@ref:EncounterSets.EncounterEventsNonCombat",
+      "Using": {
+        "Animation": [
+          "HeroSkyTouchdown",
+          "SandPortalExit_Down",
+          "RoomTransitionOut_TimeWarp"
+        ]
+      },
+      "WrappingData": {
+        "ObstacleWrapData": [
+          {
+            "Ids": [
+              769460,
+              792209,
+              792211
+            ],
+            "MoveSpeed": 40,
+            "MoveTime": 240,
+            "ResetOffsetDistance": -2000
+          },
+          {
+            "Ids": [
+              769456,
+              769459,
+              769464,
+              769462,
+              792212,
+              792210
+            ],
+            "MoveSpeed": 70,
+            "MoveTime": 160,
+            "ResetOffsetDistance": -4500
+          },
+          {
+            "Ids": [
+              769461,
+              792213
+            ],
+            "MoveSpeed": 100,
+            "MoveTime": 60,
+            "ResetOffsetDistance": -2000
+          }
+        ]
+      },
+      "ZoomFraction": 0.6,
+      "ZoomFractionAlt": 0.73
+    },
+    "Q_MiniBoss01": {
+      "DebugOnly": true,
+      "EntranceFunctionArgs": {
+        "AngleTowardsIdOnEnd": 768121
+      },
+      "InheritFrom": [
+        "Q_BaseMiniBoss"
+      ],
+      "LegalEncounters": [
+        "BossTyphonArm01"
+      ],
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "DelayedStart": true,
+            "ProcessTextLinesIds": [
+              768121
+            ],
+            "SetupBossIds": [
+              768121
+            ],
+            "SkipAngleTowardTarget": true,
+            "SkipBossMusic": true
+          },
+          "FunctionName": "BossIntro"
+        }
+      ],
+      "ZoomFraction": 0.75
+    },
+    "Q_MiniBoss02": {
+      "BackupCauseOfDeath": "Brute_Miniboss",
+      "BlockCameraReattach": true,
+      "CauseOfDeathDisplayData": {
+        "GameStateRequirements": [
+          {
+            "PathFalse": [
+              "GameState",
+              "RoomsEntered",
+              "Q_Boss01"
+            ]
+          }
+        ],
+        "Name": "Brute_Miniboss_Alt"
+      },
+      "CombatResolvedVoiceLines": [
+        {
+          "GlobalVoiceLines": "MiniBossEncounterEndVoiceLines"
+        }
+      ],
+      "EnterGlobalVoiceLines": "MiniBossEncounterStartVoiceLines",
+      "EntranceFunctionArgs": {
+        "AngleTowardsIdOnEnd": 768689,
+        "BossDreamIntroDelay": 1.2,
+        "BossId": 768689,
+        "BossIntroAnimation": "Enemy_Brute_Taunt",
+        "BossIntroDelay": 0.6,
+        "BossIntroSound": "/SFX/Enemy Sounds/TyphonBrute/BruteRoar"
+      },
+      "EntranceFunctionName": "RoomEntranceBoss",
+      "ForceAtBiomeDepth": 3,
+      "HasHarvestPoint": false,
+      "InheritFrom": [
+        "Q_BaseMiniBoss"
+      ],
+      "InspectPoints": {
+        "780392": {
+          "InteractTextLineSets": {
+            "Inspect_Q_MiniBoss02_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0360",
+                "Text": "{#Emph}Endless horrors spewn from Typhon are of every shape and size, including relatively sinister and larger ones recently fallen to the Princess of the Underworld's wrath."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_3262",
+                  "Text": "I'll slay them all."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "RoomsEntered",
+                "Q_Boss01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 1.1,
+      "LegalEncounters": [
+        "MiniBossBrute"
+      ],
+      "RushMaxRangeOverride": 525,
+      "ThreadEnterVoiceLines": true,
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "DelayedStart": true,
+            "ProcessTextLinesIds": [
+              768689
+            ],
+            "SetupBossIds": [
+              768689
+            ],
+            "SkipBossMusic": true
+          },
+          "FunctionName": "BossIntro"
+        }
+      ],
+      "ZoomFraction": 0.825
+    },
+    "Q_MiniBoss03": {
+      "Ambience": "/Ambience/TyphonOutdoorAmbience",
+      "BackupCauseOfDeath": "TyphonTail",
+      "CauseOfDeathDisplayData": {
+        "GameStateRequirements": [
+          {
+            "PathFalse": [
+              "GameState",
+              "RoomsEntered",
+              "Q_Boss01"
+            ]
+          }
+        ],
+        "Name": "TyphonTail_Alt"
+      },
+      "CombatResolvedVoiceLines": [
+        {
+          "GlobalVoiceLines": "MiniBossEncounterEndVoiceLines"
+        }
+      ],
+      "DistanceTriggers": [
+        {
+          "Args": {
+            "DelayedStart": true,
+            "SkipBossMusic": true,
+            "TailId": 768130
+          },
+          "FunctionName": "TyphonTailIntro",
+          "GameStateRequirements": [
+            {
+              "PathFalse": [
+                "GameState",
+                "RoomCountCache",
+                "Q_MiniBoss03"
+              ]
+            }
+          ],
+          "Name": "TyphonTailTrigger",
+          "TriggerId": 768130,
+          "WithinDistance": 600
+        },
+        {
+          "Args": {
+            "DelayedStart": true,
+            "SkipBossMusic": true,
+            "TailId": 768130
+          },
+          "FunctionName": "TyphonTailIntro",
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "RoomCountCache",
+                "Q_MiniBoss03"
+              ]
+            }
+          ],
+          "Name": "TyphonTailTrigger",
+          "TriggerId": 768130,
+          "WithinDistance": 1200
+        }
+      ],
+      "EnterVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_2956",
+            "PlayOnce": true,
+            "PlayOnceContext": "TyphonTailRoomEnteredVO",
+            "Text": "More infestation..."
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_3231",
+            "Text": "...I'm being watched..."
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_3232",
+            "Text": "...Something's here..."
+          },
+          "4": {
+            "Cue": "/VO/MelinoeField_3233",
+            "Text": "...I know this place..."
+          },
+          "5": {
+            "Cue": "/VO/MelinoeField_3234",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "GameState",
+                  "EncountersCompletedCache",
+                  "BossTyphonTail01"
+                ]
+              }
+            ],
+            "Text": "...Time for the Tail..."
+          },
+          "6": {
+            "Cue": "/VO/MelinoeField_3235",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "GameState",
+                  "SpeechRecord",
+                  "/VO/MelinoeField_3234"
+                ]
+              }
+            ],
+            "Text": "...The Tail Chamber..."
+          },
+          "BreakIfPlayed": true,
+          "Cooldowns": [
+            {
+              "Name": "MelinoeAnyQuipSpeech"
+            }
+          ],
+          "PreLineWait": 1.65,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlay": 0.5,
+          "SuccessiveChanceToPlayAll": 0.25,
+          "UsePlayerSource": true
+        }
+      ],
+      "EntranceFunctionArgs": {
+        "AngleTowardsIdOnEnd": 768130
+      },
+      "EntranceFunctionName": "RoomEntranceStandard",
+      "ExorcismPointChance": 0.15,
+      "FishingPointChance": 0.45,
+      "ForceAtBiomeDepth": 6,
+      "HarvestPointChances": [
+        0.3
+      ],
+      "InheritFrom": [
+        "Q_BaseMiniBoss"
+      ],
+      "InspectPoints": {
+        "792125": {
+          "InteractTextLineSets": {
+            "Inspect_Q_MiniBoss03_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0336",
+                "Text": "{#Emph}One of the serpentine tails of Typhon, lord and father of all monster-kind, slashed through floor after floor of the fortress behind which the Olympians take shelter from his storm."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3256",
+                    "Text": "He'll tear this fortress apart..."
+                  },
+                  "BreakIfPlayed": true,
+                  "GameStateRequirements": [
+                    {
+                      "Comparison": ">",
+                      "Path": [
+                        "GameState",
+                        "LastBossHealthBarRecord",
+                        "TyphonHead"
+                      ],
+                      "Value": 0
+                    }
+                  ],
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                },
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3257",
+                    "Text": "I'll be the last thing he sees."
+                  },
+                  "GameStateRequirements": [
+                    {
+                      "Comparison": "<=",
+                      "Path": [
+                        "GameState",
+                        "LastBossHealthBarRecord",
+                        "TyphonHead"
+                      ],
+                      "Value": 0
+                    }
+                  ],
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "RoomsEntered",
+                "Q_Boss01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroPanEaseIn": 0.01,
+      "IntroPanEaseOut": 0.001,
+      "IntroSequenceDuration": 0.4,
+      "LegalEncounters": [
+        "BossTyphonTail01"
+      ],
+      "PickaxePointChance": 0.3,
+      "ShovelPointChance": 0.3,
+      "UnthreadedEvents": [
+        {
+          "Args": [],
+          "FunctionName": "TyphonTailAmbushSetup"
+        }
+      ],
+      "ZoomFraction": 0.765,
+      "ZoomFractionAlt": 0.81
+    },
+    "Q_MiniBoss04": {
+      "BackupCauseOfDeath": "TyphonEye",
+      "BlockCameraReattach": true,
+      "CombatResolvedVoiceLines": [
+        {
+          "GlobalVoiceLines": "MiniBossEncounterEndVoiceLines"
+        }
+      ],
+      "EnterVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_5686",
+            "Text": "Such dreamy eyes you have, Typhon..."
+          },
+          "BreakIfPlayed": true,
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "CurrentRun",
+                "IsDreamRun"
+              ]
+            }
+          ],
+          "PlayOnce": true,
+          "PlayOnceContext": "DreamRunMonsterEyeIntroVO",
+          "PreLineWait": 1.0,
+          "TriggerCooldowns": [
+            "MelinoeAnyQuipSpeech"
+          ],
+          "UsePlayerSource": true
+        },
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_3685",
+            "PlayFirst": true,
+            "PlayOnce": true,
+            "PlayOnceContext": "TyphoneEyeFirstSightingVO",
+            "Text": "Oh, what is {#Emph}this..."
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_3686",
+            "Text": "That's not what eyes are meant to do!"
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_3687",
+            "Text": "Take a good look, Typhon."
+          },
+          "4": {
+            "Cue": "/VO/MelinoeField_3688",
+            "Text": "Watch this, Monster."
+          },
+          "5": {
+            "Cue": "/VO/MelinoeField_3690",
+            "Text": "Apparently I'm being watched."
+          },
+          "6": {
+            "Cue": "/VO/MelinoeField_3689",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "GameState",
+                  "EncountersCompletedCache",
+                  "BossTyphonEye01"
+                ]
+              }
+            ],
+            "Text": "You want to lose {#Emph}another {#Prev}eye?"
+          },
+          "7": {
+            "Cue": "/VO/MelinoeField_5686",
+            "GameStateRequirements": [
+              {
+                "PathTrue": [
+                  "CurrentRun",
+                  "IsDreamRun"
+                ]
+              },
+              {
+                "PathTrue": [
+                  "GameState",
+                  "RoomsEntered",
+                  "Q_Boss01"
+                ]
+              },
+              {
+                "Comparison": "<=",
+                "CountPathTrue": true,
+                "Path": [
+                  "SpeechRecord",
+                  "/VO/MelinoeField_5686"
+                ],
+                "SumPrevRuns": 8,
+                "Value": 0
+              }
+            ],
+            "PlayFirst": true,
+            "Text": "Such dreamy eyes you have, Typhon..."
+          },
+          "BreakIfPlayed": true,
+          "Cooldowns": [
+            {
+              "Name": "MelinoeAnyQuipSpeech"
+            }
+          ],
+          "GameStateRequirements": [
+            {
+              "FunctionArgs": {
+                "Comparison": ">=",
+                "Value": 0.2
+              },
+              "FunctionName": "RequiredHealthFraction"
+            }
+          ],
+          "PreLineWait": 1.0,
+          "RandomRemaining": true,
+          "SuccessiveChanceToPlayAll": 0.25,
+          "UsePlayerSource": true
+        }
+      ],
+      "EntranceFunctionArgs": {
+        "AngleTowardsIdOnEnd": 768689,
+        "BossId": 768121,
+        "BossIntroAnimation": "Enemy_TyphonEye_Shut_End_Fast",
+        "BossIntroDelay": 0.9,
+        "BossIntroSound": "/SFX/Enemy Sounds/Typhon/EmoteJumpScare"
+      },
+      "EntranceFunctionName": "RoomEntranceBoss",
+      "ForceAtBiomeDepth": 6,
+      "GameStateRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "EncountersCompletedCache",
+            "BossTyphonTail01"
+          ]
+        }
+      ],
+      "InheritFrom": [
+        "Q_BaseMiniBoss"
+      ],
+      "InspectPoints": {
+        "792783": {
+          "InteractTextLineSets": {
+            "Inspect_Q_MiniBoss04_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0337",
+                "Text": "{#Emph}The enemies of all-seeing Typhon cannot possibly escape his rancor, for his eyes are everywhere upon him, red with rage, and searching endlessly, piercing the very soul."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_3257",
+                  "Text": "I'll be the last thing he sees."
+                },
+                "PlayOnce": true,
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "RoomsEntered",
+                "Q_Boss01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 2.1,
+      "LegalEncounters": [
+        "BossTyphonEye01"
+      ],
+      "PostCombatReloadEvents": [
+        {
+          "Args": {
+            "GroupName": "FightEndDestroy"
+          },
+          "FunctionName": "DestroyGroup"
+        }
+      ],
+      "RushMaxRangeOverride": 525,
+      "StartThreadedEvents": [
+        {
+          "Args": {
+            "ActiveEnemyCap": 4,
+            "EggShadowSpawn": "Mudman_Shadow",
+            "EggSpawn": "Simple",
+            "Interval": 1,
+            "StartDelay": 4
+          },
+          "FunctionName": "TyphonEyeEggFuser"
+        }
+      ],
+      "ThreadEnterVoiceLines": true,
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "DelayedStart": true,
+            "ProcessTextLinesIds": [
+              768121
+            ],
+            "SetupBossIds": [
+              768121
+            ],
+            "SkipBossMusic": true
+          },
+          "FunctionName": "BossIntro"
+        }
+      ],
+      "ZoomFraction": 0.7,
+      "ZoomFractionAlt": 0.76
+    },
+    "Q_MiniBoss05": {
+      "AlwaysForce": true,
+      "BackupCauseOfDeath": "Stalker_Miniboss",
+      "BlockCameraReattach": false,
+      "CauseOfDeathDisplayData": {
+        "GameStateRequirements": [
+          {
+            "PathFalse": [
+              "GameState",
+              "RoomsEntered",
+              "Q_Boss01"
+            ]
+          }
+        ],
+        "Name": "MiniBossStalker_Alt"
+      },
+      "EnterGlobalVoiceLines": "MiniBossEncounterStartVoiceLines",
+      "EntranceFunctionArgs": {
+        "BossIds": [
+          768838,
+          768837
+        ],
+        "BossIntroAnimation": "Enemy_Stalker_Intro",
+        "BossIntroDelay": 0.3,
+        "BossIntroSound": "/SFX/Enemy Sounds/TyphonStalker/EmoteTaunting",
+        "BossStaggerDelay": 0.2
+      },
+      "EntranceFunctionName": "RoomEntranceBossTwins",
+      "ForceAtBiomeDepth": 3,
+      "GameStateRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "EncountersCompletedCache",
+            "MiniBossBrute"
+          ]
+        }
+      ],
+      "InheritFrom": [
+        "Q_BaseMiniBoss"
+      ],
+      "InspectPoints": {
+        "792124": {
+          "InteractTextLineSets": {
+            "Inspect_Q_MiniBoss05_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0361",
+                "Text": "{#Emph}The foul brood of storm-bringing Typhon crawl through the growing cracks in the stonework of the Fortress of the Gods, as though to shake the mountain to its very core."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_3263",
+                  "Text": "Best watch my step."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "RoomsEntered",
+                "Q_Boss01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroPanEaseIn": 0.01,
+      "IntroPanEaseOut": 0.001,
+      "IntroSequenceDuration": 0.5,
+      "LegalEncounters": [
+        "MiniBossStalker"
+      ],
+      "ThreadEnterVoiceLines": true,
+      "UnthreadedEvents": [
+        {
+          "Args": {
+            "DelayedStart": true,
+            "ProcessTextLinesIds": [
+              768838,
+              768837
+            ],
+            "SetupBossIds": [
+              768838,
+              768837
+            ],
+            "SkipBossMusic": true,
+            "SkipCameraPan": true
+          },
+          "FunctionName": "BossIntro"
+        }
+      ],
+      "ZoomFraction": 0.77,
+      "ZoomFractionAlt": 0.81
+    },
+    "Q_PostBoss01": {
+      "Ambience": "/Ambience/TyphonOutdoorAmbience",
+      "BlockCombat": true,
+      "BlockFamiliars": true,
+      "BlockRunProgressUI": true,
+      "DistanceTriggers": [
+        {
+          "Args": {
+            "PanTargetId": 792648,
+            "ZoomFraction": 0.415
+          },
+          "FunctionName": "BiomeOverlookQPostBoss",
+          "Repeat": true,
+          "TriggerGroup": "OverlookIn",
+          "WithinDistance": 150
+        },
+        {
+          "FunctionName": "BiomeBackToRoomQPostBoss",
+          "Repeat": true,
+          "TriggerGroup": "OverlookOut",
+          "WithinDistance": 150
+        }
+      ],
+      "EnterVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_5011",
+            "Text": "This storm shall pass..."
+          },
+          "BreakIfPlayed": true,
+          "Cooldowns": [
+            {
+              "Name": "MelinoeAnyQuipSpeech"
+            }
+          ],
+          "GameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "TyphonDefeatedWithStormStop"
+              ]
+            },
+            {
+              "PathTrue": [
+                "CurrentRun",
+                "EnemyKills",
+                "TyphonHead"
+              ]
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "ReachedTrueEnding"
+              ]
+            }
+          ],
+          "PlayOnce": true,
+          "PlayOnceContext": "Q_PostBossPostTyphonDeathIntroVO",
+          "PreLineWait": 3.5,
+          "SkipCooldownCheckIfNonePlayed": true,
+          "UsePlayerSource": true
+        },
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_3454",
+            "PlayFirst": true,
+            "Text": "Almost... there..."
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_3455",
+            "Text": "The path to the Palace..."
+          },
+          "BreakIfPlayed": true,
+          "Cooldowns": [
+            {
+              "Name": "MelinoeAnyQuipSpeech"
+            }
+          ],
+          "PlayOnce": true,
+          "PlayOnceContext": "Q_PostBossIntroVO",
+          "PreLineWait": 3.5,
+          "RandomRemaining": true,
+          "UsePlayerSource": true
+        }
+      ],
+      "EntranceDirection": "Right",
+      "EntrancePresentationUsePlayerSpeed": true,
+      "ExitFunctionName": "nil",
+      "FlipHorizontalChance": 0.0,
+      "GameStateRequirements": [],
+      "HasExorcismPoint": false,
+      "HasFishingPoint": false,
+      "HasHarvestPoint": false,
+      "HasPickaxePoint": false,
+      "HasShovelPoint": false,
+      "IgnoreMusic": true,
+      "InheritFrom": [
+        "BaseQ"
+      ],
+      "InspectPoints": {
+        "798321": {
+          "InteractTextLineSets": {
+            "Inspect_Q_PostBoss_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0415",
+                "Text": "{#Emph}Few ever have laid eyes on the glorious Palace of the King of the Olympians, as only those deemed worthy may enter, or even locate it amongst the mountain peaks."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3608",
+                    "Text": "Well, here it is..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_Q_Story_02"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        },
+        "798322": {
+          "InteractTextLineSets": {
+            "Inspect_Q_PostBoss_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0418",
+                "Text": "{#Emph}Ahead lies the well-hidden and protected Palace of the King and Queen of all the gods, that stronghold from which Olympus has fought back against all too many terrible foes."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3611",
+                    "Text": "Keep holding on..."
+                  },
+                  "GameStateRequirements": [
+                    {
+                      "PathFalse": [
+                        "GameState",
+                        "TyphonDefeatedWithStormStop"
+                      ]
+                    }
+                  ],
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                },
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_4245",
+                    "Text": "Typhon makes one fewer."
+                  },
+                  "GameStateRequirements": [
+                    {
+                      "PathTrue": [
+                        "GameState",
+                        "TyphonDefeatedWithStormStop"
+                      ]
+                    }
+                  ],
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "RoomsEntered",
+                "Q_Story01"
+              ]
+            }
+          ],
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroSequenceDuration": 0.45,
+      "LegalEncounters": [
+        "Empty"
+      ],
+      "LinkedRoom": "Q_Story01",
+      "NarrativeContextArt": "DialogueBackground_Olympus_Silent",
+      "NarrativeContextArtFlippable": false,
+      "NoReroll": true,
+      "NoReward": true,
+      "ObstacleData": {
+        "776127": {
+          "AutoActivate": true,
+          "HideRewardPreview": true,
+          "InteractDistance": 550,
+          "InteractOffsetX": 0,
+          "InteractOffsetY": 0,
+          "Name": "QStoryExit",
+          "OnUsedFunctionName": "AttemptUseDoor",
+          "OnUsedGameStateRequirements": [],
+          "SetupEvents": [
+            {
+              "FunctionName": "SetupDefaultDoor"
+            },
+            {
+              "Args": {
+                "AddToGroup": "ExitDoors"
+              },
+              "FunctionName": "GenericPresentation"
+            }
+          ]
+        },
+        "792642": {
+          "DistanceTriggers": [
+            {
+              "VoiceLines": {
+                "1": {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3456",
+                    "Text": "An aether gate...?"
+                  },
+                  "PlayOnce": true,
+                  "UsePlayerSource": true
+                },
+                "Queue": "Never"
+              },
+              "WithinDistance": 800
+            }
+          ],
+          "InteractDistance": 250,
+          "Name": "PalaceForcefield",
+          "OnUsedFunctionArgs": {
+            "ApolloMusicArgs": {
+              "ApolloId": 800842,
+              "Params": {
+                "LowPass": 1.0,
+                "Vocals": 0.6
+              }
+            },
+            "ForceWalkRequirements": [
+              {
+                "HasNone": [
+                  "ZeusPalaceFirstMeeting",
+                  "ZeusPalaceFirstMeetingAlt"
+                ],
+                "Path": [
+                  "GameState",
+                  "TextLinesRecord"
+                ]
+              }
+            ]
+          },
+          "OnUsedFunctionName": "DisablePalaceForcefield",
+          "SetupEvents": [
+            {
+              "Args": {
+                "Animation": "Blank"
+              },
+              "FunctionName": "OverwriteSelf"
+            }
+          ],
+          "UseText": "UseSpecialExit"
+        }
+      },
+      "RequiresLinked": true,
+      "RewardPreviewOverride": "ExitAheadPreview",
+      "RichPresence": "#RichPresence_Misc",
+      "SkipLastKillPresentation": true,
+      "StartThreadedEvents": [
+        {
+          "Args": {
+            "Angle": 180
+          },
+          "FunctionName": "HandleWrapping"
+        },
+        {
+          "Args": {
+            "WaitForInputAllowed": true
+          },
+          "FunctionName": "RestoreMelRun"
+        }
+      ],
+      "StartUnthreadedEvents": [
+        {
+          "FunctionName": "HideGameplayTimers"
+        },
+        {
+          "FunctionName": "SetupPalaceForcefield"
+        }
+      ],
+      "SwapSounds": {
+        "/Leftovers/SFX/FootstepsWheat": "/Leftovers/SFX/FootstepsConcreteMedium",
+        "/Leftovers/SFX/FootstepsWoodRun": "/Leftovers/SFX/FootstepsConcrete"
+      },
+      "WrappingData": {
+        "ObstacleWrapData": [
+          {
+            "Ids": [
+              794637,
+              793308,
+              793297,
+              793299,
+              793300,
+              798406,
+              798407,
+              798408
+            ],
+            "MoveSpeed": 20,
+            "MoveTime": 1200,
+            "ResetOffsetDistance": 0
+          },
+          {
+            "Ids": [
+              798415,
+              798416,
+              798417,
+              798418,
+              798419,
+              798420,
+              798421,
+              798422
+            ],
+            "MoveSpeed": 20,
+            "MoveTime": 1200,
+            "ResetOffsetDistance": 0
+          }
+        ]
+      },
+      "ZoomFraction": 0.75,
+      "ZoomFractionAlt": 0.81
+    },
+    "Q_PreBoss01": {
+      "Ambience": "/Ambience/TyphonOutdoorAmbience",
+      "CameraZoomWeights": {
+        "777417": 1.23,
+        "777418": 0.92
+      },
+      "DisableRewardMagnetisim": true,
+      "DistanceTriggers": [
+        {
+          "Args": {
+            "PanTime": 1.5,
+            "SkipMusic": true,
+            "SpawnPoints": {
+              "Q_PreBoss01": 769407
+            },
+            "UnitName": "NPC_Hermes_01",
+            "WaitTime": 0.0
+          },
+          "FunctionName": "SpawnHermesInPerson",
+          "GameStateRequirements": [
+            {
+              "Comparison": "==",
+              "Path": [
+                "CurrentRun",
+                "EnteredBiomes"
+              ],
+              "Value": 4
+            }
+          ],
+          "Name": "HermesSpawnTrigger",
+          "TriggerId": 769407,
+          "WithinDistance": 800
+        }
+      ],
+      "EndMusicOnExit": true,
+      "EntranceDirection": "LeftRight",
+      "ExitFunctionName": "FortressMainDoorOpenPresentation",
+      "ExitTowardsFunctionArgs": {
+        "EndMusic": true
+      },
+      "ExitTowardsFunctionName": "GenericPresentation",
+      "FlipHorizontalChance": 0,
+      "ForceAtBiomeDepth": 7,
+      "ForcedFirstReward": "Shop",
+      "ForcedRewardStore": "RunProgress",
+      "GameStateRequirements": [],
+      "HarvestPointForceRequirements": [
+        {
+          "PathTrue": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "RoomsEntered",
+            "Q_PreBoss01"
+          ]
+        },
+        {
+          "PathFalse": [
+            "GameState",
+            "LastSurfaceRunRecord",
+            "ResourcesGained",
+            "PlantQFang"
+          ]
+        },
+        {
+          "PathFalse": [
+            "CurrentRun",
+            "ResourcesGained",
+            "PlantQFang"
+          ]
+        }
+      ],
+      "IgnoreMusic": true,
+      "IneligibleRewards": [
+        "Devotion",
+        "RoomMoneyDrop"
+      ],
+      "InheritFrom": [
+        "BaseQ"
+      ],
+      "InspectPoints": {
+        "792126": {
+          "InteractTextLineSets": {
+            "Inspect_Q_PreBoss01_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0335",
+                "Text": "{#Emph}Some scarce deliveries risked by swift Hermes represent what aid the gods can finally provide unto the Princess of the Dead, now that the summit of Olympus lies before her."
+              },
+              "EndVoiceLines": {
+                "1": {
+                  "Cue": "/VO/MelinoeField_3255",
+                  "Text": "I'll take whatever I can get..."
+                },
+                "PreLineWait": 0.4,
+                "RequiredMinElapsedTime": 3,
+                "UsePlayerSource": true
+              }
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": {
+            "1": {
+              "PathTrue": [
+                "GameState",
+                "RoomsEntered",
+                "Q_Boss01"
+              ]
+            },
+            "NamedRequirements": [
+              "NoRecentInspectPointUsed"
+            ]
+          },
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "LegalEncounters": [
+        "TyphonShop"
+      ],
+      "LinkedRooms": [
+        "Q_Boss01",
+        "Q_Boss02"
+      ],
+      "MusicMutedStems": [
+        "Drums",
+        "Bass",
+        "Guitar"
+      ],
+      "PickaxePointForceRequirements": {
+        "OrRequirements": [
+          {
+            "NamedRequirements": [
+              "NoFamiliarPickaxePointFoundThisBiome"
+            ]
+          },
+          [
+            {
+              "PathTrue": [
+                "GameState",
+                "WeaponsUnlocked",
+                "ToolPickaxe"
+              ]
+            },
+            {
+              "PathTrue": [
+                "GameState",
+                "LastSurfaceRunRecord",
+                "RoomsEntered",
+                "Q_PreBoss01"
+              ]
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "LastSurfaceRunRecord",
+                "ResourcesGained",
+                "OreQScales"
+              ]
+            },
+            {
+              "PathFalse": [
+                "CurrentRun",
+                "ResourcesGained",
+                "OreQScales"
+              ]
+            }
+          ]
+        ]
+      },
+      "ResetBinksOnExit": true,
+      "RewardPreviewIcon": "RoomRewardSubIcon_PreBoss",
+      "SecretSpawnChance": 0.0,
+      "ShovelPointForceRequirements": {
+        "OrRequirements": [
+          {
+            "NamedRequirements": [
+              "NoFamiliarShovelPointFoundThisBiome"
+            ]
+          },
+          [
+            {
+              "PathTrue": [
+                "GameState",
+                "WeaponsUnlocked",
+                "ToolShovel"
+              ]
+            },
+            {
+              "PathTrue": [
+                "GameState",
+                "LastSurfaceRunRecord",
+                "RoomsEntered",
+                "Q_PreBoss01"
+              ]
+            },
+            {
+              "PathFalse": [
+                "GameState",
+                "LastSurfaceRunRecord",
+                "ResourcesGained",
+                "PlantQSnakereedSeed"
+              ]
+            },
+            {
+              "PathFalse": [
+                "CurrentRun",
+                "ResourcesGained",
+                "PlantQSnakereedSeed"
+              ]
+            }
+          ]
+        ]
+      },
+      "SkipLastKillPresentation": true,
+      "SkipShopSecretMusic": true,
+      "SpeakerName": "Hermes",
+      "StartUnthreadedEvents": "@ref:EncounterSets.ShopRoomEvents",
+      "StoreDataName": "Q_WorldShop",
+      "StoreDuplicateItemId": 769407,
+      "Using": {
+        "UnitName": "NPC_Hermes_01"
+      },
+      "ZagContractRewardDestinationId": 793525,
+      "ZoomFraction": 0.8,
+      "ZoomFractionAlt": 0.83
+    },
+    "Q_Story01": {
+      "Ambience": "/Leftovers/Object Ambiences/CommonwealthAmbience",
+      "BlockCombat": true,
+      "BlockFamiliars": true,
+      "CameraZoomWeights": {
+        "798372": 1.12,
+        "798373": 0.975
+      },
+      "CameraZoomWeightsAlt": {
+        "798372": 1.32,
+        "798373": 1.2
+      },
+      "EnterVoiceLines": [
+        {
+          "1": {
+            "Cue": "/VO/MelinoeField_3468",
+            "Text": "Is that...?"
+          },
+          "2": {
+            "Cue": "/VO/MelinoeField_3469",
+            "PlayFirst": true,
+            "Text": "Music..."
+          },
+          "3": {
+            "Cue": "/VO/MelinoeField_3470",
+            "Text": "The King and Queen..."
+          },
+          "4": {
+            "Cue": "/VO/MelinoeField_3471",
+            "Text": "They're here..."
+          },
+          "BreakIfPlayed": true,
+          "Cooldowns": [
+            {
+              "Name": "MelinoeAnyQuipSpeech",
+              "Time": 16
+            }
+          ],
+          "PlayOnce": true,
+          "PreLineWait": 4.0,
+          "UsePlayerSource": true
+        }
+      ],
+      "EnterWipeAnimation": "RoomTransitionOut_TopRight",
+      "EntranceDirection": "Right",
+      "EntrancePresentationUsePlayerSpeed": true,
+      "GameStateRequirements": [],
+      "HasExorcismPoint": false,
+      "HasFishingPoint": false,
+      "HasHarvestPoint": false,
+      "HasPickaxePoint": false,
+      "HasShovelPoint": false,
+      "IgnoreMusic": true,
+      "InheritFrom": [
+        "BaseQ"
+      ],
+      "InspectPoints": {
+        "798320": {
+          "InteractTextLineSets": {
+            "Inspect_Q_Story_01": {
+              "1": {
+                "Cue": "/VO/Storyteller_0416",
+                "Text": "{#Emph}The majestic Palace of Zeus stands resolute and strong, for the combined might of the gods has kept that seat of power safe, even from such monstrous adversaries as they face."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3609",
+                    "Text": "These must be just the palace grounds..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": [],
+          "UseText": "UseExamineMisc"
+        },
+        "798321": {
+          "InteractTextLineSets": {
+            "Inspect_Q_Story_02": {
+              "1": {
+                "Cue": "/VO/Storyteller_0417",
+                "Text": "{#Emph}Tranquil music made by masterful Apollo reverberates throughout the palace grounds, piercing the grimness of the circumstances like an arrow of pure light."
+              },
+              "EndVoiceLines": [
+                {
+                  "1": {
+                    "Cue": "/VO/MelinoeField_3610",
+                    "Text": "He's good..."
+                  },
+                  "PreLineWait": 0.4,
+                  "RequiredMinElapsedTime": 3,
+                  "UsePlayerSource": true
+                }
+              ]
+            }
+          },
+          "PlayOnce": true,
+          "SetupGameStateRequirements": [
+            {
+              "PathTrue": [
+                "GameState",
+                "TextLinesRecord",
+                "Inspect_Q_Story_01"
+              ]
+            },
+            {
+              "HasNone": [
+                "Inspect_Q_PostBoss_02"
+              ],
+              "Path": [
+                "CurrentRun",
+                "TextLinesRecord"
+              ]
+            }
+          ],
+          "UseText": "UseExamineMisc"
+        }
+      },
+      "IntroPanEaseIn": 0.01,
+      "IntroPanEaseOut": 0.001,
+      "IntroSequenceDuration": 1.0,
+      "LegalEncounters": [
+        "Story_Palace_01"
+      ],
+      "NarrativeContextArt": "DialogueBackground_Olympus_Silent",
+      "NarrativeContextArtFlippable": false,
+      "NoReroll": true,
+      "NoReward": true,
+      "ObstacleData": {
+        "792347": {
+          "AnimOffsetZ": 110,
+          "InteractDistance": 180,
+          "InteractTextLineSets": {
+            "PalaceBoonExit01": {
+              "1": {
+                "BoxAnimation": "DialogueSpeechBubble",
+                "BoxExitAnimation": "DialogueSpeechBubbleOut",
+                "Cue": "/VO/MelinoeField_3834",
+                "Portrait": "Portrait_Mel_Vulnerable_01",
+                "PortraitExitAnimation": "Portrait_Mel_Vulnerable_01_Exit",
+                "PostLineAnim": "MelTalkPensive01ReturnToIdle",
+                "PostLineAnimTarget": "Hero",
+                "PostLineFunctionName": "BoonInteractPresentation",
+                "PostLineRemoveContextArt": true,
+                "PreLineAnim": "MelTalkPensive01",
+                "PreLineAnimTarget": "Hero",
+                "Text": "I'm unaccustomed to being on this side! I see... Erebus, I think. Wait, Headmistress, is that {#Emph}you? {#Prev}Can you hear me?",
+                "TextColor": "@ref:Color.DialogueText",
+                "UsePlayerSource": true,
+                "UseRoomContextArt": true
+              },
+              "2": {
+                "BoxAnimation": "DialogueSpeechBubble",
+                "BoxExitAnimation": "DialogueSpeechBubbleOut",
+                "Cue": "/VO/HecateField_0328",
+                "NarrativeContextArt": "DialogueBackground_Erebus",
+                "PortraitExitWait": 0.25,
+                "PostLineRemoveContextArt": true,
+                "PreContentSound": "/Leftovers/Menu Sounds/TextReveal2",
+                "PreLineWait": 1.25,
+                "Source": "NPC_Hecate_01",
+                "Text": "{#Emph}In the name of Hades. Olympus, I accept this message! {#Prev}...Melinoë? If you can even hear me yonder, I bid you to return. We have matters to discuss."
+              },
+              "3": {
+                "BoxAnimation": "DialogueSpeechBubble",
+                "BoxExitAnimation": "DialogueSpeechBubbleOut",
+                "Cue": "/VO/MelinoeField_3835",
+                "Portrait": "Portrait_Mel_Proud_01",
+                "PostLineAnim": "MelTalkExplaining01ReturnToIdle",
+                "PostLineAnimTarget": "Hero",
+                "PostLineFunctionArgs": {
+                  "MusicEndTime": 60,
+                  "WaitTime": 0
+                },
+                "PostLineRemoveContextArt": true,
+                "PostLineThreadedFunctionName": "KillHero",
+                "PreLineAnim": "MelTalkExplaining01",
+                "PreLineAnimTarget": "Hero",
+                "PreLineWait": 0.35,
+                "Text": "...I have to go now, everyone. Please take care, and let the others know I'm sorry to have missed them. I'll return!",
+                "TextColor": "@ref:Color.DialogueText",
+                "UsePlayerSource": true,
+                "UseRoomContextArt": true
+              },
+              "EndGlobalVoiceLines": "ZeusSendOffVoiceLines",
+              "GameStateRequirements": [],
+              "PlayOnce": true
+            },
+            "PalaceBoonExit02": {
+              "1": {
+                "BoxAnimation": "DialogueSpeechBubble",
+                "BoxExitAnimation": "DialogueSpeechBubbleOut",
+                "Cue": "/VO/MelinoeField_3927",
+                "Portrait": "Portrait_Mel_Proud_01",
+                "PostLineAnim": "MelTalkPensive01ReturnToIdle",
+                "PostLineAnimTarget": "Hero",
+                "PostLineFunctionArgs": {
+                  "MusicEndTime": 60,
+                  "WaitTime": 0
+                },
+                "PostLineRemoveContextArt": true,
+                "PostLineThreadedFunctionName": "KillHero",
+                "PreLineAnim": "MelTalkPensive01",
+                "PreLineAnimTarget": "Hero",
+                "Text": "...It has been wonderful to see you all! Farewell for now!",
+                "TextColor": "@ref:Color.DialogueText",
+                "UsePlayerSource": true,
+                "UseRoomContextArt": true
+              },
+              "EndGlobalVoiceLines": "ZeusSendOffVoiceLines",
+              "GameStateRequirements": [
+                {
+                  "PathTrue": [
+                    "GameState",
+                    "TextLinesRecord",
+                    "ZeusPalacePostTrueEnding01"
+                  ]
+                }
+              ],
+              "PlayOnce": true
+            },
+            "PalaceBoonExitPostTrueEnding01": {
+              "1": {
+                "BoxAnimation": "DialogueSpeechBubble",
+                "BoxExitAnimation": "DialogueSpeechBubbleOut",
+                "Cue": "/VO/MelinoeField_5022",
+                "Portrait": "Portrait_Mel_Proud_01",
+                "PostLineAnim": "MelTalkPensive01ReturnToIdle",
+                "PostLineAnimTarget": "Hero",
+                "PostLineFunctionArgs": {
+                  "MusicEndTime": 60,
+                  "WaitTime": 0
+                },
+                "PostLineRemoveContextArt": true,
+                "PostLineThreadedFunctionName": "KillHero",
+                "PreLineAnim": "MelTalkPensive01",
+                "PreLineAnimTarget": "Hero",
+                "Text": "...It sounds like I may not be visiting again anytime soon, so... thank you all, and please let the others know I wish them well. Let's keep in touch by Boon!",
+                "TextColor": "@ref:Color.DialogueText",
+                "UsePlayerSource": true,
+                "UseRoomContextArt": true
+              },
+              "EndGlobalVoiceLines": "ZeusSendOffVoiceLines",
+              "GameStateRequirements": [
+                {
+                  "PathTrue": [
+                    "GameState",
+                    "ReachedTrueEnding"
+                  ]
+                }
+              ],
+              "PlayOnce": true
+            },
+            "PalaceBoonExitRepeatable01": {
+              "1": {
+                "BoxAnimation": "DialogueSpeechBubble",
+                "BoxExitAnimation": "DialogueSpeechBubbleOut",
+                "Cue": "/VO/MelinoeField_3923",
+                "Portrait": "Portrait_Mel_Proud_01",
+                "PostLineAnim": "MelTalkExplaining01ReturnToIdle",
+                "PostLineAnimTarget": "Hero",
+                "PostLineFunctionArgs": {
+                  "MusicEndTime": 60,
+                  "WaitTime": 0
+                },
+                "PostLineRemoveContextArt": true,
+                "PostLineThreadedFunctionName": "KillHero",
+                "PreLineAnim": "MelTalkExplaining01",
+                "PreLineAnimTarget": "Hero",
+                "Text": "...Goodbye for now, everyone! May you be safe and well when next we meet.",
+                "TextColor": "@ref:Color.DialogueText",
+                "UsePlayerSource": true,
+                "UseRoomContextArt": true
+              },
+              "EndGlobalVoiceLines": "ZeusSendOffVoiceLines",
+              "GameStateRequirements": [
+                {
+                  "PathTrue": [
+                    "GameState",
+                    "TextLinesRecord",
+                    "ZeusPalaceMeeting02"
+                  ]
+                }
+              ]
+            },
+            "PalaceBoonExitRepeatable02": {
+              "1": {
+                "BoxAnimation": "DialogueSpeechBubble",
+                "BoxExitAnimation": "DialogueSpeechBubbleOut",
+                "Cue": "/VO/MelinoeField_3925",
+                "Portrait": "Portrait_Mel_Proud_01",
+                "PostLineAnim": "MelTalkBrooding01ReturnToIdle",
+                "PostLineAnimTarget": "Hero",
+                "PostLineFunctionArgs": {
+                  "MusicEndTime": 60,
+                  "WaitTime": 0
+                },
+                "PostLineRemoveContextArt": true,
+                "PostLineThreadedFunctionName": "KillHero",
+                "PreLineAnim": "MelTalkBrooding01",
+                "PreLineAnimTarget": "Hero",
+                "Text": "...We're getting closer, everyone. Please stay safe!",
+                "TextColor": "@ref:Color.DialogueText",
+                "UsePlayerSource": true,
+                "UseRoomContextArt": true
+              },
+              "EndGlobalVoiceLines": "ZeusSendOffVoiceLines",
+              "GameStateRequirements": [
+                {
+                  "HasAny": [
+                    "ZeusPalaceMeeting03",
+                    "ZeusPalaceMeeting03_A",
+                    "ZeusPalaceMeeting03_B"
+                  ],
+                  "Path": [
+                    "GameState",
+                    "TextLinesRecord"
+                  ]
+                }
+              ]
+            },
+            "PalaceBoonExitRepeatable03": {
+              "1": {
+                "BoxAnimation": "DialogueSpeechBubble",
+                "BoxExitAnimation": "DialogueSpeechBubbleOut",
+                "Cue": "/VO/MelinoeField_3924",
+                "PostLineAnim": "MelTalkBrooding01ReturnToIdle",
+                "PostLineAnimTarget": "Hero",
+                "PostLineFunctionArgs": {
+                  "MusicEndTime": 60,
+                  "WaitTime": 0
+                },
+                "PostLineRemoveContextArt": true,
+                "PostLineThreadedFunctionName": "KillHero",
+                "PreLineAnim": "MelTalkBrooding01",
+                "PreLineAnimTarget": "Hero",
+                "Text": "...Should Typhon rise again, I shall return!",
+                "TextColor": "@ref:Color.DialogueText",
+                "UsePlayerSource": true,
+                "UseRoomContextArt": true
+              },
+              "EndGlobalVoiceLines": "ZeusSendOffVoiceLines",
+              "GameStateRequirements": [
+                {
+                  "HasAny": [
+                    "ZeusPalaceMeeting04",
+                    "ZeusPalaceMeeting04_B"
+                  ],
+                  "Path": [
+                    "GameState",
+                    "TextLinesRecord"
+                  ]
+                }
+              ]
+            },
+            "PalaceBoonExitTyphonDestroyed01": {
+              "1": {
+                "BoxAnimation": "DialogueSpeechBubble",
+                "BoxExitAnimation": "DialogueSpeechBubbleOut",
+                "Cue": "/VO/MelinoeField_3926",
+                "Portrait": "Portrait_Mel_Proud_01",
+                "PostLineAnim": "MelTalkBrooding01ReturnToIdle",
+                "PostLineAnimTarget": "Hero",
+                "PostLineFunctionArgs": {
+                  "MusicEndTime": 60,
+                  "WaitTime": 0
+                },
+                "PostLineRemoveContextArt": true,
+                "PostLineThreadedFunctionName": "KillHero",
+                "PreLineAnim": "MelTalkBrooding01",
+                "PreLineAnimTarget": "Hero",
+                "Text": "...Now for Chronos. I'll be counting on your blessings, everyone!",
+                "TextColor": "@ref:Color.DialogueText",
+                "UsePlayerSource": true,
+                "UseRoomContextArt": true
+              },
+              "EndGlobalVoiceLines": "ZeusSendOffVoiceLines",
+              "GameStateRequirements": [
+                {
+                  "PathTrue": [
+                    "GameState",
+                    "TextLinesRecord",
+                    "ZeusPalaceAboutTyphonDeath01"
+                  ]
+                }
+              ],
+              "PlayOnce": true
+            }
+          },
+          "LoadPackages": [
+            "Hecate"
+          ],
+          "Name": "EndRunBoon",
+          "OnUsedFunctionName": "UseDummyLoot",
+          "OnUsedGameStateRequirements": {
+            "1": {
+              "HasAny": [
+                "NPC_Zeus_Story_01",
+                "NPC_Chronos_02"
+              ],
+              "Path": [
+                "CurrentRun",
+                "CurrentRoom",
+                "UseRecord"
+              ]
+            },
+            "OrRequirements": [
+              [
+                {
+                  "FunctionArgs": {
+                    "Alive": false,
+                    "Units": [
+                      "NPC_Demeter_Story_01"
+                    ]
+                  },
+                  "FunctionName": "RequiredAlive"
+                }
+              ],
+              [
+                {
+                  "PathTrue": [
+                    "CurrentRun",
+                    "CurrentRoom",
+                    "UseRecord",
+                    "NPC_Demeter_Story_01"
+                  ]
+                }
+              ]
+            ]
+          },
+          "SpeakerName": "Hecate",
+          "UseText": "UsePalaceExit"
+        }
+      },
+      "RequiresLinked": true,
+      "RichPresence": "#RichPresence_Misc",
+      "StartUnthreadedEvents": [
+        {
+          "FunctionName": "HideGameplayTimers"
+        },
+        {
+          "FunctionName": "SetupPalaceExitPoint"
+        },
+        {
+          "Args": {
+            "LoadVoiceBanks": [
+              "HecateField"
+            ]
+          },
+          "FunctionName": "GenericPresentation",
+          "GameStateRequirements": [
+            {
+              "PathFalse": [
+                "GameState",
+                "TextLinesRecord",
+                "PalaceBoonExit01"
+              ]
+            }
+          ]
+        }
+      ],
+      "SwapSounds": {
+        "/Leftovers/SFX/FootstepsWheat": "/Leftovers/SFX/FootstepsConcreteMedium",
+        "/Leftovers/SFX/FootstepsWoodRun": "/Leftovers/SFX/FootstepsConcrete"
+      },
+      "TimerBlock": "StoryRoom",
+      "ZoomFraction": 0.65
+    }
+  }
