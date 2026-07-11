@@ -37,6 +37,6 @@
     "esbuild@0.25.12": true
   },
   "optionalDependencies": {
-    "@tailwindcss/oxide-linux-x64-gnu": "^4.3.2"
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.1.0"
   }
 }
