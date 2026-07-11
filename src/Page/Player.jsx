@@ -172,7 +172,7 @@ export default function Player() {
             <div
               className="h-30 w-full rounded flex flex-col items-center justify-center relative overflow-hidden"
               style={{
-                borderStyle: "solid", // Required
+                borderStyle: "solid",
                 borderWidth: "10px",
                 borderImage: "url('/Misc/frame.webp') 40 stretch",
               }}
