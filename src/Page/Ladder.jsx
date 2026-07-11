@@ -5,7 +5,7 @@ import { boonCodexr } from "../Data/Boon2";
 import { h2AspectOrder, parsemstoTime, parseTimetoms, sToA } from "../Data/Misc";
 import { Link } from "react-router-dom";
 import PageBlock from "../Block/PageBlock";
-import { ComposedChart, Line, Bar, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
+import { ComposedChart, Line, Bar, YAxis } from "recharts";
 
 import { v1bundle } from "../Data/DataBundle";
 import { useState } from "react";
@@ -42,7 +42,7 @@ export default function Ladder() {
     const removeDup = aspectArray.filter(
       (player, index, self) => index === self.findIndex((p) => p.nam === player.nam),
     );
-    const formatTime = removeDup.map((entry) => ({ ...entry, lineGraph: +entry.tim.slice(0, 2) }));
+    const formatTime = removeDup.map((entry) => ({ ...entry, lineGraph: parseTimetoms(entry.tim) }));
     fulldata_ArrArrObject.push(formatTime);
   }
   //
@@ -111,18 +111,16 @@ export default function Ladder() {
                     <div className="text-center font-[Sr] text-white">{h2AspectOrder[oi]}</div>
                     <div className="w-full h-30 border border-white/10 p-1 rounded relative" key={oi}>
                       <div className="absolute bottom-0 right-1 font-[UbuntuMono] uppercase">Bar Fear/Line Time</div>
-                      <ResponsiveContainer width="100%" height="100%">
-                        <ComposedChart
-                          style={{ width: "100%", maxHeight: "100px", aspectRatio: 1.618 }}
-                          responsive
-                          data={fulldata_ArrArrObject[oi].slice(0, 10)}
-                        >
-                          <YAxis yAxisId="left" domain={[50, 70]} hide />
-                          <YAxis yAxisId="right" orientation="right" domain={[7, 22]} hide />
-                          <Bar dataKey="fea" yAxisId="left" fill="#28282b" />
-                          <Line type="monotone" yAxisId="right" dataKey="lineGraph" stroke="#fff" />
-                        </ComposedChart>
-                      </ResponsiveContainer>
+                      <ComposedChart
+                        style={{ width: "100%", maxHeight: "100px", aspectRatio: 1.618 }}
+                        responsive
+                        data={fulldata_ArrArrObject[oi].slice(0, 10)}
+                      >
+                        <YAxis yAxisId="left" domain={[50, 70]} hide />
+                        <YAxis yAxisId="right" orientation="right" domain={[54000, 120000]} hide />
+                        <Bar dataKey="fea" yAxisId="left" fill="#28282b" radius={5} />
+                        <Line type="monotone" yAxisId="right" dataKey="lineGraph" stroke="#fff" />
+                      </ComposedChart>
                     </div>
                     {arr.slice(0, 10).map((obj, index) => (
                       <div className="grid grid-cols-3 relative text-gray-300 items-center" key={index}>

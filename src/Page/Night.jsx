@@ -130,7 +130,7 @@ export default function Night() {
             <div className="px-2">Total Entries: {orderData.length}</div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-1 px-2">
               <select
-                className="w-full select select-sm bg-[#0e0c12] rounded border-1 focus:outline-none focus:border-transparent"
+                className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
                 value={category}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -143,7 +143,7 @@ export default function Night() {
                 ))}
               </select>
               <select
-                className="w-full select select-sm bg-[#0e0c12] rounded border-1 focus:outline-none focus:border-transparent"
+                className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
                 value={region}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -155,7 +155,7 @@ export default function Night() {
                 <option value={`Underworld`}>Underworld</option>
               </select>
               <select
-                className="w-full select select-sm bg-[#0e0c12] rounded border-1 focus:outline-none focus:border-transparent"
+                className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
                 value={fill}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -166,7 +166,7 @@ export default function Night() {
                 <option value={`Fear`}>Fear</option>
               </select>
               <select
-                className="w-full select select-sm bg-[#0e0c12] rounded border-1 focus:outline-none focus:border-transparent"
+                className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
                 value={player}
                 onChange={(e) => {
                   setPageIndex(1);
@@ -276,32 +276,32 @@ export default function Night() {
                           )}
                           {obj.ham
                             ? findValue(
-                              sToA(obj.ham).sort((a, b) => {
-                                const aIndex = orderMap.get(a) ?? Infinity;
-                                const bIndex = orderMap.get(b) ?? Infinity;
-                                return aIndex - bIndex;
-                              }),
-                            ).map((ite, index) => (
-                              <div className="tooltip">
-                                <div className="tooltip-content p-0">
-                                  <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
-                                    {p9boons[ite]}
+                                sToA(obj.ham).sort((a, b) => {
+                                  const aIndex = orderMap.get(a) ?? Infinity;
+                                  const bIndex = orderMap.get(b) ?? Infinity;
+                                  return aIndex - bIndex;
+                                }),
+                              ).map((ite, index) => (
+                                <div className="tooltip">
+                                  <div className="tooltip-content p-0">
+                                    <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
+                                      {p9boons[ite]}
+                                    </div>
+                                  </div>
+                                  <div className="relative size-10 sm:size-8 shrink-0">
+                                    <img
+                                      src="/BoonBorder/Hammer.png"
+                                      alt="Border"
+                                      className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                                    />
+                                    <img
+                                      src={`/P9/${ite}.png`}
+                                      alt="Hammers"
+                                      className="absolute inset-0 w-full h-full p-1 object-contain"
+                                    />
                                   </div>
                                 </div>
-                                <div className="relative size-10 sm:size-8 shrink-0">
-                                  <img
-                                    src="/BoonBorder/Hammer.png"
-                                    alt="Border"
-                                    className="absolute inset-0 w-full h-full z-10 pointer-events-none"
-                                  />
-                                  <img
-                                    src={`/P9/${ite}.png`}
-                                    alt="Hammers"
-                                    className="absolute inset-0 w-full h-full p-1 object-contain"
-                                  />
-                                </div>
-                              </div>
-                            ))
+                              ))
                             : ``}
                         </div>
                         {obj.ks && (
@@ -327,19 +327,19 @@ export default function Night() {
                       <div className="flex justify-start">
                         {obj.cor
                           ? sToA(obj.cor).map((ite, index) => (
-                            <div className="relative size-10 sm:size-8 shrink-0">
-                              <img
-                                src="/BoonBorder/Common.png"
-                                alt="Border"
-                                className="absolute inset-0 w-full h-full z-10 pointer-events-none"
-                              />
-                              <img
-                                src={`/H2Boons/${ite}.png`}
-                                alt="Core Boon"
-                                className="absolute inset-0 w-full h-full p-1 object-contain"
-                              />
-                            </div>
-                          ))
+                              <div className="relative size-10 sm:size-8 shrink-0">
+                                <img
+                                  src="/BoonBorder/Common.png"
+                                  alt="Border"
+                                  className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                                />
+                                <img
+                                  src={`/H2Boons/${ite}.png`}
+                                  alt="Core Boon"
+                                  className="absolute inset-0 w-full h-full p-1 object-contain"
+                                />
+                              </div>
+                            ))
                           : ``}
                       </div>
                       <div className="flex gap-1">
@@ -359,9 +359,7 @@ export default function Night() {
                           </Link>
                         )}
                       </div>
-                      <div className="line-clamp-2 leading-[1.2] min-h-[32px] pt-1 text-gray-400 text-[12px]">
-                        {obj.des}
-                      </div>
+                      <div className="line-clamp-2 leading-[1.2] min-h-8 pt-1 text-gray-400 text-[12px]">{obj.des}</div>
                     </div>
                   </div>
                 ))}
@@ -381,13 +379,13 @@ export default function Night() {
                     <td className="min-w-40 w-40">Core</td>
                     <td>Time</td>
                     <td>Date</td>
-                    <td className="min-w-[100px]">Link</td>
+                    <td className="min-w-25">Link</td>
                   </tr>
                 </thead>
                 <tbody>
                   {paginatedData.map((obj, index) => (
                     <tr key={index} className="text-[14px]">
-                      <td className="border-0 border-y-1 border-y-white/5">
+                      <td className="border-0 border-y border-y-white/5">
                         <div
                           className={
                             obj.loc === `Underworld` ? `text-[#00ffaa]` : obj.loc === `Surface` ? `text-[yellow]` : ``
@@ -397,7 +395,7 @@ export default function Night() {
                           {index + 1 + ITEMS_PER_PAGE * (pageIndex - 1)}
                         </div>
                       </td>
-                      <td className="border-0 border-y-1 border-y-white/5">
+                      <td className="border-0 border-y border-y-white/5">
                         <div className="flex gap-1">
                           <div>{obj.nam}</div>
                           <div className="shrink-0 size-4">
@@ -415,17 +413,18 @@ export default function Night() {
                           </div>
                         </div>
                       </td>
-                      <td className="border-0 border-y-1 border-y-white/5">
+                      <td className="border-0 border-y border-y-white/5">
                         <div>{+obj.fea}</div>
                       </td>
-                      <td className="border-0 border-y-1 border-y-white/5">
+                      <td className="border-0 border-y border-y-white/5">
                         <div className="flex gap-2 justify-between items-center">
                           <div>{obj.asp}</div>
                           {obj.des && (
-                            <div className="w-[25px]">
+                            <div className="w-6.25">
                               <div
-                                className={`tooltip ${index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
-                                  }`}
+                                className={`tooltip ${
+                                  index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
+                                }`}
                               >
                                 <div className="tooltip-content p-0">
                                   <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
@@ -438,7 +437,7 @@ export default function Night() {
                           )}
                         </div>
                       </td>
-                      <td className="border-0 border-y-1 border-y-white/5">
+                      <td className="border-0 border-y border-y-white/5">
                         {obj.ks && (
                           <div className="flex gap-1">
                             {sToA(obj.ks).map((ite, index) => (
@@ -454,7 +453,7 @@ export default function Night() {
                           </div>
                         )}
                       </td>
-                      <td className="border-0 border-y-1 border-y-white/5">
+                      <td className="border-0 border-y border-y-white/5">
                         <div className="flex gap-0.5">
                           {obj.fam && (
                             <div className="tooltip">
@@ -468,53 +467,53 @@ export default function Night() {
                           )}
                           {obj.ham
                             ? findValue(
-                              sToA(obj.ham).sort((a, b) => {
-                                const aIndex = orderMap.get(a) ?? Infinity;
-                                const bIndex = orderMap.get(b) ?? Infinity;
-                                return aIndex - bIndex;
-                              }),
-                            ).map((ite, index) => (
-                              <div className="tooltip">
-                                <div className="tooltip-content p-0">
-                                  <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
-                                    {p9boons[ite]}
+                                sToA(obj.ham).sort((a, b) => {
+                                  const aIndex = orderMap.get(a) ?? Infinity;
+                                  const bIndex = orderMap.get(b) ?? Infinity;
+                                  return aIndex - bIndex;
+                                }),
+                              ).map((ite, index) => (
+                                <div className="tooltip">
+                                  <div className="tooltip-content p-0">
+                                    <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
+                                      {p9boons[ite]}
+                                    </div>
                                   </div>
+                                  <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
                                 </div>
-                                <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
-                              </div>
-                            ))
+                              ))
                             : ``}
                         </div>
                       </td>
-                      <td className="border-0 border-y-1 border-y-white/5">
+                      <td className="border-0 border-y border-y-white/5">
                         <div className="flex gap-0.5">
                           {obj.cor
                             ? sToA(obj.cor).map((ite, index) => (
-                              <div className="tooltip">
-                                <div className="tooltip-content p-0">
-                                  <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
-                                    {p9boons[ite]}
+                                <div className="tooltip">
+                                  <div className="tooltip-content p-0">
+                                    <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
+                                      {p9boons[ite]}
+                                    </div>
                                   </div>
+                                  <img
+                                    draggable={false}
+                                    src={`/H2Boons/${ite}.png`}
+                                    alt="Core Boon"
+                                    className="size-6"
+                                    loading="lazy"
+                                  />
                                 </div>
-                                <img
-                                  draggable={false}
-                                  src={`/H2Boons/${ite}.png`}
-                                  alt="Core Boon"
-                                  className="size-6"
-                                  loading="lazy"
-                                />
-                              </div>
-                            ))
+                              ))
                             : ``}
                         </div>
                       </td>
-                      <td className="border-0 border-y-1 border-y-white/5">
+                      <td className="border-0 border-y border-y-white/5">
                         <div>{obj.tim}</div>
                       </td>
-                      <td className="border-0 border-y-1 border-y-white/5">
+                      <td className="border-0 border-y border-y-white/5">
                         <div>{obj.dat.slice(0, 10)}</div>
                       </td>
-                      <td className="border-0 border-y-1 border-y-white/5">
+                      <td className="border-0 border-y border-y-white/5">
                         <div className="flex gap-1">
                           {obj.src && (
                             <Link to={obj.src} target="_blank" className="underline">
@@ -544,7 +543,7 @@ export default function Night() {
             <button
               disabled={pageIndex === 1}
               onClick={() => setPageIndex((prev) => prev - 1)}
-              className="min-w-[60px] bg-[white] text-black rounded cursor-pointer hover:scale-[90%] transition-transform duration-100 ease-linear"
+              className="min-w-15 bg-[white] text-black rounded cursor-pointer hover:scale-[90%] transition-transform duration-100 ease-linear"
             >
               Prev
             </button>
@@ -554,7 +553,7 @@ export default function Night() {
             <button
               disabled={pageIndex * ITEMS_PER_PAGE >= orderData.length}
               onClick={() => setPageIndex((prev) => prev + 1)}
-              className="min-w-[60px] bg-[white] text-black rounded cursor-pointer hover:scale-[90%] transition-transform duration-100 ease-linear"
+              className="min-w-15 bg-[white] text-black rounded cursor-pointer hover:scale-[90%] transition-transform duration-100 ease-linear"
             >
               Next
             </button>

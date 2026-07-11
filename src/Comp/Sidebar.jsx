@@ -8,6 +8,7 @@ export const sites = [
   { link: `Dream`, nam: `Dream Dive Runs`, icon: `Dream` },
   { link: `Ladder`, nam: `Ladder / Standing`, icon: `Athena` },
   { link: `GameplaySubmission`, nam: `Submit Run`, icon: `Book_Frog` },
+  { link: `Player`, nam: `Players`, icon: `HealthBar_Mel` },
 ];
 export const tools = [
   { link: `ArcanaDeck`, nam: `Arcana Deck`, icon: `ReRoll` },

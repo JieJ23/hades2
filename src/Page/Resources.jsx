@@ -15,16 +15,6 @@ const pagesObj = [
     des: `Stats collected since inception: Core Boons, Hammers, Arcana, and Familiars.`,
   },
   {
-    link: `FearPoints`,
-    nam: `Fear PBs`,
-    des: `A list of the top 50 players, compiled according to their accumulated highest fear completion for each aspect. All entries included.`,
-  },
-  {
-    link: `TimePb`,
-    nam: `Time PBs`,
-    des: `A list of the top 50 players, compiled according to their accumulated fastest completion for each aspect. All entries included.`,
-  },
-  {
     link: `Enemy`,
     nam: `Enemy Data`,
     des: `Information of all Hades 2 enemies.`,

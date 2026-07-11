@@ -108,7 +108,7 @@ export default function Dream() {
               <div className="px-2">Total Entries: {orderData.length}</div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-1 px-2">
                 <select
-                  className="w-full select select-sm bg-[#0e0c12] rounded border-1 focus:outline-none focus:border-transparent"
+                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
                   value={category}
                   onChange={(e) => {
                     setPageIndex(1);
@@ -121,7 +121,7 @@ export default function Dream() {
                   ))}
                 </select>
                 <select
-                  className="w-full select select-sm bg-[#0e0c12] rounded border-1 focus:outline-none focus:border-transparent"
+                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
                   value={fill}
                   onChange={(e) => {
                     setPageIndex(1);
@@ -305,7 +305,7 @@ export default function Dream() {
                             </div>
                           ))}
                         </div>
-                        <div className="line-clamp-2 leading-[1.2] min-h-[32px] text-gray-400">{obj.des}</div>
+                        <div className="line-clamp-2 leading-[1.2] min-h-8 text-gray-400">{obj.des}</div>
                       </div>
                     </div>
                   ))}
@@ -326,27 +326,27 @@ export default function Dream() {
                       <th className="min-w-40 w-40">Core</th>
                       <th>Time</th>
                       <th>Date</th>
-                      <th className="min-w-[100px]">Link</th>
+                      <th className="min-w-25">Link</th>
                     </tr>
                   </thead>
                   <tbody>
                     {paginatedData.slice(0, 100).map((obj, index) => (
                       <tr key={index} className="text-[14px]">
-                        <td className="border-0 border-y-1 border-y-white/5">
+                        <td className="border-0 border-y border-y-white/5">
                           <div className={`text-pink-500`}>
                             {/* {orderData.length - (index + 25 * (pageIndex - 1))} */}
                             {index + 1 + ITEMS_PER_PAGE * (pageIndex - 1)}
                           </div>
                         </td>
-                        <td className="border-0 border-y-1 border-y-white/5">
+                        <td className="border-0 border-y border-y-white/5">
                           <div className="flex gap-1">
                             <div>{obj.nam}</div>
                           </div>
                         </td>
-                        <td className="border-0 border-y-1 border-y-white/5">
+                        <td className="border-0 border-y border-y-white/5">
                           <div>{obj.fea}</div>
                         </td>
-                        <td className="border-0 border-y-1 border-y-white/5">
+                        <td className="border-0 border-y border-y-white/5">
                           <div className="flex gap-1">
                             {sToA(obj.loc).map((ite, index) => (
                               <div className="tooltip shrink-0">
@@ -360,11 +360,11 @@ export default function Dream() {
                             ))}
                           </div>
                         </td>
-                        <td className="border-0 border-y-1 border-y-white/5">
+                        <td className="border-0 border-y border-y-white/5">
                           <div className="flex gap-2 justify-between items-center">
                             <div>{obj.asp}</div>
                             {obj.des && (
-                              <div className="w-[25px]">
+                              <div className="w-6.25">
                                 <div
                                   className={`tooltip ${
                                     index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
@@ -381,7 +381,7 @@ export default function Dream() {
                             )}
                           </div>
                         </td>
-                        <td className="border-0 border-y-1 border-y-white/5">
+                        <td className="border-0 border-y border-y-white/5">
                           {obj.ks && (
                             <div className="flex gap-1">
                               {sToA(obj.ks).map((ite, index) => (
@@ -402,7 +402,7 @@ export default function Dream() {
                             </div>
                           )}
                         </td>
-                        <td className="border-0 border-y-1 border-y-white/5">
+                        <td className="border-0 border-y border-y-white/5">
                           <div className="flex gap-0.5">
                             {obj.fam && (
                               <div className="tooltip">
@@ -434,7 +434,7 @@ export default function Dream() {
                               : ``}
                           </div>
                         </td>
-                        <td className="border-0 border-y-1 border-y-white/5">
+                        <td className="border-0 border-y border-y-white/5">
                           <div className="flex gap-0.5">
                             {obj.cor
                               ? sToA(obj.cor).map((ite, index) => (
@@ -456,13 +456,13 @@ export default function Dream() {
                               : ``}
                           </div>
                         </td>
-                        <td className="border-0 border-y-1 border-y-white/5">
+                        <td className="border-0 border-y border-y-white/5">
                           <div>{obj.tim}</div>
                         </td>
-                        <td className="border-0 border-y-1 border-y-white/5">
+                        <td className="border-0 border-y border-y-white/5">
                           <div>{obj.dat.slice(0, 10)}</div>
                         </td>
-                        <td className="border-0 border-y-1 border-y-white/5">
+                        <td className="border-0 border-y border-y-white/5">
                           <div className="flex gap-1">
                             {obj.src && (
                               <Link to={obj.src} target="_blank" className="underline">
@@ -492,7 +492,7 @@ export default function Dream() {
               <button
                 disabled={pageIndex === 1}
                 onClick={() => setPageIndex((prev) => prev - 1)}
-                className="min-w-[60px] bg-[white] text-black rounded cursor-pointer hover:scale-[90%] transition-transform duration-100 ease-linear"
+                className="min-w-15 bg-[white] text-black rounded cursor-pointer hover:scale-[90%] transition-transform duration-100 ease-linear"
               >
                 Prev
               </button>
@@ -502,7 +502,7 @@ export default function Dream() {
               <button
                 disabled={pageIndex * ITEMS_PER_PAGE >= orderData.length}
                 onClick={() => setPageIndex((prev) => prev + 1)}
-                className="min-w-[60px] bg-[white] text-black rounded cursor-pointer hover:scale-[90%] transition-transform duration-100 ease-linear"
+                className="min-w-15 bg-[white] text-black rounded cursor-pointer hover:scale-[90%] transition-transform duration-100 ease-linear"
               >
                 Next
               </button>

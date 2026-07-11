@@ -71,7 +71,7 @@ export default function MapErebus() {
           <img
             src={`/Erebus/${rooms[rom]}.webp`}
             alt="Map"
-            className="min-w-[1200px] w-[1400px] h-auto mx-auto border border-white/10 rounded-xl"
+            className="min-w-300 w-350 h-auto mx-auto border border-white/10 rounded-xl"
             style={{
               borderStyle: "solid",
               borderWidth: "10px",
@@ -79,7 +79,7 @@ export default function MapErebus() {
             }}
           />
         </div>
-        {/* <div className="flex flex-wrap justify-center gap-1 font-[UbuntuMono]">
+        <div className="flex flex-wrap justify-center gap-1 font-[UbuntuMono]">
           {rooms.map((item, index) => (
             <div
               key={index}
@@ -109,7 +109,7 @@ export default function MapErebus() {
               style={defaultStyles}
             />
           </div>
-        ))} */}
+        ))}
       </div>
     </PageBlock>
   );

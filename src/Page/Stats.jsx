@@ -267,7 +267,7 @@ export default function Stats() {
                 .sort((a, b) => +a[0].slice(1) - +b[0].slice(1))
                 .map(([key, val], index) => (
                   <div
-                    className="flex items-center gap-2 bg-gradient-to-r from-black to-[#0e0c12]/80 rounded"
+                    className="flex items-center gap-2 bg-linear-to-r from-black to-[#0e0c12]/80 rounded"
                     key={index}
                     style={{
                       borderStyle: "solid", // Required
@@ -275,7 +275,7 @@ export default function Stats() {
                       borderImage: "url('/Misc/frame.webp') 40 stretch",
                     }}
                   >
-                    <img src={`/Arcane/${key}.png`} alt="Arcana Cards" className="w-[60px] md:w-[80px] h-auto" />
+                    <img src={`/Arcane/${key}.png`} alt="Arcana Cards" className="w-15 md:w-20 h-auto" />
                     <div>
                       <div className="text-[15px] font-[Sr]">{idarcana[key]}</div>
                       <div>{((+val / +runsAV.length) * 100).toFixed(2)}%</div>

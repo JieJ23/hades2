@@ -379,7 +379,6 @@ export default function App() {
                 <div>To</div>
                 <div>Chronos</div>
               </div>
-              <div className="text-center text-[12px]">( Mouse Hover Effect)</div>
             </div>
           </div>
           {/*  */}

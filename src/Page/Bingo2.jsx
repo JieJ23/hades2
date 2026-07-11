@@ -393,7 +393,7 @@ export default function Bingo2() {
                   <img
                     src="/hover/banner.png"
                     alt="Banner"
-                    className="absolute -bottom-3 left-1/2 w-15 h-auto -translate-x-[50%]"
+                    className="absolute -bottom-3 left-1/2 w-15 h-auto translate-x-[-50%]"
                   />
                   <div className="relative w-8 h-8">
                     <img
@@ -525,7 +525,7 @@ export default function Bingo2() {
         {/* Box End */}
         {/* Summary Image */}
         <div className="overflow-x-scroll my-10 rounded-xl">
-          <div className="min-w-[1400px] flex shrink-0">
+          <div className="min-w-350 flex shrink-0">
             <img src="/Bingo/bingo2.webp" alt="Bingo Summary" className="w-full" draggable={false} />
           </div>
         </div>
