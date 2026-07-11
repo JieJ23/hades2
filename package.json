@@ -11,15 +11,14 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-"@tailwindcss/vite": "^4.1.0",
+    "@tailwindcss/vite": "^4.1.0",
     "gsap": "^3.15.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-json-view-lite": "^2.5.0",
     "react-router-dom": "^7.5.2",
     "recharts": "^3.9.2",
-"tailwindcss": "^4.1.0"
-
+    "tailwindcss": "^4.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
@@ -36,5 +35,8 @@
   "allowScripts": {
     "fsevents@2.3.3": true,
     "esbuild@0.25.12": true
+  },
+  "optionalDependencies": {
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.3.2"
   }
 }
