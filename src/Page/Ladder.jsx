@@ -150,13 +150,7 @@ export default function Ladder() {
                                 </div>
                                 <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Fam" className="size-6" />
                               </div>
-                              {findValue(
-                                sToA(obj.ham).sort((a, b) => {
-                                  const aIndex = orderMap.get(a) ?? Infinity;
-                                  const bIndex = orderMap.get(b) ?? Infinity;
-                                  return aIndex - bIndex;
-                                }),
-                              ).map((ite, index) => (
+                              {findValue(sToA(obj.ham)).map((ite, index) => (
                                 <div className="tooltip shrink-0" key={index}>
                                   <div className="tooltip-content bg-black text-white rounded-none">
                                     <div>{p9boons[ite]}</div>

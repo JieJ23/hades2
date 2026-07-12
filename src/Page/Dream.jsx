@@ -213,35 +213,28 @@ export default function Dream() {
                                 />
                               </div>
                             )}
-                            {obj.ham
-                              ? findValue(
-                                  sToA(obj.ham).sort((a, b) => {
-                                    const aIndex = orderMap.get(a) ?? Infinity;
-                                    const bIndex = orderMap.get(b) ?? Infinity;
-                                    return aIndex - bIndex;
-                                  }),
-                                ).map((ite, index) => (
-                                  <div className="tooltip">
-                                    <div className="tooltip-content p-0">
-                                      <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
-                                        {p9boons[ite]}
-                                      </div>
-                                    </div>
-                                    <div className="relative size-10 sm:size-8 shrink-0">
-                                      <img
-                                        src="/BoonBorder/Hammer.png"
-                                        alt="Border"
-                                        className="absolute inset-0 w-full h-full z-10 pointer-events-none"
-                                      />
-                                      <img
-                                        src={`/P9/${ite}.png`}
-                                        alt="Hammers"
-                                        className="absolute inset-0 w-full h-full p-1 object-contain"
-                                      />
+                            {obj.ham &&
+                              findValue(sToA(obj.ham)).map((ite, index) => (
+                                <div className="tooltip">
+                                  <div className="tooltip-content p-0">
+                                    <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
+                                      {p9boons[ite]}
                                     </div>
                                   </div>
-                                ))
-                              : ``}
+                                  <div className="relative size-10 sm:size-8 shrink-0">
+                                    <img
+                                      src="/BoonBorder/Hammer.png"
+                                      alt="Border"
+                                      className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                                    />
+                                    <img
+                                      src={`/P9/${ite}.png`}
+                                      alt="Hammers"
+                                      className="absolute inset-0 w-full h-full p-1 object-contain"
+                                    />
+                                  </div>
+                                </div>
+                              ))}
                           </div>
                           {obj.ks && (
                             <div className="flex">
@@ -414,24 +407,17 @@ export default function Dream() {
                                 <img draggable={false} src={`/P9/${obj.fam}.png`} alt="Familiar" className="size-6" />
                               </div>
                             )}
-                            {obj.ham
-                              ? findValue(
-                                  sToA(obj.ham).sort((a, b) => {
-                                    const aIndex = orderMap.get(a) ?? Infinity;
-                                    const bIndex = orderMap.get(b) ?? Infinity;
-                                    return aIndex - bIndex;
-                                  }),
-                                ).map((ite, index) => (
-                                  <div className="tooltip">
-                                    <div className="tooltip-content p-0">
-                                      <div className="bg-black border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
-                                        {p9boons[ite]}
-                                      </div>
+                            {obj.ham &&
+                              findValue(sToA(obj.ham)).map((ite, index) => (
+                                <div className="tooltip">
+                                  <div className="tooltip-content p-0">
+                                    <div className="bg-black border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
+                                      {p9boons[ite]}
                                     </div>
-                                    <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
                                   </div>
-                                ))
-                              : ``}
+                                  <img draggable={false} src={`/P9/${ite}.png`} alt="Hammers" className="size-6" />
+                                </div>
+                              ))}
                           </div>
                         </td>
                         <td className="border-0 border-y border-y-white/5">

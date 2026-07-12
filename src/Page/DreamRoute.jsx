@@ -6,7 +6,7 @@ import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
 import { bundleData } from "../Data/DataBundle";
 // Utility
-import { sToA, findValue, orderMap, parseTimetoms, getPoolColor, getYTid } from "../Data/Misc";
+import { sToA, parseTimetoms } from "../Data/Misc";
 import { p9boons } from "../Data/P9BoonObj";
 import { Link } from "react-router-dom";
 import { h2AspectOrder } from "../Data/Misc";
@@ -100,7 +100,7 @@ export default function DreamRoute() {
             <div className="font-[Sr] mb-4 text-[16px] text-center">
               <div>
                 Total Dream Routes Cleared:{" "}
-                <span className="text-[#00ffaa] text-[23px] font-[UbuntuMono]">{availableRoutes.length}</span>
+                <span className="text-[#00ffaa] text-[23px] font-[UbuntuMono]">{availableRoutes.length}/918</span>
               </div>
             </div>
             <div className="mt-2 px-2 text-orange-300 font-[Ale]">*Dream Route Cannot Begin with Erebus Nor Ephyra</div>
