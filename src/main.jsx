@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
 import Night from "./Page/Night.jsx";
 import Dream from "./Page/Dream.jsx";
+import DreamRoute from "./Page/DreamRoute.jsx";
 import Ladder from "./Page/Ladder.jsx";
 import FearCalculator from "./Page/FearCalculator.jsx";
 import ArcanaDeck from "./Page/ArcanaDeck.jsx";
@@ -39,6 +40,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/" element={<App />} />
           <Route path="/Night" element={<Night />} />
           <Route path="/Dream" element={<Dream />} />
+          <Route path="/DreamRoute" element={<DreamRoute />} />
           <Route path="/Ladder" element={<Ladder />} />
           <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
 

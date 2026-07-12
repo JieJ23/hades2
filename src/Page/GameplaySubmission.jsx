@@ -65,7 +65,7 @@ const misc = [bDuo, bElemental];
 const other = [bChaos, bTalent];
 const keepsakes = [bKeep];
 
-const biomes = [
+export const biomes = [
   "Underworld",
   "Surface",
   "Ephyra",

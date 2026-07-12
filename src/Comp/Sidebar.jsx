@@ -6,6 +6,7 @@ export const sites = [
   { link: ``, nam: `Home`, icon: `Melinoe` },
   { link: `Night`, nam: `Hades 2 Runs`, icon: `Zeus` },
   { link: `Dream`, nam: `Dream Dive Runs`, icon: `Dream` },
+  { link: `DreamRoute`, nam: `Dream Route Data`, icon: `Dream` },
   { link: `Ladder`, nam: `Ladder / Standing`, icon: `Athena` },
   { link: `GameplaySubmission`, nam: `Submit Run`, icon: `Book_Frog` },
   { link: `Player`, nam: `Players`, icon: `HealthBar_Mel` },
