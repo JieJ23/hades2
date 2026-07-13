@@ -20,17 +20,22 @@ export default function Dream() {
   const [mounted, setMounted] = useState(false);
   const [category, setCategory] = useState("");
   const [fill, setFill] = useState("Latest");
+  const [player, setPlayer] = useState("");
   const [format, setFormat] = useState("Grid");
   const [vidOnly, setVidOnly] = useState(true);
 
+  const dataDreamDive = useMemo(() => {
+    return [...bundleData, ...posts].filter((obj) => obj.loc !== "Underworld" && obj.loc !== "Surface");
+  }, [posts]);
+
   const orderData = useMemo(() => {
-    return [...bundleData, ...posts]
-      .filter((obj) => obj.loc !== "Underworld" && obj.loc !== "Surface")
+    return dataDreamDive
       .filter((obj) => {
+        const playerMatch = player === "" || obj.nam === player;
         const categoryMatch = category === "" || obj.asp === category;
         const videoOnly = vidOnly ? obj.src.includes("youtu") : obj;
 
-        return categoryMatch && videoOnly;
+        return categoryMatch && videoOnly && playerMatch;
       })
       .sort((a, b) => {
         if (fill === "Latest") return new Date(b.dat) - new Date(a.dat);
@@ -40,7 +45,7 @@ export default function Dream() {
           return parseTimetoms(a.tim) - parseTimetoms(b.tim);
         }
       });
-  }, [posts, category, fill, vidOnly]);
+  }, [posts, category, fill, vidOnly, player]);
 
   // Pagnition
   const ITEMS_PER_PAGE = 25;
@@ -59,10 +64,12 @@ export default function Dream() {
     const page = params.get("page");
     const aspect = params.get("aspect");
     const sort = params.get("sort");
+    const player = params.get("player");
 
     if (page && !isNaN(+page)) setPageIndex(+page);
     if (aspect) setCategory(aspect);
     if (sort) setFill(sort);
+    if (player) setPlayer(player);
 
     setMounted(true);
   }, []);
@@ -89,11 +96,16 @@ export default function Dream() {
     } else {
       url.searchParams.delete("sort");
     }
+    if (player !== "") {
+      url.searchParams.set("player", player);
+    } else {
+      url.searchParams.delete("player");
+    }
 
     window.history.replaceState({}, document.title, url);
-  }, [pageIndex, category, fill, mounted]);
+  }, [pageIndex, category, fill, mounted, player]);
 
-  const allPlayers = [...new Set([...bundleData, ...(posts || [])].map((obj) => obj.nam))].sort((a, b) =>
+  const allPlayers = [...new Set(dataDreamDive.map((obj) => obj.nam))].sort((a, b) =>
     a.toLowerCase().localeCompare(b.toLowerCase()),
   );
 
@@ -130,6 +142,21 @@ export default function Dream() {
                 >
                   <option value={`Latest`}>Latest</option>
                   <option value={`Fear`}>Fear</option>
+                </select>
+                <select
+                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+                  value={player}
+                  onChange={(e) => {
+                    setPageIndex(1);
+                    setFill("Latest");
+                    setCategory("");
+                    setPlayer(e.target.value);
+                  }}
+                >
+                  <option value={""}>All Player</option>
+                  {allPlayers.map((ite) => (
+                    <option value={ite}>{ite}</option>
+                  ))}
                 </select>
               </div>
             </div>
@@ -183,7 +210,7 @@ export default function Dream() {
                       ) : (
                         <Link to={obj.src} target="_blank" className="group">
                           <img
-                            src={`/melinoe.webp`}
+                            src={`/dream.webp`}
                             alt="Cover Img"
                             className="aspect-video w-full group-hover:scale-95 duration-150 rounded-lg"
                             loading="lazy"
@@ -326,10 +353,7 @@ export default function Dream() {
                     {paginatedData.slice(0, 100).map((obj, index) => (
                       <tr key={index} className="text-[14px]">
                         <td className="border-0 border-y border-y-white/5">
-                          <div className={`text-pink-500`}>
-                            {/* {orderData.length - (index + 25 * (pageIndex - 1))} */}
-                            {index + 1 + ITEMS_PER_PAGE * (pageIndex - 1)}
-                          </div>
+                          <div className={`text-pink-500`}>{index + 1 + ITEMS_PER_PAGE * (pageIndex - 1)}</div>
                         </td>
                         <td className="border-0 border-y border-y-white/5">
                           <div className="flex gap-1">

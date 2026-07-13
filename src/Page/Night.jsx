@@ -239,9 +239,16 @@ export default function Night() {
                           loading="lazy"
                         />
                       </Link>
+                    ) : obj.loc === "Underworld" ? (
+                      <img
+                        src={`/Misc/Underworld.webp`}
+                        alt="Victory Screen"
+                        className="aspect-video w-full rounded-lg"
+                        loading="lazy"
+                      />
                     ) : (
                       <img
-                        src={`/melinoe.webp`}
+                        src={`/Misc/Surface.webp`}
                         alt="Victory Screen"
                         className="aspect-video w-full rounded-lg"
                         loading="lazy"
