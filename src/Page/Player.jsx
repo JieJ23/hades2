@@ -86,53 +86,33 @@ export default function Player() {
   const weaponLength = [
     {
       weapon: `Staff`,
-      runs: resultS.staff.length,
+      runs: resultS.staff.length || 0,
+      runsUW: resultUW.staff.length || 0,
     },
     {
       weapon: `Blade`,
-      runs: resultS.blade.length,
+      runs: resultS.blade.length || 0,
+      runsUW: resultUW.blade.length || 0,
     },
     {
       weapon: `Axe`,
-      runs: resultS.axe.length,
+      runs: resultS.axe.length || 0,
+      runsUW: resultUW.axe.length || 0,
     },
     {
       weapon: `Torch`,
-      runs: resultS.torch.length,
+      runs: resultS.torch.length || 0,
+      runsUW: resultUW.torch.length || 0,
     },
     {
       weapon: `Lob`,
-      runs: resultS.lob.length,
+      runs: resultS.lob.length || 0,
+      runsUW: resultUW.lob.length || 0,
     },
     {
       weapon: `Coat`,
-      runs: resultS.coat.length,
-    },
-  ];
-  const weaponLengthUW = [
-    {
-      weapon: `Staff`,
-      runs: resultUW.staff.length || 0,
-    },
-    {
-      weapon: `Blade`,
-      runs: resultUW.blade.length || 0,
-    },
-    {
-      weapon: `Axe`,
-      runs: resultUW.axe.length || 0,
-    },
-    {
-      weapon: `Torch`,
-      runs: resultUW.torch.length || 0,
-    },
-    {
-      weapon: `Lob`,
-      runs: resultUW.lob.length || 0,
-    },
-    {
-      weapon: `Coat`,
-      runs: resultUW.coat.length || 0,
+      runs: resultS.coat.length || 0,
+      runsUW: resultUW.coat.length || 0,
     },
   ];
 
@@ -159,12 +139,8 @@ export default function Player() {
           <Bar dataKey="runs" fill="yellow" radius={[4, 4, 0, 0]}>
             <LabelList dataKey="runs" position="center" fill="#000" />
           </Bar>
-        </BarChart>
-        <BarChart className="w-full h-50 font-[Ale]" responsive data={weaponLengthUW}>
-          <XAxis dataKey="weapon" tick={{ fill: "#ffffff" }} />
-          <YAxis width="auto" tick={{ fill: "#ffffff" }} />
-          <Bar dataKey="runs" fill="#00ffaa" radius={[4, 4, 0, 0]}>
-            <LabelList dataKey="runs" position="center" fill="#000" />
+          <Bar dataKey="runsUW" fill="#00ffaa" radius={[4, 4, 0, 0]}>
+            <LabelList dataKey="runsUW" position="center" fill="#000" />
           </Bar>
         </BarChart>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2">
