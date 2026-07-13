@@ -239,20 +239,56 @@ export default function Night() {
                           loading="lazy"
                         />
                       </Link>
-                    ) : obj.loc === "Underworld" ? (
-                      <img
-                        src={`/Misc/Underworld.webp`}
-                        alt="Victory Screen"
-                        className="aspect-video w-full rounded-lg"
-                        loading="lazy"
-                      />
                     ) : (
-                      <img
-                        src={`/Misc/Surface.webp`}
-                        alt="Victory Screen"
-                        className="aspect-video w-full rounded-lg"
-                        loading="lazy"
-                      />
+                      <Link to={obj.src} target="_blank" className="group">
+                        {obj.loc === "Underworld" ? (
+                          <div className="relative">
+                            <div className="absolute inset-0 flex justify-center items-center">
+                              <img
+                                src={`/FullAspects/${obj.asp}.webp`}
+                                alt="Victory Screen"
+                                className="w-[50%] h-auto translate-x-3 drop-shadow-[0_0_10px_purple]"
+                                loading="lazy"
+                              />
+                            </div>
+                            <img
+                              src={`/GUI_Card/${obj.fam}.png`}
+                              alt="Victory Screen"
+                              className="absolute bottom-2 right-2 w-15 sm:w-12 h-auto"
+                              loading="lazy"
+                            />
+                            <img
+                              src={`/Misc/Underworld.webp`}
+                              alt="Victory Screen"
+                              className="aspect-video w-full rounded-lg"
+                              loading="lazy"
+                            />
+                          </div>
+                        ) : (
+                          <div className="relative">
+                            <div className="absolute inset-0 flex justify-center items-center">
+                              <img
+                                src={`/FullAspects/${obj.asp}.webp`}
+                                alt="Victory Screen"
+                                className="w-[50%] h-auto translate-x-3 drop-shadow-[0_0_10px_purple]"
+                                loading="lazy"
+                              />
+                            </div>
+                            <img
+                              src={`/GUI_Card/${obj.fam}.png`}
+                              alt="Victory Screen"
+                              className="absolute bottom-2 right-2 w-15 sm:w-12 h-auto"
+                              loading="lazy"
+                            />
+                            <img
+                              src={`/Misc/Surface.webp`}
+                              alt="Victory Screen"
+                              className="aspect-video w-full rounded-lg"
+                              loading="lazy"
+                            />
+                          </div>
+                        )}
+                      </Link>
                     )}
                     <div className="px-2 pb-1">
                       <div className="flex flex-wrap items-center justify-center gap-1 my-1">

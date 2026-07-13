@@ -209,12 +209,28 @@ export default function Dream() {
                         </Link>
                       ) : (
                         <Link to={obj.src} target="_blank" className="group">
-                          <img
-                            src={`/dream.webp`}
-                            alt="Cover Img"
-                            className="aspect-video w-full group-hover:scale-95 duration-150 rounded-lg"
-                            loading="lazy"
-                          />
+                          <div className="relative">
+                            <div className="absolute inset-0 flex justify-center items-center">
+                              <img
+                                src={`/FullAspects/${obj.asp}.webp`}
+                                alt="Victory Screen"
+                                className="w-[50%] h-auto translate-x-3 drop-shadow-[0_0_10px_#00ffaa]"
+                                loading="lazy"
+                              />
+                            </div>
+                            <img
+                              src={`/GUI_Card/${obj.fam}.png`}
+                              alt="Victory Screen"
+                              className="absolute bottom-2 right-2 w-15 sm:w-12 h-auto"
+                              loading="lazy"
+                            />
+                            <img
+                              src={`/dream.webp`}
+                              alt="Victory Screen"
+                              className="aspect-video w-full rounded-lg"
+                              loading="lazy"
+                            />
+                          </div>
                         </Link>
                       )}
                       <div className="px-2 pb-1">
