@@ -22,7 +22,7 @@ export default function Dream() {
   const [fill, setFill] = useState("Latest");
   const [player, setPlayer] = useState("");
   const [format, setFormat] = useState("Grid");
-  const [vidOnly, setVidOnly] = useState(true);
+  const [vidOnly, setVidOnly] = useState(false);
 
   const dataDreamDive = useMemo(() => {
     return [...bundleData, ...posts].filter((obj) => obj.loc !== "Underworld" && obj.loc !== "Surface");

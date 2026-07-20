@@ -359,8 +359,24 @@ export default function App() {
     .filter((item) => ![...allplayers65d, ...allplayers67d].includes(item))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
-  // Display Orders
+  // All Aspects Dream Dive
 
+  const [aspects62dd] = allAvailablePlayers.reduce(
+    (acc, playerName) => {
+      const playerArray = orderData.filter((obj) => obj.nam === playerName);
+
+      const above62dd = playerArray.filter((obj) => obj.fea >= 62 && obj.loc !== "Surface" && obj.loc !== "Underworld");
+      const uniqueAspects62dd = [...new Set(above62dd.map((obj) => obj.asp))];
+
+      if (uniqueAspects62dd.length === 24) {
+        acc[0].push(playerName);
+      }
+
+      return acc;
+    },
+    [[]],
+  );
+  // Display Orders
   return (
     <main
       className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
@@ -747,6 +763,31 @@ export default function App() {
                           }}
                         />
                         <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
+                          {ite.slice(0, 2).toUpperCase()}
+                        </div>
+                      </div>
+                      <div className="font-[Ale]">{ite}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <Divider />
+              <div className="text-center my-8 highwrapper">
+                <div className="font-[Sr] text-[16px] mb-2 text-purple-400">62 Fear, All Aspects, Dream Dive</div>
+                <div className="flex justify-center gap-1 flex-wrap">
+                  {aspects62dd.map((ite) => (
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-linear-to-t from-[#131111] to-purple-300 text-gray-400 rounded p-2 px-1 high">
+                      <div className="relative w-10 h-10">
+                        <img
+                          src={`/Avatar/${ite.toLowerCase()}.webp`}
+                          alt="Avatar"
+                          className="w-10 h-10 rounded-full mask mask-hexagon egg"
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                            e.target.nextSibling.style.display = "flex";
+                          }}
+                        />
+                        <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
                           {ite.slice(0, 2).toUpperCase()}
                         </div>
                       </div>

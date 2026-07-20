@@ -24,7 +24,7 @@ export default function Night() {
   const [fill, setFill] = useState("Latest");
   const [player, setPlayer] = useState("");
   const [format, setFormat] = useState("Grid");
-  const [vidOnly, setVidOnly] = useState(true);
+  const [vidOnly, setVidOnly] = useState(false);
 
   const orderData = useMemo(() => {
     return [...bundleData, ...posts]
