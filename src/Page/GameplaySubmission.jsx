@@ -201,8 +201,6 @@ export default function GameplaySubmission() {
 
   const displayData = allCategory[category];
 
-  console.log(weaponHammer);
-
   return (
     <main className="relative">
       <Background />
