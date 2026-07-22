@@ -381,7 +381,7 @@ export default function App() {
     <main
       className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
       ref={container}
-      // onMouseMove={handleMouseMove2}
+    // onMouseMove={handleMouseMove2}
     >
       <div className="parentBox">
         <PageBlock>
@@ -432,7 +432,7 @@ export default function App() {
                 <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">65 Fear, Surface</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {allplayers65s.map((ite) => (
-                    <div className="flex gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
                       <div className="relative w-7 h-7">
                         <img
                           src={`/Avatar/${ite.toLowerCase()}.webp`}
@@ -506,7 +506,7 @@ export default function App() {
                 <div className="font-[Sr] text-[16px] mb-2 text-green-300">65 Fear, UW</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {allplayers65uw.map((ite) => (
-                    <div className="flex gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
                       <div className="relative w-7 h-7">
                         <img
                           src={`/Avatar/${ite.toLowerCase()}.webp`}
@@ -580,7 +580,7 @@ export default function App() {
                 <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">62 Fear, All Aspects, Surface</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {allaspect62s.map((ite) => (
-                    <div className="flex gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
                       <div className="relative w-7 h-7">
                         <img
                           src={`/Avatar/${ite.toLowerCase()}.webp`}
@@ -653,7 +653,7 @@ export default function App() {
                 <div className="font-[Sr] text-[16px] mb-2 text-green-300">62 Fear, All Aspects, UW</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {allaspect62uw.map((ite) => (
-                    <div className="flex gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
                       <div className="relative w-7 h-7">
                         <img
                           src={`/Avatar/${ite.toLowerCase()}.webp`}
@@ -727,7 +727,7 @@ export default function App() {
                 <div className="font-[Sr] text-[16px] mb-2 text-purple-400">65 Fear, Dream Dive</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {allplayers65d.map((ite) => (
-                    <div className="flex gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
                       <div className="relative w-7 h-7">
                         <img
                           src={`/Avatar/${ite.toLowerCase()}.webp`}
