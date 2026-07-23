@@ -38,13 +38,17 @@ export default function Night() {
 
   const orderData = useMemo(() => {
     return [...bundleData, ...posts]
-      .filter((obj) => obj.loc === "Underworld" || obj.loc === "Surface")
       .filter((obj) => obj.fea >= fearMin && obj.fea <= fearMax)
       .filter((obj) => parseTimetoms(obj.tim) >= timeMin * 6000 && parseTimetoms(obj.tim) <= timeMax * 6000)
       .filter((obj) => {
         const playerMatch = player === "" || obj.nam === player;
         const categoryMatch = category === "" || obj.asp === category;
-        const regionMatch = region === "" || obj.loc === region;
+        const regionMatch =
+          region === ""
+            ? true
+            : region === "Underworld" || region === "Surface"
+              ? obj.loc === region
+              : obj.loc !== "Underworld" && obj.loc !== "Surface";
         const videoOnly = vidOnly ? obj.src.includes("youtu") : obj;
         const includeHammer = hasHammer.length === 0 || hasHammer.every((hammer) => obj.ham?.includes(hammer));
 
@@ -199,6 +203,7 @@ export default function Night() {
                   <option value={""}>{`All Region`}</option>
                   <option value={`Surface`}>Surface</option>
                   <option value={`Underworld`}>Underworld</option>
+                  <option value={`Dream`}>Dream</option>
                 </select>
                 <select
                   className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
@@ -429,7 +434,7 @@ export default function Night() {
                               draggable={false}
                             />
                           </div>
-                        ) : (
+                        ) : obj.loc === "Surface" ? (
                           <div className="relative">
                             <div className="absolute inset-0 flex justify-center items-center">
                               <img
@@ -453,6 +458,30 @@ export default function Night() {
                               draggable={false}
                             />
                           </div>
+                        ) : (
+                          <div className="relative">
+                            <div className="absolute inset-0 flex justify-center items-center">
+                              <img
+                                src={`/FullAspects/${obj.asp}.webp`}
+                                alt="Victory Screen"
+                                className="w-[50%] h-auto translate-x-3 drop-shadow-[0_0_10px_purple]"
+                                loading="lazy"
+                              />
+                            </div>
+                            <img
+                              src={`/GUI_Card/${obj.fam}.png`}
+                              alt="Victory Screen"
+                              className="absolute bottom-2 right-2 w-15 sm:w-12 h-auto"
+                              loading="lazy"
+                            />
+                            <img
+                              src={`/Misc/Dream.webp`}
+                              alt="Victory Screen"
+                              className="aspect-video w-full rounded border border-black/50"
+                              loading="lazy"
+                              draggable={false}
+                            />
+                          </div>
                         )}
                       </Link>
                     )}
@@ -461,7 +490,7 @@ export default function Night() {
                         <div>{obj.nam}</div>
                         <div>
                           <span>
-                            {+obj.fea} | {obj.loc} | {obj.tim}
+                            {+obj.fea} | {obj.loc !== "Underworld" && obj.loc !== "Surface" ? `Dream Dive` : obj.loc} | {obj.tim}
                           </span>
                         </div>
                       </div>
@@ -495,25 +524,34 @@ export default function Night() {
                         )}
                         {obj.cor
                           ? sToA(obj.cor).map((ite, index) => (
-                              <div className="relative size-10 sm:size-8 md:size-8 xl:size-9 shrink-0">
-                                <img
-                                  src="/BoonBorder/Hammer.png"
-                                  alt="Border"
-                                  className="absolute inset-0 w-full h-full z-10 pointer-events-none"
-                                />
-                                <img
-                                  src={`/H2Boons/${ite}.png`}
-                                  alt="Core Boon"
-                                  className="absolute inset-0 w-full h-full p-1 object-contain"
-                                />
-                              </div>
-                            ))
+                            <div className="relative size-10 sm:size-8 md:size-8 xl:size-9 shrink-0">
+                              <img
+                                src="/BoonBorder/Hammer.png"
+                                alt="Border"
+                                className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                              />
+                              <img
+                                src={`/H2Boons/${ite}.png`}
+                                alt="Core Boon"
+                                className="absolute inset-0 w-full h-full p-1 object-contain"
+                              />
+                            </div>
+                          ))
                           : ``}
                       </div>
                       {obj.ham && (
                         <div className="flex gap-1 flex-wrap font-[Ale] text-[14px] sm:text-[12px]">
                           {sToA(obj.ham).map((item, index) => (
                             <div className="bg-blue-950 px-1 text-gray-300">{item}</div>
+                          ))}
+                        </div>
+                      )}
+                      {obj.loc !== "Underworld" && obj.loc !== "Surface" && (
+                        <div className="flex justify-start gap-0.5">
+                          {sToA(obj.loc).map((item) => (
+                            <div className=" bg-orange-950 text-[12px] font-[Ale] px-1 rounded-none">
+                              {item}
+                            </div>
                           ))}
                         </div>
                       )}
@@ -567,7 +605,7 @@ export default function Night() {
                       <td className="border-0 border-y border-y-white/5">
                         <div
                           className={
-                            obj.loc === `Underworld` ? `text-[#00ffaa]` : obj.loc === `Surface` ? `text-[yellow]` : ``
+                            obj.loc === `Underworld` ? `text-[#00ffaa]` : obj.loc === `Surface` ? `text-[yellow]` : `text-pink-500`
                           }
                         >
                           {/* {orderData.length - (index + 25 * (pageIndex - 1))} */}
@@ -575,7 +613,7 @@ export default function Night() {
                         </div>
                       </td>
                       <td className="border-0 border-y border-y-white/5">
-                        <div className="flex gap-1">
+                        <div className="flex items-center gap-1">
                           <div>{obj.nam}</div>
                           <div className="shrink-0 size-4">
                             <img
@@ -599,18 +637,17 @@ export default function Night() {
                         <div className="flex gap-2 justify-between items-center">
                           <div>{obj.asp}</div>
                           {obj.des && (
-                            <div className="w-6.25">
+                            <div className="">
                               <div
-                                className={`tooltip ${
-                                  index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
-                                }`}
+                                className={`tooltip ${index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
+                                  }`}
                               >
                                 <div className="tooltip-content p-0">
                                   <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
                                     {obj.des}
                                   </div>
                                 </div>
-                                <img src="/Misc/comment.png" alt="Comment" className="size-5" />
+                                <img src="/Misc/comment.png" alt="Comment" className="size-4" />
                               </div>
                             </div>
                           )}
@@ -661,21 +698,21 @@ export default function Night() {
                         <div className="flex gap-0.5">
                           {obj.cor
                             ? sToA(obj.cor).map((ite, index) => (
-                                <div className="tooltip">
-                                  <div className="tooltip-content p-0">
-                                    <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
-                                      {p9boons[ite]}
-                                    </div>
+                              <div className="tooltip">
+                                <div className="tooltip-content p-0">
+                                  <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
+                                    {p9boons[ite]}
                                   </div>
-                                  <img
-                                    draggable={false}
-                                    src={`/H2Boons/${ite}.png`}
-                                    alt="Core Boon"
-                                    className="size-6"
-                                    loading="lazy"
-                                  />
                                 </div>
-                              ))
+                                <img
+                                  draggable={false}
+                                  src={`/H2Boons/${ite}.png`}
+                                  alt="Core Boon"
+                                  className="size-6"
+                                  loading="lazy"
+                                />
+                              </div>
+                            ))
                             : ``}
                         </div>
                       </td>

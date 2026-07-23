@@ -5,11 +5,12 @@ import Divider from "../Block/Divider";
 export const sites = [
   { link: ``, nam: `Home`, icon: `Melinoe` },
   { link: `Night`, nam: `Hades 2 Runs`, icon: `Zeus` },
-  { link: `Dream`, nam: `Dream Dive Runs`, icon: `Dream` },
+  // { link: `Dream`, nam: `Dream Dive Runs`, icon: `Dream` },
   { link: `DreamRoute`, nam: `Dream Route Data`, icon: `Dream` },
   { link: `Ladder`, nam: `Ladder / Standing`, icon: `Athena` },
   { link: `GameplaySubmission`, nam: `Submit Run`, icon: `Book_Frog` },
   { link: `Player`, nam: `Players`, icon: `HealthBar_Mel` },
+  { link: `Stats`, nam: `Stats`, icon: `Boon` },
 ];
 export const tools = [
   { link: `ArcanaDeck`, nam: `Arcana Deck`, icon: `ReRoll` },
