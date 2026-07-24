@@ -18,6 +18,7 @@ import DreamParameter from "./Page/DreamParameter.jsx";
 import Enemy from "./Page/Enemy.jsx";
 
 import { DataProvider } from "./Hook/DataFetch.jsx";
+import { DataProviderSrc } from "./Hook/SrcFetch.jsx";
 
 // New Pages
 import Bingo1 from "./Page/Bingo1.jsx";
@@ -31,38 +32,44 @@ import MapTartarus from "./Page/MapTartarus.jsx";
 
 import Player from "./Page/Player.jsx";
 
+import Src from "./Page/Src.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <DataProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/Night" element={<Night />} />
-          <Route path="/DreamRoute" element={<DreamRoute />} />
-          <Route path="/Ladder" element={<Ladder />} />
-          <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
+      <DataProviderSrc>
+        <Router>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/Night" element={<Night />} />
+            <Route path="/DreamRoute" element={<DreamRoute />} />
+            <Route path="/Ladder" element={<Ladder />} />
+            <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
 
-          <Route path="/FearCalculator" element={<FearCalculator />} />
-          <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
+            <Route path="/FearCalculator" element={<FearCalculator />} />
+            <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
 
-          <Route path="/Resources" element={<Resources />} />
-          <Route path="/Stats" element={<Stats />} />
-          <Route path="/DreamParameter" element={<DreamParameter />} />
-          <Route path="/Enemy" element={<Enemy />} />
+            <Route path="/Resources" element={<Resources />} />
+            <Route path="/Stats" element={<Stats />} />
+            <Route path="/DreamParameter" element={<DreamParameter />} />
+            <Route path="/Enemy" element={<Enemy />} />
 
-          <Route path="/Bingo1" element={<Bingo1 />} />
-          <Route path="/Bingo2" element={<Bingo2 />} />
-          <Route path="/TheGameAward" element={<TheGameAward />} />
-          <Route path="/MapErebus" element={<MapErebus />} />
-          <Route path="/MapOceanus" element={<MapOceanus />} />
-          <Route path="/MapField" element={<MapField />} />
-          <Route path="/MapTartarus" element={<MapTartarus />} />
+            <Route path="/Bingo1" element={<Bingo1 />} />
+            <Route path="/Bingo2" element={<Bingo2 />} />
+            <Route path="/TheGameAward" element={<TheGameAward />} />
+            <Route path="/MapErebus" element={<MapErebus />} />
+            <Route path="/MapOceanus" element={<MapOceanus />} />
+            <Route path="/MapField" element={<MapField />} />
+            <Route path="/MapTartarus" element={<MapTartarus />} />
 
-          <Route path="/Player" element={<Player />} />
+            <Route path="/Player" element={<Player />} />
 
-          <Route path="*" element={<App />} />
-        </Routes>
-      </Router>
+            <Route path="/Src" element={<Src />} />
+
+            <Route path="*" element={<App />} />
+          </Routes>
+        </Router>
+      </DataProviderSrc>
     </DataProvider>
   </StrictMode>,
 );

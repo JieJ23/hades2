@@ -23,7 +23,10 @@ export const map = [
   { link: `MapTartarus`, nam: `Tartarus`, icon: `Chronos` },
 ];
 
-export const minor = [{ link: `Resources`, nam: `Miscellaneous`, icon: `Exorcism` }];
+export const minor = [
+  // { link: `Resources`, nam: `Miscellaneous`, icon: `Exorcism` },
+  { link: `Src`, nam: `SRC UW Ladder`, icon: `HealthBar_Regen` },
+];
 export const events = [
   { link: `TheGameAward`, nam: `The Game Award 2025`, icon: `TGA` },
   { link: `Bingo1`, nam: `Bingo #1`, icon: `Life` },
@@ -91,7 +94,7 @@ export default function SideNav() {
                 </Link>
               </div>
             ))}
-            {/* <div className="mt-4 font-[Sr]">Other</div>
+            <div className="mt-4 font-[Sr]">Other</div>
             {minor.map((obj, idx) => (
               <div className="my-0.5 p-1 rounded hover:bg-white hover:text-black text-[14px]">
                 <Link to={obj.link === "" ? "/" : `/${obj.link}`} className={`flex items-center gap-2 z-40`} key={idx}>
@@ -99,7 +102,7 @@ export default function SideNav() {
                   <div className="">{obj.nam}</div>
                 </Link>
               </div>
-            ))} */}
+            ))}
           </div>
         </div>
       </div>
