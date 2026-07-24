@@ -150,11 +150,19 @@ export default function Src() {
                     <div className={`${obj.run.times.primary_t < 300 && `text-yellow-300`}`}>
                       {index + 1}. {postSrc.data.players.data[obj.place - 1].names.international}
                     </div>
-                    <div className="text-end text-white">
+                    {/* <div className="text-end text-white">
                       {postSrc.data.players.data[obj.place - 1].location?.country?.code}
-                    </div>
+                    </div> */}
                     {/* <div className="text-end">{obj.run.players[0].id}</div> */}
                     {/* <div className="text-end">{obj.run.times.primary_t}</div> */}
+                    {index !== arr[1].length - 1 ? (
+                      <div className="text-end text-green-300">
+                        {(arr[1][index + 1].run.times.primary_t - obj.run.times.primary_t).toFixed(2)}
+                        <span className="text-[10px]">s</span>
+                      </div>
+                    ) : (
+                      <div></div>
+                    )}
                     <div className={`text-end`}>{parsesectoTime(obj.run.times.primary_t)}</div>
                   </div>
                 ))}
