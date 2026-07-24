@@ -26,6 +26,7 @@ export const map = [
 export const minor = [
   // { link: `Resources`, nam: `Miscellaneous`, icon: `Exorcism` },
   { link: `Src`, nam: `SRC UW Ladder`, icon: `HealthBar_Regen` },
+  { link: `SrcS`, nam: `SRC S Ladder`, icon: `HealthBar_Regen` },
 ];
 export const events = [
   { link: `TheGameAward`, nam: `The Game Award 2025`, icon: `TGA` },
