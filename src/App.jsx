@@ -24,6 +24,52 @@ import { p9boons } from "./Data/P9BoonObj";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
+// SRC Data
+function parseLeaderboard(json) {
+  const runs = json.data.runs;
+  const players = json.data.players?.data ?? [];
+
+  // index full player objects by id for quick lookup
+  const playersById = new Map(players.filter((p) => p.id).map((p) => [p.id, p]));
+
+  return runs.map(({ run }) => {
+    const playerRef = run.players?.[0]; // first player on the run
+
+    let name = null;
+    let icon = null;
+
+    if (playerRef) {
+      if (playerRef.rel === "guest") {
+        name = playerRef.name ?? null;
+        icon = null; // guests don't have profile icons
+      } else {
+        const player = playersById.get(playerRef.id);
+        name = player?.names?.international ?? null;
+        icon = player?.assets?.image?.uri ?? null;
+      }
+    }
+
+    return {
+      time: run.times?.primary_t ?? null,
+      aspect: run.values?.["2lge1eq8"] ?? null,
+      name,
+      icon,
+    };
+  });
+}
+function getUniquePlayers(parsedRuns) {
+  const seen = new Map();
+
+  for (const { name, icon } of parsedRuns) {
+    if (name && !seen.has(name)) {
+      seen.set(name, { name, icon });
+    }
+  }
+
+  return Array.from(seen.values());
+}
+//
+
 export default function App() {
   const { posts, loader } = useData();
   const container = useRef(null);
@@ -377,11 +423,19 @@ export default function App() {
     [[]],
   );
   // Display Orders
+
+  //
+  const srcSurface = JSON.parse(localStorage.getItem("speedrunS"));
+  const srcUnderworld = JSON.parse(localStorage.getItem("speedrunUW"));
+  const srcSSub5 = getUniquePlayers(parseLeaderboard(srcSurface).filter((obj) => obj.time < 300));
+  const srcUWSub5 = getUniquePlayers(parseLeaderboard(srcUnderworld).filter((obj) => obj.time < 300));
+  //
+
   return (
     <main
       className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
       ref={container}
-    // onMouseMove={handleMouseMove2}
+      // onMouseMove={handleMouseMove2}
     >
       <div className="parentBox">
         <PageBlock>
@@ -405,7 +459,7 @@ export default function App() {
               {/* Surface  */}
               <Divider />
               <div className="text-center my-8 highwrapper">
-                <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">Max Fear, Surface</div>
+                <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">*Max Fear, Surface</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {allplayers67s.map((ite) => (
                     <div className="flex flex-col gap-1 items-center min-w-25 bg-linear-to-t from-[#131111] to-yellow-200 text-gray-400 rounded p-2 px-1 high">
@@ -476,81 +530,6 @@ export default function App() {
                   ))}
                 </div>
               </div>
-              {/* Underworld */}
-              <Divider />
-              <div className="text-center my-8 highwrapper">
-                <div className="font-[Sr] text-[16px] mb-2 text-green-300">Max Fear, UW</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allplayers67uw.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-linear-to-t from-[#131111] to-green-300 text-gray-400 rounded p-2 px-1 high">
-                      <div className="relative w-10 h-10">
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-10 h-10 rounded-full mask mask-hexagon egg"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-green-300">65 Fear, UW</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allplayers65uw.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-7 h-7 rounded-full"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-green-300">62 Fear, UW</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allplayers62uw.map((ite) => (
-                    <div className="flex gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-7 h-7 rounded-full"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* AA  */}
               <Divider />
               <div className="text-center my-8 highwrapper">
                 <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">65 Fear, All Aspects, Surface</div>
@@ -624,6 +603,81 @@ export default function App() {
                   ))}
                 </div>
               </div>
+              {/* Underworld */}
+              <Divider />
+              <div className="text-center my-8 highwrapper">
+                <div className="font-[Sr] text-[16px] mb-2 text-green-300">*Max Fear, UW</div>
+                <div className="flex justify-center gap-1 flex-wrap">
+                  {allplayers67uw.map((ite) => (
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-linear-to-t from-[#131111] to-green-300 text-gray-400 rounded p-2 px-1 high">
+                      <div className="relative w-10 h-10">
+                        <img
+                          src={`/Avatar/${ite.toLowerCase()}.webp`}
+                          alt="Avatar"
+                          className="w-10 h-10 rounded-full mask mask-hexagon egg"
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                            e.target.nextSibling.style.display = "flex";
+                          }}
+                        />
+                        <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
+                          {ite.slice(0, 2).toUpperCase()}
+                        </div>
+                      </div>
+                      <div className="font-[Ale]">{ite}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="text-center my-8">
+                <div className="font-[Sr] text-[16px] mb-2 text-green-300">65 Fear, UW</div>
+                <div className="flex justify-center gap-1 flex-wrap">
+                  {allplayers65uw.map((ite) => (
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
+                      <div className="relative w-7 h-7">
+                        <img
+                          src={`/Avatar/${ite.toLowerCase()}.webp`}
+                          alt="Avatar"
+                          className="w-7 h-7 rounded-full"
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                            e.target.nextSibling.style.display = "flex";
+                          }}
+                        />
+                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
+                          {ite.slice(0, 2).toUpperCase()}
+                        </div>
+                      </div>
+                      <div className="font-[Ale]">{ite}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="text-center my-8">
+                <div className="font-[Sr] text-[16px] mb-2 text-green-300">62 Fear, UW</div>
+                <div className="flex justify-center gap-1 flex-wrap">
+                  {allplayers62uw.map((ite) => (
+                    <div className="flex gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
+                      <div className="relative w-7 h-7">
+                        <img
+                          src={`/Avatar/${ite.toLowerCase()}.webp`}
+                          alt="Avatar"
+                          className="w-7 h-7 rounded-full"
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                            e.target.nextSibling.style.display = "flex";
+                          }}
+                        />
+                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
+                          {ite.slice(0, 2).toUpperCase()}
+                        </div>
+                      </div>
+                      <div className="font-[Ale]">{ite}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* AA  */}
               <Divider />
               <div className="text-center my-8 highwrapper">
                 <div className="font-[Sr] text-[16px] mb-2 text-green-300">65 Fear, All Aspects, UW</div>
@@ -700,7 +754,7 @@ export default function App() {
               <Divider />
               {/* Dream */}
               <div className="text-center my-8 highwrapper">
-                <div className="font-[Sr] text-[16px] mb-2 text-purple-400">Max Fear, Dream Dive</div>
+                <div className="font-[Sr] text-[16px] mb-2 text-purple-400">*Max Fear, Dream Dive</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {allplayers67d.map((ite) => (
                     <div className="flex flex-col gap-1 items-center min-w-25 bg-linear-to-t from-[#131111] to-purple-300 text-gray-400 rounded p-2 px-1 high">
@@ -792,6 +846,68 @@ export default function App() {
                         </div>
                       </div>
                       <div className="font-[Ale]">{ite}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <Divider />
+              <div className="text-center my-8 highwrapper">
+                <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">*SRC Sub 5 Mins, Surface</div>
+                <div className="flex justify-center gap-1 flex-wrap">
+                  {srcSSub5.map((ite) => (
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
+                      <div className="relative w-7 h-7">
+                        {ite.icon ? (
+                          <img
+                            src={ite.icon}
+                            alt="Avatar"
+                            className="w-7 h-7 rounded-full egg"
+                            onError={(e) => {
+                              e.target.style.display = "none";
+                              e.target.nextSibling.style.display = "flex";
+                            }}
+                          />
+                        ) : null}
+                        <div
+                          className={`w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center truncate text-[10px] ${
+                            ite.icon ? "hidden" : "flex"
+                          }`}
+                        >
+                          {ite.name?.slice(0, 2).toUpperCase() ?? "?"}
+                        </div>
+                      </div>
+                      <div className="font-[Ale]">{ite.name}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <Divider />
+              <div className="text-center my-8">
+                <div className="font-[Sr] text-[16px] mb-2 text-green-300">*SRC Sub 5 Mins, UW</div>
+                <div className="flex justify-center gap-1 flex-wrap">
+                  {srcUWSub5.map((ite) => (
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
+                      <div className="relative w-7 h-7">
+                        {ite.icon ? (
+                          <img
+                            src={ite.icon}
+                            alt="Avatar"
+                            className="w-7 h-7 rounded-full egg"
+                            onError={(e) => {
+                              e.target.style.display = "none";
+                              e.target.nextSibling.style.display = "flex";
+                            }}
+                          />
+                        ) : null}
+                        <div
+                          className={`w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center truncate text-[10px] ${
+                            ite.icon ? "hidden" : "flex"
+                          }`}
+                        >
+                          {ite.name?.slice(0, 2).toUpperCase() ?? "?"}
+                        </div>
+                      </div>
+                      <div className="font-[Ale]">{ite.name}</div>
                     </div>
                   ))}
                 </div>
