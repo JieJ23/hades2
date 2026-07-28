@@ -446,9 +446,20 @@ export default function App() {
                 onMouseMove={handleMouseMove}
                 className="hover-target text-white font-bold text-[48px] sm:text-[58px] md:text-[64px] uppercase cursor-default select-none text-center font-[Sr] gap-2 gap-x-8 flex flex-col md:flex-row"
               >
-                <div>Death</div>
-                <div>To</div>
-                <div>Chronos</div>
+                <div>I</div>
+                <div>Am</div>
+                <div className="text-rotate">
+                  <span className="justify-items-center md:justify-items-start">
+                    <span className="flex gap-2 items-center">
+                      <img src="/Avatar/frei.webp" alt="Avatar" className="size-10 md:size-12" />
+                      FREI
+                    </span>
+                    <span>LEGEND</span>
+                    <span>GOAT</span>
+                    <span>HERO</span>
+                    <span>You</span>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
