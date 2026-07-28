@@ -24,7 +24,7 @@ const pagesObj = [
 export default function Resources() {
   return (
     <PageBlock>
-      <section className="max-w-250 mx-auto py-16 p-2 rounded font-[Ubuntu] text-[13px] text-gray-400">
+      {/* <section className="max-w-250 mx-auto py-16 p-2 rounded font-[Ubuntu] text-[13px] text-gray-400">
         {pagesObj.map((obj, index) => (
           <div key={index} className="rounded my-4">
             <Link to={`/${obj.link}`} className="hover:text-[#00ffaa] text-[18px] text-green-300 font-[Sr]">
@@ -33,7 +33,7 @@ export default function Resources() {
             <div className="ps-2">{obj.des}</div>
           </div>
         ))}
-      </section>
+      </section> */}
     </PageBlock>
   );
 }

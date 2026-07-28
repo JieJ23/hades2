@@ -425,12 +425,13 @@ export default function App() {
   // Display Orders
 
   //
-  const srcSurface = JSON.parse(localStorage.getItem("speedrunS") || []);
-  const srcUnderworld = JSON.parse(localStorage.getItem("speedrunUW") || []);
-  const srcSSub5 = getUniquePlayers(parseLeaderboard(srcSurface).filter((obj) => obj.time < 300));
-  const srcUWSub5 = getUniquePlayers(parseLeaderboard(srcUnderworld).filter((obj) => obj.time < 300));
+  const srcSurface = JSON.parse(localStorage.getItem("speedrunS")) || "";
+  const srcUnderworld = JSON.parse(localStorage.getItem("speedrunUW")) || "";
+  const srcSSub5 = srcSurface ? getUniquePlayers(parseLeaderboard(srcSurface).filter((obj) => obj.time < 300)) : "";
+  const srcUWSub5 = srcUnderworld
+    ? getUniquePlayers(parseLeaderboard(srcUnderworld).filter((obj) => obj.time < 300))
+    : "";
   //
-
   return (
     <main
       className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
@@ -853,7 +854,7 @@ export default function App() {
               <Divider />
               {srcSSub5 && (
                 <>
-                  <div className="text-center my-8 highwrapper">
+                  <div className="text-center my-8">
                     <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">*SRC Sub 5 Mins, Surface</div>
                     <div className="flex justify-center gap-1 flex-wrap">
                       {srcSSub5.map((ite) => (
