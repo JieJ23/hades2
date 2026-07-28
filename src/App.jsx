@@ -425,8 +425,8 @@ export default function App() {
   // Display Orders
 
   //
-  const srcSurface = JSON.parse(localStorage.getItem("speedrunS"));
-  const srcUnderworld = JSON.parse(localStorage.getItem("speedrunUW"));
+  const srcSurface = JSON.parse(localStorage.getItem("speedrunS") || []);
+  const srcUnderworld = JSON.parse(localStorage.getItem("speedrunUW") || []);
   const srcSSub5 = getUniquePlayers(parseLeaderboard(srcSurface).filter((obj) => obj.time < 300));
   const srcUWSub5 = getUniquePlayers(parseLeaderboard(srcUnderworld).filter((obj) => obj.time < 300));
   //
@@ -851,68 +851,76 @@ export default function App() {
                 </div>
               </div>
               <Divider />
-              <div className="text-center my-8 highwrapper">
-                <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">*SRC Sub 5 Mins, Surface</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {srcSSub5.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        {ite.icon ? (
-                          <img
-                            src={ite.icon}
-                            alt="Avatar"
-                            className="w-7 h-7 rounded-full egg"
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.nextSibling.style.display = "flex";
-                            }}
-                          />
-                        ) : null}
-                        <div
-                          className={`w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center truncate text-[10px] ${
-                            ite.icon ? "hidden" : "flex"
-                          }`}
-                        >
-                          {ite.name?.slice(0, 2).toUpperCase() ?? "?"}
+              {srcSSub5 && (
+                <>
+                  <div className="text-center my-8 highwrapper">
+                    <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">*SRC Sub 5 Mins, Surface</div>
+                    <div className="flex justify-center gap-1 flex-wrap">
+                      {srcSSub5.map((ite) => (
+                        <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
+                          <div className="relative w-7 h-7">
+                            {ite.icon ? (
+                              <img
+                                src={ite.icon}
+                                alt="Avatar"
+                                className="w-7 h-7 rounded-full egg"
+                                onError={(e) => {
+                                  e.target.style.display = "none";
+                                  e.target.nextSibling.style.display = "flex";
+                                }}
+                              />
+                            ) : null}
+                            <div
+                              className={`w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center truncate text-[10px] ${
+                                ite.icon ? "hidden" : "flex"
+                              }`}
+                            >
+                              {ite.name?.slice(0, 2).toUpperCase() ?? "?"}
+                            </div>
+                          </div>
+                          <div className="font-[Ale]">{ite.name}</div>
                         </div>
-                      </div>
-                      <div className="font-[Ale]">{ite.name}</div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </div>
-              <Divider />
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-green-300">*SRC Sub 5 Mins, UW</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {srcUWSub5.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        {ite.icon ? (
-                          <img
-                            src={ite.icon}
-                            alt="Avatar"
-                            className="w-7 h-7 rounded-full egg"
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.nextSibling.style.display = "flex";
-                            }}
-                          />
-                        ) : null}
-                        <div
-                          className={`w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center truncate text-[10px] ${
-                            ite.icon ? "hidden" : "flex"
-                          }`}
-                        >
-                          {ite.name?.slice(0, 2).toUpperCase() ?? "?"}
+                  </div>
+                  <Divider />
+                </>
+              )}
+              {srcUWSub5 && (
+                <>
+                  <div className="text-center my-8">
+                    <div className="font-[Sr] text-[16px] mb-2 text-green-300">*SRC Sub 5 Mins, UW</div>
+                    <div className="flex justify-center gap-1 flex-wrap">
+                      {srcUWSub5.map((ite) => (
+                        <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
+                          <div className="relative w-7 h-7">
+                            {ite.icon ? (
+                              <img
+                                src={ite.icon}
+                                alt="Avatar"
+                                className="w-7 h-7 rounded-full egg"
+                                onError={(e) => {
+                                  e.target.style.display = "none";
+                                  e.target.nextSibling.style.display = "flex";
+                                }}
+                              />
+                            ) : null}
+                            <div
+                              className={`w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center truncate text-[10px] ${
+                                ite.icon ? "hidden" : "flex"
+                              }`}
+                            >
+                              {ite.name?.slice(0, 2).toUpperCase() ?? "?"}
+                            </div>
+                          </div>
+                          <div className="font-[Ale]">{ite.name}</div>
                         </div>
-                      </div>
-                      <div className="font-[Ale]">{ite.name}</div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </div>
-              <Divider />
+                  </div>
+                  <Divider />
+                </>
+              )}
             </>
           )}
         </PageBlock>
