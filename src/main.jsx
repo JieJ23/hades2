@@ -39,7 +39,7 @@ createRoot(document.getElementById("root")).render(
     <DataProvider>
       <Router>
         <Routes>
-          {/* <Route path="/" element={<App />} />
+          <Route path="/" element={<App />} />
           <Route path="/Night" element={<Night />} />
           <Route path="/DreamRoute" element={<DreamRoute />} />
           <Route path="/Ladder" element={<Ladder />} />
@@ -64,9 +64,9 @@ createRoot(document.getElementById("root")).render(
           <Route path="/Player" element={<Player />} />
 
           <Route path="/Src" element={<Src />} />
-          <Route path="/SrcS" element={<SrcS />} /> */}
+          <Route path="/SrcS" element={<SrcS />} />
 
-          <Route path="*" element={<Resources />} />
+          <Route path="*" element={<App />} />
         </Routes>
       </Router>
     </DataProvider>
