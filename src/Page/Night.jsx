@@ -38,7 +38,7 @@ export default function Night() {
 
   const orderData = useMemo(() => {
     return [...bundleData, ...posts]
-      .filter((obj) => obj.fea >= fearMin && obj.fea <= fearMax)
+      .filter((obj) => +obj.fea >= fearMin && +obj.fea <= fearMax)
       .filter((obj) => parseTimetoms(obj.tim) >= timeMin * 6000 && parseTimetoms(obj.tim) <= timeMax * 6000)
       .filter((obj) => {
         const playerMatch = player === "" || obj.nam === player;
@@ -490,7 +490,8 @@ export default function Night() {
                         <div>{obj.nam}</div>
                         <div>
                           <span>
-                            {+obj.fea} | {obj.loc !== "Underworld" && obj.loc !== "Surface" ? `Dream Dive` : obj.loc} | {obj.tim}
+                            {+obj.fea} | {obj.loc !== "Underworld" && obj.loc !== "Surface" ? `Dream Dive` : obj.loc} |{" "}
+                            {obj.tim}
                           </span>
                         </div>
                       </div>
@@ -524,19 +525,19 @@ export default function Night() {
                         )}
                         {obj.cor
                           ? sToA(obj.cor).map((ite, index) => (
-                            <div className="relative size-10 sm:size-8 md:size-8 xl:size-9 shrink-0">
-                              <img
-                                src="/BoonBorder/Hammer.png"
-                                alt="Border"
-                                className="absolute inset-0 w-full h-full z-10 pointer-events-none"
-                              />
-                              <img
-                                src={`/H2Boons/${ite}.png`}
-                                alt="Core Boon"
-                                className="absolute inset-0 w-full h-full p-1 object-contain"
-                              />
-                            </div>
-                          ))
+                              <div className="relative size-10 sm:size-8 md:size-8 xl:size-9 shrink-0">
+                                <img
+                                  src="/BoonBorder/Hammer.png"
+                                  alt="Border"
+                                  className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                                />
+                                <img
+                                  src={`/H2Boons/${ite}.png`}
+                                  alt="Core Boon"
+                                  className="absolute inset-0 w-full h-full p-1 object-contain"
+                                />
+                              </div>
+                            ))
                           : ``}
                       </div>
                       {obj.ham && (
@@ -549,9 +550,7 @@ export default function Night() {
                       {obj.loc !== "Underworld" && obj.loc !== "Surface" && (
                         <div className="flex justify-start gap-0.5">
                           {sToA(obj.loc).map((item) => (
-                            <div className=" bg-orange-950 text-[12px] font-[Ale] px-1 rounded-none">
-                              {item}
-                            </div>
+                            <div className=" bg-orange-950 text-[12px] font-[Ale] px-1 rounded-none">{item}</div>
                           ))}
                         </div>
                       )}
@@ -605,7 +604,11 @@ export default function Night() {
                       <td className="border-0 border-y border-y-white/5">
                         <div
                           className={
-                            obj.loc === `Underworld` ? `text-[#00ffaa]` : obj.loc === `Surface` ? `text-[yellow]` : `text-pink-500`
+                            obj.loc === `Underworld`
+                              ? `text-[#00ffaa]`
+                              : obj.loc === `Surface`
+                                ? `text-[yellow]`
+                                : `text-pink-500`
                           }
                         >
                           {/* {orderData.length - (index + 25 * (pageIndex - 1))} */}
@@ -639,8 +642,9 @@ export default function Night() {
                           {obj.des && (
                             <div className="">
                               <div
-                                className={`tooltip ${index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
-                                  }`}
+                                className={`tooltip ${
+                                  index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
+                                }`}
                               >
                                 <div className="tooltip-content p-0">
                                   <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
@@ -698,21 +702,21 @@ export default function Night() {
                         <div className="flex gap-0.5">
                           {obj.cor
                             ? sToA(obj.cor).map((ite, index) => (
-                              <div className="tooltip">
-                                <div className="tooltip-content p-0">
-                                  <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
-                                    {p9boons[ite]}
+                                <div className="tooltip">
+                                  <div className="tooltip-content p-0">
+                                    <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
+                                      {p9boons[ite]}
+                                    </div>
                                   </div>
+                                  <img
+                                    draggable={false}
+                                    src={`/H2Boons/${ite}.png`}
+                                    alt="Core Boon"
+                                    className="size-6"
+                                    loading="lazy"
+                                  />
                                 </div>
-                                <img
-                                  draggable={false}
-                                  src={`/H2Boons/${ite}.png`}
-                                  alt="Core Boon"
-                                  className="size-6"
-                                  loading="lazy"
-                                />
-                              </div>
-                            ))
+                              ))
                             : ``}
                         </div>
                       </td>
