@@ -384,7 +384,7 @@ export default function App() {
       (acc, item) => {
         if (item.fea == 62) {
           acc[0].push(item);
-        } else if (item.fea == 65 && item.des.includes("#usum")) {
+        } else if (item.fea == 65) {
           acc[1].push(item);
         } else if (item.fea == 67 && item.des.includes("#usum")) {
           acc[2].push(item);
@@ -427,7 +427,7 @@ export default function App() {
   //
   const srcSurface = JSON.parse(localStorage.getItem("speedrunS")) || "";
   const srcUnderworld = JSON.parse(localStorage.getItem("speedrunUW")) || "";
-  const srcSSub5 = srcSurface ? getUniquePlayers(parseLeaderboard(srcSurface).filter((obj) => obj.time < 300)) : "";
+  const srcSSub6 = srcSurface ? getUniquePlayers(parseLeaderboard(srcSurface).filter((obj) => obj.time < 360)) : "";
   const srcUWSub5 = srcUnderworld
     ? getUniquePlayers(parseLeaderboard(srcUnderworld).filter((obj) => obj.time < 300))
     : "";
@@ -446,20 +446,9 @@ export default function App() {
                 onMouseMove={handleMouseMove}
                 className="hover-target text-white font-bold text-[48px] sm:text-[58px] md:text-[64px] uppercase cursor-default select-none text-center font-[Sr] gap-2 gap-x-8 flex flex-col md:flex-row"
               >
-                <div>I</div>
-                <div>Am</div>
-                <div className="text-rotate">
-                  <span className="justify-items-center md:justify-items-start">
-                    <span className="flex gap-2 items-center">
-                      <img src="/Avatar/frei.webp" alt="Avatar" className="size-10 md:size-12" />
-                      FREI
-                    </span>
-                    <span>LEGEND</span>
-                    <span>GOAT</span>
-                    <span>HERO</span>
-                    <span>You</span>
-                  </span>
-                </div>
+                <div>Death</div>
+                <div>To</div>
+                <div>Chronos</div>
               </div>
             </div>
           </div>
@@ -863,12 +852,12 @@ export default function App() {
                 </div>
               </div>
               <Divider />
-              {srcSSub5 && (
+              {srcSSub6 && (
                 <>
                   <div className="text-center my-8">
-                    <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">*SRC Sub 5 Mins, Surface</div>
+                    <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">*SRC Sub 6 Mins, Surface</div>
                     <div className="flex justify-center gap-1 flex-wrap">
-                      {srcSSub5.map((ite) => (
+                      {srcSSub6.map((ite) => (
                         <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
                           <div className="relative w-7 h-7">
                             {ite.icon ? (
