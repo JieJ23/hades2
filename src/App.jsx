@@ -288,58 +288,68 @@ export default function App() {
   const allAvailablePlayers = [...new Set(orderData.map((obj) => obj.nam))];
 
   // All Aspects Completion
-  const [aspects50uw, aspects62uw, aspects65uw, aspects50s, aspects62s, aspects65s] = allAvailablePlayers.reduce(
-    (acc, playerName) => {
-      const playerArray = orderData.filter((obj) => obj.nam === playerName);
+  const [aspects50uw, aspects62uw, aspects65uw, aspects50s, aspects62s, aspects65s, aspects67uw] =
+    allAvailablePlayers.reduce(
+      (acc, playerName) => {
+        const playerArray = orderData.filter((obj) => obj.nam === playerName);
 
-      const above50 = playerArray.filter((obj) => obj.fea >= 50 && obj.loc === "Underworld");
-      const above62 = above50.filter((obj) => obj.fea >= 62);
-      const above65 = above62.filter((obj) => obj.fea >= 65);
-      const uniqueAspects50 = [...new Set(above50.map((obj) => obj.asp))];
-      const uniqueAspects62 = [...new Set(above62.map((obj) => obj.asp))];
-      const uniqueAspects65 = [...new Set(above65.map((obj) => obj.asp))];
+        const above50 = playerArray.filter((obj) => obj.fea >= 50 && obj.loc === "Underworld");
+        const above62 = above50.filter((obj) => obj.fea >= 62);
+        const above65 = above62.filter((obj) => obj.fea >= 65);
+        const above67 = above65.filter((obj) => obj.fea == 67);
+        const uniqueAspects50 = [...new Set(above50.map((obj) => obj.asp))];
+        const uniqueAspects62 = [...new Set(above62.map((obj) => obj.asp))];
+        const uniqueAspects65 = [...new Set(above65.map((obj) => obj.asp))];
+        const uniqueAspects67 = [...new Set(above67.map((obj) => obj.asp))];
 
-      const above50s = playerArray.filter((obj) => obj.fea >= 50 && obj.loc === "Surface");
-      const above62s = above50s.filter((obj) => obj.fea >= 62);
-      const above65s = above62s.filter((obj) => obj.fea >= 65);
-      const uniqueAspects50s = [...new Set(above50s.map((obj) => obj.asp))];
-      const uniqueAspects62s = [...new Set(above62s.map((obj) => obj.asp))];
-      const uniqueAspects65s = [...new Set(above65s.map((obj) => obj.asp))];
+        const above50s = playerArray.filter((obj) => obj.fea >= 50 && obj.loc === "Surface");
+        const above62s = above50s.filter((obj) => obj.fea >= 62);
+        const above65s = above62s.filter((obj) => obj.fea >= 65);
+        const uniqueAspects50s = [...new Set(above50s.map((obj) => obj.asp))];
+        const uniqueAspects62s = [...new Set(above62s.map((obj) => obj.asp))];
+        const uniqueAspects65s = [...new Set(above65s.map((obj) => obj.asp))];
 
-      if (uniqueAspects50.length === 24) {
-        acc[0].push(playerName);
+        if (uniqueAspects50.length === 24) {
+          acc[0].push(playerName);
 
-        if (uniqueAspects62.length === 24) {
-          acc[1].push(playerName);
+          if (uniqueAspects62.length === 24) {
+            acc[1].push(playerName);
+          }
+
+          if (uniqueAspects65.length === 24) {
+            acc[2].push(playerName);
+          }
+
+          if (uniqueAspects67.length === 24) {
+            acc[6].push(playerName);
+          }
         }
 
-        if (uniqueAspects65.length === 24) {
-          acc[2].push(playerName);
+        if (uniqueAspects50s.length === 24) {
+          acc[3].push(playerName);
+
+          if (uniqueAspects62s.length === 24) {
+            acc[4].push(playerName);
+          }
+
+          if (uniqueAspects65s.length === 24) {
+            acc[5].push(playerName);
+          }
         }
-      }
 
-      if (uniqueAspects50s.length === 24) {
-        acc[3].push(playerName);
-
-        if (uniqueAspects62s.length === 24) {
-          acc[4].push(playerName);
-        }
-
-        if (uniqueAspects65s.length === 24) {
-          acc[5].push(playerName);
-        }
-      }
-
-      return acc;
-    },
-    [[], [], [], [], [], []],
-  );
-  const allaspect65uw = aspects65uw.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+        return acc;
+      },
+      [[], [], [], [], [], [], []],
+    );
+  const allaspect67uw = aspects67uw.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  const allaspect65uw = aspects65uw
+    .filter((item) => !allaspect67uw.includes(item))
+    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
   const allaspect62uw = aspects62uw
-    .filter((item) => !allaspect65uw.includes(item))
+    .filter((item) => ![...allaspect65uw, ...allaspect67uw].includes(item))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
   const allaspect50uw = aspects50uw
-    .filter((item) => ![...allaspect62uw, ...allaspect65uw].includes(item))
+    .filter((item) => ![...allaspect62uw, ...allaspect65uw, ...allaspect67uw].includes(item))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
   const allaspect65s = aspects65s.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
   const allaspect62s = aspects62s
@@ -425,12 +435,12 @@ export default function App() {
   // Display Orders
 
   //
-  const srcSurface = JSON.parse(localStorage.getItem("speedrunS")) || "";
-  const srcUnderworld = JSON.parse(localStorage.getItem("speedrunUW")) || "";
-  const srcSSub6 = srcSurface ? getUniquePlayers(parseLeaderboard(srcSurface).filter((obj) => obj.time < 360)) : "";
-  const srcUWSub5 = srcUnderworld
-    ? getUniquePlayers(parseLeaderboard(srcUnderworld).filter((obj) => obj.time < 300))
-    : "";
+  // const srcSurface = JSON.parse(localStorage.getItem("speedrunS")) || "";
+  // const srcUnderworld = JSON.parse(localStorage.getItem("speedrunUW")) || "";
+  // const srcSSub6 = srcSurface ? getUniquePlayers(parseLeaderboard(srcSurface).filter((obj) => obj.time < 360)) : "";
+  // const srcUWSub5 = srcUnderworld
+  //   ? getUniquePlayers(parseLeaderboard(srcUnderworld).filter((obj) => obj.time < 300))
+  //   : "";
   //
   return (
     <main
@@ -463,8 +473,10 @@ export default function App() {
                 <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">*Max Fear, Surface</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {allplayers67s.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-linear-to-t from-[#131111] to-yellow-200 text-gray-400 rounded p-2 px-1 high">
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 border-b-6 border-yellow-200 text-gray-400 rounded p-2 px-1">
                       <div className="relative w-10 h-10">
+                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
+                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
                         <img
                           src={`/Avatar/${ite.toLowerCase()}.webp`}
                           alt="Avatar"
@@ -536,8 +548,10 @@ export default function App() {
                 <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">65 Fear, All Aspects, Surface</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {allaspect65s.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-linear-to-t from-[#131111] to-yellow-200 text-gray-400 rounded p-2 px-1 high">
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 border-b-6 border-yellow-200 text-gray-400 rounded p-2 px-1">
                       <div className="relative w-10 h-10">
+                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
+                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
                         <img
                           src={`/Avatar/${ite.toLowerCase()}.webp`}
                           alt="Avatar"
@@ -610,8 +624,10 @@ export default function App() {
                 <div className="font-[Sr] text-[16px] mb-2 text-green-300">*Max Fear, UW</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {allplayers67uw.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-linear-to-t from-[#131111] to-green-300 text-gray-400 rounded p-2 px-1 high">
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 border-b-6 border-green-300 text-gray-400 rounded p-2 px-1">
                       <div className="relative w-10 h-10">
+                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
+                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
                         <img
                           src={`/Avatar/${ite.toLowerCase()}.webp`}
                           alt="Avatar"
@@ -681,11 +697,39 @@ export default function App() {
               {/* AA  */}
               <Divider />
               <div className="text-center my-8 highwrapper">
+                <div className="font-[Sr] text-[16px] mb-2 text-green-300">Max Fear, All Aspects, UW</div>
+                <div className="flex justify-center gap-1 flex-wrap">
+                  {allaspect67uw.map((ite) => (
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 border-b-6 border-green-300 text-gray-400 rounded p-2 px-1 relative">
+                      <div className="relative w-10 h-10">
+                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
+                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
+                        <img
+                          src={`/Avatar/${ite.toLowerCase()}.webp`}
+                          alt="Avatar"
+                          className="w-10 h-10 rounded-full mask mask-hexagon egg"
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                            e.target.nextSibling.style.display = "flex";
+                          }}
+                        />
+                        <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
+                          {ite.slice(0, 2).toUpperCase()}
+                        </div>
+                      </div>
+                      <div className="font-[Ale]">{ite}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="text-center my-8 highwrapper">
                 <div className="font-[Sr] text-[16px] mb-2 text-green-300">65 Fear, All Aspects, UW</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {allaspect65uw.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-linear-to-t from-[#131111] to-green-300 text-gray-400 rounded p-2 px-1 high">
+                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 border-b-6 border-green-300 text-gray-400 rounded p-2 px-1">
                       <div className="relative w-10 h-10">
+                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
+                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
                         <img
                           src={`/Avatar/${ite.toLowerCase()}.webp`}
                           alt="Avatar"
@@ -758,8 +802,10 @@ export default function App() {
                 <div className="font-[Sr] text-[16px] mb-2 text-purple-400">*Max Fear, Dream Dive</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {allplayers67d.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-linear-to-t from-[#131111] to-purple-300 text-gray-400 rounded p-2 px-1 high">
+                    <div className="flex flex-col gap-1 items-center min-w-25  bg-black/50 border-b-6 border-purple-300 text-gray-400 rounded p-2 px-1">
                       <div className="relative w-10 h-10">
+                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
+                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
                         <img
                           src={`/Avatar/${ite.toLowerCase()}.webp`}
                           alt="Avatar"
@@ -831,8 +877,10 @@ export default function App() {
                 <div className="font-[Sr] text-[16px] mb-2 text-purple-400">62 Fear, All Aspects, Dream Dive</div>
                 <div className="flex justify-center gap-1 flex-wrap">
                   {aspects62dd.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-linear-to-t from-[#131111] to-purple-300 text-gray-400 rounded p-2 px-1 high">
+                    <div className="flex flex-col gap-1 items-center min-w-25  bg-black/50 border-b-6 border-purple-300 text-gray-400 rounded p-2 px-1">
                       <div className="relative w-10 h-10">
+                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
+                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
                         <img
                           src={`/Avatar/${ite.toLowerCase()}.webp`}
                           alt="Avatar"
@@ -852,7 +900,7 @@ export default function App() {
                 </div>
               </div>
               <Divider />
-              {srcSSub6 && (
+              {/* {srcSSub6 && (
                 <>
                   <div className="text-center my-8">
                     <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">*SRC Sub 6 Mins, Surface</div>
@@ -921,7 +969,7 @@ export default function App() {
                   </div>
                   <Divider />
                 </>
-              )}
+              )} */}
             </>
           )}
         </PageBlock>
