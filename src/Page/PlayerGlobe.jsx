@@ -19,7 +19,7 @@ function useGlobeData() {
       try {
         const cached = localStorage.getItem("gData");
         const cacheTimestamp = localStorage.getItem("gData_timestampS");
-        const oneDayInMs = 30 * 60 * 1000; // 30 minutes in milliseconds
+        const oneDayInMs = 15 * 60 * 1000; // 15 minutes in milliseconds
 
         if (cached && cacheTimestamp) {
           const age = Date.now() - parseInt(cacheTimestamp);
@@ -157,7 +157,7 @@ export default function PlayerGlobe() {
   useEffect(() => {
     if (globeEl.current) {
       globeEl.current.controls().autoRotate = true;
-      globeEl.current.controls().autoRotateSpeed = 0.2;
+      globeEl.current.controls().autoRotateSpeed = 0.1;
     }
   }, [selectedISO, postG]);
 
@@ -244,14 +244,7 @@ export default function PlayerGlobe() {
               hexPolygonLabel={(d) => {
                 const p = playersByISO[getISO(d)];
                 return (
-                  <div className="bg-[#0e0c12] p-4 font-[Ale] text-[14px] border-1 rounded border-white/20 min-w-50 relative">
-                    {p && (
-                      <img
-                        src={`/GUI_Card/c${p.aspect}.png`}
-                        alt="Aspect"
-                        className="absolute right-0 top-0 h-full w-auto opacity-50 z-10"
-                      />
-                    )}
+                  <div className="bg-[#0e0c12] p-4 font-[Ale] text-[14px] border-1 rounded border-white/20 min-w-40 relative">
                     <div>{p ? p.name : "Unclaimed"}</div>
                     <div
                       style={{
@@ -262,7 +255,7 @@ export default function PlayerGlobe() {
                     </div>
                     <div>Zone: {d.properties.ADMIN}</div>
                     <div>Zone Code: {getISO(d)}</div>
-                    {points[getISO(d)] > 140 ? (
+                    {points[getISO(d)] > 75 ? (
                       <div className="flex flex-col gap-1">
                         <div className="text-[red]">Major Value</div>
                         <div className="flex gap-1 w-full">
@@ -271,7 +264,7 @@ export default function PlayerGlobe() {
                           <div className="w-4 h-1 bg-[red]" />
                         </div>
                       </div>
-                    ) : points[getISO(d)] > 120 ? (
+                    ) : points[getISO(d)] > 50 ? (
                       <div className="flex flex-col gap-1">
                         <div className="text-[orange]">Moderate Value</div>
                         <div className="flex gap-1 w-full">
@@ -338,7 +331,7 @@ export default function PlayerGlobe() {
                 <div>{playersByISO[getISO(hoverD)]?.name ?? "Unclaimed"}</div>
                 <div>Zone: {hoverD.properties.ADMIN}</div>
                 <div>Zone Code: {getISO(hoverD)}</div>
-                {points[getISO(hoverD)] > 140 ? (
+                {points[getISO(hoverD)] > 75 ? (
                   <div className="flex flex-col gap-1">
                     <div className="text-[red]">Major Value</div>
                     <div className="flex gap-1 w-full">
@@ -347,7 +340,7 @@ export default function PlayerGlobe() {
                       <div className="w-4 h-1 bg-[red]" />
                     </div>
                   </div>
-                ) : points[getISO(hoverD)] > 120 ? (
+                ) : points[getISO(hoverD)] > 50 ? (
                   <div className="flex flex-col gap-1">
                     <div className="text-[orange]">Moderate Value</div>
                     <div className="flex gap-1 w-full">
