@@ -9,10 +9,10 @@ import { useData } from "../Hook/DataFetch";
 import { useState } from "react";
 import Loading from "../Hook/Loading";
 
-import { BarChart, Bar, XAxis, LabelList } from 'recharts';
+import { BarChart, Bar, XAxis, LabelList } from "recharts";
 
 const types = [`Attack`, `Special`, `Cast`, `Sprint`, `Magick`];
-const regions = [`Underworld`, `Surface`]
+const regions = [`Underworld`, `Surface`];
 
 export default function Stats() {
   const { posts, loader } = useData();
@@ -20,11 +20,9 @@ export default function Stats() {
   const [region, setRegion] = useState([]);
 
   const fullData = [...bundleData, ...posts].filter((obj) => {
-    const currentAspect =
-      aspect.length === 0 || aspect.includes(obj.asp);
+    const currentAspect = aspect.length === 0 || aspect.includes(obj.asp);
 
-    const currentRegion =
-      region.length === 0 || region.includes(obj.loc);
+    const currentRegion = region.length === 0 || region.includes(obj.loc);
 
     return currentAspect && currentRegion;
   });
@@ -88,7 +86,6 @@ export default function Stats() {
 
   const ksStore = [findBiomeKeepData(0), findBiomeKeepData(1), findBiomeKeepData(2), findBiomeKeepData(3)];
 
-  console.log(hammerStore)
   return (
     <div className="h-full min-h-lvh relative overflow-hidden text-[13px] md:text-[14px] font-[Ale] select-none">
       <PageBlock>
@@ -99,12 +96,16 @@ export default function Stats() {
           <div className="w-full py-8">
             <div className="flex flex-col gap-2">
               <div className="flex justify-start flex-wrap gap-2 px-2">
-                {regions.map(item => (
-                  <div className={`relative size-10 md:size-12 shrink-0 ${region.includes(item) ? `bg-[#00ffaa]` : `bg-[#28282b]`}  rounded`}
-                    onClick={() => setRegion(prev => {
-                      if (prev.includes(item)) return prev.filter(ite => ite !== item);
-                      return [...prev, item]
-                    })}>
+                {regions.map((item) => (
+                  <div
+                    className={`relative size-10 md:size-12 shrink-0 ${region.includes(item) ? `bg-[#00ffaa]` : `bg-[#28282b]`}  rounded`}
+                    onClick={() =>
+                      setRegion((prev) => {
+                        if (prev.includes(item)) return prev.filter((ite) => ite !== item);
+                        return [...prev, item];
+                      })
+                    }
+                  >
                     <img
                       src="/BoonBorder/Hammer.png"
                       alt="Border"
@@ -120,12 +121,16 @@ export default function Stats() {
                 ))}
               </div>
               <div className="flex justify-start flex-wrap gap-2 px-2">
-                {h2AspectOrder.map(item => (
-                  <div className={`relative size-10 md:size-12 shrink-0 ${aspect.includes(item) ? `bg-[#00ffaa]` : `bg-[#28282b]`} rounded`}
-                    onClick={() => setAspect(prev => {
-                      if (prev.includes(item)) return prev.filter(ite => ite !== item);
-                      return [...prev, item]
-                    })}>
+                {h2AspectOrder.map((item) => (
+                  <div
+                    className={`relative size-10 md:size-12 shrink-0 ${aspect.includes(item) ? `bg-[#00ffaa]` : `bg-[#28282b]`} rounded`}
+                    onClick={() =>
+                      setAspect((prev) => {
+                        if (prev.includes(item)) return prev.filter((ite) => ite !== item);
+                        return [...prev, item];
+                      })
+                    }
+                  >
                     <img
                       src="/BoonBorder/Hammer.png"
                       alt="Border"
@@ -145,12 +150,8 @@ export default function Stats() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 font-[Ale] my-6">
               {grouped.map((array, index) => (
                 <div className="flex flex-col gap-2 w-full bg-linear-to-t from-black to-[#0e0c12]/80 rounded p-2 border border-white/10">
-                  <BarChart
-                    className="w-full h-40"
-                    responsive
-                    data={array[1]}
-                  >
-                    <Bar dataKey={1} fill="#28282b" radius={[5, 5, 0, 0]} >
+                  <BarChart className="w-full h-40" responsive data={array[1]}>
+                    <Bar dataKey={1} fill="#28282b" radius={[5, 5, 0, 0]}>
                       <LabelList dataKey={1} position="center" fill="#fff" />
                     </Bar>
                   </BarChart>
@@ -166,12 +167,8 @@ export default function Stats() {
                 </div>
               ))}
               <div className="flex flex-col gap-2 w-full bg-linear-to-t from-black to-[#0e0c12]/80 rounded p-2 border border-white/10">
-                <BarChart
-                  className="w-full h-40"
-                  responsive
-                  data={famStore}
-                >
-                  <Bar dataKey={1} fill="#28282b" radius={[5, 5, 0, 0]} >
+                <BarChart className="w-full h-40" responsive data={famStore}>
+                  <Bar dataKey={1} fill="#28282b" radius={[5, 5, 0, 0]}>
                     <LabelList dataKey={1} position="center" fill="#fff" />
                   </Bar>
                 </BarChart>

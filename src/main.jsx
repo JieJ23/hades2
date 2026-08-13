@@ -34,6 +34,8 @@ import Player from "./Page/Player.jsx";
 import Src from "./Page/Src.jsx";
 import SrcS from "./Page/SrcS.jsx";
 
+import PlayerGlobe from "./Page/PlayerGlobe.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <DataProvider>
@@ -65,6 +67,8 @@ createRoot(document.getElementById("root")).render(
 
           <Route path="/Src" element={<Src />} />
           <Route path="/SrcS" element={<SrcS />} />
+
+          <Route path="/PlayerGlobe" element={<PlayerGlobe />} />
 
           <Route path="*" element={<App />} />
         </Routes>
