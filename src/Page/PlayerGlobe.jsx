@@ -10,7 +10,6 @@ import Loading from "../Hook/Loading";
 import EasedCounter from "../Comp/Counter";
 
 // Fetch Data
-
 function useGlobeData() {
   const [postG, setPostG] = useState([]);
   const [loader, setLoader] = useState(true);
@@ -77,6 +76,19 @@ function returnValue(iso) {
   return points[iso];
 }
 
+const findCategory = (color) => {
+  switch (color) {
+    case "purple":
+      return "Dream Dive";
+    case "red":
+      return "High Fear";
+    case "yellow":
+      return "Speedrun";
+    case "green":
+      return "Fresh File";
+  }
+};
+
 // --- ISO lookup helper -----------------------------------------------------
 // Numeric ISO 3166-1 code (ISO_N3) is cleanly populated for every country in
 // this dataset, including ones where ISO_A3/ISO_A3_EH are broken ("-99")
@@ -132,7 +144,6 @@ export default function PlayerGlobe() {
     globeEl.current.controls().autoRotate = false;
     globeEl.current.pointOfView({ lat, lng, altitude: 1.2 }, 1000);
   };
-
   // --- 2. Load world GeoJSON (bundle this locally in production) -------
   useEffect(() => {
     fetch(
@@ -146,7 +157,7 @@ export default function PlayerGlobe() {
   useEffect(() => {
     if (globeEl.current) {
       globeEl.current.controls().autoRotate = true;
-      globeEl.current.controls().autoRotateSpeed = 0.6;
+      globeEl.current.controls().autoRotateSpeed = 0.2;
     }
   }, [selectedISO, postG]);
 
@@ -212,19 +223,9 @@ export default function PlayerGlobe() {
       a[1].reduce((acc, item) => acc + points[item.countryISO], 0),
   );
   //
-
   return (
     <>
-      <div
-        style={{
-          position: "relative",
-          width: "100%",
-          height: "100vh",
-          backgroundImage: "url('/test.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <div>
         {loader ? (
           <Loading />
         ) : (
@@ -233,7 +234,7 @@ export default function PlayerGlobe() {
               ref={globeEl}
               globeImageUrl="/nightworld.webp"
               // backgroundImageUrl="/test.png"
-              backgroundColor="rgba(1, 3, 18, 0)"
+              backgroundColor="#040404"
               // --- Hexed Polygons layer: every country, colored per-player or gray ---
               hexPolygonsData={hexData}
               hexPolygonResolution={4} // hex grid density per country
@@ -243,15 +244,22 @@ export default function PlayerGlobe() {
               hexPolygonLabel={(d) => {
                 const p = playersByISO[getISO(d)];
                 return (
-                  <div className="bg-[#0e0c12] p-4 font-[Ale] text-[14px] border-1 rounded border-white/20 min-w-40 relative">
+                  <div className="bg-[#0e0c12] p-4 font-[Ale] text-[14px] border-1 rounded border-white/20 min-w-50 relative">
                     {p && (
                       <img
                         src={`/GUI_Card/c${p.aspect}.png`}
                         alt="Aspect"
-                        className="absolute right-0 top-0 h-full w-auto opacity-50 -z-10"
+                        className="absolute right-0 top-0 h-full w-auto opacity-50 z-10"
                       />
                     )}
                     <div>{p ? p.name : "Unclaimed"}</div>
+                    <div
+                      style={{
+                        color: p ? p.color : "#fff",
+                      }}
+                    >
+                      {p && findCategory(p.color)}
+                    </div>
                     <div>Zone: {d.properties.ADMIN}</div>
                     <div>Zone Code: {getISO(d)}</div>
                     {points[getISO(d)] > 140 ? (
@@ -370,7 +378,7 @@ export default function PlayerGlobe() {
                   htmlFor="my-drawer-1"
                   className="drawer-button text-[12px] font-[Ubuntu] rounded bg-[#0e0c12] border border-white/20 p-3 focus:outline-none"
                 >
-                  Stats
+                  Stats Tab
                 </label>
               </div>
               <div className="drawer-side z-30">
