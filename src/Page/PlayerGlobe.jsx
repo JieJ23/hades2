@@ -220,7 +220,7 @@ export default function PlayerGlobe() {
           position: "relative",
           width: "100%",
           height: "100vh",
-          backgroundImage: "url('/test.png')",
+          backgroundImage: "url('/test.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -233,7 +233,7 @@ export default function PlayerGlobe() {
               ref={globeEl}
               globeImageUrl="/nightworld.webp"
               // backgroundImageUrl="/test.png"
-              backgroundColor="rgba(1, 3, 18, 0.85)"
+              backgroundColor="rgba(1, 3, 18, 0)"
               // --- Hexed Polygons layer: every country, colored per-player or gray ---
               hexPolygonsData={hexData}
               hexPolygonResolution={4} // hex grid density per country
@@ -377,7 +377,7 @@ export default function PlayerGlobe() {
                 <label htmlFor="my-drawer-1" aria-label="close sidebar" className="drawer-overlay"></label>
                 {/* Content */}
                 <div className="bg-black/90 w-full min-h-screen flex flex-col items-center font-[Ubuntu] text-[14px]">
-                  <div className="my-4 p-2 w-full max-w-300 mx-auto">
+                  <div className="my-4 p-2 w-full max-w-250 mx-auto">
                     <div className="flex gap-1 my-2">
                       <div className="flex gap-1 items-center flex-wrap border border-white/20 rounded px-2 py-1">
                         <div className="w-3 h-3 bg-[red]" />
@@ -396,16 +396,16 @@ export default function PlayerGlobe() {
                         <div>Dream Dive</div>
                       </div>
                     </div>
-                    <div className="flex flex-col my-4 lg:flex-row gap-2">
+                    <div className="flex flex-col lg:flex-row gap-1">
                       {teamSummary.map((arr, index) => (
-                        <div className={`flex flex-col gap-1 border border-white/20 rounded p-2 w-full bg-black`}>
+                        <div className={`flex flex-col gap-1 border border-white/20 rounded p-2 w-full`}>
                           <div className="font-[Sr] text-[16px] text-center">Team {arr[0]}</div>
                           <div className="flex justify-center items-center gap-1 text-[14px]">
                             <EasedCounter
                               key={statsOpen} // remounts (and re-animates) every time drawer opens
                               value={arr[1].reduce((a, b) => a + points[b.countryISO], 0)}
                               duration={2000}
-                              className="text-[36px] font-[Sr]"
+                              className="text-[40px] font-[Sr] text-white"
                             />
                             <div className="font-[UbuntuMono]">Points</div>
                           </div>

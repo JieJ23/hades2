@@ -29,6 +29,7 @@ export const minor = [
   { link: `SrcS`, nam: `SRC S Ladder`, icon: `HealthBar_Regen` },
 ];
 export const events = [
+  { link: `PlayerGlobe`, nam: `Globe`, icon: `TGA` },
   { link: `TheGameAward`, nam: `The Game Award 2025`, icon: `TGA` },
   { link: `Bingo1`, nam: `Bingo #1`, icon: `Life` },
   { link: `Bingo2`, nam: `Bingo #2`, icon: `Life` },
