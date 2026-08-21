@@ -85,7 +85,7 @@ export default function FearCalculator() {
   return (
     <main className="select-none relative">
       <PageBlock>
-        <div className="max-w-[1400px] mx-auto py-16">
+        <div className="max-w-[1400px] mx-auto pt-10">
           <div className="w-full">
             <section className="p-2 font-[UbuntuMono] text-[13px]">
               <div className="flex flex-wrap gap-1">
@@ -109,7 +109,7 @@ export default function FearCalculator() {
                 </button>
               </div>
 
-              <div className="w-full max-w-[1000px] bg-black text-white overflow-hidden p-2 truncate rounded my-2">
+              <div className="w-full max-w-[1000px] bg-[#0a0a0a] text-white overflow-hidden p-2 truncate rounded my-2 border border-white/10">
                 {shareableURL || "No URL Generated Yet"}
               </div>
             </section>
@@ -117,8 +117,8 @@ export default function FearCalculator() {
               <div className="grid grid-cols-4 w-full gap-0.5 lg:gap-1 place-content-start px-0.5">
                 {allVows.map((ite, index) => (
                   <div
-                    className={`w-full min-h-[100px] flex flex-col justify-center items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#411876] rounded ${
-                      vows[index] !== 0 ? `bg-gradient-to-t from-[#190c23]/80 to-[#411876d8]` : `bg-black/80`
+                    className={`w-full min-h-[100px] flex flex-col justify-center border border-white/10 items-center gap-0.5 relative transition-all duration-200 ease-in pt-1 hover:bg-[#221777] rounded ${
+                      vows[index] !== 0 ? `bg-gradient-to-t from-[#0a0a0a] to-[#221777]` : `bg-[#0a0a0a]`
                     } ${index === 16 && `col-start-2 col-span-2`}`}
                     key={index}
                   >
@@ -137,7 +137,7 @@ export default function FearCalculator() {
                     />
                     <div className=" text-white">{ite}</div>
                     <button
-                      className="btn btn-outline border-white/50 rounded bg-black btn-xs"
+                      className="btn btn-outline border-white/50 rounded bg-[#0a0a0a] btn-xs"
                       onClick={() => handleButtonClick(index)}
                     >
                       {vows[index]}
@@ -156,10 +156,10 @@ export default function FearCalculator() {
                 ))}
               </div>
               <div className="w-full p-2 lg:py-0">
-                <div className={`text-[#0cf29e]`}>Total: {currentVows ? currentVows : 0}</div>
+                <div className={`text-[#00ffaa] text-[18px]`}>Total: {currentVows ? currentVows : 0}</div>
                 <div className="grid grid-cols-2 gap-2">
                   {displayVow.map((item, index) => (
-                    <div className="w-full text-white rounded p-2 bg-[#000000]/80" key={index}>
+                    <div className="w-full text-gray-300 rounded p-2 bg-[#0a0a0a] border border-white/10" key={index}>
                       <div className="">{item}</div>
                       <div className="text-gray-300">{defineArray(item).d}</div>
                       <div className="flex flex-wrap justify-start gap-2 mt-1">

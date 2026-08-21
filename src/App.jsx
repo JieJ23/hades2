@@ -24,84 +24,56 @@ import { p9boons } from "./Data/P9BoonObj";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
-// SRC Data
-function parseLeaderboard(json) {
-  const runs = json.data.runs;
-  const players = json.data.players?.data ?? [];
+const normalizeLoc = (loc) => {
+  if (loc === "Underworld" || loc === "Surface") return loc;
+  return "Dream";
+};
+function sortByOrder(array, order) {
+  return [...array].sort((a, b) => order.indexOf(a) - order.indexOf(b));
+}
 
-  // index full player objects by id for quick lookup
-  const playersById = new Map(players.filter((p) => p.id).map((p) => [p.id, p]));
+function createData(fearNum, data) {
+  const entries = data.slice().filter((obj) => obj.fea == fearNum);
+  const entriesData = Object.values(
+    entries.reduce((acc, player) => {
+      const key = player.nam;
+      const loc = normalizeLoc(player.loc);
+      const aspects = player.asp;
 
-  return runs.map(({ run }) => {
-    const playerRef = run.players?.[0]; // first player on the run
-
-    let name = null;
-    let icon = null;
-
-    if (playerRef) {
-      if (playerRef.rel === "guest") {
-        name = playerRef.name ?? null;
-        icon = null; // guests don't have profile icons
-      } else {
-        const player = playersById.get(playerRef.id);
-        name = player?.names?.international ?? null;
-        icon = player?.assets?.image?.uri ?? null;
+      if (!acc[key]) {
+        acc[key] = { nam: key, locs: new Set(), asps: new Set(), locAsps: {} };
       }
-    }
 
-    return {
-      time: run.times?.primary_t ?? null,
-      aspect: run.values?.["2lge1eq8"] ?? null,
-      name,
-      icon,
-    };
-  });
+      acc[key].locs.add(loc);
+      acc[key].asps.add(aspects);
+
+      if (!acc[key].locAsps[loc]) {
+        acc[key].locAsps[loc] = new Set();
+      }
+      acc[key].locAsps[loc].add(aspects);
+
+      return acc;
+    }, {}),
+  ).map((player) => ({
+    nam: player.nam,
+    locs: [...player.locs],
+    asps: [...player.asps],
+    completed: Object.entries(player.locAsps)
+      .filter(([, aspSet]) => aspSet.size === 24)
+      .map(([loc]) => loc),
+  }));
+
+  return entriesData;
 }
-function getUniquePlayers(parsedRuns) {
-  const seen = new Map();
-
-  for (const { name, icon } of parsedRuns) {
-    if (name && !seen.has(name)) {
-      seen.set(name, { name, icon });
-    }
-  }
-
-  return Array.from(seen.values());
-}
-//
 
 export default function App() {
   const { posts, loader } = useData();
   const container = useRef(null);
   const containerRef = useRef(null);
   const lastSpawn = useRef(0);
-  const lastSpawn2 = useRef(0);
 
   useGSAP(
     () => {
-      const targetWrappers = gsap.utils.toArray(".highwrapper");
-      if (!targetWrappers.length) return;
-
-      targetWrappers.forEach((wrapper) => {
-        const highs = wrapper.querySelectorAll(".high");
-        if (!highs.length) return;
-
-        gsap.from(highs, {
-          opacity: 0,
-          backgroundColor: "#000",
-          stagger: 0.2,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: wrapper,
-            start: "top 90%",
-            end: "bottom 10%",
-            toggleActions: "play none none reset",
-            // markers: true,
-          },
-        });
-      });
-
       const eggs = gsap.utils.toArray(".egg"); // whatever your actual class is
       eggs.forEach((egg) => {
         gsap.to(egg, {
@@ -204,249 +176,79 @@ export default function App() {
       ease: "power4.in", // accelerates as it falls (gravity feel)
     });
   };
-  //
-  // const handleMouseMove2 = (e) => {
-  //   const now = Date.now();
-  //   if (now - lastSpawn2.current < 250) return; // ← ms between spawns, higher = slower
-  //   lastSpawn2.current = now;
-  //   if (!container.current) return;
 
-  //   const icons = [...textHoverObject];
-  //   const randomIcon = icons[Math.floor(Math.random() * icons.length)];
-  //   const img = document.createElement("img");
-  //   img.src = `./hover/${randomIcon}.png`;
-  //   img.classList.add("absolute", "w-8", "h-8", "pointer-events-none");
-
-  //   const rect = container.current.getBoundingClientRect();
-  //   img.style.left = `${e.clientX - rect.left}px`;
-  //   img.style.top = `${e.clientY - rect.top}px`;
-
-  //   container.current.appendChild(img);
-  //   const tl = gsap.timeline({ onComplete: () => img.remove() });
-
-  //   // Use gsap directly (not useGSAP) inside event handlers
-  //   tl.fromTo(
-  //     img,
-  //     {
-  //       opacity: 0,
-  //       scale: gsap.utils.random(0.8, 1.6),
-  //       y: 0,
-  //       x: 0,
-  //       rotation: gsap.utils.random(-30, 30),
-  //     },
-  //     {
-  //       // Stage 1: shoot up
-  //       duration: gsap.utils.random(0.8, 1.4),
-  //       y: gsap.utils.random(-25, -100), // ← negative = upward
-  //       x: gsap.utils.random(-50, 50),
-  //       rotation: gsap.utils.random(-360, 360),
-  //       opacity: 1,
-  //       ease: "power2.out", // decelerates as it rises
-  //     },
-  //   ).to(img, {
-  //     // Stage 2: fall down and fade
-  //     duration: gsap.utils.random(0.8, 1.4),
-  //     y: gsap.utils.random(80, 140), // ← positive = downward (relative to stage 1 end)
-  //     x: gsap.utils.random(-30, 30),
-  //     scale: gsap.utils.random(0.4, 0.8),
-  //     rotation: gsap.utils.random(-360, 360),
-  //     opacity: 0,
-  //     ease: "power4.in", // accelerates as it falls (gravity feel)
-  //   });
-  // };
-  //
   const orderData = useMemo(() => {
-    return [...bundleData, ...posts].sort((a, b) => {
-      const feaDiff = +b.fea - +a.fea;
-      if (feaDiff !== 0) return feaDiff;
-      return parseTimetoms(a.tim) - parseTimetoms(b.tim);
-    });
+    return [...bundleData, ...posts]
+      .filter((obj) => obj.fea >= 62)
+      .sort((a, b) => {
+        const feaDiff = +b.fea - +a.fea;
+        if (feaDiff !== 0) return feaDiff;
+        return parseTimetoms(a.tim) - parseTimetoms(b.tim);
+      });
   }, [posts]);
 
-  const [runs62uw, runs65uw, runs67uw, runs62s, runs65s, runs67s] = orderData.reduce(
-    (acc, item) => {
-      if (item.fea >= 67 && item.loc === "Underworld" && item.des.includes("#usum")) {
-        acc[2].push(item);
-      } else if (item.fea >= 65 && item.loc === "Underworld") {
-        acc[1].push(item);
-      } else if (item.fea >= 62 && item.loc === "Underworld") {
-        acc[0].push(item);
-      }
+  const entries67 = orderData.slice().filter((obj) => obj.fea == 67 && obj.des.includes("#usum"));
+  const entries67Data = Object.values(
+    entries67.reduce((acc, player) => {
+      const key = player.nam;
+      const loc = normalizeLoc(player.loc);
+      const aspects = player.asp;
 
-      if (item.fea >= 67 && item.loc === "Surface" && item.des.includes("#usum")) {
-        acc[5].push(item);
-      } else if (item.fea >= 65 && item.loc === "Surface") {
-        acc[4].push(item);
-      } else if (item.fea >= 62 && item.loc === "Surface") {
-        acc[3].push(item);
+      if (!acc[key]) {
+        acc[key] = { nam: key, locs: new Set() };
       }
+      acc[key].locs.add(loc);
 
       return acc;
-    },
-    [[], [], [], [], [], []],
-  );
-  const allAvailablePlayers = [...new Set(orderData.map((obj) => obj.nam))];
+    }, {}),
+  ).map((player) => ({
+    nam: player.nam,
+    locs: [...player.locs],
+  }));
 
-  // All Aspects Completion
-  const [aspects50uw, aspects62uw, aspects65uw, aspects50s, aspects62s, aspects65s, aspects67uw] =
-    allAvailablePlayers.reduce(
-      (acc, playerName) => {
-        const playerArray = orderData.filter((obj) => obj.nam === playerName);
-
-        const above50 = playerArray.filter((obj) => obj.fea >= 50 && obj.loc === "Underworld");
-        const above62 = above50.filter((obj) => obj.fea >= 62);
-        const above65 = above62.filter((obj) => obj.fea >= 65);
-        const above67 = above65.filter((obj) => obj.fea == 67);
-        const uniqueAspects50 = [...new Set(above50.map((obj) => obj.asp))];
-        const uniqueAspects62 = [...new Set(above62.map((obj) => obj.asp))];
-        const uniqueAspects65 = [...new Set(above65.map((obj) => obj.asp))];
-        const uniqueAspects67 = [...new Set(above67.map((obj) => obj.asp))];
-
-        const above50s = playerArray.filter((obj) => obj.fea >= 50 && obj.loc === "Surface");
-        const above62s = above50s.filter((obj) => obj.fea >= 62);
-        const above65s = above62s.filter((obj) => obj.fea >= 65);
-        const uniqueAspects50s = [...new Set(above50s.map((obj) => obj.asp))];
-        const uniqueAspects62s = [...new Set(above62s.map((obj) => obj.asp))];
-        const uniqueAspects65s = [...new Set(above65s.map((obj) => obj.asp))];
-
-        if (uniqueAspects50.length === 24) {
-          acc[0].push(playerName);
-
-          if (uniqueAspects62.length === 24) {
-            acc[1].push(playerName);
-          }
-
-          if (uniqueAspects65.length === 24) {
-            acc[2].push(playerName);
-          }
-
-          if (uniqueAspects67.length === 24) {
-            acc[6].push(playerName);
-          }
-        }
-
-        if (uniqueAspects50s.length === 24) {
-          acc[3].push(playerName);
-
-          if (uniqueAspects62s.length === 24) {
-            acc[4].push(playerName);
-          }
-
-          if (uniqueAspects65s.length === 24) {
-            acc[5].push(playerName);
-          }
-        }
-
-        return acc;
-      },
-      [[], [], [], [], [], [], []],
-    );
-  const allaspect67uw = aspects67uw.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allaspect65uw = aspects65uw
-    .filter((item) => !allaspect67uw.includes(item))
-    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allaspect62uw = aspects62uw
-    .filter((item) => ![...allaspect65uw, ...allaspect67uw].includes(item))
-    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allaspect50uw = aspects50uw
-    .filter((item) => ![...allaspect62uw, ...allaspect65uw, ...allaspect67uw].includes(item))
-    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allaspect65s = aspects65s.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allaspect62s = aspects62s
-    .filter((item) => !allaspect65s.includes(item))
-    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allaspect50s = aspects50s
-    .filter((item) => ![...allaspect62s, ...allaspect65s].includes(item))
-    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  const players67 = [...new Set(entries67.map((obj) => obj.nam))];
   //
-
-  // Clears Breakpoint 62,65,67
-  const allplayers67uw = [...new Set(runs67uw.map((obj) => obj.nam))].sort((a, b) =>
-    a.toLowerCase().localeCompare(b.toLowerCase()),
-  );
-  const allplayers65uw = [...new Set(runs65uw.map((obj) => obj.nam))]
-    .filter((item) => !allplayers67uw.includes(item))
-    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allplayers62uw = [...new Set(runs62uw.map((obj) => obj.nam))]
-    .filter((item) => ![...allplayers65uw, ...allplayers67uw].includes(item))
-    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-
-  const allplayers67s = [...new Set(runs67s.map((obj) => obj.nam))].sort((a, b) =>
-    a.toLowerCase().localeCompare(b.toLowerCase()),
-  );
-  const allplayers65s = [...new Set(runs65s.map((obj) => obj.nam))]
-    .filter((item) => !allplayers67s.includes(item))
-    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allplayers62s = [...new Set(runs62s.map((obj) => obj.nam))]
-    .filter((item) => ![...allplayers65s, ...allplayers67s].includes(item))
-    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  const entriesMaxData = createData(67, orderData);
+  const entries65Data = createData(65, orderData);
+  const entries62Data = createData(62, orderData);
   //
+  const maxFearAAUnderworld = entriesMaxData.filter((obj) => obj.completed.includes("Underworld"));
+  const fear65AAUnderworld = entries65Data.filter((obj) => obj.completed.includes("Underworld"));
+  const fear62AAUnderworld = entries62Data.filter((obj) => obj.completed.includes("Underworld"));
 
-  // Max Fear Aspect Clears
-  const maxFearClears = orderData.filter((obj) => obj.fea == 67);
-  const under67 = maxFearClears.filter((obj) => obj.loc === "Underworld").filter((obj) => obj.des.includes("#usum"));
-  const surface67 = maxFearClears.filter((obj) => obj.loc === "Surface").filter((obj) => obj.des.includes("#usum"));
+  const maxFearAASurface = entriesMaxData.filter((obj) => obj.completed.includes("Surface"));
+  const fear65AASurface = entries65Data.filter((obj) => obj.completed.includes("Surface"));
+  const fear62AASurface = entries62Data.filter((obj) => obj.completed.includes("Surface"));
 
-  // Dream Dive Max Clear Player
-  const [runs62d, runs65d, runs67d] = orderData
-    .filter((obj) => obj.loc != "Underworld" && obj.loc != "Surface")
-    .reduce(
-      (acc, item) => {
-        if (item.fea == 62) {
-          acc[0].push(item);
-        } else if (item.fea == 65) {
-          acc[1].push(item);
-        } else if (item.fea == 67 && item.des.includes("#usum")) {
-          acc[2].push(item);
-        }
+  const maxFearAADream = entriesMaxData.filter((obj) => obj.completed.includes("Dream"));
+  const fear65AADream = entries65Data.filter((obj) => obj.completed.includes("Dream"));
+  const fear62AADream = entries62Data.filter((obj) => obj.completed.includes("Dream"));
 
-        return acc;
-      },
-      [[], [], []],
-    );
-
-  const allplayers67d = [...new Set(runs67d.map((obj) => obj.nam))].sort((a, b) =>
-    a.toLowerCase().localeCompare(b.toLowerCase()),
+  const mergedMaxAA = Array.from(
+    new Map([...maxFearAAUnderworld, ...maxFearAASurface, ...maxFearAADream].map((item) => [item.nam, item])).values(),
   );
-  const allplayers65d = [...new Set(runs65d.map((obj) => obj.nam))]
-    .filter((item) => !allplayers67d.includes(item))
-    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-  const allplayers62d = [...new Set(runs62d.map((obj) => obj.nam))]
-    .filter((item) => ![...allplayers65d, ...allplayers67d].includes(item))
-    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  const namesMaxAA = new Set(mergedMaxAA.map((item) => item.nam));
 
-  // All Aspects Dream Dive
+  const merged65AA = Array.from(
+    new Map([...fear65AAUnderworld, ...fear65AASurface, ...fear65AADream].map((item) => [item.nam, item])).values(),
+  ).filter((item) => !namesMaxAA.has(item.nam));
 
-  const [aspects62dd] = allAvailablePlayers.reduce(
-    (acc, playerName) => {
-      const playerArray = orderData.filter((obj) => obj.nam === playerName);
+  const names65AA = new Set(merged65AA.map((item) => item.nam));
 
-      const above62dd = playerArray.filter((obj) => obj.fea >= 62 && obj.loc !== "Surface" && obj.loc !== "Underworld");
-      const uniqueAspects62dd = [...new Set(above62dd.map((obj) => obj.asp))];
-
-      if (uniqueAspects62dd.length === 24) {
-        acc[0].push(playerName);
-      }
-
-      return acc;
-    },
-    [[]],
-  );
-  // Display Orders
+  const merged62AA = Array.from(
+    new Map([...fear62AAUnderworld, ...fear62AASurface, ...fear62AADream].map((item) => [item.nam, item])).values(),
+  ).filter((item) => !names65AA.has(item.nam) && !namesMaxAA.has(item.nam));
 
   //
-  // const srcSurface = JSON.parse(localStorage.getItem("speedrunS")) || "";
-  // const srcUnderworld = JSON.parse(localStorage.getItem("speedrunUW")) || "";
-  // const srcSSub6 = srcSurface ? getUniquePlayers(parseLeaderboard(srcSurface).filter((obj) => obj.time < 360)) : "";
-  // const srcUWSub5 = srcUnderworld
-  //   ? getUniquePlayers(parseLeaderboard(srcUnderworld).filter((obj) => obj.time < 300))
-  //   : "";
+  const finalized65Data = entries65Data.filter((obj) => !players67.includes(obj.nam));
+  const players65 = [...new Set(entries65Data.map((obj) => obj.nam))];
+  const finalized62Data = entries62Data.filter((obj) => ![...players67, ...players65].includes(obj.nam));
   //
+
   return (
     <main
       className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
       ref={container}
-      // onMouseMove={handleMouseMove2}
     >
       <div className="parentBox">
         <PageBlock>
@@ -454,11 +256,10 @@ export default function App() {
             <div className="relative overflow-visible inline-block">
               <div
                 onMouseMove={handleMouseMove}
-                className="hover-target text-white font-bold text-[48px] sm:text-[58px] md:text-[64px] uppercase cursor-default select-none text-center font-[Sr] gap-2 gap-x-8 flex flex-col md:flex-row"
+                className="hover-target text-gray-300 font-bold text-[48px] sm:text-[58px] md:text-[64px] uppercase cursor-default select-none text-center font-[Sr] gap-2 gap-x-4 flex"
               >
-                <div>Death</div>
-                <div>To</div>
-                <div>Chronos</div>
+                <div>Git</div>
+                <div>Gud</div>
               </div>
             </div>
           </div>
@@ -466,511 +267,279 @@ export default function App() {
           {loader ? (
             <Loading />
           ) : (
-            <>
-              {/* Surface  */}
-              <Divider />
-              <div className="text-center my-8 highwrapper">
-                <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">*Max Fear, Surface</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allplayers67s.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 border-b-6 border-yellow-200 text-gray-400 rounded p-2 px-1">
-                      <div className="relative w-10 h-10">
-                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
-                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-10 h-10 rounded-full mask mask-hexagon egg"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
+            <div>
+              {/* Category 67 */}
+              <div className="mb-16 rounded">
+                <div className="px-4 text-center">
+                  <div className="font-[Sr] text-[36px] leading-none">Max Fear</div>
+                  <div className="font-[Ale] text-gray-300">Unseeded and Unmodded</div>
                 </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">65 Fear, Surface</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allplayers65s.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
+                <div className="flex flex-wrap justify-center gap-2 p-1">
+                  {entries67Data
+                    .sort((a, b) => a.nam.localeCompare(b.nam))
+                    .map((obj, index) => (
+                      <div
+                        className={`rounded font-[Ale] border border-white/10 p-2 flex items-center gap-2 w-full max-w-50 relative`}
+                        key={index}
+                      >
                         <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-7 h-7 rounded-full"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
+                          src="/banner3.png"
+                          alt="Hades"
+                          className="h-full w-full object-cover object- scale-x-[-1] top-0 right-0 absolute -z-10 brightness-75 aura aura-dual text-blue-900 duration-4000"
                         />
-                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">62 Fear, Surface</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allplayers62s.map((ite) => (
-                    <div className="flex gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-7 h-7 rounded-full"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <Divider />
-              <div className="text-center my-8 highwrapper">
-                <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">65 Fear, All Aspects, Surface</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allaspect65s.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 border-b-6 border-yellow-200 text-gray-400 rounded p-2 px-1">
-                      <div className="relative w-10 h-10">
-                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
-                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-10 h-10 rounded-full mask mask-hexagon egg"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">62 Fear, All Aspects, Surface</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allaspect62s.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-7 h-7 rounded-full"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">50 Fear, All Aspects, Surface</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allaspect50s.map((ite) => (
-                    <div className="flex gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-7 h-7 rounded-full"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* Underworld */}
-              <Divider />
-              <div className="text-center my-8 highwrapper">
-                <div className="font-[Sr] text-[16px] mb-2 text-green-300">*Max Fear, UW</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allplayers67uw.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 border-b-6 border-green-300 text-gray-400 rounded p-2 px-1">
-                      <div className="relative w-10 h-10">
-                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
-                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-10 h-10 rounded-full mask mask-hexagon egg"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-green-300">65 Fear, UW</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allplayers65uw.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-7 h-7 rounded-full"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-green-300">62 Fear, UW</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allplayers62uw.map((ite) => (
-                    <div className="flex gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-7 h-7 rounded-full"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* AA  */}
-              <Divider />
-              <div className="text-center my-8 highwrapper">
-                <div className="font-[Sr] text-[16px] mb-2 text-green-300">Max Fear, All Aspects, UW</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allaspect67uw.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 border-b-6 border-green-300 text-gray-400 rounded p-2 px-1 relative">
-                      <div className="relative w-10 h-10">
-                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
-                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-10 h-10 rounded-full mask mask-hexagon egg"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8 highwrapper">
-                <div className="font-[Sr] text-[16px] mb-2 text-green-300">65 Fear, All Aspects, UW</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allaspect65uw.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 border-b-6 border-green-300 text-gray-400 rounded p-2 px-1">
-                      <div className="relative w-10 h-10">
-                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
-                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-10 h-10 rounded-full mask mask-hexagon egg"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-green-300">62 Fear, All Aspects, UW</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allaspect62uw.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-7 h-7 rounded-full"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-green-300">50 Fear, All Aspects, UW</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allaspect50uw.map((ite) => (
-                    <div className="flex gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-7 h-7 rounded-full"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <Divider />
-              {/* Dream */}
-              <div className="text-center my-8 highwrapper">
-                <div className="font-[Sr] text-[16px] mb-2 text-purple-400">*Max Fear, Dream Dive</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allplayers67d.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25  bg-black/50 border-b-6 border-purple-300 text-gray-400 rounded p-2 px-1">
-                      <div className="relative w-10 h-10">
-                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
-                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-10 h-10 rounded-full mask mask-hexagon egg"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-purple-400">65 Fear, Dream Dive</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allplayers65d.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-7 h-7 rounded-full"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center my-8">
-                <div className="font-[Sr] text-[16px] mb-2 text-purple-400">62 Fear, Dream Dive</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {allplayers62d.map((ite) => (
-                    <div className="flex gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                      <div className="relative w-7 h-7">
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-7 h-7 rounded-full"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <Divider />
-              <div className="text-center my-8 highwrapper">
-                <div className="font-[Sr] text-[16px] mb-2 text-purple-400">62 Fear, All Aspects, Dream Dive</div>
-                <div className="flex justify-center gap-1 flex-wrap">
-                  {aspects62dd.map((ite) => (
-                    <div className="flex flex-col gap-1 items-center min-w-25  bg-black/50 border-b-6 border-purple-300 text-gray-400 rounded p-2 px-1">
-                      <div className="relative w-10 h-10">
-                        <img src="/Misc/rightwing.gif" alt="Wing" className="absolute -right-4 top-1/6 size-6" />
-                        <img src="/Misc/leftwing.gif" alt="Wing" className="absolute -left-4 top-1/6 size-6" />
-                        <img
-                          src={`/Avatar/${ite.toLowerCase()}.webp`}
-                          alt="Avatar"
-                          className="w-10 h-10 rounded-full mask mask-hexagon egg"
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                        <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate text-[10px]">
-                          {ite.slice(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <div className="font-[Ale]">{ite}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <Divider />
-              {/* {srcSSub6 && (
-                <>
-                  <div className="text-center my-8">
-                    <div className="font-[Sr] text-[16px] mb-2 text-yellow-300">*SRC Sub 6 Mins, Surface</div>
-                    <div className="flex justify-center gap-1 flex-wrap">
-                      {srcSSub6.map((ite) => (
-                        <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                          <div className="relative w-7 h-7">
-                            {ite.icon ? (
-                              <img
-                                src={ite.icon}
-                                alt="Avatar"
-                                className="w-7 h-7 rounded-full egg"
-                                onError={(e) => {
-                                  e.target.style.display = "none";
-                                  e.target.nextSibling.style.display = "flex";
-                                }}
-                              />
-                            ) : null}
-                            <div
-                              className={`w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center truncate text-[10px] ${
-                                ite.icon ? "hidden" : "flex"
-                              }`}
-                            >
-                              {ite.name?.slice(0, 2).toUpperCase() ?? "?"}
-                            </div>
+                        <div className={`relative w-10 h-10 shrink-0`}>
+                          <img
+                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
+                            alt="Avatar"
+                            className="w-10 h-10 rounded"
+                            onError={(e) => {
+                              e.target.style.display = "none";
+                              e.target.nextSibling.style.display = "flex";
+                            }}
+                          />
+                          <div className="w-10 h-10 rounded bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                            {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
-                          <div className="font-[Ale]">{ite.name}</div>
                         </div>
-                      ))}
-                    </div>
-                  </div>
-                  <Divider />
-                </>
-              )}
-              {srcUWSub5 && (
-                <>
-                  <div className="text-center my-8">
-                    <div className="font-[Sr] text-[16px] mb-2 text-green-300">*SRC Sub 5 Mins, UW</div>
-                    <div className="flex justify-center gap-1 flex-wrap">
-                      {srcUWSub5.map((ite) => (
-                        <div className="flex flex-col gap-1 items-center min-w-25 bg-black/50 text-gray-400 rounded p-1 px-2">
-                          <div className="relative w-7 h-7">
-                            {ite.icon ? (
-                              <img
-                                src={ite.icon}
-                                alt="Avatar"
-                                className="w-7 h-7 rounded-full egg"
-                                onError={(e) => {
-                                  e.target.style.display = "none";
-                                  e.target.nextSibling.style.display = "flex";
-                                }}
-                              />
-                            ) : null}
-                            <div
-                              className={`w-7 h-7 rounded-full bg-[#28282b] text-white items-center justify-center truncate text-[10px] ${
-                                ite.icon ? "hidden" : "flex"
-                              }`}
-                            >
-                              {ite.name?.slice(0, 2).toUpperCase() ?? "?"}
-                            </div>
+                        <div className="w-full">
+                          <div>{obj.nam}</div>
+                          <div className="flex gap-1">
+                            {obj.locs.map((ite) => (
+                              <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_blue]" />
+                            ))}
                           </div>
-                          <div className="font-[Ale]">{ite.name}</div>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+              {/* Max Fear All Aspects */}
+              <div className="mb-16 rounded">
+                <div className="px-4">
+                  <div className="font-[Sr] text-[20px] text-gray-300 leading-none text-center">
+                    Max Fear, All Aspects
                   </div>
-                  <Divider />
-                </>
-              )} */}
-            </>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2 p-1">
+                  {mergedMaxAA
+                    .sort((a, b) => a.nam.localeCompare(b.nam))
+                    .map((obj, index) => (
+                      <div
+                        className={`rounded font-[Ale] border border-white/10 p-2 flex items-center gap-2 w-full max-w-50 relative overflow-hidden`}
+                        key={index}
+                      >
+                        <img
+                          src="/banner2.png"
+                          alt="Hades"
+                          className="h-full w-full object-cover object-center top-0 right-0 absolute -z-10 brightness-75 aura aura-dual text-[#00ffaa] duration-3000"
+                        />
+                        <div className={`relative w-10 h-10 shrink-0`}>
+                          <img
+                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
+                            alt="Avatar"
+                            className="w-10 h-10 rounded"
+                            onError={(e) => {
+                              e.target.style.display = "none";
+                              e.target.nextSibling.style.display = "flex";
+                            }}
+                          />
+                          <div className="w-10 h-10 rounded bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                            {obj.nam.slice(0, 2).toUpperCase()}
+                          </div>
+                        </div>
+                        <div className="w-full">
+                          <div>{obj.nam}</div>
+                          <div className="flex gap-1">
+                            {obj.completed.map((ite) => (
+                              <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_blue]" />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+              {/* 65 All Aspects */}
+              <div className="mb-16 rounded">
+                <div className="px-4">
+                  <div className="font-[Sr] text-[20px] text-gray-300 leading-none text-center">
+                    65 Fear, All Aspects
+                  </div>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2 p-1">
+                  {merged65AA
+                    .sort((a, b) => a.nam.localeCompare(b.nam))
+                    .map((obj, index) => (
+                      <div
+                        className={`rounded font-[Ale] border border-white/10 p-2 flex items-center gap-2 w-full max-w-50 relative`}
+                        key={index}
+                      >
+                        <img
+                          src="/banner.png"
+                          alt="Hades"
+                          className="h-full w-full object-cover object-center top-0 right-0 absolute -z-10 brightness-75 aura aura-silver"
+                        />
+                        <div className={`relative w-10 h-10 shrink-0`}>
+                          <img
+                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
+                            alt="Avatar"
+                            className="w-10 h-10 rounded"
+                            onError={(e) => {
+                              e.target.style.display = "none";
+                              e.target.nextSibling.style.display = "flex";
+                            }}
+                          />
+                          <div className="w-10 h-10 rounded bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                            {obj.nam.slice(0, 2).toUpperCase()}
+                          </div>
+                        </div>
+                        <div className="w-full">
+                          <div>{obj.nam}</div>
+                          <div className="flex gap-1">
+                            {obj.completed.map((ite) => (
+                              <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_blue]" />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+              {/* 62 All Aspects */}
+              <div className="mb-16 rounded">
+                <div className="px-4">
+                  <div className="font-[Sr] text-[20px] text-gray-300 leading-none text-center">
+                    62 Fear, All Aspects
+                  </div>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2 p-1">
+                  {merged62AA
+                    .sort((a, b) => a.nam.localeCompare(b.nam))
+                    .map((obj, index) => (
+                      <div
+                        className={`rounded font-[Ale] bg-[#0c0e12] border border-white/10 p-2 flex items-center gap-2 w-full max-w-50 relative`}
+                        key={index}
+                      >
+                        <img
+                          src="/Level/Heroic.png"
+                          alt="Hades"
+                          className="h-full w-auto opacity-25 top-0 right-0 absolute p-2"
+                        />
+                        <div className={`relative w-10 h-10 shrink-0`}>
+                          <img
+                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
+                            alt="Avatar"
+                            className="w-10 h-10 rounded"
+                            onError={(e) => {
+                              e.target.style.display = "none";
+                              e.target.nextSibling.style.display = "flex";
+                            }}
+                          />
+                          <div className="w-10 h-10 rounded bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                            {obj.nam.slice(0, 2).toUpperCase()}
+                          </div>
+                        </div>
+                        <div className="w-full">
+                          <div>{obj.nam}</div>
+                          <div className="flex gap-1">
+                            {obj.completed.map((ite) => (
+                              <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_blue]" />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+              {/* 65 Fear */}
+              <div className="mb-16 rounded">
+                <div className="px-4">
+                  <div className="font-[Sr] text-[20px] text-gray-300 leading-none text-center">65 Fear</div>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2 p-1">
+                  {finalized65Data
+                    .sort((a, b) => a.nam.localeCompare(b.nam))
+                    .map((obj, index) => (
+                      <div
+                        className={`rounded font-[Ale] bg-[#0c0e12] border border-white/10 p-2 flex items-center gap-2 w-full max-w-50 relative`}
+                        key={index}
+                      >
+                        <img
+                          src="/Level/Epic.png"
+                          alt="Hades"
+                          className="h-full w-auto opacity-25 top-0 right-0 absolute p-2"
+                        />
+                        <div className={`relative w-10 h-10 shrink-0`}>
+                          <img
+                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
+                            alt="Avatar"
+                            className="w-10 h-10 rounded"
+                            onError={(e) => {
+                              e.target.style.display = "none";
+                              e.target.nextSibling.style.display = "flex";
+                            }}
+                          />
+                          <div className="w-10 h-10 rounded bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                            {obj.nam.slice(0, 2).toUpperCase()}
+                          </div>
+                        </div>
+                        <div className="w-full">
+                          <div>{obj.nam}</div>
+                          <div className="flex gap-1">
+                            {obj.locs.map((ite) => (
+                              <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_blue]" />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+              {/* 62 Fear */}
+              <div className="mb-16 rounded">
+                <div className="px-4">
+                  <div className="font-[Sr] text-[20px] text-gray-300 leading-none text-center">62 Fear</div>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2 p-1">
+                  {finalized62Data
+                    .sort((a, b) => a.nam.localeCompare(b.nam))
+                    .map((obj, index) => (
+                      <div
+                        className={`rounded font-[Ale] bg-[#0c0e12] border border-white/10 p-2 flex items-center gap-2 w-full max-w-50 relative`}
+                        key={index}
+                      >
+                        <img
+                          src="/Level/Rare.png"
+                          alt="Hades"
+                          className="h-full w-auto opacity-25 top-0 right-0 absolute p-2"
+                        />
+                        <div className={`relative w-10 h-10 shrink-0`}>
+                          <img
+                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
+                            alt="Avatar"
+                            className="w-10 h-10 rounded"
+                            onError={(e) => {
+                              e.target.style.display = "none";
+                              e.target.nextSibling.style.display = "flex";
+                            }}
+                          />
+                          <div className="w-10 h-10 rounded bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                            {obj.nam.slice(0, 2).toUpperCase()}
+                          </div>
+                        </div>
+                        <div className="w-full">
+                          <div>{obj.nam}</div>
+                          <div className="flex gap-1">
+                            {obj.locs.map((ite) => (
+                              <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_blue]" />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </div>
           )}
         </PageBlock>
       </div>

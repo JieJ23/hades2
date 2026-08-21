@@ -64,7 +64,7 @@ export default function ArcanaDeck() {
   return (
     <main className="select-none relative">
       <PageBlock>
-        <div className="max-w-[1400px] mx-auto py-16">
+        <div className="max-w-[1400px] mx-auto py-10">
           <div className="w-full">
             <section className="p-2 font-[UbuntuMono] text-[13px]">
               <div className="flex flex-wrap gap-1">
@@ -86,7 +86,7 @@ export default function ArcanaDeck() {
                 </button>
               </div>
 
-              <div className="w-full max-w-[1000px] bg-[black] text-white overflow-hidden p-2 truncate rounded my-2">
+              <div className="w-full max-w-[1000px] bg-[#0a0a0a] text-white overflow-hidden p-2 truncate rounded my-2 border border-white/10">
                 {shareableURL || "No URL Generated Yet"}
               </div>
             </section>
@@ -108,7 +108,7 @@ export default function ArcanaDeck() {
                       }`}
                     >
                       <img draggable={false} src={`/Arcane/${ite}.png`} alt="Arcane Card" />
-                      <div className="absolute top-1 right-0 bg-black text-[yellow] rounded size-5 flex justify-center items-center">
+                      <div className="absolute top-1 right-0 bg-[#0a0a0a] text-[yellow] rounded size-5 flex justify-center items-center">
                         {defineDeck(ite).g}
                       </div>
                     </div>
@@ -117,17 +117,21 @@ export default function ArcanaDeck() {
                 ))}
               </div>
               <div className="w-full p-3">
-                <div className={` text-[#0cf29e] ${currentGrasp <= 30 ? `text-[#0cf29e]` : `text-[#ee2828]`}`}>
+                <div
+                  className={` text-[#0cf29e] text-[18px] ${currentGrasp <= 30 ? `text-[#0cf29e]` : `text-[#ee2828]`}`}
+                >
                   Total: {currentGrasp}/30
                 </div>
-                {deck
-                  .sort((a, b) => +(a.slice(1) < +b.slice(1) ? -1 : 1))
-                  .map((ite) => (
-                    <div className="text-gray-300 rounded p-2 my-1 bg-[#000000]/80">
-                      <div className="">{defineDeck(ite).card}</div>
-                      <div>{defineDeck(ite).d}</div>
-                    </div>
-                  ))}
+                <div className="grid grid-cols-2 gap-2">
+                  {deck
+                    .sort((a, b) => +(a.slice(1) < +b.slice(1) ? -1 : 1))
+                    .map((ite) => (
+                      <div className="text-gray-300 rounded p-2 bg-[#0a0a0a] border border-white/10">
+                        <div className="">{defineDeck(ite).card}</div>
+                        <div>{defineDeck(ite).d}</div>
+                      </div>
+                    ))}
+                </div>
               </div>
             </div>
           </div>

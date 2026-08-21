@@ -18,6 +18,8 @@ import { useMemo, useState, useEffect } from "react";
 
 const allAvailableHammers = Object.values({ ...bAxe, ...bDagger, ...bLob, ...bStaff, ...bSuit, ...bTorch }).sort();
 
+const noSlots = "Attack,Special,Cast,Sprint,Magick";
+
 export default function Night() {
   const { posts, loader } = useData();
   const [pageIndex, setPageIndex] = useState(1); // current page
@@ -420,12 +422,14 @@ export default function Night() {
                                 loading="lazy"
                               />
                             </div>
-                            <img
-                              src={`/GUI_Card/${obj.fam}.png`}
-                              alt="Victory Screen"
-                              className="absolute bottom-2 right-2 w-15 sm:w-12 h-auto"
-                              loading="lazy"
-                            />
+                            {obj.fam && (
+                              <img
+                                src={`/GUI_Card/${obj.fam}.png`}
+                                alt="Victory Screen"
+                                className="absolute bottom-2 right-2 w-15 sm:w-12 h-auto"
+                                loading="lazy"
+                              />
+                            )}
                             <img
                               src={`/Misc/Underworld.webp`}
                               alt="Victory Screen"
@@ -444,12 +448,14 @@ export default function Night() {
                                 loading="lazy"
                               />
                             </div>
-                            <img
-                              src={`/GUI_Card/${obj.fam}.png`}
-                              alt="Victory Screen"
-                              className="absolute bottom-2 right-2 w-15 sm:w-12 h-auto"
-                              loading="lazy"
-                            />
+                            {obj.fam && (
+                              <img
+                                src={`/GUI_Card/${obj.fam}.png`}
+                                alt="Victory Screen"
+                                className="absolute bottom-2 right-2 w-15 sm:w-12 h-auto"
+                                loading="lazy"
+                              />
+                            )}
                             <img
                               src={`/Misc/Surface.webp`}
                               alt="Victory Screen"
@@ -468,12 +474,14 @@ export default function Night() {
                                 loading="lazy"
                               />
                             </div>
-                            <img
-                              src={`/GUI_Card/${obj.fam}.png`}
-                              alt="Victory Screen"
-                              className="absolute bottom-2 right-2 w-15 sm:w-12 h-auto"
-                              loading="lazy"
-                            />
+                            {obj.fam && (
+                              <img
+                                src={`/GUI_Card/${obj.fam}.png`}
+                                alt="Victory Screen"
+                                className="absolute bottom-2 right-2 w-15 sm:w-12 h-auto"
+                                loading="lazy"
+                              />
+                            )}
                             <img
                               src={`/Misc/Dream.webp`}
                               alt="Victory Screen"
@@ -527,7 +535,7 @@ export default function Night() {
                           ? sToA(obj.cor).map((ite, index) => (
                               <div className="relative size-10 sm:size-8 md:size-8 xl:size-9 shrink-0">
                                 <img
-                                  src="/BoonBorder/Hammer.png"
+                                  src="/BoonBorder/Base.png"
                                   alt="Border"
                                   className="absolute inset-0 w-full h-full z-10 pointer-events-none"
                                 />
@@ -538,25 +546,44 @@ export default function Night() {
                                 />
                               </div>
                             ))
-                          : ``}
+                          : sToA(noSlots).map((ite, index) => (
+                              <div className="relative size-10 sm:size-8 md:size-8 xl:size-9 shrink-0">
+                                <img
+                                  src="/BoonBorder/Base.png"
+                                  alt="Border"
+                                  className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                                />
+                                <img
+                                  src={`/H2Boons/${ite}.png`}
+                                  alt="Core Boon"
+                                  className="absolute inset-0 w-full h-full p-1 object-contain"
+                                />
+                              </div>
+                            ))}
                       </div>
                       {obj.ham && (
                         <div className="flex gap-1 flex-wrap font-[Ale] text-[14px] sm:text-[12px]">
                           {sToA(obj.ham).map((item, index) => (
-                            <div className="bg-blue-950 px-1 text-gray-300">{item}</div>
+                            <div className="bg-[#0a0a0a] border border-white/10 rounded px-1 text-gray-300">{item}</div>
                           ))}
                         </div>
                       )}
                       {obj.loc !== "Underworld" && obj.loc !== "Surface" && (
                         <div className="flex justify-start gap-0.5">
                           {sToA(obj.loc).map((item) => (
-                            <div className=" bg-orange-950 text-[12px] font-[Ale] px-1 rounded-none">{item}</div>
+                            <div className=" bg-purple-900 text-[14px] sm:text-[12px] font-[Ale] px-1 rounded border border-white/10">
+                              {item}
+                            </div>
                           ))}
                         </div>
                       )}
                       <div className="flex gap-1 font-[Ale]">
                         {obj.src && (
-                          <Link to={obj.src} target="_blank" className="bg-[#28282b] rounded-b-lg text-gray-300 px-2">
+                          <Link
+                            to={obj.src}
+                            target="_blank"
+                            className="bg-white rounded border text-[12px] border-white/10 text-black px-2"
+                          >
                             {obj.src.includes("drive.google") ? `Image` : `Video`}
                           </Link>
                         )}
@@ -564,13 +591,17 @@ export default function Night() {
                           <Link
                             to={obj.arcana}
                             target="_blank"
-                            className="bg-[#28282b] rounded-b-lg text-gray-300 px-2"
+                            className="bg-white rounded border text-[12px] border-white/10 text-black px-2"
                           >
                             Arcana
                           </Link>
                         )}
                         {obj.oath && (
-                          <Link to={obj.oath} target="_blank" className="bg-[#28282b] rounded-b-lg text-gray-300 px-2">
+                          <Link
+                            to={obj.oath}
+                            target="_blank"
+                            className="bg-white rounded border text-[12px] border-white/10 text-black px-2"
+                          >
                             Vows
                           </Link>
                         )}

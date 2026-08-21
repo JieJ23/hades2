@@ -7,7 +7,7 @@ export default function PageBlock({ children }) {
     <div>
       <Background />
       <SideNav />
-      <div className="min-h-screen rounded max-w-400 mx-auto px-2 font-[Ubuntu] text-[13px] relative">{children}</div>
+      <div className="rounded max-w-400 mx-auto px-2 font-[Ubuntu] text-[13px] relative">{children}</div>
       <Footer />
     </div>
   );
