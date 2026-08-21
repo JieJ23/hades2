@@ -291,13 +291,14 @@ export default function App() {
                           <img
                             src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
                             alt="Avatar"
-                            className="w-10 h-10 rounded"
+                            loading="lazy"
+                            className="w-10 h-10 rounded-full p-1 egg"
                             onError={(e) => {
                               e.target.style.display = "none";
                               e.target.nextSibling.style.display = "flex";
                             }}
                           />
-                          <div className="w-10 h-10 rounded bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
@@ -337,13 +338,14 @@ export default function App() {
                           <img
                             src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
                             alt="Avatar"
-                            className="w-10 h-10 rounded"
+                            loading="lazy"
+                            className="w-10 h-10 rounded-full p-1 egg"
                             onError={(e) => {
                               e.target.style.display = "none";
                               e.target.nextSibling.style.display = "flex";
                             }}
                           />
-                          <div className="w-10 h-10 rounded bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
@@ -383,13 +385,14 @@ export default function App() {
                           <img
                             src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
                             alt="Avatar"
-                            className="w-10 h-10 rounded"
+                            loading="lazy"
+                            className="w-10 h-10 rounded-full p-1 egg"
                             onError={(e) => {
                               e.target.style.display = "none";
                               e.target.nextSibling.style.display = "flex";
                             }}
                           />
-                          <div className="w-10 h-10 rounded bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
@@ -429,13 +432,14 @@ export default function App() {
                           <img
                             src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
                             alt="Avatar"
-                            className="w-10 h-10 rounded"
+                            loading="lazy"
+                            className="w-10 h-10 rounded-full p-1 egg"
                             onError={(e) => {
                               e.target.style.display = "none";
                               e.target.nextSibling.style.display = "flex";
                             }}
                           />
-                          <div className="w-10 h-10 rounded bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
@@ -473,13 +477,14 @@ export default function App() {
                           <img
                             src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
                             alt="Avatar"
-                            className="w-10 h-10 rounded"
+                            loading="lazy"
+                            className="w-10 h-10 rounded-full p-1 egg"
                             onError={(e) => {
                               e.target.style.display = "none";
                               e.target.nextSibling.style.display = "flex";
                             }}
                           />
-                          <div className="w-10 h-10 rounded bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
@@ -517,13 +522,14 @@ export default function App() {
                           <img
                             src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
                             alt="Avatar"
-                            className="w-10 h-10 rounded"
+                            loading="lazy"
+                            className="w-10 h-10 rounded-full p-1 egg"
                             onError={(e) => {
                               e.target.style.display = "none";
                               e.target.nextSibling.style.display = "flex";
                             }}
                           />
-                          <div className="w-10 h-10 rounded bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
