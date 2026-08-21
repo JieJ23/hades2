@@ -279,7 +279,7 @@ export default function App() {
                     .sort((a, b) => a.nam.localeCompare(b.nam))
                     .map((obj, index) => (
                       <div
-                        className={`rounded font-[Ale] border border-white/10 p-2 flex items-center gap-2 w-full max-w-50 relative`}
+                        className={`rounded font-[Ale] border border-white/10 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
                         key={index}
                       >
                         <img
@@ -301,7 +301,7 @@ export default function App() {
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
-                        <div className="w-full">
+                        <div className="w-full truncate">
                           <div>{obj.nam}</div>
                           <div className="flex gap-1">
                             {obj.locs.map((ite) => (
@@ -325,7 +325,7 @@ export default function App() {
                     .sort((a, b) => a.nam.localeCompare(b.nam))
                     .map((obj, index) => (
                       <div
-                        className={`rounded font-[Ale] border border-white/10 p-2 flex items-center gap-2 w-full max-w-50 relative overflow-hidden`}
+                        className={`rounded font-[Ale] border border-white/10 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative overflow-hidden`}
                         key={index}
                       >
                         <img
@@ -347,7 +347,7 @@ export default function App() {
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
-                        <div className="w-full">
+                        <div className="w-full truncate">
                           <div>{obj.nam}</div>
                           <div className="flex gap-1">
                             {obj.completed.map((ite) => (
@@ -371,7 +371,7 @@ export default function App() {
                     .sort((a, b) => a.nam.localeCompare(b.nam))
                     .map((obj, index) => (
                       <div
-                        className={`rounded font-[Ale] border border-white/10 p-2 flex items-center gap-2 w-full max-w-50 relative`}
+                        className={`rounded font-[Ale] border border-white/10 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
                         key={index}
                       >
                         <img
@@ -393,7 +393,7 @@ export default function App() {
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
-                        <div className="w-full">
+                        <div className="w-full truncate">
                           <div>{obj.nam}</div>
                           <div className="flex gap-1">
                             {obj.completed.map((ite) => (
@@ -417,7 +417,7 @@ export default function App() {
                     .sort((a, b) => a.nam.localeCompare(b.nam))
                     .map((obj, index) => (
                       <div
-                        className={`rounded font-[Ale] bg-[#0c0e12] border border-white/10 p-2 flex items-center gap-2 w-full max-w-50 relative`}
+                        className={`rounded font-[Ale] bg-[#0c0e12] border border-white/10 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
                         key={index}
                       >
                         <img
@@ -439,7 +439,7 @@ export default function App() {
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
-                        <div className="w-full">
+                        <div className="w-full truncate">
                           <div>{obj.nam}</div>
                           <div className="flex gap-1">
                             {obj.completed.map((ite) => (
@@ -461,7 +461,7 @@ export default function App() {
                     .sort((a, b) => a.nam.localeCompare(b.nam))
                     .map((obj, index) => (
                       <div
-                        className={`rounded font-[Ale] bg-[#0c0e12] border border-white/10 p-2 flex items-center gap-2 w-full max-w-50 relative`}
+                        className={`rounded font-[Ale] bg-[#0c0e12] border border-white/10 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
                         key={index}
                       >
                         <img
@@ -483,7 +483,7 @@ export default function App() {
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
-                        <div className="w-full">
+                        <div className="w-full truncate">
                           <div>{obj.nam}</div>
                           <div className="flex gap-1">
                             {obj.locs.map((ite) => (
@@ -505,7 +505,7 @@ export default function App() {
                     .sort((a, b) => a.nam.localeCompare(b.nam))
                     .map((obj, index) => (
                       <div
-                        className={`rounded font-[Ale] bg-[#0c0e12] border border-white/10 p-2 flex items-center gap-2 w-full max-w-50 relative`}
+                        className={`rounded font-[Ale] bg-[#0c0e12] border border-white/10 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
                         key={index}
                       >
                         <img
@@ -527,7 +527,7 @@ export default function App() {
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
-                        <div className="w-full">
+                        <div className="w-full truncate">
                           <div>{obj.nam}</div>
                           <div className="flex gap-1">
                             {obj.locs.map((ite) => (
