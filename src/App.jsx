@@ -285,7 +285,7 @@ export default function App() {
                         <img
                           src="/banner3.png"
                           alt="Hades"
-                          className="h-full w-full object-cover object- scale-x-[-1] top-0 right-0 absolute -z-10 brightness-75 aura aura-dual text-blue-900 duration-4000"
+                          className="h-full w-full object-cover object-center scale-x-[-1] top-0 right-0 absolute -z-10 brightness-75 aura aura-dual text-blue-900 duration-4000"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
