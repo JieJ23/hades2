@@ -293,6 +293,7 @@ export default function App() {
                             alt="Avatar"
                             loading="lazy"
                             className="w-10 h-10 rounded-full p-1 egg"
+                            draggable={false}
                             onError={(e) => {
                               e.target.style.display = "none";
                               e.target.nextSibling.style.display = "flex";
@@ -306,7 +307,11 @@ export default function App() {
                           <div>{obj.nam}</div>
                           <div className="flex gap-1">
                             {obj.locs.map((ite) => (
-                              <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_blue]" />
+                              <img
+                                src={`/${ite}.png`}
+                                alt="Locations"
+                                className="size-5 drop-shadow-[0_0_3px_#00ffaa]"
+                              />
                             ))}
                           </div>
                         </div>
@@ -340,6 +345,7 @@ export default function App() {
                             alt="Avatar"
                             loading="lazy"
                             className="w-10 h-10 rounded-full p-1 egg"
+                            draggable={false}
                             onError={(e) => {
                               e.target.style.display = "none";
                               e.target.nextSibling.style.display = "flex";
@@ -353,7 +359,11 @@ export default function App() {
                           <div>{obj.nam}</div>
                           <div className="flex gap-1">
                             {obj.completed.map((ite) => (
-                              <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_blue]" />
+                              <img
+                                src={`/${ite}.png`}
+                                alt="Locations"
+                                className="size-5 drop-shadow-[0_0_3px_#00ffaa]"
+                              />
                             ))}
                           </div>
                         </div>
@@ -387,6 +397,7 @@ export default function App() {
                             alt="Avatar"
                             loading="lazy"
                             className="w-10 h-10 rounded-full p-1 egg"
+                            draggable={false}
                             onError={(e) => {
                               e.target.style.display = "none";
                               e.target.nextSibling.style.display = "flex";
@@ -400,7 +411,11 @@ export default function App() {
                           <div>{obj.nam}</div>
                           <div className="flex gap-1">
                             {obj.completed.map((ite) => (
-                              <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_blue]" />
+                              <img
+                                src={`/${ite}.png`}
+                                alt="Locations"
+                                className="size-5 drop-shadow-[0_0_3px_#00ffaa]"
+                              />
                             ))}
                           </div>
                         </div>
@@ -420,7 +435,7 @@ export default function App() {
                     .sort((a, b) => a.nam.localeCompare(b.nam))
                     .map((obj, index) => (
                       <div
-                        className={`rounded font-[Ale] bg-[#0c0e12] border border-white/10 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
+                        className={`rounded font-[Ale] bg-[#0c0e12] border border-red-300/20 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
                         key={index}
                       >
                         <img
@@ -434,20 +449,21 @@ export default function App() {
                             alt="Avatar"
                             loading="lazy"
                             className="w-10 h-10 rounded-full p-1 egg"
+                            draggable={false}
                             onError={(e) => {
                               e.target.style.display = "none";
                               e.target.nextSibling.style.display = "flex";
                             }}
                           />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-red-300 items-center justify-center hidden truncate -translate-x-[2px]">
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
                         <div className="w-full truncate">
-                          <div>{obj.nam}</div>
+                          <div className="text-red-300">{obj.nam}</div>
                           <div className="flex gap-1">
                             {obj.completed.map((ite) => (
-                              <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_blue]" />
+                              <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_red]" />
                             ))}
                           </div>
                         </div>
@@ -465,7 +481,7 @@ export default function App() {
                     .sort((a, b) => a.nam.localeCompare(b.nam))
                     .map((obj, index) => (
                       <div
-                        className={`rounded font-[Ale] bg-[#0c0e12] border border-white/10 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
+                        className={`rounded font-[Ale] bg-[#0c0e12] border border-purple-400/20 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
                         key={index}
                       >
                         <img
@@ -479,20 +495,25 @@ export default function App() {
                             alt="Avatar"
                             loading="lazy"
                             className="w-10 h-10 rounded-full p-1 egg"
+                            draggable={false}
                             onError={(e) => {
                               e.target.style.display = "none";
                               e.target.nextSibling.style.display = "flex";
                             }}
                           />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-purple-300 items-center justify-center hidden truncate -translate-x-[2px]">
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
                         <div className="w-full truncate">
-                          <div>{obj.nam}</div>
+                          <div className="text-purple-400">{obj.nam}</div>
                           <div className="flex gap-1">
                             {obj.locs.map((ite) => (
-                              <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_blue]" />
+                              <img
+                                src={`/${ite}.png`}
+                                alt="Locations"
+                                className="size-5 drop-shadow-[0_0_3px_purple]"
+                              />
                             ))}
                           </div>
                         </div>
@@ -510,7 +531,7 @@ export default function App() {
                     .sort((a, b) => a.nam.localeCompare(b.nam))
                     .map((obj, index) => (
                       <div
-                        className={`rounded font-[Ale] bg-[#0c0e12] border border-white/10 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
+                        className={`rounded font-[Ale] bg-[#0c0e12] border border-blue-300/20 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
                         key={index}
                       >
                         <img
@@ -524,17 +545,18 @@ export default function App() {
                             alt="Avatar"
                             loading="lazy"
                             className="w-10 h-10 rounded-full p-1 egg"
+                            draggable={false}
                             onError={(e) => {
                               e.target.style.display = "none";
                               e.target.nextSibling.style.display = "flex";
                             }}
                           />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
+                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-blue-300 items-center justify-center hidden truncate -translate-x-[2px]">
                             {obj.nam.slice(0, 2).toUpperCase()}
                           </div>
                         </div>
                         <div className="w-full truncate">
-                          <div>{obj.nam}</div>
+                          <div className="text-blue-300">{obj.nam}</div>
                           <div className="flex gap-1">
                             {obj.locs.map((ite) => (
                               <img src={`/${ite}.png`} alt="Locations" className="size-5 drop-shadow-[0_0_3px_blue]" />
