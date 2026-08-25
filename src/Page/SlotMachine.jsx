@@ -29,6 +29,53 @@ function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// --- Spin allowance: 5 spins per rolling 24h window -------------------
+// The window's start time + spins used so far are persisted to
+// localStorage under this key, so the allowance survives page
+// reloads / new tabs (it's per-browser, not per-server — there's no
+// auth/backend here to key it to a user).
+const MAX_SPINS_PER_WINDOW = 5;
+const SPIN_WINDOW_MS = 6 * 60 * 60 * 1000;
+const SPIN_WINDOW_STORAGE_KEY = "crossroadSlot:spinWindow";
+
+// Reads { windowStartAt, spinsUsed } back out of localStorage. If the
+// stored window has already fully elapsed (or the data is missing /
+// malformed), returns a fresh, unused window instead.
+function loadSpinWindow() {
+  try {
+    const raw = localStorage.getItem(SPIN_WINDOW_STORAGE_KEY);
+    if (!raw) return { windowStartAt: null, spinsUsed: 0 };
+    const parsed = JSON.parse(raw);
+    if (typeof parsed.windowStartAt !== "number" || typeof parsed.spinsUsed !== "number") {
+      return { windowStartAt: null, spinsUsed: 0 };
+    }
+    if (Date.now() - parsed.windowStartAt >= SPIN_WINDOW_MS) {
+      return { windowStartAt: null, spinsUsed: 0 };
+    }
+    return parsed;
+  } catch {
+    return { windowStartAt: null, spinsUsed: 0 };
+  }
+}
+
+function saveSpinWindow(spinWindow) {
+  try {
+    localStorage.setItem(SPIN_WINDOW_STORAGE_KEY, JSON.stringify(spinWindow));
+  } catch {
+    // Storage unavailable — allowance still applies for this session
+    // via state, it just won't survive a reload.
+  }
+}
+
+// ms -> "HH:MM:SS" for the on-button countdown display.
+function formatCountdown(ms) {
+  const totalSeconds = Math.max(0, Math.ceil(ms / 1000));
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+}
+
 // icon.points can be a fixed number, or a function returning a random
 // whole number for that icon (e.g. `points: () => randomInt(550, 650)`).
 // Always resolve through this — never read icon.points directly —
@@ -106,6 +153,7 @@ const DEFAULT_ICONS = [
   { symbol: `Polecat`, name: `Gale`, points: () => randomInt(6230, 7930) },
   { symbol: `Hound`, name: `Hecuba`, points: () => randomInt(6657, 8473) },
   { symbol: `Cat`, name: `Toula`, points: () => randomInt(6424, 8176) },
+
   { symbol: `cMelinoe Staff`, name: `Melinoe Staff`, points: () => randomInt(774, 986) },
   { symbol: `cCirce`, name: `Circe`, points: () => randomInt(862, 1096) },
   { symbol: `cMomus`, name: `Momus`, points: () => randomInt(1137, 1447) },
@@ -130,6 +178,7 @@ const DEFAULT_ICONS = [
   { symbol: `cNyx`, name: `Nyx`, points: () => randomInt(3018, 3840) },
   { symbol: `cSelene`, name: `Selene`, points: () => randomInt(822, 1046) },
   { symbol: `cShiva`, name: `Shiva`, points: () => randomInt(896, 1140) },
+
   { symbol: `c0`, name: `Empty Card`, points: 99 },
   { symbol: `c1`, name: `Sorceress`, points: () => randomInt(700, 864) },
   { symbol: `c2`, name: `Wayward`, points: () => randomInt(729, 927) },
@@ -287,6 +336,66 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
   const landedRef = useRef(Array.from({ length: REEL_COUNT }, () => null));
   const completedRef = useRef(0);
 
+  // windowStartAt: epoch ms the current 24h allowance window began, or
+  // null if no spins have been used yet. spinsUsed: how many of this
+  // window's MAX_SPINS_PER_WINDOW have been spent. `now` only exists
+  // to force a re-render once per second so the countdown display
+  // stays live while the window is exhausted — the actual remaining
+  // time is always computed fresh from windowStartAt, never stored as
+  // a separately-ticking number.
+  const [windowStartAt, setWindowStartAt] = useState(null);
+  const [spinsUsed, setSpinsUsed] = useState(0);
+  const [now, setNow] = useState(() => Date.now());
+
+  // On mount, resume any window already in progress from a previous
+  // visit/reload by reading it back out of localStorage (loadSpinWindow
+  // already discards a window that's fully elapsed).
+  useEffect(() => {
+    const loaded = loadSpinWindow();
+    setWindowStartAt(loaded.windowStartAt);
+    setSpinsUsed(loaded.spinsUsed);
+  }, []);
+
+  const spinsRemaining = Math.max(0, MAX_SPINS_PER_WINDOW - spinsUsed);
+  // Only once every spin in the window is used does a cooldown apply —
+  // it runs until 24h after the window's *first* spin, not the last.
+  const cooldownEndAt = windowStartAt && spinsRemaining === 0 ? windowStartAt + SPIN_WINDOW_MS : null;
+
+  // While the window is exhausted, tick `now` forward once a second so
+  // the countdown re-renders; the effect naturally stops re-scheduling
+  // once cooldownEndAt clears below.
+  useEffect(() => {
+    if (!cooldownEndAt) return;
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, [cooldownEndAt]);
+
+  const cooldownRemainingMs = cooldownEndAt ? Math.max(0, cooldownEndAt - now) : 0;
+  const onCooldown = cooldownRemainingMs > 0;
+
+  // Once the countdown reaches zero, the 24h window has fully
+  // elapsed — reset it so the player gets a fresh set of spins.
+  useEffect(() => {
+    if (cooldownEndAt && cooldownRemainingMs <= 0) {
+      setWindowStartAt(null);
+      setSpinsUsed(0);
+      saveSpinWindow({ windowStartAt: null, spinsUsed: 0 });
+    }
+  }, [cooldownRemainingMs, cooldownEndAt]);
+
+  // Records a spin against the current window — called the instant
+  // the player presses Spin, not when the result lands. Starts the
+  // window on the player's *first* spin of a fresh cycle, so the 24h
+  // reset always counts from that first spin, not the last one that
+  // exhausted the allowance.
+  const consumeSpin = () => {
+    const windowStart = windowStartAt ?? Date.now();
+    const nextSpinsUsed = spinsUsed + 1;
+    setWindowStartAt(windowStart);
+    setSpinsUsed(nextSpinsUsed);
+    saveSpinWindow({ windowStartAt: windowStart, spinsUsed: nextSpinsUsed });
+  };
+
   // Clean up any in-flight flicker intervals / charge timers if the
   // component unmounts mid-spin.
   useEffect(() => {
@@ -398,11 +507,12 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
   };
 
   const spin = () => {
-    if (spinning) return;
+    if (spinning || onCooldown) return;
     setSpinning(true);
     setMessage("");
     landedRef.current = Array.from({ length: REEL_COUNT }, () => null);
     completedRef.current = 0;
+    consumeSpin();
 
     // Clear the name rows back to placeholders for the duration of
     // the spin — the reveal only fills in once this spin's result is
@@ -487,7 +597,7 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
       <div className="flex items-center justify-center font-[Ale] text-[#dfe7e6]">
         <div className="flex flex-col items-center gap-4 w-full max-w-400">
           <div className="flex items-center gap-3.5 font-[Ale] font-bold text-2xl tracking-[6px] uppercase text-teal-400 [text-shadow:0_0_14px_rgba(45,212,191,0.35),0_0_30px_rgba(45,212,191,0.25)]">
-            <span>Crossroad Slot</span>
+            <span>H2Cross-Slot</span>
           </div>
           <div className="flex gap-1.5" aria-label={`Points ${displayPoints}`}>
             {String(displayPoints)
@@ -505,11 +615,18 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
           <button
             ref={btnRef}
             onClick={spin}
-            disabled={spinning}
-            className="appearance-none border-0 cursor-pointer font-[Ale] font-bold text-base tracking-[4px] uppercase text-[#050506] bg-[linear-gradient(180deg,#7ff0dd,#2dd4bf_55%,#0f766e)] px-16 py-3.5 rounded-lg transition-[transform,filter] duration-150 hover:brightness-110 active:translate-y-1 focus-visible:outline focus-visible:outline-teal-400 focus-visible:outline-offset-4 disabled:cursor-default disabled:text-black/60 disabled:bg-[linear-gradient(180deg,#4d6864,#3a5451_55%,#2b3f3c)] disabled:animate-pulse"
+            disabled={spinning || onCooldown}
+            className="appearance-none border-0 cursor-pointer font-[Ale] font-bold text-base tracking-[4px] uppercase text-[#050506] bg-[linear-gradient(180deg,#7ff0dd,#2dd4bf_55%,#0f766e)] px-16 py-3.5 rounded-lg transition-[transform,filter] duration-150 hover:brightness-110 active:translate-y-1 focus-visible:outline focus-visible:outline-teal-400 focus-visible:outline-offset-4 disabled:cursor-default disabled:text-black/60 disabled:bg-[linear-gradient(180deg,#4d6864,#3a5451_55%,#2b3f3c)] disabled:animate-none"
           >
-            {spinning ? "Spinning…" : "Spin"}
+            {spinning ? "Spinning…" : onCooldown ? formatCountdown(cooldownRemainingMs) : "Spin"}
           </button>
+          {!spinning && (
+            <div className="text-center font-[Ale] text-xs tracking-[2px] uppercase text-slate-400">
+              {onCooldown
+                ? `Next spin available in ${formatCountdown(cooldownRemainingMs)}`
+                : `${spinsRemaining} / ${MAX_SPINS_PER_WINDOW} spins left today`}
+            </div>
+          )}
 
           <div className="flex flex-col lg:flex-row w-full gap-x-8 gap-4 items-center lg:items-baseline justify-center">
             <div
