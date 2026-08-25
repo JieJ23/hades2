@@ -296,13 +296,14 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
     if (!els.length) return;
     gsap.fromTo(
       els,
-      { opacity: 0, y: 28 },
+      { opacity: 0, y: 28, scale: 0.25 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.025,
+        scale: 1,
+        duration: 0.3,
         ease: "power2.out",
-        stagger: 0.05,
+        stagger: 0.2,
       },
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
