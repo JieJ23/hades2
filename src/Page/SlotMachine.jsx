@@ -13,9 +13,17 @@
 // want the exact look from before:
 //   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-import { useState, useRef, useLayoutEffect } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import PageBlock from "../Block/PageBlock";
+
+function auraTextClass(points) {
+  if (points == null) return null;
+  if (points >= 5000) return "text-amber-500";
+  if (points >= 3000) return "text-red-500";
+  if (points >= 1500) return "text-purple-500";
+  return null;
+}
 
 /* ------------------------------------------------------------------
    ICONS: swap this array to change what appears on the reels.
@@ -27,110 +35,168 @@ import PageBlock from "../Block/PageBlock";
    name is shown in — see tierClasses() below.
 ------------------------------------------------------------------- */
 const DEFAULT_ICONS = [
-  { symbol: `Raven`, name: `Raki`, points: 7777 },
-  { symbol: `Frog`, name: `Frinos`, points: 7777 },
-  { symbol: `Polecat`, name: `Gale`, points: 7777 },
-  { symbol: `Hound`, name: `Hecuba`, points: 7777 },
-  { symbol: `Cat`, name: `Toula`, points: 7777 },
-  { symbol: `cMelinoe Staff`, name: `Melinoe Staff`, points: 600 },
-  { symbol: `cCirce`, name: `Circe`, points: 800 },
-  { symbol: `cMomus`, name: `Momus`, points: 500 },
-  { symbol: `cAnubis`, name: `Anubis`, points: 600 },
-  { symbol: `cMelinoe Blades`, name: `Melinoe Blades`, points: 600 },
-  { symbol: `cArtemis`, name: `Artemis`, points: 700 },
-  { symbol: `cPan`, name: `Pan`, points: 999 },
-  { symbol: `cMorrigan`, name: `Morrigan`, points: 888 },
-  { symbol: `cMelinoe Axe`, name: `Melinoe Axe`, points: 500 },
-  { symbol: `cCharon`, name: `Charon`, points: 600 },
-  { symbol: `cThanatos`, name: `Thanatos`, points: 600 },
-  { symbol: `cNergal`, name: `Nergal`, points: 800 },
-  { symbol: `cMelinoe Flames`, name: `Melinoe Flames`, points: 700 },
-  { symbol: `cEos`, name: `Eos`, points: 600 },
-  { symbol: `cMoros`, name: `Moros`, points: 600 },
-  { symbol: `cSupay`, name: `Supay`, points: 800 },
-  { symbol: `cMelinoe Skull`, name: `Melinoe Skull`, points: 700 },
-  { symbol: `cMedea`, name: `Medea`, points: 800 },
-  { symbol: `cPersephone`, name: `Persephone`, points: 500 },
-  { symbol: `cHel`, name: `Hel`, points: 500 },
-  { symbol: `cMelinoe Coat`, name: `Melinoe Coat`, points: 700 },
-  { symbol: `cNyx`, name: `Nyx`, points: 800 },
-  { symbol: `cSelene`, name: `Selene`, points: 600 },
-  { symbol: `cShiva`, name: `Shiva`, points: 700 },
-  { symbol: "c0", name: `Empty Card`, points: 99 },
-  { symbol: "c1", name: `Sorceress`, points: 1000 },
-  { symbol: "c2", name: `Wayward`, points: 2000 },
-  { symbol: "c3", name: `Huntress`, points: 3000 },
-  { symbol: "c4", name: `Eternity`, points: 4000 },
-  { symbol: "c5", name: `Moon`, points: 5000 },
-  { symbol: "c6", name: `Furies`, points: 6000 },
-  { symbol: "c7", name: `Persistence`, points: 700 },
-  { symbol: "c8", name: `Messenger`, points: 800 },
-  { symbol: "c9", name: `Unseen`, points: 900 },
-  { symbol: "c10", name: `Night`, points: 1000 },
-  { symbol: "c11", name: `Swift`, points: 1100 },
-  { symbol: "c12", name: `Death`, points: 1200 },
-  { symbol: "c13", name: `Centaur`, points: 1300 },
-  { symbol: "c14", name: `Origination`, points: 1400 },
-  { symbol: "c15", name: `Lovers`, points: 1500 },
-  { symbol: "c16", name: `Enchantress`, points: 1600 },
-  { symbol: "c17", name: `Boatman`, points: 1700 },
-  { symbol: "c18", name: `Artificer`, points: 1800 },
-  { symbol: "c19", name: `Excellence`, points: 1900 },
-  { symbol: "c20", name: `Queen`, points: 2000 },
-  { symbol: "c21", name: `Fates`, points: 2100 },
-  { symbol: "c22", name: `Champions`, points: 2200 },
-  { symbol: "c23", name: `Strength`, points: 2300 },
-  { symbol: "c24", name: `Divinity`, points: 2400 },
-  { symbol: "c25", name: `Judgment`, points: 2500 },
+  { symbol: `Melinoe`, name: `Melinoe`, points: 6628 },
+  //
+  { symbol: `Debt`, name: `Debt`, points: 603 },
+  { symbol: `Denial`, name: `Denial`, points: 694 },
+  { symbol: `Fangs`, name: `Fangs`, points: 635 },
+  { symbol: `Forfeit`, name: `Forfeit`, points: 631 },
+  { symbol: `Frenzy`, name: `Frenzy`, points: 628 },
+  { symbol: `Grit`, name: `Grit`, points: 617 },
+  { symbol: `Hordes`, name: `Hordes`, points: 694 },
+  { symbol: `Hubris`, name: `Hubris`, points: 613 },
+  { symbol: `Menace`, name: `Menace`, points: 686 },
+  { symbol: `Pain`, name: `Pain`, points: 694 },
+  { symbol: `Return`, name: `Return`, points: 769 },
+  { symbol: `Rivals`, name: `Rivals`, points: 711 },
+  { symbol: `Scars`, name: `Scars`, points: 675 },
+  { symbol: `Shadow`, name: `Shadow`, points: 754 },
+  { symbol: `Time`, name: `Time`, points: 704 },
+  { symbol: `Void`, name: `Void`, points: 703 },
+  { symbol: `Wards`, name: `Wards`, points: 711 },
+  //
+  { symbol: `Aphrodite`, name: `Aphrodite`, points: 1711 },
+  { symbol: `Apollo`, name: `Apollo`, points: 1719 },
+  { symbol: `Arachne`, name: `Arachne`, points: 1879 },
+  { symbol: `Ares`, name: `Ares`, points: 2554 },
+  { symbol: `Artemis`, name: `Artemis`, points: 1937 },
+  { symbol: `Athena`, name: `Athena`, points: 2907 },
+  { symbol: `Chaos`, name: `Chaos`, points: 6516 },
+  { symbol: `Charon`, name: `Charon`, points: 1764 },
+  { symbol: `Chronos`, name: `Chronos`, points: 6451 },
+  { symbol: `Circe`, name: `Circe`, points: 1779 },
+  { symbol: `Demeter`, name: `Demeter`, points: 3069 },
+  { symbol: `Dionysus`, name: `Dionysus`, points: 1653 },
+  { symbol: `Dora`, name: `Dora`, points: 340 },
+  { symbol: `Echo`, name: `Echo`, points: 1378 },
+  { symbol: `Hecate`, name: `Hecate`, points: 3665 },
+  { symbol: `Hephaestus`, name: `Hephaestus`, points: 1674 },
+  { symbol: `Hera`, name: `Hera`, points: 3569 },
+  { symbol: `Heracles`, name: `Heracles`, points: 1239 },
+  { symbol: `Hermes`, name: `Hermes`, points: 1610 },
+  { symbol: `Hestia`, name: `Hestia`, points: 943 },
+  { symbol: `Icarus`, name: `Icarus`, points: 1226 },
+  { symbol: `Medea`, name: `Medea`, points: 1597 },
+  { symbol: `Moros`, name: `Moros`, points: 1097 },
+  { symbol: `Narcissus`, name: `Narcissus`, points: 1224 },
+  { symbol: `Nemesis`, name: `Nemesis`, points: 1391 },
+  { symbol: `Odysseus`, name: `Odysseus`, points: 1288 },
+  { symbol: `Poseidon`, name: `Poseidon`, points: 3541 },
+  { symbol: `Selene`, name: `Selene`, points: 1572 },
+  { symbol: `Skelly`, name: `Skelly`, points: 666 },
+  { symbol: `Zagreus`, name: `Zagreus`, points: 1467 },
+  { symbol: `Zeus`, name: `Zeus`, points: 4598 },
+  //
+  { symbol: `Raven`, name: `Raki`, points: 7127 },
+  { symbol: `Frog`, name: `Frinos`, points: 7387 },
+  { symbol: `Polecat`, name: `Gale`, points: 7080 },
+  { symbol: `Hound`, name: `Hecuba`, points: 7565 },
+  { symbol: `Cat`, name: `Toula`, points: 7300 },
+  { symbol: `cMelinoe Staff`, name: `Melinoe Staff`, points: 880 },
+  { symbol: `cCirce`, name: `Circe`, points: 979 },
+  { symbol: `cMomus`, name: `Momus`, points: 1292 },
+  { symbol: `cAnubis`, name: `Anubis`, points: 1147 },
+  { symbol: `cMelinoe Blades`, name: `Melinoe Blades`, points: 824 },
+  { symbol: `cArtemis`, name: `Artemis`, points: 1380 },
+  { symbol: `cPan`, name: `Pan`, points: 1017 },
+  { symbol: `cMorrigan`, name: `Morrigan`, points: 1011 },
+  { symbol: `cMelinoe Axe`, name: `Melinoe Axe`, points: 884 },
+  { symbol: `cCharon`, name: `Charon`, points: 929 },
+  { symbol: `cThanatos`, name: `Thanatos`, points: 1124 },
+  { symbol: `cNergal`, name: `Nergal`, points: 1020 },
+  { symbol: `cMelinoe Flames`, name: `Melinoe Flames`, points: 829 },
+  { symbol: `cEos`, name: `Eos`, points: 1025 },
+  { symbol: `cMoros`, name: `Moros`, points: 948 },
+  { symbol: `cSupay`, name: `Supay`, points: 1071 },
+  { symbol: `cMelinoe Skull`, name: `Melinoe Skull`, points: 858 },
+  { symbol: `cMedea`, name: `Medea`, points: 946 },
+  { symbol: `cPersephone`, name: `Persephone`, points: 3833 },
+  { symbol: `cHel`, name: `Hel`, points: 1094 },
+  { symbol: `cMelinoe Coat`, name: `Melinoe Coat`, points: 845 },
+  { symbol: `cNyx`, name: `Nyx`, points: 3429 },
+  { symbol: `cSelene`, name: `Selene`, points: 934 },
+  { symbol: `cShiva`, name: `Shiva`, points: 1018 },
+  { symbol: `c0`, name: `Empty Card`, points: 99 },
+  { symbol: `c1`, name: `Sorceress`, points: 771 },
+  { symbol: `c2`, name: `Wayward`, points: 828 },
+  { symbol: `c3`, name: `Huntress`, points: 801 },
+  { symbol: `c4`, name: `Eternity`, points: 910 },
+  { symbol: `c5`, name: `Moon`, points: 949 },
+  { symbol: `c6`, name: `Furies`, points: 964 },
+  { symbol: `c7`, name: `Persistence`, points: 1017 },
+  { symbol: `c8`, name: `Messenger`, points: 1079 },
+  { symbol: `c9`, name: `Unseen`, points: 1080 },
+  { symbol: `c10`, name: `Night`, points: 1104 },
+  { symbol: `c11`, name: `Swift`, points: 1115 },
+  { symbol: `c12`, name: `Death`, points: 1214 },
+  { symbol: `c13`, name: `Centaur`, points: 1263 },
+  { symbol: `c14`, name: `Origination`, points: 1260 },
+  { symbol: `c15`, name: `Lovers`, points: 1313 },
+  { symbol: `c16`, name: `Enchantress`, points: 1329 },
+  { symbol: `c17`, name: `Boatman`, points: 1349 },
+  { symbol: `c18`, name: `Artificer`, points: 1323 },
+  { symbol: `c19`, name: `Excellence`, points: 1414 },
+  { symbol: `c20`, name: `Queen`, points: 1554 },
+  { symbol: `c21`, name: `Fates`, points: 1690 },
+  { symbol: `c22`, name: `Champions`, points: 1801 },
+  { symbol: `c23`, name: `Strength`, points: 1884 },
+  { symbol: `c24`, name: `Divinity`, points: 2233 },
+  { symbol: `c25`, name: `Judgment`, points: 2816 },
 ];
 
-// Number of reels.
-const REEL_COUNT = 5;
+// Number of reels, laid out as a GRID_COLS x GRID_ROWS grid.
+const GRID_COLS = 5;
+const GRID_ROWS = 5;
+const REEL_COUNT = GRID_COLS * GRID_ROWS;
 
-// The reel window resizes at different breakpoints, so the pixel
-// height of one icon isn't a fixed constant — it's measured live from
-// the rendered DOM instead. That keeps the spin math correct at every
-// screen size without needing a hand-maintained constant.
-const FALLBACK_ITEM_HEIGHT = 88;
-// Copies of the icon set stacked in each reel strip. Must be generous:
-// a spin travels (minLoops * icons.length + indexDelta) items, and the
-// strip needs real rendered icons the whole way down or it scrolls
-// through blank space. minLoops maxes out at 2 + REEL_COUNT (the last
-// reel), so 12 loops leaves comfortable headroom regardless of how
-// many icons are in play.
-const REPEATS = 12;
+// --- "Galaxy" charging animation ------------------------------------
+// Each reel renders exactly one icon at a time (no more physically
+// duplicated strips), so DOM weight no longer scales with icon count,
+// REPEATS, or grid size — it's flat at REEL_COUNT images. While a reel
+// is "charging" it (a) spins a ring of small orbiting motes behind the
+// icon, and (b) flickers the icon shown every FLICKER_MS by swapping
+// which icon from `icons` is rendered. When the reel's charge time is
+// up, the ring decelerates back to a clean multiple of 360° (its
+// "home" rotation) and fades out while the final icon locks in and
+// pulses — the "rotate back to original placement" landing.
+const GALAXY_DOTS = 9;
+const FLICKER_MS = 70;
+// Column 0 settles first, each subsequent column settles a bit later,
+// so the grid still resolves left-to-right like the old reel version.
+const BASE_CHARGE_MS = 900;
+const COLUMN_STAGGER_MS = 350;
 
 // Point thresholds that decide which color a landed name shows up in.
 // Tune these to match the actual spread of `points` values across
 // your icon set.
 const POINTS_TIERS = [
   {
-    min: 2000,
-    classes: "text-amber-300 bg-amber-400/30 border-amber-300/50 [text-shadow:0_0_8px_rgba(251,191,36,0.5)]",
+    min: 5000,
+    classes: "text-amber-300 bg-gradient-to-tr to-[#0a0a0a] from-amber-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
   },
   {
-    min: 1000,
-    classes: "text-purple-300 bg-purple-500/30 border-purple-400/45 [text-shadow:0_0_6px_rgba(192,132,252,0.5)]",
+    min: 3000,
+    classes: "text-red-300 bg-gradient-to-tr to-[#0a0a0a] from-red-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
   },
   {
-    min: 500,
-    classes: "text-teal-300 bg-teal-400/30 border-teal-400/40 [text-shadow:0_0_6px_rgba(45,212,191,0.5)]",
+    min: 1500,
+    classes: "text-purple-300 bg-gradient-to-tr to-[#0a0a0a] from-purple-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
+  },
+  {
+    min: 700,
+    classes: "text-blue-300 bg-gradient-to-tr to-[#0a0a0a] from-blue-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
   },
   {
     min: 100,
-    classes: "text-slate-200 bg-slate-400/15 border-slate-400/30",
+    classes: "text-slate-300 bg-gradient-to-tr to-[#0a0a0a] from-slate-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]",
   },
 ];
-const PENDING_TIER_CLASSES = "text-slate-500 bg-white/5 border-white/10";
+const PENDING_TIER_CLASSES = "text-slate-500 bg-white/5 border-white";
 
 function tierClasses(points) {
   if (points == null) return PENDING_TIER_CLASSES;
   const tier = POINTS_TIERS.find((t) => points >= t.min);
   return tier ? tier.classes : POINTS_TIERS[POINTS_TIERS.length - 1].classes;
-}
-
-function buildStrip(icons) {
-  return Array.from({ length: REPEATS }, () => icons).flat();
 }
 
 // Turns a landed reel result into a score: the sum of every landed
@@ -143,16 +209,62 @@ function scoreForResult(icons, indices) {
   return Math.max(0, Math.min(99999, raw));
 }
 
+// A ring of small motes arranged in a circle around the reel's
+// center, tinted teal/green to match the site's theme. The whole
+// group is rotated via gsap (on `innerRef`) rather than animated with
+// CSS keyframes, so its rotation value can be read and eased back to
+// a clean stop when a reel lands.
+function GalaxyRing({ innerRef }) {
+  const dots = Array.from({ length: GALAXY_DOTS }, (_, i) => {
+    const angle = (360 / GALAXY_DOTS) * i;
+    const radius = 40; // % from center
+    const rad = (angle * Math.PI) / 180;
+    const x = 50 + radius * Math.cos(rad);
+    const y = 50 + radius * Math.sin(rad);
+    const size = 3 + (i % 3) * 1.5;
+    const tone = i % 2 === 0 ? "bg-teal-300" : "bg-emerald-400";
+    return (
+      <span
+        key={i}
+        className={`absolute rounded-full ${tone} shadow-[0_0_6px_rgba(45,212,191,0.85)]`}
+        style={{
+          left: `${x}%`,
+          top: `${y}%`,
+          width: size,
+          height: size,
+          transform: "translate(-50%, -50%)",
+        }}
+      />
+    );
+  });
+
+  return (
+    <div ref={innerRef} className="absolute inset-0 pointer-events-none opacity-0" style={{ willChange: "transform" }}>
+      {/* Soft rotating spiral glow behind the motes */}
+      <div className="absolute inset-[8%] rounded-full blur-[2px] bg-[conic-gradient(from_0deg,rgba(45,212,191,0)_0deg,rgba(45,212,191,0.4)_90deg,rgba(74,222,128,0)_180deg,rgba(45,212,191,0.4)_270deg,rgba(45,212,191,0)_360deg)]" />
+      {dots}
+    </div>
+  );
+}
+
 function SlotMachine({ icons = DEFAULT_ICONS }) {
-  const stripRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
-  const nameRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
+  // Dynamic-length ref arrays — populated via callback refs on each
+  // rendered element below rather than a fixed run of useRef() calls,
+  // so REEL_COUNT can be any grid size.
+  const galaxyRefs = useRef([]);
+  const iconWrapRefs = useRef([]);
+  const nameRefs = useRef([]);
   const btnRef = useRef(null);
-  const itemHeightRef = useRef(FALLBACK_ITEM_HEIGHT);
   const scoreProxyRef = useRef({ value: 0 });
+  const flickerIntervalsRef = useRef([]);
+  const chargeTimeoutsRef = useRef([]);
 
   const [spinning, setSpinning] = useState(false);
   const [message, setMessage] = useState("Press spin to begin");
   const [displayPoints, setDisplayPoints] = useState(0);
+  // The icon currently shown in each reel cell — flickers rapidly
+  // while that reel is charging, then locks to the landed icon.
+  const [displayIcons, setDisplayIcons] = useState(Array.from({ length: REEL_COUNT }, () => icons[0]));
   // One entry per reel: null while idle/spinning (renders as a
   // placeholder row so the layout never jumps), or { name, points }
   // once that spin's result is calculated.
@@ -161,31 +273,13 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
   const landedRef = useRef(Array.from({ length: REEL_COUNT }, () => null));
   const completedRef = useRef(0);
 
-  const measureItemHeight = () => {
-    const cell = stripRefs[0].current?.firstElementChild;
-    const h = cell ? cell.getBoundingClientRect().height : 0;
-    if (h > 0) itemHeightRef.current = h;
-    return itemHeightRef.current;
-  };
-
-  // Start every reel parked mid-strip so it has room to spin, and
-  // re-measure (and re-park) whenever the reel size changes. Runs in
-  // useLayoutEffect (before the browser paints) rather than
-  // useEffect, so the reels are already in their parked position for
-  // the very first paint instead of flashing their unparked layout
-  // position first.
-  useLayoutEffect(() => {
-    const parkAll = () => {
-      const h = measureItemHeight();
-      const loopHeight = icons.length * h;
-      stripRefs.forEach((ref) => {
-        gsap.set(ref.current, { y: -loopHeight });
-      });
+  // Clean up any in-flight flicker intervals / charge timers if the
+  // component unmounts mid-spin.
+  useEffect(() => {
+    return () => {
+      flickerIntervalsRef.current.forEach((id) => clearInterval(id));
+      chargeTimeoutsRef.current.forEach((id) => clearTimeout(id));
     };
-    parkAll();
-    window.addEventListener("resize", parkAll);
-    return () => window.removeEventListener("resize", parkAll);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Once the landed names are set, slide each one up into place, one
@@ -197,14 +291,8 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
   // them to invisible and animate back in — that's what was causing
   // the flicker. Only animates rows that actually landed this spin
   // (placeholder rows are skipped).
-  //
-  // duration/stagger are deliberately slow — each row takes 0.85s to
-  // ease in, and the next one doesn't start until 0.45s after the
-  // previous one began, so they visibly stack one at a time (roughly
-  // half of each row's motion has settled before the next begins)
-  // rather than all five arriving in a near-simultaneous flurry.
   useLayoutEffect(() => {
-    const els = nameRefs.map((r, i) => (resultNames[i] ? r.current : null)).filter(Boolean);
+    const els = nameRefs.current.filter((el, i) => el && resultNames[i]);
     if (!els.length) return;
     gsap.fromTo(
       els,
@@ -212,41 +300,86 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
       {
         opacity: 1,
         y: 0,
-        duration: 0.85,
+        duration: 0.025,
         ease: "power2.out",
-        stagger: 0.45,
+        stagger: 0.05,
       },
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resultNames]);
 
-  const spinReel = (reelIndex, onLanded) => {
-    const el = stripRefs[reelIndex].current;
-    const itemHeight = measureItemHeight();
-    const loopHeight = icons.length * itemHeight;
+  // Charges up a single reel: spins its galaxy ring continuously and
+  // flickers its icon through random options, then — after that
+  // column's charge time — decelerates the ring back to a clean
+  // multiple of 360° ("original placement") while fading it out and
+  // locking the icon to its final landed result.
+  const chargeReel = (reelIndex, onLanded) => {
     const targetIndex = Math.floor(Math.random() * icons.length);
+    const col = reelIndex % GRID_COLS;
+    const galaxyEl = galaxyRefs.current[reelIndex];
+    const iconWrapEl = iconWrapRefs.current[reelIndex];
 
-    const currentY = gsap.getProperty(el, "y");
-    const currentIndex = Math.round((-currentY % loopHeight) / itemHeight) % icons.length;
-    const indexDelta = (targetIndex - currentIndex + icons.length) % icons.length;
+    gsap.killTweensOf(galaxyEl);
+    gsap.killTweensOf(iconWrapEl);
+    gsap.set(galaxyEl, { rotation: 0, opacity: 0.95, scale: 1 });
+    gsap.set(iconWrapEl, { scale: 1, opacity: 1 });
 
-    const minLoops = 3 + reelIndex; // each reel spins a bit further than the last
-    const travel = (minLoops * icons.length + indexDelta) * itemHeight;
-    const finalY = currentY - travel;
-
-    gsap.to(el, {
-      y: finalY,
-      duration: 1.7 + reelIndex * 0.35,
-      ease: "power3.out", // decelerates smoothly into the result, no overshoot/bounce
-      onComplete: () => {
-        // Wrap the strip back into its safe middle range. The pattern
-        // repeats every loopHeight, so this causes no visual jump.
-        const remainder = -finalY % loopHeight;
-        gsap.set(el, { y: -loopHeight - remainder });
-        landedRef.current[reelIndex] = targetIndex;
-        onLanded();
-      },
+    gsap.to(galaxyEl, {
+      rotation: "+=360",
+      duration: 0.85,
+      ease: "none",
+      repeat: -1,
     });
+
+    clearInterval(flickerIntervalsRef.current[reelIndex]);
+    flickerIntervalsRef.current[reelIndex] = setInterval(() => {
+      setDisplayIcons((prev) => {
+        const next = [...prev];
+        next[reelIndex] = icons[Math.floor(Math.random() * icons.length)];
+        return next;
+      });
+    }, FLICKER_MS);
+
+    const chargeMs = BASE_CHARGE_MS + col * COLUMN_STAGGER_MS;
+
+    clearTimeout(chargeTimeoutsRef.current[reelIndex]);
+    chargeTimeoutsRef.current[reelIndex] = setTimeout(() => {
+      clearInterval(flickerIntervalsRef.current[reelIndex]);
+      setDisplayIcons((prev) => {
+        const next = [...prev];
+        next[reelIndex] = icons[targetIndex];
+        return next;
+      });
+
+      // Let the ring's current spin finish naturally, then ease it
+      // back to its "home" rotation (the next exact multiple of
+      // 360°) while fading out — the ring visually winds back to
+      // where it started as it hands off to the settled icon, which
+      // pulses to confirm the landing.
+      const current = gsap.getProperty(galaxyEl, "rotation");
+      const home = Math.ceil((current + 1) / 360) * 360;
+      gsap.to(galaxyEl, {
+        rotation: home,
+        opacity: 0,
+        scale: 0.6,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+      gsap.fromTo(
+        iconWrapEl,
+        { scale: 0.75, opacity: 0.6 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.5,
+          ease: "back.out(2)",
+          onComplete: () => {
+            landedRef.current[reelIndex] = targetIndex;
+            onLanded();
+          },
+        },
+      );
+    }, chargeMs);
   };
 
   const spin = () => {
@@ -275,7 +408,7 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
     );
 
     Array.from({ length: REEL_COUNT }, (_, i) => i).forEach((i) => {
-      spinReel(i, () => {
+      chargeReel(i, () => {
         completedRef.current += 1;
         if (completedRef.current === REEL_COUNT) {
           const indices = landedRef.current;
@@ -294,16 +427,39 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
             })),
           );
 
-          // Ease the digit windows up from 0 to the total score, like
-          // a mechanical counter settling into place.
-          gsap.to(scoreProxyRef.current, {
-            value: points,
-            duration: 1.1,
-            ease: "power2.out",
-            onUpdate: () => {
-              setDisplayPoints(Math.round(scoreProxyRef.current.value));
-            },
+          // Build the score up one landed icon at a time, timed to
+          // match each result card's reveal stagger above (0.1s
+          // apart) — so the total visibly "adds up" as each name
+          // slides into place, instead of jumping straight to the
+          // final number in one continuous tween.
+          gsap.killTweensOf(scoreProxyRef.current);
+          const scoreTl = gsap.timeline();
+          indices.forEach((idx, revealIndex) => {
+            scoreTl.to(
+              scoreProxyRef.current,
+              {
+                value: `+=${icons[idx].points}`,
+                duration: 0.5,
+                ease: "power2.out",
+                onUpdate: () => {
+                  setDisplayPoints(Math.min(99999, Math.round(scoreProxyRef.current.value)));
+                },
+              },
+              revealIndex * 0.1, // same stagger the name-card reveal uses
+            );
           });
+          if (allMatch) {
+            // Jackpot flourish: once the per-icon count-up lands,
+            // punch the total the rest of the way to the max payout.
+            scoreTl.to(scoreProxyRef.current, {
+              value: points,
+              duration: 0.6,
+              ease: "power2.out",
+              onUpdate: () => {
+                setDisplayPoints(Math.min(99999, Math.round(scoreProxyRef.current.value)));
+              },
+            });
+          }
 
           setSpinning(false);
         }
@@ -314,32 +470,10 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
   return (
     <PageBlock>
       <div className="flex items-center justify-center font-[Ale] text-[#dfe7e6]">
-        <div className="flex flex-col items-center gap-6 w-full max-w-[600px]">
+        <div className="flex flex-col items-center gap-4 w-full max-w-400">
           <div className="flex items-center gap-3.5 font-[Ale] font-bold text-2xl tracking-[6px] uppercase text-teal-400 [text-shadow:0_0_14px_rgba(45,212,191,0.35),0_0_30px_rgba(45,212,191,0.25)]">
             <span>Crossroad Slot</span>
           </div>
-
-          <div className="relative flex w-full justify-center gap-1.5 rounded-md bg-[#050506] p-2 shadow-[inset_0_0_20px_rgba(0,0,0,0.9),inset_0_0_0_1px_rgba(45,212,191,0.25)]">
-            {stripRefs.map((ref, i) => (
-              <div
-                key={i}
-                className="relative flex-1 w-full aspect-[110/161] overflow-hidden rounded border-2 border-teal-400/55 bg-[linear-gradient(180deg,#0a2422,#123936_45%,#0a2422)] shadow-[inset_0_10px_14px_-6px_rgba(0,0,0,0.85),inset_0_-10px_14px_-6px_rgba(0,0,0,0.85),inset_0_0_0_1px_rgba(0,0,0,0.5),0_0_10px_rgba(45,212,191,0.25)]"
-              >
-                <div ref={ref} className="absolute top-0 left-0 w-full">
-                  {buildStrip(icons).map((icon, idx) => (
-                    <div
-                      key={idx}
-                      aria-hidden="true"
-                      className="w-full aspect-[110/161] flex items-center justify-center select-none [filter:drop-shadow(0_3px_4px_rgba(0,0,0,0.7))]"
-                    >
-                      <img src={`/Slots/${icon.symbol}.png`} alt="Arcana" className="w-full h-full" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
           <div className="flex gap-1.5" aria-label={`Points ${displayPoints}`}>
             {String(displayPoints)
               .padStart(5, "0")
@@ -347,47 +481,83 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
               .map((digit, i) => (
                 <div
                   key={i}
-                  className="w-10 h-[48px] flex items-center justify-center font-[Sr] font-semibold text-[20px] text-teal-400 [text-shadow:0_0_8px_rgba(45,212,191,0.35)] bg-[linear-gradient(180deg,#0a2422,#123936_45%,#0a2422)] border-2 border-teal-400/55 rounded shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.85),inset_0_-4px_6px_-3px_rgba(0,0,0,0.85),0_0_8px_rgba(45,212,191,0.2)]"
+                  className="w-12 h-[54px] flex items-center justify-center font-[UbuntuMono] font-bold text-[24px] text-purple-400 [text-shadow:0_0_8px_purple] bg-[linear-gradient(180deg,#0a2422,#123936_45%,#0a2422)] border-2 border-teal-400/55 rounded shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.85),inset_0_-4px_6px_-3px_rgba(0,0,0,0.85),0_0_8px_rgba(45,212,191,0.2)]"
                 >
                   {digit}
                 </div>
               ))}
           </div>
-
-          {/* <div
-            className="min-h-[20px] text-center font-[Ale] font-bold text-sm tracking-[2px] uppercase text-teal-400 [text-shadow:0_0_10px_rgba(45,212,191,0.35)]"
-            aria-live="polite"
-          >
-            {message}
-          </div> */}
-
-          {/* Always mounted — reserves its own height up front so
-            nothing shifts when a result lands. */}
-          <div className="flex flex-col items-stretch gap-2 w-full max-w-[340px] min-h-[280px]">
-            {resultNames.map((item, i) => (
-              <div
-                key={i}
-                ref={nameRefs[i]}
-                className={`flex items-center justify-between gap-3 rounded-md px-4 py-2.5 border font-[Ale] font-semibold text-lg tracking-[1.5px] uppercase ${tierClasses(
-                  item?.points,
-                )}`}
-              >
-                <span className="overflow-hidden text-ellipsis whitespace-nowrap">{item ? item.name : "—"}</span>
-                {item && (
-                  <span className="font-sans font-semibold text-base tracking-normal opacity-90">{item.points}</span>
-                )}
-              </div>
-            ))}
-          </div>
-
           <button
             ref={btnRef}
             onClick={spin}
             disabled={spinning}
-            className="appearance-none border-0 cursor-pointer font-[Ale] font-bold text-base tracking-[4px] uppercase text-[#050506] bg-[linear-gradient(180deg,#7ff0dd,#2dd4bf_55%,#0f766e)] px-11 py-3.5 rounded-full shadow-[0_0_0_1px_rgba(45,212,191,0.5),0_6px_0_#0f766e,0_10px_20px_rgba(0,0,0,0.55),0_0_26px_rgba(45,212,191,0.45)] transition-[transform,filter] duration-150 hover:brightness-110 active:translate-y-1 focus-visible:outline focus-visible:outline-teal-400 focus-visible:outline-offset-4 disabled:cursor-default disabled:text-black/60 disabled:bg-[linear-gradient(180deg,#4d6864,#3a5451_55%,#2b3f3c)] disabled:shadow-[0_0_0_1px_rgba(45,212,191,0.2),0_6px_0_#24332f,0_10px_18px_rgba(0,0,0,0.5)] disabled:animate-pulse"
+            className="appearance-none border-0 cursor-pointer font-[Ale] font-bold text-base tracking-[4px] uppercase text-[#050506] bg-[linear-gradient(180deg,#7ff0dd,#2dd4bf_55%,#0f766e)] px-16 py-3.5 rounded-lg transition-[transform,filter] duration-150 hover:brightness-110 active:translate-y-1 focus-visible:outline focus-visible:outline-teal-400 focus-visible:outline-offset-4 disabled:cursor-default disabled:text-black/60 disabled:bg-[linear-gradient(180deg,#4d6864,#3a5451_55%,#2b3f3c)] disabled:animate-pulse"
           >
             {spinning ? "Spinning…" : "Spin"}
           </button>
+
+          <div className="flex flex-col lg:flex-row w-full gap-x-8 gap-4 items-center lg:items-baseline justify-center">
+            <div
+              className="relative grid w-full max-w-120 gap-1.5 rounded-md bg-[#050506] p-2 shadow-[inset_0_0_20px_rgba(0,0,0,0.9),inset_0_0_0_1px_rgba(45,212,191,0.25)]"
+              style={{ gridTemplateColumns: `repeat(${GRID_COLS}, minmax(0, 1fr))` }}
+            >
+              {Array.from({ length: REEL_COUNT }, (_, i) => i).map((i) => (
+                <div
+                  key={i}
+                  className="relative w-full aspect-[110/161] overflow-hidden rounded border-2 border-teal-400/55 bg-[linear-gradient(180deg,#0a2422,#123936_45%,#0a2422)] shadow-[inset_0_10px_14px_-6px_rgba(0,0,0,0.85),inset_0_-10px_14px_-6px_rgba(0,0,0,0.85),inset_0_0_0_1px_rgba(0,0,0,0.5),0_0_10px_rgba(45,212,191,0.25)]"
+                >
+                  <GalaxyRing innerRef={(el) => (galaxyRefs.current[i] = el)} />
+                  <div
+                    ref={(el) => (iconWrapRefs.current[i] = el)}
+                    className="absolute inset-0 flex items-center justify-center [filter:drop-shadow(0_3px_4px_rgba(0,0,0,0.7))]"
+                  >
+                    <img
+                      src={`/Slots/${displayIcons[i].symbol}.png`}
+                      alt="Arcana"
+                      className="max-w-[95%] max-h-[95%] w-auto h-auto object-contain select-none"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Always mounted — reserves its own height up front so
+            nothing shifts when a result lands. Mirrors the reel grid
+            above, one compact card per landed reel. */}
+            <div
+              className="grid w-full max-w-150 gap-2"
+              style={{ gridTemplateColumns: `repeat(${GRID_COLS}, minmax(0, 1fr))` }}
+            >
+              {resultNames.map((item, i) => {
+                const aura = auraTextClass(item?.points);
+                const card = (
+                  <div
+                    ref={(el) => (nameRefs.current[i] = el)}
+                    className={`flex flex-col items-center justify-center rounded gap-0.5 px-1 py-2 font-[Ale] font-semibold tracking-[0.5px] uppercase text-center ${tierClasses(
+                      item?.points,
+                    )}`}
+                  >
+                    <span className="w-full overflow-hidden font-[Ale] text-ellipsis whitespace-nowrap text-[10px] leading-tight">
+                      {item ? item.name : "—"}
+                    </span>
+                    {item && (
+                      <span className="font-[Ale] font-semibold text-[18px] tracking-normal opacity-90">
+                        {item.points}
+                      </span>
+                    )}
+                  </div>
+                );
+
+                return aura ? (
+                  <div key={i} className={`aura aura-hollow ${aura} rounded`}>
+                    {card}
+                  </div>
+                ) : (
+                  <div key={i}>{card}</div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </PageBlock>

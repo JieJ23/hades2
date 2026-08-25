@@ -13,6 +13,7 @@ export const sites = [
   { link: `Stats`, nam: `Stats`, icon: `Boon` },
 ];
 export const tools = [
+  { link: `SlotMachine`, nam: `Hades Slot`, icon: `Slot` },
   { link: `ArcanaDeck`, nam: `Arcana Deck`, icon: `ReRoll` },
   { link: `FearCalculator`, nam: `Fear Calculator`, icon: `Void` },
 ];
