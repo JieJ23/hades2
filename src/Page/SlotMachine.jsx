@@ -19,10 +19,24 @@ import PageBlock from "../Block/PageBlock";
 
 function auraTextClass(points) {
   if (points == null) return null;
-  if (points >= 5000) return "text-amber-500";
-  if (points >= 3000) return "text-red-500";
-  if (points >= 1500) return "text-purple-500";
+  if (points >= 6000) return "text-amber-500";
+  if (points >= 4500) return "text-red-500";
+  if (points >= 3000) return "text-purple-500";
   return null;
+}
+
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// icon.points can be a fixed number, or a function returning a random
+// whole number for that icon (e.g. `points: () => randomInt(550, 650)`).
+// Always resolve through this — never read icon.points directly —
+// so a function-based value is only rolled once per landing, not
+// re-rolled every time it's read (which would let the score total,
+// the result card, and the tier color each disagree with each other).
+function resolvePoints(points) {
+  return typeof points === "function" ? points() : points;
 }
 
 /* ------------------------------------------------------------------
@@ -35,113 +49,113 @@ function auraTextClass(points) {
    name is shown in — see tierClasses() below.
 ------------------------------------------------------------------- */
 const DEFAULT_ICONS = [
-  { symbol: `Melinoe`, name: `Melinoe`, points: 6628 },
+  { symbol: `Melinoe`, name: `Melinoe`, points: () => randomInt(5833, 7423) },
   //
-  { symbol: `Debt`, name: `Debt`, points: 603 },
-  { symbol: `Denial`, name: `Denial`, points: 694 },
-  { symbol: `Fangs`, name: `Fangs`, points: 635 },
-  { symbol: `Forfeit`, name: `Forfeit`, points: 631 },
-  { symbol: `Frenzy`, name: `Frenzy`, points: 628 },
-  { symbol: `Grit`, name: `Grit`, points: 617 },
-  { symbol: `Hordes`, name: `Hordes`, points: 694 },
-  { symbol: `Hubris`, name: `Hubris`, points: 613 },
-  { symbol: `Menace`, name: `Menace`, points: 686 },
-  { symbol: `Pain`, name: `Pain`, points: 694 },
-  { symbol: `Return`, name: `Return`, points: 769 },
-  { symbol: `Rivals`, name: `Rivals`, points: 711 },
-  { symbol: `Scars`, name: `Scars`, points: 675 },
-  { symbol: `Shadow`, name: `Shadow`, points: 754 },
-  { symbol: `Time`, name: `Time`, points: 704 },
-  { symbol: `Void`, name: `Void`, points: 703 },
-  { symbol: `Wards`, name: `Wards`, points: 711 },
+  { symbol: `Debt`, name: `Debt`, points: () => randomInt(531, 675) },
+  { symbol: `Denial`, name: `Denial`, points: () => randomInt(611, 699) },
+  { symbol: `Fangs`, name: `Fangs`, points: () => randomInt(559, 699) },
+  { symbol: `Forfeit`, name: `Forfeit`, points: () => randomInt(555, 699) },
+  { symbol: `Frenzy`, name: `Frenzy`, points: () => randomInt(553, 699) },
+  { symbol: `Grit`, name: `Grit`, points: () => randomInt(543, 691) },
+  { symbol: `Hordes`, name: `Hordes`, points: () => randomInt(611, 699) },
+  { symbol: `Hubris`, name: `Hubris`, points: () => randomInt(539, 687) },
+  { symbol: `Menace`, name: `Menace`, points: () => randomInt(604, 699) },
+  { symbol: `Pain`, name: `Pain`, points: () => randomInt(611, 699) },
+  { symbol: `Return`, name: `Return`, points: () => randomInt(700, 861) },
+  { symbol: `Rivals`, name: `Rivals`, points: () => randomInt(700, 796) },
+  { symbol: `Scars`, name: `Scars`, points: () => randomInt(594, 699) },
+  { symbol: `Shadow`, name: `Shadow`, points: () => randomInt(700, 844) },
+  { symbol: `Time`, name: `Time`, points: () => randomInt(700, 788) },
+  { symbol: `Void`, name: `Void`, points: () => randomInt(700, 787) },
+  { symbol: `Wards`, name: `Wards`, points: () => randomInt(700, 796) },
   //
-  { symbol: `Aphrodite`, name: `Aphrodite`, points: 1711 },
-  { symbol: `Apollo`, name: `Apollo`, points: 1719 },
-  { symbol: `Arachne`, name: `Arachne`, points: 1879 },
-  { symbol: `Ares`, name: `Ares`, points: 2554 },
-  { symbol: `Artemis`, name: `Artemis`, points: 1937 },
-  { symbol: `Athena`, name: `Athena`, points: 2907 },
-  { symbol: `Chaos`, name: `Chaos`, points: 6516 },
-  { symbol: `Charon`, name: `Charon`, points: 1764 },
-  { symbol: `Chronos`, name: `Chronos`, points: 6451 },
-  { symbol: `Circe`, name: `Circe`, points: 1779 },
-  { symbol: `Demeter`, name: `Demeter`, points: 3069 },
-  { symbol: `Dionysus`, name: `Dionysus`, points: 1653 },
-  { symbol: `Dora`, name: `Dora`, points: 340 },
-  { symbol: `Echo`, name: `Echo`, points: 1378 },
-  { symbol: `Hecate`, name: `Hecate`, points: 3665 },
-  { symbol: `Hephaestus`, name: `Hephaestus`, points: 1674 },
-  { symbol: `Hera`, name: `Hera`, points: 3569 },
-  { symbol: `Heracles`, name: `Heracles`, points: 1239 },
-  { symbol: `Hermes`, name: `Hermes`, points: 1610 },
-  { symbol: `Hestia`, name: `Hestia`, points: 943 },
-  { symbol: `Icarus`, name: `Icarus`, points: 1226 },
-  { symbol: `Medea`, name: `Medea`, points: 1597 },
-  { symbol: `Moros`, name: `Moros`, points: 1097 },
-  { symbol: `Narcissus`, name: `Narcissus`, points: 1224 },
-  { symbol: `Nemesis`, name: `Nemesis`, points: 1391 },
-  { symbol: `Odysseus`, name: `Odysseus`, points: 1288 },
-  { symbol: `Poseidon`, name: `Poseidon`, points: 3541 },
-  { symbol: `Selene`, name: `Selene`, points: 1572 },
-  { symbol: `Skelly`, name: `Skelly`, points: 666 },
-  { symbol: `Zagreus`, name: `Zagreus`, points: 1467 },
-  { symbol: `Zeus`, name: `Zeus`, points: 4598 },
+  { symbol: `Aphrodite`, name: `Aphrodite`, points: () => randomInt(1506, 1916) },
+  { symbol: `Apollo`, name: `Apollo`, points: () => randomInt(1513, 1925) },
+  { symbol: `Arachne`, name: `Arachne`, points: () => randomInt(1654, 2104) },
+  { symbol: `Ares`, name: `Ares`, points: () => randomInt(2248, 2860) },
+  { symbol: `Artemis`, name: `Artemis`, points: () => randomInt(1705, 2169) },
+  { symbol: `Athena`, name: `Athena`, points: () => randomInt(2558, 2999) },
+  { symbol: `Chaos`, name: `Chaos`, points: () => randomInt(5734, 7298) },
+  { symbol: `Charon`, name: `Charon`, points: () => randomInt(1552, 1976) },
+  { symbol: `Chronos`, name: `Chronos`, points: () => randomInt(5677, 7225) },
+  { symbol: `Circe`, name: `Circe`, points: () => randomInt(1566, 1992) },
+  { symbol: `Demeter`, name: `Demeter`, points: () => randomInt(3000, 3437) },
+  { symbol: `Dionysus`, name: `Dionysus`, points: () => randomInt(1500, 1851) },
+  { symbol: `Dora`, name: `Dora`, points: () => randomInt(299, 381) },
+  { symbol: `Echo`, name: `Echo`, points: () => randomInt(1213, 1499) },
+  { symbol: `Hecate`, name: `Hecate`, points: () => randomInt(3225, 4105) },
+  { symbol: `Hephaestus`, name: `Hephaestus`, points: () => randomInt(1500, 1875) },
+  { symbol: `Hera`, name: `Hera`, points: () => randomInt(3141, 3997) },
+  { symbol: `Heracles`, name: `Heracles`, points: () => randomInt(1090, 1388) },
+  { symbol: `Hermes`, name: `Hermes`, points: () => randomInt(1500, 1803) },
+  { symbol: `Hestia`, name: `Hestia`, points: () => randomInt(830, 1056) },
+  { symbol: `Icarus`, name: `Icarus`, points: () => randomInt(1079, 1373) },
+  { symbol: `Medea`, name: `Medea`, points: () => randomInt(1500, 1789) },
+  { symbol: `Moros`, name: `Moros`, points: () => randomInt(965, 1229) },
+  { symbol: `Narcissus`, name: `Narcissus`, points: () => randomInt(1077, 1371) },
+  { symbol: `Nemesis`, name: `Nemesis`, points: () => randomInt(1224, 1499) },
+  { symbol: `Odysseus`, name: `Odysseus`, points: () => randomInt(1133, 1443) },
+  { symbol: `Poseidon`, name: `Poseidon`, points: () => randomInt(3116, 3966) },
+  { symbol: `Selene`, name: `Selene`, points: () => randomInt(1500, 1761) },
+  { symbol: `Skelly`, name: `Skelly`, points: () => randomInt(586, 699) },
+  { symbol: `Zagreus`, name: `Zagreus`, points: () => randomInt(1291, 1499) },
+  { symbol: `Zeus`, name: `Zeus`, points: () => randomInt(4046, 4999) },
   //
-  { symbol: `Raven`, name: `Raki`, points: 7127 },
-  { symbol: `Frog`, name: `Frinos`, points: 7387 },
-  { symbol: `Polecat`, name: `Gale`, points: 7080 },
-  { symbol: `Hound`, name: `Hecuba`, points: 7565 },
-  { symbol: `Cat`, name: `Toula`, points: 7300 },
-  { symbol: `cMelinoe Staff`, name: `Melinoe Staff`, points: 880 },
-  { symbol: `cCirce`, name: `Circe`, points: 979 },
-  { symbol: `cMomus`, name: `Momus`, points: 1292 },
-  { symbol: `cAnubis`, name: `Anubis`, points: 1147 },
-  { symbol: `cMelinoe Blades`, name: `Melinoe Blades`, points: 824 },
-  { symbol: `cArtemis`, name: `Artemis`, points: 1380 },
-  { symbol: `cPan`, name: `Pan`, points: 1017 },
-  { symbol: `cMorrigan`, name: `Morrigan`, points: 1011 },
-  { symbol: `cMelinoe Axe`, name: `Melinoe Axe`, points: 884 },
-  { symbol: `cCharon`, name: `Charon`, points: 929 },
-  { symbol: `cThanatos`, name: `Thanatos`, points: 1124 },
-  { symbol: `cNergal`, name: `Nergal`, points: 1020 },
-  { symbol: `cMelinoe Flames`, name: `Melinoe Flames`, points: 829 },
-  { symbol: `cEos`, name: `Eos`, points: 1025 },
-  { symbol: `cMoros`, name: `Moros`, points: 948 },
-  { symbol: `cSupay`, name: `Supay`, points: 1071 },
-  { symbol: `cMelinoe Skull`, name: `Melinoe Skull`, points: 858 },
-  { symbol: `cMedea`, name: `Medea`, points: 946 },
-  { symbol: `cPersephone`, name: `Persephone`, points: 3833 },
-  { symbol: `cHel`, name: `Hel`, points: 1094 },
-  { symbol: `cMelinoe Coat`, name: `Melinoe Coat`, points: 845 },
-  { symbol: `cNyx`, name: `Nyx`, points: 3429 },
-  { symbol: `cSelene`, name: `Selene`, points: 934 },
-  { symbol: `cShiva`, name: `Shiva`, points: 1018 },
+  { symbol: `Raven`, name: `Raki`, points: () => randomInt(6272, 7982) },
+  { symbol: `Frog`, name: `Frinos`, points: () => randomInt(6501, 8273) },
+  { symbol: `Polecat`, name: `Gale`, points: () => randomInt(6230, 7930) },
+  { symbol: `Hound`, name: `Hecuba`, points: () => randomInt(6657, 8473) },
+  { symbol: `Cat`, name: `Toula`, points: () => randomInt(6424, 8176) },
+  { symbol: `cMelinoe Staff`, name: `Melinoe Staff`, points: () => randomInt(774, 986) },
+  { symbol: `cCirce`, name: `Circe`, points: () => randomInt(862, 1096) },
+  { symbol: `cMomus`, name: `Momus`, points: () => randomInt(1137, 1447) },
+  { symbol: `cAnubis`, name: `Anubis`, points: () => randomInt(1009, 1285) },
+  { symbol: `cMelinoe Blades`, name: `Melinoe Blades`, points: () => randomInt(725, 923) },
+  { symbol: `cArtemis`, name: `Artemis`, points: () => randomInt(1214, 1499) },
+  { symbol: `cPan`, name: `Pan`, points: () => randomInt(895, 1139) },
+  { symbol: `cMorrigan`, name: `Morrigan`, points: () => randomInt(890, 1132) },
+  { symbol: `cMelinoe Axe`, name: `Melinoe Axe`, points: () => randomInt(778, 990) },
+  { symbol: `cCharon`, name: `Charon`, points: () => randomInt(818, 1040) },
+  { symbol: `cThanatos`, name: `Thanatos`, points: () => randomInt(989, 1259) },
+  { symbol: `cNergal`, name: `Nergal`, points: () => randomInt(898, 1142) },
+  { symbol: `cMelinoe Flames`, name: `Melinoe Flames`, points: () => randomInt(730, 928) },
+  { symbol: `cEos`, name: `Eos`, points: () => randomInt(902, 1148) },
+  { symbol: `cMoros`, name: `Moros`, points: () => randomInt(834, 1062) },
+  { symbol: `cSupay`, name: `Supay`, points: () => randomInt(942, 1200) },
+  { symbol: `cMelinoe Skull`, name: `Melinoe Skull`, points: () => randomInt(755, 961) },
+  { symbol: `cMedea`, name: `Medea`, points: () => randomInt(832, 1060) },
+  { symbol: `cPersephone`, name: `Persephone`, points: () => randomInt(3373, 4293) },
+  { symbol: `cHel`, name: `Hel`, points: () => randomInt(963, 1225) },
+  { symbol: `cMelinoe Coat`, name: `Melinoe Coat`, points: () => randomInt(744, 946) },
+  { symbol: `cNyx`, name: `Nyx`, points: () => randomInt(3018, 3840) },
+  { symbol: `cSelene`, name: `Selene`, points: () => randomInt(822, 1046) },
+  { symbol: `cShiva`, name: `Shiva`, points: () => randomInt(896, 1140) },
   { symbol: `c0`, name: `Empty Card`, points: 99 },
-  { symbol: `c1`, name: `Sorceress`, points: 771 },
-  { symbol: `c2`, name: `Wayward`, points: 828 },
-  { symbol: `c3`, name: `Huntress`, points: 801 },
-  { symbol: `c4`, name: `Eternity`, points: 910 },
-  { symbol: `c5`, name: `Moon`, points: 949 },
-  { symbol: `c6`, name: `Furies`, points: 964 },
-  { symbol: `c7`, name: `Persistence`, points: 1017 },
-  { symbol: `c8`, name: `Messenger`, points: 1079 },
-  { symbol: `c9`, name: `Unseen`, points: 1080 },
-  { symbol: `c10`, name: `Night`, points: 1104 },
-  { symbol: `c11`, name: `Swift`, points: 1115 },
-  { symbol: `c12`, name: `Death`, points: 1214 },
-  { symbol: `c13`, name: `Centaur`, points: 1263 },
-  { symbol: `c14`, name: `Origination`, points: 1260 },
-  { symbol: `c15`, name: `Lovers`, points: 1313 },
-  { symbol: `c16`, name: `Enchantress`, points: 1329 },
-  { symbol: `c17`, name: `Boatman`, points: 1349 },
-  { symbol: `c18`, name: `Artificer`, points: 1323 },
-  { symbol: `c19`, name: `Excellence`, points: 1414 },
-  { symbol: `c20`, name: `Queen`, points: 1554 },
-  { symbol: `c21`, name: `Fates`, points: 1690 },
-  { symbol: `c22`, name: `Champions`, points: 1801 },
-  { symbol: `c23`, name: `Strength`, points: 1884 },
-  { symbol: `c24`, name: `Divinity`, points: 2233 },
-  { symbol: `c25`, name: `Judgment`, points: 2816 },
+  { symbol: `c1`, name: `Sorceress`, points: () => randomInt(700, 864) },
+  { symbol: `c2`, name: `Wayward`, points: () => randomInt(729, 927) },
+  { symbol: `c3`, name: `Huntress`, points: () => randomInt(705, 897) },
+  { symbol: `c4`, name: `Eternity`, points: () => randomInt(801, 1019) },
+  { symbol: `c5`, name: `Moon`, points: () => randomInt(835, 1063) },
+  { symbol: `c6`, name: `Furies`, points: () => randomInt(848, 1080) },
+  { symbol: `c7`, name: `Persistence`, points: () => randomInt(895, 1139) },
+  { symbol: `c8`, name: `Messenger`, points: () => randomInt(950, 1208) },
+  { symbol: `c9`, name: `Unseen`, points: () => randomInt(950, 1210) },
+  { symbol: `c10`, name: `Night`, points: () => randomInt(972, 1236) },
+  { symbol: `c11`, name: `Swift`, points: () => randomInt(981, 1249) },
+  { symbol: `c12`, name: `Death`, points: () => randomInt(1068, 1360) },
+  { symbol: `c13`, name: `Centaur`, points: () => randomInt(1111, 1415) },
+  { symbol: `c14`, name: `Origination`, points: () => randomInt(1109, 1411) },
+  { symbol: `c15`, name: `Lovers`, points: () => randomInt(1155, 1471) },
+  { symbol: `c16`, name: `Enchantress`, points: () => randomInt(1170, 1488) },
+  { symbol: `c17`, name: `Boatman`, points: () => randomInt(1187, 1499) },
+  { symbol: `c18`, name: `Artificer`, points: () => randomInt(1164, 1482) },
+  { symbol: `c19`, name: `Excellence`, points: () => randomInt(1244, 1499) },
+  { symbol: `c20`, name: `Queen`, points: () => randomInt(1500, 1740) },
+  { symbol: `c21`, name: `Fates`, points: () => randomInt(1500, 1893) },
+  { symbol: `c22`, name: `Champions`, points: () => randomInt(1585, 2017) },
+  { symbol: `c23`, name: `Strength`, points: () => randomInt(1658, 2110) },
+  { symbol: `c24`, name: `Divinity`, points: () => randomInt(1965, 2501) },
+  { symbol: `c25`, name: `Judgment`, points: () => randomInt(2478, 2999) },
 ];
 
 // Number of reels, laid out as a GRID_COLS x GRID_ROWS grid.
@@ -171,23 +185,23 @@ const COLUMN_STAGGER_MS = 350;
 // your icon set.
 const POINTS_TIERS = [
   {
-    min: 5000,
+    min: 6000,
     classes: "text-amber-300 bg-gradient-to-tr to-[#0a0a0a] from-amber-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
   },
   {
-    min: 3000,
+    min: 4500,
     classes: "text-red-300 bg-gradient-to-tr to-[#0a0a0a] from-red-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
   },
   {
-    min: 1500,
+    min: 3000,
     classes: "text-purple-300 bg-gradient-to-tr to-[#0a0a0a] from-purple-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
   },
   {
-    min: 700,
+    min: 1000,
     classes: "text-blue-300 bg-gradient-to-tr to-[#0a0a0a] from-blue-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
   },
   {
-    min: 100,
+    min: 1,
     classes: "text-slate-300 bg-gradient-to-tr to-[#0a0a0a] from-slate-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]",
   },
 ];
@@ -202,10 +216,10 @@ function tierClasses(points) {
 // Turns a landed reel result into a score: the sum of every landed
 // icon's point value — unless every reel matches, which pays out the
 // max, 99999.
-function scoreForResult(icons, indices) {
-  const allMatch = indices.every((idx) => idx === indices[0]);
+function scoreForResult(landed) {
+  const allMatch = landed.every((l) => l.index === landed[0].index);
   if (allMatch) return 99999;
-  const raw = indices.reduce((sum, idx) => sum + icons[idx].points, 0);
+  const raw = landed.reduce((sum, l) => sum + l.points, 0);
   return Math.max(0, Math.min(99999, raw));
 }
 
@@ -375,7 +389,7 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
           duration: 0.5,
           ease: "back.out(2)",
           onComplete: () => {
-            landedRef.current[reelIndex] = targetIndex;
+            landedRef.current[reelIndex] = { index: targetIndex, points: resolvePoints(icons[targetIndex].points) };
             onLanded();
           },
         },
@@ -412,19 +426,19 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
       chargeReel(i, () => {
         completedRef.current += 1;
         if (completedRef.current === REEL_COUNT) {
-          const indices = landedRef.current;
-          const points = scoreForResult(icons, indices);
-          const allMatch = indices.every((idx) => idx === indices[0]);
+          const landed = landedRef.current; // [{ index, points }, ...] — points already resolved once, at landing time
+          const points = scoreForResult(landed);
+          const allMatch = landed.every((l) => l.index === landed[0].index);
 
-          setMessage(allMatch ? `Jackpot — all ${icons[indices[0]].name}` : "");
+          setMessage(allMatch ? `Jackpot — all ${icons[landed[0].index].name}` : "");
 
           // Points are calculated — fill in the name rows; the
           // slide-up animation runs in the layout effect above once
           // these are rendered (before the browser paints).
           setResultNames(
-            indices.map((idx) => ({
-              name: icons[idx].name,
-              points: icons[idx].points,
+            landed.map((l) => ({
+              name: icons[l.index].name,
+              points: l.points,
             })),
           );
 
@@ -435,11 +449,11 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
           // final number in one continuous tween.
           gsap.killTweensOf(scoreProxyRef.current);
           const scoreTl = gsap.timeline();
-          indices.forEach((idx, revealIndex) => {
+          landed.forEach((l, revealIndex) => {
             scoreTl.to(
               scoreProxyRef.current,
               {
-                value: `+=${icons[idx].points}`,
+                value: `+=${l.points}`,
                 duration: 0.5,
                 ease: "power2.out",
                 onUpdate: () => {
