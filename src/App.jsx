@@ -279,13 +279,16 @@ export default function App() {
                     .sort((a, b) => a.nam.localeCompare(b.nam))
                     .map((obj, index) => (
                       <div
-                        className={`rounded font-[Ale] border border-white/10 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
+                        className={`rounded rounded-r-xl font-[Ale] bg-linear-to-r from-black via-black/90 to-black/50 border border-white/10 p-2 flex items-center gap-2 w-full max-w-40 md:max-w-50 relative`}
                         key={index}
                       >
-                        <img
-                          src="/banner3.png"
+                        <video
+                          autoPlay={true}
+                          muted={true}
+                          loop={true}
+                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1428438925021548544/video"
                           alt="Hades"
-                          className="h-full w-full object-cover object-center scale-x-[-1] top-0 right-0 absolute -z-10 brightness-75 aura aura-dual text-blue-900 duration-4000"
+                          className="h-full w-full object-cover object-right top-0 right-0 absolute -z-10"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
