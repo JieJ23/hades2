@@ -91,6 +91,26 @@ function resolvePoints(points) {
 }
 
 function digitTierClasses(points) {
+  if (points >= 200000) {
+    return {
+      text: "text-white",
+      glow: "[text-shadow:0_0_18px_rgba(255,255,255,1),0_0_36px_rgba(165,243,252,0.85),0_0_54px_rgba(232,121,249,0.6),0_0_72px_rgba(252,211,77,0.4)]",
+      border: "border-white/80",
+      bg: "bg-[linear-gradient(180deg,#1a0b24,#2a1030_25%,#0b1f2e_50%,#2a1030_75%,#1a0b24)]",
+      shadow:
+        "shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.92),inset_0_-4px_6px_-3px_rgba(0,0,0,0.92),0_0_30px_rgba(255,255,255,0.6),0_0_50px_rgba(232,121,249,0.35)]",
+    };
+  }
+  if (points >= 150000) {
+    return {
+      text: "text-cyan-200",
+      glow: "[text-shadow:0_0_17px_rgba(165,243,252,1),0_0_34px_rgba(103,232,249,0.7),0_0_50px_rgba(255,255,255,0.35)]",
+      border: "border-cyan-200/80",
+      bg: "bg-[linear-gradient(180deg,#052024,#0a3a40_45%,#052024)]",
+      shadow:
+        "shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.9),inset_0_-4px_6px_-3px_rgba(0,0,0,0.9),0_0_26px_rgba(165,243,252,0.55)]",
+    };
+  }
   if (points >= 100000) {
     return {
       text: "text-amber-300",
@@ -888,7 +908,6 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
   const chargeTimeoutsRef = useRef([]);
 
   const [spinning, setSpinning] = useState(false);
-  const [message, setMessage] = useState("Press spin to begin");
   const [displayPoints, setDisplayPoints] = useState(0);
   // The icon currently shown in each reel cell — flickers rapidly
   // while that reel is charging, then locks to the landed icon.
@@ -904,6 +923,13 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
   // triggered yet.
   const [bonusResults, setBonusResults] = useState([]);
   const bonusRefs = useRef([]);
+  // Pending gsap.delayedCall handles from the *current* spin's bonus
+  // reveal sequence (see spin() below). These fire well after
+  // spinning flips back to false, so if the player fires off another
+  // spin while they're still queued, they must be killed — otherwise
+  // a stale delayedCall lands mid-way through the next spin and
+  // appends the previous spin's bonus card (and score bump) onto it.
+  const bonusTimersRef = useRef([]);
 
   const landedRef = useRef(Array.from({ length: REEL_COUNT }, () => null));
   const completedRef = useRef(0);
@@ -974,6 +1000,7 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
     return () => {
       flickerIntervalsRef.current.forEach((id) => clearInterval(id));
       chargeTimeoutsRef.current.forEach((id) => clearTimeout(id));
+      bonusTimersRef.current.forEach((t) => t.kill());
     };
   }, []);
 
@@ -1097,7 +1124,6 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
   const spin = () => {
     if (spinning || onCooldown) return;
     setSpinning(true);
-    setMessage("");
     landedRef.current = Array.from({ length: REEL_COUNT }, () => null);
     completedRef.current = 0;
     consumeSpin();
@@ -1108,7 +1134,16 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
     // resizes or jumps.
     setResultNames(Array.from({ length: REEL_COUNT }, () => null));
 
-    // Clear out any bonus cards from the previous spin.
+    // Clear out any bonus cards from the previous spin — and, just as
+    // importantly, kill any of that spin's bonus delayedCalls that
+    // haven't fired yet. spinning flips back to false as soon as the
+    // reels land, well before the staggered bonus reveals below have
+    // had time to run, so it's entirely possible to smash Spin again
+    // while they're still pending. Without this, a stale callback
+    // fires mid-way through the new spin and appends the old spin's
+    // bonus card (plus its score bump) onto the new one.
+    bonusTimersRef.current.forEach((t) => t.kill());
+    bonusTimersRef.current = [];
     setBonusResults([]);
     bonusRefs.current = [];
 
@@ -1131,8 +1166,6 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
           const landed = landedRef.current; // [{ index, points }, ...] — points already resolved once, at landing time
           const points = scoreForResult(landed);
           const allMatch = landed.every((l) => l.index === landed[0].index);
-
-          setMessage(allMatch ? `Jackpot — all ${icons[landed[0].index].name}` : "");
 
           // Points are calculated — fill in the name rows; the
           // slide-up animation runs in the layout effect above once
@@ -1197,7 +1230,7 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
           if (bonusEntries.length) {
             const cardsRevealTotalS = (REEL_COUNT - 1) * CARD_REVEAL_STAGGER_S + CARD_REVEAL_DURATION_S;
             bonusEntries.forEach((entry, revealIndex) => {
-              gsap.delayedCall(cardsRevealTotalS + revealIndex * BONUS_REVEAL_STAGGER_S, () => {
+              const timer = gsap.delayedCall(cardsRevealTotalS + revealIndex * BONUS_REVEAL_STAGGER_S, () => {
                 setBonusResults((prev) => [...prev, entry]);
                 gsap.to(scoreProxyRef.current, {
                   value: `+=${entry.points}`,
@@ -1208,6 +1241,7 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
                   },
                 });
               });
+              bonusTimersRef.current.push(timer);
             });
           }
 
@@ -1222,7 +1256,7 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
       <div className="flex items-center justify-center font-[Ale] text-[#dfe7e6]">
         <div className="flex flex-col items-center gap-4 w-full max-w-400">
           <div className="flex items-center gap-3.5 font-[Ale] font-bold text-2xl tracking-[6px] uppercase text-teal-400 [text-shadow:0_0_14px_rgba(45,212,191,0.35),0_0_30px_rgba(45,212,191,0.25)]">
-            <span>H2Cross-Slot</span>
+            <span>H2_Cross_Slot</span>
           </div>
           <div className="flex gap-1.5" aria-label={`Points ${displayPoints}`}>
             {(() => {
