@@ -559,18 +559,25 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
           // final number in one continuous tween.
           gsap.killTweensOf(scoreProxyRef.current);
           const scoreTl = gsap.timeline();
+          // duration is deliberately equal to the stagger below (not
+          // larger) — each tween must fully finish before the next
+          // one starts writing to the same scoreProxyRef.value
+          // property, or GSAP's per-frame absolute writes cause the
+          // later tween to clobber the earlier one's contribution
+          // mid-flight, undercounting the final total.
+          const SCORE_STEP_MS = 0.1;
           landed.forEach((l, revealIndex) => {
             scoreTl.to(
               scoreProxyRef.current,
               {
                 value: `+=${l.points}`,
-                duration: 0.5,
+                duration: SCORE_STEP_MS,
                 ease: "power2.out",
                 onUpdate: () => {
                   setDisplayPoints(Math.min(99999, Math.round(scoreProxyRef.current.value)));
                 },
               },
-              revealIndex * 0.1, // same stagger the name-card reveal uses
+              revealIndex * SCORE_STEP_MS, // same stagger the name-card reveal uses
             );
           });
           if (allMatch) {
