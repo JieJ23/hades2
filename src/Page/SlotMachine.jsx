@@ -19,9 +19,13 @@ import PageBlock from "../Block/PageBlock";
 
 function auraTextClass(points) {
   if (points == null) return null;
-  if (points >= 6000) return "text-amber-500";
-  if (points >= 4500) return "text-red-500";
+  if (points >= 10000) return "text-amber-500";
+  if (points >= 8000) return "text-orange-500";
+  if (points >= 6000) return "text-red-500";
+  if (points >= 4500) return "text-fuchsia-500";
   if (points >= 3000) return "text-purple-500";
+  if (points >= 1500) return "text-emerald-500";
+  // if (points >= 750) return "text-blue-500";
   return null;
 }
 
@@ -98,6 +102,50 @@ function resolvePoints(points) {
 const DEFAULT_ICONS = [
   { symbol: `Melinoe`, name: `Melinoe`, points: () => randomInt(5833, 7423) },
   //
+  { symbol: `Silver Wheel`, name: `Silver Wheel`, points: () => randomInt(600, 1200) },
+  { symbol: `Knuckle Bones`, name: `Knuckle Bones`, points: () => randomInt(600, 1200) },
+  { symbol: `Luckier Tooth`, name: `Luckier Tooth`, points: () => randomInt(600, 1200) },
+  { symbol: `Ghost Onion`, name: `Ghost Onion`, points: () => randomInt(600, 1200) },
+  { symbol: `Evil Eye`, name: `Evil Eye`, points: () => randomInt(600, 1200) },
+  { symbol: `Engraved Pin`, name: `Engraved Pin`, points: () => randomInt(600, 1200) },
+  { symbol: `Discordant Bell`, name: `Discordant Bell`, points: () => randomInt(600, 1200) },
+  { symbol: `Gold Purse`, name: `Gold Purse`, points: () => randomInt(600, 1200) },
+  { symbol: `Metallic Droplet`, name: `Metallic Droplet`, points: () => randomInt(600, 1200) },
+  { symbol: `White Antler`, name: `White Antler`, points: () => randomInt(600, 1200) },
+  { symbol: `Moon Beam`, name: `Moon Beam`, points: () => randomInt(600, 1200) },
+  { symbol: `Cloud Bangle`, name: `Cloud Bangle`, points: () => randomInt(600, 1200) },
+  { symbol: `Iridescent Fan`, name: `Iridescent Fan`, points: () => randomInt(600, 1200) },
+  { symbol: `Vivid Sea`, name: `Vivid Sea`, points: () => randomInt(600, 1200) },
+  { symbol: `Barley Sheaf`, name: `Barley Sheaf`, points: () => randomInt(600, 1200) },
+  { symbol: `Harmonic Photon`, name: `Harmonic Photon`, points: () => randomInt(600, 1200) },
+  { symbol: `Beautiful Mirror`, name: `Beautiful Mirror`, points: () => randomInt(600, 1200) },
+  { symbol: `Adamant Shard`, name: `Adamant Shard`, points: () => randomInt(600, 1200) },
+  { symbol: `Everlasting Ember`, name: `Everlasting Ember`, points: () => randomInt(600, 1200) },
+  { symbol: `Lion Fang`, name: `Lion Fang`, points: () => randomInt(600, 1200) },
+  { symbol: `Blackened Fleece`, name: `Blackened Fleece`, points: () => randomInt(600, 1200) },
+  { symbol: `Crystal Figurine`, name: `Crystal Figurine`, points: () => randomInt(600, 1200) },
+  { symbol: `Silken Sash`, name: `Silken Sash`, points: () => randomInt(600, 1200) },
+  { symbol: `Aromatic Phial`, name: `Aromatic Phial`, points: () => randomInt(600, 1200) },
+  { symbol: `Concave Stone`, name: `Concave Stone`, points: () => randomInt(600, 1200) },
+  { symbol: `Experimental Hammer`, name: `Experimental Hammer`, points: () => randomInt(600, 1200) },
+  { symbol: `Transcendent Embryo`, name: `Transcendent Embryo`, points: () => randomInt(600, 1200) },
+  { symbol: `Sword Hilt`, name: `Sword Hilt`, points: () => randomInt(600, 1200) },
+  { symbol: `Gorgon Amulet`, name: `Gorgon Amulet`, points: () => randomInt(600, 1200) },
+  { symbol: `Fig Leaf`, name: `Fig Leaf`, points: () => randomInt(600, 1200) },
+  { symbol: `Calling Card`, name: `Calling Card`, points: () => randomInt(600, 1200) },
+  { symbol: `Jeweled Pom`, name: `Jeweled Pom`, points: () => randomInt(600, 1200) },
+  { symbol: `Time Piece`, name: `Time Piece`, points: () => randomInt(600, 1200) },
+  { symbol: `Water`, name: `Water`, points: () => randomInt(4000, 8000) },
+  { symbol: `Earth`, name: `Earth`, points: () => randomInt(4000, 8000) },
+  { symbol: `Fire`, name: `Fire`, points: () => randomInt(4000, 8000) },
+  { symbol: `Aether`, name: `Aether`, points: () => randomInt(4000, 8000) },
+  { symbol: `Air`, name: `Air`, points: () => randomInt(4000, 8000) },
+  { symbol: `Armor`, name: `Armor`, points: () => randomInt(1000, 2000) },
+  { symbol: `Sheep`, name: `Sheep`, points: () => randomInt(6600, 12009) },
+  { symbol: `Onion`, name: `Onion`, points: () => randomInt(1, 9999) },
+  { symbol: `Pom`, name: `Pom`, points: () => randomInt(10000, 10001) },
+
+  //
   { symbol: `Debt`, name: `Debt`, points: () => randomInt(531, 675) },
   { symbol: `Denial`, name: `Denial`, points: () => randomInt(611, 699) },
   { symbol: `Fangs`, name: `Fangs`, points: () => randomInt(559, 699) },
@@ -112,8 +160,8 @@ const DEFAULT_ICONS = [
   { symbol: `Rivals`, name: `Rivals`, points: () => randomInt(700, 796) },
   { symbol: `Scars`, name: `Scars`, points: () => randomInt(594, 699) },
   { symbol: `Shadow`, name: `Shadow`, points: () => randomInt(700, 844) },
-  { symbol: `Time`, name: `Time`, points: () => randomInt(700, 788) },
-  { symbol: `Void`, name: `Void`, points: () => randomInt(700, 787) },
+  { symbol: `Time`, name: `Time`, points: () => randomInt(7000, 7880) },
+  { symbol: `Void`, name: `Void`, points: () => randomInt(7000, 7870) },
   { symbol: `Wards`, name: `Wards`, points: () => randomInt(700, 796) },
   //
   { symbol: `Aphrodite`, name: `Aphrodite`, points: () => randomInt(1506, 1916) },
@@ -148,13 +196,13 @@ const DEFAULT_ICONS = [
   { symbol: `Zagreus`, name: `Zagreus`, points: () => randomInt(1291, 1499) },
   { symbol: `Zeus`, name: `Zeus`, points: () => randomInt(4046, 4999) },
   //
-  { symbol: `Raven`, name: `Raki`, points: () => randomInt(6272, 7982) },
-  { symbol: `Frog`, name: `Frinos`, points: () => randomInt(6501, 8273) },
-  { symbol: `Polecat`, name: `Gale`, points: () => randomInt(6230, 7930) },
-  { symbol: `Hound`, name: `Hecuba`, points: () => randomInt(6657, 8473) },
-  { symbol: `Cat`, name: `Toula`, points: () => randomInt(6424, 8176) },
+  { symbol: `Raven`, name: `Raki`, points: () => randomInt(9000, 9999) },
+  { symbol: `Frog`, name: `Frinos`, points: () => randomInt(9000, 9999) },
+  { symbol: `Polecat`, name: `Gale`, points: () => randomInt(9000, 9999) },
+  { symbol: `Hound`, name: `Hecuba`, points: () => randomInt(9000, 9999) },
+  { symbol: `Cat`, name: `Toula`, points: () => randomInt(9000, 9999) },
 
-  { symbol: `cMelinoe Staff`, name: `Melinoe Staff`, points: () => randomInt(774, 986) },
+  { symbol: `cMelinoe Staff`, name: `Melinoe Staff`, points: () => randomInt(7740, 9860) },
   { symbol: `cCirce`, name: `Circe`, points: () => randomInt(862, 1096) },
   { symbol: `cMomus`, name: `Momus`, points: () => randomInt(1137, 1447) },
   { symbol: `cAnubis`, name: `Anubis`, points: () => randomInt(1009, 1285) },
@@ -204,7 +252,7 @@ const DEFAULT_ICONS = [
   { symbol: `c22`, name: `Champions`, points: () => randomInt(1585, 2017) },
   { symbol: `c23`, name: `Strength`, points: () => randomInt(1658, 2110) },
   { symbol: `c24`, name: `Divinity`, points: () => randomInt(1965, 2501) },
-  { symbol: `c25`, name: `Judgment`, points: () => randomInt(2478, 2999) },
+  { symbol: `c25`, name: `Judgment`, points: () => randomInt(5000, 6000) },
 ];
 
 // Number of reels, laid out as a GRID_COLS x GRID_ROWS grid.
@@ -234,19 +282,33 @@ const COLUMN_STAGGER_MS = 350;
 // your icon set.
 const POINTS_TIERS = [
   {
-    min: 6000,
+    min: 10000,
     classes: "text-amber-300 bg-gradient-to-tr to-[#0a0a0a] from-amber-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
   },
   {
-    min: 4500,
+    min: 8000,
+    classes: "text-orange-300 bg-gradient-to-tr to-[#0a0a0a] from-orange-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
+  },
+  {
+    min: 6000,
     classes: "text-red-300 bg-gradient-to-tr to-[#0a0a0a] from-red-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
+  },
+  {
+    min: 4500,
+    classes:
+      "text-fuchsia-300 bg-gradient-to-tr to-[#0a0a0a] from-fuchsia-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
   },
   {
     min: 3000,
     classes: "text-purple-300 bg-gradient-to-tr to-[#0a0a0a] from-purple-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
   },
   {
-    min: 1000,
+    min: 1500,
+    classes:
+      "text-emerald-300 bg-gradient-to-tr to-[#0a0a0a] from-emerald-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
+  },
+  {
+    min: 750,
     classes: "text-blue-300 bg-gradient-to-tr to-[#0a0a0a] from-blue-900 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]",
   },
   {

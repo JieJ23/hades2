@@ -300,12 +300,13 @@ export default function App() {
                           key={index}
                         >
                           <video
+                            preload="none"
                             src="https://cdn.discordapp.com/media/v1/collectibles-shop/1420045363141672971/video"
                             autoPlay
                             loop
                             muted
                             playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-center object-right p-0.5"
+                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -348,12 +349,13 @@ export default function App() {
                             key={index}
                           >
                             <video
+                              preload="none"
                               src="https://cdn.discordapp.com/media/v1/collectibles-shop/1436367668964884690/video"
                               autoPlay
                               loop
                               muted
                               playsInline
-                              className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-center object-right p-0.5"
+                              className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5"
                             />
                             <div className={`relative w-10 h-10 shrink-0`}>
                               <img
@@ -394,9 +396,14 @@ export default function App() {
                         className={`rounded font-[Ale] text-yellow-300 bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                         key={index}
                       >
-                        <img
-                          src="/yellow.png"
-                          className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                        <video
+                          preload="none"
+                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-100"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -435,9 +442,14 @@ export default function App() {
                         className={`rounded font-[Ale] text-yellow-300 bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                         key={index}
                       >
-                        <img
-                          src="/yellow.png"
-                          className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                        <video
+                          preload="none"
+                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-100"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -477,9 +489,14 @@ export default function App() {
                           className={`rounded font-[Ale] text-yellow-300 bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                           key={index}
                         >
-                          <img
-                            src="/yellow.png"
-                            className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                          <video
+                            preload="none"
+                            src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-100"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -519,9 +536,14 @@ export default function App() {
                         className={`rounded font-[Ale] text-yellow-300 bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                         key={index}
                       >
-                        <img
-                          src="/yellow.png"
-                          className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                        <video
+                          preload="none"
+                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-100"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -560,9 +582,14 @@ export default function App() {
                         className={`rounded font-[Ale] text-yellow-300 bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                         key={index}
                       >
-                        <img
-                          src="/yellow.png"
-                          className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                        <video
+                          preload="none"
+                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-100"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -604,12 +631,13 @@ export default function App() {
                           key={index}
                         >
                           <video
+                            preload="none"
                             src="https://cdn.discordapp.com/media/v1/collectibles-shop/1447609133011304529/video"
                             autoPlay
                             loop
                             muted
                             playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-center object-right p-0.5"
+                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -652,12 +680,13 @@ export default function App() {
                             key={index}
                           >
                             <video
+                              preload="none"
                               src="https://cdn.discordapp.com/media/v1/collectibles-shop/1436367668964884690/video"
                               autoPlay
                               loop
                               muted
                               playsInline
-                              className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-center object-right p-0.5"
+                              className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5"
                             />
                             <div className={`relative w-10 h-10 shrink-0`}>
                               <img
@@ -698,9 +727,14 @@ export default function App() {
                         className={`rounded text-green-300 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                         key={index}
                       >
-                        <img
-                          src="/green.png"
-                          className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                        <video
+                          preload="none"
+                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-140"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -739,9 +773,14 @@ export default function App() {
                         className={`rounded text-green-300 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                         key={index}
                       >
-                        <img
-                          src="/green.png"
-                          className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                        <video
+                          preload="none"
+                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-140"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -781,9 +820,14 @@ export default function App() {
                           className={`rounded font-[Ale] text-green-300 bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                           key={index}
                         >
-                          <img
-                            src="/green.png"
-                            className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                          <video
+                            preload="none"
+                            src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-140"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -823,9 +867,14 @@ export default function App() {
                         className={`rounded text-green-300 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                         key={index}
                       >
-                        <img
-                          src="/green.png"
-                          className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                        <video
+                          preload="none"
+                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-140"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -864,9 +913,14 @@ export default function App() {
                         className={`rounded text-green-300 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                         key={index}
                       >
-                        <img
-                          src="/green.png"
-                          className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                        <video
+                          preload="none"
+                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-140"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -909,12 +963,13 @@ export default function App() {
                           key={index}
                         >
                           <video
+                            preload="none"
                             src="https://cdn.discordapp.com/media/v1/collectibles-shop/1394404301295714355/video"
                             autoPlay
                             loop
                             muted
                             playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-center object-right p-0.5"
+                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -957,12 +1012,13 @@ export default function App() {
                             key={index}
                           >
                             <video
+                              preload="none"
                               src="https://cdn.discordapp.com/media/v1/collectibles-shop/1436367668964884690/video"
                               autoPlay
                               loop
                               muted
                               playsInline
-                              className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-center object-right p-0.5"
+                              className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5"
                             />
                             <div className={`relative w-10 h-10 shrink-0`}>
                               <img
@@ -1004,9 +1060,14 @@ export default function App() {
                           className={`rounded text-purple-400 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                           key={index}
                         >
-                          <img
-                            src="/pink.png"
-                            className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                          <video
+                            preload="none"
+                            src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-0"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -1048,9 +1109,14 @@ export default function App() {
                           className={`rounded text-purple-400 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                           key={index}
                         >
-                          <img
-                            src="/pink.png"
-                            className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                          <video
+                            preload="none"
+                            src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-0"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -1090,9 +1156,14 @@ export default function App() {
                         className={`rounded text-purple-400 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                         key={index}
                       >
-                        <img
-                          src="/pink.png"
-                          className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                        <video
+                          preload="none"
+                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-0"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -1131,9 +1202,14 @@ export default function App() {
                         className={`rounded text-purple-400 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                         key={index}
                       >
-                        <img
-                          src="/pink.png"
-                          className="absolute top-0 right-0 h-full w-full opacity-20 object-cover object-center object-right"
+                        <video
+                          preload="none"
+                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-0"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
