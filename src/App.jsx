@@ -32,6 +32,16 @@ function sortByOrder(array, order) {
   return [...array].sort((a, b) => order.indexOf(a) - order.indexOf(b));
 }
 
+function getWordOfDay(wordA, wordB) {
+  const dayOfYear = Math.floor(
+    (Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000
+  );
+  return dayOfYear % 2 === 0 ? wordA : wordB;
+}
+
+const word = getWordOfDay("Typhon", "Chronos");
+
+
 function createData(fearNum, data, region) {
   const entries = data.slice().filter((obj) => obj.fea >= fearNum && normalizeLoc(obj.loc) === region);
 
@@ -62,6 +72,13 @@ export default function App() {
 
   useGSAP(
     () => {
+      gsap.to(".my-text", {
+        backgroundPosition: "300% 0%",
+        duration: 4,
+        repeat: -1,
+        ease: "none"
+      });
+
       const eggs = gsap.utils.toArray(".egg"); // whatever your actual class is
       eggs.forEach((egg) => {
         gsap.to(egg, {
@@ -270,10 +287,11 @@ export default function App() {
             <div className="relative overflow-visible inline-block">
               <div
                 onMouseMove={handleMouseMove}
-                className="hover-target text-gray-300 font-bold text-[48px] sm:text-[58px] md:text-[64px] uppercase cursor-default select-none text-center font-[Sr] gap-2 gap-x-4 flex"
+                className="hover-target font-bold text-[50px] sm:text-[58px] md:text-[64px] uppercase cursor-default select-none font-[Sr] gap-4 gap-x-4 my-text flex flex-col md:flex-row justify-center items-center bg-[linear-gradient(90deg,#ff0080,#7928ca,#2afadf,#ff0080)] bg-[length:300%_100%] bg-clip-text text-transparent"
               >
-                <div>Git</div>
-                <div>Gud</div>
+                <div>Death</div>
+                <div>To</div>
+                <div>{word}</div>
               </div>
             </div>
           </div>
