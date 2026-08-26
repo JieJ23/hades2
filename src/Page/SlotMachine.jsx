@@ -201,7 +201,7 @@ function digitTierClasses(points) {
 ------------------------------------------------------------------- */
 const DEFAULT_ICONS = [
   { symbol: `Melinoe`, name: `Melinoe`, points: () => randomInt(5833, 7423) },
-  //
+  //Keepsakes
   { symbol: `Silver Wheel`, name: `Silver Wheel`, points: () => randomInt(600, 1200) },
   { symbol: `Knuckle Bones`, name: `Knuckle Bones`, points: () => randomInt(600, 1200) },
   { symbol: `Luckier Tooth`, name: `Luckier Tooth`, points: () => randomInt(600, 1200) },
@@ -235,17 +235,18 @@ const DEFAULT_ICONS = [
   { symbol: `Calling Card`, name: `Calling Card`, points: () => randomInt(600, 1200) },
   { symbol: `Jeweled Pom`, name: `Jeweled Pom`, points: () => randomInt(600, 1200) },
   { symbol: `Time Piece`, name: `Time Piece`, points: () => randomInt(600, 1200) },
+  // Elements
   { symbol: `Water`, name: `Water`, points: () => randomInt(4000, 8000) },
   { symbol: `Earth`, name: `Earth`, points: () => randomInt(4000, 8000) },
   { symbol: `Fire`, name: `Fire`, points: () => randomInt(4000, 8000) },
   { symbol: `Aether`, name: `Aether`, points: () => randomInt(4000, 8000) },
   { symbol: `Air`, name: `Air`, points: () => randomInt(4000, 8000) },
+  // Items
   { symbol: `Armor`, name: `Armor`, points: () => randomInt(1000, 2000) },
   { symbol: `Sheep`, name: `Sheep`, points: () => randomInt(6600, 12009) },
   { symbol: `Onion`, name: `Onion`, points: () => randomInt(1, 9999) },
   { symbol: `Pom`, name: `Pom`, points: () => randomInt(10000, 10001) },
-
-  //
+  // Vows
   { symbol: `Debt`, name: `Debt`, points: () => randomInt(531, 675) },
   { symbol: `Denial`, name: `Denial`, points: () => randomInt(611, 699) },
   { symbol: `Fangs`, name: `Fangs`, points: () => randomInt(559, 699) },
@@ -263,17 +264,17 @@ const DEFAULT_ICONS = [
   { symbol: `Time`, name: `Time`, points: () => randomInt(7000, 7880) },
   { symbol: `Void`, name: `Void`, points: () => randomInt(7000, 7870) },
   { symbol: `Wards`, name: `Wards`, points: () => randomInt(700, 796) },
-  //
+  // Characters
   { symbol: `Aphrodite`, name: `Aphrodite`, points: () => randomInt(1506, 1916) },
   { symbol: `Apollo`, name: `Apollo`, points: () => randomInt(1513, 1925) },
   { symbol: `Arachne`, name: `Arachne`, points: () => randomInt(1654, 2104) },
   { symbol: `Ares`, name: `Ares`, points: () => randomInt(2248, 2860) },
-  { symbol: `Artemis`, name: `Artemis`, points: () => randomInt(1705, 2169) },
+  { symbol: `Artemis`, name: `*Artemis`, points: () => randomInt(1705, 2169) },
   { symbol: `Athena`, name: `Athena`, points: () => randomInt(2558, 2999) },
   { symbol: `Chaos`, name: `Chaos`, points: () => randomInt(5734, 7298) },
-  { symbol: `Charon`, name: `Charon`, points: () => randomInt(1552, 1976) },
+  { symbol: `Charon`, name: `*Charon`, points: () => randomInt(1552, 1976) },
   { symbol: `Chronos`, name: `Chronos`, points: () => randomInt(5677, 7225) },
-  { symbol: `Circe`, name: `Circe`, points: () => randomInt(1566, 1992) },
+  { symbol: `Circe`, name: `*Circe`, points: () => randomInt(1566, 1992) },
   { symbol: `Demeter`, name: `Demeter`, points: () => randomInt(3000, 3437) },
   { symbol: `Dionysus`, name: `Dionysus`, points: () => randomInt(1500, 1851) },
   { symbol: `Dora`, name: `Dora`, points: () => randomInt(299, 381) },
@@ -285,23 +286,23 @@ const DEFAULT_ICONS = [
   { symbol: `Hermes`, name: `Hermes`, points: () => randomInt(1500, 1803) },
   { symbol: `Hestia`, name: `Hestia`, points: () => randomInt(830, 1056) },
   { symbol: `Icarus`, name: `Icarus`, points: () => randomInt(1079, 1373) },
-  { symbol: `Medea`, name: `Medea`, points: () => randomInt(1500, 1789) },
+  { symbol: `Medea`, name: `*Medea`, points: () => randomInt(1500, 1789) },
   { symbol: `Moros`, name: `Moros`, points: () => randomInt(965, 1229) },
   { symbol: `Narcissus`, name: `Narcissus`, points: () => randomInt(1077, 1371) },
   { symbol: `Nemesis`, name: `Nemesis`, points: () => randomInt(1224, 1499) },
   { symbol: `Odysseus`, name: `Odysseus`, points: () => randomInt(1133, 1443) },
   { symbol: `Poseidon`, name: `Poseidon`, points: () => randomInt(3116, 3966) },
-  { symbol: `Selene`, name: `Selene`, points: () => randomInt(1500, 1761) },
+  { symbol: `Selene`, name: `*Selene`, points: () => randomInt(1500, 1761) },
   { symbol: `Skelly`, name: `Skelly`, points: () => randomInt(586, 699) },
   { symbol: `Zagreus`, name: `Zagreus`, points: () => randomInt(1291, 1499) },
   { symbol: `Zeus`, name: `Zeus`, points: () => randomInt(4046, 4999) },
-  //
+  // Familiars
   { symbol: `Raven`, name: `Raki`, points: () => randomInt(9000, 9999) },
   { symbol: `Frog`, name: `Frinos`, points: () => randomInt(9000, 9999) },
   { symbol: `Polecat`, name: `Gale`, points: () => randomInt(9000, 9999) },
   { symbol: `Hound`, name: `Hecuba`, points: () => randomInt(9000, 9999) },
   { symbol: `Cat`, name: `Toula`, points: () => randomInt(9000, 9999) },
-
+  // Aspects
   { symbol: `cMelinoe Staff`, name: `Melinoe Staff`, points: () => randomInt(7740, 9860) },
   { symbol: `cCirce`, name: `Circe`, points: () => randomInt(862, 1096) },
   { symbol: `cMomus`, name: `Momus`, points: () => randomInt(1137, 1447) },
@@ -326,7 +327,7 @@ const DEFAULT_ICONS = [
   { symbol: `cNyx`, name: `Nyx`, points: () => randomInt(3018, 3840) },
   { symbol: `cSelene`, name: `Selene`, points: () => randomInt(822, 1046) },
   { symbol: `cShiva`, name: `Shiva`, points: () => randomInt(896, 1140) },
-
+  // Arcana
   { symbol: `c0`, name: `Empty Card`, points: 99 },
   { symbol: `c1`, name: `Sorceress`, points: () => randomInt(700, 864) },
   { symbol: `c2`, name: `Wayward`, points: () => randomInt(729, 927) },
@@ -433,6 +434,408 @@ function scoreForResult(landed) {
   const raw = landed.reduce((sum, l) => sum + l.points, 0);
   return Math.max(0, Math.min(999999, raw));
 }
+// --- Bonus detection ----------------------------------------------
+// After all 25 reels land, the full board is scanned for bonus
+// conditions — plain if-statements, so new rules are easy to add or
+// tune. Each rule that fires contributes one bonus entry; every
+// entry becomes one extra card appended onto the end of the results
+// grid, and its points are added on top of the normal total.
+//
+// Groups are just lists of icon `name`s — group whichever icons you
+// want to count together.
+const BONUS_GROUP_NIGHT_FAMILY = ["Raki", "Frinos", "Gale", "Hecuba", "Toula"];
+const BONUS_GROUP_ASPECT = [
+  `Melinoe Staff`,
+  `Circe`,
+  `Momus`,
+  `Anubis`,
+  `Melinoe Blades`,
+  `Artemis`,
+  `Pan`,
+  `Morrigan`,
+  `Melinoe Axe`,
+  `Charon`,
+  `Thanatos`,
+  `Nergal`,
+  `Melinoe Flames`,
+  `Eos`,
+  `Moros`,
+  `Supay`,
+  `Melinoe Skull`,
+  `Medea`,
+  `Persephone`,
+  `Hel`,
+  `Melinoe Coat`,
+  `Nyx`,
+  `Selene`,
+  `Shiva`,
+];
+const BONUS_GROUP_ARCANA = [
+  "c1",
+  "c2",
+  "c3",
+  "c4",
+  "c5",
+  "c6",
+  "c7",
+  "c8",
+  "c9",
+  "c10",
+  "c11",
+  "c12",
+  "c13",
+  "c14",
+  "c15",
+  "c16",
+  "c17",
+  "c18",
+  "c19",
+  "c20",
+  "c21",
+  "c22",
+  "c23",
+  "c24",
+  "c25",
+];
+const BONUS_GROUP_OLYMPIANS = [
+  "Zeus",
+  "Poseidon",
+  "Hera",
+  "Demeter",
+  "Athena",
+  "Apollo",
+  "*Artemis",
+  "Ares",
+  "Aphrodite",
+  "Hephaestus",
+  "Hermes",
+  "Dionysus",
+  "Hestia",
+];
+// Every icon under the "Characters" comment in DEFAULT_ICONS,
+// including the *-prefixed ones (those exist purely to keep a
+// Character's name distinct from its same-named Aspect counterpart —
+// e.g. Character "*Artemis" vs Aspect "Artemis" — so bonus counting
+// doesn't accidentally lump the two together). Olympians (above) is a
+// subset of this same list, so an Olympian landing counts toward both
+// its own bonus and this wider one.
+const BONUS_GROUP_CHARACTERS = [
+  "Aphrodite",
+  "Apollo",
+  "Arachne",
+  "Ares",
+  "*Artemis",
+  "Athena",
+  "Chaos",
+  "*Charon",
+  "Chronos",
+  "*Circe",
+  "Demeter",
+  "Dionysus",
+  "Dora",
+  "Echo",
+  "Hecate",
+  "Hephaestus",
+  "Hera",
+  "Heracles",
+  "Hermes",
+  "Hestia",
+  "Icarus",
+  "*Medea",
+  "Moros",
+  "Narcissus",
+  "Nemesis",
+  "Odysseus",
+  "Poseidon",
+  "*Selene",
+  "Skelly",
+  "Zagreus",
+  "Zeus",
+];
+// Every icon under the "Keepsakes" comment.
+const BONUS_GROUP_KEEPSAKES = [
+  "Silver Wheel",
+  "Knuckle Bones",
+  "Luckier Tooth",
+  "Ghost Onion",
+  "Evil Eye",
+  "Engraved Pin",
+  "Discordant Bell",
+  "Gold Purse",
+  "Metallic Droplet",
+  "White Antler",
+  "Moon Beam",
+  "Cloud Bangle",
+  "Iridescent Fan",
+  "Vivid Sea",
+  "Barley Sheaf",
+  "Harmonic Photon",
+  "Beautiful Mirror",
+  "Adamant Shard",
+  "Everlasting Ember",
+  "Lion Fang",
+  "Blackened Fleece",
+  "Crystal Figurine",
+  "Silken Sash",
+  "Aromatic Phial",
+  "Concave Stone",
+  "Experimental Hammer",
+  "Transcendent Embryo",
+  "Sword Hilt",
+  "Gorgon Amulet",
+  "Fig Leaf",
+  "Calling Card",
+  "Jeweled Pom",
+  "Time Piece",
+];
+// Every icon under the "Elements" comment.
+const BONUS_GROUP_ELEMENTS = ["Water", "Earth", "Fire", "Aether", "Air"];
+// Every icon under the "Items" comment.
+const BONUS_GROUP_ITEMS = ["Armor", "Sheep", "Onion", "Pom"];
+// Every icon under the "Vows" comment.
+const BONUS_GROUP_VOWS = [
+  "Debt",
+  "Denial",
+  "Fangs",
+  "Forfeit",
+  "Frenzy",
+  "Grit",
+  "Hordes",
+  "Hubris",
+  "Menace",
+  "Pain",
+  "Return",
+  "Rivals",
+  "Scars",
+  "Shadow",
+  "Time",
+  "Void",
+  "Wards",
+];
+// Minimum times the same icon has to repeat on the board (outside of
+// a full-board jackpot, which scoreForResult already handles on its
+// own) to count as a "duplicate" bonus.
+const DUPLICATE_BONUS_TIERS = [
+  { min: 5, pointsPerIcon: () => randomInt(10000, 20000) },
+  { min: 4, pointsPerIcon: () => randomInt(5000, 10000) },
+  { min: 3, pointsPerIcon: () => randomInt(2500, 5000) },
+  { min: 2, pointsPerIcon: () => randomInt(2000, 4000) },
+];
+
+function evaluateBonuses(landed, icons) {
+  const bonuses = [];
+  const names = landed.map((l) => icons[l.index].name);
+
+  // Rule: Keepsakes — biggest single category (33 unique icons), so
+  // it needs the highest counts to clear each tier.
+  const keepsakeCount = names.filter((n) => BONUS_GROUP_KEEPSAKES.includes(n)).length;
+  if (keepsakeCount >= 2) {
+    bonuses.push({
+      name: `Favor Collector x2`,
+      points: randomInt(1000, 3000),
+    });
+  }
+  if (keepsakeCount >= 4) {
+    bonuses.push({
+      name: `Favor Collector x4`,
+      points: randomInt(2500, 4500),
+    });
+  }
+  if (keepsakeCount >= 6) {
+    bonuses.push({
+      name: `Favor Collector x6`,
+      points: randomInt(4500, 7000),
+    });
+  }
+  if (keepsakeCount >= 9) {
+    bonuses.push({
+      name: `Favor Collector x9`,
+      points: randomInt(7000, 11000),
+    });
+  }
+
+  // Rule: Elements — only 5 unique icons in the pool, so even 2
+  // landing is a meaningfully rare event; one flat bonus is enough.
+  const elementCount = names.filter((n) => BONUS_GROUP_ELEMENTS.includes(n)).length;
+  if (elementCount >= 2) {
+    bonuses.push({
+      name: `Elementalist x2`,
+      points: randomInt(6000, 10000),
+    });
+  }
+  if (elementCount >= 3) {
+    bonuses.push({
+      name: `Elementalist x3`,
+      points: randomInt(10000, 12000),
+    });
+  }
+  if (elementCount >= 4) {
+    bonuses.push({
+      name: `Elementalist x4`,
+      points: randomInt(12000, 15000),
+    });
+  }
+
+  // Rule: Items — smallest category (4 unique icons); same
+  // single-threshold treatment as Elements.
+  const itemCount = names.filter((n) => BONUS_GROUP_ITEMS.includes(n)).length;
+  if (itemCount >= 2) {
+    bonuses.push({
+      name: `Item Hoard x2`,
+      points: randomInt(4000, 8000),
+    });
+  }
+  if (itemCount >= 3) {
+    bonuses.push({
+      name: `Item Hoard x4`,
+      points: randomInt(8000, 10000),
+    });
+  }
+
+  // Rule: Vows — mid-size category (17 unique icons), similar
+  // spacing to Aspects below.
+  const vowCount = names.filter((n) => BONUS_GROUP_VOWS.includes(n)).length;
+  if (vowCount >= 2) {
+    bonuses.push({
+      name: `Fatal Vows x2`,
+      points: randomInt(2000, 3500),
+    });
+  }
+  if (vowCount >= 3) {
+    bonuses.push({
+      name: `Fatal Vows x3`,
+      points: randomInt(3000, 4000),
+    });
+  }
+  if (vowCount >= 4) {
+    bonuses.push({
+      name: `Fatal Vows x4`,
+      points: randomInt(3500, 5500),
+    });
+  }
+  if (vowCount >= 6) {
+    bonuses.push({
+      name: `Fatal Vows x6`,
+      points: randomInt(5500, 9000),
+    });
+  }
+
+  // Rule: Characters — every Character icon, Olympian or not (31
+  // unique icons total). An Olympian landing still also counts toward
+  // the narrower Olympians bonus further below.
+  const characterCount = names.filter((n) => BONUS_GROUP_CHARACTERS.includes(n)).length;
+  if (characterCount >= 4) {
+    bonuses.push({
+      name: `Cast of Characters x4`,
+      points: randomInt(2500, 4500),
+    });
+  }
+  if (characterCount >= 6) {
+    bonuses.push({
+      name: `Cast of Characters x6`,
+      points: randomInt(4500, 7000),
+    });
+  }
+  if (characterCount >= 9) {
+    bonuses.push({
+      name: `Cast of Characters x9`,
+      points: randomInt(7000, 11000),
+    });
+  }
+
+  // Rule: 2–5 icons from the Night Family group landed anywhere on
+  // the board.
+  const nightCount = names.filter((n) => BONUS_GROUP_NIGHT_FAMILY.includes(n)).length;
+  if (nightCount >= 2) {
+    bonuses.push({
+      name: `Pet Family x2`,
+      points: randomInt(8000, 12000),
+    });
+  }
+
+  const aspectCount = names.filter((n) => BONUS_GROUP_ASPECT.includes(n)).length;
+  if (aspectCount >= 3) {
+    bonuses.push({
+      name: `Weapon Master x3`,
+      points: randomInt(3333, 6666),
+    });
+  }
+  if (aspectCount >= 4) {
+    bonuses.push({
+      name: `Weapon Master x4`,
+      points: randomInt(6666, 9999),
+    });
+  }
+
+  const arcanaCount = names.filter((n) => BONUS_GROUP_ARCANA.includes(n)).length;
+  if (arcanaCount >= 2) {
+    bonuses.push({
+      name: `Perfect Deck x2`,
+      points: randomInt(2000, 3000),
+    });
+  }
+  if (arcanaCount >= 3) {
+    bonuses.push({
+      name: `Perfect Deck x3`,
+      points: randomInt(3000, 4000),
+    });
+  }
+  if (arcanaCount >= 5) {
+    bonuses.push({
+      name: `Perfect Deck x5`,
+      points: randomInt(5000, 9999),
+    });
+  }
+
+  // Rule: 2–5 Olympians landed anywhere on the board.
+  const olympianCount = names.filter((n) => BONUS_GROUP_OLYMPIANS.includes(n)).length;
+  if (olympianCount >= 2) {
+    bonuses.push({
+      name: `Olympians Champion x2`,
+      points: randomInt(2000, 4000),
+    });
+  }
+  if (olympianCount >= 3) {
+    bonuses.push({
+      name: `Olympians Champion x3`,
+      points: randomInt(3000, 6000),
+    });
+  }
+  if (olympianCount >= 5) {
+    bonuses.push({
+      name: `Olympians Champion x5`,
+      points: randomInt(5000, 9999),
+    });
+  }
+
+  // Rule: any single icon repeated DUPLICATE_BONUS_MIN+ times, short
+  // of every reel matching (that's the separate jackpot payout).
+  const counts = {};
+  names.forEach((n) => {
+    counts[n] = (counts[n] || 0) + 1;
+  });
+  Object.entries(counts).forEach(([name, count]) => {
+    if (count >= landed.length) return; // full-board jackpot, handled elsewhere
+    const tier = DUPLICATE_BONUS_TIERS.find((t) => count >= t.min);
+    if (!tier) return;
+    bonuses.push({
+      name: `${name} x${count}`,
+      points: tier.pointsPerIcon(),
+    });
+  });
+
+  return bonuses;
+}
+
+// Delay between each bonus card's reveal when more than one rule
+// fires on the same spin.
+const BONUS_REVEAL_STAGGER_S = 0.55;
+
+// Timing for the result-card slide-in (used by the useLayoutEffect
+// below, and to work out exactly when the 25th card finishes
+// animating in — the bonus cards below deliberately wait for that.
+const CARD_REVEAL_STAGGER_S = 0.2;
+const CARD_REVEAL_DURATION_S = 0.3;
 
 // A ring of small motes arranged in a circle around the reel's
 // center, tinted teal/green to match the site's theme. The whole
@@ -494,6 +897,13 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
   // placeholder row so the layout never jumps), or { name, points }
   // once that spin's result is calculated.
   const [resultNames, setResultNames] = useState(Array.from({ length: REEL_COUNT }, () => null));
+
+  // Bonus cards revealed after the main 25-card grid finishes — one
+  // entry per landed bonus icon (see BONUS_NAMES), appended in order
+  // as each one reveals. Empty between spins / while none have
+  // triggered yet.
+  const [bonusResults, setBonusResults] = useState([]);
+  const bonusRefs = useRef([]);
 
   const landedRef = useRef(Array.from({ length: REEL_COUNT }, () => null));
   const completedRef = useRef(0);
@@ -586,13 +996,29 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: 0.3,
+        duration: CARD_REVEAL_DURATION_S,
         ease: "power2.out",
-        stagger: 0.2,
+        stagger: CARD_REVEAL_STAGGER_S,
       },
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resultNames]);
+
+  // Bonus cards are appended one at a time (not all at once), so only
+  // the newest entry needs animating in each time this fires — the
+  // earlier ones are already settled at their final state. Same
+  // slide-up treatment as the result cards above.
+  useLayoutEffect(() => {
+    if (!bonusResults.length) return;
+    const el = bonusRefs.current[bonusResults.length - 1];
+    if (!el) return;
+    gsap.fromTo(
+      el,
+      { opacity: 0, y: 28, scale: 0.25 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(1.7)" },
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bonusResults]);
 
   // Charges up a single reel: spins its galaxy ring continuously and
   // flickers its icon through random options, then — after that
@@ -682,6 +1108,10 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
     // resizes or jumps.
     setResultNames(Array.from({ length: REEL_COUNT }, () => null));
 
+    // Clear out any bonus cards from the previous spin.
+    setBonusResults([]);
+    bonusRefs.current = [];
+
     // Reset the odometer to 0 the instant the lever is pulled, so
     // it's ready to count up fresh once this spin's result lands.
     gsap.killTweensOf(scoreProxyRef.current);
@@ -755,6 +1185,32 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
             });
           }
 
+          // Bonus round: scan the full landed board for bonus
+          // conditions (see evaluateBonuses). Cards reveal only once
+          // all 25 result cards have finished their own slide-in
+          // animation — not just once the (faster) score count-up
+          // finishes — so the bonus visibly follows the full board
+          // rather than overlapping it. Each bonus entry then reveals
+          // as its own card, one after another, appended onto the end
+          // of the results grid, bumping the total further each time.
+          const bonusEntries = evaluateBonuses(landed, icons);
+          if (bonusEntries.length) {
+            const cardsRevealTotalS = (REEL_COUNT - 1) * CARD_REVEAL_STAGGER_S + CARD_REVEAL_DURATION_S;
+            bonusEntries.forEach((entry, revealIndex) => {
+              gsap.delayedCall(cardsRevealTotalS + revealIndex * BONUS_REVEAL_STAGGER_S, () => {
+                setBonusResults((prev) => [...prev, entry]);
+                gsap.to(scoreProxyRef.current, {
+                  value: `+=${entry.points}`,
+                  duration: 0.45,
+                  ease: "power2.out",
+                  onUpdate: () => {
+                    setDisplayPoints(Math.min(999999, Math.round(scoreProxyRef.current.value)));
+                  },
+                });
+              });
+            });
+          }
+
           setSpinning(false);
         }
       });
@@ -792,15 +1248,15 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
           >
             {spinning ? "Spinning…" : onCooldown ? formatCountdown(cooldownRemainingMs) : "Spin"}
           </button>
-          {!spinning && (
+          {
             <div className="text-center font-[Ale] text-xs tracking-[2px] uppercase text-slate-400">
               {onCooldown
                 ? `Next spin available in ${formatCountdown(cooldownRemainingMs)}`
                 : `${spinsRemaining} / ${MAX_SPINS_PER_WINDOW} spins left today`}
             </div>
-          )}
+          }
 
-          <div className="flex flex-col lg:flex-row w-full gap-x-8 gap-4 items-center lg:items-baseline justify-center">
+          <div className="flex flex-col lg:flex-row w-full gap-x-8 gap-4 items-center lg:items-start justify-center">
             <div
               className="relative grid w-full max-w-120 gap-1.5 rounded-md bg-[#050506] p-2 shadow-[inset_0_0_20px_rgba(0,0,0,0.9),inset_0_0_0_1px_rgba(45,212,191,0.25)]"
               style={{ gridTemplateColumns: `repeat(${GRID_COLS}, minmax(0, 1fr))` }}
@@ -827,14 +1283,17 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
 
             {/* Always mounted — reserves its own height up front so
             nothing shifts when a result lands. Mirrors the reel grid
-            above, one compact card per landed reel. */}
+            above, one compact card per landed reel — plus, appended
+            onto the end of this same grid (still GRID_COLS wide, so
+            it simply wraps onto new rows), one card per bonus that
+            fired for this spin. */}
             <div
               className="grid w-full max-w-150 gap-2"
               style={{ gridTemplateColumns: `repeat(${GRID_COLS}, minmax(0, 1fr))` }}
             >
               {resultNames.map((item, i) => {
                 const aura = auraTextClass(item?.points);
-                const card = (
+                const card = item && (
                   <div
                     ref={(el) => (nameRefs.current[i] = el)}
                     className={`flex flex-col items-center justify-center rounded gap-0.5 px-1 py-2 font-[Ale] font-semibold tracking-[0.5px] uppercase text-center ${tierClasses(
@@ -860,6 +1319,21 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
                   <div key={i}>{card}</div>
                 );
               })}
+
+              {bonusResults.map((item, i) => (
+                <div className="aura aura-gold" key={`bonus-${i}`}>
+                  <div
+                    ref={(el) => (bonusRefs.current[i] = el)}
+                    className="text-yellow-300 h-full flex flex-col items-center justify-center rounded gap-0.5 px-1 py-2 font-[Ale] font-semibold tracking-[0.5px] uppercase text-center bg-gradient-to-t to-[#0e0c12] from-yellow-800 [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]"
+                  >
+                    <span className="font-[UbuntuMono] text-[11px]">Bonus</span>
+                    <span className="w-full overflow-hidden font-[Ale] text-[12px] leading-tight">{item.name}</span>
+                    <span className="font-[Ale] font-semibold text-[18px] tracking-normal opacity-90">
+                      +{item.points}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
