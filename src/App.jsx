@@ -306,7 +306,7 @@ export default function App() {
                             loop
                             muted
                             playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5"
+                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -403,7 +403,7 @@ export default function App() {
                           loop
                           muted
                           playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-100"
+                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-100"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -449,7 +449,7 @@ export default function App() {
                           loop
                           muted
                           playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-100"
+                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-100"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -496,7 +496,7 @@ export default function App() {
                             loop
                             muted
                             playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-100"
+                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-100"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -543,7 +543,7 @@ export default function App() {
                           loop
                           muted
                           playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-100"
+                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-100"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -589,7 +589,7 @@ export default function App() {
                           loop
                           muted
                           playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-100"
+                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-100"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -637,7 +637,7 @@ export default function App() {
                             loop
                             muted
                             playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5"
+                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -734,7 +734,7 @@ export default function App() {
                           loop
                           muted
                           playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-140"
+                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-140"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -780,7 +780,7 @@ export default function App() {
                           loop
                           muted
                           playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-140"
+                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-140"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -827,7 +827,7 @@ export default function App() {
                             loop
                             muted
                             playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-140"
+                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-140"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -874,7 +874,7 @@ export default function App() {
                           loop
                           muted
                           playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-140"
+                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-140"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -920,7 +920,7 @@ export default function App() {
                           loop
                           muted
                           playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-140"
+                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-140"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -1067,7 +1067,7 @@ export default function App() {
                             loop
                             muted
                             playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-0"
+                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-0"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -1116,7 +1116,7 @@ export default function App() {
                             loop
                             muted
                             playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-0"
+                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-0"
                           />
                           <div className={`relative w-10 h-10 shrink-0`}>
                             <img
@@ -1163,7 +1163,7 @@ export default function App() {
                           loop
                           muted
                           playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-0"
+                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-0"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img
@@ -1209,7 +1209,7 @@ export default function App() {
                           loop
                           muted
                           playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-25 object-cover object-right p-0.5 hue-rotate-0"
+                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-0"
                         />
                         <div className={`relative w-10 h-10 shrink-0`}>
                           <img

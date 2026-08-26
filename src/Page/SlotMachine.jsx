@@ -90,6 +90,106 @@ function resolvePoints(points) {
   return typeof points === "function" ? points() : points;
 }
 
+function digitTierClasses(points) {
+  if (points >= 100000) {
+    return {
+      text: "text-amber-300",
+      glow: "[text-shadow:0_0_16px_rgba(252,211,77,1),0_0_32px_rgba(252,211,77,0.65)]",
+      border: "border-amber-300/75",
+      bg: "bg-[linear-gradient(180deg,#2e2005,#4d3908_45%,#2e2005)]",
+      shadow:
+        "shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.9),inset_0_-4px_6px_-3px_rgba(0,0,0,0.9),0_0_22px_rgba(252,211,77,0.5)]",
+    };
+  }
+  if (points >= 90000) {
+    return {
+      text: "text-rose-400",
+      glow: "[text-shadow:0_0_13px_rgba(251,113,133,0.95),0_0_26px_rgba(251,113,133,0.45)]",
+      border: "border-rose-400/65",
+      bg: "bg-[linear-gradient(180deg,#2c0c16,#471524_45%,#2c0c16)]",
+      shadow:
+        "shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.88),inset_0_-4px_6px_-3px_rgba(0,0,0,0.88),0_0_18px_rgba(251,113,133,0.4)]",
+    };
+  }
+  if (points >= 80000) {
+    return {
+      text: "text-red-400",
+      glow: "[text-shadow:0_0_11px_rgba(248,113,113,0.9),0_0_22px_rgba(248,113,113,0.4)]",
+      border: "border-red-400/60",
+      bg: "bg-[linear-gradient(180deg,#2c0c0c,#471515_45%,#2c0c0c)]",
+      shadow:
+        "shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.87),inset_0_-4px_6px_-3px_rgba(0,0,0,0.87),0_0_15px_rgba(248,113,113,0.35)]",
+    };
+  }
+  if (points >= 70000) {
+    return {
+      text: "text-orange-400",
+      glow: "[text-shadow:0_0_10px_rgba(251,146,60,0.85)]",
+      border: "border-orange-400/55",
+      bg: "bg-[linear-gradient(180deg,#2c1806,#47270a_45%,#2c1806)]",
+      shadow:
+        "shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.86),inset_0_-4px_6px_-3px_rgba(0,0,0,0.86),0_0_13px_rgba(251,146,60,0.3)]",
+    };
+  }
+  if (points >= 60000) {
+    return {
+      text: "text-fuchsia-400",
+      glow: "[text-shadow:0_0_9px_rgba(232,121,249,0.8)]",
+      border: "border-fuchsia-400/50",
+      bg: "bg-[linear-gradient(180deg,#210a24,#361239_45%,#210a24)]",
+      shadow:
+        "shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.85),inset_0_-4px_6px_-3px_rgba(0,0,0,0.85),0_0_11px_rgba(232,121,249,0.28)]",
+    };
+  }
+  if (points >= 50000) {
+    return {
+      text: "text-purple-400",
+      glow: "[text-shadow:0_0_9px_purple]",
+      border: "border-purple-400/48",
+      bg: "bg-[linear-gradient(180deg,#170a24,#241239_45%,#170a24)]",
+      shadow:
+        "shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.85),inset_0_-4px_6px_-3px_rgba(0,0,0,0.85),0_0_10px_rgba(192,132,252,0.25)]",
+    };
+  }
+  if (points >= 40000) {
+    return {
+      text: "text-emerald-400",
+      glow: "[text-shadow:0_0_8px_rgba(52,211,153,0.75)]",
+      border: "border-emerald-400/45",
+      bg: "bg-[linear-gradient(180deg,#062418,#0a3c27_45%,#062418)]",
+      shadow:
+        "shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.85),inset_0_-4px_6px_-3px_rgba(0,0,0,0.85),0_0_9px_rgba(52,211,153,0.22)]",
+    };
+  }
+  if (points >= 30000) {
+    return {
+      text: "text-teal-400",
+      glow: "[text-shadow:0_0_7px_rgba(45,212,191,0.7)]",
+      border: "border-teal-400/45",
+      bg: "bg-[linear-gradient(180deg,#0a2422,#123936_45%,#0a2422)]",
+      shadow:
+        "shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.85),inset_0_-4px_6px_-3px_rgba(0,0,0,0.85),0_0_9px_rgba(45,212,191,0.2)]",
+    };
+  }
+  if (points >= 20000) {
+    return {
+      text: "text-blue-400",
+      glow: "[text-shadow:0_0_6px_rgba(96,165,250,0.65)]",
+      border: "border-blue-400/40",
+      bg: "bg-[linear-gradient(180deg,#0a1a24,#12293c_45%,#0a1a24)]",
+      shadow:
+        "shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.85),inset_0_-4px_6px_-3px_rgba(0,0,0,0.85),0_0_8px_rgba(96,165,250,0.18)]",
+    };
+  }
+  return {
+    text: "text-slate-400",
+    glow: "[text-shadow:0_0_6px_rgba(148,163,184,0.7)]",
+    border: "border-slate-400/40",
+    bg: "bg-[linear-gradient(180deg,#0f1115,#1a1d24_45%,#0f1115)]",
+    shadow:
+      "shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.85),inset_0_-4px_6px_-3px_rgba(0,0,0,0.85),0_0_8px_rgba(148,163,184,0.15)]",
+  };
+}
 /* ------------------------------------------------------------------
    ICONS: swap this array to change what appears on the reels.
    Each entry needs a `symbol` (emoji or short glyph/text), a `name`
@@ -326,12 +426,12 @@ function tierClasses(points) {
 
 // Turns a landed reel result into a score: the sum of every landed
 // icon's point value — unless every reel matches, which pays out the
-// max, 99999.
+// max, 999999.
 function scoreForResult(landed) {
   const allMatch = landed.every((l) => l.index === landed[0].index);
-  if (allMatch) return 99999;
+  if (allMatch) return 999999;
   const raw = landed.reduce((sum, l) => sum + l.points, 0);
-  return Math.max(0, Math.min(99999, raw));
+  return Math.max(0, Math.min(999999, raw));
 }
 
 // A ring of small motes arranged in a circle around the reel's
@@ -636,7 +736,7 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
                 duration: SCORE_STEP_MS,
                 ease: "power2.out",
                 onUpdate: () => {
-                  setDisplayPoints(Math.min(99999, Math.round(scoreProxyRef.current.value)));
+                  setDisplayPoints(Math.min(999999, Math.round(scoreProxyRef.current.value)));
                 },
               },
               revealIndex * SCORE_STEP_MS, // same stagger the name-card reveal uses
@@ -650,7 +750,7 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
               duration: 0.6,
               ease: "power2.out",
               onUpdate: () => {
-                setDisplayPoints(Math.min(99999, Math.round(scoreProxyRef.current.value)));
+                setDisplayPoints(Math.min(999999, Math.round(scoreProxyRef.current.value)));
               },
             });
           }
@@ -669,17 +769,20 @@ function SlotMachine({ icons = DEFAULT_ICONS }) {
             <span>H2Cross-Slot</span>
           </div>
           <div className="flex gap-1.5" aria-label={`Points ${displayPoints}`}>
-            {String(displayPoints)
-              .padStart(5, "0")
-              .split("")
-              .map((digit, i) => (
-                <div
-                  key={i}
-                  className="w-12 h-[54px] flex items-center justify-center font-[UbuntuMono] font-bold text-[24px] text-purple-400 [text-shadow:0_0_8px_purple] bg-[linear-gradient(180deg,#0a2422,#123936_45%,#0a2422)] border-2 border-teal-400/55 rounded shadow-[inset_0_4px_6px_-3px_rgba(0,0,0,0.85),inset_0_-4px_6px_-3px_rgba(0,0,0,0.85),0_0_8px_rgba(45,212,191,0.2)]"
-                >
-                  {digit}
-                </div>
-              ))}
+            {(() => {
+              const tier = digitTierClasses(displayPoints);
+              return String(displayPoints)
+                .padStart(6, "0")
+                .split("")
+                .map((digit, i) => (
+                  <div
+                    key={i}
+                    className={`w-10 sm:w-12 h-[48px] sm:h-[54px] flex items-center justify-center font-[UbuntuMono] font-bold text-[24px] rounded border-2 transition-all duration-700 ease-out ${tier.text} ${tier.glow} ${tier.bg} ${tier.border} ${tier.shadow}`}
+                  >
+                    {digit}
+                  </div>
+                ));
+            })()}
           </div>
           <button
             ref={btnRef}
