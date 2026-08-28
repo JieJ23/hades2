@@ -296,11 +296,11 @@ export default function App() {
       finalized62FearU,
     ];
     const dream = [maxFearDream, maxFearDreamAA, fear65AAD, fear62AAD, fear50AAD, finalized65FearD, finalized62FearD];
-    return [surface, underworld, dream];
+    return [underworld, surface, dream];
   }, [orderData]);
 
   const displayCurrentCategory = displayCategory[category];
-  const categoryRegion = ["Surface", "Underworld", "Dream"];
+  const categoryRegion = ["Underworld", "Surface", "Dream"];
   const subCategory = [
     "Max Fear",
     "Max Fear All Aspects",
@@ -308,7 +308,7 @@ export default function App() {
     "62 Fear All Aspects",
     "50 Fear All Aspects",
     "65 Fear",
-    "65 Fear",
+    "62 Fear",
   ];
   const addCategoryClasses = (region) => {
     switch (region) {
