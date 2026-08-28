@@ -385,17 +385,12 @@ export default function App() {
                       .map((obj, index) => (
                         <div className={`${ind === 0 && `aura aura-dual`} ${addTextColor(categoryRegion[category])}`}>
                           <div
-                            className={`rounded font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
+                            className={`rounded font-[Ale] bg-[#0e0c12] flex flex-col justify-center items-center pt-4 min-w-40 min-h-15 relative`}
                             key={index}
                           >
-                            <video
-                              preload="none"
-                              src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                              autoPlay
-                              loop
-                              muted
-                              playsInline
-                              className={`absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 ${addCategoryClasses(categoryRegion[category])}`}
+                            <div
+                              className={`absolute top-0 right-0 h-full w-full bg-no-repeat bg-top bg-cover scale-[105%] ${addCategoryClasses(categoryRegion[category])}`}
+                              style={{ backgroundImage: `url(/red.png)` }}
                             />
                             <div className={`relative w-10 h-10 shrink-0`}>
                               <img
@@ -413,7 +408,7 @@ export default function App() {
                                 {obj.nam.slice(0, 2).toUpperCase()}
                               </div>
                             </div>
-                            <div className="w-full truncate z-20">
+                            <div className="truncate z-20">
                               <div>{obj.nam}</div>
                             </div>
                           </div>
