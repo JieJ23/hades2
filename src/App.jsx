@@ -61,6 +61,41 @@ function createData(fearNum, data, region) {
   return entriesData;
 }
 
+function AvatarItem({ obj, ind, categoryRegion, category, addTextColor, addCategoryClasses }) {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <div className={`${ind === 0 && `aura aura-dual`} ${addTextColor(categoryRegion[category])}`}>
+      <div className="rounded font-[Ale] bg-[#0e0c12] flex flex-col justify-center items-center pt-4 min-w-40 min-h-15 relative">
+        <div
+          className={`absolute top-0 right-0 h-full w-full bg-no-repeat bg-top bg-cover scale-[105%] ${addCategoryClasses(categoryRegion[category])}`}
+          style={{ backgroundImage: `url(/red.png)` }}
+        />
+        <div className={`relative w-10 h-10 shrink-0`}>
+          {!imgError && (
+            <img
+              src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
+              alt="Avatar"
+              loading="lazy"
+              className="w-10 h-10 rounded-full p-1 egg"
+              draggable={false}
+              onError={() => setImgError(true)}
+            />
+          )}
+          {imgError && (
+            <div className="w-10 h-10 rounded-full bg-[#28282b] text-white flex items-center justify-center truncate -translate-x-[2px]">
+              {obj.nam.slice(0, 2).toUpperCase()}
+            </div>
+          )}
+        </div>
+        <div className="truncate z-20">
+          <div>{obj.nam}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const { posts, loader } = useData();
   const container = useRef(null);
@@ -125,7 +160,7 @@ export default function App() {
         });
       });
     },
-    { scope: container, dependencies: [posts] },
+    { scope: container, dependencies: [posts, category] },
   );
 
   const handleMouseMove = (e) => {
@@ -370,7 +405,7 @@ export default function App() {
               }
               {/* ------------------------------- */}
               {displayCurrentCategory.map((arr, ind) => (
-                <div className="mb-16 rounded">
+                <div className="mb-16 rounded" key={subCategory[ind] + ind}>
                   <div className="px-4 md:text-start text-center">
                     <div
                       className={`font-[Sr] text-[20px] md:text-[24px] leading-none ${addTextColor(categoryRegion[category])}`}
@@ -380,39 +415,18 @@ export default function App() {
                     {ind === 0 && <div className="font-[Ale] text-gray-300">Unseeded and Unmodded</div>}
                   </div>
                   <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                    {arr
+                    {[...arr]
                       .sort((a, b) => a.nam.localeCompare(b.nam))
-                      .map((obj, index) => (
-                        <div className={`${ind === 0 && `aura aura-dual`} ${addTextColor(categoryRegion[category])}`}>
-                          <div
-                            className={`rounded font-[Ale] bg-[#0e0c12] flex flex-col justify-center items-center pt-4 min-w-40 min-h-15 relative`}
-                            key={index}
-                          >
-                            <div
-                              className={`absolute top-0 right-0 h-full w-full bg-no-repeat bg-top bg-cover scale-[105%] ${addCategoryClasses(categoryRegion[category])}`}
-                              style={{ backgroundImage: `url(/red.png)` }}
-                            />
-                            <div className={`relative w-10 h-10 shrink-0`}>
-                              <img
-                                src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                                alt="Avatar"
-                                loading="lazy"
-                                className="w-10 h-10 rounded-full p-1 egg"
-                                draggable={false}
-                                onError={(e) => {
-                                  e.target.style.display = "none";
-                                  e.target.nextSibling.style.display = "flex";
-                                }}
-                              />
-                              <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                                {obj.nam.slice(0, 2).toUpperCase()}
-                              </div>
-                            </div>
-                            <div className="truncate z-20">
-                              <div>{obj.nam}</div>
-                            </div>
-                          </div>
-                        </div>
+                      .map((obj) => (
+                        <AvatarItem
+                          key={obj.nam}
+                          obj={obj}
+                          ind={ind}
+                          categoryRegion={categoryRegion}
+                          category={category}
+                          addTextColor={addTextColor}
+                          addCategoryClasses={addCategoryClasses}
+                        />
                       ))}
                   </div>
                 </div>
