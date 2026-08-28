@@ -33,14 +33,11 @@ function sortByOrder(array, order) {
 }
 
 function getWordOfDay(wordA, wordB) {
-  const dayOfYear = Math.floor(
-    (Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000
-  );
+  const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
   return dayOfYear % 2 === 0 ? wordA : wordB;
 }
 
 const word = getWordOfDay("Typhon", "Chronos");
-
 
 function createData(fearNum, data, region) {
   const entries = data.slice().filter((obj) => obj.fea >= fearNum && normalizeLoc(obj.loc) === region);
@@ -69,6 +66,7 @@ export default function App() {
   const container = useRef(null);
   const containerRef = useRef(null);
   const lastSpawn = useRef(0);
+  const [category, setCategory] = useState(0);
 
   useGSAP(
     () => {
@@ -76,7 +74,7 @@ export default function App() {
         backgroundPosition: "300% 0%",
         duration: 4,
         repeat: -1,
-        ease: "none"
+        ease: "none",
       });
 
       const eggs = gsap.utils.toArray(".egg"); // whatever your actual class is
@@ -192,89 +190,147 @@ export default function App() {
         return parseTimetoms(a.tim) - parseTimetoms(b.tim);
       });
   }, [posts]);
-  // Base Higher
-  const orderData62 = orderData.filter((obj) => obj.fea >= 62);
-  const orderData65 = orderData.filter((obj) => obj.fea >= 65);
-  const orderData67 = orderData.filter((obj) => obj.fea >= 67 && obj.des.includes("#usum"));
+  // Base Higher + Filter Data — heavy pipeline, only depends on orderData (i.e. posts),
+  // not on `category`, so memoize it to avoid recomputing on every category click.
+  const displayCategory = useMemo(() => {
+    const orderData62 = orderData.filter((obj) => obj.fea >= 62);
+    const orderData65 = orderData.filter((obj) => obj.fea >= 65);
+    const orderData67 = orderData.filter((obj) => obj.fea >= 67 && obj.des.includes("#usum"));
 
-  // Filter Data
-  const maxFearSurface = createData(67, orderData67, "Surface");
-  const maxFearUnder = createData(67, orderData67, "Underworld");
-  const maxFearDream = createData(67, orderData67, "Dream");
+    // Filter Data
+    const maxFearSurface = createData(67, orderData67, "Surface");
+    const maxFearUnder = createData(67, orderData67, "Underworld");
+    const maxFearDream = createData(67, orderData67, "Dream");
 
-  const maxFearSurfaceAA = maxFearSurface.filter((obj) => obj.completed === true);
-  const maxFearUnderAA = maxFearUnder.filter((obj) => obj.completed === true);
-  const maxFearDreamAA = maxFearDream.filter((obj) => obj.completed === true);
+    const maxFearSurfaceAA = maxFearSurface.filter((obj) => obj.completed === true);
+    const maxFearUnderAA = maxFearUnder.filter((obj) => obj.completed === true);
+    const maxFearDreamAA = maxFearDream.filter((obj) => obj.completed === true);
 
-  const nameMaxS = new Set(maxFearSurfaceAA.map((item) => item.nam));
-  const nameMaxU = new Set(maxFearUnderAA.map((item) => item.nam));
-  const nameMaxD = new Set(maxFearDreamAA.map((item) => item.nam));
+    const nameMaxS = new Set(maxFearSurfaceAA.map((item) => item.nam));
+    const nameMaxU = new Set(maxFearUnderAA.map((item) => item.nam));
+    const nameMaxD = new Set(maxFearDreamAA.map((item) => item.nam));
 
-  const nameMaxFearS = new Set(maxFearSurface.map((item) => item.nam));
-  const nameMaxFearU = new Set(maxFearUnder.map((item) => item.nam));
-  const nameMaxFearD = new Set(maxFearDream.map((item) => item.nam));
+    const nameMaxFearS = new Set(maxFearSurface.map((item) => item.nam));
+    const nameMaxFearU = new Set(maxFearUnder.map((item) => item.nam));
+    const nameMaxFearD = new Set(maxFearDream.map((item) => item.nam));
 
+    //
+
+    const fear65Surface = createData(65, orderData65, "Surface");
+    const fear65Under = createData(65, orderData65, "Underworld");
+    const fear65Dream = createData(65, orderData65, "Dream");
+
+    const fear65AAS = fear65Surface.filter((obj) => obj.completed === true).filter((item) => !nameMaxS.has(item.nam));
+    const fear65AAU = fear65Under.filter((obj) => obj.completed === true).filter((item) => !nameMaxS.has(item.nam));
+    const fear65AAD = fear65Dream.filter((obj) => obj.completed === true).filter((item) => !nameMaxS.has(item.nam));
+
+    const name65S = new Set(fear65AAS.map((item) => item.nam));
+    const name65U = new Set(fear65AAU.map((item) => item.nam));
+    const name65D = new Set(fear65AAD.map((item) => item.nam));
+
+    const finalized65FearS = fear65Surface.filter((item) => !nameMaxFearS.has(item.nam));
+    const finalized65FearU = fear65Under.filter((item) => !nameMaxFearU.has(item.nam));
+    const finalized65FearD = fear65Dream.filter((item) => !nameMaxFearD.has(item.nam));
+
+    const name65FearS = new Set(finalized65FearS.map((item) => item.nam));
+    const name65FearU = new Set(finalized65FearU.map((item) => item.nam));
+    const name65FearD = new Set(finalized65FearD.map((item) => item.nam));
+
+    //
+
+    const fear62Surface = createData(62, orderData62, "Surface");
+    const fear62Under = createData(62, orderData62, "Underworld");
+    const fear62Dream = createData(62, orderData62, "Dream");
+
+    const fear62AAS = fear62Surface
+      .filter((obj) => obj.completed === true)
+      .filter((item) => !name65S.has(item.nam) && !nameMaxS.has(item.nam));
+    const fear62AAU = fear62Under
+      .filter((obj) => obj.completed === true)
+      .filter((item) => !name65U.has(item.nam) && !nameMaxU.has(item.nam));
+    const fear62AAD = fear62Dream
+      .filter((obj) => obj.completed === true)
+      .filter((item) => !name65D.has(item.nam) && !nameMaxD.has(item.nam));
+
+    const name62S = new Set(fear62AAS.map((item) => item.nam));
+    const name62U = new Set(fear62AAU.map((item) => item.nam));
+    const name62D = new Set(fear62AAD.map((item) => item.nam));
+
+    const finalized62FearS = fear62Surface.filter((item) => !nameMaxFearS.has(item.nam) && !name65FearS.has(item.nam));
+    const finalized62FearU = fear62Under.filter((item) => !nameMaxFearU.has(item.nam) && !name65FearU.has(item.nam));
+    const finalized62FearD = fear62Dream.filter((item) => !nameMaxFearD.has(item.nam) && !name65FearD.has(item.nam));
+
+    //
+
+    const fear50Surface = createData(50, orderData, "Surface");
+    const fear50Under = createData(50, orderData, "Underworld");
+    const fear50Dream = createData(50, orderData, "Dream");
+
+    const fear50AAS = fear50Surface
+      .filter((obj) => obj.completed === true)
+      .filter((item) => !name62S.has(item.nam) && !name65S.has(item.nam) && !nameMaxS.has(item.nam));
+    const fear50AAU = fear50Under
+      .filter((obj) => obj.completed === true)
+      .filter((item) => !name62U.has(item.nam) && !name65U.has(item.nam) && !nameMaxU.has(item.nam));
+    const fear50AAD = fear50Dream
+      .filter((obj) => obj.completed === true)
+      .filter((item) => !name62D.has(item.nam) && !name65D.has(item.nam) && !nameMaxD.has(item.nam));
+    //
+
+    const surface = [
+      maxFearSurface,
+      maxFearSurfaceAA,
+      fear65AAS,
+      fear62AAS,
+      fear50AAS,
+      finalized65FearS,
+      finalized62FearS,
+    ];
+    const underworld = [
+      maxFearUnder,
+      maxFearUnderAA,
+      fear65AAU,
+      fear62AAU,
+      fear50AAU,
+      finalized65FearU,
+      finalized62FearU,
+    ];
+    const dream = [maxFearDream, maxFearDreamAA, fear65AAD, fear62AAD, fear50AAD, finalized65FearD, finalized62FearD];
+    return [surface, underworld, dream];
+  }, [orderData]);
+
+  const displayCurrentCategory = displayCategory[category];
+  const categoryRegion = ["Surface", "Underworld", "Dream"];
+  const subCategory = [
+    "Max Fear",
+    "Max Fear All Aspects",
+    "65 Fear All Aspects",
+    "62 Fear All Aspects",
+    "50 Fear All Aspects",
+    "65 Fear",
+    "65 Fear",
+  ];
+  const addCategoryClasses = (region) => {
+    switch (region) {
+      case "Surface":
+        return `hue-rotate-100`;
+      case "Underworld":
+        return `hue-rotate-140`;
+      case "Dream":
+        return `hue-rotate-0`;
+    }
+  };
+  const addTextColor = (region) => {
+    switch (region) {
+      case "Surface":
+        return `text-yellow-300`;
+      case "Underworld":
+        return `text-green-300`;
+      case "Dream":
+        return `text-purple-400`;
+    }
+  };
   //
-
-  const fear65Surface = createData(65, orderData65, "Surface");
-  const fear65Under = createData(65, orderData65, "Underworld");
-  const fear65Dream = createData(65, orderData65, "Dream");
-
-  const fear65AAS = fear65Surface.filter((obj) => obj.completed === true).filter((item) => !nameMaxS.has(item.nam));
-  const fear65AAU = fear65Under.filter((obj) => obj.completed === true).filter((item) => !nameMaxS.has(item.nam));
-  const fear65AAD = fear65Dream.filter((obj) => obj.completed === true).filter((item) => !nameMaxS.has(item.nam));
-
-  const name65S = new Set(fear65AAS.map((item) => item.nam));
-  const name65U = new Set(fear65AAU.map((item) => item.nam));
-  const name65D = new Set(fear65AAD.map((item) => item.nam));
-
-  const finalized65FearS = fear65Surface.filter((item) => !nameMaxFearS.has(item.nam));
-  const finalized65FearU = fear65Under.filter((item) => !nameMaxFearU.has(item.nam));
-  const finalized65FearD = fear65Dream.filter((item) => !nameMaxFearD.has(item.nam));
-
-  const name65FearS = new Set(finalized65FearS.map((item) => item.nam));
-  const name65FearU = new Set(finalized65FearU.map((item) => item.nam));
-  const name65FearD = new Set(finalized65FearD.map((item) => item.nam));
-
-  //
-
-  const fear62Surface = createData(62, orderData62, "Surface");
-  const fear62Under = createData(62, orderData62, "Underworld");
-  const fear62Dream = createData(62, orderData62, "Dream");
-
-  const fear62AAS = fear62Surface
-    .filter((obj) => obj.completed === true)
-    .filter((item) => !name65S.has(item.nam) && !nameMaxS.has(item.nam));
-  const fear62AAU = fear62Under
-    .filter((obj) => obj.completed === true)
-    .filter((item) => !name65U.has(item.nam) && !nameMaxU.has(item.nam));
-  const fear62AAD = fear62Dream
-    .filter((obj) => obj.completed === true)
-    .filter((item) => !name65D.has(item.nam) && !nameMaxD.has(item.nam));
-
-  const name62S = new Set(fear62AAS.map((item) => item.nam));
-  const name62U = new Set(fear62AAU.map((item) => item.nam));
-  const name62D = new Set(fear62AAD.map((item) => item.nam));
-
-  const finalized62FearS = fear62Surface.filter((item) => !nameMaxFearS.has(item.nam) && !name65FearS.has(item.nam));
-  const finalized62FearU = fear62Under.filter((item) => !nameMaxFearU.has(item.nam) && !name65FearU.has(item.nam));
-  const finalized62FearD = fear62Dream.filter((item) => !nameMaxFearD.has(item.nam) && !name65FearD.has(item.nam));
-
-  //
-
-  const fear50Surface = createData(50, orderData, "Surface");
-  const fear50Under = createData(50, orderData, "Underworld");
-  const fear50Dream = createData(50, orderData, "Dream");
-
-  const fear50AAS = fear50Surface
-    .filter((obj) => obj.completed === true)
-    .filter((item) => !name62S.has(item.nam) && !name65S.has(item.nam) && !nameMaxS.has(item.nam));
-  const fear50AAU = fear50Under
-    .filter((obj) => obj.completed === true)
-    .filter((item) => !name62U.has(item.nam) && !name65U.has(item.nam) && !nameMaxU.has(item.nam));
-  const fear50AAD = fear50Dream
-    .filter((obj) => obj.completed === true)
-    .filter((item) => !name62D.has(item.nam) && !name65D.has(item.nam) && !nameMaxD.has(item.nam));
 
   return (
     <main
@@ -300,80 +356,46 @@ export default function App() {
             <Loading />
           ) : (
             <div>
-              {/* Order Start */}
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-yellow-300">
-                    Max Fear Surface
-                  </div>
-                  <div className="font-[Ale] text-gray-300">Unseeded and Unmodded</div>
+              {
+                <div className="flex gap-2 justify-center my-10">
+                  {categoryRegion.map((region, index) => (
+                    <img
+                      src={`/${region}.png`}
+                      className={`border border-white/10 size-12 p-1 rounded-xl cursor-pointer ${category === index ? `bg-[#00ffaa]` : `bg-black`}`}
+                      alt="Region"
+                      onClick={() => setCategory(index)}
+                    />
+                  ))}
                 </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {maxFearSurface
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div className="aura aura-dual text-yellow-300">
-                        <div
-                          className={`rounded font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                          key={index}
-                        >
-                          <video
-                            preload="none"
-                            src="https://cdn.discordapp.com/media/v1/collectibles-shop/1420045363141672971/video"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5"
-                          />
-                          <div className={`relative w-10 h-10 shrink-0`}>
-                            <img
-                              src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                              alt="Avatar"
-                              loading="lazy"
-                              className="w-10 h-10 rounded-full p-1 egg"
-                              draggable={false}
-                              onError={(e) => {
-                                e.target.style.display = "none";
-                                e.target.nextSibling.style.display = "flex";
-                              }}
-                            />
-                            <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                              {obj.nam.slice(0, 2).toUpperCase()}
-                            </div>
-                          </div>
-                          <div className="w-full truncate z-20">
-                            <div>{obj.nam}</div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              {maxFearSurfaceAA.length > 0 && (
+              }
+              {/* ------------------------------- */}
+              {displayCurrentCategory.map((arr, ind) => (
                 <div className="mb-16 rounded">
                   <div className="px-4 md:text-start text-center">
-                    <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-yellow-300">
-                      Max Fear Surface, All Aspects
+                    <div
+                      className={`font-[Sr] text-[20px] md:text-[24px] leading-none ${addTextColor(categoryRegion[category])}`}
+                    >
+                      {subCategory[ind]}
                     </div>
+                    {ind === 0 && <div className="font-[Ale] text-gray-300">Unseeded and Unmodded</div>}
                   </div>
                   <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                    {maxFearSurfaceAA
+                    {arr
                       .sort((a, b) => a.nam.localeCompare(b.nam))
                       .map((obj, index) => (
-                        <div className="aura aura-dual text-yellow-300">
+                        <div className={`${ind === 0 && `aura aura-dual`} ${addTextColor(categoryRegion[category])}`}>
                           <div
                             className={`rounded font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
                             key={index}
                           >
                             <video
                               preload="none"
-                              src="https://cdn.discordapp.com/media/v1/collectibles-shop/1436367668964884690/video"
+                              src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
                               autoPlay
                               loop
                               muted
                               playsInline
-                              className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5"
+                              className={`absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 ${addCategoryClasses(categoryRegion[category])}`}
                             />
                             <div className={`relative w-10 h-10 shrink-0`}>
                               <img
@@ -399,859 +421,8 @@ export default function App() {
                       ))}
                   </div>
                 </div>
-              )}
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-yellow-300">
-                    65 Fear Surface, All Aspects
-                  </div>
-                </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {fear65AAS
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div
-                        className={`rounded font-[Ale] text-yellow-300 bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                        key={index}
-                      >
-                        <video
-                          preload="none"
-                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-100"
-                        />
-                        <div className={`relative w-10 h-10 shrink-0`}>
-                          <img
-                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                            alt="Avatar"
-                            loading="lazy"
-                            className="w-10 h-10 rounded-full p-1 egg"
-                            draggable={false}
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.nextSibling.style.display = "flex";
-                            }}
-                          />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                            {obj.nam.slice(0, 2).toUpperCase()}
-                          </div>
-                        </div>
-                        <div className="w-full truncate z-20">
-                          <div>{obj.nam}</div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-yellow-300">
-                    62 Fear Surface, All Aspects
-                  </div>
-                </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {fear62AAS
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div
-                        className={`rounded font-[Ale] text-yellow-300 bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                        key={index}
-                      >
-                        <video
-                          preload="none"
-                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-100"
-                        />
-                        <div className={`relative w-10 h-10 shrink-0`}>
-                          <img
-                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                            alt="Avatar"
-                            loading="lazy"
-                            className="w-10 h-10 rounded-full p-1 egg"
-                            draggable={false}
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.nextSibling.style.display = "flex";
-                            }}
-                          />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                            {obj.nam.slice(0, 2).toUpperCase()}
-                          </div>
-                        </div>
-                        <div className="w-full truncate z-20">
-                          <div>{obj.nam}</div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              {fear50AAS.length > 0 && (
-                <div className="mb-16 rounded">
-                  <div className="px-4 md:text-start text-center">
-                    <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-yellow-300">
-                      50 Fear Surface, All Aspects
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                    {fear50AAS
-                      .sort((a, b) => a.nam.localeCompare(b.nam))
-                      .map((obj, index) => (
-                        <div
-                          className={`rounded font-[Ale] text-yellow-300 bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                          key={index}
-                        >
-                          <video
-                            preload="none"
-                            src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-100"
-                          />
-                          <div className={`relative w-10 h-10 shrink-0`}>
-                            <img
-                              src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                              alt="Avatar"
-                              loading="lazy"
-                              className="w-10 h-10 rounded-full p-1 egg"
-                              draggable={false}
-                              onError={(e) => {
-                                e.target.style.display = "none";
-                                e.target.nextSibling.style.display = "flex";
-                              }}
-                            />
-                            <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                              {obj.nam.slice(0, 2).toUpperCase()}
-                            </div>
-                          </div>
-                          <div className="w-full truncate z-20">
-                            <div>{obj.nam}</div>
-                          </div>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              )}
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-yellow-300">
-                    65 Fear Surface
-                  </div>
-                </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {finalized65FearS
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div
-                        className={`rounded font-[Ale] text-yellow-300 bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                        key={index}
-                      >
-                        <video
-                          preload="none"
-                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-100"
-                        />
-                        <div className={`relative w-10 h-10 shrink-0`}>
-                          <img
-                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                            alt="Avatar"
-                            loading="lazy"
-                            className="w-10 h-10 rounded-full p-1 egg"
-                            draggable={false}
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.nextSibling.style.display = "flex";
-                            }}
-                          />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                            {obj.nam.slice(0, 2).toUpperCase()}
-                          </div>
-                        </div>
-                        <div className="w-full truncate z-20">
-                          <div>{obj.nam}</div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-yellow-300">
-                    62 Fear Surface
-                  </div>
-                </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {finalized62FearS
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div
-                        className={`rounded font-[Ale] text-yellow-300 bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                        key={index}
-                      >
-                        <video
-                          preload="none"
-                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-100"
-                        />
-                        <div className={`relative w-10 h-10 shrink-0`}>
-                          <img
-                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                            alt="Avatar"
-                            loading="lazy"
-                            className="w-10 h-10 rounded-full p-1 egg"
-                            draggable={false}
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.nextSibling.style.display = "flex";
-                            }}
-                          />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                            {obj.nam.slice(0, 2).toUpperCase()}
-                          </div>
-                        </div>
-                        <div className="w-full truncate z-20">
-                          <div>{obj.nam}</div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-green-300">
-                    Max Fear Underworld
-                  </div>
-                  <div className="font-[Ale] text-gray-300">Unseeded and Unmodded</div>
-                </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {maxFearUnder
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div className="aura aura-dual text-green-300">
-                        <div
-                          className={`rounded font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                          key={index}
-                        >
-                          <video
-                            preload="none"
-                            src="https://cdn.discordapp.com/media/v1/collectibles-shop/1447609133011304529/video"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5"
-                          />
-                          <div className={`relative w-10 h-10 shrink-0`}>
-                            <img
-                              src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                              alt="Avatar"
-                              loading="lazy"
-                              className="w-10 h-10 rounded-full p-1 egg"
-                              draggable={false}
-                              onError={(e) => {
-                                e.target.style.display = "none";
-                                e.target.nextSibling.style.display = "flex";
-                              }}
-                            />
-                            <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                              {obj.nam.slice(0, 2).toUpperCase()}
-                            </div>
-                          </div>
-                          <div className="w-full truncate z-20">
-                            <div>{obj.nam}</div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              {maxFearUnderAA.length > 0 && (
-                <div className="mb-16 rounded">
-                  <div className="px-4 md:text-start text-center">
-                    <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-green-300">
-                      Max Fear Underworld, All Aspects
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                    {maxFearUnderAA
-                      .sort((a, b) => a.nam.localeCompare(b.nam))
-                      .map((obj, index) => (
-                        <div className="aura aura-dual text-green-300">
-                          <div
-                            className={`rounded font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                            key={index}
-                          >
-                            <video
-                              preload="none"
-                              src="https://cdn.discordapp.com/media/v1/collectibles-shop/1436367668964884690/video"
-                              autoPlay
-                              loop
-                              muted
-                              playsInline
-                              className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5"
-                            />
-                            <div className={`relative w-10 h-10 shrink-0`}>
-                              <img
-                                src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                                alt="Avatar"
-                                loading="lazy"
-                                className="w-10 h-10 rounded-full p-1 egg"
-                                draggable={false}
-                                onError={(e) => {
-                                  e.target.style.display = "none";
-                                  e.target.nextSibling.style.display = "flex";
-                                }}
-                              />
-                              <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                                {obj.nam.slice(0, 2).toUpperCase()}
-                              </div>
-                            </div>
-                            <div className="w-full truncate z-20">
-                              <div>{obj.nam}</div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              )}
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-green-300">
-                    65 Fear Underworld, All Aspects
-                  </div>
-                </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {fear65AAU
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div
-                        className={`rounded text-green-300 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                        key={index}
-                      >
-                        <video
-                          preload="none"
-                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-140"
-                        />
-                        <div className={`relative w-10 h-10 shrink-0`}>
-                          <img
-                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                            alt="Avatar"
-                            loading="lazy"
-                            className="w-10 h-10 rounded-full p-1 egg"
-                            draggable={false}
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.nextSibling.style.display = "flex";
-                            }}
-                          />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                            {obj.nam.slice(0, 2).toUpperCase()}
-                          </div>
-                        </div>
-                        <div className="w-full truncate z-20">
-                          <div>{obj.nam}</div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-green-300">
-                    62 Fear Underworld, All Aspects
-                  </div>
-                </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {fear62AAU
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div
-                        className={`rounded text-green-300 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                        key={index}
-                      >
-                        <video
-                          preload="none"
-                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-140"
-                        />
-                        <div className={`relative w-10 h-10 shrink-0`}>
-                          <img
-                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                            alt="Avatar"
-                            loading="lazy"
-                            className="w-10 h-10 rounded-full p-1 egg"
-                            draggable={false}
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.nextSibling.style.display = "flex";
-                            }}
-                          />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                            {obj.nam.slice(0, 2).toUpperCase()}
-                          </div>
-                        </div>
-                        <div className="w-full truncate z-20">
-                          <div>{obj.nam}</div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              {fear50AAU.length > 0 && (
-                <div className="mb-16 rounded">
-                  <div className="px-4 md:text-start text-center">
-                    <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-green-300">
-                      50 Fear Underworld, All Aspects
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                    {fear50AAU
-                      .sort((a, b) => a.nam.localeCompare(b.nam))
-                      .map((obj, index) => (
-                        <div
-                          className={`rounded font-[Ale] text-green-300 bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                          key={index}
-                        >
-                          <video
-                            preload="none"
-                            src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-140"
-                          />
-                          <div className={`relative w-10 h-10 shrink-0`}>
-                            <img
-                              src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                              alt="Avatar"
-                              loading="lazy"
-                              className="w-10 h-10 rounded-full p-1 egg"
-                              draggable={false}
-                              onError={(e) => {
-                                e.target.style.display = "none";
-                                e.target.nextSibling.style.display = "flex";
-                              }}
-                            />
-                            <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                              {obj.nam.slice(0, 2).toUpperCase()}
-                            </div>
-                          </div>
-                          <div className="w-full truncate z-20">
-                            <div>{obj.nam}</div>
-                          </div>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              )}
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-green-300">
-                    65 Fear Underworld
-                  </div>
-                </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {finalized65FearU
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div
-                        className={`rounded text-green-300 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                        key={index}
-                      >
-                        <video
-                          preload="none"
-                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-140"
-                        />
-                        <div className={`relative w-10 h-10 shrink-0`}>
-                          <img
-                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                            alt="Avatar"
-                            loading="lazy"
-                            className="w-10 h-10 rounded-full p-1 egg"
-                            draggable={false}
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.nextSibling.style.display = "flex";
-                            }}
-                          />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                            {obj.nam.slice(0, 2).toUpperCase()}
-                          </div>
-                        </div>
-                        <div className="w-full truncate z-20">
-                          <div>{obj.nam}</div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-green-300">
-                    62 Fear Underworld
-                  </div>
-                </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {finalized62FearU
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div
-                        className={`rounded text-green-300 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                        key={index}
-                      >
-                        <video
-                          preload="none"
-                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-140"
-                        />
-                        <div className={`relative w-10 h-10 shrink-0`}>
-                          <img
-                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                            alt="Avatar"
-                            loading="lazy"
-                            className="w-10 h-10 rounded-full p-1 egg"
-                            draggable={false}
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.nextSibling.style.display = "flex";
-                            }}
-                          />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                            {obj.nam.slice(0, 2).toUpperCase()}
-                          </div>
-                        </div>
-                        <div className="w-full truncate z-20">
-                          <div>{obj.nam}</div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              {/* Order End */}
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-purple-400">
-                    Max Fear Dream Dive
-                  </div>
-                  <div className="font-[Ale] text-gray-300">Unseeded and Unmodded</div>
-                </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {maxFearDream
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div className="aura aura-dual text-purple-400">
-                        <div
-                          className={`rounded font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                          key={index}
-                        >
-                          <video
-                            preload="none"
-                            src="https://cdn.discordapp.com/media/v1/collectibles-shop/1394404301295714355/video"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5"
-                          />
-                          <div className={`relative w-10 h-10 shrink-0`}>
-                            <img
-                              src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                              alt="Avatar"
-                              loading="lazy"
-                              className="w-10 h-10 rounded-full p-1 egg"
-                              draggable={false}
-                              onError={(e) => {
-                                e.target.style.display = "none";
-                                e.target.nextSibling.style.display = "flex";
-                              }}
-                            />
-                            <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                              {obj.nam.slice(0, 2).toUpperCase()}
-                            </div>
-                          </div>
-                          <div className="w-full truncate z-20">
-                            <div>{obj.nam}</div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              {maxFearDreamAA.length > 0 && (
-                <div className="mb-16 rounded">
-                  <div className="px-4 md:text-start text-center">
-                    <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-yellow-300">
-                      Max Fear Dream Dive, All Aspects
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                    {maxFearDreamAA
-                      .sort((a, b) => a.nam.localeCompare(b.nam))
-                      .map((obj, index) => (
-                        <div className="aura aura-dual text-yellow-300">
-                          <div
-                            className={`rounded font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                            key={index}
-                          >
-                            <video
-                              preload="none"
-                              src="https://cdn.discordapp.com/media/v1/collectibles-shop/1436367668964884690/video"
-                              autoPlay
-                              loop
-                              muted
-                              playsInline
-                              className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5"
-                            />
-                            <div className={`relative w-10 h-10 shrink-0`}>
-                              <img
-                                src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                                alt="Avatar"
-                                loading="lazy"
-                                className="w-10 h-10 rounded-full p-1 egg"
-                                draggable={false}
-                                onError={(e) => {
-                                  e.target.style.display = "none";
-                                  e.target.nextSibling.style.display = "flex";
-                                }}
-                              />
-                              <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                                {obj.nam.slice(0, 2).toUpperCase()}
-                              </div>
-                            </div>
-                            <div className="w-full truncate z-20">
-                              <div>{obj.nam}</div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              )}
-              {fear65AAD.length > 0 && (
-                <div className="mb-16 rounded">
-                  <div className="px-4 md:text-start text-center">
-                    <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-purple-400">
-                      65 Fear Dream Dive, All Aspects
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                    {fear65AAD
-                      .sort((a, b) => a.nam.localeCompare(b.nam))
-                      .map((obj, index) => (
-                        <div
-                          className={`rounded text-purple-400 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                          key={index}
-                        >
-                          <video
-                            preload="none"
-                            src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-0"
-                          />
-                          <div className={`relative w-10 h-10 shrink-0`}>
-                            <img
-                              src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                              alt="Avatar"
-                              loading="lazy"
-                              className="w-10 h-10 rounded-full p-1 egg"
-                              draggable={false}
-                              onError={(e) => {
-                                e.target.style.display = "none";
-                                e.target.nextSibling.style.display = "flex";
-                              }}
-                            />
-                            <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                              {obj.nam.slice(0, 2).toUpperCase()}
-                            </div>
-                          </div>
-                          <div className="w-full truncate z-20">
-                            <div>{obj.nam}</div>
-                          </div>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              )}
-              {/* 62 AA */}
-              {fear62AAD.length > 0 && (
-                <div className="mb-16 rounded">
-                  <div className="px-4 md:text-start text-center">
-                    <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-purple-400">
-                      62 Fear Dream Dive, All Aspects
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                    {fear62AAD
-                      .sort((a, b) => a.nam.localeCompare(b.nam))
-                      .map((obj, index) => (
-                        <div
-                          className={`rounded text-purple-400 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                          key={index}
-                        >
-                          <video
-                            preload="none"
-                            src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-0"
-                          />
-                          <div className={`relative w-10 h-10 shrink-0`}>
-                            <img
-                              src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                              alt="Avatar"
-                              loading="lazy"
-                              className="w-10 h-10 rounded-full p-1 egg"
-                              draggable={false}
-                              onError={(e) => {
-                                e.target.style.display = "none";
-                                e.target.nextSibling.style.display = "flex";
-                              }}
-                            />
-                            <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                              {obj.nam.slice(0, 2).toUpperCase()}
-                            </div>
-                          </div>
-                          <div className="w-full truncate z-20">
-                            <div>{obj.nam}</div>
-                          </div>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              )}
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-purple-400">
-                    65 Fear Dream Dive
-                  </div>
-                </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {finalized65FearD
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div
-                        className={`rounded text-purple-400 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                        key={index}
-                      >
-                        <video
-                          preload="none"
-                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-0"
-                        />
-                        <div className={`relative w-10 h-10 shrink-0`}>
-                          <img
-                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                            alt="Avatar"
-                            loading="lazy"
-                            className="w-10 h-10 rounded-full p-1 egg"
-                            draggable={false}
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.nextSibling.style.display = "flex";
-                            }}
-                          />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                            {obj.nam.slice(0, 2).toUpperCase()}
-                          </div>
-                        </div>
-                        <div className="w-full truncate z-20">
-                          <div>{obj.nam}</div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-              <div className="mb-16 rounded">
-                <div className="px-4 md:text-start text-center">
-                  <div className="font-[Sr] text-[20px] md:text-[24px] leading-none text-purple-400">
-                    62 Fear Dream Dive
-                  </div>
-                </div>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
-                  {finalized62FearD
-                    .sort((a, b) => a.nam.localeCompare(b.nam))
-                    .map((obj, index) => (
-                      <div
-                        className={`rounded text-purple-400 font-[Ale] bg-black border border-white/10 p-2 flex items-center gap-2 min-w-40 relative`}
-                        key={index}
-                      >
-                        <video
-                          preload="none"
-                          src="https://cdn.discordapp.com/media/v1/collectibles-shop/1349849614257225760/video"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="absolute top-0 right-0 h-full w-full opacity-40 object-cover object-right p-0.5 hue-rotate-0"
-                        />
-                        <div className={`relative w-10 h-10 shrink-0`}>
-                          <img
-                            src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                            alt="Avatar"
-                            loading="lazy"
-                            className="w-10 h-10 rounded-full p-1 egg"
-                            draggable={false}
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                              e.target.nextSibling.style.display = "flex";
-                            }}
-                          />
-                          <div className="w-10 h-10 rounded-full bg-[#28282b] text-white items-center justify-center hidden truncate -translate-x-[2px]">
-                            {obj.nam.slice(0, 2).toUpperCase()}
-                          </div>
-                        </div>
-                        <div className="w-full truncate z-20">
-                          <div>{obj.nam}</div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
+              ))}
+              {/* ------------------------------- */}
             </div>
           )}
         </PageBlock>
