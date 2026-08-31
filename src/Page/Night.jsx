@@ -38,11 +38,14 @@ export default function Night() {
   const [hasHammer, setHasHammer] = useState([]);
   const [doNotHammer, setDoNotHammer] = useState([]);
 
+  const [unseed, setUnseeded] = useState("No");
+
   const orderData = useMemo(() => {
     return [...bundleData, ...posts]
       .filter((obj) => +obj.fea >= fearMin && +obj.fea <= fearMax)
       .filter((obj) => parseTimetoms(obj.tim) >= timeMin * 6000 && parseTimetoms(obj.tim) <= timeMax * 6000)
       .filter((obj) => {
+        const unseeded = unseed === "Yes" ? obj.des && obj.des.includes("#usum") : obj;
         const playerMatch = player === "" || obj.nam === player;
         const categoryMatch = category === "" || obj.asp === category;
         const regionMatch =
@@ -56,7 +59,9 @@ export default function Night() {
 
         const includeNotHammer = doNotHammer.length === 0 || doNotHammer.every((hammer) => !obj.ham?.includes(hammer));
 
-        return categoryMatch && regionMatch && playerMatch && videoOnly && includeHammer && includeNotHammer;
+        return (
+          categoryMatch && regionMatch && playerMatch && videoOnly && includeHammer && includeNotHammer && unseeded
+        );
       })
       .sort((a, b) => {
         if (fill === "Latest") return new Date(b.dat) - new Date(a.dat);
@@ -67,7 +72,21 @@ export default function Night() {
           return parseTimetoms(a.tim) - parseTimetoms(b.tim);
         }
       });
-  }, [posts, category, region, fill, player, vidOnly, fearMin, fearMax, timeMin, timeMax, hasHammer, doNotHammer]);
+  }, [
+    posts,
+    category,
+    region,
+    fill,
+    player,
+    vidOnly,
+    fearMin,
+    fearMax,
+    timeMin,
+    timeMax,
+    hasHammer,
+    doNotHammer,
+    unseed,
+  ]);
 
   // Pagnition
   const ITEMS_PER_PAGE = 20;
@@ -161,11 +180,21 @@ export default function Night() {
               <button
                 className={`min-w-15 font-[UbuntuMono] cursor-pointer  px-1 py-0.5 rounded text-center bg-white text-black`}
                 onClick={() => {
+                  setPageIndex(1);
+                  setCategory("");
+                  setRegion("");
+                  setFill("Latest");
+                  setPlayer("");
+                  setVidOnly(false);
+
                   setFearMin(0);
                   setFearMax(67);
                   setTimeMin(0);
                   setTimeMax(30);
                   setHasHammer([]);
+                  setDoNotHammer([]);
+
+                  setUnseeded("No");
                 }}
               >
                 Reset
@@ -334,6 +363,17 @@ export default function Night() {
                   {allAvailableHammers.map((item) => (
                     <option value={item}>{item}</option>
                   ))}
+                </select>
+                <select
+                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+                  defaultValue={"Not USUM"}
+                  value={unseed}
+                  onChange={(e) => {
+                    setUnseeded(e.target.value);
+                  }}
+                >
+                  <option value={"No"}>{`Not USUM`}</option>
+                  <option value={"Yes"}>USUM</option>
                 </select>
               </div>
             </div>
