@@ -3559,7 +3559,7 @@ export const v4data = [
     oath: "https://h2crossroads.pages.dev/FearCalculator/?vows=WzUsMywyLDYsMywzLDIsNSw0LDIsMiwzLDYsMCwyLDIsMTJd",
     tim: "18:12.73",
     fam: "Polecat",
-    cor: "PosAttack,HerSpecial,AphCast,SprintPosMagick",
+    cor: "PosAttack,HerSpecial,AphCast,Sprint,PosMagick",
     ham: "Shimmering Rockets",
     ks: "Jeweled Pom,Time Piece,Silken Sash,White Antler",
   },

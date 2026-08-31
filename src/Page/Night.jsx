@@ -577,7 +577,7 @@ export default function Night() {
                           ? sToA(obj.cor).map((ite, index) => (
                               <div className="relative size-10 sm:size-8 md:size-8 xl:size-9 shrink-0">
                                 <img
-                                  src="/BoonBorder/Base.png"
+                                  src="/BoonBorder/Hammer.png"
                                   alt="Border"
                                   className="absolute inset-0 w-full h-full z-10 pointer-events-none"
                                 />
@@ -648,7 +648,7 @@ export default function Night() {
                           </Link>
                         )}
                       </div>
-                      <div className="text-gray-300 font-[Ale] line-clamp-2 h-10">{obj.des}</div>
+                      <div className="text-gray-300 font-[Ubuntu] text-[11px] line-clamp-2 h-8">{obj.des}</div>
                     </div>
                   </div>
                 ))}
@@ -722,7 +722,7 @@ export default function Night() {
                                 }`}
                               >
                                 <div className="tooltip-content p-0">
-                                  <div className=" border border-white/10 text-white font-[Ale] px-2 py-1 rounded">
+                                  <div className=" border border-white/10 text-white font-[Ubuntu] text-[12px] px-2 py-1 rounded">
                                     {obj.des}
                                   </div>
                                 </div>
