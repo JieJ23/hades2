@@ -256,8 +256,8 @@ export default function App() {
     const fear65Dream = createData(65, orderData65, "Dream");
 
     const fear65AAS = fear65Surface.filter((obj) => obj.completed === true).filter((item) => !nameMaxS.has(item.nam));
-    const fear65AAU = fear65Under.filter((obj) => obj.completed === true).filter((item) => !nameMaxS.has(item.nam));
-    const fear65AAD = fear65Dream.filter((obj) => obj.completed === true).filter((item) => !nameMaxS.has(item.nam));
+    const fear65AAU = fear65Under.filter((obj) => obj.completed === true).filter((item) => !nameMaxU.has(item.nam));
+    const fear65AAD = fear65Dream.filter((obj) => obj.completed === true).filter((item) => !nameMaxD.has(item.nam));
 
     const name65S = new Set(fear65AAS.map((item) => item.nam));
     const name65U = new Set(fear65AAU.map((item) => item.nam));
