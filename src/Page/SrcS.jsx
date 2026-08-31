@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import PageBlock from "../Block/PageBlock";
 import Loading from "../Hook/Loading";
+import { Link } from "react-router-dom";
 
 import { ComposedChart, Line, Bar, YAxis } from "recharts";
 
@@ -148,9 +149,11 @@ export default function SrcS() {
                 </div>
                 {arr[1].slice(0, 10).map((obj, index) => (
                   <div className={` grid grid-cols-3 relative text-gray-300 items-center`} key={index}>
-                    <div className={`${obj.run.times.primary_t < 300 && `text-yellow-300`}`}>
-                      {index + 1}. {postSrc.data.players.data[obj.place - 1].names.international}
-                    </div>
+                    <Link to={`${obj.run.videos.links[0].uri}`} target="_blank">
+                      <div className={`${obj.run.times.primary_t < 300 && `text-yellow-300`}`}>
+                        {index + 1}. {postSrc.data.players.data[obj.place - 1].names.international}
+                      </div>
+                    </Link>
                     {/* <div className="text-end text-white">
                       {postSrc.data.players.data[obj.place - 1].location?.country?.code}
                     </div> */}

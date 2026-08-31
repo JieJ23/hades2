@@ -535,7 +535,9 @@ export default function Night() {
                     )}
                     <div className="p-1 flex flex-col gap-1">
                       <div className="font-[Ale] px-2">
-                        <div>{obj.nam}</div>
+                        <div className="cursor-pointer" onClick={() => setPlayer(obj.nam)}>
+                          {obj.nam}
+                        </div>
                         <div>
                           <span>
                             {+obj.fea} | {obj.loc !== "Underworld" && obj.loc !== "Surface" ? `Dream Dive` : obj.loc} |{" "}
@@ -688,7 +690,9 @@ export default function Night() {
                       </td>
                       <td className="border-0 border-y border-y-white/5">
                         <div className="flex items-center gap-1">
-                          <div>{obj.nam}</div>
+                          <div className="cursor-pointer" onClick={() => setPlayer(obj.nam)}>
+                            {obj.nam}
+                          </div>
                           <div className="shrink-0 size-4">
                             <img
                               src={
