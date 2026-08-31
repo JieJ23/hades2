@@ -391,7 +391,7 @@ export default function Night() {
               <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 gap-y-4">
                 {paginatedData.map((obj, index) => (
                   <div className="rounded">
-                    {obj.src.includes("youtu") ? (
+                    {obj.src.includes("youtu") || obj.src.includes("youtube") ? (
                       <Link to={obj.src} target="_blank" className="group">
                         <img
                           src={`https://img.youtube.com/vi/${getYTid(obj.src)}/maxresdefault.jpg`}

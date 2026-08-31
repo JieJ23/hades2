@@ -120,7 +120,8 @@ export function getTwitchid(url) {
 }
 
 export function getYTid(text) {
-  return text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)[1];
+  const match = text.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+  return match ? match[1] : null;
 }
 export function getBilibiliid(text) {
   // Matches either BV ID or av ID
