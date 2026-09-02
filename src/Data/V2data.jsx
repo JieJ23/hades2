@@ -7226,7 +7226,7 @@ export const v2data = [
     loc: "Surface",
     fea: 62,
     src: "https://www.youtube.com/watch?v=PQcncPeliJQ",
-    des: "Damageless #usum (Full Footage, No Audio Due to Salvaged Capture)",
+    des: "Damageless #usum (Full Footage, No Audio Due to Salvaged Capture) #dmgless",
     tim: "17:14.31",
     fam: "Polecat",
     cor: "HepAttack,HerSpecial,DemCast,ApoSprint,Magick",

@@ -39,6 +39,7 @@ export default function Night() {
   const [doNotHammer, setDoNotHammer] = useState([]);
 
   const [unseed, setUnseeded] = useState("No");
+  const [dmg, setDmg] = useState("No");
 
   const orderData = useMemo(() => {
     return [...bundleData, ...posts]
@@ -46,6 +47,7 @@ export default function Night() {
       .filter((obj) => parseTimetoms(obj.tim) >= timeMin * 6000 && parseTimetoms(obj.tim) <= timeMax * 6000)
       .filter((obj) => {
         const unseeded = unseed === "Yes" ? obj.des && obj.des.includes("#usum") : obj;
+        const damageless = dmg === "Yes" ? obj.des && obj.des.includes("#dmgless") : obj;
         const playerMatch = player === "" || obj.nam === player;
         const categoryMatch = category === "" || obj.asp === category;
         const regionMatch =
@@ -60,7 +62,14 @@ export default function Night() {
         const includeNotHammer = doNotHammer.length === 0 || doNotHammer.every((hammer) => !obj.ham?.includes(hammer));
 
         return (
-          categoryMatch && regionMatch && playerMatch && videoOnly && includeHammer && includeNotHammer && unseeded
+          categoryMatch &&
+          regionMatch &&
+          playerMatch &&
+          videoOnly &&
+          includeHammer &&
+          includeNotHammer &&
+          unseeded &&
+          damageless
         );
       })
       .sort((a, b) => {
@@ -86,6 +95,7 @@ export default function Night() {
     hasHammer,
     doNotHammer,
     unseed,
+    dmg,
   ]);
 
   // Pagnition
@@ -374,6 +384,17 @@ export default function Night() {
                 >
                   <option value={"No"}>{`Not USUM`}</option>
                   <option value={"Yes"}>USUM</option>
+                </select>
+                <select
+                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+                  defaultValue={"Not Damageless"}
+                  value={dmg}
+                  onChange={(e) => {
+                    setDmg(e.target.value);
+                  }}
+                >
+                  <option value={"No"}>{`Not Damageless`}</option>
+                  <option value={"Yes"}>Damageless</option>
                 </select>
               </div>
             </div>
