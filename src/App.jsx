@@ -1,4 +1,5 @@
 import { useData } from "./Hook/DataFetch";
+import { useTag } from "./Hook/TagFetch";
 import Loading from "./Hook/Loading";
 import { bundleData } from "./Data/DataBundle";
 // Utility
@@ -59,14 +60,18 @@ function createData(fearNum, data, region) {
   return entriesData;
 }
 
-function AvatarItem({ obj, ind, categoryRegion, category, addTextColor, addCategoryClasses }) {
+function AvatarItem({ obj, ind, categoryRegion, category, addTextColor, addCategoryClasses, pTags }) {
   const [imgError, setImgError] = useState(false);
 
   return (
     <div className={`${ind === 0 && `aura aura-dual`} ${addTextColor(categoryRegion[category])}`}>
-      <div className="rounded font-[Ale] bg-[#0e0c12] flex flex-col justify-center items-center pt-4 min-w-40 min-h-15 relative">
+      <div className="rounded font-[Ale] bg-[#0e0c12] flex flex-col justify-center items-center pt-4 min-w-40 h-full min-h-25 relative overflow-hidden">
         <div
           className={`absolute top-0 right-0 h-full w-full bg-no-repeat bg-top bg-cover scale-[105%] ${addCategoryClasses(categoryRegion[category])}`}
+          style={{ backgroundImage: `url(/red.png)` }}
+        />
+        <div
+          className={`absolute rotate-180 top-0 right-0 h-full w-full bg-no-repeat bg-top bg-cover scale-[105%] ${addCategoryClasses(categoryRegion[category])}`}
           style={{ backgroundImage: `url(/red.png)` }}
         />
         <div className={`relative w-10 h-10 shrink-0`}>
@@ -86,9 +91,12 @@ function AvatarItem({ obj, ind, categoryRegion, category, addTextColor, addCateg
             </div>
           )}
         </div>
-        <div className="truncate z-20">
-          <div>{obj.nam}</div>
-        </div>
+        <div className="truncate z-20">{obj.nam}</div>
+        {pTags[obj.nam] && (
+          <div className="font-[Ale] text-[13px] my-1 mb-4 z-40 max-w-30 text-center text-white">
+            - {pTags[obj.nam]}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -96,6 +104,7 @@ function AvatarItem({ obj, ind, categoryRegion, category, addTextColor, addCateg
 
 export default function App() {
   const { posts, loader } = useData();
+  const { tags, tagloader } = useTag();
   const container = useRef(null);
   const containerRef = useRef(null);
   const lastSpawn = useRef(0);
@@ -364,7 +373,7 @@ export default function App() {
     }
   };
   //
-
+  const tagObjects = Object.fromEntries(tags.map((item) => [item.Name, item.Tag]));
   return (
     <main
       className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
@@ -385,7 +394,7 @@ export default function App() {
             </div>
           </div>
           {/*  */}
-          {loader ? (
+          {loader || tagloader ? (
             <Loading />
           ) : (
             <div>
@@ -424,6 +433,7 @@ export default function App() {
                           category={category}
                           addTextColor={addTextColor}
                           addCategoryClasses={addCategoryClasses}
+                          pTags={tagObjects}
                         />
                       ))}
                   </div>
