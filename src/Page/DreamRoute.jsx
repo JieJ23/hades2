@@ -170,20 +170,6 @@ export default function DreamRoute() {
                   <div className="absolute top-1 right-1 text-[11px] font-[UbuntuMono] text-gray-400">{index + 1}</div>
                   {/* Player Info */}
                   <div className="flex gap-2 items-end font-[Sr]">
-                    <div className="relative w-8 h-8">
-                      <img
-                        src={`/Avatar/${obj.nam.toLowerCase()}.webp`}
-                        alt="Avatar"
-                        className="w-8 h-8 rounded-full"
-                        onError={(e) => {
-                          e.target.style.display = "none";
-                          e.target.nextSibling.style.display = "flex";
-                        }}
-                      />
-                      <div className="w-8 h-8 rounded bg-[#28282b] text-white items-center justify-center hidden truncate">
-                        {obj.nam.slice(0, 2).toUpperCase()}
-                      </div>
-                    </div>
                     <div>{obj.nam}</div>
                   </div>
                   {/* Region Info */}
