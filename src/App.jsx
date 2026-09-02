@@ -1,7 +1,3 @@
-import SideNav from "./Comp/Sidebar";
-import Background from "./Comp/Background";
-import Footer from "./Comp/Footer";
-
 import { useData } from "./Hook/DataFetch";
 import Loading from "./Hook/Loading";
 import { bundleData } from "./Data/DataBundle";
@@ -21,6 +17,8 @@ import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { textHoverObject } from "./Data/TextHoverObject";
 import { p9boons } from "./Data/P9BoonObj";
+
+import { playerTags } from "./Data/PlayerTag";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 

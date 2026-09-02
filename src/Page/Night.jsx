@@ -753,7 +753,16 @@ export default function Night() {
                     )}
                     <div className="p-1 flex flex-col gap-1">
                       <div className="font-[Ale] px-2">
-                        <div className="cursor-pointer" onClick={() => setPlayer(obj.nam)}>
+                        <div
+                          className="cursor-pointer"
+                          onClick={() => {
+                            setPageIndex(1);
+                            setFill("Latest");
+                            setCategory("");
+                            setRegion("");
+                            setPlayer(obj.nam);
+                          }}
+                        >
                           {obj.nam}
                         </div>
                         <div>
@@ -908,7 +917,16 @@ export default function Night() {
                       </td>
                       <td className="border-0 border-y border-y-white/5">
                         <div className="flex items-center gap-1">
-                          <div className="cursor-pointer" onClick={() => setPlayer(obj.nam)}>
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => {
+                              setPageIndex(1);
+                              setFill("Latest");
+                              setCategory("");
+                              setRegion("");
+                              setPlayer(obj.nam);
+                            }}
+                          >
                             {obj.nam}
                           </div>
                           <div className="shrink-0 size-4">
