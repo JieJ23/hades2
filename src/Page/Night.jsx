@@ -1,7 +1,3 @@
-import SideNav from "../Comp/Sidebar";
-import Background from "../Comp/Background";
-import Footer from "../Comp/Footer";
-
 import { useData } from "../Hook/DataFetch";
 import Loading from "../Hook/Loading";
 import { bundleData } from "../Data/DataBundle";
@@ -10,7 +6,8 @@ import { sToA, findValue, orderMap, parseTimetoms, getPoolColor, getYTid } from 
 import { p9boons } from "../Data/P9BoonObj";
 import { Link } from "react-router-dom";
 import { h2AspectOrder } from "../Data/Misc";
-import { bAxe, bDagger, bLob, bStaff, bSuit, bTorch } from "../Data/Boon1";
+import { bAxe, bDagger, bLob, bStaff, bSuit, bTorch, bKeep } from "../Data/Boon1";
+import { bOrder } from "../Data/Boon2";
 
 import PageBlock from "../Block/PageBlock";
 
@@ -25,6 +22,7 @@ export default function Night() {
   const [pageIndex, setPageIndex] = useState(1); // current page
   const [mounted, setMounted] = useState(false);
   const [category, setCategory] = useState("");
+  const [fam, setFam] = useState("");
   const [region, setRegion] = useState("");
   const [fill, setFill] = useState("Latest");
   const [player, setPlayer] = useState("");
@@ -37,6 +35,8 @@ export default function Night() {
   const [timeMax, setTimeMax] = useState(30);
   const [hasHammer, setHasHammer] = useState([]);
   const [doNotHammer, setDoNotHammer] = useState([]);
+  const [hasKeep, setHasKeep] = useState([]);
+  const [hasCore, setHasCore] = useState([]);
 
   const [unseed, setUnseeded] = useState("No");
   const [dmg, setDmg] = useState("No");
@@ -50,6 +50,8 @@ export default function Night() {
         const damageless = dmg === "Yes" ? obj.des && obj.des.includes("#dmgless") : obj;
         const playerMatch = player === "" || obj.nam === player;
         const categoryMatch = category === "" || obj.asp === category;
+        const familiarMatch = fam === "" || obj.fam === fam;
+
         const regionMatch =
           region === ""
             ? true
@@ -57,19 +59,26 @@ export default function Night() {
               ? obj.loc === region
               : obj.loc !== "Underworld" && obj.loc !== "Surface";
         const videoOnly = vidOnly ? obj.src.includes("youtu") : obj;
+        const includeCore = hasCore.length === 0 || hasCore.every((core) => obj.cor?.split(",").includes(core));
+
+        const includeKeep = hasKeep.length === 0 || hasKeep.every((keep) => obj.ks?.includes(keep));
+
         const includeHammer = hasHammer.length === 0 || hasHammer.every((hammer) => obj.ham?.includes(hammer));
 
         const includeNotHammer = doNotHammer.length === 0 || doNotHammer.every((hammer) => !obj.ham?.includes(hammer));
 
         return (
           categoryMatch &&
+          familiarMatch &&
           regionMatch &&
           playerMatch &&
           videoOnly &&
           includeHammer &&
           includeNotHammer &&
           unseeded &&
-          damageless
+          damageless &&
+          includeKeep &&
+          includeCore
         );
       })
       .sort((a, b) => {
@@ -84,6 +93,7 @@ export default function Night() {
   }, [
     posts,
     category,
+    fam,
     region,
     fill,
     player,
@@ -96,6 +106,8 @@ export default function Night() {
     doNotHammer,
     unseed,
     dmg,
+    hasKeep,
+    hasCore,
   ]);
 
   // Pagnition
@@ -176,7 +188,7 @@ export default function Night() {
       {loader ? (
         <Loading />
       ) : (
-        <div className="py-8">
+        <div className="py-8 select-none">
           <div className="drawer">
             <input id="my-drawer-1" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content p-1 flex gap-1">
@@ -192,6 +204,7 @@ export default function Night() {
                 onClick={() => {
                   setPageIndex(1);
                   setCategory("");
+                  setFam("");
                   setRegion("");
                   setFill("Latest");
                   setPlayer("");
@@ -203,8 +216,11 @@ export default function Night() {
                   setTimeMax(30);
                   setHasHammer([]);
                   setDoNotHammer([]);
+                  setHasKeep([]);
+                  setHasCore([]);
 
                   setUnseeded("No");
+                  setDmg("No");
                 }}
               >
                 Reset
@@ -222,44 +238,6 @@ export default function Night() {
                 <div className="px-2">Entries: {orderData.length}</div>
                 <select
                   className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
-                  value={category}
-                  onChange={(e) => {
-                    setPageIndex(1);
-                    setCategory(e.target.value);
-                  }}
-                >
-                  <option value={""}>{`All Aspects`}</option>
-                  {h2AspectOrder.map((item) => (
-                    <option value={item}>{item}</option>
-                  ))}
-                </select>
-                <select
-                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
-                  value={region}
-                  onChange={(e) => {
-                    setPageIndex(1);
-                    setRegion(e.target.value);
-                  }}
-                >
-                  <option value={""}>{`All Region`}</option>
-                  <option value={`Surface`}>Surface</option>
-                  <option value={`Underworld`}>Underworld</option>
-                  <option value={`Dream`}>Dream</option>
-                </select>
-                <select
-                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
-                  value={fill}
-                  onChange={(e) => {
-                    setPageIndex(1);
-                    setFill(e.target.value);
-                  }}
-                >
-                  <option value={`Latest`}>Latest</option>
-                  <option value={`Oldest`}>Oldest</option>
-                  <option value={`Fear`}>Fear</option>
-                </select>
-                <select
-                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
                   value={player}
                   onChange={(e) => {
                     setPageIndex(1);
@@ -273,6 +251,86 @@ export default function Night() {
                   {allPlayers.map((ite) => (
                     <option value={ite}>{ite}</option>
                   ))}
+                </select>
+                <select
+                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+                  value={category}
+                  onChange={(e) => {
+                    setPageIndex(1);
+                    setCategory(e.target.value);
+                  }}
+                >
+                  <option value={""}>{`All Aspects`}</option>
+                  {h2AspectOrder.map((item) => (
+                    <option value={item}>
+                      <img src={`/P9/${item}.png`} alt="Aspects" className="size-6" />
+                      {item}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+                  value={category}
+                  onChange={(e) => {
+                    setPageIndex(1);
+                    setFam(e.target.value);
+                  }}
+                >
+                  <option value={""}>{`All Familiars`}</option>
+                  <option value={"Frog"}>
+                    <img src={`/H2Boons/Frog.png`} alt="Familiar" className="size-6" />
+                    {`Frinos`}
+                  </option>
+                  <option value={"Cat"}>
+                    <img src={`/H2Boons/Cat.png`} alt="Familiar" className="size-6" />
+                    {`Toula`}
+                  </option>
+                  <option value={"Hound"}>
+                    <img src={`/H2Boons/Hound.png`} alt="Familiar" className="size-6" />
+                    {`Hecuba`}
+                  </option>
+                  <option value={"Raven"}>
+                    <img src={`/H2Boons/Raven.png`} alt="Familiar" className="size-6" />
+                    {`Raki`}
+                  </option>
+                  <option value={"Polecat"}>
+                    <img src={`/H2Boons/Polecat.png`} alt="Familiar" className="size-6" />
+                    {`Gale`}
+                  </option>
+                </select>
+                <select
+                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+                  value={region}
+                  onChange={(e) => {
+                    setPageIndex(1);
+                    setRegion(e.target.value);
+                  }}
+                >
+                  <option value={""}>{`All Region`}</option>
+                  <option value={`Surface`}>
+                    <img src={`/Surface.png`} alt="Region" className="size-6" />
+                    Surface
+                  </option>
+                  <option value={`Underworld`}>
+                    <img src={`/Underworld.png`} alt="Region" className="size-6" />
+                    Underworld
+                  </option>
+                  <option value={`Dream`}>
+                    <img src={`/Dream.png`} alt="Region" className="size-6" />
+                    Dream
+                  </option>
+                </select>
+                <select
+                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+                  value={fill}
+                  onChange={(e) => {
+                    setPageIndex(1);
+                    setFill(e.target.value);
+                  }}
+                >
+                  <option value={`Latest`}>Latest</option>
+                  <option value={`Oldest`}>Oldest</option>
+                  <option value={`Fear`}>Fear</option>
                 </select>
                 <div className="flex text-center gap-2">
                   <div className="w-full">
@@ -338,6 +396,48 @@ export default function Night() {
                     </select>
                   </div>
                 </div>
+                <select
+                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+                  defaultValue={"Include Core"}
+                  value={hasCore[0] || "Include Core"}
+                  onChange={(e) => {
+                    setPageIndex(1);
+                    setHasCore((prev) => {
+                      if (prev.length >= 5) return prev;
+                      if (prev.includes(e.target.value)) return prev;
+                      return [...prev, e.target.value];
+                    });
+                  }}
+                >
+                  <option disabled={true}>{`Include Core`}</option>
+                  {bOrder.slice(0, 50).map((item) => (
+                    <option value={item}>
+                      <img src={`/H2Boons/${item}.png`} alt="Boon" className="size-6" />
+                      {item}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+                  defaultValue={"Include Keepsake"}
+                  value={hasKeep[0] || "Include Keepsake"}
+                  onChange={(e) => {
+                    setPageIndex(1);
+                    setHasKeep((prev) => {
+                      if (prev.length >= 4) return prev;
+                      if (prev.includes(e.target.value)) return prev;
+                      return [...prev, e.target.value];
+                    });
+                  }}
+                >
+                  <option disabled={true}>{`Include Keepsake`}</option>
+                  {bKeep.map((item) => (
+                    <option value={item}>
+                      <img src={`/buildgui/${item}.png`} alt="Keepsakes" className="size-6" />
+                      {item}
+                    </option>
+                  ))}
+                </select>
                 <select
                   className="w-full select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
                   defaultValue={"Include Hammer"}
@@ -422,29 +522,126 @@ export default function Night() {
               Video
             </button>
           </div>
-          <div className="p-1 flex gap-1 flex-wrap font-[Ale] text-black">
-            {fearMin !== 0 && <div className="bg-purple-400 p-2 py-1 rounded-r-xl rounded-l">Min Fear: {fearMin}</div>}
-            {fearMax !== 67 && <div className="bg-purple-400 p-2 py-1 rounded-r-xl rounded-l">Max Fear: {fearMax}</div>}
-            {timeMin !== 0 && <div className="bg-yellow-400 p-2 py-1 rounded-r-xl rounded-l">Min Time: {timeMin}</div>}
-            {timeMax !== 30 && <div className="bg-yellow-400 p-2 py-1 rounded-r-xl rounded-l">Max Time: {timeMax}</div>}
+          <div className="p-1 flex gap-1 flex-wrap font-[Ale] text-[13px] text-gray-300">
+            {player !== "" && (
+              <div
+                className="bg-[#131111] border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center"
+                onClick={() => setPlayer("")}
+              >
+                Player: {player}
+              </div>
+            )}
+            {region !== "" && (
+              <div
+                className="bg-[#131111] border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center gap-1"
+                onClick={() => setRegion("")}
+              >
+                <img src={`/${region}.png`} alt="Region" className="size-5" /> {region}
+              </div>
+            )}
+            {category !== "" && (
+              <div
+                className="bg-[#131111] border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center gap-1"
+                onClick={() => setCategory("")}
+              >
+                <img src={`/P9/${category}.png`} alt="Aspects" className="size-5" /> {category}
+              </div>
+            )}
+            {fam !== "" && (
+              <div
+                className="bg-[#131111] border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center gap-1"
+                onClick={() => setFam("")}
+              >
+                <img src={`/H2Boons/${fam}.png`} alt="Familiar" className="size-5" />
+                Familiar: {fam}
+              </div>
+            )}
+            {fearMin !== 0 && (
+              <div
+                className="bg-[#131111] border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center"
+                onClick={() => setFearMin(0)}
+              >
+                Min Fear: {fearMin}
+              </div>
+            )}
+            {fearMax !== 67 && (
+              <div
+                className="bg-[#131111] border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center"
+                onClick={() => setFearMax(67)}
+              >
+                Max Fear: {fearMax}
+              </div>
+            )}
+            {timeMin !== 0 && (
+              <div
+                className="bg-[#131111] border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center"
+                onClick={() => setTimeMin(0)}
+              >
+                Min Time: {timeMin}
+              </div>
+            )}
+            {timeMax !== 30 && (
+              <div
+                className="bg-[#131111] border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center"
+                onClick={() => setTimeMax(30)}
+              >
+                Max Time: {timeMax}
+              </div>
+            )}
+            {hasCore.length > 0 &&
+              hasCore.map((item) => (
+                <div
+                  className="bg-[#131111] border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center gap-1"
+                  onClick={() => setHasCore((prev) => prev.filter((core) => core !== item))}
+                >
+                  <img src={`/H2Boons/${item}.png`} alt="Boon" className="size-5" />
+                  {item}
+                </div>
+              ))}
+            {hasKeep.length > 0 &&
+              hasKeep.map((item) => (
+                <div
+                  className="bg-[#131111] border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center gap-1"
+                  onClick={() => setHasKeep((prev) => prev.filter((keep) => keep !== item))}
+                >
+                  <img src={`/buildgui/${item}.png`} alt="Keepsakes" className="size-5" />
+                  {item}
+                </div>
+              ))}
             {hasHammer.length > 0 &&
               hasHammer.map((item) => (
                 <div
-                  className="bg-blue-400 p-2 py-1 rounded-r-xl rounded-l cursor-pointer"
+                  className="bg-[#131111] border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center"
                   onClick={() => setHasHammer((prev) => prev.filter((hammer) => hammer !== item))}
                 >
-                  Has: {item}
+                  {item}
                 </div>
               ))}
             {doNotHammer.length > 0 &&
               doNotHammer.map((item) => (
                 <div
-                  className="bg-red-400 p-2 py-1 rounded-r-xl rounded-l cursor-pointer"
+                  className="bg-[#131111] border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center"
                   onClick={() => setDoNotHammer((prev) => prev.filter((hammer) => hammer !== item))}
                 >
-                  Not Include: {item}
+                  No: {item}
                 </div>
               ))}
+            {unseed !== "No" && (
+              <div
+                className="bg-green-300 text-black border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center"
+                onClick={() => setUnseeded("No")}
+              >
+                USUM
+              </div>
+            )}
+            {dmg !== "No" && (
+              <div
+                className="bg-yellow-300 text-black border border-white/20 p-2 py-1 rounded cursor-pointer flex items-center"
+                onClick={() => setDmg("No")}
+              >
+                Damageless
+              </div>
+            )}
           </div>
           {/* Table Content */}
           {format === "Grid" ? (

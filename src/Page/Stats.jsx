@@ -18,14 +18,20 @@ export default function Stats() {
   const { posts, loader } = useData();
   const [aspect, setAspect] = useState([]);
   const [region, setRegion] = useState([]);
+  const [player, setPlayer] = useState("");
 
   const fullData = [...bundleData, ...posts].filter((obj) => {
+    const target = player == "" ? obj : obj.nam === player;
     const currentAspect = aspect.length === 0 || aspect.includes(obj.asp);
 
     const currentRegion = region.length === 0 || region.includes(obj.loc);
 
-    return currentAspect && currentRegion;
+    return currentAspect && currentRegion && target;
   });
+
+  const allPlayers = [...new Set([...bundleData, ...(posts || [])].map((obj) => obj.nam))].sort((a, b) =>
+    a.toLowerCase().localeCompare(b.toLowerCase()),
+  );
 
   const boonStore = Object.entries(
     fullData.reduce((acc, arr) => {
@@ -95,6 +101,18 @@ export default function Stats() {
         ) : (
           <div className="w-full py-8">
             <div className="flex flex-col gap-2">
+              <select
+                className="w-full max-w-75 select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+                value={player}
+                onChange={(e) => {
+                  setPlayer(e.target.value);
+                }}
+              >
+                <option value={""}>All Player</option>
+                {allPlayers.map((ite) => (
+                  <option value={ite}>{ite}</option>
+                ))}
+              </select>
               <div className="flex justify-start flex-wrap gap-2 px-2">
                 {regions.map((item) => (
                   <div
