@@ -269,39 +269,49 @@ export default function HadesCalendar() {
                       {selectedEvents.map((ev, idx) => (
                         <li key={idx} className="flex items-center w-full h-full">
                           <div
-                            className={`text-[12px] px-2 py-1 rounded ring-1 w-full relative overflow-hidden ${CHIP_COLORS[ev.color] || "bg-white/10 text-white/80 ring-white/20"
-                              }`}
+                            className="text-[12px] px-2 py-1 rounded ring-1 w-full h-full relative isolate overflow-hidden text-white/80 ring-white/20"
                           >
+                            {/* image layer - bottom */}
                             <img
-                              src={`/GUI_Card/c${ev.obj.asp}.png`}
+                              src={`/Misc/${ev.obj.loc !== "Underworld" && ev.obj.loc !== "Surface" ? `Dream` : ev.obj.loc}.webp`}
                               alt="Aspects"
-                              className="absolute right-0 bottom-0 h-full w-auto"
+                              className="absolute inset-0 h-full w-full object-cover object-center z-0"
                             />
-                            <img
-                              src={`/GUI_Card/c${ev.obj.asp}.png`}
-                              alt="Aspects"
-                              className="absolute right-0 bottom-0 h-full w-auto"
+
+                            {/* gradient overlay - middle */}
+                            <div
+                              className="absolute inset-0 z-10 pointer-events-none"
+                              style={{
+                                background: `linear-gradient(to right, #000000, #00000085,transparent)`,
+                              }}
                             />
-                            <div className="flex items-center gap-1">
-                              <div className={`relative w-9 h-9 shrink-0`}>
-                                {PfpObjects[ev.obj.nam] ? (
-                                  <img
-                                    src={`${PfpObjects[ev.obj.nam]}`}
-                                    alt="Avatar"
-                                    loading="lazy"
-                                    className="w-9 h-9 rounded-full p-1 egg"
-                                    draggable={false}
-                                  />
-                                ) : (
-                                  <div className="w-9 h-9 rounded-full bg-[#28282b] text-white flex items-center justify-center truncate -translate-x-[2px]">
-                                    {ev.obj.nam.slice(0, 2).toUpperCase()}
-                                  </div>
-                                )}
+                            <div className="z-20 relative font-[Ale]">
+                              <img
+                                src={`/GUI_Card/c${ev.obj.asp}.png`}
+                                alt="Aspects"
+                                className="absolute right-0 bottom-0 h-full w-auto drop-shadow-[0_0_8px_violet]"
+                              />
+                              <div className="flex items-center gap-1">
+                                <div className={`relative w-9 h-9 shrink-0`}>
+                                  {PfpObjects[ev.obj.nam] ? (
+                                    <img
+                                      src={`${PfpObjects[ev.obj.nam]}`}
+                                      alt="Avatar"
+                                      loading="lazy"
+                                      className="w-9 h-9 rounded-full p-1 egg"
+                                      draggable={false}
+                                    />
+                                  ) : (
+                                    <div className="w-9 h-9 rounded-full bg-[#28282b] text-white flex items-center justify-center truncate -translate-x-[2px]">
+                                      {ev.obj.nam.slice(0, 2).toUpperCase()}
+                                    </div>
+                                  )}
+                                </div>
+                                <div className="text-[15px] text-white">{ev.obj.nam}</div>
                               </div>
-                              <div className="font-[Ale] text-[15px]">{ev.obj.nam}</div>
+                              <div className="text-gray-300 text-[13px]">{`Max Fear - ${ev.obj.asp}`}</div>
+                              <div className="text-gray-300 text-[13px]">{`Time - ${ev.obj.tim}`}</div>
                             </div>
-                            <div>{`Max Fear - ${ev.obj.asp}`}</div>
-                            <div>{`${ev.obj.loc !== "Underworld" || ev.obj.loc !== "Surface" ? `Drean Dive` : ev.obj.loc} - ${ev.obj.tim}`}</div>
                           </div>
                         </li>
                       ))}
