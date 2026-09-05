@@ -38,12 +38,10 @@ import SrcS from "./Page/SrcS.jsx";
 
 import SlotMachine from "./Page/SlotMachine.jsx";
 import Template from "./Page/Template.jsx";
+import HadesCalendar from "./Page/HadesCalendar.jsx";
 
 const today = new Date();
-const targetDate = new Date('2026-10-1');
-
-
-
+const targetDate = new Date("2026-10-1");
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -54,7 +52,6 @@ createRoot(document.getElementById("root")).render(
             <Routes>
               {targetDate > today ? (
                 <>
-
                   <Route path="/" element={<App />} />
                   <Route path="/Night" element={<Night />} />
                   <Route path="/DreamRoute" element={<DreamRoute />} />
@@ -83,14 +80,13 @@ createRoot(document.getElementById("root")).render(
                   <Route path="/SrcS" element={<SrcS />} />
 
                   <Route path="/SlotMachine" element={<SlotMachine />} />
+                  <Route path="/HadesCalendar" element={<HadesCalendar />} />
 
                   <Route path="*" element={<App />} />
                 </>
               ) : (
-
                 <Route path="*" element={<Template />} />
               )}
-
             </Routes>
           </Router>
         </DataProvider>

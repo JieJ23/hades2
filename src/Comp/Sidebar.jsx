@@ -11,6 +11,7 @@ export const sites = [
   { link: `GameplaySubmission`, nam: `Submit Run`, icon: `Book_Frog` },
   { link: `Player`, nam: `Players`, icon: `HealthBar_Mel` },
   { link: `Stats`, nam: `Stats`, icon: `Boon` },
+  // { link: `HadesCalendar`, nam: `Max Fear Timeline`, icon: `Calendar` },
 ];
 export const tools = [
   { link: `SlotMachine`, nam: `Hades Slot`, icon: `Slot` },
