@@ -136,7 +136,13 @@ function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay 
               key={key}
               type="button"
               disabled={!inRange}
-              onClick={() => onSelectDay(day)}
+              onClick={() => {
+                const element = document.getElementById("info");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+                onSelectDay(day)
+              }}
               // title={dayEvents.map((e) => e.title).join(", ")}
               className={`relative flex flex-col items-center justify-start h-8 rounded transition-colors ${!inRange ? "opacity-50 cursor-not-allowed" : "hover:bg-white/10"
                 } ${isSelected ? "ring-2 ring-green-300" : ""}`}
@@ -247,7 +253,7 @@ export default function HadesCalendar() {
 
           <div className="flex flex-col md:flex-row md:items-stretch">
             {/* Selected day detail -- shown first on mobile, right sidebar from md up */}
-            <div className="order-1 md:order-2 border-b border-white/10 bg-white/5 p-4 px-2 font-[Ubuntu] min-h-[100px] md:border-b-0 md:border-l md:w-64 md:shrink-0 md:py-6">
+            <div className="order-1 md:order-2 border-b border-white/10 bg-white/5 p-4 px-2 font-[Ubuntu] min-h-[100px] md:border-b-0 md:border-l md:w-64 md:shrink-0 md:py-6" id="info">
               {selectedDate ? (
                 <>
                   <p className="text-xs text-white/50 mb-2">
