@@ -4,7 +4,7 @@ import PageBlock from "../Block/PageBlock";
 import { useData } from "../Hook/DataFetch";
 import { usePfp } from "../Hook/PfpFetch";
 import { bundleData } from "../Data/DataBundle";
-import Loading from "../Hook/Loading";
+import Loading from "../Hook/Loading"
 
 /**
  * HadesCalendar
@@ -138,22 +138,20 @@ function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay 
               disabled={!inRange}
               onClick={() => onSelectDay(day)}
               // title={dayEvents.map((e) => e.title).join(", ")}
-              className={`relative flex flex-col items-center justify-start h-8 rounded transition-colors ${
-                !inRange ? "opacity-20 cursor-not-allowed" : "hover:bg-white/10"
-              } ${isSelected ? "ring-2 ring-green-300" : ""}`}
+              className={`relative flex flex-col items-center justify-start h-8 rounded transition-colors ${!inRange ? "opacity-50 cursor-not-allowed" : "hover:bg-white/10"
+                } ${isSelected ? "ring-2 ring-green-300" : ""}`}
             >
               <span
-                className={`text-[11px] w-5 h-5 flex items-center justify-center rounded-full ${
-                  isToday ? "bg-green-300 text-black  " : "text-white/80"
-                }`}
+                className={`text-[11px] w-5 h-5 flex items-center justify-center rounded-full ${isToday ? "bg-green-300 text-black  " : "text-gray-300"
+                  }`}
               >
                 {day.getDate()}
               </span>
               <div className="flex gap-0.5">
                 {dayEvents.slice(0, 1).map((ev, i) => (
-                  <div className="flex gap-0.5 items-center text-[10px]">
-                    {/* {dayEvents.length} */}
-                    <span key={i} className={`w-1.5 h-1.5 rounded-full ${"bg-orange-400" || "bg-white/40"}`} />
+                  <div className="flex gap-0.5 items-center text-[10px] font-[UbuntuMono]">
+                    {dayEvents.length}
+                    <span key={i} className={`w-1.5 h-1.5 rounded-full ${"bg-blue-400" || "bg-white/40"}`} />
                   </div>
                 ))}
               </div>
@@ -168,18 +166,29 @@ function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay 
 export default function HadesCalendar() {
   const { posts, loader } = useData();
   const { pfp, pfploader } = usePfp();
+  const [player, setPlayer] = useState("")
 
   const months = useMemo(() => buildMonthList(RANGE_START, RANGE_END), []);
   const [selectedDate, setSelectedDate] = useState(null);
 
   // Data
-  const only67 = [...bundleData, ...posts].filter((obj) => obj.fea == 67 && obj.des.includes("#usum"));
+  const only67 =
+    useMemo(
+      () =>
+        [...bundleData, ...posts].
+          filter((obj) => obj.fea == 67 && obj.des.includes("#usum"))
+      , [player, posts])
+
+  const filteredData = only67.filter((obj) => {
+    if (player !== "") return obj.nam === player;
+    return obj;
+  })
 
   const PfpObjects = Object.fromEntries(pfp.map((item) => [item.Pfp, item.ImgLink]));
 
   const events = [];
-  for (let i = 0; i < only67.length; i++) {
-    const run = only67[i];
+  for (let i = 0; i < filteredData.length; i++) {
+    const run = filteredData[i];
     const color = run.loc == "Underworld" ? `emerald` : run.loc == "Surface" ? `amber` : `violet`;
     events.push({ date: run.dat, obj: run, color: color });
   }
@@ -202,17 +211,35 @@ export default function HadesCalendar() {
   const selectedKey = selectedDate ? toKey(selectedDate) : null;
   const selectedEvents = selectedKey ? eventsByDay[selectedKey] || [] : [];
 
+  // Player Search
+
+  const allPlayers = [...new Set(only67.map((obj) => obj.nam))].sort((a, b) =>
+    a.toLowerCase().localeCompare(b.toLowerCase()),
+  );
+
   return (
     <PageBlock>
       {loader || pfploader ? (
         <Loading />
       ) : (
-        <div className="mx-auto bg-white/5 backdrop-blur-md rounded shadow-sm ring-1 ring-white/10 overflow-hidden font-[Ubuntu]">
+        <div className="mx-auto bg-white/5 backdrop-blur-md rounded shadow-sm ring-1 ring-white/10 overflow-hidden font-[Ubuntu] select-none">
           {/* Header */}
           <div className="px-6 py-4 border-b border-white/10">
             <h2 className="text-2xl text-white font-[Sr]">
               Hades 2: 1 Year <span className="text-white/40">Overview</span>
             </h2>
+            <select
+              className="w-25 select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+              value={player}
+              onChange={(e) => {
+                setPlayer(e.target.value);
+              }}
+            >
+              <option value={""}>All Player</option>
+              {allPlayers.map((ite) => (
+                <option value={ite}>{ite}</option>
+              ))}
+            </select>
             {/* <p className="text-sm tracking-wide text-white/60 font-[Sr] mb-3">
               Sep 25, 2025 &nbsp;–&nbsp; Sep 25, 2026
             </p> */}
@@ -236,9 +263,8 @@ export default function HadesCalendar() {
                       {selectedEvents.map((ev, idx) => (
                         <li key={idx} className="flex items-center w-full h-full">
                           <div
-                            className={`text-[12px] px-2 py-1 rounded ring-1 w-full relative overflow-hidden ${
-                              CHIP_COLORS[ev.color] || "bg-white/10 text-white/80 ring-white/20"
-                            }`}
+                            className={`text-[12px] px-2 py-1 rounded ring-1 w-full relative overflow-hidden ${CHIP_COLORS[ev.color] || "bg-white/10 text-white/80 ring-white/20"
+                              }`}
                           >
                             <img
                               src={`/GUI_Card/c${ev.obj.asp}.png`}
