@@ -4,7 +4,7 @@ import PageBlock from "../Block/PageBlock";
 import { useData } from "../Hook/DataFetch";
 import { usePfp } from "../Hook/PfpFetch";
 import { bundleData } from "../Data/DataBundle";
-import Loading from "../Hook/Loading"
+import Loading from "../Hook/Loading";
 
 /**
  * HadesCalendar
@@ -98,13 +98,17 @@ function buildMonthList(start, end) {
   return months;
 }
 
-function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay }) {
+function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay, num }) {
   const cells = useMemo(() => buildMonthOnlyCells(year, month), [year, month]);
 
   return (
     <div className="w-full sm:w-[calc(50%-0.375rem)] lg:w-[calc(33.333%-0.5rem)] xl:w-[calc(25%-0.5625rem)] bg-[#0e0c12]/10 backdrop-blur-sm rounded-xl ring-1 ring-white/10 overflow-hidden flex flex-col shrink-0 relative">
-      {/* <img src="/bg1.webp" alt="Background" className="absolute w-full h-full top-0 -z-10 object-cover object-center" /> */}
-      {/* <div className="absolute w-full h-full top-0 -z-10 bg-[#0e0c12]/90" /> */}
+      <img
+        src={`/bg/${num + 1}.webp`}
+        alt="Background"
+        className="absolute w-full h-full top-0 -z-10 object-cover object-top drop-shadow-[0_0_10px_#00ffaa]"
+      />
+      <div className="absolute w-full h-full top-0 -z-10 bg-[#0e0c12]/90" />
       <div className="px-3 pt-3 pb-2 border-b border-white/10">
         <h3 className="text-sm text-white">
           {MONTH_NAMES[month]} <span className="text-white/40">{year}</span>
@@ -143,15 +147,17 @@ function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay 
                 if (element) {
                   element.scrollIntoView({ behavior: "smooth" });
                 }
-                onSelectDay(day)
+                onSelectDay(day);
               }}
               // title={dayEvents.map((e) => e.title).join(", ")}
-              className={`relative flex flex-col items-center justify-start h-8 rounded transition-colors ${!inRange ? "opacity-50 cursor-not-allowed" : "hover:bg-white/10"
-                } ${isSelected ? "ring-2 ring-green-300" : ""}`}
+              className={`relative flex flex-col items-center justify-start h-8 rounded transition-colors ${
+                !inRange ? "opacity-50 cursor-not-allowed" : "hover:bg-white/10"
+              } ${isSelected ? "ring-2 ring-green-300" : ""}`}
             >
               <span
-                className={`text-[11px] w-5 h-5 flex items-center justify-center rounded-full ${isToday ? "bg-green-300 text-black  " : "text-gray-300"
-                  }`}
+                className={`text-[11px] w-5 h-5 flex items-center justify-center rounded-full ${
+                  isToday ? "bg-green-300 text-black  " : "text-gray-300"
+                }`}
               >
                 {day.getDate()}
               </span>
@@ -159,7 +165,10 @@ function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay 
                 {dayEvents.slice(0, 1).map((ev, i) => (
                   <div className="flex gap-0.5 items-center text-[10px] font-[UbuntuMono]">
                     {dayEvents.length}
-                    <span key={i} className={`w-1.5 h-1.5 rounded-full ${"bg-blue-400" || "bg-white/40"}`} />
+                    <span
+                      key={i}
+                      className={`w-1.5 h-1.5 rounded-full animate-pulse ${"bg-blue-400" || "bg-white/40"}`}
+                    />
                   </div>
                 ))}
               </div>
@@ -174,23 +183,21 @@ function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay 
 export default function HadesCalendar() {
   const { posts, loader } = useData();
   const { pfp, pfploader } = usePfp();
-  const [player, setPlayer] = useState("")
+  const [player, setPlayer] = useState("");
 
   const months = useMemo(() => buildMonthList(RANGE_START, RANGE_END), []);
   const [selectedDate, setSelectedDate] = useState(null);
 
   // Data
-  const only67 =
-    useMemo(
-      () =>
-        [...bundleData, ...posts].
-          filter((obj) => obj.fea == 67 && obj.des.includes("#usum"))
-      , [player, posts])
+  const only67 = useMemo(
+    () => [...bundleData, ...posts].filter((obj) => obj.fea == 67 && obj.des.includes("#usum")),
+    [player, posts],
+  );
 
   const filteredData = only67.filter((obj) => {
     if (player !== "") return obj.nam === player;
     return obj;
-  })
+  });
 
   const PfpObjects = Object.fromEntries(pfp.map((item) => [item.Pfp, item.ImgLink]));
 
@@ -255,7 +262,10 @@ export default function HadesCalendar() {
 
           <div className="flex flex-col md:flex-row md:items-stretch">
             {/* Selected day detail -- shown first on mobile, right sidebar from md up */}
-            <div className="order-1 md:order-2 border-b border-white/10 bg-white/5 p-4 px-2 font-[Ubuntu] min-h-[100px] md:border-b-0 md:border-l md:w-64 md:shrink-0 md:py-6" id="info">
+            <div
+              className="order-1 md:order-2 border-b border-white/10 bg-[#0e0c12] p-4 px-2 font-[Ubuntu] min-h-[100px] md:border-b-0 md:border-l md:w-64 md:shrink-0 md:py-6"
+              id="info"
+            >
               {selectedDate ? (
                 <>
                   <p className="text-xs text-white/50 mb-2">
@@ -270,9 +280,7 @@ export default function HadesCalendar() {
                     <ul className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-2">
                       {selectedEvents.map((ev, idx) => (
                         <li key={idx} className="flex items-center w-full h-full">
-                          <div
-                            className="text-[12px] px-2 py-1 rounded ring-1 w-full h-full relative isolate overflow-hidden text-white/80 ring-white/20"
-                          >
+                          <div className="text-[12px] px-2 py-1 rounded ring-1 w-full h-full relative isolate overflow-hidden text-white/80 ring-white/20">
                             {/* image layer - bottom */}
                             <img
                               src={`/Misc/${ev.obj.loc !== "Underworld" && ev.obj.loc !== "Surface" ? `Dream` : ev.obj.loc}.webp`}
@@ -329,8 +337,9 @@ export default function HadesCalendar() {
 
             {/* All months, flex-wrap grid */}
             <div className="order-2 md:order-1 md:flex-1 md:min-w-0 flex flex-wrap gap-3 p-4 max-h-[1000px] overflow-scroll md:max-h-full">
-              {months.map((m) => (
+              {months.map((m, index) => (
                 <MiniMonth
+                  num={index}
                   key={`${m.year}-${m.month}`}
                   year={m.year}
                   month={m.month}

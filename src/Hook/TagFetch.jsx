@@ -14,7 +14,7 @@ export const TagProvider = ({ children }) => {
       try {
         const cached = localStorage.getItem("tag");
         const cacheTimestamp = localStorage.getItem("tag_timestamp");
-        const oneDayInMs = 60 * 60 * 1000; // 60 minutes in milliseconds
+        const oneDayInMs = 360 * 60 * 1000; // 6-hours minutes in milliseconds
 
         if (cached && cacheTimestamp) {
           const age = Date.now() - parseInt(cacheTimestamp);
