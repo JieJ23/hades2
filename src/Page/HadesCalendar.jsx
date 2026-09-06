@@ -102,7 +102,9 @@ function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay 
   const cells = useMemo(() => buildMonthOnlyCells(year, month), [year, month]);
 
   return (
-    <div className="w-full sm:w-[calc(50%-0.375rem)] lg:w-[calc(33.333%-0.5rem)] xl:w-[calc(25%-0.5625rem)] bg-[#0e0c12]/10 backdrop-blur-sm rounded-xl ring-1 ring-white/10 overflow-hidden flex flex-col shrink-0">
+    <div className="w-full sm:w-[calc(50%-0.375rem)] lg:w-[calc(33.333%-0.5rem)] xl:w-[calc(25%-0.5625rem)] bg-[#0e0c12]/10 backdrop-blur-sm rounded-xl ring-1 ring-white/10 overflow-hidden flex flex-col shrink-0 relative">
+      {/* <img src="/bg1.webp" alt="Background" className="absolute w-full h-full top-0 -z-10 object-cover object-center" /> */}
+      {/* <div className="absolute w-full h-full top-0 -z-10 bg-[#0e0c12]/90" /> */}
       <div className="px-3 pt-3 pb-2 border-b border-white/10">
         <h3 className="text-sm text-white">
           {MONTH_NAMES[month]} <span className="text-white/40">{year}</span>
@@ -196,7 +198,7 @@ export default function HadesCalendar() {
   for (let i = 0; i < filteredData.length; i++) {
     const run = filteredData[i];
     const color = run.loc == "Underworld" ? `emerald` : run.loc == "Surface" ? `amber` : `violet`;
-    events.push({ date: run.dat, obj: run, color: color });
+    events.push({ date: run.dat.slice(0, 10), obj: run, color: color });
   }
 
   const eventsByDay = useMemo(() => {
