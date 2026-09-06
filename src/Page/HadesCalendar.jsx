@@ -5,6 +5,7 @@ import { useData } from "../Hook/DataFetch";
 import { usePfp } from "../Hook/PfpFetch";
 import { bundleData } from "../Data/DataBundle";
 import Loading from "../Hook/Loading";
+import { h2AspectOrder } from "../Data/Misc";
 
 /**
  * HadesCalendar
@@ -102,13 +103,13 @@ function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay,
   const cells = useMemo(() => buildMonthOnlyCells(year, month), [year, month]);
 
   return (
-    <div className="w-full sm:w-[calc(50%-0.375rem)] lg:w-[calc(33.333%-0.5rem)] xl:w-[calc(25%-0.5625rem)] bg-[#0e0c12]/10 backdrop-blur-sm rounded-xl ring-1 ring-white/10 overflow-hidden flex flex-col shrink-0 relative">
+    <div className="w-full sm:w-[calc(50%-0.375rem)] lg:w-[calc(33.333%-0.5rem)] xl:w-[calc(25%-0.5625rem)] bg-[#0e0c12]/10 backdrop-blur-sm rounded ring-1 ring-white/10 overflow-hidden flex flex-col shrink-0 relative">
       <img
         src={`/bg/${num + 1}.webp`}
         alt="Background"
-        className="absolute w-full h-full top-0 -z-10 object-cover object-top drop-shadow-[0_0_10px_#00ffaa]"
+        className="absolute w-full h-full top-0 -z-10 object-contain sm:object-cover object-top drop-shadow-[0_0_8px_purple]"
       />
-      <div className="absolute w-full h-full top-0 -z-10 bg-[#0e0c12]/90" />
+      <div className="absolute w-full h-full top-0 -z-10 bg-[#0e0c12]/88" />
       <div className="px-3 pt-3 pb-2 border-b border-white/10">
         <h3 className="text-sm text-white">
           {MONTH_NAMES[month]} <span className="text-white/40">{year}</span>
@@ -184,6 +185,7 @@ export default function HadesCalendar() {
   const { posts, loader } = useData();
   const { pfp, pfploader } = usePfp();
   const [player, setPlayer] = useState("");
+  const [aspect, setAspect] = useState("");
 
   const months = useMemo(() => buildMonthList(RANGE_START, RANGE_END), []);
   const [selectedDate, setSelectedDate] = useState(null);
@@ -196,6 +198,7 @@ export default function HadesCalendar() {
 
   const filteredData = only67.filter((obj) => {
     if (player !== "") return obj.nam === player;
+    if (aspect !== "") return obj.asp === aspect;
     return obj;
   });
 
@@ -243,18 +246,34 @@ export default function HadesCalendar() {
             <h2 className="text-2xl text-white font-[Sr]">
               Hades 2: 1 Year <span className="text-white/40">Overview</span>
             </h2>
-            <select
-              className="w-25 select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
-              value={player}
-              onChange={(e) => {
-                setPlayer(e.target.value);
-              }}
-            >
-              <option value={""}>All Player</option>
-              {allPlayers.map((ite) => (
-                <option value={ite}>{ite}</option>
-              ))}
-            </select>
+            <div className="flex gap-2 mt-1">
+              <select
+                className="w-25 select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+                value={player}
+                onChange={(e) => {
+                  setAspect("");
+                  setPlayer(e.target.value);
+                }}
+              >
+                <option value={""}>Player</option>
+                {allPlayers.map((ite) => (
+                  <option value={ite}>{ite}</option>
+                ))}
+              </select>
+              <select
+                className="w-25 select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
+                value={aspect}
+                onChange={(e) => {
+                  setPlayer("");
+                  setAspect(e.target.value);
+                }}
+              >
+                <option value={""}>Aspect</option>
+                {h2AspectOrder.map((ite) => (
+                  <option value={ite}>{ite}</option>
+                ))}
+              </select>
+            </div>
             {/* <p className="text-sm tracking-wide text-white/60 font-[Sr] mb-3">
               Sep 25, 2025 &nbsp;–&nbsp; Sep 25, 2026
             </p> */}
