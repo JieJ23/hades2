@@ -107,9 +107,9 @@ function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay,
       <img
         src={`/bg/${num + 1}.webp`}
         alt="Background"
-        className="absolute w-full h-full top-0 -z-10 object-contain sm:object-cover object-top drop-shadow-[0_0_8px_purple]"
+        className="absolute w-full h-full top-0 -z-10 object-contain sm:object-cover object-top drop-shadow-[0_0_10px_#00ffaa]"
       />
-      <div className="absolute w-full h-full top-0 -z-10 bg-[#0e0c12]/88" />
+      <div className="absolute w-full h-full top-0 -z-10 bg-[#0e0c12]/90" />
       <div className="px-3 pt-3 pb-2 border-b border-white/10">
         <h3 className="text-sm text-white">
           {MONTH_NAMES[month]} <span className="text-white/40">{year}</span>
@@ -153,11 +153,11 @@ function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay,
               // title={dayEvents.map((e) => e.title).join(", ")}
               className={`relative flex flex-col items-center justify-start h-8 rounded transition-colors ${
                 !inRange ? "opacity-50 cursor-not-allowed" : "hover:bg-white/10"
-              } ${isSelected ? "ring-2 ring-green-300" : ""}`}
+              } ${isSelected ? "ring-2 ring-[#00ffaa]" : ""} ${dayEvents.length > 0 && "bg-[#00ffaa]/15"}`}
             >
               <span
                 className={`text-[11px] w-5 h-5 flex items-center justify-center rounded-full ${
-                  isToday ? "bg-green-300 text-black  " : "text-gray-300"
+                  isToday && "bg-green-300 text-black"
                 }`}
               >
                 {day.getDate()}
