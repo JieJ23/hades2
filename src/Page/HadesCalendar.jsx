@@ -162,13 +162,13 @@ function MiniMonth({ year, month, eventsByDay, today, selectedDate, onSelectDay,
               >
                 {day.getDate()}
               </span>
-              <div className="flex gap-0.5">
+              <div className="flex gap-0.5 text-[#00ffaa]">
                 {dayEvents.slice(0, 1).map((ev, i) => (
                   <div className="flex gap-0.5 items-center text-[10px] font-[UbuntuMono]">
                     {dayEvents.length}
                     <span
                       key={i}
-                      className={`w-1.5 h-1.5 rounded-full animate-pulse ${"bg-blue-400" || "bg-white/40"}`}
+                      className={`w-1.5 h-1.5 rounded-full animate-pulse ${"bg-[#00ffaa]" || "bg-white/40"}`}
                     />
                   </div>
                 ))}
