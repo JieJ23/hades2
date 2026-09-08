@@ -41,7 +41,7 @@ import Template from "./Page/Template.jsx";
 import HadesCalendar from "./Page/HadesCalendar.jsx";
 
 const today = new Date();
-const targetDate = new Date("2026-9-2");
+const targetDate = new Date("2026-10-2");
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
