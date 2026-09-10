@@ -41,56 +41,58 @@ import Template from "./Page/Template.jsx";
 import HadesCalendar from "./Page/HadesCalendar.jsx";
 
 const today = new Date();
-const targetDate = new Date("2026-10-2");
+const targetDate = new Date("2026-10-4");
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <TagProvider>
-      <PfpProvider>
-        <DataProvider>
-          <Router>
-            <Routes>
-              {targetDate > today ? (
-                <>
-                  <Route path="/" element={<App />} />
-                  <Route path="/Night" element={<Night />} />
-                  <Route path="/DreamRoute" element={<DreamRoute />} />
-                  <Route path="/Ladder" element={<Ladder />} />
-                  <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
+    {targetDate > today ? (
+      <TagProvider>
+        <PfpProvider>
+          <DataProvider>
+            <Router>
+              <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/Night" element={<Night />} />
+                <Route path="/DreamRoute" element={<DreamRoute />} />
+                <Route path="/Ladder" element={<Ladder />} />
+                <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
 
-                  <Route path="/FearCalculator" element={<FearCalculator />} />
-                  <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
+                <Route path="/FearCalculator" element={<FearCalculator />} />
+                <Route path="/ArcanaDeck" element={<ArcanaDeck />} />
 
-                  <Route path="/Resources" element={<Resources />} />
-                  <Route path="/Stats" element={<Stats />} />
-                  <Route path="/DreamParameter" element={<DreamParameter />} />
-                  <Route path="/Enemy" element={<Enemy />} />
+                <Route path="/Resources" element={<Resources />} />
+                <Route path="/Stats" element={<Stats />} />
+                <Route path="/DreamParameter" element={<DreamParameter />} />
+                <Route path="/Enemy" element={<Enemy />} />
 
-                  <Route path="/Bingo1" element={<Bingo1 />} />
-                  <Route path="/Bingo2" element={<Bingo2 />} />
-                  <Route path="/TheGameAward" element={<TheGameAward />} />
-                  <Route path="/MapErebus" element={<MapErebus />} />
-                  <Route path="/MapOceanus" element={<MapOceanus />} />
-                  <Route path="/MapField" element={<MapField />} />
-                  <Route path="/MapTartarus" element={<MapTartarus />} />
+                <Route path="/Bingo1" element={<Bingo1 />} />
+                <Route path="/Bingo2" element={<Bingo2 />} />
+                <Route path="/TheGameAward" element={<TheGameAward />} />
+                <Route path="/MapErebus" element={<MapErebus />} />
+                <Route path="/MapOceanus" element={<MapOceanus />} />
+                <Route path="/MapField" element={<MapField />} />
+                <Route path="/MapTartarus" element={<MapTartarus />} />
 
-                  <Route path="/Player" element={<Player />} />
+                <Route path="/Player" element={<Player />} />
 
-                  <Route path="/Src" element={<Src />} />
-                  <Route path="/SrcS" element={<SrcS />} />
+                <Route path="/Src" element={<Src />} />
+                <Route path="/SrcS" element={<SrcS />} />
 
-                  <Route path="/SlotMachine" element={<SlotMachine />} />
-                  <Route path="/HadesCalendar" element={<HadesCalendar />} />
+                <Route path="/SlotMachine" element={<SlotMachine />} />
+                <Route path="/HadesCalendar" element={<HadesCalendar />} />
 
-                  <Route path="*" element={<App />} />
-                </>
-              ) : (
-                <Route path="*" element={<Template />} />
-              )}
-            </Routes>
-          </Router>
-        </DataProvider>
-      </PfpProvider>
-    </TagProvider>
+                <Route path="*" element={<App />} />
+              </Routes>
+            </Router>
+          </DataProvider>
+        </PfpProvider>
+      </TagProvider>
+    ) : (
+      <Router>
+        <Routes>
+          <Route path="*" element={<Template />} />
+        </Routes>
+      </Router>
+    )}
   </StrictMode>,
 );
