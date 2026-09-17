@@ -91,9 +91,13 @@ function AvatarItem({ obj, ind, categoryRegion, category, addTextColor, addCateg
               draggable={false}
             />
           ) : (
-            <div className="w-10 h-10 rounded-full bg-[#28282b] text-white flex items-center justify-center truncate -translate-x-[2px]">
-              {obj.nam.slice(0, 2).toUpperCase()}
-            </div>
+            <img
+              src="/hover/Melinoe.png"
+              alt="Avatar"
+              loading="lazy"
+              className="w-10 h-10 rounded-full p-1 egg drop-shadow-[0_0_6px_black]"
+              draggable={false}
+            />
           )}
         </div>
         <div className="truncate z-20">{obj.nam}</div>
