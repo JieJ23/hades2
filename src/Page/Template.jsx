@@ -9,8 +9,6 @@ import { p9boons } from "../Data/P9BoonObj";
 import { useRef } from "react";
 import Background from "../Comp/Background";
 
-import { playerTags } from "../Data/PlayerTag";
-
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
 function getWordOfDay(wordA, wordB) {

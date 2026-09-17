@@ -753,17 +753,20 @@ export default function Night() {
                     )}
                     <div className="p-1 flex flex-col gap-1">
                       <div className="font-[Ale] px-2">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => {
-                            setPageIndex(1);
-                            setFill("Latest");
-                            setCategory("");
-                            setRegion("");
-                            setPlayer(obj.nam);
-                          }}
-                        >
-                          {obj.nam}
+                        <div className="flex justify-between">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => {
+                              setPageIndex(1);
+                              setFill("Latest");
+                              setCategory("");
+                              setRegion("");
+                              setPlayer(obj.nam);
+                            }}
+                          >
+                            {obj.nam}
+                          </div>
+                          <div>{obj.dat.slice(0, 10)}</div>
                         </div>
                         <div>
                           <span>

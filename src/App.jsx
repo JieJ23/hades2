@@ -1,5 +1,4 @@
 import { useData } from "./Hook/DataFetch";
-import { useTag } from "./Hook/TagFetch";
 import { usePfp } from "./Hook/PfpFetch";
 import Loading from "./Hook/Loading";
 import { bundleData } from "./Data/DataBundle";
@@ -11,7 +10,6 @@ import { h2AspectOrder } from "./Data/Misc";
 import { useMemo, useState, useRef } from "react";
 
 import PageBlock from "./Block/PageBlock";
-import Divider from "./Block/Divider";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -19,8 +17,6 @@ import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { textHoverObject } from "./Data/TextHoverObject";
 import { p9boons } from "./Data/P9BoonObj";
-
-import { playerTags } from "./Data/PlayerTag";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
@@ -61,7 +57,7 @@ function createData(fearNum, data, region) {
   return entriesData;
 }
 
-function AvatarItem({ obj, ind, categoryRegion, category, addTextColor, addCategoryClasses, pTags, profileImg }) {
+function AvatarItem({ obj, ind, categoryRegion, category, addTextColor, addCategoryClasses, profileImg }) {
   return (
     <div className={`${(ind === 0 || ind === 1) && `aura aura-dual`} ${addTextColor(categoryRegion[category])}`}>
       <div className="rounded font-[Ale] bg-[#0e0c12] flex flex-col justify-center items-center pt-4 min-w-40 h-full min-h-25 relative overflow-hidden">
@@ -73,10 +69,22 @@ function AvatarItem({ obj, ind, categoryRegion, category, addTextColor, addCateg
           className={`absolute rotate-180 top-0 right-0 h-full w-full bg-no-repeat bg-top bg-cover scale-[105%] ${addCategoryClasses(categoryRegion[category])}`}
           style={{ backgroundImage: `url(/red.png)` }}
         />
+        <div className="absolute top-6 right-4 flex flex-col items-center gap-1.5">
+          {profileImg && profileImg[2] && (
+            <Link to={profileImg[2]} target="_blank">
+              <img src="/youtube.png" alt="Youtube" className="size-4.5 rounded" />
+            </Link>
+          )}
+          {profileImg && profileImg[3] && (
+            <Link to={profileImg[3]} target="_blank">
+              <img src="/twitch.png" alt="Twitch" className="size-4.5 rounded" />
+            </Link>
+          )}
+        </div>
         <div className={`relative w-10 h-10 shrink-0`}>
           {profileImg ? (
             <img
-              src={`${profileImg}`}
+              src={`${profileImg[0]}`}
               alt="Avatar"
               loading="lazy"
               className="w-10 h-10 rounded-full p-1 egg"
@@ -89,8 +97,8 @@ function AvatarItem({ obj, ind, categoryRegion, category, addTextColor, addCateg
           )}
         </div>
         <div className="truncate z-20">{obj.nam}</div>
-        {pTags && (
-          <div className="font-[Ale] text-[13px] my-1 mb-4 z-40 max-w-30 text-center text-white">{pTags}</div>
+        {profileImg && (
+          <div className="font-[Ale] text-[13px] my-1 mb-4 z-40 max-w-30 text-center text-white">{profileImg[1]}</div>
         )}
       </div>
     </div>
@@ -99,7 +107,6 @@ function AvatarItem({ obj, ind, categoryRegion, category, addTextColor, addCateg
 
 export default function App() {
   const { posts, loader } = useData();
-  const { tags, tagloader } = useTag();
   const { pfp, pfploader } = usePfp();
   const container = useRef(null);
   const containerRef = useRef(null);
@@ -115,7 +122,7 @@ export default function App() {
         ease: "none",
       });
 
-      if (loader || tagloader || pfploader) return;
+      if (loader || pfploader) return;
       const eggs = gsap.utils.toArray(".egg"); // whatever your actual class is
       eggs.forEach((egg) => {
         gsap.to(egg, {
@@ -164,7 +171,7 @@ export default function App() {
         });
       });
     },
-    { scope: container, dependencies: [posts, category, loader, tagloader, pfploader] },
+    { scope: container, dependencies: [posts, category, loader, pfploader] },
   );
 
   const handleMouseMove = (e) => {
@@ -370,9 +377,9 @@ export default function App() {
     }
   };
   //
-  const tagObjects = Object.fromEntries(tags.map((item) => [item.Name, item.Tag]));
-  const PfpObjects = Object.fromEntries(pfp.map((item) => [item.Pfp, item.ImgLink]));
-
+  const PfpObjects = Object.fromEntries(
+    pfp.map((item) => [item.Pfp, [item.ImgLink, item.Tag, item.YtLink, item.TLink]]),
+  );
   return (
     <main
       className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
@@ -393,7 +400,7 @@ export default function App() {
             </div>
           </div>
           {/*  */}
-          {loader || tagloader || pfploader ? (
+          {loader || pfploader ? (
             <Loading />
           ) : (
             <div>
@@ -432,7 +439,6 @@ export default function App() {
                           category={category}
                           addTextColor={addTextColor}
                           addCategoryClasses={addCategoryClasses}
-                          pTags={tagObjects[obj.nam]}
                           profileImg={PfpObjects[obj.nam]}
                         />
                       ))}
