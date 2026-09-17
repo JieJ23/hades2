@@ -246,6 +246,9 @@ export default function HadesCalendar() {
             <h2 className="text-2xl text-white font-[Sr]">
               Hades 2: 1 Year <span className="text-white/40">Overview</span>
             </h2>
+            <div className="text-[11px]">
+              {only67.length}/{allPlayers.length}
+            </div>
             <div className="flex gap-2 mt-1">
               <select
                 className="w-25 select select-sm bg-[#0e0c12] rounded border focus:outline-none focus:border-transparent"
@@ -278,7 +281,6 @@ export default function HadesCalendar() {
               Sep 25, 2025 &nbsp;–&nbsp; Sep 25, 2026
             </p> */}
           </div>
-
           <div className="flex flex-col md:flex-row md:items-stretch">
             {/* Selected day detail -- shown first on mobile, right sidebar from md up */}
             <div
