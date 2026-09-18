@@ -59,13 +59,7 @@ export default function SideNav() {
         </div>
         <div className="drawer-side z-40">
           <label htmlFor="my-drawer-5" aria-label="close sidebar" className="drawer-overlay" />
-          <div className="menu bg-[#0e0c12] min-h-full w-80 p-4 relative rounded">
-            <div
-              className="absolute top-0 left-0 w-full h-full opacity-10 bg-center -z-10"
-              style={{
-                backgroundImage: "url(hadestwo.webp)",
-              }}
-            />
+          <div className="menu bg-[#0e0c12]/90 min-h-full w-80 p-4 relative rounded">
             {/* Sidebar content here */}
             {sites.map((obj, idx) => (
               <div className="my-0.5 p-1 rounded hover:bg-white hover:text-black text-[14px]">
