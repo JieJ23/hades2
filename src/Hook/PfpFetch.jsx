@@ -14,7 +14,7 @@ export const PfpProvider = ({ children }) => {
       try {
         const cached = localStorage.getItem("pfp");
         const cacheTimestamp = localStorage.getItem("pfp_timestamp");
-        const oneDayInMs = 180 * 60 * 1000; // 6-hours minutes in milliseconds
+        const oneDayInMs = 6 * 60 * 60 * 1000; // 6-hours minutes in milliseconds
 
         if (cached && cacheTimestamp) {
           const age = Date.now() - parseInt(cacheTimestamp);

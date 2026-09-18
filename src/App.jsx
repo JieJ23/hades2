@@ -7,7 +7,7 @@ import { sToA, findValue, orderMap, parseTimetoms, getPoolColor, getYTid } from 
 import { Link } from "react-router-dom";
 import { h2AspectOrder } from "./Data/Misc";
 
-import { useMemo, useState, useRef } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 
 import PageBlock from "./Block/PageBlock";
 
@@ -28,12 +28,7 @@ function sortByOrder(array, order) {
   return [...array].sort((a, b) => order.indexOf(a) - order.indexOf(b));
 }
 
-function getWordOfDay(wordA, wordB) {
-  const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
-  return dayOfYear % 2 === 0 ? wordA : wordB;
-}
-
-const word = getWordOfDay("Typhon", "Chronos");
+const DEFAULT_TEXT = "Death to Chronos";
 
 function createData(fearNum, data, region) {
   const entries = data.slice().filter((obj) => obj.fea >= fearNum && normalizeLoc(obj.loc) === region);
@@ -118,6 +113,10 @@ export default function App() {
   const containerRef = useRef(null);
   const lastSpawn = useRef(0);
   const [category, setCategory] = useState(0);
+
+  const textRef = useRef(null);
+  const [displayWords, setDisplayWords] = useState(DEFAULT_TEXT.split(" "));
+  const hasAnimated = useRef(false);
 
   useGSAP(
     () => {
@@ -386,6 +385,33 @@ export default function App() {
   const PfpObjects = Object.fromEntries(
     pfp.map((item) => [item.Pfp, [item.ImgLink, item.Tag, item.YtLink, item.TLink]]),
   );
+
+  const fetchedText = PfpObjects?.H2Crossroads?.[1];
+
+  useEffect(() => {
+    // wait until loading is done AND we actually have text
+    if (pfploader || !fetchedText) return;
+    // only run the swap once
+    if (hasAnimated.current) return;
+    hasAnimated.current = true;
+
+    const tl = gsap.timeline();
+
+    tl.to(textRef.current, {
+      opacity: 0,
+      y: -10,
+      duration: 0.25,
+      ease: "power2.in",
+      onComplete: () => setDisplayWords(fetchedText.split(" ")),
+    }).fromTo(
+      textRef.current,
+      { opacity: 0, y: 20, scale: 10 },
+      { opacity: 1, y: 0, duration: 1.5, scale: 1, ease: "power2.out" },
+    );
+
+    return () => tl.kill();
+  }, [pfploader, fetchedText]);
+
   return (
     <main
       className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
@@ -396,12 +422,13 @@ export default function App() {
           <div className="min-h-screen flex justify-center items-center relative" ref={containerRef}>
             <div className="relative overflow-visible inline-block">
               <div
+                ref={textRef}
                 onMouseMove={handleMouseMove}
-                className="hover-target font-bold text-[50px] sm:text-[58px] md:text-[64px] uppercase cursor-default select-none font-[Sr] gap-4 gap-x-4 my-text flex flex-col md:flex-row justify-center items-center bg-[linear-gradient(90deg,#ff0080,#7928ca,#2afadf,#ff0080)] bg-[length:300%_100%] bg-clip-text text-transparent"
+                className="hover-target font-bold text-[52px] sm:text-[58px] md:text-[64px] uppercase cursor-default select-none font-[Sr] gap-x-4 my-text flex flex-col md:flex-row justify-center items-center bg-[linear-gradient(90deg,#ff0080,#7928ca,#2afadf,#ff0080)] bg-[length:300%_100%] bg-clip-text text-transparent"
               >
-                <div>Death</div>
-                <div>To</div>
-                <div>{word}</div>
+                {displayWords.map((item, i) => (
+                  <div key={i}>{item}</div>
+                ))}
               </div>
             </div>
           </div>
