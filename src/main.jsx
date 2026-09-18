@@ -30,6 +30,11 @@ import MapErebus from "./Page/MapErebus.jsx";
 import MapOceanus from "./Page/MapOceanus.jsx";
 import MapField from "./Page/MapField.jsx";
 import MapTartarus from "./Page/MapTartarus.jsx";
+import MapEphyra from "./Page/MapEphyra.jsx";
+import MapThessaly from "./Page/MapThessaly.jsx";
+import MapOlympus from "./Page/MapOlympus.jsx";
+import MapSummit from "./Page/MapSummit.jsx";
+import MapChaos from "./Page/MapChaos.jsx";
 
 import Player from "./Page/Player.jsx";
 
@@ -67,6 +72,11 @@ createRoot(document.getElementById("root")).render(
             <Route path="/MapOceanus" element={<MapOceanus />} />
             <Route path="/MapField" element={<MapField />} />
             <Route path="/MapTartarus" element={<MapTartarus />} />
+            <Route path="/MapEphyra" element={<MapEphyra />} />
+            <Route path="/MapThessaly" element={<MapThessaly />} />
+            <Route path="/MapOlympus" element={<MapOlympus />} />
+            <Route path="/MapSummit" element={<MapSummit />} />
+            <Route path="/MapChaos" element={<MapChaos />} />
 
             <Route path="/Player" element={<Player />} />
 

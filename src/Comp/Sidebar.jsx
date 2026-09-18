@@ -4,10 +4,10 @@ import Divider from "../Block/Divider";
 
 export const sites = [
   { link: ``, nam: `Home`, icon: `Melinoe` },
-  { link: `Night`, nam: `Hades 2 Runs`, icon: `Zeus` },
+  { link: `Night`, nam: `Hades 2 Runs`, icon: `TGA` },
   // { link: `Dream`, nam: `Dream Dive Runs`, icon: `Dream` },
   { link: `DreamRoute`, nam: `Dream Route Data`, icon: `Dream` },
-  { link: `Ladder`, nam: `Ladder / Standing`, icon: `Athena` },
+  { link: `Ladder`, nam: `Ladder / Standing`, icon: `TGA` },
   { link: `GameplaySubmission`, nam: `Submit Run`, icon: `Book_Frog` },
   { link: `Player`, nam: `Players`, icon: `HealthBar_Mel` },
   { link: `Stats`, nam: `Stats`, icon: `Boon` },
@@ -23,6 +23,11 @@ export const map = [
   { link: `MapOceanus`, nam: `Oceanus`, icon: `Narcissus` },
   { link: `MapField`, nam: `Field`, icon: `Echo` },
   { link: `MapTartarus`, nam: `Tartarus`, icon: `Chronos` },
+  { link: `MapEphyra`, nam: `Ephyra`, icon: `Medea` },
+  { link: `MapThessaly`, nam: `Thessaly`, icon: `Eris` },
+  { link: `MapOlympus`, nam: `Olympus`, icon: `Athena` },
+  { link: `MapSummit`, nam: `Summit`, icon: `Zeus` },
+  { link: `MapChaos`, nam: `Chaos & Zag`, icon: `Chaos` },
 ];
 
 export const minor = [
