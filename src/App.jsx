@@ -102,7 +102,9 @@ function AvatarItem({ obj, ind, categoryRegion, category, addTextColor, addCateg
         </div>
         <div className="truncate z-20">{obj.nam}</div>
         {profileImg && (
-          <div className="font-[Ale] text-[13px] my-1 mb-4 z-40 max-w-30 text-center text-white">{profileImg[1]}</div>
+          <div className="font-[Ale] text-[13px] my-1 mb-4 z-40 max-w-30 text-center text-white">
+            {profileImg[1].replace("$#c!", "")}
+          </div>
         )}
       </div>
     </div>
