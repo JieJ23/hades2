@@ -46,7 +46,7 @@ export default function SideNav() {
 
   return (
     <div className="font-[Ale] rounded">
-      <div className="drawer drawer-end p-3 relative z-40">
+      <div className="drawer drawer-end p-3 relative z-50">
         <input id="my-drawer-5" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex justify-end fixed top-3 right-3">
           {/* Page content here */}
@@ -57,7 +57,7 @@ export default function SideNav() {
             <img src="/menu.png" alt="Menu Icon" className="size-8" />
           </label>
         </div>
-        <div className="drawer-side z-40">
+        <div className="drawer-side z-50">
           <label htmlFor="my-drawer-5" aria-label="close sidebar" className="drawer-overlay" />
           <div className="menu bg-[#0e0c12]/90 min-h-full w-80 p-4 relative rounded">
             {/* Sidebar content here */}
