@@ -427,7 +427,7 @@ export default function App() {
               <div
                 ref={textRef}
                 onMouseMove={handleMouseMove}
-                className="hover-target font-bold text-[58px] md:text-[64px] uppercase cursor-default select-none font-[Sr] gap-x-4 my-text flex flex-wrap flex-col md:flex-row justify-center items-center bg-[linear-gradient(90deg,#ff0080,#7928ca,#2afadf,#ff0080)] bg-[length:300%_100%] bg-clip-text text-transparent"
+                className="hover-target font-bold text-[clamp(32px,5vw,64px)] uppercase cursor-default select-none font-[Sr] gap-x-4 my-text flex flex-wrap flex-col md:flex-row justify-center items-center bg-[linear-gradient(90deg,#ff0080,#7928ca,#2afadf,#ff0080)] bg-[length:300%_100%] bg-clip-text text-transparent"
               >
                 {displayWords.map((item, i) => (
                   <div key={i}>{item}</div>
