@@ -393,27 +393,27 @@ export default function App() {
 
   const fetchedText = PfpObjects?.H2Crossroads?.[1];
 
-  useEffect(() => {
-    if (pfploader || !fetchedText) return;
-    if (hasAnimated.current) return;
-    hasAnimated.current = true;
+  useGSAP(
+    () => {
+      if (pfploader || !fetchedText) return;
 
-    const tl = gsap.timeline();
-
-    tl.to(textRef.current, {
-      opacity: 0,
-      y: -10,
-      duration: 0.5,
-      ease: "power1.inOut", // smoother, more gradual start+end than power2.in
-      onComplete: () => setDisplayWords(fetchedText.split(" ")),
-    }).fromTo(
-      textRef.current,
-      { opacity: 0, y: -500, scale: 1.15 },
-      { opacity: 1, y: 0, scale: 1, duration: 2, ease: "bounce.out" },
-    );
-
-    return () => tl.kill();
-  }, [pfploader, fetchedText]);
+      gsap
+        .timeline()
+        .to(textRef.current, {
+          opacity: 0,
+          y: -10,
+          duration: 0.5,
+          ease: "power1.inOut",
+          onComplete: () => setDisplayWords(fetchedText.split(" ")),
+        })
+        .fromTo(
+          textRef.current,
+          { opacity: 0, y: -500, scale: 1.15 },
+          { opacity: 1, y: 0, scale: 1, duration: 2, ease: "bounce.out" },
+        );
+    },
+    { dependencies: [pfploader, fetchedText], scope: textRef },
+  );
 
   return (
     <main
@@ -427,7 +427,7 @@ export default function App() {
               <div
                 ref={textRef}
                 onMouseMove={handleMouseMove}
-                className="hover-target font-bold text-[clamp(32px,5vw,64px)] uppercase cursor-default select-none font-[Sr] gap-x-4 my-text flex flex-wrap flex-col md:flex-row justify-center items-center bg-[linear-gradient(90deg,#ff0080,#7928ca,#2afadf,#ff0080)] bg-[length:300%_100%] bg-clip-text text-transparent"
+                className="hover-target font-bold text-[clamp(40px,10vw,64px)] uppercase cursor-default select-none font-[Sr] gap-x-4 my-text flex flex-wrap flex-col md:flex-row justify-center items-center bg-[linear-gradient(90deg,#ff0080,#7928ca,#2afadf,#ff0080)] bg-[length:300%_100%] bg-clip-text text-transparent"
               >
                 {displayWords.map((item, i) => (
                   <div key={i}>{item}</div>

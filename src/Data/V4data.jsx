@@ -1173,7 +1173,7 @@ export const v4data = [
     loc: "Underworld",
     fea: "62",
     src: "https://www.youtube.com/watch?v=nf77r7hEudA",
-    des: "There are 2 ways to beat R4 Chronos: 1, get good; 2, click JPom and pray. /hj",
+    des: "There are 2 ways to beat R4 Chronos: 1, get good; 2, click JPom and pray. /hj #usum",
     arcana: "",
     oath: "",
     tim: "18:32.05",

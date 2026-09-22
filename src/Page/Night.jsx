@@ -892,7 +892,7 @@ export default function Night() {
                     <td>Idx</td>
                     <th>Name</th>
                     <td>Fear</td>
-                    <td>Aspect</td>
+                    <td className="min-w-30 w-30">Aspect</td>
                     <td className="min-w-40 w-40">Keep</td>
                     <td className="min-w-40 w-40">Fammer</td>
                     <td className="min-w-40 w-40">Core</td>
@@ -954,7 +954,7 @@ export default function Night() {
                         <div className="flex gap-2 justify-between items-center">
                           <div>{obj.asp}</div>
                           {obj.des && (
-                            <div className="">
+                            <div className="shrink-0">
                               <div
                                 className={`tooltip ${
                                   index < paginatedData.length / 2 ? `tooltip-bottom` : `tooltip-top`
