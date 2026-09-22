@@ -401,16 +401,16 @@ export default function App() {
         .timeline()
         .to(textRef.current, {
           opacity: 0,
-          y: -10,
           duration: 0.5,
           ease: "power1.inOut",
           onComplete: () => setDisplayWords(fetchedText.split(" ")),
         })
-        .fromTo(
-          textRef.current,
-          { opacity: 0, y: -500, scale: 1.15 },
-          { opacity: 1, y: 0, scale: 1, duration: 2, ease: "bounce.out" },
-        );
+        .from(textRef.current, {
+          clipPath: "inset(0 50% 0 50%)",
+          opacity: 1,
+          duration: 2,
+          ease: "power3.inOut",
+        });
     },
     { dependencies: [pfploader, fetchedText], scope: textRef },
   );
