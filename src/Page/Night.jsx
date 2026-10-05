@@ -25,6 +25,7 @@ export default function Night() {
   const [fam, setFam] = useState("");
   const [region, setRegion] = useState("");
   const [fill, setFill] = useState("Latest");
+  const [speed, setSpeed] = useState("Fastest");
   const [player, setPlayer] = useState("");
   const [format, setFormat] = useState("Grid");
   const [vidOnly, setVidOnly] = useState(false);
@@ -83,6 +84,7 @@ export default function Night() {
       })
       .sort((a, b) => {
         if (fill === "Latest") return new Date(b.dat) - new Date(a.dat);
+        if (fill === "Fastest") return parseTimetoms(a.tim) - parseTimetoms(b.tim);
         if (fill === "Oldest") return new Date(a.dat) - new Date(b.dat);
         else {
           const feaDiff = +b.fea - +a.fea;
@@ -331,6 +333,7 @@ export default function Night() {
                   <option value={`Latest`}>Latest</option>
                   <option value={`Oldest`}>Oldest</option>
                   <option value={`Fear`}>Fear</option>
+                  <option value={`Fastest`}>Fastest</option>
                 </select>
                 <div className="flex text-center gap-2">
                   <div className="w-full">
@@ -770,8 +773,8 @@ export default function Night() {
                         </div>
                         <div>
                           <span>
-                            {+obj.fea} | {obj.loc !== "Underworld" && obj.loc !== "Surface" ? `Dream Dive` : obj.loc} |{" "}
-                            {obj.tim}
+                            {+obj.fea == 0 ? "AnyFear" : +obj.fea} |{" "}
+                            {obj.loc !== "Underworld" && obj.loc !== "Surface" ? `Dream Dive` : obj.loc} | {obj.tim}
                           </span>
                         </div>
                       </div>
@@ -821,7 +824,7 @@ export default function Night() {
                           : sToA(noSlots).map((ite, index) => (
                               <div className="relative size-10 sm:size-8 md:size-8 xl:size-9 shrink-0">
                                 <img
-                                  src="/BoonBorder/Base.png"
+                                  src="/BoonBorder/Hammer.png"
                                   alt="Border"
                                   className="absolute inset-0 w-full h-full z-10 pointer-events-none"
                                 />
@@ -892,7 +895,7 @@ export default function Night() {
                     <td>Idx</td>
                     <th>Name</th>
                     <td>Fear</td>
-                    <td className="min-w-30 w-30">Aspect</td>
+                    <td className="min-w-35 w-35">Aspect</td>
                     <td className="min-w-40 w-40">Keep</td>
                     <td className="min-w-40 w-40">Fammer</td>
                     <td className="min-w-40 w-40">Core</td>

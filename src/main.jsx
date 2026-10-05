@@ -39,7 +39,7 @@ import MapChaos from "./Page/MapChaos.jsx";
 import Player from "./Page/Player.jsx";
 
 import Src from "./Page/Src.jsx";
-import SrcS from "./Page/SrcS.jsx";
+// import SrcS from "./Page/SrcS.jsx";
 
 import SlotMachine from "./Page/SlotMachine.jsx";
 import Template from "./Page/Template.jsx";
@@ -80,8 +80,8 @@ createRoot(document.getElementById("root")).render(
 
             <Route path="/Player" element={<Player />} />
 
-            <Route path="/Src" element={<Src />} />
-            <Route path="/SrcS" element={<SrcS />} />
+            {/* <Route path="/Src" element={<Src />} /> */}
+            {/* <Route path="/SrcS" element={<SrcS />} /> */}
 
             <Route path="/SlotMachine" element={<SlotMachine />} />
             <Route path="/HadesCalendar" element={<HadesCalendar />} />

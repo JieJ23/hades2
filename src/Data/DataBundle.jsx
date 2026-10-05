@@ -6,7 +6,18 @@ import { v2data } from "./V2data";
 import { v3data } from "./V3data";
 import { v4data } from "./V4data";
 import { v5data } from "./V5data";
+import { srcData } from "./S1data";
 
-export const bundleData = [...p9data, ...p11data, ...v1data, ...v2data, ...v3data, ...v4data, ...v5data, ...p17data];
+export const bundleData = [
+  ...p9data,
+  ...p11data,
+  ...v1data,
+  ...v2data,
+  ...v3data,
+  ...v4data,
+  ...v5data,
+  ...p17data,
+  ...srcData,
+];
 export const v1bundle = [...v1data, ...v2data, ...v3data, ...v4data, ...v5data];
 export const eabundle = [...p9data, ...p11data];

@@ -22,8 +22,8 @@ import { h2AspectOrder } from "../Data/Misc";
  * }
  */
 
-const RANGE_START = new Date(2025, 8, 25); // Sep 25, 2025 (month is 0-indexed)
-const RANGE_END = new Date(2026, 8, 25); // Sep 25, 2026
+const RANGE_START = new Date(2025, 9, 1); // Sep 25, 2025 (month is 0-indexed)
+const RANGE_END = new Date(2026, 9, 25); // Sep 25, 2026
 
 const DOT_COLORS = {
   amber: "bg-amber-400",
