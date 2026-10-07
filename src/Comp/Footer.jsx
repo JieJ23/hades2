@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <div className="my-10 select-none text-gray-400 text-center text-[13px] md:text-[14px] p-2 font-[Ale]">
-      <div>∞ Created by Autumn ∞</div>
+      <div>Created by Autumn</div>
       <div>Contributors:</div>
       <div className="flex flex-wrap justify-center gap-2 my-2">
         {contri.map((item, index) => (
