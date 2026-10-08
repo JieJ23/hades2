@@ -15,7 +15,7 @@ import Loading from "../Hook/Loading";
 
 //
 export const orderMap = new Map(allP9.map((item, index) => [item, index]));
-export const findValue = (arr) => {
+const findValue = (arr) => {
   const finalized = arr.map((ite) => p9boons_reverse[ite]);
   return finalized;
 };
@@ -29,7 +29,7 @@ export default function Ladder() {
   const { posts, loader } = useData();
 
   const regionData = [...v1bundle, ...(posts || [])]
-    .filter((obj) => obj.des.includes("#usum"))
+    .filter((obj) => obj.des && obj.des.includes("#usum"))
     .filter((obj) => obj.fea <= maxFear)
     .filter((obj) => obj.loc === location);
 
