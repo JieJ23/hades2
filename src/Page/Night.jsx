@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { h2AspectOrder } from "../Data/Misc";
 import { bAxe, bDagger, bLob, bStaff, bSuit, bTorch, bKeep } from "../Data/Boon1";
 import { bOrder } from "../Data/Boon2";
+import { srcData } from "../Data/S1data";
 
 import PageBlock from "../Block/PageBlock";
 
@@ -43,7 +44,7 @@ export default function Night() {
   const [dmg, setDmg] = useState("No");
 
   const orderData = useMemo(() => {
-    return [...bundleData, ...posts]
+    return [...bundleData, ...srcData, ...posts]
       .filter((obj) => +obj.fea >= fearMin && +obj.fea <= fearMax)
       .filter((obj) => parseTimetoms(obj.tim) >= timeMin * 6000 && parseTimetoms(obj.tim) <= timeMax * 6000)
       .filter((obj) => {
