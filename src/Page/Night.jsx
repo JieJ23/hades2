@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { h2AspectOrder } from "../Data/Misc";
 import { bAxe, bDagger, bLob, bStaff, bSuit, bTorch, bKeep } from "../Data/Boon1";
 import { bOrder } from "../Data/Boon2";
-import { srcData } from "../Data/S1data";
+import srcData from "../Data/S1data.json";
 
 import PageBlock from "../Block/PageBlock";
 

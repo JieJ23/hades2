@@ -53,7 +53,7 @@ const addCategoryClasses = (region) => {
 const addTextColor = (region) => {
   switch (region) {
     case "Surface":
-      return `text-yellow-300`;
+      return `[#00ffaa]`;
     case "Underworld":
       return `text-green-300`;
     case "Dream":
@@ -131,9 +131,12 @@ function buildDisplayCategory(entries) {
 const AvatarItem = memo(function AvatarItem({ name, ind, region, profileImg, func }) {
   const bgClasses = addCategoryClasses(region);
   return (
-    <div className={`${ind <= 1 ? "aura aura-dual" : ""} ${addTextColor(region)}`}>
+    <div
+      className={`${ind <= 1 ? "aura aura-dual" : ""}`}
+      style={profileImg && profileImg[3] != "" ? { color: profileImg[3] } : { color: "fff" }}
+    >
       <div
-        className={`rounded font-[Ale] bg-[#0e0c12] flex flex-col justify-center items-center pt-4 w-full h-full ${ind < 4 ? `min-w-44 min-h-35` : `min-w-38 min-h-25`} relative overflow-hidden`}
+        className={`rounded font-[Ale] bg-[#0e0c12] flex flex-col justify-center items-center pt-4 w-full h-full ${ind < 4 ? `min-w-44 min-h-35` : `min-w-40 min-h-25`} relative overflow-hidden`}
       >
         <div
           className={`absolute top-0 right-0 h-full w-full bg-no-repeat bg-top bg-cover scale-[105%] ${bgClasses}`}
@@ -143,34 +146,15 @@ const AvatarItem = memo(function AvatarItem({ name, ind, region, profileImg, fun
           className={`absolute rotate-180 top-0 right-0 h-full w-full bg-no-repeat bg-top bg-cover scale-[105%] ${bgClasses}`}
           style={{ backgroundImage: `url(/red.png)` }}
         />
-        <div className="absolute top-6 right-4 flex flex-col items-center gap-1.5">
+
+        <div className="grid grid-cols-2 items-center absolute w-full h-full left-0 top-0 opacity-35 p-1">
           {profileImg && profileImg[2] && (
-            <Link to={profileImg[2]} target="_blank">
-              <img src="/youtube.png" alt="Youtube" className="size-4.5 rounded" />
-            </Link>
+            <img src={`/GUI_Card/c${profileImg[2]}.png`} alt="backgorund" className={`w-full translate-x-1`} />
           )}
-          {profileImg && profileImg[3] && (
-            <Link to={profileImg[3]} target="_blank">
-              <img src="/twitch.png" alt="Twitch" className="size-4.5 rounded" />
-            </Link>
+          {profileImg && profileImg[4] && (
+            <img src={`/GUI_Card/${profileImg[4]}.png`} alt="backgorund" className={`w-full -translate-x-1`} />
           )}
         </div>
-        {ind == 0 && (
-          <div className="absolute top-6 left-5 flex flex-col items-center gap-1.5">
-            <div className="relative size-8.5 shrink-0">
-              <img
-                src="/BoonBorder/Hammer.png"
-                alt="Border"
-                className="absolute inset-0 w-full h-full z-10 pointer-events-none"
-              />
-              <img
-                src={`/P9/${func[name]}.png`}
-                alt="First Aspect"
-                className="absolute inset-0 w-full h-full p-0.5 object-contain"
-              />
-            </div>
-          </div>
-        )}
         <div className={`relative w-10 h-10 shrink-0`}>
           {profileImg ? (
             <img
@@ -192,7 +176,7 @@ const AvatarItem = memo(function AvatarItem({ name, ind, region, profileImg, fun
         </div>
         <div className="truncate z-20">{name}</div>
         {profileImg && (
-          <div className="font-[Ale] text-[13px] my-1 mb-4 z-40 max-w-30 text-center text-white">
+          <div className="font-[Ale] text-[13px] my-1 mb-4 z-40 max-w-30 text-center">
             {profileImg[1].replace("$#c!", "")}
           </div>
         )}
@@ -200,7 +184,6 @@ const AvatarItem = memo(function AvatarItem({ name, ind, region, profileImg, fun
     </div>
   );
 });
-
 export default function App() {
   const { posts, loader } = useData();
   const { pfp, pfploader } = usePfp();
@@ -335,7 +318,8 @@ export default function App() {
   const region = CATEGORY_REGION[category];
 
   const PfpObjects = useMemo(
-    () => Object.fromEntries(pfp.map((item) => [item.Pfp, [item.ImgLink, item.Tag, item.YtLink, item.TLink]])),
+    () =>
+      Object.fromEntries(pfp.map((item) => [item.Pfp, [item.ImgLink, item.Tag, item.Aspect, item.Colors, item.Fami]])),
     [pfp],
   );
 
@@ -379,6 +363,7 @@ export default function App() {
       firstMaxAspect[run.nam] = run.asp;
     }
   }
+
   return (
     <main
       className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
