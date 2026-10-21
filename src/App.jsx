@@ -98,7 +98,7 @@ function buildDisplayCategory(entries) {
       aspects.add(e.asp);
     }
   }
-
+  4;
   return buckets.map((tiers) => {
     const claimedAny = new Set(); // had any run at a higher tier
     const claimedAA = new Set(); // completed all aspects at a higher tier
@@ -128,11 +128,13 @@ function buildDisplayCategory(entries) {
 /*  Components                                                                */
 /* -------------------------------------------------------------------------- */
 
-const AvatarItem = memo(function AvatarItem({ name, ind, region, profileImg }) {
+const AvatarItem = memo(function AvatarItem({ name, ind, region, profileImg, func }) {
   const bgClasses = addCategoryClasses(region);
   return (
     <div className={`${ind <= 1 ? "aura aura-dual" : ""} ${addTextColor(region)}`}>
-      <div className="rounded font-[Ale] bg-[#0e0c12] flex flex-col justify-center items-center pt-4 min-w-40 h-full min-h-25 relative overflow-hidden">
+      <div
+        className={`rounded font-[Ale] bg-[#0e0c12] flex flex-col justify-center items-center pt-4 w-full h-full ${ind < 4 ? `min-w-44 min-h-35` : `min-w-38 min-h-25`} relative overflow-hidden`}
+      >
         <div
           className={`absolute top-0 right-0 h-full w-full bg-no-repeat bg-top bg-cover scale-[105%] ${bgClasses}`}
           style={{ backgroundImage: `url(/red.png)` }}
@@ -153,6 +155,22 @@ const AvatarItem = memo(function AvatarItem({ name, ind, region, profileImg }) {
             </Link>
           )}
         </div>
+        {ind == 0 && (
+          <div className="absolute top-6 left-5 flex flex-col items-center gap-1.5">
+            <div className="relative size-8.5 shrink-0">
+              <img
+                src="/BoonBorder/Hammer.png"
+                alt="Border"
+                className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+              />
+              <img
+                src={`/P9/${func[name]}.png`}
+                alt="First Aspect"
+                className="absolute inset-0 w-full h-full p-0.5 object-contain"
+              />
+            </div>
+          </div>
+        )}
         <div className={`relative w-10 h-10 shrink-0`}>
           {profileImg ? (
             <img
@@ -345,6 +363,22 @@ export default function App() {
     { dependencies: [pfploader, fetchedText], scope: textRef },
   );
 
+  // Players
+
+  const maxFearRuns = [...bundleData, ...posts].filter(
+    (objs) => objs.des && objs.des.includes("#usum") && objs.fea == 67,
+  );
+
+  const firstMaxAspect = {};
+  const earliestDate = {};
+
+  for (const run of maxFearRuns) {
+    const time = new Date(run.dat).getTime();
+    if (!(run.nam in earliestDate) || time < earliestDate[run.nam]) {
+      earliestDate[run.nam] = time;
+      firstMaxAspect[run.nam] = run.asp;
+    }
+  }
   return (
     <main
       className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
@@ -396,6 +430,7 @@ export default function App() {
                         ind={ind}
                         region={region}
                         profileImg={PfpObjects[obj.nam]}
+                        func={firstMaxAspect}
                       />
                     ))}
                   </div>

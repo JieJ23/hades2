@@ -3100,7 +3100,7 @@ export const v5data = [
     ks: "Jeweled Pom,Time Piece,Engraved Pin,White Antler",
   },
   {
-    dat: "2023-09-03",
+    dat: "2026-09-03",
     nam: "Aki",
     asp: "Melinoe Staff",
     loc: "Underworld",
