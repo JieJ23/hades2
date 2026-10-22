@@ -174,9 +174,13 @@ const AvatarItem = memo(function AvatarItem({ name, ind, region, profileImg, fun
             />
           )}
         </div>
-        <div className="truncate z-20">{name}</div>
+        <div className={`truncate z-20 ${profileImg && profileImg[2] && profileImg[4] && `bg-black/50`} rounded`}>
+          {name}
+        </div>
         {profileImg && (
-          <div className="font-[Ale] text-[13px] my-1 mb-4 z-40 max-w-30 text-center">
+          <div
+            className={`font-[Ale] text-[13px] my-1 mb-4 z-40 max-w-35 text-center ${profileImg && profileImg[2] && profileImg[4] && `bg-black/40`} rounded`}
+          >
             {profileImg[1].replace("$#c!", "")}
           </div>
         )}
