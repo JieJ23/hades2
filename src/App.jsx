@@ -136,7 +136,7 @@ const AvatarItem = memo(function AvatarItem({ name, ind, region, profileImg, fun
       style={profileImg && profileImg[3] != "" ? { color: profileImg[3] } : { color: "fff" }}
     >
       <div
-        className={`rounded font-[Ale] bg-[#0e0c12] flex flex-col justify-center items-center pt-4 w-full h-full ${ind < 4 ? `min-w-44 min-h-35` : `min-w-40 min-h-25`} relative overflow-hidden`}
+        className={`rounded  bg-[#0e0c12] flex flex-col justify-center items-center pt-4 w-full h-full ${ind < 4 ? `min-w-44 min-h-35` : `min-w-40 min-h-25`} relative overflow-hidden`}
       >
         <div
           className={`absolute top-0 right-0 h-full w-full bg-no-repeat bg-top bg-cover scale-[105%] ${bgClasses}`}
@@ -174,12 +174,14 @@ const AvatarItem = memo(function AvatarItem({ name, ind, region, profileImg, fun
             />
           )}
         </div>
-        <div className={`truncate z-20 ${profileImg && profileImg[2] && profileImg[4] && `bg-black/50`} rounded`}>
+        <div
+          className={`truncate z-20 ${profileImg && profileImg[2] && profileImg[4] && `bg-black/50 px-0.5`} rounded font-[Ale]`}
+        >
           {name}
         </div>
         {profileImg && (
           <div
-            className={`font-[Ale] text-[13px] my-1 mb-4 z-40 max-w-35 text-center ${profileImg && profileImg[2] && profileImg[4] && `bg-black/40`} rounded`}
+            className={` text-[13px] font-[Ale] my-1 mb-4 z-40 max-w-35 text-center ${profileImg && profileImg[2] && profileImg[4] && `bg-black/50 px-0.5`} rounded`}
           >
             {profileImg[1].replace("$#c!", "")}
           </div>
@@ -370,7 +372,7 @@ export default function App() {
 
   return (
     <main
-      className="h-full min-h-lvh relative text-[12px] md:text-[14px] font-[Ale] select-none overflow-x-hidden"
+      className="h-full min-h-lvh relative text-[12px] md:text-[14px]  select-none overflow-x-hidden"
       ref={container}
     >
       <div className="parentBox">
@@ -380,7 +382,7 @@ export default function App() {
               <div
                 ref={textRef}
                 onMouseMove={handleMouseMove}
-                className="hover-target font-bold text-[clamp(32px,10vw,60px)] uppercase cursor-default select-none font-[Sr] gap-x-4 my-text flex flex-wrap flex-col md:flex-row justify-center items-center text-center bg-[linear-gradient(90deg,#ff0080,#7928ca,#2afadf,#ff0080)] bg-[length:300%_100%] bg-clip-text text-transparent "
+                className="hover-target font-bold text-[clamp(32px,10vw,60px)] uppercase cursor-default select-none font-[Mar] gap-x-4 my-text flex flex-wrap flex-col md:flex-row justify-center items-center text-center bg-[linear-gradient(90deg,#ff0080,#7928ca,#2afadf,#ff0080)] bg-[length:300%_100%] bg-clip-text text-transparent "
               >
                 {displayWords.join(" ")}
               </div>
@@ -404,12 +406,12 @@ export default function App() {
               </div>
               {/* ------------------------------- */}
               {displayCurrentCategory.map((arr, ind) => (
-                <div className="mb-16 rounded" key={SUB_CATEGORY[ind]}>
+                <div className="mb-16 rounded px-2" key={SUB_CATEGORY[ind]}>
                   <div className="px-4 md:text-start text-center">
-                    <div className={`font-[Sr] text-[20px] md:text-[24px] leading-none ${addTextColor(region)}`}>
+                    <div className={`font-[Mar] text-[20px] md:text-[24px] leading-none ${addTextColor(region)}`}>
                       {SUB_CATEGORY[ind]}
                     </div>
-                    {ind === 0 && <div className="font-[Ale] text-gray-300">Unseeded and Unmodded</div>}
+                    {ind === 0 && <div className=" text-gray-300">Unseeded and Unmodded</div>}
                   </div>
                   <div className="flex flex-wrap justify-center md:justify-start gap-1 p-1">
                     {arr.map((obj) => (
@@ -425,7 +427,6 @@ export default function App() {
                   </div>
                 </div>
               ))}
-              {/* ------------------------------- */}
             </div>
           )}
         </PageBlock>

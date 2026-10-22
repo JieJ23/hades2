@@ -5,24 +5,19 @@
   }
 
       @font-face {
-    font-family: Ale;
+    font-family: Aleo;
     font-style: normal;
-    src: url("/src/fonts/Ale.ttf") format("truetype");
+    src: url("/src/fonts/Aleo.ttf") format("truetype");
   }
 
         @font-face {
-    font-family: Ubuntu;
+    font-family: Mar;
     font-style: normal;
-    src: url("/src/fonts/Ubuntu.ttf") format("truetype");
+    src: url("/src/fonts/Mar.ttf") format("truetype");
   }
 
           @font-face {
-    font-family: UbuntuMono;
+    font-family: Ale;
     font-style: normal;
-    src: url("/src/fonts/UbuntuMono.ttf") format("truetype");
-  }
-                    @font-face {
-    font-family: Sr;
-    font-style: normal;
-    src: url("/src/fonts/Sr.ttf") format("truetype");
+    src: url("/src/fonts/Ale.ttf") format("truetype");
   }

@@ -38,11 +38,9 @@ import MapChaos from "./Page/MapChaos.jsx";
 
 import Player from "./Page/Player.jsx";
 
-import Src from "./Page/Src.jsx";
-// import SrcS from "./Page/SrcS.jsx";
+import LadderSrc from "./Page/LadderSrc.jsx";
 
 import SlotMachine from "./Page/SlotMachine.jsx";
-import Template from "./Page/Template.jsx";
 import HadesCalendar from "./Page/HadesCalendar.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -55,6 +53,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="/Night" element={<Night />} />
             <Route path="/DreamRoute" element={<DreamRoute />} />
             <Route path="/Ladder" element={<Ladder />} />
+            <Route path="/LadderSrc" element={<LadderSrc />} />
             <Route path="/GameplaySubmission" element={<GameplaySubmission />} />
 
             <Route path="/FearCalculator" element={<FearCalculator />} />
@@ -79,9 +78,6 @@ createRoot(document.getElementById("root")).render(
             <Route path="/MapChaos" element={<MapChaos />} />
 
             <Route path="/Player" element={<Player />} />
-
-            {/* <Route path="/Src" element={<Src />} /> */}
-            {/* <Route path="/SrcS" element={<SrcS />} /> */}
 
             <Route path="/SlotMachine" element={<SlotMachine />} />
             <Route path="/HadesCalendar" element={<HadesCalendar />} />

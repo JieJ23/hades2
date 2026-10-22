@@ -8,6 +8,7 @@ export const sites = [
   // { link: `Dream`, nam: `Dream Dive Runs`, icon: `Dream` },
   { link: `DreamRoute`, nam: `Dream Route Data`, icon: `Dream` },
   { link: `Ladder`, nam: `Ladder / Standing`, icon: `TGA` },
+  { link: `LadderSRC`, nam: `SRC Ladder / Standing`, icon: `TGA` },
   { link: `GameplaySubmission`, nam: `Submit Run`, icon: `Book_Frog` },
   { link: `Player`, nam: `Players`, icon: `HealthBar_Mel` },
   { link: `Stats`, nam: `Stats`, icon: `Boon` },

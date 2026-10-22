@@ -54,7 +54,7 @@ export default function Ladder() {
             <Loading />
           ) : (
             <>
-              <div className="p-1 flex flex-wrap justify-center gap-1 my-2 font-[UbuntuMono] text-[13px]">
+              <div className="p-1 flex flex-wrap justify-center gap-1 my-2 font-[Mar] text-[14px]">
                 <button
                   className={`cursor-pointer rounded p-0.5 px-1 ${
                     location === `Underworld` ? `bg-white text-black` : `bg-transparent text-white`
@@ -105,12 +105,12 @@ export default function Ladder() {
                   ))}
                 </select>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 text-[13px] font-[Ale]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-2 text-[12px]">
                 {fulldata_ArrArrObject.map((arr, oi) => (
                   <div className={`rounded-sm px-2 py-1 relative bg-linear-to-b from-black to-[#0e0c12]/80`}>
-                    <div className="text-center font-[Sr] text-white">{h2AspectOrder[oi]}</div>
+                    <div className="text-center font-[Mar text-[16px] text-white">{h2AspectOrder[oi]}</div>
                     <div className="w-full h-30 border border-white/10 p-1 rounded relative" key={oi}>
-                      <div className="absolute bottom-0 right-1 font-[UbuntuMono] uppercase">Bar Fear/Line Time</div>
+                      <div className="absolute bottom-0 right-1  uppercase">Bar Fear/Line Time</div>
                       <ComposedChart
                         style={{ width: "100%", maxHeight: "100px", aspectRatio: 1.618 }}
                         responsive

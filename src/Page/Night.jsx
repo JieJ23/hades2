@@ -194,16 +194,16 @@ export default function Night() {
         <div className="py-8 select-none">
           <div className="drawer">
             <input id="my-drawer-1" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content p-1 flex gap-1">
+            <div className="drawer-content p-1 flex gap-1 font-[Mar] text-[14px]">
               {/* Page content here */}
               <label
                 htmlFor="my-drawer-1"
-                className="drawer-button rounded bg-white text-black p-1 py-0.5 font-[UbuntuMono] inline-block min-w-15 text-center"
+                className="drawer-button rounded bg-white text-black p-1 py-0.5  inline-block min-w-15 text-center"
               >
                 Filter
               </label>
               <button
-                className={`min-w-15 font-[UbuntuMono] cursor-pointer  px-1 py-0.5 rounded text-center bg-white text-black`}
+                className={`min-w-15  cursor-pointer  px-1 py-0.5 rounded text-center bg-white text-black`}
                 onClick={() => {
                   setPageIndex(1);
                   setCategory("");
@@ -503,7 +503,7 @@ export default function Night() {
               </div>
             </div>
           </div>
-          <div className="my-1 flex justify-start gap-1 font-[UbuntuMono] p-1">
+          <div className="my-1 flex justify-start gap-1  p-1 font-[Mar] text-[14px]">
             <button
               className={`min-w-15 cursor-pointer  px-1 py-0.5 rounded text-center ${format === "List" ? `bg-white text-black` : ``}`}
               onClick={() => setFormat("List")}
@@ -756,10 +756,10 @@ export default function Night() {
                       </Link>
                     )}
                     <div className="p-1 flex flex-col gap-1">
-                      <div className="font-[Ale] px-2">
+                      <div className="text-[12px] px-2">
                         <div className="flex justify-between">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer font-[Mar] text-[14px]"
                             onClick={() => {
                               setPageIndex(1);
                               setFill("Latest");
@@ -770,7 +770,6 @@ export default function Night() {
                           >
                             {obj.nam}
                           </div>
-                          <div>{obj.dat.slice(0, 10)}</div>
                         </div>
                         <div>
                           <span>
@@ -838,7 +837,7 @@ export default function Night() {
                             ))}
                       </div>
                       {obj.ham && (
-                        <div className="flex gap-1 flex-wrap font-[Ale] text-[14px] sm:text-[12px]">
+                        <div className="flex gap-1 flex-wrap text-[12px]">
                           {sToA(obj.ham).map((item, index) => (
                             <div className="bg-[#0a0a0a] border border-white/10 rounded px-1 text-gray-300">{item}</div>
                           ))}
@@ -853,7 +852,7 @@ export default function Night() {
                           ))}
                         </div>
                       )}
-                      <div className="flex gap-1 font-[Ale]">
+                      <div className="flex gap-1">
                         {obj.src && (
                           <Link
                             to={obj.src}
@@ -882,7 +881,7 @@ export default function Night() {
                           </Link>
                         )}
                       </div>
-                      <div className="text-gray-300 font-[Ubuntu] text-[11px] line-clamp-2 h-8">{obj.des}</div>
+                      <div className="text-gray-300 text-[12px] line-clamp-2 h-8">{obj.des}</div>
                     </div>
                   </div>
                 ))}
@@ -965,7 +964,7 @@ export default function Night() {
                                 }`}
                               >
                                 <div className="tooltip-content p-0">
-                                  <div className=" border border-white/10 text-white font-[Ubuntu] text-[12px] px-2 py-1 rounded">
+                                  <div className=" border border-white/10 text-white  text-[12px] px-2 py-1 rounded">
                                     {obj.des}
                                   </div>
                                 </div>
@@ -1070,7 +1069,7 @@ export default function Night() {
             </div>
           )}
           {/* Pagination controls */}
-          <div className="flex justify-center gap-4 items-center text-[14px] font-[UbuntuMono] py-2 my-2">
+          <div className="flex justify-center gap-4 items-center font-[Mar] text-[14px] py-2 my-2">
             <button
               disabled={pageIndex === 1}
               onClick={() => setPageIndex((prev) => prev - 1)}
@@ -1078,7 +1077,7 @@ export default function Night() {
             >
               Prev
             </button>
-            <div className="text-[18px] text-white font-[Ale]">
+            <div className="text-[14px] text-white font-[Aleo]">
               {pageIndex}/{TOTAL_Page}
             </div>
             <button
